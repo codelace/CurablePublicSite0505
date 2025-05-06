@@ -35,8 +35,9 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         target="_blank" 
         rel="noopener noreferrer"
         className={dnaButtonClasses}
+        style={{ width: '90px' }} // Force exact width to match other buttons
       >
-        <span>⚛️🧬⚗️</span>
+        <span className="text-xs">⚛️🧬⚗️</span>
       </a>
       
       <Link to="/join" className={joinButtonClasses}>
