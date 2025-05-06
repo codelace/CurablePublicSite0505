@@ -34,7 +34,7 @@ export const people: Person[] = [
     id: 4,
     name: "AC",
     role: "Ecosystem & DevRel",
-    avatar: "/avatars/ac.png",
+    avatar: "/lovable-uploads/a8ddc104-70a5-41d7-8f30-854ebfeec1a0.png",
     group: "team"
   },
   {
@@ -48,7 +48,7 @@ export const people: Person[] = [
     id: 6,
     name: "Kenichi",
     role: "DAO Ops & Governance",
-    avatar: "/avatars/kenichi.png",
+    avatar: "/lovable-uploads/ba7ce5e9-c5ee-4e01-9746-5504712070b7.png",
     group: "team"
   },
   {
@@ -62,21 +62,21 @@ export const people: Person[] = [
     id: 8,
     name: "Trek",
     role: "Regulatory Affairs",
-    avatar: "/avatars/trek.png",
+    avatar: "/lovable-uploads/78f3d7f6-b133-4ee6-bea4-b5e4842c9728.png",
     group: "team"
   },
   {
     id: 9,
     name: "Sensei",
     role: "Human Health",
-    avatar: "/avatars/sensei.png",
+    avatar: "/lovable-uploads/d40b9bb3-1154-41eb-8f04-9df2c968b110.png",
     group: "team"
   },
   {
     id: 10,
     name: "Olokoji",
     role: "Legal & Compliance",
-    avatar: "/avatars/olokoji.png",
+    avatar: "/lovable-uploads/90558286-0ee7-4d4f-b509-691581da1995.png",
     group: "team"
   },
 
