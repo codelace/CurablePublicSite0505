@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Dna, Menu, X } from 'lucide-react';
+import { Dna, Menu, X, Telegram, Twitter } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -38,6 +38,39 @@ const Navbar = () => {
           <Link to="/whitepaper" className={`nav-link ${isActive('/whitepaper') ? 'active' : ''}`}>
             WHITEPAPER
           </Link>
+
+          {/* Social Media Links */}
+          <div className="ml-4 flex items-center space-x-3">
+            <a 
+              href="https://discord.gg/kRftHc7e" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-titanium-white/70 hover:text-plasma-violet transition-colors"
+              aria-label="Discord"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-discord">
+                <circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M7.5 7.2c.2-.4.5-.8.9-1.2A10 10 0 0 1 12 5a10 10 0 0 1 3.6 1.1c.4.4.7.8.9 1.2"/><path d="M5 15.2c2.9 1.2 7.1 1.2 10 0"/><path d="M16.8 14.5c-.2.8-.7 1.5-1.2 2-1.3 1.2-3 2-4.6 2s-3.3-.8-4.6-2c-.5-.5-1-1.2-1.2-2"/><path d="M12 22a8 8 0 0 0 8-8V9.5a5 5 0 0 0-2.7-4.3A10 10 0 0 0 12 4a10 10 0 0 0-5.3 1.2A5 5 0 0 0 4 9.5V14a8 8 0 0 0 8 8Z"/>
+              </svg>
+            </a>
+            <a 
+              href="https://t.me/curabledaopublic" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-titanium-white/70 hover:text-bio-blue transition-colors"
+              aria-label="Telegram"
+            >
+              <Telegram size={20} />
+            </a>
+            <a 
+              href="https://x.com/curabledao" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-titanium-white/70 hover:text-titanium-white transition-colors"
+              aria-label="X (Twitter)"
+            >
+              <Twitter size={20} />
+            </a>
+          </div>
         </nav>
         
         {/* CTA Buttons */}
@@ -113,6 +146,39 @@ const Navbar = () => {
                     >
                       WHITEPAPER
                     </Link>
+
+                    {/* Social Media Links */}
+                    <div className="flex items-center space-x-6 py-3 border-b border-graphite-700/40">
+                      <a 
+                        href="https://discord.gg/kRftHc7e" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-titanium-white/70 hover:text-plasma-violet transition-colors"
+                        aria-label="Discord"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-discord">
+                          <circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M7.5 7.2c.2-.4.5-.8.9-1.2A10 10 0 0 1 12 5a10 10 0 0 1 3.6 1.1c.4.4.7.8.9 1.2"/><path d="M5 15.2c2.9 1.2 7.1 1.2 10 0"/><path d="M16.8 14.5c-.2.8-.7 1.5-1.2 2-1.3 1.2-3 2-4.6 2s-3.3-.8-4.6-2c-.5-.5-1-1.2-1.2-2"/><path d="M12 22a8 8 0 0 0 8-8V9.5a5 5 0 0 0-2.7-4.3A10 10 0 0 0 12 4a10 10 0 0 0-5.3 1.2A5 5 0 0 0 4 9.5V14a8 8 0 0 0 8 8Z"/>
+                        </svg>
+                      </a>
+                      <a 
+                        href="https://t.me/curabledaopublic" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-titanium-white/70 hover:text-bio-blue transition-colors"
+                        aria-label="Telegram"
+                      >
+                        <Telegram size={22} />
+                      </a>
+                      <a 
+                        href="https://x.com/curabledao" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-titanium-white/70 hover:text-titanium-white transition-colors"
+                        aria-label="X (Twitter)"
+                      >
+                        <Twitter size={22} />
+                      </a>
+                    </div>
                   </nav>
                 </div>
                 
