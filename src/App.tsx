@@ -40,7 +40,7 @@ const App = () => (
             </div>
             <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-radial from-transparent to-dark-base/90"></div>
             <Navbar />
-            <main className="pt-20 relative z-10">
+            <main className="pt-16 sm:pt-20 relative z-10">
               <Routes>
                 <Route path="/" element={<About />} />
                 <Route path="/about" element={<Navigate to="/" replace />} />

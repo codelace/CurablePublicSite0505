@@ -32,7 +32,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="container px-4 py-4 relative min-h-screen">
+    <div className="container px-3 sm:px-4 py-3 sm:py-4 relative min-h-screen max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px]">
       {/* Background patterns */}
       <BackgroundPatterns />
       

@@ -13,15 +13,15 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-[68px] bg-gunmetal-900/60 backdrop-blur-lg border-b border-graphite-700/40">
-      <div className="container mx-auto px-4 h-full flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 h-[60px] sm:h-[68px] bg-gunmetal-900/60 backdrop-blur-lg border-b border-graphite-700/40">
+      <div className="container mx-auto px-3 sm:px-4 h-full flex items-center justify-between">
         {/* Logo & Pulse Dot */}
         <div className="flex items-center">
           <Link to="/about" className="flex items-center">
             <img 
               src="/lovable-uploads/9f48e9db-5a06-4a87-be2f-b514b3153f90.png" 
               alt="CURABLE DAO" 
-              className="h-12 w-auto" 
+              className="h-8 sm:h-12 w-auto" 
             />
           </Link>
           <div className="ml-2 w-2 h-2 rounded-full bg-quantum-red animate-pulse-dot"></div>
@@ -72,61 +72,61 @@ const Navbar = () => {
             </SheetTrigger>
             <SheetContent side="right" className="p-0 border-0 w-full max-w-full sm:max-w-md bg-gunmetal-900/95 backdrop-blur-lg">
               <div className="flex flex-col h-full">
-                <div className="p-6 border-b border-graphite-700/40">
+                <div className="p-4 border-b border-graphite-700/40">
                   <div className="flex items-center">
                     <img 
                       src="/lovable-uploads/9f48e9db-5a06-4a87-be2f-b514b3153f90.png" 
                       alt="CURABLE DAO" 
-                      className="h-10 w-auto" 
+                      className="h-8 w-auto" 
                     />
                     <div className="ml-2 w-2 h-2 rounded-full bg-quantum-red animate-pulse-dot"></div>
                   </div>
                 </div>
                 
-                <div className="flex-1 overflow-auto p-6">
-                  <nav className="flex flex-col space-y-6">
+                <div className="flex-1 overflow-auto p-4">
+                  <nav className="flex flex-col space-y-4">
                     {/* DNA Launch Button */}
                     <a 
                       href="https://binding-db-integrator-1-codelace77.replit.app/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 py-4 rounded-lg text-white font-bold text-xl mb-6 animate-pulse"
+                      className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 py-3 rounded-lg text-white font-bold text-base mb-4 animate-pulse"
                     >
                       🧬 Launch BindingDB
                     </a>
                     
                     <Link 
                       to="/about" 
-                      className={`text-xl font-bold py-3 border-b border-graphite-700/40 ${isActive('/about') ? 'text-plasma-violet' : 'text-titanium-white'}`}
+                      className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/about') ? 'text-plasma-violet' : 'text-titanium-white'}`}
                     >
                       ABOUT
                     </Link>
                     <Link 
                       to="/tokenomics" 
-                      className={`text-xl font-bold py-3 border-b border-graphite-700/40 ${isActive('/tokenomics') ? 'text-plasma-violet' : 'text-titanium-white'}`}
+                      className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/tokenomics') ? 'text-plasma-violet' : 'text-titanium-white'}`}
                     >
                       TOKENOMICS
                     </Link>
                     <Link 
                       to="/whitepaper" 
-                      className={`text-xl font-bold py-3 border-b border-graphite-700/40 ${isActive('/whitepaper') ? 'text-plasma-violet' : 'text-titanium-white'}`}
+                      className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/whitepaper') ? 'text-plasma-violet' : 'text-titanium-white'}`}
                     >
                       WHITEPAPER
                     </Link>
                   </nav>
                 </div>
                 
-                <div className="p-6 pt-0">
-                  <div className="flex flex-col space-y-4">
+                <div className="p-4 pt-0">
+                  <div className="flex flex-col space-y-3">
                     <Link 
                       to="/join" 
-                      className="btn-primary text-center py-4 text-base"
+                      className="btn-primary text-center py-3 text-sm"
                     >
                       JOIN DAO
                     </Link>
                     <Link 
                       to="/novel" 
-                      className="btn-secondary text-center py-4 text-base"
+                      className="btn-secondary text-center py-3 text-sm"
                     >
                       NOVEL CURE APP
                     </Link>

@@ -14,7 +14,6 @@ interface TeamSectionProps {
 
 const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, setHoveredProfile }) => {
   const isMobile = useIsMobile();
-  const [teamMembers, setTeamMembers] = useState(people);
   
   // For mobile carousel
   const [activePage, setActivePage] = useState(0);
@@ -34,17 +33,10 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
     ? people.slice(activePage * pageSize, (activePage + 1) * pageSize)
     : people;
   
-  // Debug the actual team members that are being processed
-  console.log("Raw Team members data:", people);
-  
-  // Force re-render to ensure all team members are displayed
+  // Reset active page on mobile/desktop switch
   useEffect(() => {
-    // This is just to ensure the component re-renders properly
-    console.log("TeamSection mounted or updated with people count:", people.length);
-    
-    // Force a re-render with a new reference to make sure all team members are displayed
-    setTeamMembers([...people]);
-  }, []);
+    setActivePage(0);
+  }, [isMobile]);
   
   return (
     <div 
@@ -80,10 +72,10 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
         </div>
       )}
       
-      <div className={`grid grid-cols-2 ${isMobile ? 'gap-3' : 'sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4'}`}>
+      <div className={`grid grid-cols-2 ${isMobile ? 'gap-2' : 'sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4'}`}>
         {visibleTeamMembers.map((person, index) => (
           <div 
-            key={`team-member-${person.id}-${index}`}
+            key={`team-member-${person.id}`}
             className="transform transition-all duration-300"
             onMouseEnter={() => setHoveredProfile(index)}
             onMouseLeave={() => setHoveredProfile(null)}

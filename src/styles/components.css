@@ -2,21 +2,23 @@
 @layer components {
   .btn-holo {
     @apply bg-gradient-to-r from-gunmetal-900/80 to-graphite-700/60 backdrop-blur-md 
-           border border-graphite-700/60 rounded-lg px-6 py-2.5 
-           text-titanium-white font-medium transition-all duration-300
+           border border-graphite-700/60 rounded-lg px-4 sm:px-6 py-2 sm:py-2.5 
+           text-titanium-white text-sm sm:text-base font-medium transition-all duration-300
            hover:shadow-[0_0_12px_rgba(161,98,255,0.4)] hover:border-plasma-violet/40 
            active:scale-95;
   }
 
   .btn-primary {
     @apply bg-gradient-to-r from-logo-blue to-logo-blue hover:from-logo-blue hover:to-plasma-violet
-           text-gunmetal-900 font-bold px-6 py-2.5 rounded-lg transition-all duration-300
+           text-gunmetal-900 font-bold px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg transition-all duration-300
+           text-xs sm:text-sm
            hover:shadow-[0_0_15px_rgba(30,174,219,0.5)] active:scale-95;
   }
 
   .btn-secondary {
     @apply bg-gradient-to-r from-quantum-red to-quantum-red hover:from-quantum-red hover:to-logo-blue
-           text-titanium-white font-bold px-6 py-2.5 rounded-lg transition-all duration-300
+           text-titanium-white font-bold px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg transition-all duration-300
+           text-xs sm:text-sm
            hover:shadow-[0_0_15px_rgba(255,51,102,0.5)] active:scale-95;
   }
 
@@ -26,7 +28,7 @@
   }
 
   .section-divider {
-    @apply relative h-[1px] w-full my-16 overflow-hidden;
+    @apply relative h-[1px] w-full my-10 sm:my-16 overflow-hidden;
   }
 
   .section-divider::before {
@@ -36,7 +38,7 @@
   }
 
   .nav-link {
-    @apply relative inline-block px-4 py-2 transition-colors;
+    @apply relative inline-block px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-sm sm:text-base;
   }
 
   .nav-link::after {
@@ -58,5 +60,34 @@
 
   .text-gradient-glow {
     @apply bg-gradient-to-r from-bio-blue via-bio-violet to-bio-green bg-clip-text text-transparent animate-text-shimmer;
+  }
+  
+  /* Responsive text scaling */
+  .text-responsive {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+  
+  .heading-responsive {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  /* Mobile-friendly containers */
+  .container-mobile {
+    @apply px-3 sm:px-4 py-3 sm:py-4 w-full;
+  }
+  
+  /* Smaller mobile padding */
+  .mobile-padding {
+    @apply p-2 sm:p-4;
+  }
+  
+  /* Mobile-friendly spacing */
+  .mobile-gap {
+    @apply gap-2 sm:gap-4;
+  }
+  
+  /* Better touch targets for mobile */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
   }
 }
