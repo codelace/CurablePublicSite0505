@@ -1,0 +1,64 @@
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-gradient-purple-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-plasma-violet to-logo-blue;
+  }
+
+  .text-outline {
+    text-shadow: 0 0 1px rgba(232, 241, 249, 0.5);
+  }
+  
+  .grid-overlay {
+    background-size: 50px 50px;
+    background-image: 
+      linear-gradient(to right, rgba(39, 44, 51, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(39, 44, 51, 0.1) 1px, transparent 1px);
+  }
+  
+  .bg-gradient-radial {
+    background-image: radial-gradient(circle at center, transparent 0%, #0E0E10 70%);
+  }
+  
+  .hud-corners::before, 
+  .hud-corners::after,
+  .hud-corners > span::before, 
+  .hud-corners > span::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 1px solid rgba(30, 174, 219, 0.5);
+  }
+  
+  .hud-corners::before {
+    top: 0;
+    left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
+  
+  .hud-corners::after {
+    top: 0;
+    right: 0;
+    border-left: 0;
+    border-bottom: 0;
+  }
+  
+  .hud-corners > span::before {
+    bottom: 0;
+    left: 0;
+    border-right: 0;
+    border-top: 0;
+  }
+  
+  .hud-corners > span::after {
+    bottom: 0;
+    right: 0;
+    border-left: 0;
+    border-top: 0;
+  }
+}

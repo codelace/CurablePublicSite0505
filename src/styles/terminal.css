@@ -1,0 +1,38 @@
+
+@layer components {
+  /* Terminal-style interface elements */
+  .terminal-header {
+    @apply flex font-mono text-xs text-titanium-white/70 bg-gunmetal-900 border-b border-graphite-700/40 p-2 rounded-t-lg;
+  }
+  
+  .terminal-window {
+    @apply bg-dark-surface/80 backdrop-blur-md border border-graphite-700/60 rounded-lg overflow-hidden;
+  }
+  
+  .terminal-text {
+    @apply font-mono text-sm whitespace-pre-line text-titanium-white/80;
+  }
+  
+  .command-prompt {
+    @apply flex items-center font-mono;
+  }
+  
+  .command-prompt::before {
+    content: '>';
+    @apply mr-2 text-arc-blue;
+  }
+  
+  .hud-border {
+    @apply border border-graphite-700/60 rounded-lg p-0.5 relative;
+  }
+  
+  .hud-border::before {
+    content: '';
+    @apply absolute -top-0.5 -left-0.5 w-3 h-3 border-t border-l border-arc-blue/60;
+  }
+  
+  .hud-border::after {
+    content: '';
+    @apply absolute -bottom-0.5 -right-0.5 w-3 h-3 border-b border-r border-arc-blue/60;
+  }
+}
