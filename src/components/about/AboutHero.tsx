@@ -6,6 +6,7 @@ import { mission } from '@/data/mission';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
 import StatusTicker from '@/components/StatusTicker';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const AboutHero = () => {
   // For typewriter effect
@@ -79,20 +80,71 @@ const AboutHero = () => {
           </div>
         </div>
         
-        <div className="mt-8">
-          <a 
-            href="https://binding-db-integrator-1-codelace77.replit.app/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <Button 
-              className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold flex items-center gap-2 font-mono border border-plasma-violet/60 shadow-[0_0_15px_rgba(161,98,255,0.3)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(161,98,255,0.5)] hover:translate-y-[-2px]"
+        {isMobile ? (
+          <div className="mt-8">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button 
+                  className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold flex items-center gap-2 font-mono border border-plasma-violet/60 shadow-[0_0_15px_rgba(161,98,255,0.3)] transition-all duration-300 w-full justify-center"
+                >
+                  {isMobile ? 'launch app' : 'launch --next-frontier'}
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="bg-gunmetal-900/95 border-graphite-700/40 p-4">
+                <div className="h-full flex flex-col justify-center items-center">
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-bold mb-2 text-titanium-white">Launch Options</h3>
+                    <p className="text-titanium-white/70">Choose your destination</p>
+                  </div>
+                  
+                  <div className="space-y-4 w-full">
+                    <a 
+                      href="https://binding-db-integrator-1-codelace77.replit.app/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="bg-bio-blue hover:bg-bio-blue/90 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-mono border border-bio-blue/60 shadow-[0_0_15px_rgba(91,192,235,0.3)] transition-all duration-300 w-full"
+                    >
+                      BindingDB Integrator
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                    
+                    <a 
+                      href="/novel" 
+                      className="bg-bio-green hover:bg-bio-green/90 text-gunmetal-900 font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-mono border border-bio-green/60 shadow-[0_0_15px_rgba(142,228,175,0.3)] transition-all duration-300 w-full"
+                    >
+                      Novel Cure App
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                    
+                    <a 
+                      href="/join" 
+                      className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-mono border border-plasma-violet/60 shadow-[0_0_15px_rgba(161,98,255,0.3)] transition-all duration-300 w-full"
+                    >
+                      Join DAO
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        ) : (
+          <div className="mt-8">
+            <a 
+              href="https://binding-db-integrator-1-codelace77.replit.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
             >
-              {isMobile ? 'launch' : 'launch --next-frontier'}
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-          </a>
-        </div>
+              <Button 
+                className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold flex items-center gap-2 font-mono border border-plasma-violet/60 shadow-[0_0_15px_rgba(161,98,255,0.3)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(161,98,255,0.5)] hover:translate-y-[-2px]"
+              >
+                {isMobile ? 'launch' : 'launch --next-frontier'}
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
