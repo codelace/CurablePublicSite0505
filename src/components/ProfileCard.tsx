@@ -3,12 +3,22 @@ import React from 'react';
 import Card from './Card';
 import { Person } from '@/data/people';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
 
 interface ProfileCardProps {
   person: Person;
 }
 
 const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
+  // Map the group to a display name
+  const groupDisplay = person.group === 'team' ? 'Guardian' : 'Advisor';
+  
+  // Set badge color based on group
+  const badgeVariant = person.group === 'team' ? 'default' : 'secondary';
+  const badgeClass = person.group === 'team' 
+    ? 'bg-arc-blue/20 text-arc-blue border-arc-blue/30' 
+    : 'bg-quantum-red/20 text-quantum-red border-quantum-red/30';
+
   return (
     <Card className="flex flex-col items-center text-center h-full">
       <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-arc-blue/30 mb-4 relative">
@@ -33,6 +43,9 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
         </div>
       </div>
       <h3 className="text-lg font-bold mb-1 text-titanium-white">{person.name}</h3>
+      <Badge variant={badgeVariant} className={`mb-2 ${badgeClass}`}>
+        {groupDisplay}
+      </Badge>
       <p className="text-arc-blue text-sm font-mono">{person.role}</p>
     </Card>
   );

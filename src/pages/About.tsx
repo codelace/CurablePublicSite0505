@@ -16,9 +16,6 @@ const statusItems = [
 ];
 
 const About = () => {
-  const teamMembers = people.filter(person => person.group === 'team');
-  const advisors = people.filter(person => person.group === 'advisor');
-
   return (
     <div className="container mx-auto px-4 py-16 pt-24">
       {/* Hero Status */}
@@ -46,23 +43,11 @@ const About = () => {
       
       <SectionDivider />
       
-      {/* Team Grid */}
+      {/* All Team Members Grid */}
       <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center text-titanium-white">Core Team</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {teamMembers.map(person => (
-            <ProfileCard key={person.id} person={person} />
-          ))}
-        </div>
-      </section>
-      
-      <SectionDivider />
-      
-      {/* Advisors Grid */}
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center text-titanium-white">Advisors</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {advisors.map(person => (
+        <h2 className="text-3xl font-bold mb-8 text-center text-titanium-white">Our Team</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {people.map(person => (
             <ProfileCard key={person.id} person={person} />
           ))}
         </div>
