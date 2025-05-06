@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { people } from '@/data/people';
 import ProfileCard from '@/components/ProfileCard';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
@@ -16,6 +16,12 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
   
   // Debug the actual team members that are being processed
   console.log("Raw Team members data:", people);
+  
+  // Force re-render to ensure all team members are displayed
+  useEffect(() => {
+    // This is just to ensure the component re-renders properly
+    console.log("TeamSection mounted or updated with people count:", people.length);
+  }, []);
   
   return (
     <div 

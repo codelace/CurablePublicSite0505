@@ -5,10 +5,10 @@ import CommandPatternBackground from '@/components/CommandPatternBackground';
 const BackgroundPatterns = () => {
   return (
     <>
-      {/* Static background patterns with NO animation */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+      {/* Static background patterns with NO animation - using inline styles to force no animation */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" style={{ animation: 'none !important' }}>
         {/* Base grid pattern - explicitly static */}
-        <div className="pattern-static absolute inset-0">
+        <div className="pattern-static absolute inset-0" style={{ animation: 'none !important' }}>
           <CommandPatternBackground 
             variant="grid" 
             color="blue" 
@@ -19,7 +19,7 @@ const BackgroundPatterns = () => {
         </div>
         
         {/* Node pattern - explicitly static */}
-        <div className="pattern-static absolute inset-0">
+        <div className="pattern-static absolute inset-0" style={{ animation: 'none !important' }}>
           <CommandPatternBackground 
             variant="nodes" 
             color="violet" 
@@ -30,7 +30,7 @@ const BackgroundPatterns = () => {
         </div>
         
         {/* DNA pattern - explicitly static */}
-        <div className="pattern-static absolute inset-0">
+        <div className="pattern-static absolute inset-0" style={{ animation: 'none !important' }}>
           <CommandPatternBackground 
             variant="dna" 
             color="violet" 

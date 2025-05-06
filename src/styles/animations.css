@@ -1,7 +1,8 @@
+
 @layer utilities {
   /* All animations completely disabled */
   .cursor-blink {
-    /* animation completely removed */
+    animation: none !important;
   }
   
   @keyframes blink {
@@ -10,7 +11,7 @@
   }
   
   .animate-slide {
-    /* animation completely removed */
+    animation: none !important;
   }
   
   @keyframes slide {
@@ -19,11 +20,11 @@
   }
   
   .animate-pulse-dot {
-    /* animation completely removed */
+    animation: none !important;
   }
   
   .animate-pulse-glow {
-    /* animation completely removed */
+    animation: none !important;
   }
   
   /* Keep scan line effect but not using it on background */
@@ -40,8 +41,7 @@
     right: 0;
     height: 5px;
     background: rgba(30, 174, 219, 0.5);
-    /* animation completely removed */
-    animation: scan 4s linear infinite;
+    animation: none !important;
   }
   
   @keyframes scan {
