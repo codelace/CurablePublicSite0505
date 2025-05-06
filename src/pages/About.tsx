@@ -12,7 +12,7 @@ import { values } from '@/data/values';
 const About = () => {
   // For typewriter effect
   const [displayTitle, setDisplayTitle] = useState('');
-  const fullTitle = 'Building the Future of R&D';
+  const fullTitle = 'Building the Future of Cures';
   const [tickerItems] = useState([
     '🔁 BindingDB integration active',
     '⬇️ New TargetForge scaffold queued',
