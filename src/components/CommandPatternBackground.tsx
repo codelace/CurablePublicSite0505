@@ -19,7 +19,7 @@ interface CommandPatternBackgroundProps {
 const CommandPatternBackground: React.FC<CommandPatternBackgroundProps> = ({
   variant = 'grid',
   intensity = 'medium',
-  animated = true,
+  animated = false, // Default to false to force all patterns to be static
   className = '',
   speed = 'medium',
   color = 'blue',
@@ -28,17 +28,17 @@ const CommandPatternBackground: React.FC<CommandPatternBackgroundProps> = ({
   const getPatternComponent = () => {
     switch (variant) {
       case 'dots':
-        return <DotsPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
+        return <DotsPattern intensity={intensity} animated={false} color={color} speed={speed} />;
       case 'nodes':
-        return <NodesPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
+        return <NodesPattern intensity={intensity} animated={false} color={color} speed={speed} />;
       case 'matrix':
-        return <MatrixPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
+        return <MatrixPattern intensity={intensity} animated={false} color={color} speed={speed} />;
       case 'dna':
-        return <DnaPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
+        return <DnaPattern intensity={intensity} animated={false} color={color} speed={speed} />;
       case 'circuit':
-        return <CircuitPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
+        return <CircuitPattern intensity={intensity} animated={false} color={color} speed={speed} />;
       default: // grid
-        return <GridPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
+        return <GridPattern intensity={intensity} animated={false} color={color} speed={speed} />;
     }
   };
 

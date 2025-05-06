@@ -19,19 +19,17 @@ const About = () => {
   const visibleSections = useScrollReveal();
   const isMobile = useIsMobile();
 
-  // Force initial visibility on mobile
+  // Force all sections to be visible initially
   useEffect(() => {
-    if (isMobile) {
-      const sections = ['mission-section', 'values-section', 'team-section'];
-      sections.forEach(id => {
-        const section = document.getElementById(id);
-        if (section) {
-          section.classList.remove('opacity-0', 'translate-y-10');
-          section.classList.add('opacity-100', 'translate-y-0');
-        }
-      });
-    }
-  }, [isMobile]);
+    const sections = ['mission-section', 'values-section', 'team-section'];
+    sections.forEach(id => {
+      const section = document.getElementById(id);
+      if (section) {
+        section.classList.remove('opacity-0', 'translate-y-10');
+        section.classList.add('opacity-100', 'translate-y-0');
+      }
+    });
+  }, []);
 
   return (
     <div className="container px-4 py-4 relative min-h-screen">
@@ -43,7 +41,7 @@ const About = () => {
 
       {/* Core values section with reduced vertical spacing */}
       <ValuesSection 
-        isVisible={visibleSections.values || isMobile} 
+        isVisible={true} 
         hoveredValue={hoveredValue} 
         setHoveredValue={setHoveredValue} 
       />
@@ -52,7 +50,7 @@ const About = () => {
 
       {/* Team Section with improved layout and reduced spacing */}
       <TeamSection 
-        isVisible={visibleSections.team || isMobile} 
+        isVisible={true} 
         hoveredProfile={hoveredProfile} 
         setHoveredProfile={setHoveredProfile} 
       />

@@ -23,7 +23,7 @@ const App = () => (
       <BrowserRouter>
         <div className="flex min-h-screen w-full">
           <div className="flex-1 relative">
-            <CommandPatternBackground variant="grid" intensity="medium" />
+            <CommandPatternBackground variant="grid" intensity="medium" animated={false} className="pattern-static" />
             <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-radial from-transparent to-dark-base/80"></div>
             <Navbar />
             <main className="pt-20 relative z-10">
