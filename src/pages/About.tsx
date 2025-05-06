@@ -20,7 +20,7 @@ const About = () => {
         <h1 className="text-3xl font-bold text-titanium-white mb-4">
           Building the Future of <span className="text-arc-blue">Biomedical Research</span>
         </h1>
-        <p className="text-titanium-white/90 max-w-3xl mb-6">{mission.intro}</p>
+        <p className="text-titanium-white/90 max-w-3xl mb-6">{mission}</p>
         
         <div className="mt-4">
           <a 
@@ -43,7 +43,7 @@ const About = () => {
         <h2 className="text-2xl font-bold text-titanium-white mb-6">Our Core Values</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {values.map((value, index) => (
-            <ValueCard key={index} {...value} />
+            <ValueCard key={index} value={value} />
           ))}
         </div>
       </div>
@@ -55,7 +55,7 @@ const About = () => {
         <h2 className="text-2xl font-bold text-titanium-white mb-6">Our Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {people.map((person, index) => (
-            <ProfileCard key={index} {...person} />
+            <ProfileCard key={index} person={person} />
           ))}
         </div>
       </div>
