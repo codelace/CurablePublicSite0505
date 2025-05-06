@@ -11,13 +11,32 @@ interface ProfileCardProps {
 
 const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
   // Map the group to a display name
-  const groupDisplay = person.group === 'team' ? 'Guardian' : 'Advisor';
+  const getGroupDisplay = (group: string) => {
+    switch (group) {
+      case 'team': return 'Guardian';
+      case 'advisor': return 'Advisor';
+      case 'founder': return 'Founder';
+      default: return group;
+    }
+  };
   
-  // Set badge color based on group
-  const badgeVariant = person.group === 'team' ? 'default' : 'secondary';
-  const badgeClass = person.group === 'team' 
-    ? 'bg-arc-blue/20 text-arc-blue border-arc-blue/30' 
-    : 'bg-quantum-red/20 text-quantum-red border-quantum-red/30';
+  // Get badge styling based on group
+  const getBadgeStyle = (group: string) => {
+    switch (group) {
+      case 'team': 
+        return 'bg-arc-blue/20 text-arc-blue border-arc-blue/30';
+      case 'advisor': 
+        return 'bg-quantum-red/20 text-quantum-red border-quantum-red/30';
+      case 'founder': 
+        return 'bg-plasma-violet/20 text-plasma-violet border-plasma-violet/30';
+      default: 
+        return 'bg-arc-blue/20 text-arc-blue border-arc-blue/30';
+    }
+  };
+
+  const groupDisplay = getGroupDisplay(person.group);
+  const badgeClass = getBadgeStyle(person.group);
+  const badgeVariant = person.group === 'team' ? 'default' : person.group === 'advisor' ? 'secondary' : 'outline';
 
   return (
     <Card className="flex flex-col items-center text-center h-full">

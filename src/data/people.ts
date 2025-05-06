@@ -4,25 +4,27 @@ export type Person = {
   name: string;
   role: string;
   avatar: string;
-  group: 'team' | 'advisor';
+  group: 'team' | 'advisor' | 'founder';
 };
 
 export const people: Person[] = [
-  // ——— TEAM ———
+  // ——— FOUNDERS ———
   {
     id: 1,
     name: "Hugh Donatello",
     role: "Chief Executive Officer",
     avatar: "/lovable-uploads/d1b2c6d5-1a88-415d-ae0d-a2fd6669f9ce.png",
-    group: "team"
+    group: "founder"
   },
   {
     id: 2,
     name: "Ilyssa Evans",
     role: "Chief Operations Officer",
     avatar: "/lovable-uploads/b83232dd-6ec6-4bae-b29c-71def935812a.png",
-    group: "team"
+    group: "founder"
   },
+  
+  // ——— TEAM ———
   {
     id: 3,
     name: "Fax",
