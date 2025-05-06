@@ -12,17 +12,17 @@ const BackgroundPatterns = () => {
           <CommandPatternBackground 
             variant="grid" 
             color="violet" 
-            intensity="low" 
-            animated={false}
+            intensity="medium" 
+            animated={true}
           />
         </div>
         
         {/* Node pattern - using violet to match other pages */}
-        <div className="absolute inset-0 opacity-50">
+        <div className="absolute inset-0 opacity-60">
           <CommandPatternBackground 
             variant="nodes" 
             color="violet" 
-            intensity="low" 
+            intensity="medium" 
             animated={false}
           />
         </div>

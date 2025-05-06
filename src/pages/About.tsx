@@ -6,6 +6,7 @@ import ValuesSection from '@/components/about/ValuesSection';
 import TeamSection from '@/components/about/TeamSection';
 import { useIsMobile } from '@/hooks/use-mobile';
 import BackgroundPatterns from '@/components/about/BackgroundPatterns';
+import CommandPatternBackground from '@/components/CommandPatternBackground';
 
 const About = () => {
   // For value card hover state
@@ -31,10 +32,33 @@ const About = () => {
 
   return (
     <div className="w-full relative min-h-screen">
-      {/* Use consistent background patterns */}
-      <BackgroundPatterns />
+      {/* Fixed background patterns */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Base grid pattern */}
+        <div className="absolute inset-0">
+          <CommandPatternBackground 
+            variant="grid" 
+            color="violet" 
+            intensity="medium" 
+            animated={true}
+          />
+        </div>
+        
+        {/* Node pattern overlay */}
+        <div className="absolute inset-0 opacity-60">
+          <CommandPatternBackground 
+            variant="nodes" 
+            color="violet" 
+            intensity="medium" 
+            animated={false}
+          />
+        </div>
+      </div>
       
-      <div className="container mx-auto px-4 max-w-full">
+      {/* Gradient overlay for better text contrast */}
+      <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-radial opacity-80"></div>
+      
+      <div className="container mx-auto px-4 max-w-full z-10 relative">
         {/* Mission Section */}
         <AboutHero />
 

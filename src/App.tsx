@@ -24,21 +24,7 @@ const App = () => (
         <BrowserRouter>
           <div className="flex min-h-screen w-full bg-gunmetal-900 text-titanium-white">
             <div className="flex-1 relative overflow-x-hidden">
-              {/* Completely static background with inline styles to force no animation */}
-              <div 
-                className="pattern-static absolute inset-0" 
-                style={{
-                  animation: 'none !important',
-                  transition: 'none !important'
-                }}
-              >
-                <CommandPatternBackground 
-                  variant="grid" 
-                  intensity="low" 
-                  animated={false} 
-                  className="pattern-static" 
-                />
-              </div>
+              {/* We're removing this static background as individual pages will handle their own backgrounds */}
               <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-radial from-transparent to-dark-base/90"></div>
               <Navbar />
               <main className="pt-16 sm:pt-20 relative z-10">

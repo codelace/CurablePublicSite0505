@@ -8,12 +8,16 @@ const GridPattern: React.FC<PatternProps> = ({
   color = 'blue',
   speed = 'medium',
 }) => {
+  // Force animation to be visible
+  const animationClass = animated ? getAnimationSpeed(speed) : '';
+  
   return (
     <svg 
-      className={`absolute inset-0 w-full h-full ${animated ? getAnimationSpeed(speed) : ''} ${getOpacity(intensity)}`} 
+      className={`absolute inset-0 w-full h-full ${animationClass} ${getOpacity(intensity)}`} 
       width="100%" 
       height="100%" 
       xmlns="http://www.w3.org/2000/svg"
+      style={{animation: animated ? 'pan-grid 15s infinite linear' : 'none'}}
     >
       <defs>
         <pattern 
@@ -26,7 +30,7 @@ const GridPattern: React.FC<PatternProps> = ({
             d="M 40 0 L 0 0 0 40" 
             fill="none" 
             stroke="currentColor" 
-            strokeWidth="0.8" 
+            strokeWidth="1.2" 
             className={color === 'violet' ? 'text-plasma-violet/70' : color === 'green' ? 'text-bio-green/70' : 'text-bio-blue/70'} 
           />
         </pattern>
