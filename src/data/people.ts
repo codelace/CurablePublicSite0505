@@ -85,49 +85,49 @@ export const people: Person[] = [
     id: 11,
     name: "Weblogica",
     role: "Engineering & Security",
-    avatar: "/avatars/weblogica.png",
+    avatar: "/lovable-uploads/a2f4ba16-59a7-4321-a074-79d871ef3491.png",
     group: "advisor"
   },
   {
     id: 12,
-    name: "Ravish",
-    role: "Agentic Infrastructure",
-    avatar: "/avatars/ravish.png",
+    name: "B. Toshi",
+    role: "Web3 Builders",
+    avatar: "/lovable-uploads/e12440db-60fb-408c-bef3-081c44b9f807.png",
     group: "advisor"
   },
   {
     id: 13,
-    name: "B. Toshi",
-    role: "Web3 Builders",
-    avatar: "/avatars/toshi.png",
+    name: "Ravish",
+    role: "Agentic Infrastructure",
+    avatar: "/lovable-uploads/b6f57fff-8618-41e8-ae67-aa9643b7a86d.png",
     group: "advisor"
   },
   {
     id: 14,
-    name: "Rocks",
-    role: "Content & Community",
-    avatar: "/avatars/rocks.png",
+    name: "Tamas",
+    role: "DAO Ops & Gov",
+    avatar: "/lovable-uploads/4c90c926-820b-4db0-9a47-a457463c075a.png",
     group: "advisor"
   },
   {
     id: 15,
-    name: "Pink",
-    role: "Content & Community",
-    avatar: "/avatars/pink.png",
+    name: "Iggy",
+    role: "Engineering & AI",
+    avatar: "/lovable-uploads/6a79f3bb-c709-4794-9b5a-40ac0a922f6e.png",
     group: "advisor"
   },
   {
     id: 16,
-    name: "Tamas",
-    role: "DAO Ops & Gov",
-    avatar: "/avatars/tamas.png",
+    name: "Pink",
+    role: "Content & Community",
+    avatar: "/lovable-uploads/31f14b9a-7672-4ad1-a74e-b7ef1e0fd867.png",
     group: "advisor"
   },
   {
     id: 17,
-    name: "Iggy",
-    role: "Engineering & AI",
-    avatar: "/avatars/iggy.png",
+    name: "Rocks",
+    role: "Content & Community",
+    avatar: "/lovable-uploads/d02246f5-470f-4d66-a2cb-88d9748dfcef.png",
     group: "advisor"
   }
 ];
