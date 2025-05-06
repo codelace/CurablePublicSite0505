@@ -118,4 +118,32 @@
   .text-gradient-purple-blue {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-plasma-violet to-logo-blue;
   }
+
+  /* New animations for dynamic UI */
+  .cursor-blink {
+    animation: blink 1s step-end infinite;
+  }
+  
+  @keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  .animate-slide {
+    animation: slide 15s linear infinite;
+  }
+  
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .animate-pulse-dot {
+    animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
 }
