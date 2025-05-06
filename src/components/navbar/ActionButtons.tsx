@@ -36,7 +36,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         rel="noopener noreferrer"
         className={dnaButtonClasses}
       >
-        <span className="text-sm">⚛️ 🧬 ⚗️</span>
+        <span>⚛️🧬⚗️</span>
       </a>
       
       <Link to="/join" className={joinButtonClasses}>
