@@ -10,7 +10,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 const AboutHero = () => {
   // For typewriter effect
   const [displayTitle, setDisplayTitle] = useState('');
-  const fullTitle = 'Building the Future of Cures: Molecule to Market';
+  const fullTitle = 'The Future of Cures: Molecule-to-Market';
   const isMobile = useIsMobile();
   
   const [tickerItems] = useState([
@@ -43,7 +43,7 @@ const AboutHero = () => {
   return (
     <div className="mb-16 relative z-10 transition-all duration-1000" id="mission-section">
       <CommandHUDHeader 
-        title={displayTitle || 'Building the Future of Cures: Molecule to Market'} 
+        title={displayTitle || 'The Future of Cures: Molecule-to-Market'} 
         subtitle="Decentralized research & development protocol" 
         statusText="CURABLE CORE ACTIVE"
       />
