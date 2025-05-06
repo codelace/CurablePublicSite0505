@@ -7,36 +7,42 @@ const BackgroundPatterns = () => {
     <>
       {/* Static background patterns with NO animation */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* Base grid pattern - static */}
-        <CommandPatternBackground 
-          variant="grid" 
-          color="blue" 
-          intensity="high" 
-          animated={false} 
-          className="pattern-static"
-        />
+        {/* Base grid pattern - explicitly static */}
+        <div className="pattern-static absolute inset-0">
+          <CommandPatternBackground 
+            variant="grid" 
+            color="blue" 
+            intensity="low" 
+            animated={false} 
+            className="pattern-static"
+          />
+        </div>
         
-        {/* Node pattern - static */}
-        <CommandPatternBackground 
-          variant="nodes" 
-          color="violet" 
-          intensity="high" 
-          animated={false} 
-          className="pattern-static"
-        />
+        {/* Node pattern - explicitly static */}
+        <div className="pattern-static absolute inset-0">
+          <CommandPatternBackground 
+            variant="nodes" 
+            color="violet" 
+            intensity="low" 
+            animated={false}
+            className="pattern-static"
+          />
+        </div>
         
-        {/* DNA pattern - static */}
-        <CommandPatternBackground 
-          variant="dna" 
-          color="violet" 
-          intensity="high" 
-          animated={false} 
-          className="pattern-static"
-        />
+        {/* DNA pattern - explicitly static */}
+        <div className="pattern-static absolute inset-0">
+          <CommandPatternBackground 
+            variant="dna" 
+            color="violet" 
+            intensity="low" 
+            animated={false}
+            className="pattern-static"
+          />
+        </div>
       </div>
       
-      {/* Static gradient overlay */}
-      <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-radial opacity-80"></div>
+      {/* Static gradient overlay to further reduce pattern visibility */}
+      <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-radial opacity-90"></div>
     </>
   );
 };

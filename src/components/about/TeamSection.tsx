@@ -14,8 +14,8 @@ interface TeamSectionProps {
 const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, setHoveredProfile }) => {
   const isMobile = useIsMobile();
   
-  // Force display of all team members
-  console.log("Team members:", people.map(p => p.name)); // Debug log to check all members
+  // Debug the actual team members that are being processed
+  console.log("Raw Team members data:", people);
   
   return (
     <div 
@@ -33,7 +33,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
         {people.map((person, index) => (
           <div 
             key={person.id}
-            className="transform transition-all duration-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-quantum-red/20"
+            className="transform transition-all duration-300"
             onMouseEnter={() => setHoveredProfile(index)}
             onMouseLeave={() => setHoveredProfile(null)}
           >

@@ -7,7 +7,9 @@ const DnaPattern: React.FC<PatternProps> = ({
   animated = false, // Default to false to ensure it's never animated
   color = 'blue'
 }) => {
-  // Remove all animation classes completely
+  // Explicitly prevent any animation
+  const animationStyle = {animation: 'none !important'};
+  
   return (
     <svg 
       className={`absolute inset-0 w-full h-full ${getOpacity(intensity)}`} 
@@ -15,6 +17,7 @@ const DnaPattern: React.FC<PatternProps> = ({
       height="100%" 
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1000 1000"
+      style={animationStyle}
     >
       <defs>
         <radialGradient id="dna-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
@@ -23,7 +26,7 @@ const DnaPattern: React.FC<PatternProps> = ({
         </radialGradient>
       </defs>
       
-      {/* DNA Double Helix */}
+      {/* DNA Double Helix - static */}
       <g className={color === 'violet' ? 'stroke-plasma-violet/30' : color === 'green' ? 'stroke-bio-green/30' : 'stroke-bio-blue/30'} fill="none" strokeWidth="1.5">
         <path d="M300,100 Q500,300 300,500 Q100,700 300,900" />
         <path d="M700,100 Q500,300 700,500 Q900,700 700,900" />
@@ -37,7 +40,7 @@ const DnaPattern: React.FC<PatternProps> = ({
         })}
       </g>
       
-      {/* DNA Nodes - remove all animation classes */}
+      {/* DNA Nodes - explicitly static */}
       {Array.from({ length: 20 }).map((_, i) => {
         const y = 150 + i * 40;
         const isLeft = i % 2 === 0;
@@ -51,6 +54,7 @@ const DnaPattern: React.FC<PatternProps> = ({
             cy={y} 
             r="4" 
             className={`${color === 'violet' ? 'fill-plasma-violet/50' : color === 'green' ? 'fill-bio-green/50' : 'fill-bio-blue/50'}`}
+            style={animationStyle}
           />
         );
       })}

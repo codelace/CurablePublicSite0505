@@ -1,8 +1,7 @@
-
 @layer utilities {
-  /* Animations for dynamic UI */
+  /* All animations completely disabled */
   .cursor-blink {
-    animation: blink 1s step-end infinite;
+    /* animation completely removed */
   }
   
   @keyframes blink {
@@ -11,7 +10,7 @@
   }
   
   .animate-slide {
-    animation: slide 15s linear infinite;
+    /* animation completely removed */
   }
   
   @keyframes slide {
@@ -19,13 +18,12 @@
     100% { transform: translateX(-100%); }
   }
   
-  /* Disable all pulse animations entirely */
   .animate-pulse-dot {
-    /* animation removed */
+    /* animation completely removed */
   }
   
   .animate-pulse-glow {
-    /* animation removed */
+    /* animation completely removed */
   }
   
   /* Keep scan line effect but not using it on background */
@@ -42,6 +40,7 @@
     right: 0;
     height: 5px;
     background: rgba(30, 174, 219, 0.5);
+    /* animation completely removed */
     animation: scan 4s linear infinite;
   }
   
@@ -52,6 +51,7 @@
 
   /* Static pattern style - explicitly set as completely static */
   .pattern-static {
-    opacity: 0.3;
+    opacity: 0.2; /* Reduced opacity */
+    animation: none !important; /* Force no animation */
   }
 }

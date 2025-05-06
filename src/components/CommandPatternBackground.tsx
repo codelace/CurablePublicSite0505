@@ -24,6 +24,9 @@ const CommandPatternBackground: React.FC<CommandPatternBackgroundProps> = ({
   speed = 'medium',
   color = 'blue',
 }) => {
+  // Override animation setting to always be false
+  const isAnimated = false; // Force false regardless of prop
+  
   // Get pattern component based on variant
   const getPatternComponent = () => {
     switch (variant) {
@@ -42,13 +45,11 @@ const CommandPatternBackground: React.FC<CommandPatternBackgroundProps> = ({
     }
   };
 
-  // Determine container class
-  const containerClass = variant === 'nodes' || variant === 'matrix' 
-    ? 'absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden' 
-    : 'absolute inset-0 w-full h-full pointer-events-none z-0';
+  // Determine container class and ensure pattern-static class is applied
+  const containerClass = 'absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden pattern-static';
 
   return (
-    <div className={`${containerClass} ${className}`}>
+    <div className={`${containerClass} ${className} pattern-static`} style={{animation: 'none !important'}}>
       {getPatternComponent()}
     </div>
   );

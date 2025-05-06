@@ -7,8 +7,11 @@ const NodesPattern: React.FC<PatternProps> = ({
   animated = false, // Default to false to ensure it's never animated
   color = 'blue'
 }) => {
+  // Explicitly override any animation
+  const animationStyle = {animation: 'none !important'};
+  
   return (
-    <div className={`absolute inset-0 ${getOpacity(intensity)}`}>
+    <div className={`absolute inset-0 ${getOpacity(intensity)}`} style={animationStyle}>
       {Array.from({ length: 16 }).map((_, i) => (
         <div 
           key={i}
@@ -20,7 +23,7 @@ const NodesPattern: React.FC<PatternProps> = ({
             top: `${Math.random() * 100}%`,
             transform: 'translate(-50%, -50%)',
             opacity: Math.random() * 0.5 + 0.15,
-            // Remove animation completely
+            animation: 'none !important'
           }}
         />
       ))}
@@ -33,7 +36,7 @@ const NodesPattern: React.FC<PatternProps> = ({
             height: '4px',
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
-            // Remove animation completely
+            animation: 'none !important'
           }}
         />
       ))}
