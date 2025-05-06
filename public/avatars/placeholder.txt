@@ -1,0 +1,3 @@
+
+This directory contains avatar images for team members and advisors.
+Replace these with actual photos named avatar-1.png through avatar-9.png.

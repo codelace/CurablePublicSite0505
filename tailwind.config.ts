@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,16 +53,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				// Custom colors
+				"stealth-black": "#050505",
+				"gunmetal-900": "#101418",
+				"graphite-700": "#272C33",
+				"arc-blue": "#00E5FF",
+				"quantum-red": "#FF3366",
+				"plasma-violet": "#A162FF",
+				"titanium-white": "#E8F1F9",
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -70,26 +69,43 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' },
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' },
+				},
+				'pulse-glow': {
+					'0%, 100%': { opacity: '0.1' },
+					'50%': { opacity: '0.3' },
+				},
+				'pan-grid': {
+					'0%': { transform: 'translateX(0px)' },
+					'100%': { transform: 'translateX(32px)' },
+				},
+				'fade-up': {
+					'0%': { opacity: '0', transform: 'translateY(12px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' },
+				},
+				'expand-underline': {
+					'0%': { width: '0%', left: '50%', right: '50%' },
+					'100%': { width: '100%', left: '0%', right: '0%' },
+				},
+				'pulse-dot': {
+					'0%, 100%': { transform: 'scale(1)', opacity: '0.8' },
+					'50%': { transform: 'scale(1.5)', opacity: '1' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 6s infinite ease-in-out',
+				'pan-grid': 'pan-grid 15s infinite linear',
+				'fade-up': 'fade-up 0.6s ease-out',
+				'expand-underline': 'expand-underline 0.3s ease-out forwards',
+				'pulse-dot': 'pulse-dot 2s infinite ease-in-out',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
