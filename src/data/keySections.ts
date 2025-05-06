@@ -5,8 +5,8 @@ export type KeySection = {
 };
 
 export const keyCards: KeySection[] = [
-  { heading: 'Bridging DeFi & Biotech', sub: 'Transparent funding, tokenized IP, on‑chain votes' },
-  { heading: 'Democratizing Biotech',   sub: 'Open access to data, equitable ownership models' },
-  { heading: 'AI‑Powered Discovery',    sub: 'Virtual screening, KD prediction, agentic design' },
-  { heading: 'Global Talent Network',   sub: 'Merit‑based rewards, decentralized workforce' },
+  { heading: 'Bridging DeFi & Biotech', sub: 'Tokenized IP-NFTs, streaming grants, and transparent royalty routing' },
+  { heading: 'Democratizing Biotech',   sub: 'Removing gatekeepers in capital access, data ownership, and research direction' },
+  { heading: 'AI‑Powered Discovery',    sub: 'Agentic pipeline for ideation, screening, simulation, and regulatory pathfinding' },
+  { heading: 'Global Talent Network',   sub: 'Proof-of-contribution, reputation staking, and dynamic incentives' },
 ];
