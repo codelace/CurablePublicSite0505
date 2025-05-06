@@ -30,7 +30,7 @@ const AboutHero = () => {
       }, 100);
       return () => clearTimeout(timeout);
     } else if (displayTitle === '') {
-      setDisplayTitle(fullTitle);
+      setDisplayTitle(isMobile ? fullTitle : '');
     }
   }, [displayTitle, fullTitle, isMobile]);
 
@@ -46,7 +46,7 @@ const AboutHero = () => {
   return (
     <div className="mb-10 sm:mb-16 relative z-10 transition-all duration-1000" id="mission-section">
       <CommandHUDHeader 
-        title={displayTitle || fullTitle} 
+        title={isMobile ? "The Future of Cures" : (displayTitle || fullTitle)} 
         subtitle="Decentralized research & development protocol" 
         statusText="CURABLE CORE ACTIVE"
       />
@@ -90,7 +90,7 @@ const AboutHero = () => {
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </SheetTrigger>
-              <SheetContent className="bg-gunmetal-900/95 border-graphite-700/40 p-4">
+              <SheetContent className="bg-gunmetal-900/95 border-graphite-700/40 p-4 w-[90vw] max-w-md">
                 <div className="h-full flex flex-col justify-center items-center">
                   <div className="text-center mb-6">
                     <h3 className="text-xl sm:text-2xl font-bold mb-2 text-titanium-white">Launch Options</h3>
