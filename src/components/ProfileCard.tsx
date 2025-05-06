@@ -2,6 +2,7 @@
 import React from 'react';
 import Card from './Card';
 import { Person } from '@/data/people';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 interface ProfileCardProps {
   person: Person;
@@ -11,11 +12,17 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
   return (
     <Card className="flex flex-col items-center text-center h-full">
       <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-arc-blue/30 mb-4 relative">
-        <img 
-          src={person.avatar} 
-          alt={person.name} 
-          className="w-full h-full object-cover"
-        />
+        <Avatar className="w-full h-full">
+          <AvatarImage 
+            src={person.avatar} 
+            alt={person.name} 
+            className="w-full h-full object-cover"
+          />
+          <AvatarFallback className="bg-arc-blue/20 text-titanium-white">
+            {person.name.split(' ').map(n => n[0]).join('')}
+          </AvatarFallback>
+        </Avatar>
+        
         {/* Reticle animation on hover */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
           <div className="w-full h-full flex items-center justify-center">

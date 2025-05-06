@@ -1,4 +1,3 @@
-
 export type Person = {
   id: number;
   name: string;
@@ -13,7 +12,7 @@ export const people: Person[] = [
     id: 1,
     name: "Hugh Donatello",
     role: "Chief Executive Officer",
-    avatar: "/avatars/hugh.png",
+    avatar: "/lovable-uploads/d1b2c6d5-1a88-415d-ae0d-a2fd6669f9ce.png",
     group: "team"
   },
   {
