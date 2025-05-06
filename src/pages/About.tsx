@@ -12,7 +12,7 @@ import { values } from '@/data/values';
 const About = () => {
   // For typewriter effect
   const [displayTitle, setDisplayTitle] = useState('');
-  const fullTitle = 'Building the Future of Biomedical Research';
+  const fullTitle = 'Building the Future of R&D';
   const [tickerItems] = useState([
     '🔁 BindingDB integration active',
     '⬇️ New TargetForge scaffold queued',
@@ -49,7 +49,7 @@ const About = () => {
   return (
     <div className="container px-4 py-8">
       {/* Mission Section with dynamic elements */}
-      <div className="mb-12 animate-fade-up">
+      <div className="mb-8 animate-fade-up">
         <div className="inline-block px-3 py-1 mb-2 rounded-full font-mono text-xs bg-gunmetal-900/70 border border-graphite-700/40">
           {/* Status panel with animation */}
           <span className="flex items-center">
@@ -64,7 +64,7 @@ const About = () => {
         </h1>
         
         {/* Mission statement as ticker */}
-        <div className="bg-gunmetal-900/40 border border-graphite-700/40 rounded-lg p-3 mb-6 overflow-hidden">
+        <div className="bg-gunmetal-900/40 border border-graphite-700/40 rounded-lg p-3 mb-4 overflow-hidden">
           <div className="flex items-center space-x-4 animate-slide">
             <div className="whitespace-nowrap flex items-center font-mono text-plasma-violet">
               <span className="text-logo-blue mr-2">$</span> {tickerItems[currentTickerIndex]}
@@ -73,7 +73,7 @@ const About = () => {
         </div>
         
         {/* Static mission paragraph */}
-        <p className="text-titanium-white/90 max-w-3xl mb-6">{mission}</p>
+        <p className="text-titanium-white/90 max-w-3xl mb-4">{mission}</p>
         
         <div className="mt-4">
           <a 
@@ -91,12 +91,12 @@ const About = () => {
         </div>
       </div>
 
-      {/* Core values section with interactive cards */}
-      <div className="mb-16">
-        <h2 className="text-2xl font-bold text-titanium-white mb-6">
+      {/* Core values section with enhanced interactive cards */}
+      <div className="mb-10">
+        <h2 className="text-2xl font-bold text-titanium-white mb-4">
           <span className="text-logo-blue">&gt;</span> Our Core Values
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {values.map((value, index) => (
             <div 
               key={index}
@@ -104,18 +104,7 @@ const About = () => {
               onMouseEnter={() => setHoveredValue(index)}
               onMouseLeave={() => setHoveredValue(null)}
             >
-              <ValueCard value={value} />
-              {hoveredValue === index && (
-                <div className="mt-2 bg-gunmetal-900/80 border border-graphite-700/60 rounded p-2 text-xs font-mono text-logo-blue animate-fade-up">
-                  <div className="flex items-center">
-                    <span className="inline-block w-2 h-2 rounded-full bg-logo-blue mr-2 animate-pulse"></span>
-                    {index === 0 && 'Transparency metric: 98.7% transactions verified'}
-                    {index === 1 && 'Scientific rigidity: 42 peer validations this week'}
-                    {index === 2 && 'Governance health: 89% participation rate'}
-                    {index === 3 && 'Access index: 1,287 open datasets available'}
-                  </div>
-                </div>
-              )}
+              <ValueCard value={value} isHovered={hoveredValue === index} />
             </div>
           ))}
         </div>
@@ -123,12 +112,12 @@ const About = () => {
 
       <SectionDivider />
 
-      {/* Team Section with interactive elements */}
-      <div className="mb-16">
-        <h2 className="text-2xl font-bold text-titanium-white mb-6">
+      {/* Team Section with improved layout */}
+      <div className="mb-10">
+        <h2 className="text-2xl font-bold text-titanium-white mb-4">
           <span className="text-plasma-violet">&gt;</span> Our Team
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
           {people.map((person, index) => (
             <div 
               key={index}
@@ -141,7 +130,7 @@ const About = () => {
                 <div className="mt-2 bg-gunmetal-900/80 border border-graphite-700/60 rounded p-2 text-xs font-mono text-quantum-red animate-fade-up">
                   <div className="flex items-center">
                     <span className="inline-block w-2 h-2 rounded-full bg-quantum-red mr-2 animate-pulse"></span>
-                    Active protocol contributor: {Math.floor(Math.random() * 20) + 5} commits
+                    Active protocol contributor
                   </div>
                 </div>
               )}
