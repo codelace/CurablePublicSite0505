@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Dna } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,16 +24,6 @@ const Navbar = () => {
           <div className="ml-2 w-2 h-2 rounded-full bg-quantum-red animate-pulse-dot"></div>
         </div>
         
-        {/* Purple Emoji Button - New Addition */}
-        <a 
-          href="https://binding-db-integrator-1-codelace77.replit.app/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="hidden md:flex items-center mx-4 bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-white font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(147,51,234,0.5)] animate-pulse"
-        >
-          🧬🧬🧬
-        </a>
-        
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
           <Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`}>
@@ -48,6 +39,15 @@ const Navbar = () => {
         
         {/* CTA Buttons */}
         <div className="hidden md:flex items-center space-x-4">
+          {/* DNA Button - Now to the left of JOIN */}
+          <a 
+            href="https://binding-db-integrator-1-codelace77.replit.app/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-white font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(147,51,234,0.5)] animate-pulse"
+          >
+            🧬
+          </a>
           <Link to="/join" className="btn-primary text-sm">
             JOIN
           </Link>
@@ -82,14 +82,14 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden absolute top-[68px] left-0 right-0 bg-gunmetal-900/95 backdrop-blur-lg border-b border-graphite-700/40 animate-fade-up">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            {/* Purple Emoji Button - Mobile Version */}
+            {/* DNA Button - Mobile Version */}
             <a 
               href="https://binding-db-integrator-1-codelace77.replit.app/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-white font-bold text-lg mb-2 animate-pulse"
             >
-              🧬🧬🧬
+              🧬
             </a>
             
             <Link 
