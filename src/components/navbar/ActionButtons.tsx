@@ -13,8 +13,8 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
 
   // Standardized button classes for consistent sizing and appearance
   const baseButtonClasses = isMobile
-    ? "flex items-center justify-center w-full py-2.5 rounded-lg text-white font-bold text-sm"
-    : "flex items-center justify-center px-5 py-2.5 rounded-lg text-white font-bold text-sm min-w-[110px] transition-all duration-300 hover:scale-105";
+    ? "flex items-center justify-center w-full py-2 rounded-lg text-white font-bold text-xs"
+    : "flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold text-xs min-w-[90px] transition-all duration-300 hover:scale-105";
 
   const dnaButtonClasses = `${baseButtonClasses} ${isMobile 
     ? "bg-gradient-to-r from-logo-blue to-logo-blue hover:from-logo-blue hover:to-plasma-violet" 
@@ -36,11 +36,11 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         rel="noopener noreferrer"
         className={dnaButtonClasses}
       >
-        <span className="text-base">⚛️ 🧬 ⚗️</span>
+        <span className="text-sm">⚛️ 🧬 ⚗️</span>
       </a>
       
       <Link to="/join" className={joinButtonClasses}>
-        JOIN DAO
+        JOIN
       </Link>
       
       <Link to="/novel" className={novelButtonClasses}>
