@@ -21,12 +21,12 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
     : "bg-gradient-to-r from-quantum-red to-quantum-red hover:from-quantum-red hover:to-logo-blue hover:shadow-[0_0_15px_rgba(255,51,102,0.5)]"}`;
 
   const joinButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "bg-gradient-to-r from-logo-blue to-logo-blue hover:from-logo-blue hover:to-plasma-violet" 
-    : "bg-gradient-to-r from-logo-blue to-logo-blue hover:from-logo-blue hover:to-plasma-violet hover:shadow-[0_0_15px_rgba(30,174,219,0.5)]"}`;
-
-  const novelButtonClasses = `${baseButtonClasses} ${isMobile 
     ? "bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-plasma-violet" 
     : "bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-plasma-violet hover:shadow-[0_0_15px_rgba(147,51,234,0.5)]"}`;
+
+  const novelButtonClasses = `${baseButtonClasses} ${isMobile 
+    ? "bg-gradient-to-r from-logo-blue to-logo-blue hover:from-logo-blue hover:to-plasma-violet" 
+    : "bg-gradient-to-r from-logo-blue to-logo-blue hover:from-logo-blue hover:to-plasma-violet hover:shadow-[0_0_15px_rgba(30,174,219,0.5)]"}`;
 
   return (
     <div className={containerClasses}>
@@ -36,7 +36,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         rel="noopener noreferrer"
         className={dnaButtonClasses}
       >
-        {isMobile ? "🧬 Launch BindingDB" : "🧬 BindingDB"}
+        <span className="text-lg">⚛️ 🧬 ⚗️</span>
       </a>
       
       <Link to="/join" className={joinButtonClasses}>
