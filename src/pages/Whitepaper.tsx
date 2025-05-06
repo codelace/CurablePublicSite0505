@@ -1,103 +1,199 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { sections } from '@/data/whitepaperSections';
-import { keyCards } from '@/data/keySections';
-import Card from '@/components/Card';
+import { ArrowRight, ExternalLink, Download, FileText, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ArrowRight } from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Badge } from "@/components/ui/badge";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const Whitepaper = () => {
-  const [activeTab, setActiveTab] = useState("overview");
+  const [activeSection, setActiveSection] = useState(0);
+  const [terminalText, setTerminalText] = useState('');
+  const fullTerminalText = '> initializing whitepaper_v2.5...\n> system loaded: curable-core-protocol';
+  
+  // Typewriter effect for terminal header
+  useEffect(() => {
+    if (terminalText.length < fullTerminalText.length) {
+      const timeout = setTimeout(() => {
+        setTerminalText(fullTerminalText.substring(0, terminalText.length + 1));
+      }, 50);
+      return () => clearTimeout(timeout);
+    }
+  }, [terminalText]);
+
+  // Intersection observer for scrollspy functionality
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = parseInt(entry.target.id.split('-')[1]);
+            setActiveSection(id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    // Observe all section elements
+    document.querySelectorAll('.whitepaper-section').forEach(
+      section => observer.observe(section)
+    );
+
+    return () => {
+      document.querySelectorAll('.whitepaper-section').forEach(
+        section => observer.unobserve(section)
+      );
+    };
+  }, []);
+
+  // Handle section click
+  const scrollToSection = (index: number) => {
+    setActiveSection(index);
+    const element = document.getElementById(`section-${index}`);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Format section index as hex
+  const formatHex = (index: number) => {
+    return `0x${index.toString(16).padStart(2, '0')}`;
+  };
 
   return (
-    <div className="container px-4 py-8">
-      <div className="mb-6 animate-fade-up">
-        <div className="inline-block px-3 py-1 mb-2 rounded-full font-mono text-xs bg-gunmetal-900/70 border border-graphite-700/40">
-          WHITEPAPER v1.2 — UPDATED MAY 2024
-        </div>
-        <h1 className="text-3xl font-bold text-titanium-white">
-          Curable<span className="text-arc-blue">DAO</span> Whitepaper
+    <div className="container max-w-full p-0 min-h-[calc(100vh-5rem)]">
+      <div className="bg-gunmetal-900/80 backdrop-blur-sm p-4 border-b border-graphite-700/60 font-mono">
+        <div className="text-sm text-bio-blue whitespace-pre-line">{terminalText}</div>
+        <h1 className="text-3xl font-bold text-titanium-white mt-2 flex items-center gap-2">
+          <span className="text-bio-blue">&gt;</span> <span className="text-bio-green">CurableDAO</span> Whitepaper
+          <Badge className="ml-2 bg-bio-violet/20 text-bio-violet text-xs">v2.5</Badge>
         </h1>
-        <p className="text-titanium-white/90">
-          A comprehensive overview of our mission, technology, and governance framework
-        </p>
-        
-        <div className="mt-4">
-          <a 
-            href="https://binding-db-integrator-1-codelace77.replit.app/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <Button 
-              className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold flex items-center gap-2"
-            >
-              The Next Frontier
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-          </a>
-        </div>
       </div>
       
-      <Tabs defaultValue="overview" value={activeTab} onValueChange={setActiveTab} className="space-y-4">
-        <TabsList className="grid grid-cols-3 w-full">
-          <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="sections">All Sections</TabsTrigger>
-          <TabsTrigger value="download">Download</TabsTrigger>
-        </TabsList>
-        
-        <TabsContent value="overview" className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {keyCards.map((card, index) => (
-              <Card key={index} className="h-full p-4">
-                <h3 className="text-xl font-bold mb-2 text-arc-blue">{card.heading}</h3>
-                <p className="text-titanium-white/80 text-sm">{card.sub}</p>
-              </Card>
-            ))}
-          </div>
-        </TabsContent>
-        
-        <TabsContent value="sections">
-          <Accordion type="multiple" className="space-y-2">
+      <div className="flex flex-col md:flex-row">
+        {/* Fixed sidebar navigation */}
+        <aside className="w-full md:w-64 md:min-h-[calc(100vh-9rem)] border-r border-graphite-700/60 bg-gunmetal-900/60 p-4 md:sticky md:top-20">
+          <div className="font-mono text-sm text-titanium-white/70 mb-3">// Section Index</div>
+          <nav className="space-y-1">
             {sections.map((section, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`section-${index}`}
-                className="border border-graphite-700/60 bg-gunmetal-900/60 backdrop-blur-md rounded-xl overflow-hidden"
+              <button
+                key={index}
+                onClick={() => scrollToSection(index)}
+                className={`w-full text-left p-2 rounded transition-all flex items-center gap-2 hover:bg-gunmetal-900/80 
+                  ${activeSection === index ? 'text-bio-green bg-gunmetal-900/80' : 'text-titanium-white/70'}`}
               >
-                <AccordionTrigger className="px-4 py-3 hover:bg-graphite-700/20 text-left font-rajdhani text-lg">
-                  {section.title}
-                </AccordionTrigger>
-                <AccordionContent className="px-4 py-3 text-titanium-white/80 leading-relaxed max-h-60 overflow-y-auto">
-                  {section.body}
-                </AccordionContent>
-              </AccordionItem>
+                <span className={`inline-block w-2 h-2 rounded-full ${activeSection === index ? 'bg-bio-green animate-pulse' : 'bg-titanium-white/30'}`}></span>
+                <span className="text-xs text-bio-blue font-mono mr-1">{formatHex(index)}:</span>
+                <span className="font-mono text-sm truncate">{section.title.replace(/^\d+\.\s+/, '')}</span>
+              </button>
             ))}
-          </Accordion>
-        </TabsContent>
-        
-        <TabsContent value="download" className="space-y-4">
-          <div className="flex flex-col gap-4 items-center justify-center p-8 bg-gunmetal-900/40 backdrop-blur-sm border border-graphite-700/40 rounded-xl">
-            <h3 className="text-xl font-bold text-titanium-white mb-2">Download Options</h3>
-            <div className="flex flex-wrap justify-center gap-4">
-              <button className="btn-holo flex items-center space-x-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                <span>Download PDF</span>
-              </button>
-              <button className="btn-holo flex items-center space-x-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-                <span>View Full PDF</span>
-              </button>
-            </div>
+          </nav>
+          
+          <div className="mt-6 pt-6 border-t border-graphite-700/60">
+            <Button 
+              variant="outline" 
+              className="w-full mb-2 bg-gunmetal-900/80 border-graphite-700/60 hover:bg-gunmetal-900 hover:border-bio-blue/60 font-mono text-bio-blue flex items-center gap-2"
+            >
+              <Download className="w-4 h-4" />
+              download.pdf
+            </Button>
+            <Button 
+              variant="outline" 
+              className="w-full bg-gunmetal-900/80 border-graphite-700/60 hover:bg-gunmetal-900 hover:border-bio-green/60 font-mono text-bio-green flex items-center gap-2"
+            >
+              <Github className="w-4 h-4" />
+              view.github
+            </Button>
           </div>
-        </TabsContent>
-      </Tabs>
+        </aside>
+        
+        {/* Main content area */}
+        <main className="flex-1 bg-gunmetal-900/30 backdrop-blur-sm min-h-[calc(100vh-9rem)]">
+          <ScrollArea className="h-[calc(100vh-9rem)]">
+            <div className="p-6 md:p-8 space-y-12">
+              {sections.map((section, index) => (
+                <div 
+                  key={index} 
+                  id={`section-${index}`} 
+                  className={`whitepaper-section space-y-4 transition-opacity duration-300 
+                    ${activeSection === index ? 'opacity-100' : 'opacity-80'}`}
+                >
+                  <div className="font-mono bg-gunmetal-900/80 border border-graphite-700/60 p-3 rounded flex items-center">
+                    <span className="text-bio-blue mr-2">{formatHex(index)}:</span>
+                    <h2 className="text-xl text-bio-green font-bold">
+                      {section.title}
+                    </h2>
+                  </div>
+                  
+                  <div className="font-sans text-titanium-white/90 leading-relaxed whitespace-pre-line pl-4 ml-2 border-l-2 border-graphite-700/60">
+                    {section.body}
+                  </div>
+                  
+                  {/* Decorative elements to enhance the terminal/code look */}
+                  {index < sections.length - 1 && (
+                    <div className="font-mono text-xs text-titanium-white/30 pl-4">
+                      # End of section {formatHex(index)}
+                    </div>
+                  )}
+                </div>
+              ))}
+              
+              {/* Final signature block */}
+              <div className="font-mono bg-gunmetal-900/40 border border-graphite-700/40 p-6 rounded mt-12">
+                <div className="text-titanium-white/80 text-sm">
+                  <div className="text-bio-green mb-4">/*</div>
+                  <div className="mb-2">CurableDAO is a protocol for collective healing.</div>
+                  <div className="mb-2">We, the network, sign this whitepaper in shared pursuit</div>
+                  <div className="mb-4">of decentralized biomedical breakthroughs.</div>
+                  <div className="mb-2">Signed,</div>
+                  <div className="text-bio-blue mb-2">The CurableDAO Genesis Contributors</div>
+                  <div className="text-bio-green">*/</div>
+                </div>
+                
+                <div className="flex flex-wrap gap-2 mt-6 justify-center">
+                  {Array(5).fill(0).map((_, i) => (
+                    <TooltipProvider key={i}>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <div className="w-10 h-10 rounded-full bg-bio-blue/20 flex items-center justify-center border border-bio-blue/30">
+                            <span className="text-xs font-mono text-bio-blue">0x{i.toString(16).padStart(2, '0')}</span>
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <div className="text-xs font-mono">
+                            <div>contributor.{i+1}.eth</div>
+                            <div className="text-titanium-white/60">signed: 05/02/2024</div>
+                          </div>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Call to action */}
+              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center bg-gunmetal-900/20 border border-graphite-700/20 p-6 rounded-lg">
+                <Button 
+                  className="bg-bio-green text-gunmetal-900 hover:bg-bio-green/90 font-mono font-bold flex items-center gap-2"
+                >
+                  fork.protocol()
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+                
+                <Button 
+                  variant="outline"
+                  className="bg-transparent border-bio-blue text-bio-blue hover:bg-bio-blue/10 font-mono flex items-center gap-2"
+                >
+                  cite.whitepaper()
+                  <ExternalLink className="w-4 h-4" />
+                </Button>
+              </div>
+            </div>
+          </ScrollArea>
+        </main>
+      </div>
     </div>
   );
 };

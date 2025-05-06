@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -25,7 +24,7 @@ const About = () => {
   // For value card hover state
   const [hoveredValue, setHoveredValue] = useState<number | null>(null);
   
-  // For profile card hover state
+  // For profile card hover state - keeping the state but removing the hover message
   const [hoveredProfile, setHoveredProfile] = useState<number | null>(null);
 
   // Typewriter effect
@@ -126,14 +125,7 @@ const About = () => {
               onMouseLeave={() => setHoveredProfile(null)}
             >
               <ProfileCard person={person} />
-              {hoveredProfile === index && (
-                <div className="mt-2 bg-gunmetal-900/80 border border-graphite-700/60 rounded p-2 text-xs font-mono text-quantum-red animate-fade-up">
-                  <div className="flex items-center">
-                    <span className="inline-block w-2 h-2 rounded-full bg-quantum-red mr-2 animate-pulse"></span>
-                    Active protocol contributor
-                  </div>
-                </div>
-              )}
+              {/* Removed the active protocol contributor message */}
             </div>
           ))}
         </div>

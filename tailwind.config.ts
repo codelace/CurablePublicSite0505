@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -122,6 +123,10 @@ export default {
             "background-position": "right center",
           },
         },
+        'code-flow': {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(-10px)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -133,6 +138,7 @@ export default {
         'pulse-dot': 'pulse-dot 2s infinite ease-in-out',
         shimmer: "shimmer 3s ease-in-out infinite",
         "text-shimmer": "text-shimmer 3s ease-in-out infinite",
+        'code-flow': 'code-flow 10s ease-in-out infinite alternate',
       },
     }
   },
