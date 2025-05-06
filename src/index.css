@@ -1,10 +1,9 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
 @import url('https://fonts.cdnfonts.com/css/jetbrains-mono');
 
 @layer base {
@@ -45,11 +44,12 @@
   }
 
   body {
-    @apply bg-stealth-black text-titanium-white antialiased;
+    @apply bg-gradient-dark text-titanium-white antialiased font-sans;
     font-family: 'Inter', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
+    @apply font-space font-bold;
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
   }
@@ -108,6 +108,18 @@
   .nav-link:hover::after, .nav-link.active::after {
     @apply left-0 right-0 opacity-100;
   }
+  
+  .glass-panel {
+    @apply bg-gunmetal-900/60 backdrop-blur-lg border border-graphite-700/40 rounded-lg;
+  }
+  
+  .glow-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-bio-blue/20;
+  }
+
+  .text-gradient-glow {
+    @apply bg-gradient-to-r from-bio-blue via-bio-violet to-bio-green bg-clip-text text-transparent animate-text-shimmer;
+  }
 }
 
 @layer utilities {
@@ -147,3 +159,4 @@
     50% { opacity: 0.5; }
   }
 }
+

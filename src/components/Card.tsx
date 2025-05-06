@@ -10,7 +10,7 @@ const Card: React.FC<CardProps> = ({ children, className, ...props }) => {
   return (
     <div 
       className={cn(
-        "card-holo p-6 animate-fade-up", 
+        "glass-panel p-6 glow-hover animate-fade-up", 
         className
       )} 
       {...props}
