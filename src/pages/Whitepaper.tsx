@@ -1,22 +1,11 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { sections } from '@/data/whitepaperSections';
+import { keyCards } from '@/data/keySections';
 import Card from '@/components/Card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Whitepaper = () => {
-  const [expandedSections, setExpandedSections] = useState<string[]>([]);
-  
-  const toggleSection = (sectionId: string) => {
-    setExpandedSections(prev => 
-      prev.includes(sectionId) 
-        ? prev.filter(id => id !== sectionId)
-        : [...prev, sectionId]
-    );
-  };
-
-  const keySections = sections.find(section => section.title === 'Key Sections')?.body.split('\n\n') || [];
-
   return (
     <div className="container mx-auto px-4 py-16 pt-24">
       {/* Header */}
@@ -36,20 +25,18 @@ const Whitepaper = () => {
       <div className="max-w-4xl mx-auto mb-16">
         <Accordion type="multiple" className="space-y-4">
           {sections.map((section, index) => (
-            section.title !== 'Key Sections' && (
-              <AccordionItem 
-                key={index} 
-                value={`section-${index}`}
-                className="border border-graphite-700/60 bg-gunmetal-900/60 backdrop-blur-md rounded-xl overflow-hidden"
-              >
-                <AccordionTrigger className="px-6 py-4 hover:bg-graphite-700/20 text-left font-rajdhani text-xl">
-                  {section.title}
-                </AccordionTrigger>
-                <AccordionContent className="px-6 py-4 text-titanium-white/80 leading-relaxed">
-                  {section.body}
-                </AccordionContent>
-              </AccordionItem>
-            )
+            <AccordionItem 
+              key={index} 
+              value={`section-${index}`}
+              className="border border-graphite-700/60 bg-gunmetal-900/60 backdrop-blur-md rounded-xl overflow-hidden"
+            >
+              <AccordionTrigger className="px-6 py-4 hover:bg-graphite-700/20 text-left font-rajdhani text-xl">
+                {section.title}
+              </AccordionTrigger>
+              <AccordionContent className="px-6 py-4 text-titanium-white/80 leading-relaxed">
+                {section.body}
+              </AccordionContent>
+            </AccordionItem>
           ))}
         </Accordion>
       </div>
@@ -58,15 +45,12 @@ const Whitepaper = () => {
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8 text-center text-titanium-white">Key Sections</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {keySections.map((section, index) => {
-            const [title, content] = section.split(' - ');
-            return (
-              <Card key={index} className="h-full">
-                <h3 className="text-xl font-bold mb-3 text-arc-blue">{title.replace('**', '').replace('**', '')}</h3>
-                <p className="text-titanium-white/80 text-sm">{content}</p>
-              </Card>
-            );
-          })}
+          {keyCards.map((card, index) => (
+            <Card key={index} className="h-full">
+              <h3 className="text-xl font-bold mb-3 text-arc-blue">{card.heading}</h3>
+              <p className="text-titanium-white/80 text-sm">{card.sub}</p>
+            </Card>
+          ))}
         </div>
       </div>
       
