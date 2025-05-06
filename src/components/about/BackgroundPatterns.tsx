@@ -5,18 +5,18 @@ import CommandPatternBackground from '@/components/CommandPatternBackground';
 const BackgroundPatterns = () => {
   return (
     <>
-      {/* Enhanced background patterns with higher intensity */}
+      {/* Enhanced background patterns with static display */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* Base grid pattern with higher intensity */}
+        {/* Base grid pattern with moderate intensity - allowing this one to animate since it's subtle */}
         <CommandPatternBackground 
           variant="grid" 
           color="blue" 
           intensity="high" 
-          animated={true} 
-          className="pattern-pulse"
+          animated={false} 
+          className=""
         />
         
-        {/* Foreground node pattern with higher visibility - no pulsing animation */}
+        {/* Foreground node pattern with higher visibility - no animation */}
         <CommandPatternBackground 
           variant="nodes" 
           color="violet" 
@@ -25,7 +25,7 @@ const BackgroundPatterns = () => {
           className=""
         />
         
-        {/* DNA helix pattern in the background - no pulsing animation */}
+        {/* DNA helix pattern in the background - no animation */}
         <CommandPatternBackground 
           variant="dna" 
           color="violet" 
@@ -36,7 +36,7 @@ const BackgroundPatterns = () => {
         />
       </div>
       
-      {/* Subtle gradient overlay for depth */}
+      {/* Subtle gradient overlay for depth - static */}
       <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-radial opacity-80"></div>
     </>
   );

@@ -64,17 +64,8 @@
     100% { top: 100%; }
   }
 
-  /* Enhanced animation for background patterns - for blue grid only */
-  .pattern-pulse {
-    animation: pattern-pulse 4s ease-in-out infinite;
-  }
-  
-  @keyframes pattern-pulse {
-    0%, 100% {
-      opacity: 0.2;
-    }
-    50% {
-      opacity: 0.4;
-    }
+  /* Static pattern style - no animation */
+  .pattern-static {
+    opacity: 0.3;
   }
 }
