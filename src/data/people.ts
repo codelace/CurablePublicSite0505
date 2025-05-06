@@ -36,7 +36,7 @@ export const people: Person[] = [
     id: 4,
     name: "AC",
     role: "Ecosystem & DevRel",
-    avatar: "/lovable-uploads/a8ddc104-70a5-41d7-8f30-854ebfeec1a0.png",
+    avatar: "/lovable-uploads/64bce3f9-3ed0-4cc2-90ba-9bc836707a73.png",
     group: "team"
   },
   {
