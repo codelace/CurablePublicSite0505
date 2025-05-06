@@ -65,12 +65,12 @@
     @apply bg-gradient-to-r from-gunmetal-900/80 to-graphite-700/60 backdrop-blur-md 
            border border-graphite-700/60 rounded-lg px-6 py-2.5 
            text-titanium-white font-medium transition-all duration-300
-           hover:shadow-[0_0_12px_rgba(30,174,219,0.4)] hover:border-logo-blue/40 
+           hover:shadow-[0_0_12px_rgba(161,98,255,0.4)] hover:border-plasma-violet/40 
            active:scale-95;
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-logo-blue to-logo-blue hover:from-logo-blue hover:to-quantum-red
+    @apply bg-gradient-to-r from-logo-blue to-logo-blue hover:from-logo-blue hover:to-plasma-violet
            text-gunmetal-900 font-bold px-6 py-2.5 rounded-lg transition-all duration-300
            hover:shadow-[0_0_15px_rgba(30,174,219,0.5)] active:scale-95;
   }
@@ -83,7 +83,7 @@
 
   .card-holo {
     @apply bg-gunmetal-900/60 backdrop-blur-md border border-graphite-700/60 rounded-2xl 
-           shadow-lg hover:shadow-[0_0_15px_rgba(30,174,219,0.2)] transition-all duration-300;
+           shadow-lg hover:shadow-[0_0_15px_rgba(161,98,255,0.2)] transition-all duration-300;
   }
 
   .section-divider {
@@ -92,7 +92,7 @@
 
   .section-divider::before {
     content: '';
-    @apply absolute w-full h-[1px] bg-gradient-to-r from-transparent via-quantum-red/40 to-transparent;
+    @apply absolute w-full h-[1px] bg-gradient-to-r from-transparent via-plasma-violet/60 to-transparent;
     transform: rotate(-4deg);
   }
 
@@ -113,5 +113,9 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .text-gradient-purple-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-plasma-violet to-logo-blue;
   }
 }

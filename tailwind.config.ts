@@ -57,11 +57,11 @@ export default {
 				"stealth-black": "#050505",
 				"gunmetal-900": "#101418",
 				"graphite-700": "#272C33",
-				"arc-blue": "#1EAEDB", // Updated to match logo blue
+				"arc-blue": "#1EAEDB", // Logo blue
 				"quantum-red": "#FF3366",
 				"plasma-violet": "#A162FF",
 				"titanium-white": "#E8F1F9",
-				"logo-blue": "#1EAEDB", // Added logo blue as a separate color
+				"logo-blue": "#1EAEDB", // Logo blue as a separate color
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

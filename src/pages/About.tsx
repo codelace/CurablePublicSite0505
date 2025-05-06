@@ -24,7 +24,7 @@ const About = () => {
       {/* Mission Section */}
       <section className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-titanium-white">
-          The Future of <span className="text-arc-blue">Biomedical Research</span> is Decentralized
+          The Future of <span className="text-gradient-purple-blue">Biomedical Research</span> is Decentralized
         </h1>
         <p className="text-lg text-titanium-white/90 leading-relaxed whitespace-pre-line">
           {mission}
@@ -33,7 +33,9 @@ const About = () => {
       
       {/* Values Grid */}
       <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center text-titanium-white">Our Core Values</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center text-titanium-white">
+          Our <span className="text-plasma-violet">Core Values</span>
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map(value => (
             <ValueCard key={value.id} value={value} />
@@ -45,7 +47,9 @@ const About = () => {
       
       {/* All Team Members Grid */}
       <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center text-titanium-white">Our Team</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center text-titanium-white">
+          Our <span className="text-plasma-violet">Team</span>
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {people.map(person => (
             <ProfileCard key={person.id} person={person} />
