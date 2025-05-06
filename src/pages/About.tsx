@@ -29,9 +29,10 @@ const About = () => {
             rel="noopener noreferrer"
           >
             <Button 
-              className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold flex items-center gap-2"
+              className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold flex items-center gap-2 font-mono border border-plasma-violet/60 shadow-[0_0_15px_rgba(161,98,255,0.3)]"
             >
-              The Next Frontier
+              {/* Using curly braces and string to escape the > character */}
+              launch --next-frontier
               <ArrowRight className="w-4 h-4" />
             </Button>
           </a>
