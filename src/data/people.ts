@@ -1,3 +1,4 @@
+
 export type Person = {
   id: number;
   name: string;
@@ -26,7 +27,7 @@ export const people: Person[] = [
     id: 3,
     name: "Fax",
     role: "Web3 Builders",
-    avatar: "/avatars/fax.png",
+    avatar: "/lovable-uploads/9dc560d7-8282-4ac5-aa25-1491ffcfd77f.png",
     group: "team"
   },
   {
@@ -40,7 +41,7 @@ export const people: Person[] = [
     id: 5,
     name: "Devox",
     role: "Engineering & AI",
-    avatar: "/avatars/devox.png",
+    avatar: "/lovable-uploads/edfc0e0b-7e7f-439f-b909-d78d05dfb329.png",
     group: "team"
   },
   {
@@ -54,7 +55,7 @@ export const people: Person[] = [
     id: 7,
     name: "Dope",
     role: "Science & Research",
-    avatar: "/avatars/dope.png",
+    avatar: "/lovable-uploads/d558783f-32dc-44c3-9b91-77b76dd49f16.png",
     group: "team"
   },
   {
