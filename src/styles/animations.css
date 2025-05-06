@@ -64,7 +64,7 @@
     100% { top: 100%; }
   }
 
-  /* Enhanced animation for background patterns */
+  /* Enhanced animation for background patterns - for blue grid only */
   .pattern-pulse {
     animation: pattern-pulse 4s ease-in-out infinite;
   }

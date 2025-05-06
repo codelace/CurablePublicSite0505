@@ -16,23 +16,23 @@ const BackgroundPatterns = () => {
           className="pattern-pulse"
         />
         
-        {/* Foreground node pattern with higher visibility */}
+        {/* Foreground node pattern with higher visibility - no pulsing animation */}
         <CommandPatternBackground 
           variant="nodes" 
           color="violet" 
           intensity="high" 
-          animated={true} 
-          className="pattern-pulse"
+          animated={false} 
+          className=""
         />
         
-        {/* DNA helix pattern in the background */}
+        {/* DNA helix pattern in the background - no pulsing animation */}
         <CommandPatternBackground 
           variant="dna" 
-          color="green" 
+          color="violet" 
           intensity="high" 
-          animated={true} 
+          animated={false} 
           speed="slow" 
-          className="pattern-pulse"
+          className=""
         />
       </div>
       

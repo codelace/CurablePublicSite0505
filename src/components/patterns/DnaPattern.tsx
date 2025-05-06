@@ -49,7 +49,7 @@ const DnaPattern: React.FC<PatternProps> = ({
             cx={x} 
             cy={y} 
             r="4" 
-            className={`${color === 'violet' ? 'fill-plasma-violet/50' : color === 'green' ? 'fill-bio-green/50' : 'fill-bio-blue/50'} ${animated ? 'animate-pulse-glow' : ''}`}
+            className={`${color === 'violet' ? 'fill-plasma-violet/50' : color === 'green' ? 'fill-bio-green/50' : 'fill-bio-blue/50'}`}
           />
         );
       })}
