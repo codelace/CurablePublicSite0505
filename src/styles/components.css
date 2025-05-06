@@ -1,4 +1,3 @@
-
 @layer components {
   .btn-holo {
     @apply bg-gradient-to-r from-gunmetal-900/80 to-graphite-700/60 backdrop-blur-md 
@@ -91,8 +90,18 @@
     @apply min-h-[44px] min-w-[44px];
   }
 
-  /* Navbar glow effect */
+  /* Navbar glow effect - enhanced */
   .navbar-glow {
-    @apply shadow-[0_2px_15px_rgba(30,174,219,0.15)];
+    @apply shadow-[0_4px_20px_rgba(30,174,219,0.25)] border-b-logo-blue/20;
+    animation: pulse-border 3s infinite alternate;
+  }
+
+  @keyframes pulse-border {
+    0% {
+      box-shadow: 0 2px 15px rgba(30,174,219,0.15);
+    }
+    100% {
+      box-shadow: 0 4px 20px rgba(30,174,219,0.3);
+    }
   }
 }
