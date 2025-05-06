@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Dna, Menu, X, Telegram, Twitter } from 'lucide-react';
+import { Menu, X, Twitter } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -59,7 +59,11 @@ const Navbar = () => {
               className="text-titanium-white/70 hover:text-bio-blue transition-colors"
               aria-label="Telegram"
             >
-              <Telegram size={20} />
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21.73 2.77a2.5 2.5 0 0 0-2.77.53L6.7 14.4a.5.5 0 0 0 .3.85l2.8.7"></path>
+                <path d="M18.5 4.5 9.2 18.1a.5.5 0 0 0 .6.7l7.9-2.4a2.5 2.5 0 0 0 1.8-2.2z"></path>
+                <path d="m2 22 5.5-1.5L18.5 9"></path>
+              </svg>
             </a>
             <a 
               href="https://x.com/curabledao" 
@@ -167,7 +171,11 @@ const Navbar = () => {
                         className="text-titanium-white/70 hover:text-bio-blue transition-colors"
                         aria-label="Telegram"
                       >
-                        <Telegram size={22} />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M21.73 2.77a2.5 2.5 0 0 0-2.77.53L6.7 14.4a.5.5 0 0 0 .3.85l2.8.7"></path>
+                          <path d="M18.5 4.5 9.2 18.1a.5.5 0 0 0 .6.7l7.9-2.4a2.5 2.5 0 0 0 1.8-2.2z"></path>
+                          <path d="m2 22 5.5-1.5L18.5 9"></path>
+                        </svg>
                       </a>
                       <a 
                         href="https://x.com/curabledao" 
