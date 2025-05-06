@@ -13,8 +13,12 @@ const Navbar = () => {
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
         {/* Logo & Pulse Dot */}
         <div className="flex items-center">
-          <Link to="/about" className="font-rajdhani text-2xl font-bold tracking-wider text-titanium-white">
-            CURABLE
+          <Link to="/about" className="flex items-center">
+            <img 
+              src="/lovable-uploads/9f48e9db-5a06-4a87-be2f-b514b3153f90.png" 
+              alt="CURABLE DAO" 
+              className="h-9 w-auto" 
+            />
           </Link>
           <div className="ml-2 w-2 h-2 rounded-full bg-arc-blue animate-pulse-dot"></div>
         </div>
