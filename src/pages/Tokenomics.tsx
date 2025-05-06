@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { tokenRows } from '@/data/tokenRows';
 import Card from '@/components/Card';
@@ -51,32 +50,6 @@ const VestingSchedule = () => {
             <div 
               className="h-full bg-arc-blue rounded-full animate-[vesting_2s_ease-out_forwards]"
               style={{ width: '25%' }}
-            />
-          </div>
-        </div>
-        
-        <div>
-          <div className="flex justify-between mb-2">
-            <span className="font-mono text-sm text-titanium-white/70">Investors</span>
-            <span className="font-mono text-sm text-arc-blue">3 year vesting, 6 month cliff</span>
-          </div>
-          <div className="h-4 bg-graphite-700/40 rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-plasma-violet rounded-full animate-[vesting_2s_ease-out_forwards]"
-              style={{ width: '33%' }}
-            />
-          </div>
-        </div>
-        
-        <div>
-          <div className="flex justify-between mb-2">
-            <span className="font-mono text-sm text-titanium-white/70">Community</span>
-            <span className="font-mono text-sm text-arc-blue">2 year vesting, no cliff</span>
-          </div>
-          <div className="h-4 bg-graphite-700/40 rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-quantum-red rounded-full animate-[vesting_2s_ease-out_forwards]"
-              style={{ width: '50%' }}
             />
           </div>
         </div>
