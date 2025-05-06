@@ -1,20 +1,18 @@
 
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, FlaskConical, Shield, Users, Pause, Play } from 'lucide-react';
+import { ArrowRight, FlaskConical, Shield, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { mission } from '@/data/mission';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
 import StatusTicker from '@/components/StatusTicker';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const AboutHero = () => {
   // For typewriter effect
   const [displayTitle, setDisplayTitle] = useState('');
   const fullTitle = 'The Future of Cures: Molecule-to-Market';
   const isMobile = useIsMobile();
-  const [isPlaying, setIsPlaying] = useState(false);
   
   const [tickerItems] = useState([
     '🔁 BindingDB integration active',
@@ -45,18 +43,6 @@ const AboutHero = () => {
     }
   }, []);
 
-  const toggleVideo = () => {
-    const video = document.getElementById('hero-video') as HTMLVideoElement;
-    if (video) {
-      if (isPlaying) {
-        video.pause();
-      } else {
-        video.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
   return (
     <div className="mb-10 sm:mb-16 relative z-10 transition-all duration-1000" id="mission-section">
       <CommandHUDHeader 
@@ -67,30 +53,6 @@ const AboutHero = () => {
       
       {/* Status ticker */}
       <StatusTicker items={tickerItems} className="mb-6 sm:mb-8" />
-      
-      {/* Video component */}
-      <div className="mb-6 sm:mb-8 glass-panel p-3 sm:p-4">
-        <AspectRatio ratio={16 / 9} className="overflow-hidden rounded-md">
-          <iframe 
-            id="hero-video"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=0&showinfo=0&rel=0&loop=1&mute=1"
-            title="Curable Protocol Demo"
-            className="w-full h-full object-cover"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-          <div className="absolute bottom-3 right-3">
-            <Button 
-              variant="outline" 
-              size="icon"
-              className="bg-gunmetal-900/80 border-graphite-700/60 hover:bg-graphite-700/80 text-titanium-white rounded-full"
-              onClick={toggleVideo}
-            >
-              {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-            </Button>
-          </div>
-        </AspectRatio>
-      </div>
       
       {/* Enhanced mission panel with animated border */}
       <div className="glass-panel p-4 sm:p-6 mb-8 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(142,228,175,0.15)] transition-all duration-500">
