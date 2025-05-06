@@ -28,6 +28,21 @@
     50% { opacity: 0.5; }
   }
   
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { 
+      opacity: 0.3;
+      box-shadow: 0 0 5px rgba(161, 98, 255, 0.3);
+    }
+    50% { 
+      opacity: 0.6;
+      box-shadow: 0 0 15px rgba(161, 98, 255, 0.5);
+    }
+  }
+  
   .scan-line {
     position: relative;
     overflow: hidden;

@@ -5,11 +5,13 @@ import { Button } from '@/components/ui/button';
 import { mission } from '@/data/mission';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
 import StatusTicker from '@/components/StatusTicker';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const AboutHero = () => {
   // For typewriter effect
   const [displayTitle, setDisplayTitle] = useState('');
   const fullTitle = 'Building the Future of Cures';
+  const isMobile = useIsMobile();
   
   const [tickerItems] = useState([
     '🔁 BindingDB integration active',
@@ -29,10 +31,19 @@ const AboutHero = () => {
     }
   }, [displayTitle]);
 
+  // Add class to make the section visible on initial load
+  useEffect(() => {
+    const missionSection = document.getElementById('mission-section');
+    if (missionSection) {
+      missionSection.classList.remove('opacity-0', 'translate-y-10');
+      missionSection.classList.add('opacity-100', 'translate-y-0');
+    }
+  }, []);
+
   return (
-    <div className="mb-16 relative z-10 transition-all duration-1000 opacity-0 translate-y-10" id="mission-section">
+    <div className="mb-16 relative z-10 transition-all duration-1000" id="mission-section">
       <CommandHUDHeader 
-        title={displayTitle} 
+        title={displayTitle || 'Building the Future of Cures'} 
         subtitle="Decentralized research & development protocol" 
         statusText="CURABLE CORE ACTIVE"
       />
@@ -77,7 +88,7 @@ const AboutHero = () => {
             <Button 
               className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold flex items-center gap-2 font-mono border border-plasma-violet/60 shadow-[0_0_15px_rgba(161,98,255,0.3)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(161,98,255,0.5)] hover:translate-y-[-2px]"
             >
-              launch --next-frontier
+              {isMobile ? 'launch' : 'launch --next-frontier'}
               <ArrowRight className="w-4 h-4" />
             </Button>
           </a>
