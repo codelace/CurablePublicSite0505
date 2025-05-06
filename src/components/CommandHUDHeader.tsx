@@ -46,7 +46,7 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
 
   return (
     <div className={`${className} mb-6`}>
-      <div className="flex items-center justify-between mb-2">
+      <div className="flex flex-col xs:flex-row items-start xs:items-center justify-between mb-2 gap-2">
         <div className="inline-block px-3 py-1 rounded-full font-mono text-xs bg-gunmetal-900/80 border border-graphite-700/60">
           <span className="flex items-center">
             <span className="inline-block w-2 h-2 rounded-full bg-bio-green mr-2 animate-pulse"></span>
@@ -54,7 +54,7 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
           </span>
         </div>
         
-        <div className="flex space-x-2">
+        <div className="flex flex-wrap gap-2">
           {['CPU', 'NET', 'MEM'].map((metric, index) => (
             <TooltipProvider key={index}>
               <Tooltip>
@@ -77,7 +77,7 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
       </div>
       
       <div className={`bg-dark-surface/60 backdrop-blur-lg border ${colors.border} rounded-lg p-4 ${colors.glow} shadow-lg`}>
-        <h1 className="text-3xl md:text-4xl font-bold text-titanium-white mb-2 font-space flex items-center gap-2">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-titanium-white mb-2 font-space flex items-center gap-2 break-words">
           <span className={colors.accent}>&gt;</span> {title}
         </h1>
         {subtitle && (
