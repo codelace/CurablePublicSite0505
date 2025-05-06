@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { tokenRows } from '@/data/tokenRows';
+import { tokenIntro, vestingText } from '@/data/tokenCopy';
 import Card from '@/components/Card';
 import { Link } from 'react-router-dom';
 
@@ -54,6 +56,9 @@ const VestingSchedule = () => {
           </div>
         </div>
       </div>
+      <div className="mt-6 prose prose-invert max-w-none text-titanium-white/80">
+        <div dangerouslySetInnerHTML={{ __html: vestingText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br/>') }} />
+      </div>
     </div>
   );
 };
@@ -67,9 +72,7 @@ const Tokenomics = () => {
           <span className="text-arc-blue">CURE</span> Token Economics
         </h1>
         <p className="text-lg text-titanium-white/90 leading-relaxed">
-          The CURE token powers the Curable ecosystem, aligning incentives across all stakeholders
-          and providing governance rights within the DAO. Our token design emphasizes long-term
-          sustainability and aligns with our mission of accelerating biomedical innovation.
+          {tokenIntro}
         </p>
       </div>
       
