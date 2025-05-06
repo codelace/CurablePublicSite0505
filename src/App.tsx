@@ -23,8 +23,14 @@ const App = () => (
       <BrowserRouter>
         <div className="flex min-h-screen w-full">
           <div className="flex-1 relative">
-            {/* Explicitly static background with reduced opacity */}
-            <div className="pattern-static absolute inset-0" style={{animation: 'none !important'}}>
+            {/* Completely static background with inline styles to force no animation */}
+            <div 
+              className="pattern-static absolute inset-0" 
+              style={{
+                animation: 'none !important',
+                transition: 'none !important'
+              }}
+            >
               <CommandPatternBackground 
                 variant="grid" 
                 intensity="low" 
