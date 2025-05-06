@@ -44,6 +44,11 @@
     @apply border-border;
   }
 
+  html, body {
+    @apply bg-gunmetal-900 text-titanium-white antialiased;
+    color-scheme: dark;
+  }
+
   body {
     @apply bg-gradient-dark text-titanium-white antialiased font-sans;
     font-family: 'Inter', sans-serif;
