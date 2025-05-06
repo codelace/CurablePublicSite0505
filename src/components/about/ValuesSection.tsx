@@ -14,7 +14,7 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({ isVisible, hoveredValue, 
   return (
     <div 
       id="values-section" 
-      className={`mb-8 sm:mb-12 relative z-10 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      className={`mb-8 sm:mb-12 relative z-10 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} w-full`}
     >
       <CommandHUDHeader 
         title="Our Core Values" 

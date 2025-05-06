@@ -44,7 +44,7 @@ const AboutHero = () => {
   }, []);
 
   return (
-    <div className="mb-8 sm:mb-12 relative z-10 transition-all duration-1000 overflow-hidden" id="mission-section">
+    <div className="mb-8 sm:mb-12 relative z-10 transition-all duration-1000 overflow-hidden w-full" id="mission-section">
       <CommandHUDHeader 
         title={isMobile ? "The Future of Cures" : (displayTitle || fullTitle)} 
         subtitle="Decentralized research & development protocol" 
@@ -90,7 +90,7 @@ const AboutHero = () => {
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </SheetTrigger>
-              <SheetContent className="bg-gunmetal-900/95 border-graphite-700/40 p-4 w-[85vw] sm:w-[280px]">
+              <SheetContent className="bg-gunmetal-900/95 border-graphite-700/40 p-4 w-[85vw] sm:max-w-[280px]">
                 <div className="h-full flex flex-col justify-center items-center">
                   <div className="text-center mb-6">
                     <h3 className="text-xl font-bold mb-2 text-titanium-white">Launch Options</h3>

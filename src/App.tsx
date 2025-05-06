@@ -22,7 +22,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="flex min-h-screen w-full">
-          <div className="flex-1 relative">
+          <div className="flex-1 relative overflow-x-hidden">
             {/* Completely static background with inline styles to force no animation */}
             <div 
               className="pattern-static absolute inset-0" 

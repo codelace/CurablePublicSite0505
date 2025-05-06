@@ -17,7 +17,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
   return (
     <div 
       id="team-section" 
-      className="mb-8 relative z-10 opacity-100 translate-y-0"
+      className="mb-8 relative z-10 opacity-100 translate-y-0 w-full"
     >
       <CommandHUDHeader 
         title="Our Team" 

@@ -30,11 +30,11 @@ const About = () => {
   }, []);
 
   return (
-    <div className="w-full relative min-h-screen px-3">
+    <div className="w-full relative min-h-screen">
       {/* Use consistent background patterns */}
       <BackgroundPatterns />
       
-      <div className="container mx-auto max-w-full sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]">
+      <div className="container mx-auto px-4 max-w-full">
         {/* Mission Section */}
         <AboutHero />
 
