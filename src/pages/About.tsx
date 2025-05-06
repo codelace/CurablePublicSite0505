@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -52,14 +53,14 @@ const About = () => {
     <div className="container px-4 py-8 relative">
       {/* Additional background patterns specific to this page */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <CommandPatternBackground variant="nodes" intensity="low" />
+        <CommandPatternBackground variant="nodes" intensity="medium" />
       </div>
       
       {/* Mission Section with HUD header */}
       <div className="mb-12 relative z-10 animate-fade-up">
         <CommandHUDHeader 
           title={displayTitle} 
-          subtitle="Decentralized biomedical research protocol" 
+          subtitle="Decentralized research & development protocol" 
           statusText="CURABLE CORE ACTIVE"
         />
         
