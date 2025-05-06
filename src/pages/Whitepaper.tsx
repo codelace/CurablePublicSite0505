@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import { sections } from '@/data/whitepaperSections';
 import { keyCards } from '@/data/keySections';
 import Card from '@/components/Card';
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { ArrowRight } from "lucide-react";
 
 const Whitepaper = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -21,6 +23,21 @@ const Whitepaper = () => {
         <p className="text-titanium-white/90">
           A comprehensive overview of our mission, technology, and governance framework
         </p>
+        
+        <div className="mt-4">
+          <a 
+            href="https://binding-db-integrator-1-codelace77.replit.app/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button 
+              className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold flex items-center gap-2"
+            >
+              The Next Frontier
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </a>
+        </div>
       </div>
       
       <Tabs defaultValue="overview" value={activeTab} onValueChange={setActiveTab} className="space-y-4">

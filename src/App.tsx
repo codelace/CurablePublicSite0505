@@ -4,10 +4,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { SidebarProvider } from "@/components/ui/sidebar";
 import Navbar from "./components/Navbar";
 import HUDGrid from "./components/HUDGrid";
-import CommandSidebar from "./components/CommandSidebar";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Whitepaper from "./pages/Whitepaper";
@@ -24,26 +22,23 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <SidebarProvider>
-          <div className="flex min-h-screen w-full">
-            <CommandSidebar />
-            <div className="flex-1">
-              <HUDGrid />
-              <Navbar />
-              <main className="pt-20">
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/whitepaper" element={<Whitepaper />} />
-                  <Route path="/tokenomics" element={<Tokenomics />} />
-                  <Route path="/join" element={<Join />} />
-                  <Route path="/novel" element={<Novel />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </main>
-            </div>
+        <div className="flex min-h-screen w-full">
+          <div className="flex-1">
+            <HUDGrid />
+            <Navbar />
+            <main className="pt-20">
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/whitepaper" element={<Whitepaper />} />
+                <Route path="/tokenomics" element={<Tokenomics />} />
+                <Route path="/join" element={<Join />} />
+                <Route path="/novel" element={<Novel />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
           </div>
-        </SidebarProvider>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
