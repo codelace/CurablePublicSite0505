@@ -10,25 +10,25 @@ export const values: Value[] = [
   {
     id: 1,
     title: "Transparency",
-    description: "All research funding, data, and governance decisions are recorded on-chain for complete visibility and accountability to the community.",
+    description: "Every grant, vote, and milestone lives on‑chain—open for anyone to audit.",
     icon: "transparency"
   },
   {
     id: 2,
     title: "Scientific Rigor",
-    description: "We maintain the highest standards of scientific methodology, peer review, and evidence-based decision making.",
+    description: "Peer‑reviewed protocols and reproducible data are non‑negotiable.",
     icon: "rigor"
   },
   {
     id: 3,
     title: "Inclusive Governance",
-    description: "Our multi-tiered governance system ensures both expert guidance and community participation in setting research priorities.",
+    description: "Researchers, patients, and supporters share equal power to steer R&D.",
     icon: "governance"
   },
   {
     id: 4,
     title: "Open Access",
-    description: "Research outputs funded by the DAO are made available to the global community, maximizing their impact and utility.",
+    description: "Breakthroughs belong to the world; findings are published for all to build upon.",
     icon: "access"
   }
 ];

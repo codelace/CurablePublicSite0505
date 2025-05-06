@@ -3,6 +3,7 @@ import React from 'react';
 import HeroStatus from '@/components/HeroStatus';
 import { values } from '@/data/values';
 import { people } from '@/data/people';
+import { mission } from '@/data/mission';
 import ValueCard from '@/components/ValueCard';
 import ProfileCard from '@/components/ProfileCard';
 import SectionDivider from '@/components/SectionDivider';
@@ -28,10 +29,8 @@ const About = () => {
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-titanium-white">
           The Future of <span className="text-arc-blue">Biomedical Research</span> is Decentralized
         </h1>
-        <p className="text-lg text-titanium-white/90 leading-relaxed">
-          Curable DAO bridges the gap between decentralized finance and biomedical innovation, 
-          creating a global community-governed platform that accelerates research, ensures equitable 
-          access, and aligns incentives across all stakeholders in the healthcare ecosystem.
+        <p className="text-lg text-titanium-white/90 leading-relaxed whitespace-pre-line">
+          {mission}
         </p>
       </section>
       

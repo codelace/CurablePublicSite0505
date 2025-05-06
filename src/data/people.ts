@@ -8,67 +8,126 @@ export type Person = {
 };
 
 export const people: Person[] = [
+  // ——— TEAM ———
   {
     id: 1,
-    name: "Dr. Sarah Chen",
-    role: "Founder & Chief Scientific Officer",
-    avatar: "/avatars/avatar-1.png",
+    name: "Hugh Donatello",
+    role: "Chief Executive Officer",
+    avatar: "/avatars/hugh.png",
     group: "team"
   },
   {
     id: 2,
-    name: "Michael Rodriguez",
-    role: "Chief Technology Officer",
-    avatar: "/avatars/avatar-2.png",
+    name: "Ilyssa Evans",
+    role: "Chief Operations Officer",
+    avatar: "/avatars/ilyssa.png",
     group: "team"
   },
   {
     id: 3,
-    name: "Aisha Patel",
-    role: "Head of Research",
-    avatar: "/avatars/avatar-3.png",
+    name: "Fax",
+    role: "Web3 Builders",
+    avatar: "/avatars/fax.png",
     group: "team"
   },
   {
     id: 4,
-    name: "Jason Park",
-    role: "Lead DeFi Architect",
-    avatar: "/avatars/avatar-4.png",
+    name: "AC",
+    role: "Ecosystem & DevRel",
+    avatar: "/avatars/ac.png",
     group: "team"
   },
   {
     id: 5,
-    name: "Emily Nakamura",
-    role: "Community Manager",
-    avatar: "/avatars/avatar-5.png",
+    name: "Devox",
+    role: "Engineering & AI",
+    avatar: "/avatars/devox.png",
     group: "team"
   },
   {
     id: 6,
-    name: "Dr. Robert Wei",
-    role: "Blockchain Advisor",
-    avatar: "/avatars/avatar-6.png",
-    group: "advisor"
+    name: "Kenichi",
+    role: "DAO Ops & Governance",
+    avatar: "/avatars/kenichi.png",
+    group: "team"
   },
   {
     id: 7,
-    name: "Dr. Elena Sorokin",
-    role: "Pharmaceutical Research Advisor",
-    avatar: "/avatars/avatar-7.png",
-    group: "advisor"
+    name: "Dope",
+    role: "Science & Research",
+    avatar: "/avatars/dope.png",
+    group: "team"
   },
   {
     id: 8,
-    name: "James Montgomery",
-    role: "Regulatory Affairs Advisor",
-    avatar: "/avatars/avatar-8.png",
-    group: "advisor"
+    name: "Trek",
+    role: "Regulatory Affairs",
+    avatar: "/avatars/trek.png",
+    group: "team"
   },
   {
     id: 9,
-    name: "Dr. Kenji Tanaka",
-    role: "Scientific Ethics Advisor",
-    avatar: "/avatars/avatar-9.png",
+    name: "Sensei",
+    role: "Human Health",
+    avatar: "/avatars/sensei.png",
+    group: "team"
+  },
+  {
+    id: 10,
+    name: "Olokoji",
+    role: "Legal & Compliance",
+    avatar: "/avatars/olokoji.png",
+    group: "team"
+  },
+
+  // ——— ADVISORS ———
+  {
+    id: 11,
+    name: "Weblogica",
+    role: "Engineering & Security",
+    avatar: "/avatars/weblogica.png",
+    group: "advisor"
+  },
+  {
+    id: 12,
+    name: "Ravish",
+    role: "Agentic Infrastructure",
+    avatar: "/avatars/ravish.png",
+    group: "advisor"
+  },
+  {
+    id: 13,
+    name: "B. Toshi",
+    role: "Web3 Builders",
+    avatar: "/avatars/toshi.png",
+    group: "advisor"
+  },
+  {
+    id: 14,
+    name: "Rocks",
+    role: "Content & Community",
+    avatar: "/avatars/rocks.png",
+    group: "advisor"
+  },
+  {
+    id: 15,
+    name: "Pink",
+    role: "Content & Community",
+    avatar: "/avatars/pink.png",
+    group: "advisor"
+  },
+  {
+    id: 16,
+    name: "Tamas",
+    role: "DAO Ops & Gov",
+    avatar: "/avatars/tamas.png",
+    group: "advisor"
+  },
+  {
+    id: 17,
+    name: "Iggy",
+    role: "Engineering & AI",
+    avatar: "/avatars/iggy.png",
     group: "advisor"
   }
 ];
