@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { people } from '@/data/people';
 import ProfileCard from '@/components/ProfileCard';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
@@ -26,7 +26,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
         className="mb-4"
       />
       
-      <div className={`grid grid-cols-2 ${isMobile ? 'gap-2' : 'sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4'}`}>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3">
         {people.map((person, index) => (
           <div 
             key={`team-member-${person.id}`}

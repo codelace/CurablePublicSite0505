@@ -30,28 +30,30 @@ const About = () => {
   }, []);
 
   return (
-    <div className="w-full px-3 sm:px-4 py-3 sm:py-4 relative min-h-screen mx-auto max-w-[100%] sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px]">
+    <div className="w-full relative min-h-screen px-3">
       {/* Use consistent background patterns */}
       <BackgroundPatterns />
       
-      {/* Mission Section */}
-      <AboutHero />
+      <div className="container mx-auto max-w-full sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]">
+        {/* Mission Section */}
+        <AboutHero />
 
-      {/* Core values section */}
-      <ValuesSection 
-        isVisible={true} 
-        hoveredValue={hoveredValue} 
-        setHoveredValue={setHoveredValue} 
-      />
+        {/* Core values section */}
+        <ValuesSection 
+          isVisible={true} 
+          hoveredValue={hoveredValue} 
+          setHoveredValue={setHoveredValue} 
+        />
 
-      <SectionDivider />
+        <SectionDivider />
 
-      {/* Team Section */}
-      <TeamSection 
-        isVisible={true} 
-        hoveredProfile={hoveredProfile} 
-        setHoveredProfile={setHoveredProfile} 
-      />
+        {/* Team Section */}
+        <TeamSection 
+          isVisible={true} 
+          hoveredProfile={hoveredProfile} 
+          setHoveredProfile={setHoveredProfile} 
+        />
+      </div>
     </div>
   );
 };

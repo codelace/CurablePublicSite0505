@@ -44,7 +44,7 @@ const AboutHero = () => {
   }, []);
 
   return (
-    <div className="mb-10 sm:mb-16 relative z-10 transition-all duration-1000 max-w-full" id="mission-section">
+    <div className="mb-8 sm:mb-12 relative z-10 transition-all duration-1000 overflow-hidden" id="mission-section">
       <CommandHUDHeader 
         title={isMobile ? "The Future of Cures" : (displayTitle || fullTitle)} 
         subtitle="Decentralized research & development protocol" 
@@ -52,45 +52,45 @@ const AboutHero = () => {
       />
       
       {/* Status ticker */}
-      <StatusTicker items={tickerItems} className="mb-6 sm:mb-8" />
+      <StatusTicker items={tickerItems} className="mb-6" />
       
       {/* Enhanced mission panel with animated border and consistent accent colors */}
-      <div className="glass-panel p-4 sm:p-6 mb-8 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(142,228,175,0.15)] transition-all duration-500 max-w-full">
+      <div className="glass-panel p-3 sm:p-4 md:p-6 mb-6 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(142,228,175,0.15)] transition-all duration-500">
         {/* Corner brackets for command center look - using consistent colors */}
         <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-plasma-violet/60"></div>
         <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-plasma-violet/60"></div>
         <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-plasma-violet/60"></div>
         <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-plasma-violet/60"></div>
         
-        <p className="text-titanium-white/90 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base lg:text-lg font-light">{mission}</p>
+        <p className="text-titanium-white/90 mb-4 leading-relaxed text-sm sm:text-base break-words">{mission}</p>
         
-        <div className="flex flex-wrap gap-3 mb-4">
-          <div className="flex items-center gap-2 text-xs sm:text-sm text-titanium-white/70 font-mono">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-4">
+          <div className="flex items-center gap-2 text-xs text-titanium-white/70 font-mono">
             <FlaskConical className="w-4 h-4 text-bio-green" />
             <span>Research Driven</span>
           </div>
-          <div className="flex items-center gap-2 text-xs sm:text-sm text-titanium-white/70 font-mono">
+          <div className="flex items-center gap-2 text-xs text-titanium-white/70 font-mono">
             <Shield className="w-4 h-4 text-bio-blue" />
             <span>On-Chain Governance</span>
           </div>
-          <div className="flex items-center gap-2 text-xs sm:text-sm text-titanium-white/70 font-mono">
+          <div className="flex items-center gap-2 text-xs text-titanium-white/70 font-mono">
             <Users className="w-4 h-4 text-plasma-violet" />
             <span>Community Owned</span>
           </div>
         </div>
         
         {isMobile ? (
-          <div className="mt-4 sm:mt-6">
+          <div className="mt-4">
             <Sheet>
               <SheetTrigger asChild>
                 <Button 
-                  className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold flex items-center gap-2 font-mono border border-plasma-violet/60 shadow-[0_0_15px_rgba(161,98,255,0.3)] transition-all duration-300 w-full justify-center text-sm py-5"
+                  className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold flex items-center gap-2 font-mono border border-plasma-violet/60 shadow-[0_0_15px_rgba(161,98,255,0.3)] transition-all duration-300 w-full justify-center text-xs py-4"
                 >
                   LAUNCH APP
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </SheetTrigger>
-              <SheetContent className="bg-gunmetal-900/95 border-graphite-700/40 p-4 w-[85vw] max-w-[280px]">
+              <SheetContent className="bg-gunmetal-900/95 border-graphite-700/40 p-4 w-[85vw] sm:w-[280px]">
                 <div className="h-full flex flex-col justify-center items-center">
                   <div className="text-center mb-6">
                     <h3 className="text-xl font-bold mb-2 text-titanium-white">Launch Options</h3>
@@ -102,7 +102,7 @@ const AboutHero = () => {
                       href="https://binding-db-integrator-1-codelace77.replit.app/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="bg-bio-blue hover:bg-bio-blue/90 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-mono border border-bio-blue/60 shadow-[0_0_15px_rgba(91,192,235,0.3)] transition-all duration-300 w-full text-sm"
+                      className="bg-bio-blue hover:bg-bio-blue/90 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-mono border border-bio-blue/60 shadow-[0_0_15px_rgba(91,192,235,0.3)] transition-all duration-300 w-full text-xs"
                     >
                       BindingDB
                       <ArrowRight className="w-4 h-4" />
@@ -110,7 +110,7 @@ const AboutHero = () => {
                     
                     <a 
                       href="/novel" 
-                      className="bg-bio-green hover:bg-bio-green/90 text-gunmetal-900 font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-mono border border-bio-green/60 shadow-[0_0_15px_rgba(142,228,175,0.3)] transition-all duration-300 w-full text-sm"
+                      className="bg-bio-green hover:bg-bio-green/90 text-gunmetal-900 font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-mono border border-bio-green/60 shadow-[0_0_15px_rgba(142,228,175,0.3)] transition-all duration-300 w-full text-xs"
                     >
                       Novel Cure
                       <ArrowRight className="w-4 h-4" />
@@ -118,7 +118,7 @@ const AboutHero = () => {
                     
                     <a 
                       href="/join" 
-                      className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-mono border border-plasma-violet/60 shadow-[0_0_15px_rgba(161,98,255,0.3)] transition-all duration-300 w-full text-sm"
+                      className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-mono border border-plasma-violet/60 shadow-[0_0_15px_rgba(161,98,255,0.3)] transition-all duration-300 w-full text-xs"
                     >
                       Join DAO
                       <ArrowRight className="w-4 h-4" />
@@ -129,7 +129,7 @@ const AboutHero = () => {
             </Sheet>
           </div>
         ) : (
-          <div className="mt-6 sm:mt-8">
+          <div className="mt-6">
             <a 
               href="https://binding-db-integrator-1-codelace77.replit.app/" 
               target="_blank" 

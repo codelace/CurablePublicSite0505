@@ -14,16 +14,16 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({ isVisible, hoveredValue, 
   return (
     <div 
       id="values-section" 
-      className={`mb-12 relative z-10 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      className={`mb-8 sm:mb-12 relative z-10 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
     >
       <CommandHUDHeader 
         title="Our Core Values" 
         variant="accent" 
         statusText="VALUES MODULE"
-        className="mb-6"
+        className="mb-4 sm:mb-6"
       />
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {values.map((value, index) => (
           <div 
             key={index}
