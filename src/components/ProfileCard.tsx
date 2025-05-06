@@ -41,11 +41,11 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
   const badgeClass = getBadgeStyle(person.group);
   const badgeVariant = person.group === 'team' ? 'default' : person.group === 'advisor' ? 'secondary' : 'outline';
   
-  const avatarSize = isMobile ? "w-16 h-16" : "w-20 h-20";
+  const avatarSize = isMobile ? "w-12 h-12" : "w-16 h-16";
 
   return (
-    <Card className="flex flex-col items-center text-center h-full p-3 sm:p-4">
-      <div className={`${avatarSize} rounded-full overflow-hidden border-2 border-plasma-violet/30 mb-3 sm:mb-4 relative`}>
+    <Card className="flex flex-col items-center text-center h-full p-2 sm:p-3">
+      <div className={`${avatarSize} rounded-full overflow-hidden border-2 border-plasma-violet/30 mb-2 relative`}>
         <Avatar className="w-full h-full">
           <AvatarImage 
             src={person.avatar} 
@@ -66,11 +66,11 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
           </div>
         </div>
       </div>
-      <h3 className="text-sm sm:text-lg font-bold mb-1 text-titanium-white">{person.name}</h3>
-      <Badge variant={badgeVariant} className={`mb-2 text-xs sm:text-sm ${badgeClass}`}>
+      <h3 className="text-xs sm:text-sm font-bold mb-1 text-titanium-white">{person.name}</h3>
+      <Badge variant={badgeVariant} className={`mb-1 text-xs ${badgeClass}`}>
         {groupDisplay}
       </Badge>
-      <p className="text-plasma-violet text-xs sm:text-sm font-mono">{person.role}</p>
+      <p className="text-plasma-violet text-xs font-mono truncate">{person.role}</p>
     </Card>
   );
 };

@@ -22,23 +22,26 @@ const About = () => {
   // Force initial visibility on mobile
   useEffect(() => {
     if (isMobile) {
-      const missionSection = document.getElementById('mission-section');
-      if (missionSection) {
-        missionSection.classList.remove('opacity-0', 'translate-y-10');
-        missionSection.classList.add('opacity-100', 'translate-y-0');
-      }
+      const sections = ['mission-section', 'values-section', 'team-section'];
+      sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.classList.remove('opacity-0', 'translate-y-10');
+          section.classList.add('opacity-100', 'translate-y-0');
+        }
+      });
     }
   }, [isMobile]);
 
   return (
-    <div className="container px-4 py-8 relative">
+    <div className="container px-4 py-4 relative min-h-screen">
       {/* Background patterns */}
       <BackgroundPatterns />
       
       {/* Mission Section with HUD header */}
       <AboutHero />
 
-      {/* Core values section with enhanced interactive cards */}
+      {/* Core values section with reduced vertical spacing */}
       <ValuesSection 
         isVisible={visibleSections.values || isMobile} 
         hoveredValue={hoveredValue} 
@@ -47,7 +50,7 @@ const About = () => {
 
       <SectionDivider />
 
-      {/* Team Section with improved layout */}
+      {/* Team Section with improved layout and reduced spacing */}
       <TeamSection 
         isVisible={visibleSections.team || isMobile} 
         hoveredProfile={hoveredProfile} 

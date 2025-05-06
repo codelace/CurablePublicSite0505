@@ -34,12 +34,12 @@
   
   @keyframes pulse-glow {
     0%, 100% { 
-      opacity: 0.3;
-      box-shadow: 0 0 5px rgba(161, 98, 255, 0.3);
+      opacity: 0.5;
+      box-shadow: 0 0 10px rgba(161, 98, 255, 0.4);
     }
     50% { 
-      opacity: 0.6;
-      box-shadow: 0 0 15px rgba(161, 98, 255, 0.5);
+      opacity: 0.8;
+      box-shadow: 0 0 20px rgba(161, 98, 255, 0.7);
     }
   }
   
@@ -54,13 +54,27 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: rgba(30, 174, 219, 0.3);
+    height: 5px;
+    background: rgba(30, 174, 219, 0.5);
     animation: scan 4s linear infinite;
   }
   
   @keyframes scan {
     0% { top: -30px; }
     100% { top: 100%; }
+  }
+
+  /* Enhanced animation for background patterns */
+  .pattern-pulse {
+    animation: pattern-pulse 4s ease-in-out infinite;
+  }
+  
+  @keyframes pattern-pulse {
+    0%, 100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.4;
+    }
   }
 }
