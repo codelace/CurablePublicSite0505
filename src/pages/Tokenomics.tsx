@@ -7,22 +7,30 @@ import CommandHUDHeader from '@/components/CommandHUDHeader';
 import CommandPatternBackground from '@/components/CommandPatternBackground';
 import HUDGrid from '@/components/HUDGrid';
 import { ArrowRight, CircleDollarSign, TrendingUp } from 'lucide-react';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 const TokenTable = ({ rows }) => {
   return (
     <div className="card-holo relative h-full overflow-hidden">
-      <CommandPatternBackground variant="grid" intensity="medium" animated={true} color="blue" />
-      <div className="overflow-x-auto p-2 relative z-10">
-        <table className="w-full min-w-[400px]">
-          <thead>
-            <tr className="border-b border-graphite-700/60">
-              <th className="px-3 py-1.5 text-left font-mono text-quantum-red text-xs">Category</th>
-              <th className="px-3 py-1.5 text-right font-mono text-quantum-red text-xs">Allocation %</th>
-            </tr>
-          </thead>
-          <tbody>
+      <CommandPatternBackground variant="grid" intensity="high" animated={true} color="blue" />
+      <div className="relative z-10">
+        <Table>
+          <TableHeader>
+            <TableRow className="border-b border-graphite-700/60">
+              <TableHead className="px-2 py-1 text-left font-mono text-quantum-red text-xs w-3/4">Category</TableHead>
+              <TableHead className="px-2 py-1 text-right font-mono text-quantum-red text-xs w-1/4">Allocation %</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
             {rows.map((row, index) => (
-              <tr 
+              <TableRow 
                 key={index} 
                 className={`
                   ${index === rows.length - 1 ? 'border-t-2 border-graphite-700/60' : 'border-b border-graphite-700/30'} 
@@ -30,16 +38,16 @@ const TokenTable = ({ rows }) => {
                   hover:bg-dark-surface/50 transition-colors
                 `}
               >
-                <td className="px-3 py-1.5 text-left font-mono text-xs">
+                <TableCell className="px-2 py-1 text-left font-mono text-xs">
                   {row.cat}
-                </td>
-                <td className="px-3 py-1.5 text-right font-mono text-xs">
+                </TableCell>
+                <TableCell className="px-2 py-1 text-right font-mono text-xs">
                   {row.pct}%
-                </td>
-              </tr>
+                </TableCell>
+              </TableRow>
             ))}
-          </tbody>
-        </table>
+          </TableBody>
+        </Table>
       </div>
     </div>
   );
@@ -47,9 +55,9 @@ const TokenTable = ({ rows }) => {
 
 const VestingSchedule = () => {
   return (
-    <div className="card-holo p-2 relative h-full overflow-hidden">
-      <CommandPatternBackground variant="nodes" intensity="medium" animated={true} color="violet" />
-      <div className="space-y-2 relative z-10">
+    <div className="card-holo relative h-full overflow-hidden">
+      <CommandPatternBackground variant="nodes" intensity="high" animated={true} color="violet" />
+      <div className="space-y-2 relative z-10 p-2">
         <div>
           <div className="flex justify-between mb-1">
             <span className="font-mono text-xs text-titanium-white/80">Core Team</span>
@@ -63,7 +71,7 @@ const VestingSchedule = () => {
           </div>
         </div>
       </div>
-      <div className="mt-2 prose prose-invert max-w-none text-titanium-white/90 text-xs leading-tight relative z-10">
+      <div className="mt-2 prose prose-invert max-w-none text-titanium-white/90 text-xs leading-tight relative z-10 p-2">
         <div dangerouslySetInnerHTML={{ __html: vestingText.replace(/\*\*(.*?)\*\*/g, '<strong class="text-bio-blue">$1</strong>').replace(/\n/g, '<br/>') }} />
       </div>
     </div>
@@ -75,7 +83,7 @@ const Tokenomics = () => {
     <div className="container mx-auto p-4 relative">
       {/* Background pattern with increased visibility */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <HUDGrid variant="dense" color="violet" intensity="medium" />
+        <HUDGrid variant="dense" color="violet" intensity="high" />
       </div>
       
       {/* Intro */}
@@ -91,7 +99,7 @@ const Tokenomics = () => {
           {/* Token Intro Panel */}
           <div className="glass-panel p-3 relative group overflow-hidden">
             {/* Enhanced background pattern */}
-            <CommandPatternBackground variant="circuit" intensity="medium" animated={true} color="multi" />
+            <CommandPatternBackground variant="circuit" intensity="high" animated={true} color="multi" />
             <div className="absolute inset-0 bg-dark-surface/50 rounded-lg -z-10 backdrop-blur-md"></div>
             
             {/* Add animated corners */}
@@ -130,7 +138,7 @@ const Tokenomics = () => {
         <div className="mt-3">
           {/* Call-to-Action */}
           <div className="glass-panel p-3 text-center relative group overflow-hidden">
-            <CommandPatternBackground variant="matrix" intensity="low" animated={true} color="green" />
+            <CommandPatternBackground variant="matrix" intensity="high" animated={true} color="green" />
             <div className="absolute inset-0 bg-dark-surface/60 backdrop-blur-md -z-10"></div>
             <div className="absolute -top-0.5 -left-0.5 w-4 h-4 border-t border-l border-bio-blue/70 rounded-tl-sm"></div>
             <div className="absolute -top-0.5 -right-0.5 w-4 h-4 border-t border-r border-bio-blue/70 rounded-tr-sm"></div>
