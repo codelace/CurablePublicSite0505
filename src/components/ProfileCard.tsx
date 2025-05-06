@@ -37,9 +37,17 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
   const groupDisplay = getGroupDisplay(person.group);
   const badgeClass = getBadgeStyle(person.group);
   const badgeVariant = person.group === 'team' ? 'default' : person.group === 'advisor' ? 'secondary' : 'outline';
+  
+  // Generate random status for command center feel
+  const randomStatus = () => {
+    const statuses = ['monitoring', 'active', 'on duty', 'analyzing'];
+    return statuses[Math.floor(Math.random() * statuses.length)];
+  };
+  
+  const [status] = React.useState(randomStatus());
 
   return (
-    <Card className="flex flex-col items-center text-center h-full">
+    <Card className="flex flex-col items-center text-center h-full bg-gunmetal-900/80 backdrop-blur-md hover:bg-gunmetal-900/90 transition-all duration-300 group">
       <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-plasma-violet/30 mb-4 relative">
         <Avatar className="w-full h-full">
           <AvatarImage 
@@ -53,7 +61,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
         </Avatar>
         
         {/* Reticle animation on hover */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="w-full h-full flex items-center justify-center">
             <div className="w-[80%] h-[80%] border border-plasma-violet/60 rounded-full animate-pulse-glow"></div>
             <div className="absolute w-[60%] h-[60%] border border-plasma-violet/40 rounded-full"></div>
@@ -66,6 +74,12 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
         {groupDisplay}
       </Badge>
       <p className="text-plasma-violet text-sm font-mono">{person.role}</p>
+      
+      {/* Command center status */}
+      <div className="mt-2 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <span className="h-1.5 w-1.5 rounded-full bg-logo-blue animate-pulse"></span>
+        <span className="text-titanium-white/60 text-xs font-mono">status: {status}</span>
+      </div>
     </Card>
   );
 };
