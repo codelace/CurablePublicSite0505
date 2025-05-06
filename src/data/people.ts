@@ -19,7 +19,7 @@ export const people: Person[] = [
     id: 2,
     name: "Ilyssa Evans",
     role: "Chief Operations Officer",
-    avatar: "/avatars/ilyssa.png",
+    avatar: "/lovable-uploads/b83232dd-6ec6-4bae-b29c-71def935812a.png",
     group: "team"
   },
   {
