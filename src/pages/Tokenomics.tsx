@@ -2,7 +2,6 @@
 import React from 'react';
 import { tokenRows } from '@/data/tokenRows';
 import { tokenIntro, vestingText } from '@/data/tokenCopy';
-import Card from '@/components/Card';
 import { Link } from 'react-router-dom';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
 import CommandPatternBackground from '@/components/CommandPatternBackground';
@@ -13,11 +12,11 @@ const TokenTable = ({ rows }) => {
   return (
     <div className="overflow-x-auto card-holo relative h-full">
       <CommandPatternBackground variant="grid" intensity="low" />
-      <table className="w-full min-w-[500px]">
+      <table className="w-full min-w-[400px]">
         <thead>
           <tr className="border-b border-graphite-700/40">
-            <th className="px-4 py-2 text-left font-mono text-quantum-red">Category</th>
-            <th className="px-4 py-2 text-right font-mono text-quantum-red">Allocation %</th>
+            <th className="px-3 py-1.5 text-left font-mono text-quantum-red text-xs">Category</th>
+            <th className="px-3 py-1.5 text-right font-mono text-quantum-red text-xs">Allocation %</th>
           </tr>
         </thead>
         <tbody>
@@ -30,10 +29,10 @@ const TokenTable = ({ rows }) => {
                 hover:bg-dark-surface/40 transition-colors
               `}
             >
-              <td className="px-4 py-2 text-left font-mono">
+              <td className="px-3 py-1.5 text-left font-mono text-xs">
                 {row.cat}
               </td>
-              <td className="px-4 py-2 text-right font-mono">
+              <td className="px-3 py-1.5 text-right font-mono text-xs">
                 {row.pct}%
               </td>
             </tr>
@@ -46,9 +45,9 @@ const TokenTable = ({ rows }) => {
 
 const VestingSchedule = () => {
   return (
-    <div className="card-holo p-3 relative h-full">
+    <div className="card-holo p-2 relative h-full">
       <CommandPatternBackground variant="nodes" intensity="low" />
-      <div className="space-y-2">
+      <div className="space-y-1">
         <div>
           <div className="flex justify-between mb-1">
             <span className="font-mono text-xs text-titanium-white/70">Core Team</span>
@@ -62,7 +61,7 @@ const VestingSchedule = () => {
           </div>
         </div>
       </div>
-      <div className="mt-2 prose prose-invert max-w-none text-titanium-white/80 text-xs">
+      <div className="mt-1.5 prose prose-invert max-w-none text-titanium-white/80 text-xs leading-tight">
         <div dangerouslySetInnerHTML={{ __html: vestingText.replace(/\*\*(.*?)\*\*/g, '<strong class="text-bio-blue">$1</strong>').replace(/\n/g, '<br/>') }} />
       </div>
     </div>
@@ -71,7 +70,7 @@ const VestingSchedule = () => {
 
 const Tokenomics = () => {
   return (
-    <div className="container mx-auto px-4 py-4 relative">
+    <div className="container mx-auto px-4 py-2 relative">
       {/* Background pattern */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <HUDGrid variant="standard" color="violet" intensity="low" />
@@ -83,12 +82,12 @@ const Tokenomics = () => {
           title="CURE Token Economics"
           subtitle="Decentralized biomedical incentive mechanism"
           statusText="TOKENOMICS MODULE" 
-          className="mb-3"
+          className="mb-2"
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-2">
           {/* Token Intro Panel */}
-          <div className="glass-panel p-3 relative group overflow-hidden">
+          <div className="glass-panel p-2 relative group overflow-hidden">
             {/* Add subtle animated background for glass panel */}
             <div className="absolute inset-0 bg-dark-surface/40 rounded-lg -z-10 backdrop-blur-md"></div>
             
@@ -98,9 +97,9 @@ const Tokenomics = () => {
             <div className="absolute -bottom-0.5 -left-0.5 w-4 h-4 border-b border-l border-bio-blue/60 rounded-bl-sm group-hover:border-bio-blue/90 transition-colors duration-300"></div>
             <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 border-b border-r border-quantum-red/60 rounded-br-sm group-hover:border-quantum-red/90 transition-colors duration-300"></div>
             
-            <div className="flex items-start gap-2 h-full">
+            <div className="flex items-start gap-2">
               <CircleDollarSign className="text-quantum-red w-4 h-4 mt-1 shrink-0" />
-              <p className="text-xs text-titanium-white/90 leading-relaxed">
+              <p className="text-xs text-titanium-white/90 leading-tight">
                 {tokenIntro}
               </p>
             </div>
@@ -125,24 +124,28 @@ const Tokenomics = () => {
         </div>
         
         {/* Bottom Row */}
-        <div className="mt-3">
+        <div className="mt-2">
           {/* Call-to-Action */}
-          <Card className="text-center p-3 glow-hover h-full flex flex-col justify-center">
-            <h3 className="text-lg font-bold mb-2 text-titanium-white">
+          <div className="glass-panel p-2 text-center relative group">
+            <div className="absolute -top-0.5 -left-0.5 w-4 h-4 border-t border-l border-bio-blue/60 rounded-tl-sm"></div>
+            <div className="absolute -top-0.5 -right-0.5 w-4 h-4 border-t border-r border-bio-blue/60 rounded-tr-sm"></div>
+            <div className="absolute -bottom-0.5 -left-0.5 w-4 h-4 border-b border-l border-bio-blue/60 rounded-bl-sm"></div>
+            <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 border-b border-r border-bio-blue/60 rounded-br-sm"></div>
+            <h3 className="text-sm font-bold text-titanium-white mb-1">
               <span className="text-quantum-red">&gt;</span> Get Involved
             </h3>
-            <p className="text-titanium-white/80 mb-3 text-xs">
+            <p className="text-titanium-white/80 mb-2 text-xs">
               Join the Curable DAO community and contribute to the future of decentralized biomedical research.
             </p>
             <Link 
               to="/join" 
-              className="bg-quantum-red text-dark-base hover:bg-quantum-red/90 font-mono font-bold flex items-center gap-2 shadow-[0_0_12px_rgba(255,51,102,0.3)] hover:shadow-[0_0_20px_rgba(255,51,102,0.5)] transition-all duration-300 relative overflow-hidden group px-4 py-2 rounded-lg mx-auto inline-flex"
+              className="bg-quantum-red text-dark-base hover:bg-quantum-red/90 font-mono font-bold flex items-center gap-2 shadow-[0_0_12px_rgba(255,51,102,0.3)] hover:shadow-[0_0_20px_rgba(255,51,102,0.5)] transition-all duration-300 relative overflow-hidden group px-3 py-1.5 rounded-lg mx-auto inline-flex text-sm"
             >
               <span className="relative z-10">JOIN THE DAO</span>
               <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
               <div className="absolute inset-0 bg-gradient-to-r from-quantum-red to-quantum-red/90 -z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
-          </Card>
+          </div>
         </div>
       </div>
     </div>
