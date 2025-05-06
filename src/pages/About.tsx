@@ -7,6 +7,9 @@ import ProfileCard from '@/components/ProfileCard';
 import SectionDivider from '@/components/SectionDivider';
 import ValueCard from '@/components/ValueCard';
 import { values } from '@/data/values';
+import CommandHUDHeader from '@/components/CommandHUDHeader';
+import StatusTicker from '@/components/StatusTicker';
+import CommandPatternBackground from '@/components/CommandPatternBackground';
 
 const About = () => {
   // For typewriter effect
@@ -46,60 +49,58 @@ const About = () => {
   }, [tickerItems.length]);
 
   return (
-    <div className="container px-4 py-8">
-      {/* Mission Section with dynamic elements */}
-      <div className="mb-8 animate-fade-up">
-        <div className="inline-block px-3 py-1 mb-2 rounded-full font-mono text-xs bg-gunmetal-900/70 border border-graphite-700/40">
-          {/* Status panel with animation */}
-          <span className="flex items-center">
-            <span className="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-            SYSTEM ONLINE
-          </span>
-        </div>
+    <div className="container px-4 py-8 relative">
+      {/* Additional background patterns specific to this page */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <CommandPatternBackground variant="nodes" intensity="low" />
+      </div>
+      
+      {/* Mission Section with HUD header */}
+      <div className="mb-12 relative z-10 animate-fade-up">
+        <CommandHUDHeader 
+          title={displayTitle} 
+          subtitle="Decentralized biomedical research protocol" 
+          statusText="CURABLE CORE ACTIVE"
+        />
         
-        {/* Animated Title with Typewriter Effect */}
-        <h1 className="text-3xl font-bold text-titanium-white mb-4">
-          {displayTitle}<span className="text-arc-blue cursor-blink">|</span>
-        </h1>
-        
-        {/* Mission statement as ticker */}
-        <div className="bg-gunmetal-900/40 border border-graphite-700/40 rounded-lg p-3 mb-4 overflow-hidden">
-          <div className="flex items-center space-x-4 animate-slide">
-            <div className="whitespace-nowrap flex items-center font-mono text-plasma-violet">
-              <span className="text-logo-blue mr-2">$</span> {tickerItems[currentTickerIndex]}
-            </div>
-          </div>
-        </div>
+        {/* Status ticker */}
+        <StatusTicker items={tickerItems} className="mb-6" />
         
         {/* Static mission paragraph */}
-        <p className="text-titanium-white/90 max-w-3xl mb-4">{mission}</p>
-        
-        <div className="mt-4">
-          <a 
-            href="https://binding-db-integrator-1-codelace77.replit.app/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <Button 
-              className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold flex items-center gap-2 font-mono border border-plasma-violet/60 shadow-[0_0_15px_rgba(161,98,255,0.3)]"
+        <div className="glass-panel p-6 mb-6">
+          <p className="text-titanium-white/90 max-w-3xl mb-4">{mission}</p>
+          
+          <div className="mt-4">
+            <a 
+              href="https://binding-db-integrator-1-codelace77.replit.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
             >
-              launch --next-frontier
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-          </a>
+              <Button 
+                className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold flex items-center gap-2 font-mono border border-plasma-violet/60 shadow-[0_0_15px_rgba(161,98,255,0.3)]"
+              >
+                launch --next-frontier
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
 
       {/* Core values section with enhanced interactive cards */}
-      <div className="mb-10">
-        <h2 className="text-2xl font-bold text-titanium-white mb-4">
-          <span className="text-logo-blue">&gt;</span> Our Core Values
-        </h2>
+      <div className="mb-16 relative z-10">
+        <CommandHUDHeader 
+          title="Our Core Values" 
+          variant="accent" 
+          statusText="VALUES MODULE"
+          className="mb-8"
+        />
+        
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {values.map((value, index) => (
             <div 
               key={index}
-              className="transform transition-all duration-300 hover:-translate-y-2"
+              className="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-bio-blue/20"
               onMouseEnter={() => setHoveredValue(index)}
               onMouseLeave={() => setHoveredValue(null)}
             >
@@ -112,20 +113,23 @@ const About = () => {
       <SectionDivider />
 
       {/* Team Section with improved layout */}
-      <div className="mb-10">
-        <h2 className="text-2xl font-bold text-titanium-white mb-4">
-          <span className="text-plasma-violet">&gt;</span> Our Team
-        </h2>
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="mb-16 relative z-10">
+        <CommandHUDHeader 
+          title="Our Team" 
+          variant="secondary" 
+          statusText="CONTRIBUTOR MODULE" 
+          className="mb-8"
+        />
+        
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
           {people.map((person, index) => (
             <div 
               key={index}
-              className="transform transition-all duration-300 hover:-translate-y-2"
+              className="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-quantum-red/20"
               onMouseEnter={() => setHoveredProfile(index)}
               onMouseLeave={() => setHoveredProfile(null)}
             >
               <ProfileCard person={person} />
-              {/* Removed the active protocol contributor message */}
             </div>
           ))}
         </div>

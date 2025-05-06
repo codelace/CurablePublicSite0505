@@ -5,7 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import HUDGrid from "./components/HUDGrid";
+import CommandPatternBackground from "./components/CommandPatternBackground";
 import About from "./pages/About";
 import Whitepaper from "./pages/Whitepaper";
 import Tokenomics from "./pages/Tokenomics";
@@ -22,10 +22,11 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="flex min-h-screen w-full">
-          <div className="flex-1">
-            <HUDGrid />
+          <div className="flex-1 relative">
+            <CommandPatternBackground variant="grid" intensity="medium" />
+            <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-radial from-transparent to-dark-base/80"></div>
             <Navbar />
-            <main className="pt-20">
+            <main className="pt-20 relative z-10">
               <Routes>
                 <Route path="/" element={<About />} />
                 <Route path="/about" element={<Navigate to="/" replace />} />
