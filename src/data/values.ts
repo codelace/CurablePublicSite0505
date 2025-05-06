@@ -21,7 +21,7 @@ export const values: Value[] = [
   },
   {
     id: 3,
-    title: "Inclusive Governance",
+    title: "Distributed Governance",
     description: "Researchers, patients, and supporters share equal power to steer R&D.",
     icon: "governance"
   },
