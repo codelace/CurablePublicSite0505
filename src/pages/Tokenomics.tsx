@@ -10,50 +10,52 @@ import { ArrowRight, CircleDollarSign, TrendingUp } from 'lucide-react';
 
 const TokenTable = ({ rows }) => {
   return (
-    <div className="overflow-x-auto card-holo relative h-full">
-      <CommandPatternBackground variant="grid" intensity="low" />
-      <table className="w-full min-w-[400px]">
-        <thead>
-          <tr className="border-b border-graphite-700/40">
-            <th className="px-3 py-1.5 text-left font-mono text-quantum-red text-xs">Category</th>
-            <th className="px-3 py-1.5 text-right font-mono text-quantum-red text-xs">Allocation %</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, index) => (
-            <tr 
-              key={index} 
-              className={`
-                ${index === rows.length - 1 ? 'border-t-2 border-graphite-700/60' : 'border-b border-graphite-700/20'} 
-                ${row.cat.startsWith('—') ? 'text-titanium-white/60' : ''}
-                hover:bg-dark-surface/40 transition-colors
-              `}
-            >
-              <td className="px-3 py-1.5 text-left font-mono text-xs">
-                {row.cat}
-              </td>
-              <td className="px-3 py-1.5 text-right font-mono text-xs">
-                {row.pct}%
-              </td>
+    <div className="card-holo relative h-full overflow-hidden">
+      <CommandPatternBackground variant="grid" intensity="medium" animated={true} color="blue" />
+      <div className="overflow-x-auto p-2 relative z-10">
+        <table className="w-full min-w-[400px]">
+          <thead>
+            <tr className="border-b border-graphite-700/60">
+              <th className="px-3 py-1.5 text-left font-mono text-quantum-red text-xs">Category</th>
+              <th className="px-3 py-1.5 text-right font-mono text-quantum-red text-xs">Allocation %</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {rows.map((row, index) => (
+              <tr 
+                key={index} 
+                className={`
+                  ${index === rows.length - 1 ? 'border-t-2 border-graphite-700/60' : 'border-b border-graphite-700/30'} 
+                  ${row.cat.startsWith('—') ? 'text-titanium-white/60' : ''}
+                  hover:bg-dark-surface/50 transition-colors
+                `}
+              >
+                <td className="px-3 py-1.5 text-left font-mono text-xs">
+                  {row.cat}
+                </td>
+                <td className="px-3 py-1.5 text-right font-mono text-xs">
+                  {row.pct}%
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
 
 const VestingSchedule = () => {
   return (
-    <div className="card-holo p-2 relative h-full">
-      <CommandPatternBackground variant="nodes" intensity="low" />
-      <div className="space-y-1">
+    <div className="card-holo p-2 relative h-full overflow-hidden">
+      <CommandPatternBackground variant="nodes" intensity="medium" animated={true} color="violet" />
+      <div className="space-y-2 relative z-10">
         <div>
           <div className="flex justify-between mb-1">
-            <span className="font-mono text-xs text-titanium-white/70">Core Team</span>
+            <span className="font-mono text-xs text-titanium-white/80">Core Team</span>
             <span className="font-mono text-xs text-plasma-violet">4 year vesting, 1 year cliff</span>
           </div>
-          <div className="h-2 bg-graphite-700/40 rounded-full overflow-hidden">
+          <div className="h-2 bg-graphite-700/60 rounded-full overflow-hidden">
             <div 
               className="h-full bg-plasma-violet rounded-full animate-[vesting_2s_ease-out_forwards]"
               style={{ width: '25%' }}
@@ -61,7 +63,7 @@ const VestingSchedule = () => {
           </div>
         </div>
       </div>
-      <div className="mt-1.5 prose prose-invert max-w-none text-titanium-white/80 text-xs leading-tight">
+      <div className="mt-2 prose prose-invert max-w-none text-titanium-white/90 text-xs leading-tight relative z-10">
         <div dangerouslySetInnerHTML={{ __html: vestingText.replace(/\*\*(.*?)\*\*/g, '<strong class="text-bio-blue">$1</strong>').replace(/\n/g, '<br/>') }} />
       </div>
     </div>
@@ -70,10 +72,10 @@ const VestingSchedule = () => {
 
 const Tokenomics = () => {
   return (
-    <div className="container mx-auto px-4 py-2 relative">
-      {/* Background pattern */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <HUDGrid variant="standard" color="violet" intensity="low" />
+    <div className="container mx-auto p-4 relative">
+      {/* Background pattern with increased visibility */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <HUDGrid variant="dense" color="violet" intensity="medium" />
       </div>
       
       {/* Intro */}
@@ -82,24 +84,25 @@ const Tokenomics = () => {
           title="CURE Token Economics"
           subtitle="Decentralized biomedical incentive mechanism"
           statusText="TOKENOMICS MODULE" 
-          className="mb-2"
+          className="mb-3"
         />
         
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {/* Token Intro Panel */}
-          <div className="glass-panel p-2 relative group overflow-hidden">
-            {/* Add subtle animated background for glass panel */}
-            <div className="absolute inset-0 bg-dark-surface/40 rounded-lg -z-10 backdrop-blur-md"></div>
+          <div className="glass-panel p-3 relative group overflow-hidden">
+            {/* Enhanced background pattern */}
+            <CommandPatternBackground variant="circuit" intensity="medium" animated={true} color="multi" />
+            <div className="absolute inset-0 bg-dark-surface/50 rounded-lg -z-10 backdrop-blur-md"></div>
             
             {/* Add animated corners */}
-            <div className="absolute -top-0.5 -left-0.5 w-4 h-4 border-t border-l border-quantum-red/60 rounded-tl-sm group-hover:border-quantum-red/90 transition-colors duration-300"></div>
-            <div className="absolute -top-0.5 -right-0.5 w-4 h-4 border-t border-r border-bio-blue/60 rounded-tr-sm group-hover:border-bio-blue/90 transition-colors duration-300"></div>
-            <div className="absolute -bottom-0.5 -left-0.5 w-4 h-4 border-b border-l border-bio-blue/60 rounded-bl-sm group-hover:border-bio-blue/90 transition-colors duration-300"></div>
-            <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 border-b border-r border-quantum-red/60 rounded-br-sm group-hover:border-quantum-red/90 transition-colors duration-300"></div>
+            <div className="absolute -top-0.5 -left-0.5 w-4 h-4 border-t border-l border-quantum-red/70 rounded-tl-sm group-hover:border-quantum-red transition-colors duration-300"></div>
+            <div className="absolute -top-0.5 -right-0.5 w-4 h-4 border-t border-r border-bio-blue/70 rounded-tr-sm group-hover:border-bio-blue transition-colors duration-300"></div>
+            <div className="absolute -bottom-0.5 -left-0.5 w-4 h-4 border-b border-l border-bio-blue/70 rounded-bl-sm group-hover:border-bio-blue transition-colors duration-300"></div>
+            <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 border-b border-r border-quantum-red/70 rounded-br-sm group-hover:border-quantum-red transition-colors duration-300"></div>
             
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2 relative z-10">
               <CircleDollarSign className="text-quantum-red w-4 h-4 mt-1 shrink-0" />
-              <p className="text-xs text-titanium-white/90 leading-tight">
+              <p className="text-xs text-titanium-white leading-tight">
                 {tokenIntro}
               </p>
             </div>
@@ -117,29 +120,31 @@ const Tokenomics = () => {
           {/* Vesting Schedule */}
           <div>
             <div className="mb-1 font-mono text-xs text-titanium-white">
-              <span className="text-quantum-red">&gt;</span> Vesting Schedule
+              <span className="text-quantum-red mr-2">&gt;</span> Vesting Schedule
             </div>
             <VestingSchedule />
           </div>
         </div>
         
         {/* Bottom Row */}
-        <div className="mt-2">
+        <div className="mt-3">
           {/* Call-to-Action */}
-          <div className="glass-panel p-2 text-center relative group">
-            <div className="absolute -top-0.5 -left-0.5 w-4 h-4 border-t border-l border-bio-blue/60 rounded-tl-sm"></div>
-            <div className="absolute -top-0.5 -right-0.5 w-4 h-4 border-t border-r border-bio-blue/60 rounded-tr-sm"></div>
-            <div className="absolute -bottom-0.5 -left-0.5 w-4 h-4 border-b border-l border-bio-blue/60 rounded-bl-sm"></div>
-            <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 border-b border-r border-bio-blue/60 rounded-br-sm"></div>
-            <h3 className="text-sm font-bold text-titanium-white mb-1">
+          <div className="glass-panel p-3 text-center relative group overflow-hidden">
+            <CommandPatternBackground variant="matrix" intensity="low" animated={true} color="green" />
+            <div className="absolute inset-0 bg-dark-surface/60 backdrop-blur-md -z-10"></div>
+            <div className="absolute -top-0.5 -left-0.5 w-4 h-4 border-t border-l border-bio-blue/70 rounded-tl-sm"></div>
+            <div className="absolute -top-0.5 -right-0.5 w-4 h-4 border-t border-r border-bio-blue/70 rounded-tr-sm"></div>
+            <div className="absolute -bottom-0.5 -left-0.5 w-4 h-4 border-b border-l border-bio-blue/70 rounded-bl-sm"></div>
+            <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 border-b border-r border-bio-blue/70 rounded-br-sm"></div>
+            <h3 className="text-sm font-bold text-titanium-white mb-1 relative z-10">
               <span className="text-quantum-red">&gt;</span> Get Involved
             </h3>
-            <p className="text-titanium-white/80 mb-2 text-xs">
+            <p className="text-titanium-white/90 mb-2 text-xs relative z-10">
               Join the Curable DAO community and contribute to the future of decentralized biomedical research.
             </p>
             <Link 
               to="/join" 
-              className="bg-quantum-red text-dark-base hover:bg-quantum-red/90 font-mono font-bold flex items-center gap-2 shadow-[0_0_12px_rgba(255,51,102,0.3)] hover:shadow-[0_0_20px_rgba(255,51,102,0.5)] transition-all duration-300 relative overflow-hidden group px-3 py-1.5 rounded-lg mx-auto inline-flex text-sm"
+              className="bg-quantum-red text-dark-base hover:bg-quantum-red/90 font-mono font-bold flex items-center gap-2 shadow-[0_0_12px_rgba(255,51,102,0.3)] hover:shadow-[0_0_20px_rgba(255,51,102,0.5)] transition-all duration-300 relative overflow-hidden group px-3 py-1.5 rounded-lg mx-auto inline-flex text-sm z-10"
             >
               <span className="relative z-10">JOIN THE DAO</span>
               <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
@@ -153,3 +158,4 @@ const Tokenomics = () => {
 };
 
 export default Tokenomics;
+

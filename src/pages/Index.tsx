@@ -80,7 +80,7 @@ const Index = () => {
         <TabsContent value="principles" className="mt-4">
           {/* Principles Grid */}
           <h2 className="text-2xl font-bold mb-4 text-titanium-white">
-            Decentralized research and development protocol
+            Decentralized research & development protocol
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {principles.map(principle => (
@@ -120,3 +120,4 @@ const Index = () => {
 };
 
 export default Index;
+
