@@ -14,7 +14,7 @@ export const MobileNav = () => {
     <Sheet>
       <SheetTrigger asChild>
         <button 
-          className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-graphite-700/30 border border-graphite-700/40"
+          className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-graphite-700/40 border border-graphite-700/60 shadow-md shadow-logo-blue/10"
           aria-label="Toggle menu"
         >
           <Menu className="w-5 h-5 text-titanium-white" />

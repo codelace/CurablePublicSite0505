@@ -38,7 +38,7 @@
   }
 
   .nav-link {
-    @apply relative inline-block px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-sm sm:text-base;
+    @apply relative inline-block px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-sm sm:text-base text-titanium-white hover:text-logo-blue;
   }
 
   .nav-link::after {
@@ -89,5 +89,10 @@
   /* Better touch targets for mobile */
   .touch-target {
     @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Navbar glow effect */
+  .navbar-glow {
+    @apply shadow-[0_2px_15px_rgba(30,174,219,0.15)];
   }
 }
