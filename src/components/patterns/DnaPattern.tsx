@@ -4,12 +4,13 @@ import { PatternProps, getOpacity } from './types';
 
 const DnaPattern: React.FC<PatternProps> = ({
   intensity = 'medium',
-  animated = true,
+  animated = false, // Default to false to ensure it's never animated
   color = 'blue'
 }) => {
+  // Remove all animation classes completely
   return (
     <svg 
-      className={`absolute inset-0 w-full h-full ${animated ? 'animate-rotate-slow' : ''} ${getOpacity(intensity)}`} 
+      className={`absolute inset-0 w-full h-full ${getOpacity(intensity)}`} 
       width="100%" 
       height="100%" 
       xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +37,7 @@ const DnaPattern: React.FC<PatternProps> = ({
         })}
       </g>
       
-      {/* DNA Nodes */}
+      {/* DNA Nodes - remove all animation classes */}
       {Array.from({ length: 20 }).map((_, i) => {
         const y = 150 + i * 40;
         const isLeft = i % 2 === 0;

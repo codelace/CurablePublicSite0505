@@ -4,7 +4,7 @@ import { PatternProps, getOpacity } from './types';
 
 const NodesPattern: React.FC<PatternProps> = ({
   intensity = 'medium',
-  animated = true,
+  animated = false, // Default to false to ensure it's never animated
   color = 'blue'
 }) => {
   return (
@@ -20,7 +20,7 @@ const NodesPattern: React.FC<PatternProps> = ({
             top: `${Math.random() * 100}%`,
             transform: 'translate(-50%, -50%)',
             opacity: Math.random() * 0.5 + 0.15,
-            animation: animated ? `pulse-glow ${Math.random() * 10 + 5}s infinite ease-in-out` : 'none'
+            // Remove animation completely
           }}
         />
       ))}
@@ -33,7 +33,7 @@ const NodesPattern: React.FC<PatternProps> = ({
             height: '4px',
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
-            animation: animated ? `pulse-dot ${Math.random() * 3 + 2}s infinite ease-in-out` : 'none'
+            // Remove animation completely
           }}
         />
       ))}

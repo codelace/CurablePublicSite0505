@@ -57,10 +57,10 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
           </AvatarFallback>
         </Avatar>
         
-        {/* Reticle animation on hover */}
+        {/* Remove reticle animation on hover - just use a static border */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
           <div className="w-full h-full flex items-center justify-center">
-            <div className="w-[80%] h-[80%] border border-plasma-violet/60 rounded-full animate-pulse-glow"></div>
+            <div className="w-[80%] h-[80%] border border-plasma-violet/60 rounded-full"></div>
             <div className="absolute w-[60%] h-[60%] border border-plasma-violet/40 rounded-full"></div>
             <div className="absolute w-[40%] h-[40%] border border-plasma-violet/20 rounded-full"></div>
           </div>

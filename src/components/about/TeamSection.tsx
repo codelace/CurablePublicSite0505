@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { people } from '@/data/people';
 import ProfileCard from '@/components/ProfileCard';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
@@ -29,7 +29,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
       <div className={`grid grid-cols-2 ${isMobile ? 'gap-2' : 'sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4'}`}>
         {people.map((person, index) => (
           <div 
-            key={index}
+            key={person.id} // Use the person's ID as the key instead of index for better React reconciliation
             className="transform transition-all duration-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-quantum-red/20"
             onMouseEnter={() => setHoveredProfile(index)}
             onMouseLeave={() => setHoveredProfile(null)}

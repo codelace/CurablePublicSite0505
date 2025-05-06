@@ -19,30 +19,16 @@
     100% { transform: translateX(-100%); }
   }
   
+  /* Disable all pulse animations entirely */
   .animate-pulse-dot {
-    animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-  
-  @keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+    /* animation removed */
   }
   
   .animate-pulse-glow {
-    animation: pulse-glow 3s ease-in-out infinite;
+    /* animation removed */
   }
   
-  @keyframes pulse-glow {
-    0%, 100% { 
-      opacity: 0.5;
-      box-shadow: 0 0 10px rgba(161, 98, 255, 0.4);
-    }
-    50% { 
-      opacity: 0.8;
-      box-shadow: 0 0 20px rgba(161, 98, 255, 0.7);
-    }
-  }
-  
+  /* Keep scan line effect but not using it on background */
   .scan-line {
     position: relative;
     overflow: hidden;
@@ -64,7 +50,7 @@
     100% { top: 100%; }
   }
 
-  /* Static pattern style - no animation */
+  /* Static pattern style - explicitly set as completely static */
   .pattern-static {
     opacity: 0.3;
   }
