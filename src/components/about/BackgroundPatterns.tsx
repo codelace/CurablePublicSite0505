@@ -5,43 +5,30 @@ import CommandPatternBackground from '@/components/CommandPatternBackground';
 const BackgroundPatterns = () => {
   return (
     <>
-      {/* Static background patterns with NO animation - using inline styles to force no animation */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" style={{ animation: 'none !important' }}>
-        {/* Base grid pattern - explicitly static */}
-        <div className="pattern-static absolute inset-0" style={{ animation: 'none !important' }}>
+      {/* Consistent background patterns with the rest of the app */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Base grid pattern */}
+        <div className="absolute inset-0">
           <CommandPatternBackground 
             variant="grid" 
-            color="blue" 
+            color="violet" 
             intensity="low" 
-            animated={false} 
-            className="pattern-static"
+            animated={false}
           />
         </div>
         
-        {/* Node pattern - explicitly static */}
-        <div className="pattern-static absolute inset-0" style={{ animation: 'none !important' }}>
+        {/* Node pattern - using violet to match other pages */}
+        <div className="absolute inset-0 opacity-50">
           <CommandPatternBackground 
             variant="nodes" 
             color="violet" 
             intensity="low" 
             animated={false}
-            className="pattern-static"
-          />
-        </div>
-        
-        {/* DNA pattern - explicitly static */}
-        <div className="pattern-static absolute inset-0" style={{ animation: 'none !important' }}>
-          <CommandPatternBackground 
-            variant="dna" 
-            color="violet" 
-            intensity="low" 
-            animated={false}
-            className="pattern-static"
           />
         </div>
       </div>
       
-      {/* Static gradient overlay to further reduce pattern visibility */}
+      {/* Gradient overlay for better text contrast */}
       <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-radial opacity-90"></div>
     </>
   );

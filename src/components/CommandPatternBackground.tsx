@@ -19,37 +19,34 @@ interface CommandPatternBackgroundProps {
 const CommandPatternBackground: React.FC<CommandPatternBackgroundProps> = ({
   variant = 'grid',
   intensity = 'medium',
-  animated = false, // Default to false to force all patterns to be static
+  animated = false,
   className = '',
   speed = 'medium',
-  color = 'blue',
+  color = 'violet', // Changed default to violet for consistency
 }) => {
-  // Override animation setting to always be false
-  const isAnimated = false; // Force false regardless of prop
-  
   // Get pattern component based on variant
   const getPatternComponent = () => {
     switch (variant) {
       case 'dots':
-        return <DotsPattern intensity={intensity} animated={false} color={color} speed={speed} />;
+        return <DotsPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
       case 'nodes':
-        return <NodesPattern intensity={intensity} animated={false} color={color} speed={speed} />;
+        return <NodesPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
       case 'matrix':
-        return <MatrixPattern intensity={intensity} animated={false} color={color} speed={speed} />;
+        return <MatrixPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
       case 'dna':
-        return <DnaPattern intensity={intensity} animated={false} color={color} speed={speed} />;
+        return <DnaPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
       case 'circuit':
-        return <CircuitPattern intensity={intensity} animated={false} color={color} speed={speed} />;
+        return <CircuitPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
       default: // grid
-        return <GridPattern intensity={intensity} animated={false} color={color} speed={speed} />;
+        return <GridPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
     }
   };
 
-  // Determine container class and ensure pattern-static class is applied
-  const containerClass = 'absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden pattern-static';
+  // Determine container class
+  const containerClass = 'absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden';
 
   return (
-    <div className={`${containerClass} ${className} pattern-static`} style={{animation: 'none !important'}}>
+    <div className={`${containerClass} ${className}`}>
       {getPatternComponent()}
     </div>
   );

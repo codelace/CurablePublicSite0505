@@ -54,13 +54,13 @@ const AboutHero = () => {
       {/* Status ticker */}
       <StatusTicker items={tickerItems} className="mb-6 sm:mb-8" />
       
-      {/* Enhanced mission panel with animated border */}
+      {/* Enhanced mission panel with animated border and consistent accent colors */}
       <div className="glass-panel p-4 sm:p-6 mb-8 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(142,228,175,0.15)] transition-all duration-500">
-        {/* Corner brackets for command center look */}
-        <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-bio-blue/60"></div>
-        <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-bio-blue/60"></div>
-        <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-bio-blue/60"></div>
-        <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-bio-blue/60"></div>
+        {/* Corner brackets for command center look - using consistent colors */}
+        <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-plasma-violet/60"></div>
+        <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-plasma-violet/60"></div>
+        <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-plasma-violet/60"></div>
+        <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-plasma-violet/60"></div>
         
         <p className="text-titanium-white/90 max-w-3xl mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base lg:text-lg font-light">{mission}</p>
         
