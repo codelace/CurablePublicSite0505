@@ -8,10 +8,10 @@ import ProfileCard from '@/components/ProfileCard';
 import SectionDivider from '@/components/SectionDivider';
 
 const statusItems = [
-  { label: 'API CONNECTED', status: 'connected' },
-  { label: 'DAO PROTOCOL v1.2.4', status: 'connected' },
-  { label: 'NETWORK UPTIME 99.8%', status: 'connected' },
-  { label: 'CONSENSUS PROTOCOL', status: 'pending' }
+  { label: 'API CONNECTED', status: 'connected' as const },
+  { label: 'DAO PROTOCOL v1.2.4', status: 'connected' as const },
+  { label: 'NETWORK UPTIME 99.8%', status: 'connected' as const },
+  { label: 'CONSENSUS PROTOCOL', status: 'pending' as const }
 ];
 
 const About = () => {
