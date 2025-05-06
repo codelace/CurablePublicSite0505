@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import SectionDivider from '@/components/SectionDivider';
-import useScrollReveal from '@/hooks/useScrollReveal';
 import AboutHero from '@/components/about/AboutHero';
 import ValuesSection from '@/components/about/ValuesSection';
 import TeamSection from '@/components/about/TeamSection';
@@ -15,11 +14,10 @@ const About = () => {
   // For profile card hover state
   const [hoveredProfile, setHoveredProfile] = useState<number | null>(null);
   
-  // For section scroll reveal animations
-  const visibleSections = useScrollReveal();
+  // For device detection
   const isMobile = useIsMobile();
 
-  // Force all sections to be visible initially
+  // Force all sections to be visible initially to improve perceived performance
   useEffect(() => {
     const sections = ['mission-section', 'values-section', 'team-section'];
     sections.forEach(id => {
@@ -33,13 +31,13 @@ const About = () => {
 
   return (
     <div className="container px-3 sm:px-4 py-3 sm:py-4 relative min-h-screen max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px]">
-      {/* Background patterns */}
-      <BackgroundPatterns />
+      {/* Background patterns - simplify for mobile */}
+      {!isMobile && <BackgroundPatterns />}
       
-      {/* Mission Section with HUD header */}
+      {/* Mission Section with video embed */}
       <AboutHero />
 
-      {/* Core values section with reduced vertical spacing */}
+      {/* Core values section */}
       <ValuesSection 
         isVisible={true} 
         hoveredValue={hoveredValue} 
@@ -48,7 +46,7 @@ const About = () => {
 
       <SectionDivider />
 
-      {/* Team Section with improved layout and reduced spacing */}
+      {/* Team Section */}
       <TeamSection 
         isVisible={true} 
         hoveredProfile={hoveredProfile} 

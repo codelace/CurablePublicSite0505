@@ -1,6 +1,6 @@
 
 @layer utilities {
-  /* All animations completely disabled */
+  /* All animations completely disabled for better mobile performance */
   .cursor-blink {
     animation: none !important;
   }
@@ -27,7 +27,7 @@
     animation: none !important;
   }
   
-  /* Keep scan line effect but not using it on background */
+  /* Keep scan line effect but disable animation */
   .scan-line {
     position: relative;
     overflow: hidden;
@@ -40,7 +40,7 @@
     left: 0;
     right: 0;
     height: 5px;
-    background: rgba(30, 174, 219, 0.5);
+    background: rgba(30, 174, 219, 0.2);
     animation: none !important;
   }
   
@@ -51,7 +51,19 @@
 
   /* Static pattern style - explicitly set as completely static */
   .pattern-static {
-    opacity: 0.2; /* Reduced opacity */
+    opacity: 0.1; /* Further reduced opacity for better performance */
     animation: none !important; /* Force no animation */
+  }
+  
+  /* Mobile optimization classes */
+  .mobile-no-animate {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .mobile-simplified {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
   }
 }
