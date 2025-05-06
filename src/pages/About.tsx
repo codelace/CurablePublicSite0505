@@ -1,61 +1,64 @@
 
 import React from 'react';
-import HeroStatus from '@/components/HeroStatus';
-import { values } from '@/data/values';
-import { people } from '@/data/people';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { mission } from '@/data/mission';
-import ValueCard from '@/components/ValueCard';
+import { people } from '@/data/people';
 import ProfileCard from '@/components/ProfileCard';
 import SectionDivider from '@/components/SectionDivider';
-
-const statusItems = [
-  { label: 'API CONNECTED', status: 'connected' as const },
-  { label: 'DAO PROTOCOL v1.2.4', status: 'connected' as const },
-  { label: 'NETWORK UPTIME 99.8%', status: 'connected' as const },
-  { label: 'CONSENSUS PROTOCOL', status: 'pending' as const }
-];
+import ValueCard from '@/components/ValueCard';
+import { values } from '@/data/values';
 
 const About = () => {
   return (
-    <div className="container mx-auto px-4 py-16 pt-24">
-      {/* Hero Status */}
-      <HeroStatus items={statusItems} />
-      
+    <div className="container px-4 py-8">
       {/* Mission Section */}
-      <section className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-titanium-white">
-          The Future of <span className="text-gradient-purple-blue">Biomedical Research</span> is Decentralized
+      <div className="mb-12 animate-fade-up">
+        <div className="inline-block px-3 py-1 mb-2 rounded-full font-mono text-xs bg-gunmetal-900/70 border border-graphite-700/40">
+          OUR MISSION
+        </div>
+        <h1 className="text-3xl font-bold text-titanium-white mb-4">
+          Building the Future of <span className="text-arc-blue">Biomedical Research</span>
         </h1>
-        <p className="text-lg text-titanium-white/90 leading-relaxed whitespace-pre-line">
-          {mission}
-        </p>
-      </section>
-      
-      {/* Values Grid */}
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center text-titanium-white">
-          Our <span className="text-plasma-violet">Core Values</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map(value => (
-            <ValueCard key={value.id} value={value} />
+        <p className="text-titanium-white/90 max-w-3xl mb-6">{mission.intro}</p>
+        
+        <div className="mt-4">
+          <a 
+            href="https://binding-db-integrator-1-codelace77.replit.app/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button 
+              className="bg-plasma-violet hover:bg-plasma-violet/90 text-white font-bold flex items-center gap-2"
+            >
+              The Next Frontier
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </a>
+        </div>
+      </div>
+
+      {/* Core values section */}
+      <div className="mb-16">
+        <h2 className="text-2xl font-bold text-titanium-white mb-6">Our Core Values</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {values.map((value, index) => (
+            <ValueCard key={index} {...value} />
           ))}
         </div>
-      </section>
-      
+      </div>
+
       <SectionDivider />
-      
-      {/* All Team Members Grid */}
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center text-titanium-white">
-          Our <span className="text-plasma-violet">Team</span>
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {people.map(person => (
-            <ProfileCard key={person.id} person={person} />
+
+      {/* Team Section */}
+      <div className="mb-16">
+        <h2 className="text-2xl font-bold text-titanium-white mb-6">Our Team</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {people.map((person, index) => (
+            <ProfileCard key={index} {...person} />
           ))}
         </div>
-      </section>
+      </div>
     </div>
   );
 };
