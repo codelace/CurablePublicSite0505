@@ -26,10 +26,10 @@ const WhitepaperSidebar: React.FC<WhitepaperSidebarProps> = ({
             key={index}
             onClick={() => onSectionClick(index)}
             className={`w-full text-left p-2 rounded transition-all flex items-center gap-2 hover:bg-dark-base 
-              ${activeSection === index ? 'text-arc-blue bg-dark-base' : 'text-titanium-white/70'}`}
+              ${activeSection === index ? 'text-bio-blue bg-dark-base' : 'text-titanium-white/70'}`}
           >
-            <span className={`inline-block w-2 h-2 rounded-full ${activeSection === index ? 'bg-arc-blue animate-pulse' : 'bg-titanium-white/30'}`}></span>
-            <span className="text-xs text-bio-green font-mono mr-1">{formatHex(index)}:</span>
+            <span className={`inline-block w-2 h-2 rounded-full ${activeSection === index ? 'bg-plasma-violet animate-pulse' : 'bg-titanium-white/30'}`}></span>
+            <span className="text-xs text-quantum-red font-mono mr-1">{formatHex(index)}:</span>
             <span className="font-mono text-sm truncate">{section.title.replace(/^\d+\.\s+/, '')}</span>
           </button>
         ))}
@@ -38,14 +38,14 @@ const WhitepaperSidebar: React.FC<WhitepaperSidebarProps> = ({
       <div className="mt-6 pt-6 border-t border-graphite-700/60">
         <Button 
           variant="outline" 
-          className="w-full mb-2 bg-dark-base border-graphite-700/60 hover:bg-gunmetal-900 hover:border-arc-blue/60 font-mono text-arc-blue flex items-center gap-2"
+          className="w-full mb-2 bg-dark-base border-graphite-700/60 hover:bg-gunmetal-900 hover:border-bio-blue/60 font-mono text-bio-blue flex items-center gap-2"
         >
           <Download className="w-4 h-4" />
           download.pdf
         </Button>
         <Button 
           variant="outline" 
-          className="w-full bg-dark-base border-graphite-700/60 hover:bg-gunmetal-900 hover:border-bio-green/60 font-mono text-bio-green flex items-center gap-2"
+          className="w-full bg-dark-base border-graphite-700/60 hover:bg-gunmetal-900 hover:border-plasma-violet/60 font-mono text-plasma-violet flex items-center gap-2"
         >
           <Github className="w-4 h-4" />
           view.github

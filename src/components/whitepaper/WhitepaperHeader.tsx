@@ -21,9 +21,9 @@ const WhitepaperHeader: React.FC<WhitepaperHeaderProps> = ({ fullTerminalText })
 
   return (
     <div className="bg-dark-surface border-b border-graphite-700/60 p-4 font-mono">
-      <div className="text-sm text-arc-blue whitespace-pre-line">{terminalText}</div>
+      <div className="text-sm text-bio-blue whitespace-pre-line">{terminalText}</div>
       <h1 className="text-3xl font-bold text-titanium-white mt-2 flex items-center gap-2 font-space">
-        <span className="text-arc-blue">&gt;</span> <span className="text-bio-green">CurableDAO</span> Whitepaper
+        <span className="text-bio-blue">&gt;</span> <span className="text-quantum-red">CurableDAO</span> Whitepaper
         <Badge className="ml-2 bg-plasma-violet/20 text-plasma-violet text-xs">v2.5</Badge>
       </h1>
     </div>

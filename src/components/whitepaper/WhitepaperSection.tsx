@@ -24,8 +24,8 @@ const WhitepaperSectionComponent: React.FC<WhitepaperSectionProps> = ({
         ${activeSection === index ? 'opacity-100' : 'opacity-80'}`}
     >
       <div className="font-mono bg-dark-surface border border-graphite-700/60 p-3 rounded flex items-center">
-        <span className="text-arc-blue mr-2">{formatHex(index)}:</span>
-        <h2 className="text-xl text-bio-green font-bold font-space">
+        <span className="text-bio-blue mr-2">{formatHex(index)}:</span>
+        <h2 className="text-xl text-quantum-red font-bold font-space">
           {section.title}
         </h2>
       </div>
