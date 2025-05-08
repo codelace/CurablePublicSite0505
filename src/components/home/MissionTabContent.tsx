@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Card from '@/components/Card';
 import GradientText from '@/components/ui/GradientText';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Flask, Shield, Zap } from 'lucide-react';
+import { ArrowRight, Beaker, Shield, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const MissionTabContent: React.FC = () => {
@@ -81,7 +81,7 @@ const MissionTabContent: React.FC = () => {
           {/* Feature boxes */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="bg-gunmetal-900/50 rounded-xl p-6 border border-graphite-700/30 hover:border-logo-blue/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(30,174,219,0.2)] group">
-              <Flask className="w-8 h-8 mb-4 text-bio-green group-hover:text-bio-green/100 group-hover:scale-110 transition-all duration-300" />
+              <Beaker className="w-8 h-8 mb-4 text-bio-green group-hover:text-bio-green/100 group-hover:scale-110 transition-all duration-300" />
               <h3 className="text-xl font-bold mb-2 text-titanium-white">Research Driven</h3>
               <p className="text-titanium-white/70">Validated data science models accelerate target discovery and drug design.</p>
             </div>

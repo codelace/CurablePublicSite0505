@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, FlaskConical, Shield, Users, ChevronRight, Star } from 'lucide-react';
+import { ArrowRight, Beaker, Shield, Users, ChevronRight, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { mission } from '@/data/mission';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
@@ -54,7 +54,7 @@ const AboutHero = () => {
       <div className="relative mb-6">
         <div className="absolute inset-0 bg-gradient-to-r from-logo-blue/5 via-plasma-violet/10 to-bio-green/5 rounded-lg blur-sm"></div>
         <CommandHUDHeader 
-          title={isMobile ? "The Future of Cures" : (displayTitle || fullTitle)} 
+          title={isMobile ? "The Future of Cures" : displayTitle || fullTitle} 
           subtitle={<>Decentralized <GradientText variant="blue-purple" animate>research & development</GradientText> protocol</>} 
           statusText="CURABLE CORE ACTIVE"
         />
@@ -87,7 +87,7 @@ const AboutHero = () => {
         {/* Enhanced feature icons */}
         <div className="flex flex-wrap gap-4 sm:gap-6 mb-8 justify-center sm:justify-start">
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gunmetal-900/60 border border-logo-blue/30 text-sm text-titanium-white/70 font-mono hover:text-bio-green hover:border-bio-green/50 transition-all duration-300 group cursor-default">
-            <FlaskConical className="w-4 h-4 text-bio-green group-hover:scale-125 transition-transform duration-300" />
+            <Beaker className="w-4 h-4 text-bio-green group-hover:scale-125 transition-transform duration-300" />
             <span>Research Driven</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gunmetal-900/60 border border-bio-blue/30 text-sm text-titanium-white/70 font-mono hover:text-bio-blue hover:border-bio-blue/50 transition-all duration-300 group cursor-default">
