@@ -1,6 +1,6 @@
 
 import { cn } from "@/lib/utils";
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
@@ -8,13 +8,13 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   hoverEffect?: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ 
+const Card = forwardRef<HTMLDivElement, CardProps>(({ 
   children, 
   className, 
   glowColor = 'blue', 
   hoverEffect = true, 
   ...props 
-}) => {
+}, ref) => {
   const [isHovered, setIsHovered] = useState(false);
   
   const glowStyles = {
@@ -27,6 +27,7 @@ const Card: React.FC<CardProps> = ({
   
   return (
     <div 
+      ref={ref}
       className={cn(
         "glass-panel p-4 relative transition-all duration-300",
         hoverEffect ? `hover-lift ${glowClass}` : '',
@@ -53,6 +54,8 @@ const Card: React.FC<CardProps> = ({
       {children}
     </div>
   );
-};
+});
+
+Card.displayName = "Card";
 
 export default Card;

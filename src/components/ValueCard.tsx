@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import Card from './Card';
 import { Value } from '@/data/values';
