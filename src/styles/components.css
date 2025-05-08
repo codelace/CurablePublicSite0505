@@ -51,7 +51,7 @@
   }
   
   .glass-panel {
-    @apply bg-gunmetal-900/60 backdrop-blur-lg border border-graphite-700/40 rounded-lg relative overflow-hidden;
+    @apply bg-gunmetal-900/60 backdrop-blur-lg border border-graphite-700/40 rounded-lg relative overflow-hidden transition-all duration-300 hover:border-logo-blue/20 hover:shadow-[0_0_15px_rgba(30,174,219,0.1)];
   }
   
   .glow-hover {
@@ -104,5 +104,30 @@
     100% {
       box-shadow: 0 4px 20px rgba(30,174,219,0.3);
     }
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg;
+  }
+  
+  /* Button hover effects */
+  .btn-hover {
+    @apply transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+  
+  /* Glassmorphism enhancements */
+  .glass-effect {
+    @apply bg-gunmetal-900/70 backdrop-blur-md border border-white/10;
+  }
+  
+  /* Image hover effects */
+  .img-hover {
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-lg;
+  }
+  
+  /* Text gradient effects */
+  .text-gradient {
+    @apply bg-gradient-to-r from-logo-blue via-plasma-violet to-quantum-red bg-clip-text text-transparent;
   }
 }

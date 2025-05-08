@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Badge } from "@/components/ui/badge";
 
@@ -18,6 +18,8 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
   variant = 'primary',
   className = '',
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
   // Color variations
   const getColors = () => {
     switch (variant) {
@@ -25,19 +27,22 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
         return {
           accent: 'text-quantum-red',
           glow: 'shadow-quantum-red/20',
-          border: 'border-quantum-red/30'
+          border: 'border-quantum-red/30',
+          hover: 'hover:border-quantum-red/50 hover:shadow-[0_0_20px_rgba(255,51,102,0.3)]'
         };
       case 'accent':
         return {
           accent: 'text-plasma-violet',
           glow: 'shadow-plasma-violet/20',
-          border: 'border-plasma-violet/30'
+          border: 'border-plasma-violet/30',
+          hover: 'hover:border-plasma-violet/50 hover:shadow-[0_0_20px_rgba(161,98,255,0.3)]'
         };
       default:
         return {
           accent: 'text-arc-blue',
           glow: 'shadow-arc-blue/20',
-          border: 'border-arc-blue/30'
+          border: 'border-arc-blue/30',
+          hover: 'hover:border-arc-blue/50 hover:shadow-[0_0_20px_rgba(30,174,219,0.3)]'
         };
     }
   };
@@ -61,7 +66,7 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
                 <TooltipTrigger asChild>
                   <Badge 
                     variant="outline" 
-                    className={`bg-dark-surface/60 ${colors.border} hover:${colors.border} cursor-help`}
+                    className={`bg-dark-surface/60 ${colors.border} hover:${colors.border} cursor-help transition-all duration-300`}
                   >
                     <span className={colors.accent}>{metric}</span>: 
                     <span className="ml-1 text-titanium-white/70">{Math.floor(Math.random() * 90) + 10}%</span>
@@ -76,14 +81,28 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
         </div>
       </div>
       
-      <div className={`bg-dark-surface/60 backdrop-blur-lg border ${colors.border} rounded-lg p-4 ${colors.glow} shadow-lg`}>
+      <div 
+        className={`bg-dark-surface/60 backdrop-blur-lg border ${colors.border} rounded-lg p-4 ${colors.glow} shadow-lg transition-all duration-300 ${colors.hover}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-titanium-white mb-2 font-space flex items-center gap-2 break-words">
-          <span className={colors.accent}>&gt;</span> {title}
+          <span className={`${colors.accent} ${isHovered ? 'animate-pulse' : ''}`}>&gt;</span> {title}
         </h1>
         {subtitle && (
           <p className="text-titanium-white/70 max-w-3xl font-mono text-sm">
             <span className="text-bio-green">#</span> {subtitle}
           </p>
+        )}
+        
+        {/* Show corner accents on hover */}
+        {isHovered && (
+          <>
+            <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-logo-blue/60 rounded-tl"></div>
+            <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-logo-blue/60 rounded-tr"></div>
+            <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-logo-blue/60 rounded-bl"></div>
+            <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-logo-blue/60 rounded-br"></div>
+          </>
         )}
       </div>
     </div>

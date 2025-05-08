@@ -294,6 +294,60 @@ export type Database = {
           },
         ]
       }
+      chat_memories: {
+        Row: {
+          content: string
+          created_at: string | null
+          embedding: string | null
+          id: string
+          metadata: Json | null
+          model_type: string
+          user_id: string | null
+        }
+        Insert: {
+          content: string
+          created_at?: string | null
+          embedding?: string | null
+          id?: string
+          metadata?: Json | null
+          model_type: string
+          user_id?: string | null
+        }
+        Update: {
+          content?: string
+          created_at?: string | null
+          embedding?: string | null
+          id?: string
+          metadata?: Json | null
+          model_type?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      conversations: {
+        Row: {
+          created_at: string
+          id: string
+          title: string
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          title?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          title?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       data_sources: {
         Row: {
           api_version: string | null
@@ -321,6 +375,39 @@ export type Database = {
           type?: string
           updated_at?: string | null
           url?: string | null
+        }
+        Relationships: []
+      }
+      digests: {
+        Row: {
+          created_at: string | null
+          date: string
+          id: string
+          insights: Json
+          new_knowledge: Json
+          sent_at: string | null
+          tasks_completed: Json
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          date?: string
+          id?: string
+          insights?: Json
+          new_knowledge?: Json
+          sent_at?: string | null
+          tasks_completed?: Json
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          date?: string
+          id?: string
+          insights?: Json
+          new_knowledge?: Json
+          sent_at?: string | null
+          tasks_completed?: Json
+          user_id?: string | null
         }
         Relationships: []
       }
@@ -430,6 +517,107 @@ export type Database = {
             columns: ["assay_id"]
             isOneToOne: false
             referencedRelation: "assays"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      hivemind_memory: {
+        Row: {
+          content: string
+          created_at: string | null
+          embedding: string
+          id: number
+          role: string
+        }
+        Insert: {
+          content: string
+          created_at?: string | null
+          embedding: string
+          id?: number
+          role: string
+        }
+        Update: {
+          content?: string
+          created_at?: string | null
+          embedding?: string
+          id?: number
+          role?: string
+        }
+        Relationships: []
+      }
+      memory_items: {
+        Row: {
+          content: string | null
+          created_at: string
+          embedding: string | null
+          id: string
+          metadata: Json | null
+          snippet: string
+          source_url: string | null
+          title: string
+          type: string
+          user_id: string | null
+        }
+        Insert: {
+          content?: string | null
+          created_at?: string
+          embedding?: string | null
+          id?: string
+          metadata?: Json | null
+          snippet: string
+          source_url?: string | null
+          title: string
+          type: string
+          user_id?: string | null
+        }
+        Update: {
+          content?: string | null
+          created_at?: string
+          embedding?: string | null
+          id?: string
+          metadata?: Json | null
+          snippet?: string
+          source_url?: string | null
+          title?: string
+          type?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      messages: {
+        Row: {
+          content: string
+          conversation_id: string
+          created_at: string
+          embedding: string | null
+          id: string
+          provider: string | null
+          type: string
+        }
+        Insert: {
+          content: string
+          conversation_id: string
+          created_at?: string
+          embedding?: string | null
+          id?: string
+          provider?: string | null
+          type: string
+        }
+        Update: {
+          content?: string
+          conversation_id?: string
+          created_at?: string
+          embedding?: string | null
+          id?: string
+          provider?: string | null
+          type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "messages_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "conversations"
             referencedColumns: ["id"]
           },
         ]
@@ -603,6 +791,36 @@ export type Database = {
           },
         ]
       }
+      user_api_keys: {
+        Row: {
+          anthropic_key: string | null
+          created_at: string | null
+          id: string
+          openai_key: string | null
+          perplexity_key: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          anthropic_key?: string | null
+          created_at?: string | null
+          id?: string
+          openai_key?: string | null
+          perplexity_key?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          anthropic_key?: string | null
+          created_at?: string | null
+          id?: string
+          openai_key?: string | null
+          perplexity_key?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_profiles: {
         Row: {
           active: boolean | null
@@ -740,7 +958,142 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      binary_quantize: {
+        Args: { "": string } | { "": unknown }
+        Returns: unknown
+      }
+      halfvec_avg: {
+        Args: { "": number[] }
+        Returns: unknown
+      }
+      halfvec_out: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      halfvec_send: {
+        Args: { "": unknown }
+        Returns: string
+      }
+      halfvec_typmod_in: {
+        Args: { "": unknown[] }
+        Returns: number
+      }
+      hnsw_bit_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      hnsw_halfvec_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      hnsw_sparsevec_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      hnswhandler: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      ivfflat_bit_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      ivfflat_halfvec_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      ivfflathandler: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      l2_norm: {
+        Args: { "": unknown } | { "": unknown }
+        Returns: number
+      }
+      l2_normalize: {
+        Args: { "": string } | { "": unknown } | { "": unknown }
+        Returns: string
+      }
+      search_chat_memories: {
+        Args: {
+          query_embedding: string
+          match_threshold: number
+          match_count: number
+        }
+        Returns: {
+          id: string
+          content: string
+          model_type: string
+          created_at: string
+          similarity: number
+        }[]
+      }
+      search_memory: {
+        Args: {
+          query_embedding: string
+          match_threshold: number
+          match_count: number
+        }
+        Returns: {
+          id: string
+          type: string
+          title: string
+          snippet: string
+          created_at: string
+          similarity: number
+        }[]
+      }
+      search_messages: {
+        Args: {
+          query_embedding: string
+          match_threshold: number
+          match_count: number
+        }
+        Returns: {
+          id: string
+          content: string
+          type: string
+          provider: string
+          created_at: string
+          similarity: number
+        }[]
+      }
+      sparsevec_out: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      sparsevec_send: {
+        Args: { "": unknown }
+        Returns: string
+      }
+      sparsevec_typmod_in: {
+        Args: { "": unknown[] }
+        Returns: number
+      }
+      vector_avg: {
+        Args: { "": number[] }
+        Returns: string
+      }
+      vector_dims: {
+        Args: { "": string } | { "": unknown }
+        Returns: number
+      }
+      vector_norm: {
+        Args: { "": string }
+        Returns: number
+      }
+      vector_out: {
+        Args: { "": string }
+        Returns: unknown
+      }
+      vector_send: {
+        Args: { "": string }
+        Returns: string
+      }
+      vector_typmod_in: {
+        Args: { "": unknown[] }
+        Returns: number
+      }
     }
     Enums: {
       [_ in never]: never

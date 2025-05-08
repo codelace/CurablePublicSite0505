@@ -35,9 +35,13 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         target="_blank" 
         rel="noopener noreferrer"
         className={dnaButtonClasses}
-        style={{ width: '90px' }} // Force exact width to match other buttons
+        style={{ width: '90px' }}
       >
-        <span className="text-xs">⚛️🧬⚗️</span>
+        <span className="text-xs flex items-center gap-0.5">
+          <span className="animate-pulse">⚛️</span>
+          <span>🧬</span>
+          <span>⚗️</span>
+        </span>
       </a>
       
       <Link to="/join" className={joinButtonClasses}>
@@ -45,7 +49,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
       </Link>
       
       <Link to="/novel" className={novelButtonClasses}>
-        NOVEL CURE APP
+        NOVEL CURE
       </Link>
     </div>
   );

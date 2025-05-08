@@ -1,14 +1,15 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Card from './Card';
 import { Value } from '@/data/values';
 
 interface ValueCardProps {
   value: Value;
-  isHovered?: boolean;
 }
 
-const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
+const ValueCard: React.FC<ValueCardProps> = ({ value }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
   const iconMap = {
     transparency: (
       <svg className={`w-8 h-8 text-plasma-violet transition-transform duration-300 ${isHovered ? 'scale-110' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +41,12 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
   };
 
   return (
-    <Card className={`flex flex-col items-center text-center h-full p-3 transition-all duration-300 ${isHovered ? 'shadow-[0_0_20px_rgba(91,192,235,0.3)]' : ''}`}>
+    <Card 
+      className="flex flex-col items-center text-center h-full p-3 transition-all duration-300"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      glowColor={value.icon === 'rigor' || value.icon === 'access' ? 'blue' : 'purple'}
+    >
       <div className="mb-2">
         {iconMap[value.icon as keyof typeof iconMap]}
       </div>
