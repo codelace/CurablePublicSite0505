@@ -1,0 +1,64 @@
+
+@layer utilities {
+  /* Cursor blink animation */
+  .cursor-blink {
+    animation: blink 1s step-end infinite;
+  }
+  
+  @keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  /* Enhanced pulse animations with better performance */
+  .animate-pulse-dot {
+    animation: pulse-dot 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 3s infinite ease-in-out;
+  }
+  
+  @keyframes pulse-dot {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.35); opacity: 1; }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.6; }
+  }
+  
+  /* Optimized scan line effect */
+  .scan-line {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(30, 174, 219, 0.2);
+    animation: scan 3s linear infinite;
+    will-change: transform;
+  }
+  
+  @keyframes scan {
+    0% { top: -10px; }
+    100% { top: 100%; }
+  }
+
+  /* Elegant static pattern style with subtle hover animation */
+  .pattern-static {
+    opacity: 0.08;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .pattern-static:hover {
+    opacity: 0.15;
+  }
+}

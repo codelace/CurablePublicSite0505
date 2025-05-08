@@ -1,0 +1,77 @@
+
+@layer utilities {
+  /* Elegant floating animation for subtle movement */
+  .float-animation {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  /* Orbit animation for particles */
+  .animate-orbit {
+    animation: orbit 3s linear infinite;
+    transform-origin: center;
+  }
+  
+  @keyframes orbit {
+    0% { transform: rotate(0deg) translateX(12px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(12px) rotate(-360deg); }
+  }
+  
+  /* Data visualization expanding bar */
+  .animate-expand {
+    animation: expand 2s ease-out forwards;
+    transform-origin: left;
+  }
+  
+  @keyframes expand {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+  }
+  
+  /* Data flow animation */
+  .data-flow {
+    animation: dataFlow 5s linear infinite;
+    background-size: 200% 100%;
+  }
+  
+  @keyframes dataFlow {
+    0% { background-position: 0% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  /* Circuit trace animation */
+  .circuit-trace {
+    stroke-dasharray: 10;
+    stroke-dashoffset: 10;
+    animation: circuitTrace 3s linear infinite;
+  }
+  
+  @keyframes circuitTrace {
+    to { stroke-dashoffset: 0; }
+  }
+  
+  /* Smooth appearance animation */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

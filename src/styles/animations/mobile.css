@@ -1,0 +1,16 @@
+
+@layer utilities {
+  /* Mobile optimization classes */
+  @media (max-width: 768px) {
+    .mobile-no-animate {
+      animation: none !important;
+      transition: none !important;
+    }
+    
+    .mobile-simplified {
+      box-shadow: none !important;
+      text-shadow: none !important;
+      backdrop-filter: none !important;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+
+@layer utilities {
+  /* Electric pulse animation */
+  .electric-pulse {
+    animation: electricPulse 2s infinite;
+  }
+  
+  @keyframes electricPulse {
+    0%, 100% { filter: drop-shadow(0 0 2px rgba(30, 174, 219, 0.7)); }
+    50% { filter: drop-shadow(0 0 8px rgba(30, 174, 219, 1)); }
+  }
+  
+  /* Quantum flicker for future tech elements */
+  .quantum-flicker {
+    animation: quantumFlicker 4s infinite;
+  }
+  
+  @keyframes quantumFlicker {
+    0%, 100% { opacity: 1; }
+    25% { opacity: 0.7; }
+    30% { opacity: 0.9; }
+    35% { opacity: 0.7; }
+    40% { opacity: 1; }
+    45% { opacity: 0.8; }
+    50% { opacity: 1; }
+    75% { opacity: 0.9; }
+    80% { opacity: 0.7; }
+    85% { opacity: 0.9; }
+  }
+
+  /* Elegant glow pulse for highlights */
+  .glow-pulse {
+    animation: glowPulse 3s infinite alternate;
+  }
+  
+  @keyframes glowPulse {
+    0% { box-shadow: 0 0 5px rgba(30, 174, 219, 0.3); }
+    100% { box-shadow: 0 0 15px rgba(30, 174, 219, 0.6); }
+  }
+  
+  /* Force field shield effect */
+  .force-field {
+    animation: forceField 4s ease-in-out infinite;
+  }
+  
+  @keyframes forceField {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.6; transform: scale(1.05); }
+  }
+}

@@ -1,0 +1,101 @@
+
+@layer utilities {
+  /* Enhanced button hover effect with light sweep */
+  .btn-hover-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-hover-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.5s;
+    z-index: 1;
+  }
+  
+  .btn-hover-effect:hover::before {
+    left: 100%;
+  }
+  
+  /* Beautiful border glow effect */
+  .border-glow {
+    position: relative;
+  }
+  
+  .border-glow::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      45deg,
+      rgba(30, 174, 219, 0.5),
+      rgba(161, 98, 255, 0.5),
+      rgba(255, 51, 102, 0.5),
+      rgba(30, 174, 219, 0.5)
+    );
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .border-glow:hover::after {
+    opacity: 1;
+  }
+  
+  /* Hover rise animation - sleek and subtle */
+  .hover-rise {
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .hover-rise:hover {
+    transform: translateY(-6px);
+  }
+
+  /* Magnetic hover effect */
+  .magnetic-hover {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .magnetic-hover:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+  
+  /* Shine effect */
+  .shine-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shine-effect::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(30deg);
+    animation: shine 4s ease-in-out infinite;
+  }
+  
+  @keyframes shine {
+    0% { transform: rotate(30deg) translateX(-300%); }
+    30%, 100% { transform: rotate(30deg) translateX(500%); }
+  }
+}
