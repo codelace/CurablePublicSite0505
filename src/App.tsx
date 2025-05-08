@@ -6,6 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import CommandPatternBackground from "./components/CommandPatternBackground";
+import ParticleBackground from "./components/ParticleBackground";
+import Index from "./pages/Index";
 import About from "./pages/About";
 import Whitepaper from "./pages/Whitepaper";
 import Tokenomics from "./pages/Tokenomics";
@@ -24,13 +26,14 @@ const App = () => (
         <BrowserRouter>
           <div className="flex min-h-screen w-full bg-gunmetal-900 text-titanium-white">
             <div className="flex-1 relative overflow-x-hidden">
-              {/* We're removing this static background as individual pages will handle their own backgrounds */}
-              <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-radial from-transparent to-dark-base/90"></div>
+              {/* Base background gradient */}
+              <div className="fixed inset-0 bg-gradient-radial from-dark-surface/20 to-dark-base/90 pointer-events-none"></div>
+              
               <Navbar />
               <main className="pt-16 sm:pt-20 relative z-10">
                 <Routes>
-                  <Route path="/" element={<About />} />
-                  <Route path="/about" element={<Navigate to="/" replace />} />
+                  <Route path="/" element={<Index />} />
+                  <Route path="/about" element={<About />} />
                   <Route path="/whitepaper" element={<Whitepaper />} />
                   <Route path="/tokenomics" element={<Tokenomics />} />
                   <Route path="/join" element={<Join />} />

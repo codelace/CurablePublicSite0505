@@ -1,5 +1,7 @@
-import React, { useRef, useEffect } from 'react';
+
+import React, { useRef, useEffect, useState } from 'react';
 import Card from './Card';
+import GradientText from './ui/GradientText';
 import { Value } from '@/data/values';
 
 interface ValueCardProps {
@@ -9,6 +11,7 @@ interface ValueCardProps {
 
 const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
   const cardRef = useRef<HTMLDivElement>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
   
   // Add magnetic movement effect on hover
   useEffect(() => {
@@ -36,11 +39,15 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
     document.addEventListener('mousemove', handleMouseMove);
     cardRef.current.addEventListener('mouseleave', handleMouseLeave);
     
+    // Start animation sequence
+    setIsAnimating(true);
+    
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       if (cardRef.current) {
         cardRef.current.removeEventListener('mouseleave', handleMouseLeave);
       }
+      setIsAnimating(false);
     };
   }, [isHovered]);
   
@@ -82,28 +89,28 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
           gradientFrom: 'from-logo-blue/10',
           gradientTo: 'to-bio-blue/5',
           ringColor: 'border-logo-blue/40',
-          glowColor: 'shadow-[0_0_15px_rgba(30,174,219,0.3)]'
+          glowColor: 'blue'
         };
       case 'access':
         return {
           gradientFrom: 'from-bio-blue/10',
           gradientTo: 'to-bio-green/5',
           ringColor: 'border-bio-blue/40',
-          glowColor: 'shadow-[0_0_15px_rgba(91,192,235,0.3)]'
+          glowColor: 'blue'
         };
       case 'governance':
         return {
           gradientFrom: 'from-plasma-violet/10',
           gradientTo: 'to-quantum-red/5',
           ringColor: 'border-plasma-violet/40',
-          glowColor: 'shadow-[0_0_15px_rgba(161,98,255,0.3)]'
+          glowColor: 'purple'
         };
       default: // transparency
         return {
           gradientFrom: 'from-plasma-violet/10',
           gradientTo: 'to-logo-blue/5',
           ringColor: 'border-plasma-violet/40',
-          glowColor: 'shadow-[0_0_15px_rgba(161,98,255,0.3)]'
+          glowColor: 'purple'
         };
     }
   };
@@ -113,12 +120,14 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
   return (
     <Card 
       ref={cardRef}
-      className={`flex flex-col items-center text-center h-full p-3 transition-all duration-300 ${isHovered ? 'transform -translate-y-2' : ''}`}
-      glowColor={value.icon === 'rigor' || value.icon === 'access' ? 'blue' : 'purple'}
+      className={`flex flex-col items-center text-center h-full p-3 transition-all duration-500 ${
+        isHovered ? 'transform -translate-y-2' : ''
+      }`}
+      glowColor={colorScheme.glowColor === 'blue' ? 'blue' : 'purple'}
     >
       {/* Enhanced background effect */}
       {isHovered && (
-        <div className={`absolute inset-0 bg-gradient-to-br ${colorScheme.gradientFrom} ${colorScheme.gradientTo} rounded-lg transition-opacity duration-300 opacity-70`}></div>
+        <div className={`absolute inset-0 bg-gradient-to-br ${colorScheme.gradientFrom} ${colorScheme.gradientTo} rounded-lg transition-opacity duration-500 opacity-70`}></div>
       )}
       
       <div className={`mb-3 relative z-10 ${isHovered ? 'animate-pulse-dot' : ''}`}>
@@ -134,9 +143,16 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
         )}
       </div>
       
-      <h3 className={`text-lg font-bold mb-2 transition-all duration-300 ${isHovered ? 'text-gradient-purple-blue' : 'text-titanium-white'} relative z-10`}>
-        {value.title}
+      <h3 className={`text-lg font-bold mb-2 transition-all duration-300 relative z-10 ${isHovered ? '' : 'text-titanium-white'}`}>
+        {isHovered ? (
+          <GradientText variant={colorScheme.glowColor === 'blue' ? 'blue-purple' : 'purple-red'} animate={true}>
+            {value.title}
+          </GradientText>
+        ) : (
+          value.title
+        )}
       </h3>
+      
       <p className={`text-titanium-white/80 text-xs mb-2 transition-opacity duration-300 ${isHovered ? 'opacity-90' : 'opacity-75'} relative z-10`}>
         {value.description}
       </p>
@@ -161,16 +177,6 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
             ></div>
           </div>
         </div>
-      )}
-      
-      {/* Add corner accents on hover */}
-      {isHovered && (
-        <>
-          <div className={`absolute top-0 left-0 w-3 h-3 border-t border-l ${colorScheme.ringColor} rounded-tl-md`}></div>
-          <div className={`absolute top-0 right-0 w-3 h-3 border-t border-r ${colorScheme.ringColor} rounded-tr-md`}></div>
-          <div className={`absolute bottom-0 left-0 w-3 h-3 border-b border-l ${colorScheme.ringColor} rounded-bl-md`}></div>
-          <div className={`absolute bottom-0 right-0 w-3 h-3 border-b border-r ${colorScheme.ringColor} rounded-br-md`}></div>
-        </>
       )}
     </Card>
   );
