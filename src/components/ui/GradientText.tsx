@@ -7,13 +7,15 @@ interface GradientTextProps {
   variant?: 'blue-purple' | 'purple-red' | 'green-blue' | 'multi';
   className?: string;
   animate?: boolean;
+  style?: React.CSSProperties;
 }
 
 const GradientText = ({ 
   children, 
   variant = 'blue-purple', 
   className = '', 
-  animate = false 
+  animate = false,
+  style
 }: GradientTextProps) => {
   const getGradientClass = () => {
     switch (variant) {
@@ -36,6 +38,7 @@ const GradientText = ({
         animate && 'animate-text-shimmer bg-[length:200%_auto]',
         className
       )}
+      style={style}
     >
       {children}
     </span>
