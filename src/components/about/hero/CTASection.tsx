@@ -17,8 +17,7 @@ const CTASection: React.FC<CTASectionProps> = ({ isVisible }) => {
       <GlassPanel 
         borderGlow="multi" 
         hover={true}
-        intensity="high"
-        animated={true}
+        intensity="low"
       >
         {isMobile ? <MobileCTA /> : <DesktopCTA />}
       </GlassPanel>

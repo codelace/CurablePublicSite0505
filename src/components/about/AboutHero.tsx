@@ -21,13 +21,13 @@ const AboutHero = () => {
     '🧬 Gene sequence analysis complete'
   ]);
   
-  // Staggered animation for elements
+  // Simple staggered animation with slightly faster timing
   useEffect(() => {
     const elements = ['header', 'ticker', 'mission', 'features', 'cta'];
     
     const showElements = async () => {
       for (const element of elements) {
-        await new Promise(resolve => setTimeout(resolve, 200));
+        await new Promise(resolve => setTimeout(resolve, 180));
         setDisplayedElements(prev => [...prev, element]);
       }
     };

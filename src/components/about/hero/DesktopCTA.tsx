@@ -4,18 +4,18 @@ import { ArrowRight } from 'lucide-react';
 
 const DesktopCTA: React.FC = () => {
   return (
-    <div className="mt-10 flex justify-center sm:justify-start">
-      {/* Enhanced glowing CTA button */}
+    <div className="mt-8 flex justify-center sm:justify-start">
+      {/* Cleaner, more subtle CTA button */}
       <div className="relative group">
-        <div className="absolute -inset-1 bg-gradient-to-r from-logo-blue via-plasma-violet to-bio-green rounded-lg blur opacity-30 group-hover:opacity-80 transition duration-500 animate-pulse-glow"></div>
+        <div className="absolute -inset-1 bg-gradient-to-r from-logo-blue/30 via-plasma-violet/30 to-bio-green/30 rounded-lg blur-sm opacity-30 group-hover:opacity-60 transition duration-500"></div>
         <a 
           href="https://binding-db-integrator-1-codelace77.replit.app/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="relative bg-gradient-to-br from-gunmetal-900 to-dark-surface hover:from-dark-surface hover:to-gunmetal-900 text-white font-bold flex items-center gap-3 font-mono border-2 border-logo-blue/50 transition-all duration-500 text-base py-6 px-10 rounded-lg hover:scale-105"
+          className="relative bg-dark-surface hover:bg-gunmetal-900 text-white font-medium flex items-center gap-3 font-mono border border-logo-blue/30 transition-all duration-500 text-base py-4 px-8 rounded-lg hover:scale-[1.03]"
         >
-          <span className="bg-gradient-to-r from-logo-blue via-plasma-violet to-bio-green bg-clip-text text-transparent animate-text-shimmer bg-[length:200%_auto]">launch --next-frontier</span>
-          <ArrowRight className="w-6 h-6 text-logo-blue group-hover:translate-x-1 transition-transform duration-300" />
+          <span className="bg-gradient-to-r from-logo-blue/90 via-plasma-violet/90 to-bio-green/90 bg-clip-text text-transparent">launch --next-frontier</span>
+          <ArrowRight className="w-5 h-5 text-logo-blue/80 group-hover:translate-x-1 transition-transform duration-300" />
         </a>
       </div>
     </div>

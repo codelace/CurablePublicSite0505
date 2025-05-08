@@ -10,7 +10,7 @@ interface HeroHeaderProps {
 const HeroHeader: React.FC<HeroHeaderProps> = ({ isVisible }) => {
   return (
     <div className={`relative mb-6 transform transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-      <div className="absolute inset-0 bg-gradient-to-r from-logo-blue/15 via-plasma-violet/20 to-bio-green/15 rounded-xl blur-md"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-logo-blue/10 via-plasma-violet/15 to-bio-green/10 rounded-xl blur-md"></div>
       <CommandHUDHeader 
         title={
           <>
