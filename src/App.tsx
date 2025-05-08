@@ -33,6 +33,7 @@ const App = () => (
               <main className="pt-16 sm:pt-20 relative z-10">
                 <Routes>
                   <Route path="/" element={<Index />} />
+                  <Route path="/home" element={<Navigate to="/" replace />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/whitepaper" element={<Whitepaper />} />
                   <Route path="/tokenomics" element={<Tokenomics />} />
