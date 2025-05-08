@@ -28,4 +28,32 @@
   .touch-target {
     @apply min-h-[44px] min-w-[44px];
   }
+  
+  /* New: Responsive card grid */
+  .card-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6;
+  }
+  
+  /* New: Adaptive section margins */
+  .section-spacing {
+    @apply my-8 sm:my-12 md:my-16 lg:my-20;
+  }
+  
+  /* New: Responsive container with max-width */
+  .container-adaptive {
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: min(1200px, 95vw);
+  }
+  
+  /* New: Mobile-first interactive elements */
+  .mobile-interactive {
+    @apply active:scale-95 hover:bg-white/5 transition-all duration-200;
+  }
+  
+  /* New: Mobile menu container */
+  .mobile-menu {
+    @apply fixed inset-0 bg-dark-base/95 backdrop-blur-lg z-50 p-5 overflow-y-auto
+           flex flex-col transition-all duration-300;
+    transform-origin: top right;
+  }
 }

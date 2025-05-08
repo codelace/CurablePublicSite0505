@@ -32,4 +32,59 @@
   .glass-panel {
     @apply bg-gunmetal-900/60 backdrop-blur-lg border border-graphite-700/40 rounded-lg relative overflow-hidden transition-all duration-300 hover:border-logo-blue/20 hover:shadow-[0_0_15px_rgba(30,174,219,0.1)];
   }
+  
+  /* New: Interactive data card with highlight scanning effect */
+  .data-card {
+    @apply bg-dark-base/80 border border-logo-blue/20 rounded-lg p-4 relative overflow-hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .data-card::before {
+    content: '';
+    @apply absolute top-0 left-0 h-full w-1 bg-logo-blue/30 opacity-0 transition-all duration-500;
+  }
+  
+  .data-card:hover {
+    @apply border-logo-blue/50 shadow-[0_5px_15px_rgba(30,174,219,0.15)];
+    transform: translateY(-5px);
+  }
+  
+  .data-card:hover::before {
+    @apply opacity-100;
+    animation: data-scan 2s infinite;
+  }
+  
+  @keyframes data-scan {
+    0% { left: 0; opacity: 0.3; }
+    50% { opacity: 0.5; }
+    100% { left: 100%; opacity: 0.3; }
+  }
+  
+  /* New: Quantum effect card with particle animation */
+  .quantum-card {
+    @apply bg-gradient-to-br from-dark-surface to-graphite-700/20 backdrop-blur-sm 
+           border border-plasma-violet/20 rounded-xl relative overflow-hidden;
+    transition: all 0.4s ease-out;
+  }
+  
+  .quantum-card::after {
+    content: '';
+    @apply absolute inset-0 bg-plasma-violet/5 opacity-0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+  
+  .quantum-card:hover {
+    @apply border-plasma-violet/40 shadow-[0_0_25px_rgba(161,98,255,0.2)];
+  }
+  
+  .quantum-card:hover::after {
+    @apply opacity-100;
+    animation: quantum-particles 3s infinite;
+  }
+  
+  @keyframes quantum-particles {
+    0%, 100% { background-size: 100% 100%; }
+    50% { background-size: 120% 120%; background-position: center; }
+  }
 }

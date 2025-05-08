@@ -69,4 +69,55 @@
   .btn-hover:hover::after {
     @apply opacity-100;
   }
+
+  /* New: Cybernetic button with pulse effect */
+  .btn-cyber {
+    @apply relative bg-gunmetal-900 border border-logo-blue/30 text-logo-blue font-mono 
+           px-4 py-2 rounded overflow-hidden transition-all duration-300;
+  }
+
+  .btn-cyber::before {
+    content: "";
+    @apply absolute inset-0 bg-logo-blue/5 opacity-0 transition-opacity duration-300;
+  }
+
+  .btn-cyber:hover {
+    @apply border-logo-blue/80 shadow-[0_0_12px_rgba(30,174,219,0.3)];
+  }
+
+  .btn-cyber:hover::before {
+    @apply opacity-100;
+    animation: cyber-pulse 2s infinite;
+  }
+
+  @keyframes cyber-pulse {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* New: Quantum button with energy effect */
+  .btn-quantum {
+    @apply relative bg-dark-surface border border-plasma-violet/30 text-plasma-violet font-bold
+           px-5 py-2 rounded-md overflow-hidden transition-all duration-300;
+  }
+
+  .btn-quantum::after {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-r from-plasma-violet/10 to-quantum-red/10 opacity-0;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-quantum:hover {
+    @apply border-plasma-violet/70 shadow-[0_0_15px_rgba(161,98,255,0.3)];
+  }
+
+  .btn-quantum:hover::after {
+    @apply opacity-100;
+    animation: quantum-shift 3s infinite alternate;
+  }
+
+  @keyframes quantum-shift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+  }
 }

@@ -1,0 +1,65 @@
+
+@layer utilities {
+  /* Dynamic content reveal animations */
+  .reveal-content {
+    @apply opacity-0;
+    animation: reveal-content 0.8s ease-out forwards;
+    animation-delay: calc(var(--reveal-delay, 0) * 100ms);
+  }
+  
+  @keyframes reveal-content {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Typing animation for terminal-like text */
+  .typing-cursor {
+    border-right: 2px solid currentColor;
+    animation: typing-cursor 0.8s step-end infinite;
+  }
+  
+  @keyframes typing-cursor {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: currentColor; }
+  }
+  
+  /* Perspective tilt effect for cards */
+  .perspective-tilt {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+  }
+  
+  .perspective-tilt:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+  }
+  
+  /* Particle flow animation */
+  .particle-flow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 60%, rgba(30, 174, 219, 0.15) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .particle-flow:hover::before {
+    opacity: 1;
+    animation: particle-pulse 3s infinite ease-in-out;
+  }
+  
+  @keyframes particle-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+}

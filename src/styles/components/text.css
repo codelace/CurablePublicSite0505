@@ -52,4 +52,55 @@
   .terminal-text:hover::after {
     @apply opacity-100;
   }
+  
+  /* New: Data stream text effect */
+  .data-stream {
+    @apply relative font-mono text-bio-blue inline-block overflow-hidden;
+  }
+  
+  .data-stream::before {
+    content: attr(data-text);
+    @apply absolute inset-0 text-titanium-white/20 overflow-hidden;
+    width: 0%;
+    animation: data-typing 4s steps(40) infinite;
+  }
+  
+  @keyframes data-typing {
+    0%, 100% { width: 0; }
+    50%, 70% { width: 100%; }
+  }
+  
+  /* New: Quantum fluctuation text */
+  .quantum-text {
+    @apply relative text-plasma-violet transition-all duration-300;
+    text-shadow: 0 0 5px rgba(161, 98, 255, 0.3);
+  }
+  
+  .quantum-text:hover {
+    text-shadow: 0 0 8px rgba(161, 98, 255, 0.7), 0 0 12px rgba(161, 98, 255, 0.4);
+    animation: quantum-flicker 2s infinite ease-in-out;
+  }
+  
+  @keyframes quantum-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+    60% { opacity: 1; }
+    70% { opacity: 0.9; }
+    80% { opacity: 1; }
+  }
+  
+  /* New: Bio-highlight text */
+  .bio-highlight {
+    @apply relative text-bio-green inline-block;
+  }
+  
+  .bio-highlight::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-bio-green/70 transition-all duration-300;
+  }
+  
+  .bio-highlight:hover::after {
+    @apply w-full;
+    box-shadow: 0 0 8px rgba(142, 228, 175, 0.6);
+  }
 }

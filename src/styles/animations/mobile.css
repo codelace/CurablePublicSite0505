@@ -1,16 +1,66 @@
 
 @layer utilities {
-  /* Mobile optimization classes */
-  @media (max-width: 768px) {
-    .mobile-no-animate {
-      animation: none !important;
-      transition: none !important;
+  /* Optimized animations for mobile */
+  
+  /* Smoother transition for touch interactions */
+  .touch-feedback {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .touch-feedback:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
+  
+  /* Simple slide-in animation for mobile menus */
+  .slide-in-menu {
+    animation: slide-in-menu 0.3s ease-out forwards;
+    transform-origin: top right;
+  }
+  
+  @keyframes slide-in-menu {
+    0% {
+      opacity: 0;
+      transform: translateX(30px);
     }
-    
-    .mobile-simplified {
-      box-shadow: none !important;
-      text-shadow: none !important;
-      backdrop-filter: none !important;
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Optimized loading spinner for mobile */
+  .mobile-spinner {
+    @apply relative w-6 h-6;
+  }
+  
+  .mobile-spinner::after {
+    content: "";
+    @apply absolute inset-0 rounded-full border-2 border-t-bio-blue border-r-bio-blue border-b-transparent border-l-transparent;
+    animation: mobile-spin 0.6s linear infinite;
+    will-change: transform;
+  }
+  
+  @keyframes mobile-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Mobile-friendly reveal animations */
+  .mobile-reveal {
+    @apply opacity-0;
+    animation: mobile-reveal 0.5s ease-out forwards;
+    will-change: transform, opacity;
+  }
+  
+  @keyframes mobile-reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
