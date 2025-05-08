@@ -1,91 +1,106 @@
 
 import React from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import MissionTabContent from '@/components/home/MissionTabContent';
-import PrinciplesTabContent from '@/components/home/PrinciplesTabContent';
-import JoinTabContent from '@/components/home/JoinTabContent';
-import HeroStatus from '@/components/HeroStatus';
-import CommandHUDHeader from '@/components/CommandHUDHeader';
+import { Beaker, ChevronDown } from 'lucide-react';
+import MissionTabContent from './MissionTabContent';
+import PrinciplesTabContent from './PrinciplesTabContent';
+import JoinTabContent from './JoinTabContent';
+
+// Define the valid status types
+type StatusType = 'connected' | 'pending' | 'offline';
+
+interface StatusItem {
+  label: string;
+  status: StatusType;
+}
 
 interface MainContentSectionProps {
-  statusItems: Array<{
-    label: string;
-    status: 'connected' | 'pending' | 'error' | 'warning';
-  }>;
+  statusItems: StatusItem[];
   activeTab: string;
-  setActiveTab: (value: string) => void;
+  setActiveTab: (tab: string) => void;
   revealSections: string[];
 }
 
-const MainContentSection: React.FC<MainContentSectionProps> = ({ 
-  statusItems, 
-  activeTab, 
-  setActiveTab, 
-  revealSections 
+const MainContentSection: React.FC<MainContentSectionProps> = ({
+  statusItems,
+  activeTab,
+  setActiveTab,
+  revealSections
 }) => {
   return (
-    <div id="main-content" className="pt-20 pb-24">
-      {/* Hero Status with enhanced styling */}
-      <div className={`transition-all duration-1000 transform ${revealSections.includes('status') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <HeroStatus items={statusItems} />
+    <div 
+      id="main-content" 
+      className="w-full mt-16 sm:mt-24"
+    >
+      {/* Core status indicators */}
+      <div className={`flex flex-wrap gap-3 justify-center mb-10 transition-all duration-1000 delay-200 ${revealSections.includes('status') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        {statusItems.map((item, idx) => (
+          <div 
+            key={`status-${idx}`} 
+            className={`flex items-center gap-2 px-3 py-1 rounded-md border text-xs sm:text-sm font-mono
+              ${item.status === 'connected' ? 'border-bio-green/50 text-bio-green bg-bio-green/10' : 
+                item.status === 'pending' ? 'border-logo-blue/50 text-logo-blue bg-logo-blue/10' : 
+                'border-quantum-red/50 text-quantum-red bg-quantum-red/10'}`}
+          >
+            <div className={`w-2 h-2 rounded-full
+              ${item.status === 'connected' ? 'bg-bio-green animate-pulse' : 
+                item.status === 'pending' ? 'bg-logo-blue animate-pulse' : 
+                'bg-quantum-red'}`} 
+            />
+            {item.label}
+          </div>
+        ))}
       </div>
       
-      {/* Enhanced section header */}
-      <div className={`mt-16 mb-10 transition-all duration-1000 delay-200 transform ${revealSections.includes('status') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <CommandHUDHeader 
-          title={
-            <>
-              <span className="text-titanium-white">Core</span>
-              <span className="text-logo-blue ml-2">Principles</span>
-            </>
-          }
-          subtitle="Decentralized biomedical research protocol"
-          statusText="SYSTEM ACTIVE"
-          className="mb-4"
-        />
+      {/* Tab Navigation */}
+      <div className={`flex justify-center mb-6 border-b border-graphite-700/30 transition-all duration-1000 delay-300 ${revealSections.includes('tabs') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="flex space-x-1 sm:space-x-2">
+          <button
+            className={`px-4 py-2 text-sm sm:text-base font-medium relative ${activeTab === 'mission' ? 'text-titanium-white' : 'text-titanium-white/60 hover:text-titanium-white/80'}`}
+            onClick={() => setActiveTab('mission')}
+          >
+            <span>Mission</span>
+            {activeTab === 'mission' && (
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-bio-green/80" />
+            )}
+          </button>
+          <button
+            className={`px-4 py-2 text-sm sm:text-base font-medium relative ${activeTab === 'principles' ? 'text-titanium-white' : 'text-titanium-white/60 hover:text-titanium-white/80'}`}
+            onClick={() => setActiveTab('principles')}
+          >
+            <span>Principles</span>
+            {activeTab === 'principles' && (
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-logo-blue/80" />
+            )}
+          </button>
+          <button
+            className={`px-4 py-2 text-sm sm:text-base font-medium relative ${activeTab === 'join' ? 'text-titanium-white' : 'text-titanium-white/60 hover:text-titanium-white/80'}`}
+            onClick={() => setActiveTab('join')}
+          >
+            <span>Join</span>
+            {activeTab === 'join' && (
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-plasma-violet/80" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Tab Content */}
+      <div className={`transition-all duration-1000 delay-400 ${revealSections.includes('tabs') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="relative min-h-[20rem]">
+          {activeTab === 'mission' && <MissionTabContent />}
+          
+          {activeTab === 'principles' && <PrinciplesTabContent />}
+          
+          {activeTab === 'join' && <JoinTabContent />}
+        </div>
       </div>
       
-      {/* Enhanced tabs with more dramatic styling */}
-      <div className={`mt-8 transition-all duration-1000 delay-400 transform ${revealSections.includes('tabs') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <Tabs 
-          defaultValue="mission" 
-          className="mt-6" 
-          value={activeTab} 
-          onValueChange={(value) => setActiveTab(value)}
-        >
-          <TabsList className="grid grid-cols-3 w-full max-w-xl mx-auto glass-panel bg-gunmetal-900/70 backdrop-blur-xl border border-graphite-700/60 p-1 shadow-xl">
-            <TabsTrigger 
-              value="mission" 
-              className="data-[state=active]:bg-logo-blue/30 data-[state=active]:text-titanium-white data-[state=active]:shadow-md transition-all duration-300 hover:bg-logo-blue/20 py-3"
-            >
-              Mission
-            </TabsTrigger>
-            <TabsTrigger 
-              value="principles" 
-              className="data-[state=active]:bg-plasma-violet/30 data-[state=active]:text-titanium-white data-[state=active]:shadow-md transition-all duration-300 hover:bg-plasma-violet/20 py-3"
-            >
-              Principles
-            </TabsTrigger>
-            <TabsTrigger 
-              value="join" 
-              className="data-[state=active]:bg-quantum-red/30 data-[state=active]:text-titanium-white data-[state=active]:shadow-md transition-all duration-300 hover:bg-quantum-red/20 py-3"
-            >
-              Join Us
-            </TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="mission" className="mt-8 animate-fade-up">
-            <MissionTabContent />
-          </TabsContent>
-          
-          <TabsContent value="principles" className="mt-8 animate-fade-up">
-            <PrinciplesTabContent />
-          </TabsContent>
-          
-          <TabsContent value="join" className="mt-8 animate-fade-up">
-            <JoinTabContent />
-          </TabsContent>
-        </Tabs>
+      {/* Page navigation hint */}
+      <div className={`flex justify-center mt-16 transition-all duration-1000 delay-500 ${revealSections.includes('tabs') ? 'opacity-100' : 'opacity-0'}`}>
+        <div className="flex flex-col items-center text-titanium-white/30 animate-pulse">
+          <ChevronDown className="w-5 h-5" />
+          <span className="text-xs font-mono">Scroll to explore</span>
+        </div>
       </div>
     </div>
   );
