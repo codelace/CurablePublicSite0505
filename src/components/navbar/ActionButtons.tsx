@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 
 interface ActionButtonsProps {
   className?: string;
@@ -9,51 +9,15 @@ interface ActionButtonsProps {
 
 export const ActionButtons = ({ className = "", isMobile = false }: ActionButtonsProps) => {
   const [hoveredButton, setHoveredButton] = useState<string | null>(null);
-  const dnaRef = useRef<HTMLAnchorElement>(null);
-  const joinRef = useRef<HTMLAnchorElement>(null);
-  const novelRef = useRef<HTMLAnchorElement>(null);
-  
-  // Enhanced magnetic effect handler with smoother transitions
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent, ref: React.RefObject<HTMLElement>, buttonId: string) => {
-      if (!ref.current || hoveredButton !== buttonId) return;
-      
-      const rect = ref.current.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      
-      // Adjusted intensity for a more subtle, professional effect
-      const intensity = 0.1;
-      ref.current.style.transform = `translate(${x * intensity}px, ${y * intensity}px) scale(1.03)`;
-    };
-    
-    const handleMouseLeave = (ref: React.RefObject<HTMLElement>) => {
-      if (!ref.current) return;
-      // Smoother transition back to original position
-      ref.current.style.transform = '';
-    };
-    
-    const mouseMove = (e: MouseEvent) => {
-      handleMouseMove(e, dnaRef, 'dna');
-      handleMouseMove(e, joinRef, 'join');
-      handleMouseMove(e, novelRef, 'novel');
-    };
-    
-    document.addEventListener('mousemove', mouseMove);
-    
-    return () => {
-      document.removeEventListener('mousemove', mouseMove);
-    };
-  }, [hoveredButton]);
   
   const containerClasses = isMobile 
     ? `flex flex-col space-y-3 ${className}`
     : `hidden md:flex items-center space-x-4 ${className}`;
 
-  // Standardized button classes with improved transitions
+  // Standardized button classes without the transform effects
   const baseButtonClasses = isMobile
     ? "flex items-center justify-center w-full py-2 rounded-lg text-white font-bold text-xs relative overflow-hidden"
-    : "flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold text-xs min-w-[90px] transition-all duration-300 relative overflow-hidden";
+    : "flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold text-xs min-w-[90px] transition-colors duration-300 relative overflow-hidden";
 
   const dnaButtonClasses = `${baseButtonClasses} ${isMobile 
     ? "bg-gradient-to-r from-logo-blue to-logo-blue hover:from-logo-blue hover:to-plasma-violet" 
@@ -70,25 +34,20 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
   return (
     <div className={containerClasses}>
       <a 
-        ref={dnaRef}
         href="https://binding-db-integrator-1-codelace77.replit.app/" 
         target="_blank" 
         rel="noopener noreferrer"
-        className={`${dnaButtonClasses} transform transition-all duration-300 ease-out`}
+        className={`${dnaButtonClasses} transition-colors duration-300`}
         style={{ width: '90px' }}
         onMouseEnter={() => setHoveredButton('dna')}
-        onMouseLeave={() => {
-          setHoveredButton(null);
-          if (dnaRef.current) dnaRef.current.style.transform = '';
-        }}
+        onMouseLeave={() => setHoveredButton(null)}
       >
         {/* Simplified overlay with improved transitions */}
         <span className="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
         <div className="flex items-center gap-1 relative z-10">
-          {/* Simpler animations for a cleaner look */}
-          <span className={`transition-transform duration-300 ${hoveredButton === 'dna' ? 'scale-110' : ''}`}>⚛️</span>
-          <span className={`transition-transform duration-300 ${hoveredButton === 'dna' ? 'scale-110' : ''}`}>🧬</span>
-          <span className={`transition-transform duration-300 ${hoveredButton === 'dna' ? 'scale-110' : ''}`}>⚗️</span>
+          <span>⚛️</span>
+          <span>🧬</span>
+          <span>⚗️</span>
         </div>
         
         {/* Simplified shine effect */}
@@ -101,14 +60,10 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
       </a>
       
       <Link 
-        ref={joinRef}
         to="/join" 
-        className={`${joinButtonClasses} transform transition-all duration-300 ease-out`}
+        className={`${joinButtonClasses} transition-colors duration-300`}
         onMouseEnter={() => setHoveredButton('join')}
-        onMouseLeave={() => {
-          setHoveredButton(null);
-          if (joinRef.current) joinRef.current.style.transform = '';
-        }}
+        onMouseLeave={() => setHoveredButton(null)}
       >
         {/* Simplified overlay with improved transitions */}
         <span className="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
@@ -124,14 +79,10 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
       </Link>
       
       <Link 
-        ref={novelRef}
         to="/novel" 
-        className={`${novelButtonClasses} transform transition-all duration-300 ease-out`}
+        className={`${novelButtonClasses} transition-colors duration-300`}
         onMouseEnter={() => setHoveredButton('novel')}
-        onMouseLeave={() => {
-          setHoveredButton(null);
-          if (novelRef.current) novelRef.current.style.transform = '';
-        }}
+        onMouseLeave={() => setHoveredButton(null)}
       >
         {/* Simplified overlay with improved transitions */}
         <span className="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
