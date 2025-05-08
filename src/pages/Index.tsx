@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import HeroStatus from '@/components/HeroStatus';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import Card from '@/components/Card';
-import GradientText from '@/components/ui/GradientText';
 import ParticleBackground from '@/components/ParticleBackground';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import MissionTabContent from '@/components/home/MissionTabContent';
+import PrinciplesTabContent from '@/components/home/PrinciplesTabContent';
+import JoinTabContent from '@/components/home/JoinTabContent';
+import AnimatedCircuitLines from '@/components/home/AnimatedCircuitLines';
 
 const statusItems = [
   { label: 'API CONNECTED', status: 'connected' as const },
@@ -15,38 +15,9 @@ const statusItems = [
   { label: 'CONSENSUS PROTOCOL', status: 'pending' as const }
 ];
 
-const principles = [
-  {
-    id: 'agentic-intelligence',
-    title: 'Agentic Intelligence',
-    icon: '🧠',
-    description: 'AI agents guide discovery, simulate risk, and surface regulatory insights—amplifying human creativity, not replacing it.'
-  },
-  {
-    id: 'transparent',
-    title: 'Transparent & Traceable',
-    icon: '🔎',
-    description: 'Every experiment, vote, and funding milestone is recorded on-chain for full scientific auditability.'
-  },
-  {
-    id: 'collective',
-    title: 'Collective Ownership',
-    icon: '⚖️',
-    description: 'Researchers, patients, and supporters govern together—equally empowered to propose, fund, and license IP.'
-  },
-  {
-    id: 'open',
-    title: 'Open by Default',
-    icon: '🌍',
-    description: 'Data, protocols, and breakthroughs are shared to accelerate global collaboration and cure accessibility.'
-  },
-];
-
 const Index = () => {
   const [activeTab, setActiveTab] = useState('mission');
   const [isScrolled, setIsScrolled] = useState(false);
-  const [hoveredPrinciple, setHoveredPrinciple] = useState<string | null>(null);
-  const [titleVisible, setTitleVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,14 +27,6 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
-  // Reveal title animation on load
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTitleVisible(true);
-    }, 300);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="relative">
@@ -71,11 +34,7 @@ const Index = () => {
       <ParticleBackground color="multi" intensity="low" />
       
       {/* Animated circuit lines */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-[20%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-plasma-violet/20 to-transparent data-flow"></div>
-        <div className="absolute top-[40%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-logo-blue/20 to-transparent data-flow" style={{animationDuration: "7s"}}></div>
-        <div className="absolute top-[60%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-bio-green/20 to-transparent data-flow" style={{animationDuration: "9s"}}></div>
-      </div>
+      <AnimatedCircuitLines />
 
       <div className="container px-4 py-8 relative z-10">
         {/* Hero Status */}
@@ -94,175 +53,15 @@ const Index = () => {
           </TabsList>
           
           <TabsContent value="mission" className="mt-6 animate-fade-up">
-            {/* Hero Header Section */}
-            <section className="mb-6">
-              <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-titanium-white transform transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                The Future of Biomedical Breakthroughs Is <GradientText variant="blue-purple" animate className="holo-scan">Collective</GradientText>
-              </h1>
-              <p className={`text-titanium-white/90 leading-relaxed mb-4 text-base sm:text-lg max-w-3xl transform transition-all duration-700 delay-100 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} data-surge`}>
-                CurableDAO is building an agentic, decentralized ecosystem for discovering, validating, and delivering novel cures.
-                We merge AI-powered research, open IP markets, and blockchain-native governance to transform stalled science into shared progress.
-              </p>
-            </section>
-            
-            {/* Supporting Subheader Section */}
-            <section className="mb-6">
-              <Card variant="elevated" className="p-6 bg-gunmetal-900/60 backdrop-blur-md energy-pulse">
-                <h2 className="text-xl sm:text-2xl font-bold mb-3 text-titanium-white">
-                  From <GradientText variant="purple-red" className="molecular-rotate inline-block origin-center">Molecule</GradientText> to <GradientText variant="green-blue" className="molecular-rotate inline-block origin-center" style={{animationDirection: "reverse"}}>Market</GradientText>, Reimagined.
-                </h2>
-                <p className="text-titanium-white/90 leading-relaxed">
-                  CurableDAO integrates agentic AI, transparent funding, and community-led validation into a living R&D platform.
-                  Our IP‑NFT framework unlocks collaboration, regulatory traceability, and scientific equity for the diseases that matter most.
-                </p>
-                
-                {/* Progress indicators */}
-                <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="relative">
-                    <div className="h-2 bg-graphite-700/30 rounded-full overflow-hidden">
-                      <div className="h-full bg-logo-blue rounded-full animate-expand" style={{width: "78%", animationDuration: "2.1s"}}></div>
-                    </div>
-                    <p className="text-xs mt-1 text-titanium-white/70">Research Pipeline: 78%</p>
-                  </div>
-                  
-                  <div className="relative">
-                    <div className="h-2 bg-graphite-700/30 rounded-full overflow-hidden">
-                      <div className="h-full bg-plasma-violet rounded-full animate-expand" style={{width: "65%", animationDuration: "1.7s"}}></div>
-                    </div>
-                    <p className="text-xs mt-1 text-titanium-white/70">Community Growth: 65%</p>
-                  </div>
-                  
-                  <div className="relative">
-                    <div className="h-2 bg-graphite-700/30 rounded-full overflow-hidden">
-                      <div className="h-full bg-quantum-red rounded-full animate-expand" style={{width: "92%", animationDuration: "2.5s"}}></div>
-                    </div>
-                    <p className="text-xs mt-1 text-titanium-white/70">Protocol Security: 92%</p>
-                  </div>
-                </div>
-              </Card>
-            </section>
+            <MissionTabContent />
           </TabsContent>
           
           <TabsContent value="principles" className="mt-6 animate-fade-up">
-            {/* Principles Grid */}
-            <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-titanium-white">
-              <GradientText variant="multi" animate={true}>Decentralized Research & Development Protocol</GradientText>
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {principles.map(principle => (
-                <Card 
-                  key={principle.id} 
-                  className="flex flex-col p-5 h-full transform transition-all duration-500 hover:scale-105"
-                  variant="elevated"
-                  glowColor={principle.id === 'agentic-intelligence' || principle.id === 'collective' ? 'purple' : 'blue'}
-                  onMouseEnter={() => setHoveredPrinciple(principle.id)}
-                  onMouseLeave={() => setHoveredPrinciple(null)}
-                >
-                  <div className={`text-4xl mb-3 transition-all duration-300 float-animation ${hoveredPrinciple === principle.id ? 'scale-125' : ''}`}>
-                    {principle.icon}
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-titanium-white">
-                    {hoveredPrinciple === principle.id ? (
-                      <GradientText variant={principle.id === 'agentic-intelligence' || principle.id === 'collective' ? 'purple-red' : 'green-blue'} className="text-distortion">
-                        {principle.title}
-                      </GradientText>
-                    ) : principle.title}
-                  </h3>
-                  <p className="text-titanium-white/80 text-sm">{principle.description}</p>
-                  
-                  {/* Interactive elements that appear on hover */}
-                  {hoveredPrinciple === principle.id && (
-                    <div className="mt-4 pt-3 border-t border-graphite-700/30 animate-fade-up">
-                      <div className="flex items-center justify-between text-xs font-mono">
-                        <span className="text-titanium-white/60">Impact Score</span>
-                        <span className="text-logo-blue">94.3%</span>
-                      </div>
-                      <div className="h-1 w-full bg-graphite-700/20 rounded-full mt-1 overflow-hidden">
-                        <div className={`h-full animate-expand rounded-full ${principle.id === 'agentic-intelligence' || principle.id === 'collective' ? 'bg-plasma-violet' : 'bg-logo-blue'}`} style={{width: "94%"}}></div>
-                      </div>
-                      
-                      {/* Animated nodes */}
-                      <div className="grid grid-cols-3 gap-2 mt-3">
-                        {[1, 2, 3].map((nodeIndex) => (
-                          <div 
-                            key={nodeIndex} 
-                            className="w-full h-1 rounded-full bg-graphite-700/30 overflow-hidden" 
-                          >
-                            <div 
-                              className="h-full rounded-full cyber-loading" 
-                              style={{
-                                background: nodeIndex === 1 ? 'linear-gradient(90deg, rgba(30,174,219,0.5), rgba(30,174,219,0.2))' : 
-                                nodeIndex === 2 ? 'linear-gradient(90deg, rgba(161,98,255,0.5), rgba(161,98,255,0.2))' : 
-                                'linear-gradient(90deg, rgba(142,228,175,0.5), rgba(142,228,175,0.2))',
-                                animationDelay: `${nodeIndex * 0.2}s`
-                              }}
-                            ></div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </Card>
-              ))}
-            </div>
+            <PrinciplesTabContent />
           </TabsContent>
           
           <TabsContent value="join" className="mt-6 animate-fade-up">
-            {/* CTA Section */}
-            <section className="max-w-2xl mx-auto text-center">
-              <Card className="p-8 bg-gunmetal-900/70 backdrop-blur-xl border border-graphite-700/60" variant="elevated" glowColor="red">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-titanium-white">
-                  <GradientText variant="multi" animate={true} className="holo-scan">Join CurableDAO</GradientText>
-                </h2>
-                <p className="text-titanium-white/90 mb-6 text-base sm:text-lg data-surge">
-                  Help decentralize the discovery of tomorrow's cures.
-                </p>
-                
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Button className="btn-primary py-6 hover:scale-105 transition-all energy-pulse" asChild>
-                      <Link to="/join" className="flex flex-col items-center justify-center">
-                        <span className="text-base font-bold">Apply to Launch a Cure</span>
-                        <span className="text-xs opacity-80 mt-1">For researchers & institutions</span>
-                      </Link>
-                    </Button>
-                    <Button className="btn-secondary py-6 hover:scale-105 transition-all energy-pulse" asChild>
-                      <Link to="/join" className="flex flex-col items-center justify-center">
-                        <span className="text-base font-bold">Join the DAO</span>
-                        <span className="text-xs opacity-80 mt-1">For contributors & investors</span>
-                      </Link>
-                    </Button>
-                  </div>
-                  
-                  {/* Latest stats section with animated counters */}
-                  <div className="mt-8 pt-6 border-t border-graphite-700/30 grid grid-cols-3 gap-4 particle-drift">
-                    <div className="text-center relative group">
-                      <div className="text-2xl font-bold text-logo-blue group-hover:scale-110 transform transition-all duration-300 notification-ping">137</div>
-                      <div className="text-xs text-titanium-white/70">Active Researchers</div>
-                    </div>
-                    <div className="text-center relative group">
-                      <div className="text-2xl font-bold text-plasma-violet group-hover:scale-110 transform transition-all duration-300 notification-ping">16.4M</div>
-                      <div className="text-xs text-titanium-white/70">TVL (USD)</div>
-                    </div>
-                    <div className="text-center relative group">
-                      <div className="text-2xl font-bold text-quantum-red group-hover:scale-110 transform transition-all duration-300 notification-ping">7</div>
-                      <div className="text-xs text-titanium-white/70">Active Studies</div>
-                    </div>
-                  </div>
-                  
-                  {/* Molecular orbiting particles - purely decorative */}
-                  <div className="relative h-8 opacity-60">
-                    <div className="absolute top-0 left-0 right-0 flex justify-center">
-                      <div className="relative w-32 h-8">
-                        <div className="absolute top-4 left-16 w-1 h-1 rounded-full bg-logo-blue animate-orbit"></div>
-                        <div className="absolute top-4 left-16 w-1.5 h-1.5 rounded-full bg-plasma-violet animate-orbit" style={{animationDelay: "0.5s", animationDirection: "reverse"}}></div>
-                        <div className="absolute top-4 left-16 w-0.5 h-0.5 rounded-full bg-bio-green animate-orbit" style={{animationDelay: "1s"}}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </section>
+            <JoinTabContent />
           </TabsContent>
         </Tabs>
       </div>
