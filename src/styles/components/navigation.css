@@ -1,0 +1,42 @@
+
+@layer components {
+  .nav-link {
+    @apply relative inline-block px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-sm sm:text-base text-titanium-white hover:text-logo-blue;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-1/2 right-1/2 bottom-0 h-[2px] bg-logo-blue opacity-0 transition-all duration-300;
+  }
+
+  .nav-link:hover::after, .nav-link.active::after {
+    @apply left-0 right-0 opacity-100;
+  }
+  
+  /* Navbar glow effect - enhanced */
+  .navbar-glow {
+    @apply shadow-[0_4px_20px_rgba(30,174,219,0.25)] border-b-logo-blue/20;
+    animation: pulse-border 3s infinite alternate;
+  }
+
+  @keyframes pulse-border {
+    0% {
+      box-shadow: 0 2px 15px rgba(30,174,219,0.15);
+      border-color: rgba(30, 174, 219, 0.1);
+    }
+    100% {
+      box-shadow: 0 4px 20px rgba(30,174,219,0.3);
+      border-color: rgba(30, 174, 219, 0.3);
+    }
+  }
+  
+  .section-divider {
+    @apply relative h-[1px] w-full my-10 sm:my-16 overflow-hidden;
+  }
+
+  .section-divider::before {
+    content: '';
+    @apply absolute w-full h-[1px] bg-gradient-to-r from-transparent via-plasma-violet/60 to-transparent;
+    transform: rotate(-4deg);
+  }
+}

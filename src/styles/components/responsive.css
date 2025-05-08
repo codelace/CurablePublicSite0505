@@ -1,0 +1,31 @@
+
+@layer components {
+  /* Responsive text scaling */
+  .text-responsive {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+  
+  .heading-responsive {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  /* Mobile-friendly containers */
+  .container-mobile {
+    @apply px-3 sm:px-4 py-3 sm:py-4 w-full;
+  }
+  
+  /* Smaller mobile padding */
+  .mobile-padding {
+    @apply p-2 sm:p-4;
+  }
+  
+  /* Mobile-friendly spacing */
+  .mobile-gap {
+    @apply gap-2 sm:gap-4;
+  }
+  
+  /* Better touch targets for mobile */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}

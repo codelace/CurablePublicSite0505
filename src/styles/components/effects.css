@@ -1,0 +1,34 @@
+
+@layer components {
+  /* Glassmorphism enhancements */
+  .glass-effect {
+    @apply bg-gunmetal-900/70 backdrop-blur-md border border-white/10 relative;
+  }
+  
+  .glass-effect::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 transition-opacity duration-300 pointer-events-none;
+  }
+  
+  .glass-effect:hover::before {
+    @apply opacity-100;
+  }
+  
+  /* Image hover effects */
+  .img-hover {
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-lg relative overflow-hidden;
+  }
+  
+  .img-hover::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-b from-transparent to-gunmetal-900/30 opacity-0 transition-opacity duration-300;
+  }
+  
+  .img-hover:hover::after {
+    @apply opacity-100;
+  }
+  
+  .glow-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-bio-blue/20;
+  }
+}

@@ -1,0 +1,55 @@
+
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-logo-blue via-plasma-violet to-quantum-red bg-clip-text text-transparent transition-all duration-300;
+    background-size: 200% auto;
+  }
+  
+  .text-gradient:hover {
+    background-position: right center;
+  }
+  
+  .text-gradient-glow {
+    @apply bg-gradient-to-r from-bio-blue via-bio-violet to-bio-green bg-clip-text text-transparent animate-text-shimmer;
+  }
+  
+  /* Enhanced glow text */
+  .glow-text {
+    @apply text-titanium-white;
+    text-shadow: 0 0 8px rgba(232, 241, 249, 0.3);
+    transition: text-shadow 0.3s ease;
+  }
+  
+  .glow-text:hover {
+    text-shadow: 0 0 12px rgba(30, 174, 219, 0.5), 0 0 20px rgba(30, 174, 219, 0.2);
+  }
+  
+  /* Cybernetic highlight */
+  .cyber-highlight {
+    @apply relative inline-block;
+  }
+  
+  .cyber-highlight::before {
+    content: '';
+    @apply absolute -inset-1 bg-gradient-to-r from-logo-blue/20 to-plasma-violet/20 rounded-md -z-10 blur-sm opacity-0 transition-opacity duration-300;
+  }
+  
+  .cyber-highlight:hover::before {
+    @apply opacity-100;
+  }
+  
+  /* Terminal-style text */
+  .terminal-text {
+    @apply font-mono text-logo-blue relative;
+  }
+  
+  .terminal-text::after {
+    content: '';
+    @apply absolute inline-block h-full w-[2px] ml-0.5 bg-logo-blue opacity-0;
+    animation: blink 1s step-end infinite;
+  }
+  
+  .terminal-text:hover::after {
+    @apply opacity-100;
+  }
+}

@@ -1,0 +1,35 @@
+
+@layer components {
+  .card-holo {
+    @apply bg-gunmetal-900/60 backdrop-blur-md border border-graphite-700/60 rounded-2xl 
+           shadow-lg hover:shadow-[0_0_15px_rgba(161,98,255,0.2)] transition-all duration-300;
+  }
+  
+  .card-holo::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl bg-gradient-to-br from-plasma-violet/5 to-transparent opacity-0 transition-opacity duration-300;
+  }
+  
+  .card-holo:hover::before {
+    @apply opacity-100;
+  }
+  
+  /* Enhanced card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg relative overflow-hidden;
+  }
+  
+  .card-hover::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-logo-blue/5 to-transparent opacity-0 transition-opacity duration-300;
+  }
+  
+  .card-hover:hover::after {
+    @apply opacity-100;
+  }
+  
+  /* Glass panel effects */
+  .glass-panel {
+    @apply bg-gunmetal-900/60 backdrop-blur-lg border border-graphite-700/40 rounded-lg relative overflow-hidden transition-all duration-300 hover:border-logo-blue/20 hover:shadow-[0_0_15px_rgba(30,174,219,0.1)];
+  }
+}
