@@ -7,9 +7,29 @@
   .text-gradient-purple-blue {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-plasma-violet to-logo-blue;
   }
+  
+  .text-gradient-blue-green {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-logo-blue to-bio-green;
+  }
+  
+  .text-gradient-red-purple {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-quantum-red to-plasma-violet;
+  }
 
   .text-outline {
     text-shadow: 0 0 1px rgba(232, 241, 249, 0.5);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 8px rgba(30, 174, 219, 0.6);
+  }
+  
+  .text-glow-purple {
+    text-shadow: 0 0 8px rgba(161, 98, 255, 0.6);
+  }
+  
+  .text-glow-red {
+    text-shadow: 0 0 8px rgba(255, 51, 102, 0.6);
   }
   
   .grid-overlay {
@@ -21,6 +41,10 @@
   
   .bg-gradient-radial {
     background-image: radial-gradient(circle at center, transparent 0%, #0E0E10 70%);
+  }
+  
+  .bg-gradient-conic {
+    background-image: conic-gradient(from 0deg at 50% 50%, rgba(30, 174, 219, 0.1), rgba(161, 98, 255, 0.1), rgba(255, 51, 102, 0.1), rgba(30, 174, 219, 0.1));
   }
   
   .hud-corners::before, 
@@ -72,15 +96,46 @@
     border-top: 0;
   }
   
-  /* New utilities for enhanced visual appeal */
+  /* Enhanced glowing border with animation */
   .glow-border {
-    @apply border border-transparent hover:border-logo-blue/30 transition-colors duration-300;
-    box-shadow: 0 0 0 rgba(30, 174, 219, 0);
-    transition: box-shadow 0.3s ease;
+    @apply border border-transparent transition-all duration-300;
+    position: relative;
   }
   
-  .glow-border:hover {
-    box-shadow: 0 0 15px rgba(30, 174, 219, 0.3);
+  .glow-border::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      45deg,
+      rgba(30, 174, 219, 0.6),
+      rgba(161, 98, 255, 0.6),
+      rgba(255, 51, 102, 0.6),
+      rgba(30, 174, 219, 0.6)
+    );
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .glow-border:hover::after {
+    opacity: 1;
+    animation: borderRotate 4s linear infinite;
+  }
+  
+  @keyframes borderRotate {
+    from {
+      --angle: 0deg;
+    }
+    to {
+      --angle: 360deg;
+    }
   }
   
   .bg-gradient-subtle {
@@ -91,24 +146,149 @@
     @apply bg-gradient-to-br from-gunmetal-900 via-dark-surface to-gunmetal-900;
   }
   
+  /* Enhanced shadow effects with animations */
   .shadow-blue-glow {
     box-shadow: 0 0 15px rgba(30, 174, 219, 0.2);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .shadow-blue-glow:hover {
+    box-shadow: 0 0 25px rgba(30, 174, 219, 0.4);
   }
   
   .shadow-purple-glow {
     box-shadow: 0 0 15px rgba(161, 98, 255, 0.2);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .shadow-purple-glow:hover {
+    box-shadow: 0 0 25px rgba(161, 98, 255, 0.4);
   }
   
   .shadow-red-glow {
     box-shadow: 0 0 15px rgba(255, 51, 102, 0.2);
+    transition: box-shadow 0.3s ease;
   }
   
+  .shadow-red-glow:hover {
+    box-shadow: 0 0 25px rgba(255, 51, 102, 0.4);
+  }
+  
+  /* Enhanced hover lift effect */
   .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
   }
   
   .hover-lift:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 0 15px rgba(30, 174, 219, 0.2);
+  }
+  
+  /* Glass card effect */
+  .glass-card {
+    @apply bg-gunmetal-900/50 backdrop-blur-md border border-white/5 rounded-xl;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-card:hover {
+    @apply bg-gunmetal-900/60 border-logo-blue/20;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 0 12px rgba(30, 174, 219, 0.1);
+  }
+  
+  /* Advanced parallax effect for background elements */
+  .parallax-slow {
+    transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+    will-change: transform;
+  }
+  
+  .parallax-medium {
+    transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    will-change: transform;
+  }
+  
+  .parallax-fast {
+    transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    will-change: transform;
+  }
+  
+  /* Animated underline effect */
+  .animated-underline {
+    position: relative;
+  }
+  
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, rgba(30, 174, 219, 1), rgba(161, 98, 255, 1));
+    transition: width 0.3s ease;
+  }
+  
+  .animated-underline:hover::after {
+    width: 100%;
+  }
+  
+  /* DNA double helix animation for bio elements */
+  .dna-animate {
+    position: relative;
+  }
+  
+  .dna-animate::before,
+  .dna-animate::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(30, 174, 219, 0.5), transparent);
+    animation: dnaWave 3s infinite ease-in-out;
+    opacity: 0;
+  }
+  
+  .dna-animate::before {
+    left: -10px;
+  }
+  
+  .dna-animate::after {
+    right: -10px;
+    animation-delay: 1.5s;
+  }
+  
+  .dna-animate:hover::before,
+  .dna-animate:hover::after {
+    opacity: 1;
+  }
+  
+  @keyframes dnaWave {
+    0%, 100% {
+      height: 20%;
+    }
+    50% {
+      height: 60%;
+    }
+  }
+  
+  /* Cyber circuit background */
+  .cyber-circuit {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cyber-circuit::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, transparent 50%, rgba(30, 174, 219, 0.05) 50%),
+                      linear-gradient(to bottom, transparent 50%, rgba(30, 174, 219, 0.05) 50%);
+    background-size: 20px 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .cyber-circuit:hover::before {
+    opacity: 1;
   }
 }

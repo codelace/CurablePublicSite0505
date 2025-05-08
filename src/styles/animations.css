@@ -1,6 +1,6 @@
 
 @layer utilities {
-  /* Re-enable essential animations with performance optimizations */
+  /* Cursor blink animation */
   .cursor-blink {
     animation: blink 1s step-end infinite;
   }
@@ -10,15 +10,26 @@
     50% { opacity: 0; }
   }
   
+  /* Enhanced pulse animations with better performance */
   .animate-pulse-dot {
-    animation: pulse-dot 2s infinite ease-in-out;
+    animation: pulse-dot 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
   }
   
   .animate-pulse-glow {
     animation: pulse-glow 3s infinite ease-in-out;
   }
   
-  /* Keep scan line effect with optimized animation */
+  @keyframes pulse-dot {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.35); opacity: 1; }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.6; }
+  }
+  
+  /* Optimized scan line effect */
   .scan-line {
     position: relative;
     overflow: hidden;
@@ -41,9 +52,9 @@
     100% { top: 100%; }
   }
 
-  /* Static pattern style with subtle animation */
+  /* Elegant static pattern style with subtle hover animation */
   .pattern-static {
-    opacity: 0.1;
+    opacity: 0.08;
     transition: opacity 0.5s ease-in-out;
   }
   
@@ -65,7 +76,12 @@
     }
   }
   
-  /* Enhanced button hover effect */
+  /* Enhanced button hover effect with light sweep */
+  .btn-hover-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
   .btn-hover-effect::before {
     content: '';
     position: absolute;
@@ -80,13 +96,14 @@
       transparent
     );
     transition: 0.5s;
+    z-index: 1;
   }
   
   .btn-hover-effect:hover::before {
     left: 100%;
   }
   
-  /* Subtle border glow effect */
+  /* Beautiful border glow effect */
   .border-glow {
     position: relative;
   }
@@ -117,7 +134,7 @@
     opacity: 1;
   }
   
-  /* Floating animation for subtle movement */
+  /* Elegant floating animation for subtle movement */
   .float-animation {
     animation: float 4s ease-in-out infinite;
   }
@@ -128,6 +145,65 @@
     }
     50% {
       transform: translateY(-8px);
+    }
+  }
+  
+  /* New shine effect animation */
+  .shine-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shine-effect::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(30deg);
+    animation: shine 4s ease-in-out infinite;
+  }
+  
+  @keyframes shine {
+    0% { transform: rotate(30deg) translateX(-300%); }
+    30%, 100% { transform: rotate(30deg) translateX(500%); }
+  }
+  
+  /* Magnetic hover effect */
+  .magnetic-hover {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .magnetic-hover:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+  
+  /* Elegant glow pulse for highlights */
+  .glow-pulse {
+    animation: glowPulse 3s infinite alternate;
+  }
+  
+  @keyframes glowPulse {
+    0% { box-shadow: 0 0 5px rgba(30, 174, 219, 0.3); }
+    100% { box-shadow: 0 0 15px rgba(30, 174, 219, 0.6); }
+  }
+  
+  /* Smooth appearance animation */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }

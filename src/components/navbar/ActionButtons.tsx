@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 interface ActionButtonsProps {
   className?: string;
@@ -7,6 +8,8 @@ interface ActionButtonsProps {
 }
 
 export const ActionButtons = ({ className = "", isMobile = false }: ActionButtonsProps) => {
+  const [hoveredButton, setHoveredButton] = useState<string | null>(null);
+  
   const containerClasses = isMobile 
     ? `flex flex-col space-y-3 ${className}`
     : `hidden md:flex items-center space-x-4 ${className}`;
@@ -14,7 +17,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
   // Standardized button classes for consistent sizing and appearance
   const baseButtonClasses = isMobile
     ? "flex items-center justify-center w-full py-2 rounded-lg text-white font-bold text-xs relative overflow-hidden"
-    : "flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold text-xs min-w-[90px] transition-all duration-300 hover:scale-105 relative overflow-hidden";
+    : "flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold text-xs min-w-[90px] transition-all duration-300 relative overflow-hidden btn-hover-effect";
 
   const dnaButtonClasses = `${baseButtonClasses} ${isMobile 
     ? "bg-gradient-to-r from-logo-blue to-logo-blue hover:from-logo-blue hover:to-plasma-violet" 
@@ -34,25 +37,46 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         href="https://binding-db-integrator-1-codelace77.replit.app/" 
         target="_blank" 
         rel="noopener noreferrer"
-        className={dnaButtonClasses}
+        className={`${dnaButtonClasses} transform transition-transform duration-300 hover:scale-105 magnetic-hover`}
         style={{ width: '90px' }}
+        onMouseEnter={() => setHoveredButton('dna')}
+        onMouseLeave={() => setHoveredButton(null)}
       >
         <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
-        <span className="text-xs flex items-center gap-0.5">
-          <span className="animate-pulse">⚛️</span>
+        <span className="text-xs flex items-center gap-0.5 relative z-10">
+          <span className={hoveredButton === 'dna' ? 'animate-pulse' : ''}>⚛️</span>
           <span>🧬</span>
           <span>⚗️</span>
         </span>
+        {hoveredButton === 'dna' && (
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent shine-effect"></span>
+        )}
       </a>
       
-      <Link to="/join" className={joinButtonClasses}>
+      <Link 
+        to="/join" 
+        className={`${joinButtonClasses} transform transition-transform duration-300 hover:scale-105 magnetic-hover`}
+        onMouseEnter={() => setHoveredButton('join')}
+        onMouseLeave={() => setHoveredButton(null)}
+      >
         <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
-        JOIN
+        <span className="relative z-10">JOIN</span>
+        {hoveredButton === 'join' && (
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent shine-effect"></span>
+        )}
       </Link>
       
-      <Link to="/novel" className={novelButtonClasses}>
+      <Link 
+        to="/novel" 
+        className={`${novelButtonClasses} transform transition-transform duration-300 hover:scale-105 magnetic-hover`}
+        onMouseEnter={() => setHoveredButton('novel')}
+        onMouseLeave={() => setHoveredButton(null)}
+      >
         <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
-        NOVEL
+        <span className="relative z-10">NOVEL</span>
+        {hoveredButton === 'novel' && (
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent shine-effect"></span>
+        )}
       </Link>
     </div>
   );
