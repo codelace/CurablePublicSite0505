@@ -1,8 +1,8 @@
 
 @layer utilities {
-  /* All animations completely disabled for better mobile performance */
+  /* Re-enable essential animations with performance optimizations */
   .cursor-blink {
-    animation: none !important;
+    animation: blink 1s step-end infinite;
   }
   
   @keyframes blink {
@@ -10,24 +10,15 @@
     50% { opacity: 0; }
   }
   
-  .animate-slide {
-    animation: none !important;
-  }
-  
-  @keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-  }
-  
   .animate-pulse-dot {
-    animation: none !important;
+    animation: pulse-dot 2s infinite ease-in-out;
   }
   
   .animate-pulse-glow {
-    animation: none !important;
+    animation: pulse-glow 3s infinite ease-in-out;
   }
   
-  /* Keep scan line effect but disable animation */
+  /* Keep scan line effect with optimized animation */
   .scan-line {
     position: relative;
     overflow: hidden;
@@ -39,31 +30,104 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 5px;
+    height: 3px;
     background: rgba(30, 174, 219, 0.2);
-    animation: none !important;
+    animation: scan 3s linear infinite;
+    will-change: transform;
   }
   
   @keyframes scan {
-    0% { top: -30px; }
+    0% { top: -10px; }
     100% { top: 100%; }
   }
 
-  /* Static pattern style - explicitly set as completely static */
+  /* Static pattern style with subtle animation */
   .pattern-static {
-    opacity: 0.1; /* Further reduced opacity for better performance */
-    animation: none !important; /* Force no animation */
+    opacity: 0.1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .pattern-static:hover {
+    opacity: 0.15;
   }
   
   /* Mobile optimization classes */
-  .mobile-no-animate {
-    animation: none !important;
-    transition: none !important;
+  @media (max-width: 768px) {
+    .mobile-no-animate {
+      animation: none !important;
+      transition: none !important;
+    }
+    
+    .mobile-simplified {
+      box-shadow: none !important;
+      text-shadow: none !important;
+      backdrop-filter: none !important;
+    }
   }
   
-  .mobile-simplified {
-    box-shadow: none !important;
-    text-shadow: none !important;
-    backdrop-filter: none !important;
+  /* Enhanced button hover effect */
+  .btn-hover-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.5s;
+  }
+  
+  .btn-hover-effect:hover::before {
+    left: 100%;
+  }
+  
+  /* Subtle border glow effect */
+  .border-glow {
+    position: relative;
+  }
+  
+  .border-glow::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      45deg,
+      rgba(30, 174, 219, 0.5),
+      rgba(161, 98, 255, 0.5),
+      rgba(255, 51, 102, 0.5),
+      rgba(30, 174, 219, 0.5)
+    );
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .border-glow:hover::after {
+    opacity: 1;
+  }
+  
+  /* Floating animation for subtle movement */
+  .float-animation {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
   }
 }

@@ -13,8 +13,8 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
 
   // Standardized button classes for consistent sizing and appearance
   const baseButtonClasses = isMobile
-    ? "flex items-center justify-center w-full py-2 rounded-lg text-white font-bold text-xs"
-    : "flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold text-xs min-w-[90px] transition-all duration-300 hover:scale-105";
+    ? "flex items-center justify-center w-full py-2 rounded-lg text-white font-bold text-xs relative overflow-hidden"
+    : "flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold text-xs min-w-[90px] transition-all duration-300 hover:scale-105 relative overflow-hidden";
 
   const dnaButtonClasses = `${baseButtonClasses} ${isMobile 
     ? "bg-gradient-to-r from-logo-blue to-logo-blue hover:from-logo-blue hover:to-plasma-violet" 
@@ -37,6 +37,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         className={dnaButtonClasses}
         style={{ width: '90px' }}
       >
+        <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
         <span className="text-xs flex items-center gap-0.5">
           <span className="animate-pulse">⚛️</span>
           <span>🧬</span>
@@ -45,11 +46,13 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
       </a>
       
       <Link to="/join" className={joinButtonClasses}>
+        <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
         JOIN
       </Link>
       
       <Link to="/novel" className={novelButtonClasses}>
-        NOVEL CURE
+        <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
+        NOVEL
       </Link>
     </div>
   );

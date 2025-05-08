@@ -41,20 +41,22 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
 
   return (
     <Card 
-      className="flex flex-col items-center text-center h-full p-3 transition-all duration-300"
+      className={`flex flex-col items-center text-center h-full p-3 transition-all duration-300 ${isHovered ? 'transform -translate-y-1' : ''}`}
       glowColor={value.icon === 'rigor' || value.icon === 'access' ? 'blue' : 'purple'}
     >
-      <div className="mb-2">
+      <div className={`mb-3 relative ${isHovered ? 'animate-pulse-dot' : ''}`}>
+        <div className={`absolute inset-0 rounded-full bg-gradient-radial opacity-0 transition-opacity duration-300 ${isHovered ? 'opacity-10' : ''}`}></div>
         {iconMap[value.icon as keyof typeof iconMap]}
       </div>
-      <h3 className={`text-lg font-bold mb-1 text-titanium-white transition-all duration-300 ${isHovered ? 'text-logo-blue' : ''}`}>
+      <h3 className={`text-lg font-bold mb-2 transition-all duration-300 ${isHovered ? 'text-logo-blue' : 'text-titanium-white'}`}>
         {value.title}
       </h3>
-      <p className="text-titanium-white/80 text-xs">{value.description}</p>
+      <p className="text-titanium-white/80 text-xs mb-2">{value.description}</p>
       
       {isHovered && (
-        <div className="mt-2 pt-2 border-t border-graphite-700/40 w-full">
-          <p className="text-xs font-mono text-logo-blue animate-fade-up">
+        <div className="mt-2 pt-2 border-t border-graphite-700/40 w-full animate-fade-up">
+          <p className="text-xs font-mono text-logo-blue flex items-center">
+            <span className="mr-1 opacity-70">›</span>
             {valueDetailMap[value.icon as keyof typeof valueDetailMap]}
           </p>
         </div>
