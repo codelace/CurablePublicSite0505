@@ -54,7 +54,7 @@ const AboutHero = () => {
       <div className="relative mb-6">
         <div className="absolute inset-0 bg-gradient-to-r from-logo-blue/5 via-plasma-violet/10 to-bio-green/5 rounded-lg blur-sm"></div>
         <CommandHUDHeader 
-          title={isMobile ? "The Future of Cures" : displayTitle || fullTitle} 
+          title={isMobile ? "The Future of Cures" : (displayTitle || fullTitle)} 
           subtitle={<>Decentralized <GradientText variant="blue-purple" animate>research & development</GradientText> protocol</>} 
           statusText="CURABLE CORE ACTIVE"
         />
