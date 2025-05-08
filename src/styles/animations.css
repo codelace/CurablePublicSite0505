@@ -6,3 +6,9 @@
 @import './animations/glow-effects.css';
 @import './animations/mobile.css';
 @import './animations/dynamic.css';
+/* Movement.css now imports the following files:
+ * - flow-animations.css
+ * - element-effects.css
+ * - indicators.css 
+ * - transitions.css
+ */

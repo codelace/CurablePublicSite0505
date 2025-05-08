@@ -1,0 +1,61 @@
+
+@layer utilities {
+  /* Notification ping */
+  .notification-ping {
+    position: relative;
+  }
+  
+  .notification-ping::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #FF3366;
+    border-radius: 50%;
+    animation: notificationPing 2s ease-in-out infinite;
+  }
+  
+  @keyframes notificationPing {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+  }
+  
+  /* Cybernetic loading bar */
+  .cyber-loading {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cyber-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, 
+      rgba(30, 174, 219, 0.2), 
+      rgba(161, 98, 255, 0.2), 
+      rgba(30, 174, 219, 0.2));
+    animation: cyberLoad 3s infinite;
+  }
+  
+  @keyframes cyberLoad {
+    0% { width: 0; }
+    50% { width: 100%; }
+    100% { width: 0; }
+  }
+  
+  /* Data visualization expanding bar */
+  .animate-expand {
+    animation: expand 2s ease-out forwards;
+    transform-origin: left;
+  }
+  
+  @keyframes expand {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+  }
+}
