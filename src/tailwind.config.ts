@@ -80,6 +80,7 @@ export default {
         "gradient-radial": "radial-gradient(circle at center, transparent 0%, #0E0E10 70%)",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "gradient-glow": "linear-gradient(to right, rgba(30, 174, 219, 0), rgba(30, 174, 219, 0.3), rgba(30, 174, 219, 0))",
+        "noise": "url('/noise.png')"
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -149,6 +150,30 @@ export default {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
+        'ping': {
+          '75%, 100%': {
+            transform: 'scale(2)',
+            opacity: '0',
+          },
+        },
+        'blink': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
+        'expand': {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+        'data-surge': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        'ripple': {
+          '0%': { boxShadow: '0 0 0 0 rgba(30, 174, 219, 0.4)' },
+          '70%': { boxShadow: '0 0 0 15px rgba(30, 174, 219, 0)' },
+          '100%': { boxShadow: '0 0 0 0 rgba(30, 174, 219, 0)' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -158,13 +183,18 @@ export default {
         'fade-up': 'fade-up 0.6s ease-out',
         'expand-underline': 'expand-underline 0.3s ease-out forwards',
         'pulse-dot': 'pulse-dot 2s infinite ease-in-out',
-        shimmer: "shimmer 3s ease-in-out infinite",
+        'shimmer': "shimmer 3s ease-in-out infinite",
         "text-shimmer": "text-shimmer 3s ease-in-out infinite",
         'code-flow': 'code-flow 10s ease-in-out infinite alternate',
         'scan-line': 'scan-line 4s linear infinite',
         'flicker': 'flicker 3s ease-in-out infinite',
         'float': 'float 3s ease-in-out infinite',
         'rotate-slow': 'rotate-slow 30s linear infinite',
+        'ping': 'ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite',
+        'blink': 'blink 1s ease-in-out infinite',
+        'expand': 'expand 1s ease-out',
+        'data-surge': 'data-surge 8s ease infinite',
+        'ripple': 'ripple 1.5s infinite'
       },
     }
   },
