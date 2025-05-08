@@ -19,17 +19,18 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
     ? "flex items-center justify-center w-full py-2 rounded-lg text-white font-bold text-xs relative overflow-hidden"
     : "flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold text-xs min-w-[90px] transition-colors duration-300 relative overflow-hidden";
 
+  // Enhanced with warmer colors
   const dnaButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "bg-gradient-to-r from-logo-blue to-logo-blue hover:from-logo-blue hover:to-plasma-violet" 
-    : "bg-logo-blue hover:bg-gradient-to-r hover:from-logo-blue hover:to-plasma-violet hover:shadow-[0_0_12px_rgba(30,174,219,0.6)] transition-all duration-300"}`;
+    ? "bg-gradient-to-r from-quantum-red to-quantum-red hover:from-quantum-red hover:to-plasma-violet" 
+    : "bg-quantum-red hover:bg-gradient-to-r hover:from-quantum-red hover:to-plasma-violet hover:shadow-[0_0_12px_rgba(255,51,102,0.6)] transition-all duration-300"}`;
 
   const joinButtonClasses = `${baseButtonClasses} ${isMobile 
     ? "bg-quantum-red hover:bg-gradient-to-r hover:from-quantum-red hover:to-logo-blue" 
     : "bg-quantum-red hover:bg-gradient-to-r hover:from-quantum-red hover:to-logo-blue hover:shadow-[0_0_12px_rgba(255,51,102,0.6)] transition-all duration-300"}`;
 
   const novelButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-plasma-violet" 
-    : "bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-plasma-violet hover:shadow-[0_0_12px_rgba(147,51,234,0.6)] transition-all duration-300"}`;
+    ? "bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-quantum-red" 
+    : "bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-quantum-red hover:shadow-[0_0_12px_rgba(147,51,234,0.6)] transition-all duration-300"}`;
 
   return (
     <div className={containerClasses}>
@@ -42,7 +43,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         onMouseEnter={() => setHoveredButton('dna')}
         onMouseLeave={() => setHoveredButton(null)}
       >
-        {/* Simplified overlay with improved transitions */}
+        {/* Enhanced overlay with improved transitions */}
         <span className="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
         <div className="flex items-center gap-1 relative z-10">
           <span>⚛️</span>
@@ -53,9 +54,9 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         {/* Simplified shine effect */}
         <span className="absolute top-0 left-[-100%] w-full h-full bg-white/10 transform skew-x-15 transition-all duration-700 group-hover:left-[100%]"></span>
         
-        {/* Subtle border glow when hovered */}
+        {/* Subtle border glow when hovered - warmer glow */}
         {hoveredButton === 'dna' && (
-          <span className="absolute inset-0 rounded-lg ring-1 ring-logo-blue/70 animate-pulse-subtle"></span>
+          <span className="absolute inset-0 rounded-lg ring-1 ring-quantum-red/70 animate-pulse-subtle"></span>
         )}
       </a>
       
@@ -65,7 +66,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         onMouseEnter={() => setHoveredButton('join')}
         onMouseLeave={() => setHoveredButton(null)}
       >
-        {/* Simplified overlay with improved transitions */}
+        {/* Enhanced overlay with improved transitions */}
         <span className="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
         <span className="relative z-10">JOIN</span>
         
@@ -84,7 +85,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         onMouseEnter={() => setHoveredButton('novel')}
         onMouseLeave={() => setHoveredButton(null)}
       >
-        {/* Simplified overlay with improved transitions */}
+        {/* Enhanced overlay with improved transitions */}
         <span className="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
         <span className="relative z-10">NOVEL</span>
         

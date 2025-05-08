@@ -16,7 +16,7 @@
   
   /* Enhanced card hover effects */
   .card-hover {
-    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg relative overflow-hidden;
+    @apply transition-all duration-300 hover:shadow-lg relative overflow-hidden;
   }
   
   .card-hover::after {
@@ -28,25 +28,24 @@
     @apply opacity-100;
   }
   
-  /* Glass panel effects */
+  /* Glass panel effects - ENHANCED with warmer glows */
   .glass-panel {
-    @apply bg-gunmetal-900/60 backdrop-blur-lg border border-graphite-700/40 rounded-lg relative overflow-hidden transition-all duration-300 hover:border-logo-blue/20 hover:shadow-[0_0_15px_rgba(30,174,219,0.1)];
+    @apply bg-gunmetal-900/60 backdrop-blur-lg border border-graphite-700/40 rounded-lg relative overflow-hidden transition-all duration-300 hover:border-quantum-red/20 hover:shadow-[0_0_15px_rgba(255,51,102,0.15)];
   }
   
-  /* New: Interactive data card with highlight scanning effect */
+  /* New: Interactive data card with highlight scanning effect - now with warmer colors */
   .data-card {
-    @apply bg-dark-base/80 border border-logo-blue/20 rounded-lg p-4 relative overflow-hidden;
+    @apply bg-dark-base/80 border border-quantum-red/20 rounded-lg p-4 relative overflow-hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   
   .data-card::before {
     content: '';
-    @apply absolute top-0 left-0 h-full w-1 bg-logo-blue/30 opacity-0 transition-all duration-500;
+    @apply absolute top-0 left-0 h-full w-1 bg-quantum-red/30 opacity-0 transition-all duration-500;
   }
   
   .data-card:hover {
-    @apply border-logo-blue/50 shadow-[0_5px_15px_rgba(30,174,219,0.15)];
-    transform: translateY(-5px);
+    @apply border-quantum-red/50 shadow-[0_5px_15px_rgba(255,51,102,0.15)];
   }
   
   .data-card:hover::before {
@@ -60,22 +59,22 @@
     100% { left: 100%; opacity: 0.3; }
   }
   
-  /* New: Quantum effect card with particle animation */
+  /* New: Quantum effect card with particle animation - warmer tones */
   .quantum-card {
     @apply bg-gradient-to-br from-dark-surface to-graphite-700/20 backdrop-blur-sm 
-           border border-plasma-violet/20 rounded-xl relative overflow-hidden;
+           border border-quantum-red/20 rounded-xl relative overflow-hidden;
     transition: all 0.4s ease-out;
   }
   
   .quantum-card::after {
     content: '';
-    @apply absolute inset-0 bg-plasma-violet/5 opacity-0;
+    @apply absolute inset-0 bg-quantum-red/5 opacity-0;
     transition: opacity 0.5s ease;
     pointer-events: none;
   }
   
   .quantum-card:hover {
-    @apply border-plasma-violet/40 shadow-[0_0_25px_rgba(161,98,255,0.2)];
+    @apply border-quantum-red/40 shadow-[0_0_25px_rgba(255,51,102,0.2)];
   }
   
   .quantum-card:hover::after {
@@ -86,5 +85,32 @@
   @keyframes quantum-particles {
     0%, 100% { background-size: 100% 100%; }
     50% { background-size: 120% 120%; background-position: center; }
+  }
+  
+  /* NEW: Warm magnetic card */
+  .magnetic-card {
+    @apply bg-gradient-to-br from-dark-surface/90 to-gunmetal-900/80 backdrop-blur-md 
+           border border-quantum-red/30 rounded-xl relative overflow-hidden;
+    transition: all 0.4s ease;
+  }
+  
+  .magnetic-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-quantum-red/10 via-plasma-violet/10 to-transparent opacity-0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .magnetic-card:hover {
+    @apply border-quantum-red/60 shadow-[0_0_30px_rgba(255,51,102,0.25)];
+  }
+  
+  .magnetic-card:hover::before {
+    @apply opacity-100;
+    animation: warm-pulse 3s infinite alternate;
+  }
+  
+  @keyframes warm-pulse {
+    0% { opacity: 0.1; }
+    100% { opacity: 0.3; }
   }
 }

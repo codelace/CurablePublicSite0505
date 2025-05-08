@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -70,6 +69,10 @@ export default {
         "bio-violet": "#CBA6F7",
         "dark-base": "#0E0E10",
         "dark-surface": "#1A1A1E",
+        // New warmer colors for magnetic feel
+        "warm-amber": "#FF9E2C", 
+        "warm-coral": "#FF6B6B",
+        "warm-rose": "#FF4676",
       },
       fontFamily: {
         space: ["Space Grotesk", "sans-serif"],
@@ -80,7 +83,9 @@ export default {
         "gradient-radial": "radial-gradient(circle at center, transparent 0%, #0E0E10 70%)",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "gradient-glow": "linear-gradient(to right, rgba(30, 174, 219, 0), rgba(30, 174, 219, 0.3), rgba(30, 174, 219, 0))",
-        "noise": "url('/noise.png')"
+        "gradient-warm": "linear-gradient(to right, rgba(255, 51, 102, 0), rgba(255, 51, 102, 0.3), rgba(255, 51, 102, 0))",
+        "noise": "url('/noise.png')",
+        "radial-gradient": "radial-gradient(circle at center, transparent 30%, rgba(10, 10, 10, 0.8) 100%)"
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -120,11 +125,11 @@ export default {
           '0%, 100%': { transform: 'scale(1)', opacity: '0.8' },
           '50%': { transform: 'scale(1.5)', opacity: '1' },
         },
-        shimmer: {
+        'shimmer': {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.7" },
         },
-        "text-shimmer": {
+        'text-shimmer': {
           "0%, 100%": {
             "background-size": "200% 200%",
             "background-position": "left center",
@@ -185,7 +190,17 @@ export default {
           '60%': { transform: 'translate(2px, 2px)' },
           '80%': { transform: 'translate(2px, -2px)' },
           '100%': { transform: 'translate(0)' },
-        }
+        },
+        'warm-pulse': {
+          '0%': { boxShadow: '0 0 5px rgba(255, 51, 102, 0.4)' },
+          '50%': { boxShadow: '0 0 15px rgba(255, 51, 102, 0.7)' },
+          '100%': { boxShadow: '0 0 5px rgba(255, 51, 102, 0.4)' },
+        },
+        'magnetic-flow': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -208,7 +223,12 @@ export default {
         'expand': 'expand 1s ease-out',
         'data-surge': 'data-surge 8s ease infinite',
         'ripple': 'ripple 1.5s infinite',
-        'glitch': 'glitch 0.5s ease-in-out infinite alternate'
+        'glitch': 'glitch 0.5s ease-in-out infinite alternate',
+        'warm-pulse': 'warm-pulse 3s infinite ease-in-out',
+        'magnetic-flow': 'magnetic-flow 8s infinite ease-in-out',
+      },
+      rotate: {
+        '15': '15deg',
       },
     }
   },

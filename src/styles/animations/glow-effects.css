@@ -1,13 +1,13 @@
 
 @layer utilities {
-  /* Electric pulse animation */
+  /* Electric pulse animation - enhanced with warmer colors */
   .electric-pulse {
     animation: electricPulse 2s infinite;
   }
   
   @keyframes electricPulse {
-    0%, 100% { filter: drop-shadow(0 0 2px rgba(30, 174, 219, 0.7)); }
-    50% { filter: drop-shadow(0 0 8px rgba(30, 174, 219, 1)); }
+    0%, 100% { filter: drop-shadow(0 0 2px rgba(255, 51, 102, 0.7)); }
+    50% { filter: drop-shadow(0 0 8px rgba(255, 51, 102, 1)); }
   }
   
   /* Quantum flicker for future tech elements */
@@ -28,17 +28,17 @@
     85% { opacity: 0.9; }
   }
 
-  /* Elegant glow pulse for highlights */
+  /* Elegant glow pulse for highlights - enhanced with red */
   .glow-pulse {
     animation: glowPulse 3s infinite alternate;
   }
   
   @keyframes glowPulse {
-    0% { box-shadow: 0 0 5px rgba(30, 174, 219, 0.3); }
-    100% { box-shadow: 0 0 15px rgba(30, 174, 219, 0.6); }
+    0% { box-shadow: 0 0 5px rgba(255, 51, 102, 0.3); }
+    100% { box-shadow: 0 0 15px rgba(255, 51, 102, 0.6); }
   }
   
-  /* Force field shield effect */
+  /* Force field shield effect - warmer colors */
   .force-field {
     animation: forceField 4s ease-in-out infinite;
   }
@@ -46,5 +46,58 @@
   @keyframes forceField {
     0%, 100% { opacity: 0.2; }
     50% { opacity: 0.6; transform: scale(1.05); }
+  }
+  
+  /* NEW: Magnetic glow effect */
+  .magnetic-glow {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .magnetic-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 51, 102, 0.4) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .magnetic-glow:hover::before {
+    opacity: 1;
+  }
+  
+  /* NEW: Warm pulse effect */
+  .warm-pulse {
+    animation: warmPulse 3s infinite alternate;
+  }
+  
+  @keyframes warmPulse {
+    0% { box-shadow: 0 0 5px rgba(255, 51, 102, 0.3); }
+    100% { box-shadow: 0 0 20px rgba(255, 51, 102, 0.6); }
+  }
+  
+  /* NEW: Heat shimmer effect */
+  .heat-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .heat-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 51, 102, 0.05) 50%, transparent 100%);
+    animation: heatRise 3s infinite ease-in-out;
+    pointer-events: none;
+  }
+  
+  @keyframes heatRise {
+    0% { transform: translateY(100%); opacity: 0.3; }
+    100% { transform: translateY(-100%); opacity: 0; }
   }
 }

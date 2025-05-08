@@ -15,9 +15,9 @@ const CTASection: React.FC<CTASectionProps> = ({ isVisible }) => {
   return (
     <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
       <GlassPanel 
-        borderGlow="multi" 
+        borderGlow="red" 
         hover={true}
-        intensity="low"
+        intensity="medium"
       >
         {isMobile ? <MobileCTA /> : <DesktopCTA />}
       </GlassPanel>

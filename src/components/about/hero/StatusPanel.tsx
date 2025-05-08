@@ -13,9 +13,9 @@ const StatusPanel: React.FC<StatusPanelProps> = ({ isVisible, items }) => {
     <div className={`transform transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
       <GlassPanel 
         className="mb-6"
-        borderGlow="blue"
+        borderGlow="red"
         hover={true}
-        intensity="low"
+        intensity="medium"
       >
         <StatusTicker items={items} />
       </GlassPanel>
