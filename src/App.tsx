@@ -21,11 +21,11 @@ const queryClient = new QueryClient();
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  // Simulate a loader effect for dramatic entrance
+  // Enhanced dramatic entrance with longer animation
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 800);
+    }, 1200);
     return () => clearTimeout(timer);
   }, []);
 
@@ -36,34 +36,43 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter>
-            {/* App Loader */}
+            {/* Enhanced App Loader with more dramatic appearance */}
             <div 
-              className={`fixed inset-0 bg-gunmetal-900 z-50 flex items-center justify-center transition-opacity duration-1000 pointer-events-none ${isLoading ? 'opacity-100' : 'opacity-0'}`}
+              className={`fixed inset-0 bg-gunmetal-900 z-50 flex items-center justify-center transition-opacity duration-1500 pointer-events-none ${isLoading ? 'opacity-100' : 'opacity-0'}`}
             >
               <div className="flex flex-col items-center">
-                <div className="w-20 h-20 relative">
+                <div className="w-28 h-28 relative">
                   <div className="absolute inset-0 rounded-full border-4 border-logo-blue/20"></div>
-                  <div className="absolute inset-0 rounded-full border-t-4 border-logo-blue animate-spin"></div>
+                  <div className="absolute inset-0 rounded-full border-t-4 border-r-4 border-logo-blue animate-spin"></div>
+                  <div className="absolute inset-0 rounded-full border-4 border-transparent border-b-4 border-plasma-violet animate-pulse opacity-70"></div>
                 </div>
-                <div className="mt-4 font-space text-titanium-white text-xl">
-                  <span className="text-logo-blue">Curable</span>DAO
+                <div className="mt-6 font-space text-titanium-white text-3xl relative">
+                  <span className="text-logo-blue animate-pulse">Curable</span>
+                  <span className="text-titanium-white">DAO</span>
+                  <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-logo-blue to-transparent animate-expand"></div>
+                </div>
+                <div className="mt-8 text-titanium-white/60 font-mono text-sm animate-pulse">
+                  Initializing protocol...
                 </div>
               </div>
             </div>
 
             <div className="flex min-h-screen w-full bg-gunmetal-900 text-titanium-white">
               <div className="flex-1 relative overflow-x-hidden">
-                {/* Base background gradient */}
+                {/* Enhanced background effects */}
                 <div className="fixed inset-0 bg-gradient-radial from-dark-surface/20 to-dark-base/95 pointer-events-none"></div>
+                <div className="fixed inset-0 bg-noise opacity-[0.02] pointer-events-none"></div>
                 
-                {/* Subtle noise texture */}
-                <div className="fixed inset-0 bg-noise opacity-[0.015] pointer-events-none"></div>
+                {/* Enhanced glow effects at corners */}
+                <div className="fixed top-0 left-0 w-72 h-72 rounded-full bg-logo-blue/10 blur-3xl"></div>
+                <div className="fixed bottom-0 right-0 w-96 h-96 rounded-full bg-plasma-violet/10 blur-3xl"></div>
+                <div className="fixed top-1/2 right-0 w-64 h-64 rounded-full bg-bio-green/5 blur-3xl"></div>
                 
                 <Navbar />
-                <main className={`pt-16 sm:pt-20 relative z-10 transition-all duration-700 ${isLoading ? 'opacity-0 translate-y-6' : 'opacity-100 translate-y-0'}`}>
+                <main className={`relative z-10 transition-all duration-1000 ${isLoading ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0'}`}>
                   <Routes>
-                    <Route path="/" element={<Index />} />
-                    <Route path="/home" element={<Navigate to="/" replace />} />
+                    <Route path="/" element={<Navigate to="/home" replace />} />
+                    <Route path="/home" element={<Index />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/whitepaper" element={<Whitepaper />} />
                     <Route path="/tokenomics" element={<Tokenomics />} />

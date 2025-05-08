@@ -11,7 +11,6 @@ import GradientText from '@/components/ui/GradientText';
 
 const AboutHero = () => {
   const [displayedElements, setDisplayedElements] = useState<string[]>([]);
-  const title = 'The Future of Cures: Molecule-to-Market';
   const isMobile = useIsMobile();
   
   const [tickerItems] = useState([
@@ -39,19 +38,21 @@ const AboutHero = () => {
 
   return (
     <div className="relative z-10 w-full overflow-visible">
-      {/* Enhanced background elements */}
-      <div className="absolute -top-40 -left-20 w-80 h-80 rounded-full bg-logo-blue/10 blur-3xl"></div>
-      <div className="absolute top-1/2 -right-40 w-96 h-96 rounded-full bg-plasma-violet/10 blur-3xl"></div>
-      <div className="absolute bottom-20 left-20 w-60 h-60 rounded-full bg-bio-green/5 blur-3xl"></div>
+      {/* Enhanced background elements with more intense glow */}
+      <div className="absolute -top-40 -left-20 w-80 h-80 rounded-full bg-logo-blue/15 blur-3xl animate-pulse-glow"></div>
+      <div className="absolute top-1/2 -right-40 w-96 h-96 rounded-full bg-plasma-violet/15 blur-3xl animate-pulse-glow" style={{animationDelay: "1s"}}></div>
+      <div className="absolute bottom-20 left-20 w-60 h-60 rounded-full bg-bio-green/10 blur-3xl animate-pulse-glow" style={{animationDelay: "2s"}}></div>
       
-      {/* Command HUD Header with dramatic appearance */}
-      <div className={`relative mb-6 transform transition-all duration-500 ${displayedElements.includes('header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-        <div className="absolute inset-0 bg-gradient-to-r from-logo-blue/10 via-plasma-violet/15 to-bio-green/10 rounded-xl blur-sm"></div>
+      {/* Command HUD Header with dramatic appearance - no more rotating text */}
+      <div className={`relative mb-6 transform transition-all duration-700 ${displayedElements.includes('header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className="absolute inset-0 bg-gradient-to-r from-logo-blue/15 via-plasma-violet/20 to-bio-green/15 rounded-xl blur-md"></div>
         <CommandHUDHeader 
-          title={<>
-            <span className="text-titanium-white">The Future of Cures:</span>
-            <span className="ml-2 bg-gradient-to-r from-bio-blue via-logo-blue to-plasma-violet bg-clip-text text-transparent">Molecule-to-Market</span>
-          </>}
+          title={
+            <>
+              <span className="text-titanium-white">The Future of Cures: </span>
+              <span className="text-logo-blue">Molecule-to-Market</span>
+            </>
+          }
           subtitle={<>Decentralized <GradientText variant="blue-purple">research & development</GradientText> protocol</>} 
           statusText="CURABLE CORE ACTIVE"
           animated={false}
@@ -59,7 +60,7 @@ const AboutHero = () => {
       </div>
       
       {/* Enhanced Status Ticker with dramatic styling */}
-      <div className={`transform transition-all duration-500 ${displayedElements.includes('ticker') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+      <div className={`transform transition-all duration-700 delay-100 ${displayedElements.includes('ticker') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <StatusTicker 
           items={tickerItems} 
           className="mb-8 hover:shadow-[0_0_30px_rgba(30,174,219,0.4)] transition-all duration-500 glass-panel"
@@ -68,7 +69,7 @@ const AboutHero = () => {
       
       {/* Enhanced mission panel with futuristic design elements */}
       <div 
-        className={`glass-panel p-6 sm:p-8 mb-12 relative overflow-hidden group transition-all duration-700 transform ${displayedElements.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} hover:shadow-[0_0_40px_rgba(142,228,175,0.3)]`}
+        className={`glass-panel p-6 sm:p-8 mb-12 relative overflow-hidden group transition-all duration-1000 transform ${displayedElements.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} hover:shadow-[0_0_40px_rgba(142,228,175,0.3)]`}
       >
         {/* Enhanced corner brackets with animated glow */}
         <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-plasma-violet/70 animate-pulse"></div>
@@ -77,23 +78,30 @@ const AboutHero = () => {
         <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-plasma-violet/70 animate-pulse" style={{animationDelay: "1.5s"}}></div>
         
         {/* Enhanced scan line effect */}
-        <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-logo-blue/60 to-transparent scan-line"></div>
+        <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-logo-blue/60 to-transparent animate-scan-line"></div>
         
         {/* Mission text with enhanced typography and effects */}
         <div className="relative z-10">
           <Star className="absolute -left-2 -top-2 text-bio-green/60 w-10 h-10 animate-pulse" />
           <h2 className="text-2xl sm:text-3xl font-bold text-titanium-white mb-4">Mission Statement<span className="text-logo-blue">_</span></h2>
-          <p className="text-titanium-white/90 mb-8 leading-relaxed text-base sm:text-lg break-words data-surge font-light pl-4 border-l-2 border-plasma-violet/30">
-            <span className="text-bio-green font-semibold text-2xl">"</span>
-            {mission}
-            <span className="text-bio-green font-semibold text-2xl">"</span>
-          </p>
+          
+          {/* Enhanced mission text with gradient border */}
+          <div className="relative rounded-lg p-4 sm:p-6 bg-gradient-to-br from-gunmetal-900/50 to-dark-surface/30 backdrop-blur-sm border border-logo-blue/30 shadow-inner">
+            <p className="text-titanium-white/90 leading-relaxed text-base sm:text-lg break-words font-light">
+              <span className="text-bio-green font-semibold text-2xl">"</span>
+              {mission}
+              <span className="text-bio-green font-semibold text-2xl">"</span>
+            </p>
+            
+            {/* Bottom highlight line */}
+            <div className="absolute bottom-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-bio-green/40 to-transparent"></div>
+          </div>
           
           <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-graphite-700/60 to-transparent my-8"></div>
         </div>
         
         {/* Enhanced feature icons with more dramatic styling */}
-        <div className={`flex flex-wrap gap-4 sm:gap-6 mb-8 justify-center sm:justify-start transform transition-all duration-700 delay-300 ${displayedElements.includes('features') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <div className={`flex flex-wrap gap-4 sm:gap-6 mb-8 justify-center sm:justify-start transform transition-all duration-1000 delay-300 ${displayedElements.includes('features') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gunmetal-900/70 border-2 border-logo-blue/40 text-sm text-titanium-white/90 font-mono hover:text-bio-green hover:border-bio-green/60 transition-all duration-300 group cursor-default shadow-lg hover:shadow-[0_0_15px_rgba(142,228,175,0.3)]">
             <Beaker className="w-5 h-5 text-bio-green group-hover:scale-125 transition-transform duration-300" />
             <span>Research Driven</span>
@@ -109,7 +117,7 @@ const AboutHero = () => {
         </div>
         
         {/* Enhanced CTA section with more dramatic styling */}
-        <div className={`transform transition-all duration-700 delay-500 ${displayedElements.includes('cta') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <div className={`transform transition-all duration-1000 delay-500 ${displayedElements.includes('cta') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           {isMobile ? (
             <div className="mt-6">
               <Sheet>
@@ -163,16 +171,17 @@ const AboutHero = () => {
             </div>
           ) : (
             <div className="mt-10 flex justify-center sm:justify-start">
+              {/* Enhanced glowing CTA button */}
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-logo-blue via-plasma-violet to-bio-green rounded-lg blur opacity-30 group-hover:opacity-80 transition duration-500"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-logo-blue via-plasma-violet to-bio-green rounded-lg blur opacity-30 group-hover:opacity-80 transition duration-500 animate-pulse-glow"></div>
                 <a 
                   href="https://binding-db-integrator-1-codelace77.replit.app/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="relative bg-gradient-to-br from-gunmetal-900 to-dark-surface hover:from-dark-surface hover:to-gunmetal-900 text-white font-bold flex items-center gap-3 font-mono border-2 border-logo-blue/50 transition-all duration-500 text-base py-6 px-10 rounded-lg"
+                  className="relative bg-gradient-to-br from-gunmetal-900 to-dark-surface hover:from-dark-surface hover:to-gunmetal-900 text-white font-bold flex items-center gap-3 font-mono border-2 border-logo-blue/50 transition-all duration-500 text-base py-6 px-10 rounded-lg hover:scale-105"
                 >
-                  <span className="bg-gradient-to-r from-logo-blue via-plasma-violet to-bio-green bg-clip-text text-transparent">launch --next-frontier</span>
-                  <ArrowRight className="w-6 h-6 text-logo-blue animate-pulse" />
+                  <span className="bg-gradient-to-r from-logo-blue via-plasma-violet to-bio-green bg-clip-text text-transparent animate-text-shimmer bg-[length:200%_auto]">launch --next-frontier</span>
+                  <ArrowRight className="w-6 h-6 text-logo-blue group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
               </div>
             </div>

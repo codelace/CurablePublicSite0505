@@ -19,6 +19,9 @@ export default {
       },
     },
     extend: {
+      screens: {
+        'xs': '400px',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -74,6 +77,10 @@ export default {
       },
       backgroundImage: {
         "gradient-dark": "linear-gradient(to bottom right, #0E0E10, #1A1A1E)",
+        "gradient-radial": "radial-gradient(circle at center, transparent 0%, #0E0E10 70%)",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-glow": "linear-gradient(to right, rgba(30, 174, 219, 0), rgba(30, 174, 219, 0.3), rgba(30, 174, 219, 0))",
+        "noise": "url('/noise.png')"
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -92,6 +99,10 @@ export default {
         'pulse-glow': {
           '0%, 100%': { opacity: '0.1' },
           '50%': { opacity: '0.3' },
+        },
+        'pulse-subtle': {
+          '0%, 100%': { opacity: '0.95' },
+          '50%': { opacity: '1' },
         },
         'pan-grid': {
           '0%': { transform: 'translateX(0px)' },
@@ -127,18 +138,77 @@ export default {
           '0%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(-10px)' },
         },
+        'scan-line': {
+          '0%': { top: '-30px' },
+          '100%': { top: '100%' },
+        },
+        'flicker': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.8' },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
+        'rotate-slow': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        'ping': {
+          '75%, 100%': {
+            transform: 'scale(2)',
+            opacity: '0',
+          },
+        },
+        'blink': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
+        'expand': {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+        'data-surge': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        'ripple': {
+          '0%': { boxShadow: '0 0 0 0 rgba(30, 174, 219, 0.4)' },
+          '70%': { boxShadow: '0 0 0 15px rgba(30, 174, 219, 0)' },
+          '100%': { boxShadow: '0 0 0 0 rgba(30, 174, 219, 0)' },
+        },
+        'glitch': {
+          '0%': { transform: 'translate(0)' },
+          '20%': { transform: 'translate(-2px, 2px)' },
+          '40%': { transform: 'translate(-2px, -2px)' },
+          '60%': { transform: 'translate(2px, 2px)' },
+          '80%': { transform: 'translate(2px, -2px)' },
+          '100%': { transform: 'translate(0)' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'pulse-glow': 'pulse-glow 6s infinite ease-in-out',
+        'pulse-subtle': 'pulse-subtle 3s infinite ease-in-out',
         'pan-grid': 'pan-grid 15s infinite linear',
         'fade-up': 'fade-up 0.6s ease-out',
         'expand-underline': 'expand-underline 0.3s ease-out forwards',
         'pulse-dot': 'pulse-dot 2s infinite ease-in-out',
-        shimmer: "shimmer 3s ease-in-out infinite",
+        'shimmer': "shimmer 3s ease-in-out infinite",
         "text-shimmer": "text-shimmer 3s ease-in-out infinite",
         'code-flow': 'code-flow 10s ease-in-out infinite alternate',
+        'scan-line': 'scan-line 4s linear infinite',
+        'flicker': 'flicker 3s ease-in-out infinite',
+        'float': 'float 3s ease-in-out infinite',
+        'rotate-slow': 'rotate-slow 30s linear infinite',
+        'ping': 'ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite',
+        'blink': 'blink 1s ease-in-out infinite',
+        'expand': 'expand 1s ease-out',
+        'data-surge': 'data-surge 8s ease infinite',
+        'ripple': 'ripple 1.5s infinite',
+        'glitch': 'glitch 0.5s ease-in-out infinite alternate'
       },
     }
   },
