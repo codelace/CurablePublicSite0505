@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import Card from './Card';
 import { Value } from '@/data/values';
 
@@ -9,6 +9,42 @@ interface ValueCardProps {
 }
 
 const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  
+  // Add magnetic movement effect on hover
+  useEffect(() => {
+    if (!isHovered || !cardRef.current) return;
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      const card = cardRef.current;
+      if (!card) return;
+      
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      // Adjust strength of the magnetic effect
+      const strength = 0.08;
+      card.style.transform = `translate(${x * strength}px, ${y * strength}px) scale(1.02) translateY(-8px)`;
+    };
+    
+    const handleMouseLeave = () => {
+      if (cardRef.current) {
+        cardRef.current.style.transform = '';
+      }
+    };
+    
+    document.addEventListener('mousemove', handleMouseMove);
+    cardRef.current.addEventListener('mouseleave', handleMouseLeave);
+    
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      if (cardRef.current) {
+        cardRef.current.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, [isHovered]);
+  
   const iconMap = {
     transparency: (
       <svg className={`w-8 h-8 text-plasma-violet transition-all duration-500 ${isHovered ? 'scale-110 text-glow-purple' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -39,30 +75,103 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
     access: "Access index: 1,287 open datasets available",
   };
 
+  // Color schemes for different value types
+  const getValueColorScheme = (icon: string) => {
+    switch (icon) {
+      case 'rigor':
+        return {
+          gradientFrom: 'from-logo-blue/10',
+          gradientTo: 'to-bio-blue/5',
+          ringColor: 'border-logo-blue/40',
+          glowColor: 'shadow-[0_0_15px_rgba(30,174,219,0.3)]'
+        };
+      case 'access':
+        return {
+          gradientFrom: 'from-bio-blue/10',
+          gradientTo: 'to-bio-green/5',
+          ringColor: 'border-bio-blue/40',
+          glowColor: 'shadow-[0_0_15px_rgba(91,192,235,0.3)]'
+        };
+      case 'governance':
+        return {
+          gradientFrom: 'from-plasma-violet/10',
+          gradientTo: 'to-quantum-red/5',
+          ringColor: 'border-plasma-violet/40',
+          glowColor: 'shadow-[0_0_15px_rgba(161,98,255,0.3)]'
+        };
+      default: // transparency
+        return {
+          gradientFrom: 'from-plasma-violet/10',
+          gradientTo: 'to-logo-blue/5',
+          ringColor: 'border-plasma-violet/40',
+          glowColor: 'shadow-[0_0_15px_rgba(161,98,255,0.3)]'
+        };
+    }
+  };
+
+  const colorScheme = getValueColorScheme(value.icon);
+
   return (
     <Card 
-      className={`flex flex-col items-center text-center h-full p-3 transition-all duration-300 ${isHovered ? 'transform -translate-y-2 magnetic-hover' : ''}`}
+      ref={cardRef}
+      className={`flex flex-col items-center text-center h-full p-3 transition-all duration-300 ${isHovered ? 'transform -translate-y-2' : ''}`}
       glowColor={value.icon === 'rigor' || value.icon === 'access' ? 'blue' : 'purple'}
     >
-      <div className={`mb-3 relative ${isHovered ? 'animate-pulse-dot' : ''}`}>
+      {/* Enhanced background effect */}
+      {isHovered && (
+        <div className={`absolute inset-0 bg-gradient-to-br ${colorScheme.gradientFrom} ${colorScheme.gradientTo} rounded-lg transition-opacity duration-300 opacity-70`}></div>
+      )}
+      
+      <div className={`mb-3 relative z-10 ${isHovered ? 'animate-pulse-dot' : ''}`}>
         <div className={`absolute inset-0 rounded-full bg-gradient-radial opacity-0 transition-opacity duration-300 ${isHovered ? 'opacity-30' : ''}`}></div>
         {iconMap[value.icon as keyof typeof iconMap]}
+        
+        {/* Add orbiting particle effect */}
+        {isHovered && (
+          <div className="absolute inset-[-8px] pointer-events-none">
+            <div className="absolute w-1.5 h-1.5 rounded-full bg-logo-blue/60 animate-orbit" style={{animationDuration: '3s'}}></div>
+            <div className="absolute w-1 h-1 rounded-full bg-plasma-violet/60 animate-orbit" style={{animationDuration: '4s', animationDelay: '0.5s'}}></div>
+          </div>
+        )}
       </div>
-      <h3 className={`text-lg font-bold mb-2 transition-all duration-300 ${isHovered ? 'text-gradient-purple-blue' : 'text-titanium-white'}`}>
+      
+      <h3 className={`text-lg font-bold mb-2 transition-all duration-300 ${isHovered ? 'text-gradient-purple-blue' : 'text-titanium-white'} relative z-10`}>
         {value.title}
       </h3>
-      <p className={`text-titanium-white/80 text-xs mb-2 transition-opacity duration-300 ${isHovered ? 'opacity-90' : 'opacity-75'}`}>
+      <p className={`text-titanium-white/80 text-xs mb-2 transition-opacity duration-300 ${isHovered ? 'opacity-90' : 'opacity-75'} relative z-10`}>
         {value.description}
       </p>
       
       {isHovered && (
-        <div className="mt-2 pt-2 border-t border-graphite-700/40 w-full fade-in-up">
+        <div className="mt-2 pt-2 border-t border-graphite-700/40 w-full fade-in-up relative z-10">
           <p className="text-xs font-mono text-logo-blue flex items-center glow-text">
-            <span className="mr-1 opacity-70">›</span>
+            <span className="mr-1 opacity-70 animate-pulse">›</span>
             {valueDetailMap[value.icon as keyof typeof valueDetailMap]}
           </p>
           <div className="mt-1 w-full h-1 bg-gradient-to-r from-transparent via-logo-blue/20 to-transparent rounded-full animate-pulse-glow"></div>
+          
+          {/* Add data visualization bar */}
+          <div className="mt-2 w-full h-1 bg-graphite-700/30 rounded-full overflow-hidden">
+            <div 
+              className={`h-full ${value.icon === 'rigor' || value.icon === 'access' ? 'bg-logo-blue' : 'bg-plasma-violet'} rounded-full animate-expand`}
+              style={{
+                width: value.icon === 'transparency' ? '98%' : 
+                       value.icon === 'rigor' ? '84%' : 
+                       value.icon === 'governance' ? '89%' : '75%'
+              }}
+            ></div>
+          </div>
         </div>
+      )}
+      
+      {/* Add corner accents on hover */}
+      {isHovered && (
+        <>
+          <div className={`absolute top-0 left-0 w-3 h-3 border-t border-l ${colorScheme.ringColor} rounded-tl-md`}></div>
+          <div className={`absolute top-0 right-0 w-3 h-3 border-t border-r ${colorScheme.ringColor} rounded-tr-md`}></div>
+          <div className={`absolute bottom-0 left-0 w-3 h-3 border-b border-l ${colorScheme.ringColor} rounded-bl-md`}></div>
+          <div className={`absolute bottom-0 right-0 w-3 h-3 border-b border-r ${colorScheme.ringColor} rounded-br-md`}></div>
+        </>
       )}
     </Card>
   );
