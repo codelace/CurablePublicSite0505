@@ -7,10 +7,11 @@ import WhitepaperSidebar from '@/components/whitepaper/WhitepaperSidebar';
 import WhitepaperSectionComponent from '@/components/whitepaper/WhitepaperSection';
 import SignatureBlock from '@/components/whitepaper/SignatureBlock';
 import CallToAction from '@/components/whitepaper/CallToAction';
+import ParticleBackground from '@/components/ParticleBackground';
 
 const Whitepaper = () => {
   const [activeSection, setActiveSection] = useState(0);
-  const fullTerminalText = '> initializing whitepaper_v2.5...\n> system loaded: curable-core-protocol';
+  const fullTerminalText = '> initializing whitepaper_v2.5...\n> system loaded: curable-core-protocol\n> rendering document...';
 
   // Intersection observer for scrollspy functionality
   useEffect(() => {
@@ -53,7 +54,10 @@ const Whitepaper = () => {
   };
 
   return (
-    <div className="container max-w-full p-0 min-h-[calc(100vh-5rem)]">
+    <div className="container max-w-full p-0 min-h-[calc(100vh-5rem)] relative overflow-hidden">
+      {/* Subtle particle background */}
+      <ParticleBackground count={30} color="blue" intensity="low" speed="slow" />
+      
       <WhitepaperHeader fullTerminalText={fullTerminalText} />
       
       <div className="flex flex-col md:flex-row">
@@ -65,7 +69,11 @@ const Whitepaper = () => {
         />
         
         {/* Main content area */}
-        <main className="flex-1 bg-dark-base backdrop-blur-sm min-h-[calc(100vh-9rem)]">
+        <main className="flex-1 bg-dark-base/80 backdrop-blur-sm min-h-[calc(100vh-9rem)] relative">
+          {/* Decorative background elements */}
+          <div className="absolute inset-0 bg-gradient-radial opacity-10 pointer-events-none"></div>
+          <div className="absolute inset-0 grid-overlay opacity-5 pointer-events-none"></div>
+          
           <ScrollArea className="h-[calc(100vh-9rem)]">
             <div className="p-6 md:p-8 space-y-12">
               {sections.map((section, index) => (

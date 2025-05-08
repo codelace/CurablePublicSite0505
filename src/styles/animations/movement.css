@@ -74,4 +74,49 @@
       transform: translateY(0);
     }
   }
+  
+  /* New: Holographic scan effect */
+  .holo-scan {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .holo-scan::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, transparent, rgba(30, 174, 219, 0.2), transparent);
+    animation: holoScan 4s infinite ease-in-out;
+    pointer-events: none;
+  }
+  
+  @keyframes holoScan {
+    0% { top: -50%; }
+    100% { top: 150%; }
+  }
+  
+  /* New: Data surge animation */
+  .data-surge {
+    position: relative;
+  }
+  
+  .data-surge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(91, 192, 235, 0.3), transparent);
+    animation: dataSurge 5s infinite ease-out;
+    pointer-events: none;
+  }
+  
+  @keyframes dataSurge {
+    0% { left: -50%; }
+    100% { left: 150%; }
+  }
 }
