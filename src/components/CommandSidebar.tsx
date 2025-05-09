@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 
 const navItems = [
-  { title: "Home", url: "/", icon: LayoutDashboard },
+  { title: "Home", url: "/home", icon: LayoutDashboard },
   { title: "About", url: "/about", icon: CircleDot },
   { title: "Whitepaper", url: "/whitepaper", icon: Settings },
   { title: "Tokenomics", url: "/tokenomics", icon: CircleDot },

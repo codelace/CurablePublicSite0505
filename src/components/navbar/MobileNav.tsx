@@ -35,16 +35,16 @@ export const MobileNav = () => {
                 ABOUT
               </Link>
               <Link 
-                to="/tokenomics" 
-                className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/tokenomics') ? 'text-plasma-violet' : 'text-titanium-white'}`}
-              >
-                TOKENOMICS
-              </Link>
-              <Link 
                 to="/whitepaper" 
                 className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/whitepaper') ? 'text-plasma-violet' : 'text-titanium-white'}`}
               >
                 WHITEPAPER
+              </Link>
+              <Link 
+                to="/tokenomics" 
+                className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/tokenomics') ? 'text-plasma-violet' : 'text-titanium-white'}`}
+              >
+                TOKENOMICS
               </Link>
 
               {/* Social Media Links */}

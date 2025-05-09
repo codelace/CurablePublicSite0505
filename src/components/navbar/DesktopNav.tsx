@@ -15,16 +15,16 @@ export const DesktopNav = () => {
         ABOUT
       </Link>
       <Link 
-        to="/tokenomics" 
-        className={`nav-link after:transition-all after:duration-300 ${isActive('/tokenomics') ? 'text-logo-blue after:opacity-100 after:left-0 after:right-0' : ''}`}
-      >
-        TOKENOMICS
-      </Link>
-      <Link 
         to="/whitepaper" 
         className={`nav-link after:transition-all after:duration-300 ${isActive('/whitepaper') ? 'text-logo-blue after:opacity-100 after:left-0 after:right-0' : ''}`}
       >
         WHITEPAPER
+      </Link>
+      <Link 
+        to="/tokenomics" 
+        className={`nav-link after:transition-all after:duration-300 ${isActive('/tokenomics') ? 'text-logo-blue after:opacity-100 after:left-0 after:right-0' : ''}`}
+      >
+        TOKENOMICS
       </Link>
 
       {/* Social Media Links */}
