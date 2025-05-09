@@ -90,7 +90,7 @@ const App = () => {
                 <div className="fixed top-1/2 right-0 w-64 h-64 rounded-full bg-warm-coral/5 blur-3xl"></div>
                 
                 <Navbar />
-                <main className={`relative z-10 transition-all duration-1000 magnetic-transition ${isLoading ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0 active'}`}>
+                <main className={`relative z-10 transition-all duration-1000 magnetic-transition navbar-padding ${isLoading ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0 active'}`}>
                   <Routes>
                     <Route path="/" element={<Navigate to="/home" replace />} />
                     <Route path="/home" element={

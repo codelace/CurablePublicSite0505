@@ -39,4 +39,9 @@
     @apply absolute w-full h-[1px] bg-gradient-to-r from-transparent via-plasma-violet/60 to-transparent;
     transform: rotate(-4deg);
   }
+  
+  /* Added class for content padding to account for fixed navbar */
+  .navbar-padding {
+    @apply pt-[60px] sm:pt-[68px];
+  }
 }

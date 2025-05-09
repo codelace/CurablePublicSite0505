@@ -42,7 +42,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="w-full relative min-h-screen pb-8"> {/* Further reduced padding */}
+    <div className="w-full relative min-h-screen pb-8 pt-[60px] sm:pt-[68px]"> {/* Added padding top to account for navbar height */}
       {/* Enhanced background effects */}
       <AboutBackgroundEffects />
       
