@@ -1,0 +1,108 @@
+
+@layer utilities {
+  /* Warm glow pulse effect */
+  .warm-glow {
+    animation: warm-glow 4s infinite alternate;
+  }
+  
+  @keyframes warm-glow {
+    0% { box-shadow: 0 0 5px rgba(255, 70, 118, 0.3); }
+    100% { box-shadow: 0 0 20px rgba(255, 70, 118, 0.6); }
+  }
+  
+  /* Magnetic field line animation */
+  .magnetic-field-line {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .magnetic-field-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 70, 118, 0.6), transparent);
+    animation: magnetic-scan 3s infinite ease-in-out;
+  }
+  
+  @keyframes magnetic-scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  /* Heat distortion effect */
+  .heat-distortion {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .heat-distortion::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('/noise.png');
+    opacity: 0.02;
+    animation: heat-wave 8s infinite;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  
+  @keyframes heat-wave {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(5px) scale(1.01); }
+  }
+  
+  /* Magnetic attraction effect */
+  .magnetic-attraction {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .magnetic-attraction:hover {
+    box-shadow: 0 0 20px rgba(255, 70, 118, 0.4);
+    border-color: rgba(255, 70, 118, 0.8);
+  }
+  
+  /* Warm pulse ripple effect */
+  .warm-ripple {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .warm-ripple::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 rgba(255, 70, 118, 0.7);
+    animation: warm-ripple-effect 3s infinite;
+    opacity: 0;
+  }
+  
+  @keyframes warm-ripple-effect {
+    0% { box-shadow: 0 0 0 0 rgba(255, 70, 118, 0.7); opacity: 1; }
+    70% { box-shadow: 0 0 0 20px rgba(255, 70, 118, 0); opacity: 0; }
+    100% { box-shadow: 0 0 0 0 rgba(255, 70, 118, 0); opacity: 0; }
+  }
+  
+  /* Heat sensitive hover effect */
+  .heat-sensitive {
+    position: relative;
+    transition: all 0.4s ease;
+  }
+  
+  .heat-sensitive::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 70, 118, 0.3) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  
+  .heat-sensitive:hover::before {
+    opacity: 1;
+  }
+}

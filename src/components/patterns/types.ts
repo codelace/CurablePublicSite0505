@@ -4,7 +4,7 @@ export interface PatternProps {
   animated?: boolean;
   className?: string;
   speed?: 'slow' | 'medium' | 'fast';
-  color?: 'blue' | 'green' | 'violet' | 'multi';
+  color?: 'blue' | 'green' | 'violet' | 'multi' | 'red';
 }
 
 export const getOpacity = (intensity: PatternProps['intensity'] = 'medium') => {
@@ -28,6 +28,7 @@ export const getColor = (color: PatternProps['color'] = 'blue') => {
     case 'green': return 'text-bio-green';
     case 'violet': return 'text-plasma-violet';
     case 'multi': return 'bg-gradient-to-br from-bio-blue via-plasma-violet to-quantum-red bg-clip-text';
+    case 'red': return 'text-quantum-red';
     default: return 'text-bio-blue';
   }
 };
