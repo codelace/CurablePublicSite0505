@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Card from '@/components/Card';
 import GradientText from '@/components/ui/GradientText';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 
 interface Principle {
   id: string;
@@ -42,13 +43,14 @@ const PrinciplesTabContent: React.FC = () => {
   
   return (
     <>
-      {/* Principles Grid */}
-      <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-titanium-white">
-        <GradientText variant="multi" animate={true}>Decentralized Research & Development Protocol</GradientText>
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center text-titanium-white">
+        <GradientText variant="multi" animate={true}>Decentralized Research Protocol</GradientText>
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      {/* Horizontal layout on wider screens */}
+      <div className="hidden md:grid grid-cols-4 gap-3">
         {principles.map(principle => (
-          <PrincipleCard 
+          <CompactPrincipleCard 
             key={principle.id}
             principle={principle}
             isHovered={hoveredPrinciple === principle.id}
@@ -56,6 +58,40 @@ const PrinciplesTabContent: React.FC = () => {
             onLeave={() => setHoveredPrinciple(null)}
           />
         ))}
+      </div>
+      
+      {/* Tabbed interface for mobile */}
+      <div className="md:hidden">
+        <Tabs defaultValue={principles[0].id} className="w-full">
+          <TabsList className="grid grid-cols-4 mb-2">
+            {principles.map(principle => (
+              <TabsTrigger 
+                key={principle.id} 
+                value={principle.id}
+                className="px-2 py-1 text-xs flex flex-col items-center"
+              >
+                <span className="text-lg mb-1">{principle.icon}</span>
+                <span className="truncate max-w-[60px]">{principle.title.split(' ')[0]}</span>
+              </TabsTrigger>
+            ))}
+          </TabsList>
+          
+          {principles.map(principle => (
+            <TabsContent key={principle.id} value={principle.id} className="mt-0">
+              <Card 
+                className="p-4"
+                variant="elevated"
+                glowColor={principle.id === 'agentic-intelligence' || principle.id === 'collective' ? 'purple' : 'blue'}
+              >
+                <div className="flex items-center mb-2">
+                  <span className="text-2xl mr-3">{principle.icon}</span>
+                  <h3 className="text-lg font-bold text-titanium-white">{principle.title}</h3>
+                </div>
+                <p className="text-titanium-white/80 text-sm">{principle.description}</p>
+              </Card>
+            </TabsContent>
+          ))}
+        </Tabs>
       </div>
     </>
   );
@@ -68,57 +104,54 @@ interface PrincipleCardProps {
   onLeave: () => void;
 }
 
-const PrincipleCard: React.FC<PrincipleCardProps> = ({ principle, isHovered, onHover, onLeave }) => {
+const CompactPrincipleCard: React.FC<PrincipleCardProps> = ({ principle, isHovered, onHover, onLeave }) => {
+  // Color schemes for different value types
+  const getValueColorScheme = (id: string) => {
+    switch (id) {
+      case 'transparent':
+      case 'open':
+        return {
+          glowColor: 'blue',
+          textColor: 'text-logo-blue',
+          iconBg: 'bg-logo-blue/10'
+        };
+      default: // agentic-intelligence, collective
+        return {
+          glowColor: 'purple',
+          textColor: 'text-plasma-violet',
+          iconBg: 'bg-plasma-violet/10'
+        };
+    }
+  };
+
+  const colorScheme = getValueColorScheme(principle.id);
+
   return (
     <Card 
-      key={principle.id} 
-      className="flex flex-col p-5 h-full transform transition-all duration-500 hover:scale-105"
+      className={`flex flex-col p-3 h-full transition-all duration-300 ${
+        isHovered ? 'transform -translate-y-1' : ''
+      }`}
       variant="elevated"
-      glowColor={principle.id === 'agentic-intelligence' || principle.id === 'collective' ? 'purple' : 'blue'}
+      glowColor={colorScheme.glowColor === 'blue' ? 'blue' : 'purple'}
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
     >
-      <div className={`text-4xl mb-3 transition-all duration-300 float-animation ${isHovered ? 'scale-125' : ''}`}>
-        {principle.icon}
+      <div className="flex items-center mb-2">
+        <div className={`w-8 h-8 rounded-full ${colorScheme.iconBg} flex items-center justify-center ${isHovered ? 'animate-pulse' : ''}`}>
+          <span className="text-xl">{principle.icon}</span>
+        </div>
+        <h3 className={`ml-2 text-sm font-bold ${isHovered ? colorScheme.textColor : 'text-titanium-white'}`}>
+          {principle.title.split(' ')[0]}
+        </h3>
       </div>
-      <h3 className="text-xl font-bold mb-2 text-titanium-white">
-        {isHovered ? (
-          <GradientText variant={principle.id === 'agentic-intelligence' || principle.id === 'collective' ? 'purple-red' : 'green-blue'} className="text-distortion">
-            {principle.title}
-          </GradientText>
-        ) : principle.title}
-      </h3>
-      <p className="text-titanium-white/80 text-sm">{principle.description}</p>
       
-      {/* Interactive elements that appear on hover */}
+      <p className="text-titanium-white/80 text-xs leading-tight">{principle.description}</p>
+      
       {isHovered && (
-        <div className="mt-4 pt-3 border-t border-graphite-700/30 animate-fade-up">
-          <div className="flex items-center justify-between text-xs font-mono">
-            <span className="text-titanium-white/60">Impact Score</span>
-            <span className="text-logo-blue">94.3%</span>
-          </div>
-          <div className="h-1 w-full bg-graphite-700/20 rounded-full mt-1 overflow-hidden">
-            <div className={`h-full animate-expand rounded-full ${principle.id === 'agentic-intelligence' || principle.id === 'collective' ? 'bg-plasma-violet' : 'bg-logo-blue'}`} style={{width: "94%"}}></div>
-          </div>
-          
-          {/* Animated nodes */}
-          <div className="grid grid-cols-3 gap-2 mt-3">
-            {[1, 2, 3].map((nodeIndex) => (
-              <div 
-                key={nodeIndex} 
-                className="w-full h-1 rounded-full bg-graphite-700/30 overflow-hidden" 
-              >
-                <div 
-                  className="h-full rounded-full cyber-loading" 
-                  style={{
-                    background: nodeIndex === 1 ? 'linear-gradient(90deg, rgba(30,174,219,0.5), rgba(30,174,219,0.2))' : 
-                    nodeIndex === 2 ? 'linear-gradient(90deg, rgba(161,98,255,0.5), rgba(161,98,255,0.2))' : 
-                    'linear-gradient(90deg, rgba(142,228,175,0.5), rgba(142,228,175,0.2))',
-                    animationDelay: `${nodeIndex * 0.2}s`
-                  }}
-                ></div>
-              </div>
-            ))}
+        <div className="mt-2 pt-1 border-t border-graphite-700/20 w-full animate-fade-in">
+          <div className="flex justify-between text-[0.65rem] text-titanium-white/50 font-mono">
+            <span>Protocol</span>
+            <span className={colorScheme.textColor}>active</span>
           </div>
         </div>
       )}
