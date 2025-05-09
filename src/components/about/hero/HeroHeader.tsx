@@ -9,7 +9,7 @@ interface HeroHeaderProps {
 
 const HeroHeader: React.FC<HeroHeaderProps> = ({ isVisible }) => {
   return (
-    <div className={`relative mb-6 transform transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+    <div className={`relative mb-4 transform transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
       {/* Warmer, more magnetic background glow */}
       <div className="absolute inset-0 bg-gradient-to-r from-warm-rose/20 via-warm-amber/15 to-warm-coral/15 rounded-xl blur-md"></div>
       
@@ -35,10 +35,10 @@ const HeroHeader: React.FC<HeroHeaderProps> = ({ isVisible }) => {
       <div className="absolute inset-0 heat-distortion rounded-xl pointer-events-none"></div>
       
       {/* Warm corners effect */}
-      <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-warm-rose/50 rounded-tl-lg"></div>
-      <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-warm-amber/50 rounded-tr-lg"></div>
-      <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-warm-coral/50 rounded-bl-lg"></div>
-      <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-warm-rose/50 rounded-br-lg"></div>
+      <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-warm-rose/50 rounded-tl-lg"></div>
+      <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-warm-amber/50 rounded-tr-lg"></div>
+      <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-warm-coral/50 rounded-bl-lg"></div>
+      <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-warm-rose/50 rounded-br-lg"></div>
     </div>
   );
 };

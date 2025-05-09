@@ -17,16 +17,16 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
   return (
     <div 
       id="team-section" 
-      className="mb-8 relative z-10 opacity-100 translate-y-0 w-full"
+      className="mb-4 relative z-10 opacity-100 translate-y-0 w-full"
     >
       <CommandHUDHeader 
         title="Our Team" 
         variant="secondary" 
         statusText="CONTRIBUTOR MODULE" 
-        className="mb-4"
+        className="mb-3"
       />
       
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
         {people.map((person, index) => (
           <div 
             key={`team-member-${person.id}`}

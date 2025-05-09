@@ -28,27 +28,27 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  // Enhanced dramatic staged animation on mount
+  // Enhanced dramatic staged animation on mount with faster timing
   useEffect(() => {
     // Initial stage - Basic UI elements
     setTimeout(() => {
       setMounted(true);
-    }, 200);
+    }, 100); // Reduced from 200ms
     
     // Second stage - Hero text and intro
     setTimeout(() => {
       setRevealSections(prev => [...prev, 'hero-text']);
-    }, 800);
+    }, 400); // Reduced from 800ms
     
     // Third stage - Status indicators
     setTimeout(() => {
       setRevealSections(prev => [...prev, 'status']);
-    }, 1400);
+    }, 700); // Reduced from 1400ms
     
     // Fourth stage - Main content
     setTimeout(() => {
       setRevealSections(prev => [...prev, 'tabs']);
-    }, 2000);
+    }, 1000); // Reduced from 2000ms
   }, []);
 
   // Scroll to content function
@@ -64,9 +64,9 @@ const Index = () => {
       {/* Background components */}
       <BackgroundEffects />
       
-      {/* Main content with animations */}
-      <div className={`container px-4 py-6 relative z-10 flex-1 transition-all duration-1000 transform ${mounted ? 'opacity-100' : 'opacity-0'}`}>
-        {/* Hero Section */}
+      {/* Main content with animations - compacted layout */}
+      <div className={`container px-4 py-4 relative z-10 flex-1 transition-all duration-700 transform ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+        {/* Hero Section with reduced spacing */}
         <HeroSection 
           mounted={mounted} 
           revealSections={revealSections} 

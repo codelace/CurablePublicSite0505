@@ -21,13 +21,13 @@ const AboutHero = () => {
     '🧬 Gene sequence analysis complete'
   ]);
   
-  // Simple staggered animation with slightly faster timing
+  // Simple staggered animation with faster timing for less scrolling
   useEffect(() => {
     const elements = ['header', 'ticker', 'mission', 'features', 'cta'];
     
     const showElements = async () => {
       for (const element of elements) {
-        await new Promise(resolve => setTimeout(resolve, 180));
+        await new Promise(resolve => setTimeout(resolve, 120)); // Reduced delay
         setDisplayedElements(prev => [...prev, element]);
       }
     };
@@ -50,12 +50,14 @@ const AboutHero = () => {
       />
       
       {/* Mission statement panel */}
-      <div className={`transform transition-all duration-1000 ${displayedElements.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <div className={`transform transition-all duration-700 ${displayedElements.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <MissionPanel />
       </div>
       
-      {/* Feature badges */}
-      <FeatureBadges isVisible={displayedElements.includes('features')} />
+      {/* Feature badges with smaller spacing */}
+      <div className="my-4">
+        <FeatureBadges isVisible={displayedElements.includes('features')} />
+      </div>
       
       {/* CTA section (mobile or desktop) */}
       <CTASection isVisible={displayedElements.includes('cta')} />

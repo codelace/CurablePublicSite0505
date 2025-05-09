@@ -21,41 +21,44 @@ const About = () => {
   // For advanced section animation with sequential reveal
   const [animatedSections, setAnimatedSections] = useState<string[]>([]);
 
-  // Force all sections to be visible with dramatic staggered timing
+  // Force all sections to be visible with more compact timing
   useEffect(() => {
     const sections = ['mission-section', 'values-section', 'team-section'];
     
-    // Enhanced staggered animation with longer delays for more drama
+    // Enhanced staggered animation with shorter delays for less scrolling
     const animateSection = (index: number) => {
       if (index >= sections.length) return;
       
       setTimeout(() => {
         setAnimatedSections(prev => [...prev, sections[index]]);
         animateSection(index + 1);
-      }, 400); // Increased delay between sections for dramatic effect
+      }, 200); // Decreased delay between sections for faster reveal
     };
     
     // Slight initial delay for the first section to allow page transition
     setTimeout(() => {
       animateSection(0);
-    }, 200);
+    }, 100); // Shorter initial delay
   }, []);
 
   return (
-    <div className="w-full relative min-h-screen pb-20">
+    <div className="w-full relative min-h-screen pb-12"> {/* Reduced padding */}
       {/* Enhanced background effects */}
       <AboutBackgroundEffects />
       
-      <div className="container mx-auto px-4 max-w-7xl z-10 relative pt-16">
+      <div className="container mx-auto px-4 max-w-7xl z-10 relative pt-8"> {/* Reduced top padding */}
         {/* Mission Section with enhanced reveal animation */}
-        <div className={`transition-all duration-1000 ${animatedSections.includes('mission-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
+        <div className={`transition-all duration-700 ${animatedSections.includes('mission-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
           <AboutHero />
         </div>
 
-        <SectionDivider />
+        {/* Smaller divider */}
+        <div className="my-4">
+          <SectionDivider />
+        </div>
 
         {/* Core values section with enhanced staggered animation */}
-        <div className={`transition-all duration-1000 delay-300 ${animatedSections.includes('values-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
+        <div className={`transition-all duration-700 delay-200 ${animatedSections.includes('values-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
           <ValuesSection 
             isVisible={animatedSections.includes('values-section')} 
             hoveredValue={hoveredValue} 
@@ -63,10 +66,13 @@ const About = () => {
           />
         </div>
 
-        <SectionDivider />
+        {/* Smaller divider */}
+        <div className="my-4">
+          <SectionDivider />
+        </div>
 
         {/* Team Section with enhanced animation */}
-        <div className={`transition-all duration-1000 delay-500 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'} mb-20`}>
+        <div className={`transition-all duration-700 delay-300 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'} mb-12`}>
           <TeamSection 
             isVisible={animatedSections.includes('team-section')} 
             hoveredProfile={hoveredProfile} 
