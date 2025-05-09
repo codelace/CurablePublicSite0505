@@ -2,8 +2,6 @@
 import React from 'react';
 import { Beaker, ChevronDown } from 'lucide-react';
 import MissionTabContent from './MissionTabContent';
-import PrinciplesTabContent from './PrinciplesTabContent';
-import JoinTabContent from './JoinTabContent';
 
 // Define the valid status types
 type StatusType = 'connected' | 'pending' | 'offline';
@@ -50,48 +48,11 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
           </div>
         ))}
       </div>
-      
-      {/* Tab Navigation with reduced vertical spacing */}
-      <div className={`flex justify-center mb-2 border-b border-graphite-700/30 transition-all duration-700 delay-300 ${revealSections.includes('tabs') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="flex space-x-1">
-          <button
-            className={`px-3 py-1 text-sm font-medium relative ${activeTab === 'mission' ? 'text-titanium-white' : 'text-titanium-white/60 hover:text-titanium-white/80'}`}
-            onClick={() => setActiveTab('mission')}
-          >
-            <span>Mission</span>
-            {activeTab === 'mission' && (
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-bio-green/80" />
-            )}
-          </button>
-          <button
-            className={`px-3 py-1 text-sm font-medium relative ${activeTab === 'principles' ? 'text-titanium-white' : 'text-titanium-white/60 hover:text-titanium-white/80'}`}
-            onClick={() => setActiveTab('principles')}
-          >
-            <span>Principles</span>
-            {activeTab === 'principles' && (
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-logo-blue/80" />
-            )}
-          </button>
-          <button
-            className={`px-3 py-1 text-sm font-medium relative ${activeTab === 'join' ? 'text-titanium-white' : 'text-titanium-white/60 hover:text-titanium-white/80'}`}
-            onClick={() => setActiveTab('join')}
-          >
-            <span>Join</span>
-            {activeTab === 'join' && (
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-plasma-violet/80" />
-            )}
-          </button>
-        </div>
-      </div>
 
       {/* Tab Content with reduced height */}
       <div className={`transition-all duration-700 delay-300 ${revealSections.includes('tabs') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="relative min-h-[10rem]">
-          {activeTab === 'mission' && <MissionTabContent />}
-          
-          {activeTab === 'principles' && <PrinciplesTabContent />}
-          
-          {activeTab === 'join' && <JoinTabContent />}
+          <MissionTabContent />
         </div>
       </div>
       

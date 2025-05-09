@@ -13,7 +13,6 @@ const statusItems = [
 ];
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState('mission');
   const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [revealSections, setRevealSections] = useState<string[]>([]);
@@ -76,8 +75,8 @@ const Index = () => {
         {/* Main Content Section */}
         <MainContentSection 
           statusItems={statusItems}
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
+          activeTab="mission"
+          setActiveTab={() => {}}
           revealSections={revealSections}
         />
       </div>
