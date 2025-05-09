@@ -32,33 +32,11 @@ const JoinTabContent: React.FC = () => {
             </Button>
           </div>
           
-          {/* Latest stats section with animated counters */}
-          <StatsSection />
-          
           {/* Molecular orbiting particles - purely decorative */}
           <OrbitalParticles />
         </div>
       </Card>
     </section>
-  );
-};
-
-const StatsSection: React.FC = () => {
-  return (
-    <div className="mt-8 pt-6 border-t border-graphite-700/30 grid grid-cols-3 gap-4 particle-drift">
-      <div className="text-center relative group">
-        <div className="text-2xl font-bold text-logo-blue group-hover:scale-110 transform transition-all duration-300 notification-ping">137</div>
-        <div className="text-xs text-titanium-white/70">Active Researchers</div>
-      </div>
-      <div className="text-center relative group">
-        <div className="text-2xl font-bold text-plasma-violet group-hover:scale-110 transform transition-all duration-300 notification-ping">16.4M</div>
-        <div className="text-xs text-titanium-white/70">TVL (USD)</div>
-      </div>
-      <div className="text-center relative group">
-        <div className="text-2xl font-bold text-quantum-red group-hover:scale-110 transform transition-all duration-300 notification-ping">7</div>
-        <div className="text-xs text-titanium-white/70">Active Studies</div>
-      </div>
-    </div>
   );
 };
 
