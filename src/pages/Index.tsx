@@ -4,7 +4,6 @@ import HeroSection from '@/components/home/HeroSection';
 import MainContentSection from '@/components/home/MainContentSection';
 import BackgroundEffects from '@/components/home/BackgroundEffects';
 import FloatingActionIndicator from '@/components/home/FloatingActionIndicator';
-import { useIdleCallback } from '@/utils/performance';
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,26 +43,31 @@ const Index = () => {
         setRevealSections(prev => [...prev, 'hero-text']);
       }, 400);
       
-      // Handle heavier animations during browser idle time
-      useIdleCallback(() => {
-        // Third stage - Status indicators
-        setTimeout(() => {
-          setRevealSections(prev => [...prev, 'status']);
-        }, 300);
-        
-        // Fourth stage - Main content
-        setTimeout(() => {
-          setRevealSections(prev => [...prev, 'tabs']);
-        }, 600);
-      });
+      // Third stage - Status indicators
+      setTimeout(() => {
+        setRevealSections(prev => [...prev, 'status']);
+      }, 700);
+      
+      // Fourth stage - Main content
+      setTimeout(() => {
+        setRevealSections(prev => [...prev, 'tabs']);
+      }, 1000);
     });
   }, []);
 
-  // Memoize scroll function to prevent recreation on renders
+  // Improved scroll function with smoother animation and error handling
   const scrollToContent = useCallback(() => {
     const contentElement = document.getElementById('main-content');
     if (contentElement) {
-      contentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // More reliable scrolling method with a slight offset
+      window.scrollTo({
+        top: contentElement.offsetTop - 80, // Offset to account for navbar height
+        behavior: 'smooth'
+      });
+      
+      // Focus the content area for accessibility
+      contentElement.setAttribute('tabindex', '-1');
+      contentElement.focus({ preventScroll: true });
     }
   }, []);
 

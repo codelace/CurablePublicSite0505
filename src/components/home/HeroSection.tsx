@@ -47,8 +47,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         
         {/* Enhanced call to action buttons with compact spacing */}
         <div className={`flex flex-wrap justify-center gap-2 sm:gap-3 transition-all duration-700 delay-400 transform ${revealClass('hero-text')}`}>
-          <Link 
-            to="/about"
+          <button
+            onClick={scrollToContent}
             className="group relative px-4 py-2 bg-logo-blue hover:bg-logo-blue/90 text-white font-bold rounded-lg overflow-hidden transition-all duration-500 hover:shadow-[0_0_25px_rgba(30,174,219,0.4)] hover:scale-105 will-change-transform"
           >
             <div className="relative z-10 flex items-center gap-2">
@@ -56,7 +56,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform will-change-transform" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-logo-blue to-plasma-violet/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          </Link>
+          </button>
           
           <Link 
             to="/whitepaper"

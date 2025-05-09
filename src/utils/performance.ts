@@ -3,7 +3,7 @@
  * Performance utility functions for optimizing component rendering
  */
 
-import { useCallback, useRef, useEffect } from 'react';
+import { useCallback, useRef, useEffect, useState } from 'react';
 
 /**
  * Hook to detect if component is visible in viewport
@@ -61,6 +61,14 @@ export const useIdleCallback = (callback: () => void, deps: any[] = []) => {
 export const batchDomOperations = () => {
   const reads: Function[] = [];
   const writes: Function[] = [];
+  
+  // Define the execute function that will be returned
+  const execute = () => {
+    // First read all
+    reads.forEach(read => read());
+    // Then write all
+    writes.forEach(write => write());
+  };
 
   return {
     measure: (fn: Function) => {
@@ -72,16 +80,6 @@ export const batchDomOperations = () => {
         }
       };
     },
-    execute: () => {
-      // First read all
-      reads.forEach(read => read());
-      // Then write all
-      writes.forEach(write => write());
-    }
+    execute
   };
 };
-
-/**
- * Import missing useState
- */
-import { useState } from 'react';
