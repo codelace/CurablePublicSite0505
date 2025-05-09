@@ -8,7 +8,7 @@ export const NavLogo = () => {
   return (
     <div className="flex items-center">
       <Link 
-        to="/about" 
+        to="/home" 
         className="flex items-center group relative"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}

@@ -29,19 +29,19 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
   return (
     <div 
       id="main-content" 
-      className="w-full mt-8 sm:mt-12"
+      className="w-full mt-4 sm:mt-6"
     >
       {/* Core status indicators with reduced spacing */}
-      <div className={`flex flex-wrap gap-2 justify-center mb-6 transition-all duration-700 delay-200 ${revealSections.includes('status') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className={`flex flex-wrap gap-1 justify-center mb-3 transition-all duration-700 delay-200 ${revealSections.includes('status') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {statusItems.map((item, idx) => (
           <div 
             key={`status-${idx}`} 
-            className={`flex items-center gap-2 px-3 py-1 rounded-md border text-xs sm:text-sm font-mono
+            className={`flex items-center gap-1 px-2 py-0.5 rounded-md border text-xs font-mono
               ${item.status === 'connected' ? 'border-bio-green/50 text-bio-green bg-bio-green/10' : 
                 item.status === 'pending' ? 'border-logo-blue/50 text-logo-blue bg-logo-blue/10' : 
                 'border-quantum-red/50 text-quantum-red bg-quantum-red/10'}`}
           >
-            <div className={`w-2 h-2 rounded-full
+            <div className={`w-1.5 h-1.5 rounded-full
               ${item.status === 'connected' ? 'bg-bio-green animate-pulse' : 
                 item.status === 'pending' ? 'bg-logo-blue animate-pulse' : 
                 'bg-quantum-red'}`} 
@@ -52,10 +52,10 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
       </div>
       
       {/* Tab Navigation with reduced vertical spacing */}
-      <div className={`flex justify-center mb-4 border-b border-graphite-700/30 transition-all duration-700 delay-300 ${revealSections.includes('tabs') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="flex space-x-1 sm:space-x-2">
+      <div className={`flex justify-center mb-2 border-b border-graphite-700/30 transition-all duration-700 delay-300 ${revealSections.includes('tabs') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="flex space-x-1">
           <button
-            className={`px-4 py-2 text-sm sm:text-base font-medium relative ${activeTab === 'mission' ? 'text-titanium-white' : 'text-titanium-white/60 hover:text-titanium-white/80'}`}
+            className={`px-3 py-1 text-sm font-medium relative ${activeTab === 'mission' ? 'text-titanium-white' : 'text-titanium-white/60 hover:text-titanium-white/80'}`}
             onClick={() => setActiveTab('mission')}
           >
             <span>Mission</span>
@@ -64,7 +64,7 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
             )}
           </button>
           <button
-            className={`px-4 py-2 text-sm sm:text-base font-medium relative ${activeTab === 'principles' ? 'text-titanium-white' : 'text-titanium-white/60 hover:text-titanium-white/80'}`}
+            className={`px-3 py-1 text-sm font-medium relative ${activeTab === 'principles' ? 'text-titanium-white' : 'text-titanium-white/60 hover:text-titanium-white/80'}`}
             onClick={() => setActiveTab('principles')}
           >
             <span>Principles</span>
@@ -73,7 +73,7 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
             )}
           </button>
           <button
-            className={`px-4 py-2 text-sm sm:text-base font-medium relative ${activeTab === 'join' ? 'text-titanium-white' : 'text-titanium-white/60 hover:text-titanium-white/80'}`}
+            className={`px-3 py-1 text-sm font-medium relative ${activeTab === 'join' ? 'text-titanium-white' : 'text-titanium-white/60 hover:text-titanium-white/80'}`}
             onClick={() => setActiveTab('join')}
           >
             <span>Join</span>
@@ -86,7 +86,7 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
 
       {/* Tab Content with reduced height */}
       <div className={`transition-all duration-700 delay-300 ${revealSections.includes('tabs') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="relative min-h-[15rem]">
+        <div className="relative min-h-[10rem]">
           {activeTab === 'mission' && <MissionTabContent />}
           
           {activeTab === 'principles' && <PrinciplesTabContent />}
@@ -96,7 +96,7 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
       </div>
       
       {/* Page navigation hint with reduced margin */}
-      <div className={`flex justify-center mt-8 transition-all duration-700 delay-400 ${revealSections.includes('tabs') ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`flex justify-center mt-4 transition-all duration-700 delay-400 ${revealSections.includes('tabs') ? 'opacity-100' : 'opacity-0'}`}>
         <div className="flex flex-col items-center text-titanium-white/30 animate-pulse">
           <ChevronDown className="w-4 h-4" />
           <span className="text-xs font-mono">Scroll to explore</span>

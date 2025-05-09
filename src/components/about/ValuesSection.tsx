@@ -14,16 +14,16 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({ isVisible, hoveredValue, 
   return (
     <div 
       id="values-section" 
-      className={`mb-4 sm:mb-8 relative z-10 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} w-full`}
+      className={`mb-3 relative z-10 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} w-full`}
     >
       <CommandHUDHeader 
         title="Our Core Values" 
         variant="accent" 
         statusText="VALUES MODULE"
-        className="mb-3 sm:mb-4"
+        className="mb-2"
       />
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
         {values.map((value, index) => (
           <div 
             key={index}
@@ -31,7 +31,7 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({ isVisible, hoveredValue, 
             onMouseEnter={() => setHoveredValue(index)}
             onMouseLeave={() => setHoveredValue(null)}
             style={{ 
-              transitionDelay: `${index * 70}ms`,
+              transitionDelay: `${index * 50}ms`,
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)'
             }}

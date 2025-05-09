@@ -32,7 +32,7 @@ const About = () => {
       setTimeout(() => {
         setAnimatedSections(prev => [...prev, sections[index]]);
         animateSection(index + 1);
-      }, 200); // Decreased delay between sections for faster reveal
+      }, 150); // Even shorter delay between sections for faster reveal
     };
     
     // Slight initial delay for the first section to allow page transition
@@ -42,23 +42,23 @@ const About = () => {
   }, []);
 
   return (
-    <div className="w-full relative min-h-screen pb-12"> {/* Reduced padding */}
+    <div className="w-full relative min-h-screen pb-8"> {/* Further reduced padding */}
       {/* Enhanced background effects */}
       <AboutBackgroundEffects />
       
-      <div className="container mx-auto px-4 max-w-7xl z-10 relative pt-8"> {/* Reduced top padding */}
+      <div className="container mx-auto px-4 max-w-7xl z-10 relative pt-4"> {/* Further reduced top padding */}
         {/* Mission Section with enhanced reveal animation */}
         <div className={`transition-all duration-700 ${animatedSections.includes('mission-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
           <AboutHero />
         </div>
 
         {/* Smaller divider */}
-        <div className="my-4">
+        <div className="my-2">
           <SectionDivider />
         </div>
 
         {/* Core values section with enhanced staggered animation */}
-        <div className={`transition-all duration-700 delay-200 ${animatedSections.includes('values-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
+        <div className={`transition-all duration-700 delay-100 ${animatedSections.includes('values-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
           <ValuesSection 
             isVisible={animatedSections.includes('values-section')} 
             hoveredValue={hoveredValue} 
@@ -67,12 +67,12 @@ const About = () => {
         </div>
 
         {/* Smaller divider */}
-        <div className="my-4">
+        <div className="my-2">
           <SectionDivider />
         </div>
 
         {/* Team Section with enhanced animation */}
-        <div className={`transition-all duration-700 delay-300 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'} mb-12`}>
+        <div className={`transition-all duration-700 delay-200 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'} mb-8`}>
           <TeamSection 
             isVisible={animatedSections.includes('team-section')} 
             hoveredProfile={hoveredProfile} 
