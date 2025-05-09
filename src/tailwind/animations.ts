@@ -1,0 +1,27 @@
+
+// Animation configurations
+export const animations = {
+  'accordion-down': 'accordion-down 0.2s ease-out',
+  'accordion-up': 'accordion-up 0.2s ease-out',
+  'pulse-glow': 'pulse-glow 6s infinite ease-in-out',
+  'pulse-subtle': 'pulse-subtle 3s infinite ease-in-out',
+  'pan-grid': 'pan-grid 15s infinite linear',
+  'fade-up': 'fade-up 0.6s ease-out',
+  'expand-underline': 'expand-underline 0.3s ease-out forwards',
+  'pulse-dot': 'pulse-dot 2s infinite ease-in-out',
+  'shimmer': "shimmer 3s ease-in-out infinite",
+  "text-shimmer": "text-shimmer 3s ease-in-out infinite",
+  'code-flow': 'code-flow 10s ease-in-out infinite alternate',
+  'scan-line': 'scan-line 4s linear infinite',
+  'flicker': 'flicker 3s ease-in-out infinite',
+  'float': 'float 3s ease-in-out infinite',
+  'rotate-slow': 'rotate-slow 30s linear infinite',
+  'ping': 'ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite',
+  'blink': 'blink 1s ease-in-out infinite',
+  'expand': 'expand 1s ease-out',
+  'data-surge': 'data-surge 8s ease infinite',
+  'ripple': 'ripple 1.5s infinite',
+  'glitch': 'glitch 0.5s ease-in-out infinite alternate',
+  'warm-pulse': 'warm-pulse 3s infinite ease-in-out',
+  'magnetic-flow': 'magnetic-flow 8s infinite ease-in-out',
+};
