@@ -16,7 +16,7 @@ const StatusPanel: React.FC<StatusPanelProps> = ({ isVisible, items }) => {
     <div className={`flex flex-col sm:flex-row items-center justify-between gap-2 mb-4 transform transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
       {/* Status ticker */}
       <div className="w-full sm:flex-grow">
-        <StatusTicker items={items} delay={2000} />
+        <StatusTicker items={items} />
       </div>
       
       {/* CTA button - only show on desktop here, mobile is handled in CTASection */}

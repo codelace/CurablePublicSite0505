@@ -30,7 +30,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             <span className="text-logo-blue">DAO</span>
           </div>
           <div className="text-lg sm:text-xl md:text-2xl mt-1 text-titanium-white/80 font-light">
-            The Future of <GradientText variant="blue-purple" animate>Biomedical Research</GradientText>
+            Medicine's New <GradientText variant="blue-purple" animate>Operating System: Blueprinting Tomorrow's Cures</GradientText>
           </div>
         </h1>
         
