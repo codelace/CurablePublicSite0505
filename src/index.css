@@ -1,7 +1,22 @@
 
-/* Import all CSS files */
-@import './styles/base.css';
-@import './styles/components.css';
+@import './styles/animations.css';
 @import './styles/terminal.css';
 @import './styles/utilities.css';
-@import './styles/animations.css';
+@import './styles/base.css';
+@import './styles/components.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Rest of your CSS styles */
+:root {
+  /* ... keep existing code */
+}
+
+/* Dark mode styles */
+.dark {
+  /* ... keep existing code */
+}
+
+/* Any other existing styles */

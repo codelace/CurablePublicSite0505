@@ -6,6 +6,7 @@ import NodesPattern from './patterns/NodesPattern';
 import MatrixPattern from './patterns/MatrixPattern';
 import DnaPattern from './patterns/DnaPattern';
 import CircuitPattern from './patterns/CircuitPattern';
+import { PatternProps } from './patterns/types';
 
 interface CommandPatternBackgroundProps {
   variant?: 'dots' | 'grid' | 'nodes' | 'matrix' | 'dna' | 'circuit';
@@ -13,7 +14,7 @@ interface CommandPatternBackgroundProps {
   animated?: boolean;
   className?: string;
   speed?: 'slow' | 'medium' | 'fast';
-  color?: 'blue' | 'green' | 'violet' | 'multi';
+  color?: 'blue' | 'green' | 'violet' | 'multi' | 'red';
   interactive?: boolean;
 }
 
@@ -58,17 +59,17 @@ const CommandPatternBackground: React.FC<CommandPatternBackgroundProps> = ({
   const getPatternComponent = () => {
     switch (variant) {
       case 'dots':
-        return <DotsPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
+        return <DotsPattern variant="dots" intensity={intensity} animated={animated} color={color} speed={speed} />;
       case 'nodes':
-        return <NodesPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
+        return <NodesPattern variant="nodes" intensity={intensity} animated={animated} color={color} speed={speed} />;
       case 'matrix':
-        return <MatrixPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
+        return <MatrixPattern variant="matrix" intensity={intensity} animated={animated} color={color} speed={speed} />;
       case 'dna':
-        return <DnaPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
+        return <DnaPattern variant="dna" intensity={intensity} animated={animated} color={color} speed={speed} />;
       case 'circuit':
-        return <CircuitPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
+        return <CircuitPattern variant="circuit" intensity={intensity} animated={animated} color={color} speed={speed} />;
       default: // grid
-        return <GridPattern intensity={intensity} animated={animated} color={color} speed={speed} />;
+        return <GridPattern variant="grid" intensity={intensity} animated={animated} color={color} speed={speed} />;
     }
   };
 

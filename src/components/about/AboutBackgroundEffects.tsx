@@ -1,8 +1,7 @@
-
 import React from 'react';
 import CommandPatternBackground from '@/components/CommandPatternBackground';
-import { CircuitPattern } from '@/components/patterns/CircuitPattern';
-import { NodesPattern } from '@/components/patterns/NodesPattern';
+import CircuitPattern from '@/components/patterns/CircuitPattern';
+import NodesPattern from '@/components/patterns/NodesPattern';
 
 interface PatternProps {
   variant: "grid" | "nodes" | "circuit" | "dna" | "dots" | "matrix";
