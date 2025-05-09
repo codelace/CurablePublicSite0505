@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -19,11 +18,12 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
     ? "flex items-center justify-center w-full py-2 rounded-lg text-white font-bold text-xs relative overflow-hidden"
     : "flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold text-xs min-w-[90px] transition-colors duration-300 relative overflow-hidden";
 
-  // Enhanced with warmer colors
+  // Changed from quantum-red to dark slate grey (gunmetal-900)
   const dnaButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "bg-gradient-to-r from-quantum-red to-quantum-red hover:from-quantum-red hover:to-plasma-violet" 
-    : "bg-quantum-red hover:bg-gradient-to-r hover:from-quantum-red hover:to-plasma-violet hover:shadow-[0_0_12px_rgba(255,51,102,0.6)] transition-all duration-300"}`;
+    ? "bg-gunmetal-900 hover:bg-gradient-to-r hover:from-gunmetal-900 hover:to-graphite-700" 
+    : "bg-gunmetal-900 hover:bg-gradient-to-r hover:from-gunmetal-900 hover:to-graphite-700 hover:shadow-[0_0_12px_rgba(16,20,24,0.6)] transition-all duration-300"}`;
 
+  // Keep other button classes the same
   const joinButtonClasses = `${baseButtonClasses} ${isMobile 
     ? "bg-quantum-red hover:bg-gradient-to-r hover:from-quantum-red hover:to-logo-blue" 
     : "bg-quantum-red hover:bg-gradient-to-r hover:from-quantum-red hover:to-logo-blue hover:shadow-[0_0_12px_rgba(255,51,102,0.6)] transition-all duration-300"}`;
@@ -54,9 +54,9 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         {/* Simplified shine effect */}
         <span className="absolute top-0 left-[-100%] w-full h-full bg-white/10 transform skew-x-15 transition-all duration-700 group-hover:left-[100%]"></span>
         
-        {/* Subtle border glow when hovered - warmer glow */}
+        {/* Subtle border glow when hovered - adjusted for dark slate grey */}
         {hoveredButton === 'dna' && (
-          <span className="absolute inset-0 rounded-lg ring-1 ring-quantum-red/70 animate-pulse-subtle"></span>
+          <span className="absolute inset-0 rounded-lg ring-1 ring-graphite-700/70 animate-pulse-subtle"></span>
         )}
       </a>
       
