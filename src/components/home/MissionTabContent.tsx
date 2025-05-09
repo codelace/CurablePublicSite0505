@@ -70,7 +70,7 @@ const MissionTabContent: React.FC = () => {
           <div className="absolute -bottom-8 -left-8 w-16 h-16 rounded-full bg-plasma-violet/20 blur-lg"></div>
           
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-titanium-white">
-            From <GradientText variant="purple-red" className="inline-block">Molecule</GradientText> to <GradientText variant="green-blue" className="inline-block">Market</GradientText>, Reimagined.
+            From <GradientText variant="green-blue" className="inline-block font-extrabold text-shadow-glow brightness-125 saturate-150">Molecule</GradientText> to <GradientText variant="purple-red" className="inline-block font-extrabold text-shadow-glow brightness-125 saturate-150">Market</GradientText>, Reimagined.
           </h2>
           
           <p className="text-titanium-white/90 leading-relaxed text-lg mb-8">

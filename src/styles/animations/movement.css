@@ -4,3 +4,9 @@
 @import './element-effects.css';
 @import './indicators.css';
 @import './transitions.css';
+
+/* Text shadow glow effect for vibrant highlights */
+.text-shadow-glow {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  filter: drop-shadow(0 0 2px currentColor);
+}
