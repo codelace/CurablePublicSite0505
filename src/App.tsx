@@ -1,10 +1,10 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import CommandPatternBackground from "./components/CommandPatternBackground";
 import ParticleBackground from "./components/ParticleBackground";
@@ -17,6 +17,27 @@ import Novel from "./pages/Novel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
+
+// Page transition wrapper component
+const PageTransition = ({ children }: { children: React.ReactNode }) => {
+  const location = useLocation();
+  const prevPathRef = useRef<string>(location.pathname);
+  const [transitionClass, setTransitionClass] = useState("page-enter");
+  
+  useEffect(() => {
+    if (prevPathRef.current !== location.pathname) {
+      // Page change detected
+      setTransitionClass("warm-flash page-enter");
+      prevPathRef.current = location.pathname;
+    }
+  }, [location.pathname]);
+  
+  return (
+    <div className={transitionClass}>
+      {children}
+    </div>
+  );
+};
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -40,16 +61,16 @@ const App = () => {
             <div 
               className={`fixed inset-0 bg-gunmetal-900 z-50 flex items-center justify-center transition-opacity duration-1500 pointer-events-none ${isLoading ? 'opacity-100' : 'opacity-0'}`}
             >
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center magnetic-pull">
                 <div className="w-28 h-28 relative">
                   <div className="absolute inset-0 rounded-full border-4 border-logo-blue/20"></div>
-                  <div className="absolute inset-0 rounded-full border-t-4 border-r-4 border-logo-blue animate-spin"></div>
-                  <div className="absolute inset-0 rounded-full border-4 border-transparent border-b-4 border-plasma-violet animate-pulse opacity-70"></div>
+                  <div className="absolute inset-0 rounded-full border-t-4 border-r-4 border-warm-rose animate-spin"></div>
+                  <div className="absolute inset-0 rounded-full border-4 border-transparent border-b-4 border-warm-amber animate-pulse opacity-70"></div>
                 </div>
                 <div className="mt-6 font-space text-titanium-white text-3xl relative">
-                  <span className="text-logo-blue animate-pulse">Curable</span>
+                  <span className="text-warm-rose animate-pulse">Curable</span>
                   <span className="text-titanium-white">DAO</span>
-                  <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-logo-blue to-transparent animate-expand"></div>
+                  <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-warm-rose to-transparent animate-expand"></div>
                 </div>
                 <div className="mt-8 text-titanium-white/60 font-mono text-sm animate-pulse">
                   Initializing protocol...
@@ -64,21 +85,49 @@ const App = () => {
                 <div className="fixed inset-0 bg-noise opacity-[0.02] pointer-events-none"></div>
                 
                 {/* Enhanced glow effects at corners */}
-                <div className="fixed top-0 left-0 w-72 h-72 rounded-full bg-logo-blue/10 blur-3xl"></div>
-                <div className="fixed bottom-0 right-0 w-96 h-96 rounded-full bg-plasma-violet/10 blur-3xl"></div>
-                <div className="fixed top-1/2 right-0 w-64 h-64 rounded-full bg-bio-green/5 blur-3xl"></div>
+                <div className="fixed top-0 left-0 w-72 h-72 rounded-full bg-warm-rose/10 blur-3xl"></div>
+                <div className="fixed bottom-0 right-0 w-96 h-96 rounded-full bg-warm-amber/10 blur-3xl"></div>
+                <div className="fixed top-1/2 right-0 w-64 h-64 rounded-full bg-warm-coral/5 blur-3xl"></div>
                 
                 <Navbar />
-                <main className={`relative z-10 transition-all duration-1000 ${isLoading ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0'}`}>
+                <main className={`relative z-10 transition-all duration-1000 magnetic-transition ${isLoading ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0 active'}`}>
                   <Routes>
                     <Route path="/" element={<Navigate to="/home" replace />} />
-                    <Route path="/home" element={<Index />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/whitepaper" element={<Whitepaper />} />
-                    <Route path="/tokenomics" element={<Tokenomics />} />
-                    <Route path="/join" element={<Join />} />
-                    <Route path="/novel" element={<Novel />} />
-                    <Route path="*" element={<NotFound />} />
+                    <Route path="/home" element={
+                      <PageTransition>
+                        <Index />
+                      </PageTransition>
+                    } />
+                    <Route path="/about" element={
+                      <PageTransition>
+                        <About />
+                      </PageTransition>
+                    } />
+                    <Route path="/whitepaper" element={
+                      <PageTransition>
+                        <Whitepaper />
+                      </PageTransition>
+                    } />
+                    <Route path="/tokenomics" element={
+                      <PageTransition>
+                        <Tokenomics />
+                      </PageTransition>
+                    } />
+                    <Route path="/join" element={
+                      <PageTransition>
+                        <Join />
+                      </PageTransition>
+                    } />
+                    <Route path="/novel" element={
+                      <PageTransition>
+                        <Novel />
+                      </PageTransition>
+                    } />
+                    <Route path="*" element={
+                      <PageTransition>
+                        <NotFound />
+                      </PageTransition>
+                    } />
                   </Routes>
                 </main>
               </div>

@@ -7,6 +7,7 @@
 @import './animations/mobile.css';
 @import './animations/dynamic.css';
 @import './animations/warm-effects.css';
+@import './animations/page-transitions.css';
 /* Movement.css now imports the following files:
  * - flow-animations.css
  * - element-effects.css

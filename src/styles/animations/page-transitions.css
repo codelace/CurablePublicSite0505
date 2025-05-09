@@ -1,0 +1,101 @@
+
+@layer utilities {
+  /* Page entrance animation - warmer, more magnetic */
+  .page-enter {
+    animation: page-enter 0.7s ease-out forwards;
+  }
+  
+  @keyframes page-enter {
+    0% {
+      opacity: 0;
+      transform: translateY(15px) scale(0.98);
+      filter: saturate(0.8);
+    }
+    70% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: saturate(1.03);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: saturate(1);
+    }
+  }
+  
+  /* Magnetic page transition effect */
+  .magnetic-transition {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .magnetic-transition::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(255, 70, 118, 0.05) 30%, transparent 70%);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s ease-out;
+  }
+  
+  .magnetic-transition.active::before {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  
+  /* Warm flash transition effect */
+  .warm-flash {
+    animation: warm-flash 0.8s ease-out forwards;
+  }
+  
+  @keyframes warm-flash {
+    0% {
+      box-shadow: 0 0 0 rgba(255, 70, 118, 0);
+    }
+    20% {
+      box-shadow: 0 0 20px rgba(255, 70, 118, 0.4);
+    }
+    100% {
+      box-shadow: 0 0 0 rgba(255, 70, 118, 0);
+    }
+  }
+  
+  /* Route transition effects */
+  .route-exit {
+    opacity: 0;
+    transform: scale(0.98);
+    transition: all 0.4s ease-in;
+  }
+  
+  .route-enter {
+    opacity: 0;
+    transform: scale(0.98);
+    transition: all 0.4s ease-out;
+  }
+  
+  .route-enter-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Magnetic pull effect for page transitions */
+  .magnetic-pull {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .magnetic-pull::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 70, 118, 0.15) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+  
+  .magnetic-pull.active::after {
+    opacity: 1;
+  }
+}

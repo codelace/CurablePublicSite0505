@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
 type BorderGlowType = 'blue' | 'purple' | 'green' | 'red' | 'multi' | 'none';
@@ -13,6 +13,7 @@ interface GlassPanelProps {
   hover?: boolean;
   withCorners?: boolean;
   animated?: boolean;
+  magneticEffect?: boolean;
 }
 
 const GlassPanel: React.FC<GlassPanelProps> = ({
@@ -23,7 +24,42 @@ const GlassPanel: React.FC<GlassPanelProps> = ({
   hover = false,
   withCorners = false,
   animated = false,
+  magneticEffect = false,
 }) => {
+  const [mousePosition, setMousePosition] = useState<{ x: number, y: number }>({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  
+  // Handle mouse interaction for magnetic effect
+  useEffect(() => {
+    if (!magneticEffect) return;
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      const element = e.currentTarget as HTMLElement;
+      const rect = element.getBoundingClientRect();
+      
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      
+      setMousePosition({ x, y });
+    };
+    
+    const elements = document.querySelectorAll('.magnetic-panel');
+    
+    elements.forEach(element => {
+      element.addEventListener('mousemove', handleMouseMove as EventListener);
+      element.addEventListener('mouseenter', () => setIsHovering(true));
+      element.addEventListener('mouseleave', () => setIsHovering(false));
+    });
+    
+    return () => {
+      elements.forEach(element => {
+        element.removeEventListener('mousemove', handleMouseMove as EventListener);
+        element.removeEventListener('mouseenter', () => setIsHovering(true));
+        element.removeEventListener('mouseleave', () => setIsHovering(false));
+      });
+    };
+  }, [magneticEffect]);
+  
   // Color mapping for consistent styling - enhanced for warmer tones
   const colorMap = {
     blue: {
@@ -45,16 +81,16 @@ const GlassPanel: React.FC<GlassPanelProps> = ({
       cornerColor: 'border-bio-green/40',
     },
     red: {
-      border: 'border-quantum-red/40',
+      border: 'border-warm-rose/40',
       shadow: 'rgba(255, 51, 102, ',
       hover: 'hover:shadow-[0_0_20px_rgba(255,51,102,0.4)] hover:border-quantum-red/60',
-      cornerColor: 'border-quantum-red/40',
+      cornerColor: 'border-warm-rose/40',
     },
     multi: {
-      border: 'border-transparent bg-gradient-to-r from-quantum-red/30 via-plasma-violet/30 to-bio-green/30',
+      border: 'border-transparent bg-gradient-to-r from-warm-rose/30 via-plasma-violet/30 to-bio-green/30',
       shadow: 'rgba(255, 51, 102, ',
       hover: 'hover:shadow-[0_0_20px_rgba(255,51,102,0.3)]',
-      cornerColor: 'border-quantum-red/40',
+      cornerColor: 'border-warm-rose/40',
     },
     none: {
       border: 'border-graphite-700/20',
@@ -77,6 +113,12 @@ const GlassPanel: React.FC<GlassPanelProps> = ({
   const hoverEffect = hover ? `transition-all duration-500 ${colorMap[borderGlow].hover}` : '';
   const cornerColor = colorMap[borderGlow].cornerColor;
   
+  // Magnetic effect styling
+  const magneticStyle = magneticEffect && isHovering ? {
+    '--x': `${mousePosition.x}%`,
+    '--y': `${mousePosition.y}%`
+  } as React.CSSProperties : {};
+  
   return (
     <div 
       className={cn(
@@ -85,8 +127,10 @@ const GlassPanel: React.FC<GlassPanelProps> = ({
         `shadow-[0_0_15px_${shadowColor}]`,
         hoverEffect,
         animated && 'animate-pulse-subtle',
+        magneticEffect && 'magnetic-panel',
         className
       )}
+      style={magneticStyle}
     >
       {/* Enhanced gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-br from-gunmetal-900/30 via-transparent to-dark-surface/20 rounded-lg pointer-events-none"></div>
@@ -101,8 +145,15 @@ const GlassPanel: React.FC<GlassPanelProps> = ({
         </>
       )}
       
-      {/* Inner glow effect - NEW */}
-      <div className="absolute inset-0 bg-gradient-to-br from-quantum-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg pointer-events-none"></div>
+      {/* Inner glow effect - enhanced with magnetic response */}
+      {magneticEffect && (
+        <div 
+          className="absolute inset-0 bg-gradient-radial from-warm-rose/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg pointer-events-none"
+          style={{
+            background: `radial-gradient(circle at var(--x, 50%) var(--y, 50%), ${colorMap[borderGlow].shadow}${intensityMap[intensity]} 0%, transparent 70%)`
+          }}
+        ></div>
+      )}
       
       {/* Content with z-index to appear above the background */}
       <div className="relative z-10">{children}</div>
