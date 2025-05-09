@@ -18,10 +18,10 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
     ? "flex items-center justify-center w-full py-2 rounded-lg text-white font-bold text-xs relative overflow-hidden"
     : "flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold text-xs min-w-[90px] transition-colors duration-300 relative overflow-hidden";
 
-  // Changed from quantum-red to dark slate grey (gunmetal-900)
+  // Changed to a more visible gunmetal-blue to stand out from the background
   const dnaButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "bg-gunmetal-900 hover:bg-gradient-to-r hover:from-gunmetal-900 hover:to-graphite-700" 
-    : "bg-gunmetal-900 hover:bg-gradient-to-r hover:from-gunmetal-900 hover:to-graphite-700 hover:shadow-[0_0_12px_rgba(16,20,24,0.6)] transition-all duration-300"}`;
+    ? "bg-gradient-to-r from-graphite-700 to-logo-blue/30 hover:from-graphite-700 hover:to-logo-blue/50" 
+    : "bg-gradient-to-r from-graphite-700 to-logo-blue/30 hover:from-graphite-700 hover:to-logo-blue/50 hover:shadow-[0_0_12px_rgba(30,174,219,0.3)] transition-all duration-300"}`;
 
   // Keep other button classes the same
   const joinButtonClasses = `${baseButtonClasses} ${isMobile 
@@ -54,9 +54,9 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         {/* Simplified shine effect */}
         <span className="absolute top-0 left-[-100%] w-full h-full bg-white/10 transform skew-x-15 transition-all duration-700 group-hover:left-[100%]"></span>
         
-        {/* Subtle border glow when hovered - adjusted for dark slate grey */}
+        {/* Subtle border glow when hovered - adjusted for blue accent */}
         {hoveredButton === 'dna' && (
-          <span className="absolute inset-0 rounded-lg ring-1 ring-graphite-700/70 animate-pulse-subtle"></span>
+          <span className="absolute inset-0 rounded-lg ring-1 ring-logo-blue/70 animate-pulse-subtle"></span>
         )}
       </a>
       

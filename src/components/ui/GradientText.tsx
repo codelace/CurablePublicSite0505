@@ -18,14 +18,19 @@ export interface GradientTextProps {
   variant?: GradientVariant;
   className?: string;
   animated?: boolean;
+  animate?: boolean; // Adding this property for backwards compatibility
 }
 
 const GradientText = ({
   children,
   variant = 'blue',
   className,
-  animated = false
+  animated = false,
+  animate = false // Support for legacy prop, will be merged with animated
 }: GradientTextProps) => {
+  // Use either animated or animate prop (for backward compatibility)
+  const shouldAnimate = animated || animate;
+  
   const getGradientClasses = () => {
     switch (variant) {
       case 'blue':
@@ -56,7 +61,7 @@ const GradientText = ({
       className={cn(
         'bg-gradient-to-r bg-clip-text text-transparent',
         getGradientClasses(),
-        animated ? 'animate-text-shimmer bg-[length:200%_auto]' : '',
+        shouldAnimate ? 'animate-text-shimmer bg-[length:200%_auto]' : '',
         className
       )}
     >
