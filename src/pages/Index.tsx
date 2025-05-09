@@ -1,62 +1,71 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import HeroSection from '@/components/home/HeroSection';
 import MainContentSection from '@/components/home/MainContentSection';
 import BackgroundEffects from '@/components/home/BackgroundEffects';
 import FloatingActionIndicator from '@/components/home/FloatingActionIndicator';
-
-const statusItems = [
-  { label: 'API CONNECTED', status: 'connected' as const },
-  { label: 'DAO PROTOCOL v1.2.4', status: 'connected' as const },
-  { label: 'NETWORK UPTIME 99.8%', status: 'connected' as const },
-  { label: 'CONSENSUS PROTOCOL', status: 'pending' as const }
-];
+import { useIdleCallback } from '@/utils/performance';
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [revealSections, setRevealSections] = useState<string[]>([]);
+  const [activeTab, setActiveTab] = useState('mission');
   
-  // Track scroll position
+  // Memoize status items to prevent unnecessary re-renders
+  const statusItems = useMemo(() => [
+    { label: 'API CONNECTED', status: 'connected' as const },
+    { label: 'DAO PROTOCOL v1.2.4', status: 'connected' as const },
+    { label: 'NETWORK UPTIME 99.8%', status: 'connected' as const },
+    { label: 'CONSENSUS PROTOCOL', status: 'pending' as const }
+  ], []);
+  
+  // Track scroll position with passive listener for better performance
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  // Enhanced dramatic staged animation on mount with faster timing
+  // Enhanced staged animation on mount with better timing and performance
   useEffect(() => {
-    // Initial stage - Basic UI elements
-    setTimeout(() => {
-      setMounted(true);
-    }, 100); // Reduced from 200ms
-    
-    // Second stage - Hero text and intro
-    setTimeout(() => {
-      setRevealSections(prev => [...prev, 'hero-text']);
-    }, 400); // Reduced from 800ms
-    
-    // Third stage - Status indicators
-    setTimeout(() => {
-      setRevealSections(prev => [...prev, 'status']);
-    }, 700); // Reduced from 1400ms
-    
-    // Fourth stage - Main content
-    setTimeout(() => {
-      setRevealSections(prev => [...prev, 'tabs']);
-    }, 1000); // Reduced from 2000ms
+    // Use a single RAF call to optimize browser reflows
+    requestAnimationFrame(() => {
+      // Initial stage - Basic UI elements
+      setTimeout(() => {
+        setMounted(true);
+      }, 100);
+      
+      // Second stage - Hero text and intro
+      setTimeout(() => {
+        setRevealSections(prev => [...prev, 'hero-text']);
+      }, 400);
+      
+      // Handle heavier animations during browser idle time
+      useIdleCallback(() => {
+        // Third stage - Status indicators
+        setTimeout(() => {
+          setRevealSections(prev => [...prev, 'status']);
+        }, 300);
+        
+        // Fourth stage - Main content
+        setTimeout(() => {
+          setRevealSections(prev => [...prev, 'tabs']);
+        }, 600);
+      });
+    });
   }, []);
 
-  // Scroll to content function
-  const scrollToContent = () => {
+  // Memoize scroll function to prevent recreation on renders
+  const scrollToContent = useCallback(() => {
     const contentElement = document.getElementById('main-content');
     if (contentElement) {
       contentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  };
+  }, []);
 
   return (
     <div className="relative min-h-[calc(100vh-60px)] sm:min-h-[calc(100vh-68px)] flex flex-col">
@@ -75,8 +84,8 @@ const Index = () => {
         {/* Main Content Section */}
         <MainContentSection 
           statusItems={statusItems}
-          activeTab="mission"
-          setActiveTab={() => {}}
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
           revealSections={revealSections}
         />
       </div>

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { memo } from 'react';
 import StatusTicker from '@/components/StatusTicker';
 import DesktopCTA from './DesktopCTA';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -13,7 +13,10 @@ const StatusPanel: React.FC<StatusPanelProps> = ({ isVisible, items }) => {
   const isMobile = useIsMobile();
   
   return (
-    <div className={`flex flex-col sm:flex-row items-center justify-between gap-2 mb-4 transform transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+    <div 
+      className={`flex flex-col sm:flex-row items-center justify-between gap-2 mb-4 transform transition-all duration-700 delay-100 will-change-transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      aria-hidden={!isVisible}
+    >
       {/* Status ticker */}
       <div className="w-full sm:flex-grow">
         <StatusTicker items={items} />
@@ -29,4 +32,4 @@ const StatusPanel: React.FC<StatusPanelProps> = ({ isVisible, items }) => {
   );
 };
 
-export default StatusPanel;
+export default memo(StatusPanel);
