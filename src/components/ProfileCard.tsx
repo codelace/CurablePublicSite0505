@@ -1,11 +1,12 @@
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Card from './Card';
 import { Person } from '@/data/people';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { useIsMobile } from '@/hooks/use-mobile';
 import ProfileHoverCard from './ProfileHoverCard';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
 interface ProfileCardProps {
   person: Person;
@@ -16,6 +17,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
   const isMobile = useIsMobile();
   const [isHovered, setIsHovered] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [openPopover, setOpenPopover] = useState(false);
   
   // Map the group to a display name
   const getGroupDisplay = (group: string) => {
@@ -62,14 +64,23 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
   };
 
   const animationClass = getAnimationClass();
+  
+  const handleMouseEnter = useCallback(() => setIsHovered(true), []);
+  const handleMouseLeave = useCallback(() => setIsHovered(false), []);
+  
+  const handlePopoverToggle = useCallback(() => {
+    if (isMobile) {
+      setOpenPopover(!openPopover);
+    }
+  }, [isMobile, openPopover]);
 
   const cardContent = (
     <Card 
       className={`flex flex-col items-center text-center h-full p-2 sm:p-3 
                 transition-all duration-300 transform hover:scale-105
                 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${animationClass}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       glowColor={person.group === 'team' ? 'blue' : person.group === 'advisor' ? 'red' : 'purple'}
     >
       <div 
@@ -121,10 +132,45 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
     </Card>
   );
   
-  // Wrap the card in hover card on desktop, but not on mobile
-  return isMobile ? (
-    cardContent
-  ) : (
+  // For mobile, use Popover component instead of HoverCard for better touch interaction
+  if (isMobile) {
+    return (
+      <Popover open={openPopover} onOpenChange={setOpenPopover}>
+        <PopoverTrigger asChild>
+          <div className="touch-feedback" onClick={handlePopoverToggle}>
+            {cardContent}
+          </div>
+        </PopoverTrigger>
+        <PopoverContent 
+          className={`w-80 border-2 p-0 shadow-xl z-50 ${getBadgeStyle(person.group)} 
+                    ${getAnimationClass()} backdrop-blur-lg mobile-reveal`}
+          side="top"
+        >
+          <div className="p-4 space-y-2">
+            <div className="flex items-center gap-3">
+              <Avatar className="w-14 h-14">
+                <AvatarImage src={person.avatar} alt={person.name} />
+                <AvatarFallback>{person.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+              </Avatar>
+              <div>
+                <h4 className="font-bold text-titanium-white">{person.name}</h4>
+                <p className="text-sm text-titanium-white/70">{person.role}</p>
+              </div>
+            </div>
+            
+            <div className="pt-2 border-t border-graphite-700/30">
+              <p className="text-titanium-white/80 text-sm">
+                {person.gptDescription || person.bio}
+              </p>
+            </div>
+          </div>
+        </PopoverContent>
+      </Popover>
+    );
+  }
+  
+  // On desktop, use the enhanced HoverCard
+  return (
     <ProfileHoverCard person={person} isActive={isActive}>
       {cardContent}
     </ProfileHoverCard>

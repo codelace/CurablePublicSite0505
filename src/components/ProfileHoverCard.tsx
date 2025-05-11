@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Person } from '@/data/people';
 import { 
   HoverCard,
@@ -9,6 +10,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Globe, Linkedin, Twitter } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
+import useHoverState from '@/hooks/useHoverState';
 
 interface ProfileHoverCardProps {
   person: Person;
@@ -17,6 +20,16 @@ interface ProfileHoverCardProps {
 }
 
 const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCardProps) => {
+  const isMobile = useIsMobile();
+  const [isSticky, setIsSticky] = useState(false);
+  
+  const { isActive: isHovering, hoverProps } = useHoverState({ 
+    delay: 100 // Add a small delay to prevent accidental triggers
+  });
+  
+  // Show card when either external isActive prop is true or component's hover state is active
+  const showCard = isActive || isHovering || isSticky;
+  
   // Extract URLs if they exist in the bio
   const hasLinkedIn = person.bio?.includes('linkedin.com');
   const linkedInUrl = hasLinkedIn ? 
@@ -71,26 +84,35 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
       </React.Fragment>
     ));
   };
+
+  // Lock the hover card in place when clicked
+  const handleCardClick = () => {
+    setIsSticky(!isSticky);
+  };
   
   return (
-    <HoverCard open={isActive} defaultOpen={false}>
+    <HoverCard open={showCard}>
       <HoverCardTrigger asChild>
-        <div className="cursor-pointer">
+        <div className="cursor-pointer" {...hoverProps}>
           {children}
         </div>
       </HoverCardTrigger>
       
       <HoverCardContent 
         className={cn(
-          "w-80 border-2 p-0 shadow-xl z-50", 
+          "w-80 border-2 p-0 shadow-xl z-50 cursor-auto", 
           borderClass,
           backgroundClass,
           glowClass,
-          "backdrop-blur-lg animate-in fade-in-0 zoom-in-95"
+          isSticky ? "ring-2 ring-titanium-white/30" : "",
+          "backdrop-blur-lg profile-card-enter"
         )}
         side="right"
         align="start"
         sideOffset={5}
+        onClick={handleCardClick}
+        onPointerEnterCapture={hoverProps.onMouseEnter}
+        onPointerLeaveCapture={hoverProps.onMouseLeave}
       >
         <div className="p-4 space-y-3">
           <div className="flex items-center gap-3">
@@ -167,6 +189,12 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
             </div>
           )}
         </div>
+        
+        {isSticky && (
+          <div className="absolute -top-6 right-0 bg-gunmetal-800/90 text-xs px-2 py-1 rounded-t-md text-titanium-white/70">
+            Click again to dismiss
+          </div>
+        )}
       </HoverCardContent>
     </HoverCard>
   );
