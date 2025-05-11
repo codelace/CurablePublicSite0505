@@ -9,9 +9,10 @@ import ProfileHoverCard from './ProfileHoverCard';
 
 interface ProfileCardProps {
   person: Person;
+  isActive?: boolean;
 }
 
-const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
+const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) => {
   const isMobile = useIsMobile();
   const [isHovered, setIsHovered] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -74,7 +75,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
       <div 
         className={`${avatarSize} rounded-full overflow-hidden border-2 
                   border-plasma-violet/30 mb-2 relative transition-all duration-300 
-                  ${isHovered ? 'border-plasma-violet/60 scale-105' : ''}`}
+                  ${isHovered || isActive ? 'border-plasma-violet/60 scale-105' : ''}`}
         onLoad={() => setIsLoaded(true)}
       >
         <Avatar className="w-full h-full">
@@ -93,7 +94,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
         </Avatar>
         
         {/* Enhanced hover effect with subtle pulse */}
-        {isHovered && (
+        {(isHovered || isActive) && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="absolute w-full h-full rounded-full bg-plasma-violet/5 animate-pulse"></div>
             <div className="w-[80%] h-[80%] border border-plasma-violet/60 rounded-full animate-pulse-glow"></div>
@@ -124,7 +125,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
   return isMobile ? (
     cardContent
   ) : (
-    <ProfileHoverCard person={person}>
+    <ProfileHoverCard person={person} isActive={isActive}>
       {cardContent}
     </ProfileHoverCard>
   );

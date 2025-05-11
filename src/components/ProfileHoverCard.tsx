@@ -14,9 +14,10 @@ import { cn } from '@/lib/utils';
 interface ProfileHoverCardProps {
   person: Person;
   children: React.ReactNode;
+  isActive?: boolean;
 }
 
-const ProfileHoverCard = ({ person, children }: ProfileHoverCardProps) => {
+const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCardProps) => {
   // Extract URLs if they exist in the bio
   const hasLinkedIn = person.bio?.includes('linkedin.com');
   const linkedInUrl = hasLinkedIn ? 
@@ -25,28 +26,39 @@ const ProfileHoverCard = ({ person, children }: ProfileHoverCardProps) => {
   // Map group to background style
   const getBackgroundStyle = (group: string) => {
     switch (group) {
-      case 'team': return 'bg-gradient-to-br from-gunmetal-900/90 to-logo-blue/20';
-      case 'advisor': return 'bg-gradient-to-br from-gunmetal-900/90 to-quantum-red/20';
-      case 'founder': return 'bg-gradient-to-br from-gunmetal-900/90 to-plasma-violet/20';
-      default: return 'bg-gunmetal-900/80';
+      case 'team': return 'bg-gradient-to-br from-gunmetal-900/90 to-logo-blue/30';
+      case 'advisor': return 'bg-gradient-to-br from-gunmetal-900/90 to-quantum-red/30';
+      case 'founder': return 'bg-gradient-to-br from-gunmetal-900/90 to-plasma-violet/30';
+      default: return 'bg-gunmetal-900/90';
     }
   };
   
   // Map group to border style
   const getBorderStyle = (group: string) => {
     switch (group) {
-      case 'team': return 'border-logo-blue/40';
-      case 'advisor': return 'border-quantum-red/40';
-      case 'founder': return 'border-plasma-violet/40';
-      default: return 'border-graphite-700/40';
+      case 'team': return 'border-logo-blue/60';
+      case 'advisor': return 'border-quantum-red/60';
+      case 'founder': return 'border-plasma-violet/60';
+      default: return 'border-graphite-700/60';
+    }
+  };
+  
+  // Map group to glow style
+  const getGlowStyle = (group: string) => {
+    switch (group) {
+      case 'team': return 'shadow-[0_0_15px_rgba(30,174,219,0.4)]';
+      case 'advisor': return 'shadow-[0_0_15px_rgba(255,51,102,0.4)]';
+      case 'founder': return 'shadow-[0_0_15px_rgba(161,98,255,0.4)]';
+      default: return '';
     }
   };
   
   const backgroundClass = getBackgroundStyle(person.group);
   const borderClass = getBorderStyle(person.group);
+  const glowClass = getGlowStyle(person.group);
   
   return (
-    <HoverCard>
+    <HoverCard open={isActive} defaultOpen={false}>
       <HoverCardTrigger asChild>
         <div className="cursor-pointer">
           {children}
@@ -55,15 +67,19 @@ const ProfileHoverCard = ({ person, children }: ProfileHoverCardProps) => {
       
       <HoverCardContent 
         className={cn(
-          "w-80 border p-0 shadow-xl", 
+          "w-80 border-2 p-0 shadow-xl z-50", 
           borderClass,
           backgroundClass,
-          "backdrop-blur-lg"
+          glowClass,
+          "backdrop-blur-lg animate-in fade-in-0 zoom-in-95"
         )}
+        side="right"
+        align="start"
+        sideOffset={5}
       >
         <div className="p-4 space-y-3">
           <div className="flex items-center gap-3">
-            <Avatar className="w-14 h-14 border-2 border-graphite-700/30">
+            <Avatar className="w-14 h-14 border-2 border-graphite-700/60">
               <AvatarImage src={person.avatar} alt={person.name} />
               <AvatarFallback className="bg-gunmetal-900/80">
                 {person.name.split(' ').map(n => n[0]).join('')}
@@ -83,14 +99,14 @@ const ProfileHoverCard = ({ person, children }: ProfileHoverCardProps) => {
           </div>
           
           {person.gptDescription && (
-            <div className="py-2 border-t border-graphite-700/20">
-              <p className="text-titanium-white/90 text-sm italic">"{person.gptDescription}"</p>
+            <div className="py-2 border-t border-graphite-700/30">
+              <p className="text-titanium-white/90 text-sm italic text-shadow-glow">{person.gptDescription}</p>
             </div>
           )}
           
           {person.bio && (
-            <div className="py-2 border-t border-graphite-700/20">
-              <p className="text-titanium-white/80 text-sm line-clamp-4">
+            <div className="py-2 border-t border-graphite-700/30">
+              <p className="text-titanium-white/80 text-sm max-h-24 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent pr-1">
                 {person.bio}
               </p>
             </div>
@@ -106,9 +122,9 @@ const ProfileHoverCard = ({ person, children }: ProfileHoverCardProps) => {
                         href={linkedInUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-titanium-white/70 hover:text-titanium-white transition-colors"
+                        className="text-titanium-white hover:text-titanium-white transition-colors"
                       >
-                        <Linkedin size={16} />
+                        <Linkedin size={16} className="hover:text-warm-rose" />
                       </a>
                     </TooltipTrigger>
                     <TooltipContent side="bottom">LinkedIn Profile</TooltipContent>
@@ -122,9 +138,9 @@ const ProfileHoverCard = ({ person, children }: ProfileHoverCardProps) => {
                         href={person.website} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-titanium-white/70 hover:text-titanium-white transition-colors"
+                        className="text-titanium-white hover:text-titanium-white transition-colors"
                       >
-                        <Globe size={16} />
+                        <Globe size={16} className="hover:text-warm-rose" />
                       </a>
                     </TooltipTrigger>
                     <TooltipContent side="bottom">Website</TooltipContent>

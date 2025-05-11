@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { people } from '@/data/people';
 import ProfileCard from '@/components/ProfileCard';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
@@ -14,11 +14,23 @@ interface TeamSectionProps {
 
 const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, setHoveredProfile }) => {
   const isMobile = useIsMobile();
+  const [activeProfile, setActiveProfile] = useState<number | null>(null);
+  
+  // Enhanced hover handling for better detection
+  const handleMouseEnter = (index: number) => {
+    setHoveredProfile(index);
+    setActiveProfile(index);
+  };
+  
+  const handleMouseLeave = () => {
+    setHoveredProfile(null);
+    setActiveProfile(null);
+  };
   
   return (
     <div 
       id="team-section" 
-      className="mb-3 relative z-10 opacity-100 translate-y-0 w-full"
+      className="mb-3 relative z-20 opacity-100 translate-y-0 w-full"
     >
       <CommandHUDHeader 
         title="Our Team" 
@@ -32,11 +44,14 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
           {people.map((person, index) => (
             <div 
               key={`team-member-${person.id}`}
-              className="transform transition-all duration-300"
-              onMouseEnter={() => setHoveredProfile(index)}
-              onMouseLeave={() => setHoveredProfile(null)}
+              className={`transform transition-all duration-300 ${hoveredProfile === index ? 'z-30' : 'z-10'}`}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
             >
-              <ProfileCard person={person} />
+              <ProfileCard
+                person={person}
+                isActive={activeProfile === index}
+              />
             </div>
           ))}
         </div>

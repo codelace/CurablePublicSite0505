@@ -202,4 +202,22 @@
     0% { background-position: 0% 50%; }
     100% { background-position: 200% 50%; }
   }
+  
+  /* Adding scrollbar styling for hover cards */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(107, 114, 128, 0.5);
+    border-radius: 20px;
+  }
 }
