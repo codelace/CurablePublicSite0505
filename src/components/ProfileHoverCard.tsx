@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Person } from '@/data/people';
 import { 
@@ -57,12 +56,12 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
   const borderClass = getBorderStyle(person.group);
   const glowClass = getGlowStyle(person.group);
   
-  // Format the gptDescription as haiku with line breaks
+  // Format the gptDescription as haiku with line breaks after periods only
   const formatHaikuDescription = (description?: string) => {
     if (!description) return null;
     
-    // Split by periods, commas, or sentence breaks
-    const sentences = description.split(/(?<=[.,:;])\s+/);
+    // Split by periods only
+    const sentences = description.split(/(?<=\.)\s+/);
     
     // Join with line breaks
     return sentences.map((sentence, i) => (
