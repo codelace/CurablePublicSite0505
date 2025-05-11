@@ -4,11 +4,17 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 interface UseHoverStateOptions {
   delay?: number;
   exitDelay?: number;
-  isQuickSwitch?: boolean; // Add option for quick switching between elements
+  isQuickSwitch?: boolean;
 }
 
 export function useHoverState(options: UseHoverStateOptions = {}) {
-  const { delay = 0, exitDelay = 300, isQuickSwitch = false } = options;
+  // Further reduce delays for quicker transitions 
+  const { 
+    delay = 0, 
+    exitDelay = 300, 
+    isQuickSwitch = false 
+  } = options;
+  
   const [isHovered, setIsHovered] = useState(false);
   const [isActive, setIsActive] = useState(false);
   
@@ -32,7 +38,7 @@ export function useHoverState(options: UseHoverStateOptions = {}) {
     
     setIsHovered(true);
     
-    // For quick switch, use a much lower delay or no delay
+    // For quick switch, use zero delay for immediate response
     const effectiveDelay = isQuickSwitch ? 0 : delay;
     
     if (effectiveDelay > 0) {
@@ -54,8 +60,8 @@ export function useHoverState(options: UseHoverStateOptions = {}) {
     
     setIsHovered(false);
     
-    // For quick switching, use a much shorter exit delay
-    const effectiveExitDelay = isQuickSwitch ? 50 : exitDelay;
+    // For quick switching, make exit even faster
+    const effectiveExitDelay = isQuickSwitch ? 20 : exitDelay;
     
     if (effectiveExitDelay > 0) {
       exitTimerRef.current = setTimeout(() => {

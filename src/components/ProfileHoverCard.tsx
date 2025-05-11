@@ -22,11 +22,11 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
   const isMobile = useIsMobile();
   const [isSticky, setIsSticky] = useState(false);
   
-  // Use quick switch option to make horizontal navigation smoother
+  // Use super quick switch option to make horizontal navigation smoother
   const { isActive: isHovering, hoverProps } = useHoverState({ 
-    delay: 50, // Reduced delay for better responsiveness
-    exitDelay: 100, // Shorter exit delay to make switching between profiles smoother
-    isQuickSwitch: true // Enable quick switching between profiles
+    delay: 0, // Immediate response
+    exitDelay: 20, // Very short exit delay for instant switching between profiles
+    isQuickSwitch: true
   });
   
   // Show card when either external isActive prop is true or component's hover state is active
@@ -42,7 +42,7 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
     setIsSticky(!isSticky);
   };
   
-  // Set up hover handlers
+  // Set up hover handlers with immediate response
   const handleMouseEnter = () => {
     hoverProps.onMouseEnter();
   };
