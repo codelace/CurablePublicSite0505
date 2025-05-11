@@ -8,10 +8,10 @@ interface UseHoverStateOptions {
 }
 
 export function useHoverState(options: UseHoverStateOptions = {}) {
-  // Further reduce delays for quicker transitions 
+  // Minimize all delays for faster transitions
   const { 
     delay = 0, 
-    exitDelay = 300, 
+    exitDelay = 100, 
     isQuickSwitch = false 
   } = options;
   
@@ -38,18 +38,10 @@ export function useHoverState(options: UseHoverStateOptions = {}) {
     
     setIsHovered(true);
     
-    // For quick switch, use zero delay for immediate response
-    const effectiveDelay = isQuickSwitch ? 0 : delay;
+    // Always use zero delay for immediate response
+    setIsActive(true);
     
-    if (effectiveDelay > 0) {
-      enterTimerRef.current = setTimeout(() => {
-        setIsActive(true);
-        enterTimerRef.current = null;
-      }, effectiveDelay);
-    } else {
-      setIsActive(true);
-    }
-  }, [delay, isQuickSwitch]);
+  }, []);
   
   const handleMouseLeave = useCallback(() => {
     // Clear any existing enter timer
@@ -60,8 +52,8 @@ export function useHoverState(options: UseHoverStateOptions = {}) {
     
     setIsHovered(false);
     
-    // For quick switching, make exit even faster
-    const effectiveExitDelay = isQuickSwitch ? 20 : exitDelay;
+    // Use minimal exit delay for better interactivity
+    const effectiveExitDelay = isQuickSwitch ? 0 : exitDelay;
     
     if (effectiveExitDelay > 0) {
       exitTimerRef.current = setTimeout(() => {

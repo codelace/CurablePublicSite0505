@@ -22,10 +22,10 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
   const isMobile = useIsMobile();
   const [isSticky, setIsSticky] = useState(false);
   
-  // Use super quick switch option to make horizontal navigation smoother
+  // Configure for instant transition without delays
   const { isActive: isHovering, hoverProps } = useHoverState({ 
-    delay: 0, // Immediate response
-    exitDelay: 20, // Very short exit delay for instant switching between profiles
+    delay: 0,
+    exitDelay: 0,
     isQuickSwitch: true
   });
   
@@ -42,13 +42,15 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
     setIsSticky(!isSticky);
   };
   
-  // Set up hover handlers with immediate response
+  // Immediate response handlers
   const handleMouseEnter = () => {
     hoverProps.onMouseEnter();
   };
   
   const handleMouseLeave = () => {
-    hoverProps.onMouseLeave();
+    if (!isSticky) {
+      hoverProps.onMouseLeave();
+    }
   };
   
   return (
@@ -66,7 +68,7 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
           backgroundClass,
           glowClass,
           isSticky ? "ring-2 ring-titanium-white/30" : "",
-          "backdrop-blur-lg profile-card-enter"
+          "backdrop-blur-lg profile-card-enter pointer-events-auto"
         )}
         side="right"
         align="start"
