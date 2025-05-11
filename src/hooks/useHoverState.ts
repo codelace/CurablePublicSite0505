@@ -4,10 +4,11 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 interface UseHoverStateOptions {
   delay?: number;
   exitDelay?: number;
+  isQuickSwitch?: boolean; // Add option for quick switching between elements
 }
 
 export function useHoverState(options: UseHoverStateOptions = {}) {
-  const { delay = 0, exitDelay = 300 } = options;
+  const { delay = 0, exitDelay = 300, isQuickSwitch = false } = options;
   const [isHovered, setIsHovered] = useState(false);
   const [isActive, setIsActive] = useState(false);
   
@@ -31,15 +32,18 @@ export function useHoverState(options: UseHoverStateOptions = {}) {
     
     setIsHovered(true);
     
-    if (delay > 0) {
+    // For quick switch, use a much lower delay or no delay
+    const effectiveDelay = isQuickSwitch ? 0 : delay;
+    
+    if (effectiveDelay > 0) {
       enterTimerRef.current = setTimeout(() => {
         setIsActive(true);
         enterTimerRef.current = null;
-      }, delay);
+      }, effectiveDelay);
     } else {
       setIsActive(true);
     }
-  }, [delay]);
+  }, [delay, isQuickSwitch]);
   
   const handleMouseLeave = useCallback(() => {
     // Clear any existing enter timer
@@ -50,17 +54,18 @@ export function useHoverState(options: UseHoverStateOptions = {}) {
     
     setIsHovered(false);
     
-    // Add a slight delay before hiding to prevent flickering
-    // when moving between child elements
-    if (exitDelay > 0) {
+    // For quick switching, use a much shorter exit delay
+    const effectiveExitDelay = isQuickSwitch ? 50 : exitDelay;
+    
+    if (effectiveExitDelay > 0) {
       exitTimerRef.current = setTimeout(() => {
         setIsActive(false);
         exitTimerRef.current = null;
-      }, exitDelay);
+      }, effectiveExitDelay);
     } else {
       setIsActive(false);
     }
-  }, [exitDelay]);
+  }, [exitDelay, isQuickSwitch]);
   
   return {
     isHovered,

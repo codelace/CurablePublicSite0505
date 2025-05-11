@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { people } from '@/data/people';
 import ProfileCard from '@/components/ProfileCard';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
@@ -17,8 +17,12 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
   const isMobile = useIsMobile();
   const [activeProfile, setActiveProfile] = useState<number | null>(null);
   const { ref, isInViewport } = useInViewport();
+  const gridRef = useRef<HTMLDivElement>(null);
   
-  // Enhanced hover handling for better detection
+  // Track mouse position for better horizontal movement detection
+  const [mousePosition, setMousePosition] = useState<{ x: number, y: number } | null>(null);
+  
+  // Enhanced hover handling with horizontal movement optimization
   const handleMouseEnter = useCallback((index: number) => {
     setHoveredProfile(index);
     setActiveProfile(index);
@@ -28,6 +32,17 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
     setHoveredProfile(null);
     setActiveProfile(null);
   }, [setHoveredProfile]);
+  
+  // Track mouse movement within the grid
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!gridRef.current) return;
+    
+    const rect = gridRef.current.getBoundingClientRect();
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    });
+  }, []);
   
   // Handle click to toggle active profile state (for mobile and accessibility)
   const handleCardClick = useCallback((index: number) => {
@@ -48,7 +63,11 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
       />
       
       <TooltipProvider>
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-1">
+        <div 
+          ref={gridRef}
+          onMouseMove={handleMouseMove}
+          className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-1"
+        >
           {people.map((person, index) => (
             <div 
               key={`team-member-${person.id}`}

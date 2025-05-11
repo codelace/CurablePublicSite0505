@@ -23,8 +23,11 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
   const isMobile = useIsMobile();
   const [isSticky, setIsSticky] = useState(false);
   
+  // Use quick switch option to make horizontal navigation smoother
   const { isActive: isHovering, hoverProps } = useHoverState({ 
-    delay: 100 // Add a small delay to prevent accidental triggers
+    delay: 50, // Reduced delay for better responsiveness
+    exitDelay: 100, // Shorter exit delay to make switching between profiles smoother
+    isQuickSwitch: true // Enable quick switching between profiles
   });
   
   // Show card when either external isActive prop is true or component's hover state is active
@@ -123,6 +126,19 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
+        {/* Close button for easier dismissal */}
+        {isSticky && (
+          <div 
+            className="absolute -top-6 right-0 bg-gunmetal-800/90 text-xs px-2 py-1 rounded-t-md text-titanium-white/70 hover:bg-gunmetal-700/90 cursor-pointer"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsSticky(false);
+            }}
+          >
+            Close
+          </div>
+        )}
+        
         <div className="p-4 space-y-3">
           <div className="flex items-center gap-3">
             <Avatar className="w-14 h-14 border-2 border-graphite-700/60">
@@ -198,12 +214,6 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
             </div>
           )}
         </div>
-        
-        {isSticky && (
-          <div className="absolute -top-6 right-0 bg-gunmetal-800/90 text-xs px-2 py-1 rounded-t-md text-titanium-white/70">
-            Click again to dismiss
-          </div>
-        )}
       </HoverCardContent>
     </HoverCard>
   );
