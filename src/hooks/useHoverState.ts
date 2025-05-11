@@ -8,11 +8,11 @@ interface UseHoverStateOptions {
 }
 
 export function useHoverState(options: UseHoverStateOptions = {}) {
-  // Minimize all delays for faster transitions
+  // Use zero delays for instant transitions
   const { 
     delay = 0, 
-    exitDelay = 100, 
-    isQuickSwitch = false 
+    exitDelay = 0, 
+    isQuickSwitch = true 
   } = options;
   
   const [isHovered, setIsHovered] = useState(false);
@@ -37,10 +37,7 @@ export function useHoverState(options: UseHoverStateOptions = {}) {
     }
     
     setIsHovered(true);
-    
-    // Always use zero delay for immediate response
-    setIsActive(true);
-    
+    setIsActive(true); // Immediate activation
   }, []);
   
   const handleMouseLeave = useCallback(() => {
@@ -51,18 +48,7 @@ export function useHoverState(options: UseHoverStateOptions = {}) {
     }
     
     setIsHovered(false);
-    
-    // Use minimal exit delay for better interactivity
-    const effectiveExitDelay = isQuickSwitch ? 0 : exitDelay;
-    
-    if (effectiveExitDelay > 0) {
-      exitTimerRef.current = setTimeout(() => {
-        setIsActive(false);
-        exitTimerRef.current = null;
-      }, effectiveExitDelay);
-    } else {
-      setIsActive(false);
-    }
+    setIsActive(false); // Immediate deactivation for quick switching
   }, [exitDelay, isQuickSwitch]);
   
   return {

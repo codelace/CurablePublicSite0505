@@ -22,19 +22,18 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
   // Track mouse position for better horizontal movement detection
   const [mousePosition, setMousePosition] = useState<{ x: number, y: number } | null>(null);
   
-  // Enhanced hover handling with better horizontal movement support
+  // Handle hover on profile cards with improved horizontal navigation
   const handleMouseEnter = useCallback((index: number) => {
     setHoveredProfile(index);
     setActiveProfile(index);
   }, [setHoveredProfile]);
   
   const handleMouseLeave = useCallback(() => {
-    // Only clear if we're not in "sticky" mode
     setHoveredProfile(null);
     setActiveProfile(null);
   }, [setHoveredProfile]);
   
-  // Track mouse movement within the grid for smoother transitions
+  // Track mouse movement for smoother transitions between cards
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (!gridRef.current) return;
     
@@ -45,7 +44,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
     });
   }, []);
   
-  // Handle click to toggle active profile state
+  // Toggle card selection on click
   const handleCardClick = useCallback((index: number) => {
     setActiveProfile(prev => prev === index ? null : index);
   }, []);
@@ -72,7 +71,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
           {people.map((person, index) => (
             <div 
               key={`team-member-${person.id}`}
-              className={`transform transition-all duration-100 ${
+              className={`transform transition-all duration-75 ${
                 hoveredProfile === index ? 'z-30 scale-105' : 'z-10'
               }`}
               onMouseEnter={() => isInViewport && handleMouseEnter(index)}
