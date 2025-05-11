@@ -90,6 +90,15 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
     setIsSticky(!isSticky);
   };
   
+  // Set up hover handlers for the HoverCardContent
+  const handleMouseEnter = () => {
+    hoverProps.onMouseEnter();
+  };
+  
+  const handleMouseLeave = () => {
+    hoverProps.onMouseLeave();
+  };
+  
   return (
     <HoverCard open={showCard}>
       <HoverCardTrigger asChild>
@@ -111,8 +120,8 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
         align="start"
         sideOffset={5}
         onClick={handleCardClick}
-        onPointerEnterCapture={hoverProps.onMouseEnter}
-        onPointerLeaveCapture={hoverProps.onMouseLeave}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div className="p-4 space-y-3">
           <div className="flex items-center gap-3">
