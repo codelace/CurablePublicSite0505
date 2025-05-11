@@ -47,7 +47,7 @@ export const people: Person[] = [
     role: "Ecosystem & DevRel",
     avatar: "/lovable-uploads/64bce3f9-3ed0-4cc2-90ba-9bc836707a73.png",
     group: "team",
-    gptDescription: "Ecosystem architect with a heart for people. Three years deep in content, comms, and connection. Lives where community thrives.",
+    gptDescription: "Ecosystem builder with a heart for people.\nKnee-deep in content, comms, and connection.\nLives where community thrives.",
     bio: "There is much to say. I've been involved in web3 for 3 years and enjoyed almost every minute. I've taken the experience from web3 small businesses to web3 and now I create content, advise, host spaces/streams, and provide network connections."
   },
   {
