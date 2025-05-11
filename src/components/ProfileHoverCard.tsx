@@ -57,6 +57,22 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
   const borderClass = getBorderStyle(person.group);
   const glowClass = getGlowStyle(person.group);
   
+  // Format the gptDescription as haiku with line breaks
+  const formatHaikuDescription = (description?: string) => {
+    if (!description) return null;
+    
+    // Split by periods, commas, or sentence breaks
+    const sentences = description.split(/(?<=[.,:;])\s+/);
+    
+    // Join with line breaks
+    return sentences.map((sentence, i) => (
+      <React.Fragment key={i}>
+        {sentence}
+        {i < sentences.length - 1 && <br />}
+      </React.Fragment>
+    ));
+  };
+  
   return (
     <HoverCard open={isActive} defaultOpen={false}>
       <HoverCardTrigger asChild>
@@ -100,7 +116,9 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
           
           {person.gptDescription && (
             <div className="py-2 border-t border-graphite-700/30">
-              <p className="text-titanium-white/90 text-sm italic">{person.gptDescription}</p>
+              <p className="text-titanium-white/90 text-sm italic">
+                {formatHaikuDescription(person.gptDescription)}
+              </p>
             </div>
           )}
           
