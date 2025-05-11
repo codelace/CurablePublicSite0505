@@ -10,11 +10,19 @@ interface ProfileBioProps {
 const ProfileBio: React.FC<ProfileBioProps> = ({ bio, gptDescription }) => {
   if (!bio && !gptDescription) return null;
   
+  // Get formatted sentences from the utility function
+  const formattedSentences = gptDescription ? formatHaikuDescription(gptDescription) : null;
+  
   return (
     <div className="py-2 border-t border-graphite-700/30">
       {gptDescription && (
         <p className="text-titanium-white/90 text-sm italic">
-          {formatHaikuDescription(gptDescription)}
+          {formattedSentences?.map((sentence, i) => (
+            <React.Fragment key={i}>
+              {sentence}
+              {i < formattedSentences.length - 1 && <br />}
+            </React.Fragment>
+          ))}
         </p>
       )}
       

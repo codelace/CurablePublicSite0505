@@ -41,18 +41,11 @@ export const getGlowStyle = (group: string): string => {
 
 /**
  * Format text as haiku with line breaks after periods
+ * Returns an array of sentences for React to render
  */
-export const formatHaikuDescription = (description?: string): React.ReactNode => {
+export const formatHaikuDescription = (description?: string): string[] | null => {
   if (!description) return null;
   
   // Split by periods only
-  const sentences = description.split(/(?<=\.)\s+/);
-  
-  // Join with line breaks
-  return sentences.map((sentence, i) => (
-    <React.Fragment key={i}>
-      {sentence}
-      {i < sentences.length - 1 && <br />}
-    </React.Fragment>
-  ));
+  return description.split(/(?<=\.)\s+/);
 };
