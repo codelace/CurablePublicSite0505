@@ -43,7 +43,7 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
     }
   };
   
-  // Map group to glow style
+  // Map group to glow style (with static glow, no animation)
   const getGlowStyle = (group: string) => {
     switch (group) {
       case 'team': return 'shadow-[0_0_15px_rgba(30,174,219,0.4)]';
@@ -100,11 +100,11 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
           
           {person.gptDescription && (
             <div className="py-2 border-t border-graphite-700/30">
-              <p className="text-titanium-white/90 text-sm italic text-shadow-glow">{person.gptDescription}</p>
+              <p className="text-titanium-white/90 text-sm italic">{person.gptDescription}</p>
             </div>
           )}
           
-          {person.bio && (
+          {person.bio && !person.gptDescription && (
             <div className="py-2 border-t border-graphite-700/30">
               <p className="text-titanium-white/80 text-sm max-h-24 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent pr-1">
                 {person.bio}
