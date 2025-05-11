@@ -693,6 +693,48 @@ export type Database = {
           },
         ]
       }
+      partners: {
+        Row: {
+          campaign: string
+          created_at: string
+          ctas: Json | null
+          description: string
+          docs: Json | null
+          emoji: string | null
+          id: string
+          logo: string | null
+          name: string
+          sections: Json | null
+          updated_at: string
+        }
+        Insert: {
+          campaign: string
+          created_at?: string
+          ctas?: Json | null
+          description: string
+          docs?: Json | null
+          emoji?: string | null
+          id?: string
+          logo?: string | null
+          name: string
+          sections?: Json | null
+          updated_at?: string
+        }
+        Update: {
+          campaign?: string
+          created_at?: string
+          ctas?: Json | null
+          description?: string
+          docs?: Json | null
+          emoji?: string | null
+          id?: string
+          logo?: string | null
+          name?: string
+          sections?: Json | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string | null

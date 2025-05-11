@@ -147,4 +147,59 @@
     opacity: 1;
     animation: magnetic-flow 8s infinite linear;
   }
+  
+  /* NEW: Profile hover card animation */
+  .profile-card-enter {
+    animation: profileCardEnter 0.3s ease-out forwards;
+  }
+  
+  .profile-card-exit {
+    animation: profileCardExit 0.2s ease-in forwards;
+  }
+  
+  @keyframes profileCardEnter {
+    from { 
+      opacity: 0; 
+      transform: translateY(10px) scale(0.95); 
+      filter: blur(5px);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0) scale(1); 
+      filter: blur(0);
+    }
+  }
+  
+  @keyframes profileCardExit {
+    from { 
+      opacity: 1; 
+      transform: translateY(0) scale(1); 
+      filter: blur(0);
+    }
+    to { 
+      opacity: 0; 
+      transform: translateY(10px) scale(0.95); 
+      filter: blur(5px);
+    }
+  }
+  
+  /* NEW: Text shimmer effect for hover card descriptions */
+  .text-shimmer {
+    background: linear-gradient(
+      90deg,
+      currentColor,
+      rgba(255, 255, 255, 0.8),
+      currentColor
+    );
+    background-size: 200% 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmerText 6s infinite linear;
+  }
+  
+  @keyframes shimmerText {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
 }

@@ -4,6 +4,7 @@ import { people } from '@/data/people';
 import ProfileCard from '@/components/ProfileCard';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 interface TeamSectionProps {
   isVisible: boolean;
@@ -26,18 +27,20 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
         className="mb-2"
       />
       
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-1">
-        {people.map((person, index) => (
-          <div 
-            key={`team-member-${person.id}`}
-            className="transform transition-all duration-300"
-            onMouseEnter={() => setHoveredProfile(index)}
-            onMouseLeave={() => setHoveredProfile(null)}
-          >
-            <ProfileCard person={person} />
-          </div>
-        ))}
-      </div>
+      <TooltipProvider>
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-1">
+          {people.map((person, index) => (
+            <div 
+              key={`team-member-${person.id}`}
+              className="transform transition-all duration-300"
+              onMouseEnter={() => setHoveredProfile(index)}
+              onMouseLeave={() => setHoveredProfile(null)}
+            >
+              <ProfileCard person={person} />
+            </div>
+          ))}
+        </div>
+      </TooltipProvider>
     </div>
   );
 };

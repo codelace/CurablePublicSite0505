@@ -4,6 +4,7 @@
 @import './element-effects.css';
 @import './indicators.css';
 @import './transitions.css';
+@import './hover-effects.css';
 
 /* Text shadow glow effect for vibrant highlights */
 .text-shadow-glow {

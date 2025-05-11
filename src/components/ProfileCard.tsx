@@ -5,6 +5,7 @@ import { Person } from '@/data/people';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { useIsMobile } from '@/hooks/use-mobile';
+import ProfileHoverCard from './ProfileHoverCard';
 
 interface ProfileCardProps {
   person: Person;
@@ -61,7 +62,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
 
   const animationClass = getAnimationClass();
 
-  return (
+  const cardContent = (
     <Card 
       className={`flex flex-col items-center text-center h-full p-2 sm:p-3 
                 transition-all duration-300 transform hover:scale-105
@@ -117,6 +118,15 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person }) => {
       
       <p className="text-plasma-violet text-xs font-mono truncate terminal-text">{person.role}</p>
     </Card>
+  );
+  
+  // Wrap the card in hover card on desktop, but not on mobile
+  return isMobile ? (
+    cardContent
+  ) : (
+    <ProfileHoverCard person={person}>
+      {cardContent}
+    </ProfileHoverCard>
   );
 };
 
