@@ -8,7 +8,7 @@ interface UseHoverStateOptions {
 }
 
 export function useHoverState(options: UseHoverStateOptions = {}) {
-  // Use zero delays for instant transitions
+  // Use zero delays for instant transitions by default
   const { 
     delay = 0, 
     exitDelay = 0, 
@@ -36,9 +36,17 @@ export function useHoverState(options: UseHoverStateOptions = {}) {
       exitTimerRef.current = null;
     }
     
+    // If delay is specified, use timer, otherwise activate immediately
+    if (delay > 0) {
+      enterTimerRef.current = setTimeout(() => {
+        setIsActive(true);
+      }, delay);
+    } else {
+      setIsActive(true); // Immediate activation
+    }
+    
     setIsHovered(true);
-    setIsActive(true); // Immediate activation
-  }, []);
+  }, [delay]);
   
   const handleMouseLeave = useCallback(() => {
     // Clear any existing enter timer
@@ -48,7 +56,15 @@ export function useHoverState(options: UseHoverStateOptions = {}) {
     }
     
     setIsHovered(false);
-    setIsActive(false); // Immediate deactivation for quick switching
+    
+    // If exitDelay is specified and not quick switch mode, use timer
+    if (exitDelay > 0 && !isQuickSwitch) {
+      exitTimerRef.current = setTimeout(() => {
+        setIsActive(false);
+      }, exitDelay);
+    } else {
+      setIsActive(false); // Immediate deactivation for quick switching
+    }
   }, [exitDelay, isQuickSwitch]);
   
   return {
