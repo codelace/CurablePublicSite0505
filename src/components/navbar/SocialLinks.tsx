@@ -10,7 +10,7 @@ export const SocialLinks = ({ size = 20, className = "" }: SocialLinksProps) => 
   return (
     <div className={`flex items-center space-x-3 ${className}`}>
       <a 
-        href="https://discord.gg/kRftHc7e" 
+        href="https://discord.gg/zY4RuyPZ" 
         target="_blank" 
         rel="noopener noreferrer"
         className="text-titanium-white/70 hover:text-plasma-violet transition-colors"
