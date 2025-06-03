@@ -186,5 +186,95 @@ export const people: Person[] = [
     group: "advisor",
     gptDescription: "Organic growth, intentional reach. Content meets community with impact. Always building with love.",
     bio: "Web 3 community builder/ building. Building connections, supporting only organic projects and sharing only organic content. Goal for me is to GROW with purpose, find genuine connections and maximize my impact with intention!"
+  },
+  {
+    id: 20,
+    name: "Royalty",
+    role: "Advisor",
+    avatar: "placeholder-royalty",
+    group: "advisor",
+    gptDescription: "New advisor joining the mission. Details to be updated soon.",
+    bio: "Advisor profile details coming soon."
+  },
+  {
+    id: 21,
+    name: "Storm",
+    role: "Advisor",
+    avatar: "placeholder-storm",
+    group: "advisor",
+    gptDescription: "New advisor joining the mission. Details to be updated soon.",
+    bio: "Advisor profile details coming soon."
+  },
+  {
+    id: 22,
+    name: "Ayodele",
+    role: "Advisor",
+    avatar: "placeholder-ayodele",
+    group: "advisor",
+    gptDescription: "New advisor joining the mission. Details to be updated soon.",
+    bio: "Advisor profile details coming soon."
+  },
+  {
+    id: 23,
+    name: "Godfather",
+    role: "Advisor",
+    avatar: "placeholder-godfather",
+    group: "advisor",
+    gptDescription: "New advisor joining the mission. Details to be updated soon.",
+    bio: "Advisor profile details coming soon."
+  },
+  {
+    id: 24,
+    name: "Apollo",
+    role: "Advisor",
+    avatar: "placeholder-apollo",
+    group: "advisor",
+    gptDescription: "New advisor joining the mission. Details to be updated soon.",
+    bio: "Advisor profile details coming soon."
+  },
+  {
+    id: 25,
+    name: "Lawrenzovic",
+    role: "Advisor",
+    avatar: "placeholder-lawrenzovic",
+    group: "advisor",
+    gptDescription: "New advisor joining the mission. Details to be updated soon.",
+    bio: "Advisor profile details coming soon."
+  },
+  {
+    id: 26,
+    name: "Dr Beaver",
+    role: "Advisor",
+    avatar: "placeholder-dr-beaver",
+    group: "advisor",
+    gptDescription: "New advisor joining the mission. Details to be updated soon.",
+    bio: "Advisor profile details coming soon."
+  },
+  {
+    id: 27,
+    name: "Amen",
+    role: "Advisor",
+    avatar: "placeholder-amen",
+    group: "advisor",
+    gptDescription: "New advisor joining the mission. Details to be updated soon.",
+    bio: "Advisor profile details coming soon."
+  },
+  {
+    id: 28,
+    name: "Drew",
+    role: "Advisor",
+    avatar: "placeholder-drew",
+    group: "advisor",
+    gptDescription: "New advisor joining the mission. Details to be updated soon.",
+    bio: "Advisor profile details coming soon."
+  },
+  {
+    id: 29,
+    name: "Scooby",
+    role: "Advisor",
+    avatar: "placeholder-scooby",
+    group: "advisor",
+    gptDescription: "New advisor joining the mission. Details to be updated soon.",
+    bio: "Advisor profile details coming soon."
   }
 ];
