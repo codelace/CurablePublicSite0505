@@ -87,7 +87,7 @@ export const team: Person[] = [
     id: 18,
     name: "Kareem",
     role: "Guardian",
-    avatar: "placeholder-kareem",
+    avatar: "/placeholder.svg",
     group: "team",
     gptDescription: "New guardian joining the mission. Details to be updated soon.",
     bio: "Guardian profile details coming soon."
@@ -96,7 +96,7 @@ export const team: Person[] = [
     id: 19,
     name: "Aguda",
     role: "Guardian",
-    avatar: "placeholder-aguda",
+    avatar: "/placeholder.svg",
     group: "team",
     gptDescription: "New guardian joining the mission. Details to be updated soon.",
     bio: "Guardian profile details coming soon."
