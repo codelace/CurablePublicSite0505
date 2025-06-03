@@ -104,6 +104,15 @@ export const people: Person[] = [
     gptDescription: "IP, governance, and data decoded. Law student with DAO firepower. Where compliance meets conviction.",
     bio: "I have over two years of experience contributing to the Decentralized Science (DeSci) ecosystem and more than four years in the broader blockchain space. My contributions span roles such as IP and Compliance Officer at Aragon DAO, as well as tokenomics and governance support at Valley DAO, Cerebrum DAO, and currently, Spine DAO."
   },
+  {
+    id: 17,
+    name: "Rocks",
+    role: "Content & Community",
+    avatar: "/lovable-uploads/d02246f5-470f-4d66-a2cb-88d9748dfcef.png",
+    group: "team",
+    gptDescription: "Radiology by day, Blender by night. Health, art, and Web3 in perfect symmetry. Creative care in every detail.",
+    bio: "I work in the medical field for 8 years. I am a certified Radiologic Technologist. Have been cross trained in CT and Mammo as well, but have not sat for the certification exam. I have hospital and outpatient experience. My hobby and passion is Art, physical and on the blockchain. I create in 3D using Blender."
+  },
 
   // ——— ADVISORS ———
   {
@@ -160,14 +169,5 @@ export const people: Person[] = [
     group: "advisor",
     gptDescription: "Organic growth, intentional reach. Content meets community with impact. Always building with love.",
     bio: "Web 3 community builder/ building. Building connections, supporting only organic projects and sharing only organic content. Goal for me is to GROW with purpose, find genuine connections and maximize my impact with intention!"
-  },
-  {
-    id: 17,
-    name: "Rocks",
-    role: "Content & Community",
-    avatar: "/lovable-uploads/d02246f5-470f-4d66-a2cb-88d9748dfcef.png",
-    group: "advisor",
-    gptDescription: "Radiology by day, Blender by night. Health, art, and Web3 in perfect symmetry. Creative care in every detail.",
-    bio: "I work in the medical field for 8 years. I am a certified Radiologic Technologist. Have been cross trained in CT and Mammo as well, but have not sat for the certification exam. I have hospital and outpatient experience. My hobby and passion is Art, physical and on the blockchain. I create in 3D using Blender."
   }
 ];
