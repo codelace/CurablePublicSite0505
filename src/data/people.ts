@@ -1,4 +1,3 @@
-
 export type Person = {
   id: number;
   name: string;
@@ -112,6 +111,24 @@ export const people: Person[] = [
     group: "team",
     gptDescription: "Radiology by day, Blender by night. Health, art, and Web3 in perfect symmetry. Creative care in every detail.",
     bio: "I work in the medical field for 8 years. I am a certified Radiologic Technologist. Have been cross trained in CT and Mammo as well, but have not sat for the certification exam. I have hospital and outpatient experience. My hobby and passion is Art, physical and on the blockchain. I create in 3D using Blender."
+  },
+  {
+    id: 18,
+    name: "Kareem",
+    role: "Guardian",
+    avatar: "placeholder-kareem",
+    group: "team",
+    gptDescription: "New guardian joining the mission. Details to be updated soon.",
+    bio: "Guardian profile details coming soon."
+  },
+  {
+    id: 19,
+    name: "Aguda",
+    role: "Guardian",
+    avatar: "placeholder-aguda",
+    group: "team",
+    gptDescription: "New guardian joining the mission. Details to be updated soon.",
+    bio: "Guardian profile details coming soon."
   },
 
   // ——— ADVISORS ———
