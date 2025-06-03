@@ -8,27 +8,35 @@ interface ProfileBioProps {
 }
 
 const ProfileBio: React.FC<ProfileBioProps> = ({ bio, gptDescription }) => {
-  if (!bio && !gptDescription) return null;
+  // Use gptDescription first, fallback to bio
+  const description = gptDescription || bio;
   
-  // Get formatted sentences from the utility function
-  const formattedSentences = gptDescription ? formatHaikuDescription(gptDescription) : null;
+  if (!description) {
+    return (
+      <div className="pt-2 border-t border-graphite-700/30">
+        <p className="text-titanium-white/60 text-sm italic">
+          Profile details coming soon...
+        </p>
+      </div>
+    );
+  }
+  
+  // Format as haiku-style with line breaks
+  const haikuLines = formatHaikuDescription(description);
   
   return (
-    <div className="py-2 border-t border-graphite-700/30">
-      {gptDescription && (
-        <p className="text-titanium-white/90 text-sm italic">
-          {formattedSentences?.map((sentence, i) => (
-            <React.Fragment key={i}>
-              {sentence}
-              {i < formattedSentences.length - 1 && <br />}
-            </React.Fragment>
+    <div className="pt-2 border-t border-graphite-700/30">
+      {haikuLines ? (
+        <div className="text-titanium-white/80 text-sm space-y-1">
+          {haikuLines.map((line, index) => (
+            <p key={index} className="leading-relaxed">
+              {line.trim()}
+            </p>
           ))}
-        </p>
-      )}
-      
-      {bio && !gptDescription && (
-        <p className="text-titanium-white/80 text-sm max-h-24 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent pr-1">
-          {bio}
+        </div>
+      ) : (
+        <p className="text-titanium-white/80 text-sm leading-relaxed">
+          {description}
         </p>
       )}
     </div>
