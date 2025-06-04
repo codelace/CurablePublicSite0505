@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Person } from '@/data/people';
 import { 
   HoverCard,
@@ -21,9 +21,14 @@ interface ProfileHoverCardProps {
 const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCardProps) => {
   const isMobile = useIsMobile();
   const [isSticky, setIsSticky] = useState(false);
+  const hoverCardRef = useRef<HTMLDivElement>(null);
   
-  // Use hover state with instant transitions
-  const { isActive: isHovering, hoverProps } = useHoverState();
+  // Use improved hover state with better timing
+  const { isActive: isHovering, hoverProps } = useHoverState({
+    delay: 100,
+    exitDelay: 200,
+    isQuickSwitch: true
+  });
   
   // Show card when either external isActive prop is true or component's hover state is active
   const showCard = isActive || isHovering || isSticky;
@@ -33,13 +38,26 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
   const borderClass = getBorderStyle(person.group);
   const glowClass = getGlowStyle(person.group);
   
+  // Enhanced mouse enter for hover card content
+  const handleCardMouseEnter = () => {
+    hoverProps.onMouseEnter();
+  };
+  
+  // Enhanced mouse leave for hover card content
+  const handleCardMouseLeave = () => {
+    if (!isSticky) {
+      hoverProps.onMouseLeave();
+    }
+  };
+  
   // Lock the hover card in place when clicked (toggle)
-  const handleCardClick = () => {
+  const handleCardClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setIsSticky(!isSticky);
   };
   
   return (
-    <HoverCard open={showCard}>
+    <HoverCard open={showCard} openDelay={0} closeDelay={0}>
       <HoverCardTrigger asChild>
         <div 
           className="cursor-pointer" 
@@ -50,30 +68,30 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
       </HoverCardTrigger>
       
       <HoverCardContent 
+        ref={hoverCardRef}
         className={cn(
-          "w-80 border-2 p-0 shadow-xl z-50", 
+          "w-80 border-2 p-0 shadow-xl z-[100]", 
           borderClass,
           backgroundClass,
           glowClass,
           isSticky ? "ring-2 ring-titanium-white/30" : "",
-          "backdrop-blur-lg profile-card-enter pointer-events-none" // Allow mouse events to pass through
+          "backdrop-blur-lg profile-card-enter"
         )}
         side="right"
         align="start"
-        sideOffset={5}
+        sideOffset={8}
+        alignOffset={-20}
+        onMouseEnter={handleCardMouseEnter}
+        onMouseLeave={handleCardMouseLeave}
         onClick={handleCardClick}
-        onMouseEnter={() => {
-          // Re-activate hover state when mouse enters content
-          hoverProps.onMouseEnter();
-        }}
+        avoidCollisions={true}
+        sticky="always"
       >
-        <div className="pointer-events-auto"> {/* Restore pointer events for the content */}
-          <ProfileCardContent 
-            person={person} 
-            isSticky={isSticky} 
-            onCloseSticky={() => setIsSticky(false)} 
-          />
-        </div>
+        <ProfileCardContent 
+          person={person} 
+          isSticky={isSticky} 
+          onCloseSticky={() => setIsSticky(false)} 
+        />
       </HoverCardContent>
     </HoverCard>
   );

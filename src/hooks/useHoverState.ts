@@ -8,10 +8,9 @@ interface UseHoverStateOptions {
 }
 
 export function useHoverState(options: UseHoverStateOptions = {}) {
-  // Use zero delays for instant transitions by default
   const { 
-    delay = 0, 
-    exitDelay = 0, 
+    delay = 50, // Small delay to prevent flickering
+    exitDelay = 150, // Longer exit delay for better UX
     isQuickSwitch = true 
   } = options;
   
@@ -20,6 +19,7 @@ export function useHoverState(options: UseHoverStateOptions = {}) {
   
   const enterTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const exitTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isMouseOverRef = useRef(false);
   
   // Clear all timers on unmount
   useEffect(() => {
@@ -30,25 +30,28 @@ export function useHoverState(options: UseHoverStateOptions = {}) {
   }, []);
   
   const handleMouseEnter = useCallback(() => {
+    isMouseOverRef.current = true;
+    
     // Clear any existing exit timer
     if (exitTimerRef.current) {
       clearTimeout(exitTimerRef.current);
       exitTimerRef.current = null;
     }
     
-    // If delay is specified, use timer, otherwise activate immediately
-    if (delay > 0) {
-      enterTimerRef.current = setTimeout(() => {
-        setIsActive(true);
-      }, delay);
-    } else {
-      setIsActive(true); // Immediate activation
-    }
-    
     setIsHovered(true);
+    
+    // Always use a small delay to prevent rapid flickering
+    if (enterTimerRef.current) clearTimeout(enterTimerRef.current);
+    enterTimerRef.current = setTimeout(() => {
+      if (isMouseOverRef.current) {
+        setIsActive(true);
+      }
+    }, delay);
   }, [delay]);
   
   const handleMouseLeave = useCallback(() => {
+    isMouseOverRef.current = false;
+    
     // Clear any existing enter timer
     if (enterTimerRef.current) {
       clearTimeout(enterTimerRef.current);
@@ -57,15 +60,14 @@ export function useHoverState(options: UseHoverStateOptions = {}) {
     
     setIsHovered(false);
     
-    // If exitDelay is specified and not quick switch mode, use timer
-    if (exitDelay > 0 && !isQuickSwitch) {
-      exitTimerRef.current = setTimeout(() => {
+    // Use exit delay for better UX
+    if (exitTimerRef.current) clearTimeout(exitTimerRef.current);
+    exitTimerRef.current = setTimeout(() => {
+      if (!isMouseOverRef.current) {
         setIsActive(false);
-      }, exitDelay);
-    } else {
-      setIsActive(false); // Immediate deactivation for quick switching
-    }
-  }, [exitDelay, isQuickSwitch]);
+      }
+    }, exitDelay);
+  }, [exitDelay]);
   
   return {
     isHovered,
