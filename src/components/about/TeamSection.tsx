@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback, useRef, useEffect } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { people } from '@/data/people';
 import ProfileCard from '@/components/ProfileCard';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
@@ -19,30 +19,14 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
   const { ref, isInViewport } = useInViewport();
   const gridRef = useRef<HTMLDivElement>(null);
   
-  // Track mouse position for better horizontal movement detection
-  const [mousePosition, setMousePosition] = useState<{ x: number, y: number } | null>(null);
-  
-  // Handle hover on profile cards with improved horizontal navigation
+  // Handle hover on profile cards - simplified
   const handleMouseEnter = useCallback((index: number) => {
     setHoveredProfile(index);
-    setActiveProfile(index);
   }, [setHoveredProfile]);
   
   const handleMouseLeave = useCallback(() => {
     setHoveredProfile(null);
-    setActiveProfile(null);
   }, [setHoveredProfile]);
-  
-  // Track mouse movement for smoother transitions between cards
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    if (!gridRef.current) return;
-    
-    const rect = gridRef.current.getBoundingClientRect();
-    setMousePosition({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
-    });
-  }, []);
   
   // Toggle card selection on click
   const handleCardClick = useCallback((index: number) => {
@@ -65,7 +49,6 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, se
       <TooltipProvider>
         <div 
           ref={gridRef}
-          onMouseMove={handleMouseMove}
           className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-1"
         >
           {people.map((person, index) => (
