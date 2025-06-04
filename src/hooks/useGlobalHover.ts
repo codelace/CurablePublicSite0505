@@ -1,5 +1,5 @@
 
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 class GlobalHoverManager {
   private activeCard: string | null = null;
@@ -70,7 +70,7 @@ export function useGlobalHover(cardId: string) {
   }, [cardId]);
 
   const handleMouseLeave = useCallback(() => {
-    globalHoverManager.scheduleHide(150);
+    globalHoverManager.scheduleHide(50);
   }, []);
 
   return {
