@@ -1,4 +1,3 @@
-
 import { Person } from '../types/person';
 
 export const advisors: Person[] = [
@@ -60,7 +59,7 @@ export const advisors: Person[] = [
   {
     id: 20,
     name: "Royalty",
-    role: "Advisor",
+    role: "DAO Ops & Governance",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -69,7 +68,7 @@ export const advisors: Person[] = [
   {
     id: 21,
     name: "Storm",
-    role: "Advisor",
+    role: "Content & Community Engagement",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -78,7 +77,7 @@ export const advisors: Person[] = [
   {
     id: 22,
     name: "Ayodele",
-    role: "Advisor",
+    role: "Content & Community Engagement",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -87,7 +86,7 @@ export const advisors: Person[] = [
   {
     id: 23,
     name: "Godfather",
-    role: "Advisor",
+    role: "Content & Community Engagement",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -96,7 +95,7 @@ export const advisors: Person[] = [
   {
     id: 24,
     name: "Apollo",
-    role: "Advisor",
+    role: "Content & Community Engagement",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -105,7 +104,7 @@ export const advisors: Person[] = [
   {
     id: 25,
     name: "Lawrenzovic",
-    role: "Advisor",
+    role: "Content & Community Engagement",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -114,7 +113,7 @@ export const advisors: Person[] = [
   {
     id: 26,
     name: "Dr Beaver",
-    role: "Advisor",
+    role: "Human Health",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -123,7 +122,7 @@ export const advisors: Person[] = [
   {
     id: 27,
     name: "Amen",
-    role: "Advisor",
+    role: "Content & Community Engagement",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -132,7 +131,7 @@ export const advisors: Person[] = [
   {
     id: 28,
     name: "Drew",
-    role: "Advisor",
+    role: "Engineering & AI",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -141,7 +140,7 @@ export const advisors: Person[] = [
   {
     id: 29,
     name: "Scooby",
-    role: "Advisor",
+    role: "Agentic Infrastructure",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
