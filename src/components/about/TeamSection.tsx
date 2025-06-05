@@ -3,6 +3,7 @@ import React, { useState, useCallback, useRef } from 'react';
 import { people } from '@/data/people';
 import ProfileCard from '@/components/ProfileCard';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { useInViewport } from '@/utils/performance';
 
@@ -12,10 +13,20 @@ interface TeamSectionProps {
   setHoveredProfile: (index: number | null) => void;
 }
 
-const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
+const TeamSection: React.FC<TeamSectionProps> = ({ isVisible, hoveredProfile, setHoveredProfile }) => {
+  const isMobile = useIsMobile();
   const [activeProfile, setActiveProfile] = useState<number | null>(null);
   const { ref, isInViewport } = useInViewport();
   const gridRef = useRef<HTMLDivElement>(null);
+  
+  // Handle hover on profile cards - simplified
+  const handleMouseEnter = useCallback((index: number) => {
+    setHoveredProfile(index);
+  }, [setHoveredProfile]);
+  
+  const handleMouseLeave = useCallback(() => {
+    setHoveredProfile(null);
+  }, [setHoveredProfile]);
   
   // Toggle card selection on click
   const handleCardClick = useCallback((index: number) => {
@@ -43,7 +54,11 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
           {people.map((person, index) => (
             <div 
               key={`team-member-${person.id}`}
-              className="transform transition-all duration-75"
+              className={`transform transition-all duration-75 ${
+                hoveredProfile === index ? 'z-30 scale-105' : 'z-10'
+              }`}
+              onMouseEnter={() => isInViewport && handleMouseEnter(index)}
+              onMouseLeave={() => isInViewport && handleMouseLeave()}
               onClick={() => handleCardClick(index)}
             >
               <ProfileCard
