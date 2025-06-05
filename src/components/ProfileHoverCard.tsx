@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/hover-card';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { useGlobalHover } from '@/hooks/useGlobalHover';
+import useHoverState from '@/hooks/useHoverState';
 import ProfileCardContent from './profile/ProfileCardContent';
 import { getBorderStyle, getBackgroundStyle, getGlowStyle } from '@/utils/profileStyles';
 
@@ -22,13 +22,16 @@ const ProfileHoverCard = ({ person, children, isActive = false }: ProfileHoverCa
   const isMobile = useIsMobile();
   const [isSticky, setIsSticky] = useState(false);
   const hoverCardRef = useRef<HTMLDivElement>(null);
-  const cardId = `profile-${person.id}`;
   
-  // Use global hover state for better coordination
-  const { isActive: isGloballyActive, hoverProps } = useGlobalHover(cardId);
+  // Use improved hover state with better timing
+  const { isActive: isHovering, hoverProps } = useHoverState({
+    delay: 100,
+    exitDelay: 200,
+    isQuickSwitch: true
+  });
   
-  // Show card when either external isActive prop is true, global hover state is active, or sticky
-  const showCard = isActive || isGloballyActive || isSticky;
+  // Show card when either external isActive prop is true or component's hover state is active
+  const showCard = isActive || isHovering || isSticky;
   
   // Get style classes
   const backgroundClass = getBackgroundStyle(person.group);
