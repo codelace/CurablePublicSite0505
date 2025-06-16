@@ -1,5 +1,5 @@
 
-import { Twitter } from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface SocialLinksProps {
   size?: number;
@@ -10,7 +10,7 @@ export const SocialLinks = ({ size = 20, className = "" }: SocialLinksProps) => 
   return (
     <div className={`flex items-center space-x-3 ${className}`}>
       <a 
-        href="https://discord.gg/zY4RuyPZ" 
+        href="https://discord.gg/6ysU6ge653" 
         target="_blank" 
         rel="noopener noreferrer"
         className="text-titanium-white/70 hover:text-plasma-violet transition-colors"
@@ -27,7 +27,7 @@ export const SocialLinks = ({ size = 20, className = "" }: SocialLinksProps) => 
         className="text-titanium-white/70 hover:text-titanium-white transition-colors"
         aria-label="X (Twitter)"
       >
-        <Twitter size={size} />
+        <X size={size} />
       </a>
     </div>
   );
