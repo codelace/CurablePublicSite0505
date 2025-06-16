@@ -26,6 +26,14 @@ export const DesktopNav = () => {
       >
         TOKENOMICS
       </Link>
+      <a 
+        href="https://curableda-oi-codelace77.replit.app/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="nav-link after:transition-all after:duration-300 hover:text-logo-blue"
+      >
+        CUREWORLD
+      </a>
 
       {/* Social Media Links */}
       <SocialLinks className="ml-4" />

@@ -46,6 +46,14 @@ export const MobileNav = () => {
               >
                 TOKENOMICS
               </Link>
+              <a 
+                href="https://curableda-oi-codelace77.replit.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-base font-bold py-3 border-b border-graphite-700/40 text-titanium-white hover:text-plasma-violet"
+              >
+                CUREWORLD
+              </a>
 
               {/* Social Media Links */}
               <SocialLinks size={22} className="py-3 border-b border-graphite-700/40" />
