@@ -5,7 +5,7 @@ export const team: Person[] = [
   {
     id: 4,
     name: "AC",
-    role: "Ecosystem & DevRel",
+    role: "Ecosystem & Networking",
     avatar: "/lovable-uploads/64bce3f9-3ed0-4cc2-90ba-9bc836707a73.png",
     group: "team",
     gptDescription: "Ecosystem builder with a heart for people.\nKnee-deep in content, comms, and connection.\nLives where community thrives.",
