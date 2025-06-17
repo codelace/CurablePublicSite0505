@@ -3,15 +3,6 @@ import { Person } from '../types/person';
 
 export const team: Person[] = [
   {
-    id: 3,
-    name: "Fax",
-    role: "Web3 Builders",
-    avatar: "/lovable-uploads/9dc560d7-8282-4ac5-aa25-1491ffcfd77f.png",
-    group: "team",
-    gptDescription: "Tokenomics meets creative flow. Shaping culture with product intuition. Where strategy feels like art.",
-    bio: "I Am Currently Project Curator For Multiple Projects @LAMB_sNFT A RWA Backed NFT Project On @AbstractChain With Multiple Different IP's @bigfoot404_ A MPL404 Dynamic NFT/ Fractionalized Token/RWA @ToadsInTrenches A NFT Project On Abstract With IP and A Token Coming Soon @ThePupsNFT A Very Astute Art House Project That Has Tentacles In Multiple Projects"
-  },
-  {
     id: 4,
     name: "AC",
     role: "Ecosystem & DevRel",
@@ -19,6 +10,15 @@ export const team: Person[] = [
     group: "team",
     gptDescription: "Ecosystem builder with a heart for people.\nKnee-deep in content, comms, and connection.\nLives where community thrives.",
     bio: "There is much to say. I've been involved in web3 for 3 years and enjoyed almost every minute. I've taken the experience from web3 small businesses to web3 and now I create content, advise, host spaces/streams, and provide network connections."
+  },
+  {
+    id: 17,
+    name: "Rocks",
+    role: "Content & Community",
+    avatar: "/lovable-uploads/d02246f5-470f-4d66-a2cb-88d9748dfcef.png",
+    group: "team",
+    gptDescription: "Radiology by day, Blender by night. Health, art, and Web3 in perfect symmetry. Creative care in every detail.",
+    bio: "I work in the medical field for 8 years. I am a certified Radiologic Technologist. Have been cross trained in CT and Mammo as well, but have not sat for the certification exam. I have hospital and outpatient experience. My hobby and passion is Art, physical and on the blockchain. I create in 3D using Blender."
   },
   {
     id: 6,
@@ -64,15 +64,6 @@ export const team: Person[] = [
     group: "team",
     gptDescription: "IP, governance, and data decoded. Law student with DAO firepower. Where compliance meets conviction.",
     bio: "I have over two years of experience contributing to the Decentralized Science (DeSci) ecosystem and more than four years in the broader blockchain space. My contributions span roles such as IP and Compliance Officer at Aragon DAO, as well as tokenomics and governance support at Valley DAO, Cerebrum DAO, and currently, Spine DAO."
-  },
-  {
-    id: 17,
-    name: "Rocks",
-    role: "Content & Community",
-    avatar: "/lovable-uploads/d02246f5-470f-4d66-a2cb-88d9748dfcef.png",
-    group: "team",
-    gptDescription: "Radiology by day, Blender by night. Health, art, and Web3 in perfect symmetry. Creative care in every detail.",
-    bio: "I work in the medical field for 8 years. I am a certified Radiologic Technologist. Have been cross trained in CT and Mammo as well, but have not sat for the certification exam. I have hospital and outpatient experience. My hobby and passion is Art, physical and on the blockchain. I create in 3D using Blender."
   },
   {
     id: 18,

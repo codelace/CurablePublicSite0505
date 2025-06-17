@@ -67,6 +67,15 @@ export const advisors: Person[] = [
     bio: "Been working in the web3 space since 2018. Full-stack blockchain engineer in the crypto space since 2018. Did my bachelor in chemical engineering and then switched to blockchain and did masters in CS. Worked with huge names like Dafi, SingularityDAO, Cre8ors, Uniswap Foundation."
   },
   {
+    id: 3,
+    name: "Fax",
+    role: "Web3 Builders",
+    avatar: "/lovable-uploads/9dc560d7-8282-4ac5-aa25-1491ffcfd77f.png",
+    group: "advisor",
+    gptDescription: "Tokenomics meets creative flow. Shaping culture with product intuition. Where strategy feels like art.",
+    bio: "I Am Currently Project Curator For Multiple Projects @LAMB_sNFT A RWA Backed NFT Project On @AbstractChain With Multiple Different IP's @bigfoot404_ A MPL404 Dynamic NFT/ Fractionalized Token/RWA @ToadsInTrenches A NFT Project On Abstract With IP and A Token Coming Soon @ThePupsNFT A Very Astute Art House Project That Has Tentacles In Multiple Projects"
+  },
+  {
     id: 20,
     name: "Royalty",
     role: "DAO Ops & Governance",
