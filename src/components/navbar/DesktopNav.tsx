@@ -51,6 +51,22 @@ export const DesktopNav = () => {
                     Wearable
                   </Link>
                 </NavigationMenuLink>
+                <NavigationMenuLink asChild>
+                  <Link 
+                    to="/agency" 
+                    className="block px-3 py-2 text-sm text-titanium-white hover:text-logo-blue transition-colors"
+                  >
+                    Agency
+                  </Link>
+                </NavigationMenuLink>
+                <NavigationMenuLink asChild>
+                  <Link 
+                    to="/gated-ip-nft" 
+                    className="block px-3 py-2 text-sm text-titanium-white hover:text-logo-blue transition-colors"
+                  >
+                    Gated IP NFT
+                  </Link>
+                </NavigationMenuLink>
               </div>
             </NavigationMenuContent>
           </NavigationMenuItem>

@@ -58,12 +58,24 @@ export const MobileNav = () => {
                   <ChevronDown className={`w-4 h-4 transition-transform ${productsOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {productsOpen && (
-                  <div className="pb-3 pl-4">
+                  <div className="pb-3 pl-4 space-y-2">
                     <Link 
                       to="/wearable" 
                       className={`block text-sm py-2 ${isActive('/wearable') ? 'text-plasma-violet' : 'text-titanium-white/80'}`}
                     >
                       Wearable
+                    </Link>
+                    <Link 
+                      to="/agency" 
+                      className={`block text-sm py-2 ${isActive('/agency') ? 'text-plasma-violet' : 'text-titanium-white/80'}`}
+                    >
+                      Agency
+                    </Link>
+                    <Link 
+                      to="/gated-ip-nft" 
+                      className={`block text-sm py-2 ${isActive('/gated-ip-nft') ? 'text-plasma-violet' : 'text-titanium-white/80'}`}
+                    >
+                      Gated IP NFT
                     </Link>
                   </div>
                 )}

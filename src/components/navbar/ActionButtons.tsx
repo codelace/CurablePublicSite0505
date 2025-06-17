@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -11,12 +12,12 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
   
   const containerClasses = isMobile 
     ? `flex flex-col space-y-3 ${className}`
-    : `hidden md:flex items-center space-x-4 ${className}`;
+    : `hidden md:flex items-center space-x-3 ${className}`;
 
-  // Standardized button classes without the transform effects
+  // Made buttons narrower by reducing padding and min-width
   const baseButtonClasses = isMobile
     ? "flex items-center justify-center w-full py-2 rounded-lg text-white font-bold text-xs relative overflow-hidden"
-    : "flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold text-xs min-w-[90px] transition-colors duration-300 relative overflow-hidden";
+    : "flex items-center justify-center px-3 py-2 rounded-lg text-white font-bold text-xs min-w-[75px] transition-colors duration-300 relative overflow-hidden";
 
   // Changed to a more visible gunmetal-blue to stand out from the background
   const dnaButtonClasses = `${baseButtonClasses} ${isMobile 
@@ -39,7 +40,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         target="_blank" 
         rel="noopener noreferrer"
         className={`${dnaButtonClasses} transition-colors duration-300`}
-        style={{ width: '90px' }}
+        style={{ width: '75px' }}
         onMouseEnter={() => setHoveredButton('dna')}
         onMouseLeave={() => setHoveredButton(null)}
       >

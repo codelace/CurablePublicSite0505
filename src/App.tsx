@@ -15,6 +15,8 @@ import Tokenomics from "./pages/Tokenomics";
 import Join from "./pages/Join";
 import Novel from "./pages/Novel";
 import Wearable from "./pages/Wearable";
+import Agency from "./pages/Agency";
+import GatedIpNft from "./pages/GatedIpNft";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -117,6 +119,16 @@ const App = () => {
                     <Route path="/wearable" element={
                       <PageTransition>
                         <Wearable />
+                      </PageTransition>
+                    } />
+                    <Route path="/agency" element={
+                      <PageTransition>
+                        <Agency />
+                      </PageTransition>
+                    } />
+                    <Route path="/gated-ip-nft" element={
+                      <PageTransition>
+                        <GatedIpNft />
                       </PageTransition>
                     } />
                     <Route path="/join" element={
