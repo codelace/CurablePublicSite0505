@@ -1,3 +1,4 @@
+
 import { Person } from '../types/person';
 
 export const advisors: Person[] = [
@@ -95,7 +96,7 @@ export const advisors: Person[] = [
   {
     id: 21,
     name: "Storm",
-    role: "Content & Community Engagement",
+    role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -104,7 +105,7 @@ export const advisors: Person[] = [
   {
     id: 22,
     name: "Ayodele",
-    role: "Content & Community Engagement",
+    role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -113,7 +114,7 @@ export const advisors: Person[] = [
   {
     id: 23,
     name: "Godfather",
-    role: "Content & Community Engagement",
+    role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -122,7 +123,7 @@ export const advisors: Person[] = [
   {
     id: 24,
     name: "Apollo",
-    role: "Content & Community Engagement",
+    role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -131,7 +132,7 @@ export const advisors: Person[] = [
   {
     id: 25,
     name: "Lawrenzovic",
-    role: "Content & Community Engagement",
+    role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -149,7 +150,7 @@ export const advisors: Person[] = [
   {
     id: 27,
     name: "Amen",
-    role: "Content & Community Engagement",
+    role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
@@ -167,7 +168,7 @@ export const advisors: Person[] = [
   {
     id: 30,
     name: "LOV3",
-    role: "Content & Community Engagement",
+    role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
