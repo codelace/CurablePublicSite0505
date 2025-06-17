@@ -1,4 +1,3 @@
-
 import { Person } from '../types/person';
 
 export const advisors: Person[] = [
@@ -74,6 +73,15 @@ export const advisors: Person[] = [
     group: "advisor",
     gptDescription: "Tokenomics meets creative flow. Shaping culture with product intuition. Where strategy feels like art.",
     bio: "I Am Currently Project Curator For Multiple Projects @LAMB_sNFT A RWA Backed NFT Project On @AbstractChain With Multiple Different IP's @bigfoot404_ A MPL404 Dynamic NFT/ Fractionalized Token/RWA @ToadsInTrenches A NFT Project On Abstract With IP and A Token Coming Soon @ThePupsNFT A Very Astute Art House Project That Has Tentacles In Multiple Projects"
+  },
+  {
+    id: 31,
+    name: "Amit",
+    role: "Regulatory Affairs",
+    avatar: "/placeholder.svg",
+    group: "advisor",
+    gptDescription: "New advisor joining the mission. Details to be updated soon.",
+    bio: "Advisor profile details coming soon."
   },
   {
     id: 20,
@@ -160,15 +168,6 @@ export const advisors: Person[] = [
     id: 30,
     name: "LOV3",
     role: "Content & Community Engagement",
-    avatar: "/placeholder.svg",
-    group: "advisor",
-    gptDescription: "New advisor joining the mission. Details to be updated soon.",
-    bio: "Advisor profile details coming soon."
-  },
-  {
-    id: 31,
-    name: "Amit",
-    role: "Regulatory Affairs",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
