@@ -1,14 +1,16 @@
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { SocialLinks } from './SocialLinks';
 import { NavLogo } from './NavLogo';
 import { ActionButtons } from './ActionButtons';
+import { useState } from 'react';
 
 export const MobileNav = () => {
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
+  const [productsOpen, setProductsOpen] = useState(false);
 
   return (
     <Sheet>
@@ -46,6 +48,27 @@ export const MobileNav = () => {
               >
                 TOKENOMICS
               </Link>
+              
+              <div className="border-b border-graphite-700/40">
+                <button 
+                  onClick={() => setProductsOpen(!productsOpen)}
+                  className="w-full flex items-center justify-between text-base font-bold py-3 text-titanium-white"
+                >
+                  PRODUCTS
+                  <ChevronDown className={`w-4 h-4 transition-transform ${productsOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {productsOpen && (
+                  <div className="pb-3 pl-4">
+                    <Link 
+                      to="/wearable" 
+                      className={`block text-sm py-2 ${isActive('/wearable') ? 'text-plasma-violet' : 'text-titanium-white/80'}`}
+                    >
+                      Wearable
+                    </Link>
+                  </div>
+                )}
+              </div>
+              
               <a 
                 href="https://curableda-oi-codelace77.replit.app/" 
                 target="_blank" 

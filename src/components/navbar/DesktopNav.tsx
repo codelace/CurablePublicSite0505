@@ -1,6 +1,14 @@
 
 import { Link, useLocation } from 'react-router-dom';
 import { SocialLinks } from './SocialLinks';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 export const DesktopNav = () => {
   const location = useLocation();
@@ -26,6 +34,29 @@ export const DesktopNav = () => {
       >
         TOKENOMICS
       </Link>
+      
+      <NavigationMenu>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className="nav-link bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
+              PRODUCTS
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <div className="p-2 w-48 bg-gunmetal-900/95 border border-logo-blue/30">
+                <NavigationMenuLink asChild>
+                  <Link 
+                    to="/wearable" 
+                    className="block px-3 py-2 text-sm text-titanium-white hover:text-logo-blue transition-colors"
+                  >
+                    Wearable
+                  </Link>
+                </NavigationMenuLink>
+              </div>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+      
       <a 
         href="https://curableda-oi-codelace77.replit.app/" 
         target="_blank" 

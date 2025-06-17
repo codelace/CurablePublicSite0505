@@ -14,6 +14,7 @@ import Whitepaper from "./pages/Whitepaper";
 import Tokenomics from "./pages/Tokenomics";
 import Join from "./pages/Join";
 import Novel from "./pages/Novel";
+import Wearable from "./pages/Wearable";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -111,6 +112,11 @@ const App = () => {
                     <Route path="/tokenomics" element={
                       <PageTransition>
                         <Tokenomics />
+                      </PageTransition>
+                    } />
+                    <Route path="/wearable" element={
+                      <PageTransition>
+                        <Wearable />
                       </PageTransition>
                     } />
                     <Route path="/join" element={
