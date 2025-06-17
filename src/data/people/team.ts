@@ -39,6 +39,15 @@ export const team: Person[] = [
     bio: "Agentic infrastructure development and autonomous systems design."
   },
   {
+    id: 9,
+    name: "Sensei",
+    role: "Human Health",
+    avatar: "/lovable-uploads/d40b9bb3-1154-41eb-8f04-9df2c968b110.png",
+    group: "team",
+    gptDescription: "Four decades in healing hands. Clinical wisdom meets wearable future. Built on care, scaled by tech.",
+    bio: "My name is Richard G. Nassab, DC. I am currently in practice with 40 plus years of experience. I specialize in chronic and difficult conditions in which I work interdisciplinary. With curable dao I will be focused on wearable technologies current and future. These will help with our day to day needs and patient assessment and empowerment."
+  },
+  {
     id: 7,
     name: "Dope",
     role: "Science & Research",
@@ -55,15 +64,6 @@ export const team: Person[] = [
     group: "team",
     gptDescription: "Therapeutics shepherd across decades. Wearables, rare disease, and roadmaps. From molecule to market, mapped.",
     bio: "With over 20 years of experience in the pharmaceutical and biotechnology industry, I'm a proven leader who has successfully guided programs from early discovery through clinical development and regulatory approval. I've been working in biotech working on cure for cancer with research and technology."
-  },
-  {
-    id: 9,
-    name: "Sensei",
-    role: "Human Health",
-    avatar: "/lovable-uploads/d40b9bb3-1154-41eb-8f04-9df2c968b110.png",
-    group: "team",
-    gptDescription: "Four decades in healing hands. Clinical wisdom meets wearable future. Built on care, scaled by tech.",
-    bio: "My name is Richard G. Nassab, DC. I am currently in practice with 40 plus years of experience. I specialize in chronic and difficult conditions in which I work interdisciplinary. With curable dao I will be focused on wearable technologies current and future. These will help with our day to day needs and patient assessment and empowerment."
   },
   {
     id: 10,
