@@ -38,7 +38,7 @@ export const DesktopNav = () => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="nav-link bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
+            <NavigationMenuTrigger className="nav-link bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-sm sm:text-base font-normal">
               PRODUCTS
             </NavigationMenuTrigger>
             <NavigationMenuContent>
