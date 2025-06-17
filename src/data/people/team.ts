@@ -30,6 +30,15 @@ export const team: Person[] = [
     bio: "I have been deeply involved in decentralized governance, operations, and community building across multiple Web3 projects, with a focus on DeSci, AI, and impact-driven DAOs. My journey started in traditional project management and web development, but I quickly transitioned into the Web3 space, drawn by its potential to revolutionize industries through decentralization and open collaboration."
   },
   {
+    id: 29,
+    name: "Scooby",
+    role: "Agentic Infrastructure",
+    avatar: "/placeholder.svg",
+    group: "team",
+    gptDescription: "Building the future of autonomous systems and agentic infrastructure.",
+    bio: "Agentic infrastructure development and autonomous systems design."
+  },
+  {
     id: 7,
     name: "Dope",
     role: "Science & Research",
@@ -82,14 +91,5 @@ export const team: Person[] = [
     group: "team",
     gptDescription: "New guardian joining the mission. Details to be updated soon.",
     bio: "Guardian profile details coming soon."
-  },
-  {
-    id: 29,
-    name: "Scooby",
-    role: "Lead, Agentic Infrastructure",
-    avatar: "/placeholder.svg",
-    group: "team",
-    gptDescription: "Leading the charge in agentic infrastructure. Building the future of autonomous systems.",
-    bio: "Leading agentic infrastructure development and autonomous systems design."
   }
 ];
