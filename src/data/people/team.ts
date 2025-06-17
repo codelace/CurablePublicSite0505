@@ -21,15 +21,6 @@ export const team: Person[] = [
     bio: "There is much to say. I've been involved in web3 for 3 years and enjoyed almost every minute. I've taken the experience from web3 small businesses to web3 and now I create content, advise, host spaces/streams, and provide network connections."
   },
   {
-    id: 5,
-    name: "Devox",
-    role: "Engineering & AI",
-    avatar: "/lovable-uploads/edfc0e0b-7e7f-439f-b909-d78d05dfb329.png",
-    group: "team",
-    gptDescription: "Full-stack force since 2018. Chemical roots, crypto branches. Code with soul, built to scale.",
-    bio: "Been working in the web3 space since 2018. Full-stack blockchain engineer in the crypto space since 2018. Did my bachelor in chemical engineering and then switched to blockchain and did masters in CS. Worked with huge names like Dafi, SingularityDAO, Cre8ors, Uniswap Foundation."
-  },
-  {
     id: 6,
     name: "Kenichi",
     role: "DAO Ops & Governance",
@@ -100,5 +91,14 @@ export const team: Person[] = [
     group: "team",
     gptDescription: "New guardian joining the mission. Details to be updated soon.",
     bio: "Guardian profile details coming soon."
+  },
+  {
+    id: 29,
+    name: "Scooby",
+    role: "Lead, Agentic Infrastructure",
+    avatar: "/placeholder.svg",
+    group: "team",
+    gptDescription: "Leading the charge in agentic infrastructure. Building the future of autonomous systems.",
+    bio: "Leading agentic infrastructure development and autonomous systems design."
   }
 ];

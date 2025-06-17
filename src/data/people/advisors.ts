@@ -1,3 +1,4 @@
+
 import { Person } from '../types/person';
 
 export const advisors: Person[] = [
@@ -55,6 +56,15 @@ export const advisors: Person[] = [
     group: "advisor",
     gptDescription: "Organic growth, intentional reach. Content meets community with impact. Always building with love.",
     bio: "Web 3 community builder/ building. Building connections, supporting only organic projects and sharing only organic content. Goal for me is to GROW with purpose, find genuine connections and maximize my impact with intention!"
+  },
+  {
+    id: 5,
+    name: "Devox",
+    role: "Engineering & AI",
+    avatar: "/lovable-uploads/edfc0e0b-7e7f-439f-b909-d78d05dfb329.png",
+    group: "advisor",
+    gptDescription: "Full-stack force since 2018. Chemical roots, crypto branches. Code with soul, built to scale.",
+    bio: "Been working in the web3 space since 2018. Full-stack blockchain engineer in the crypto space since 2018. Did my bachelor in chemical engineering and then switched to blockchain and did masters in CS. Worked with huge names like Dafi, SingularityDAO, Cre8ors, Uniswap Foundation."
   },
   {
     id: 20,
@@ -138,9 +148,18 @@ export const advisors: Person[] = [
     bio: "Advisor profile details coming soon."
   },
   {
-    id: 29,
-    name: "Scooby",
-    role: "Agentic Infrastructure",
+    id: 30,
+    name: "LOV3",
+    role: "Content & Community Engagement",
+    avatar: "/placeholder.svg",
+    group: "advisor",
+    gptDescription: "New advisor joining the mission. Details to be updated soon.",
+    bio: "Advisor profile details coming soon."
+  },
+  {
+    id: 31,
+    name: "Amit",
+    role: "Regulatory Affairs",
     avatar: "/placeholder.svg",
     group: "advisor",
     gptDescription: "New advisor joining the mission. Details to be updated soon.",
