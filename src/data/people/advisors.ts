@@ -76,6 +76,14 @@ export const advisors: Person[] = [
     bio: "Translates complex pathways into clear decisions.\nBridges science, strategy, and structure.\nBuilds frameworks that unlock progress."
   },
   {
+    id: 26,
+    name: "Dr Beaver",
+    role: "Human Health",
+    avatar: "/placeholder.svg",
+    group: "advisor",
+    bio: "Chemical insight meets healing flow.\nFusing posture, wearables, and care.\nScience rebalanced with nature."
+  },
+  {
     id: 20,
     name: "Royalty",
     role: "DAO Ops & Governance",
@@ -122,14 +130,6 @@ export const advisors: Person[] = [
     avatar: "/placeholder.svg",
     group: "advisor",
     bio: "Words that spark, replies that ripple.\nThreadsmith and vibe amplifier.\nAlways engaging, always present."
-  },
-  {
-    id: 26,
-    name: "Dr Beaver",
-    role: "Human Health",
-    avatar: "/placeholder.svg",
-    group: "advisor",
-    bio: "Chemical insight meets healing flow.\nFusing posture, wearables, and care.\nScience rebalanced with nature."
   },
   {
     id: 27,
