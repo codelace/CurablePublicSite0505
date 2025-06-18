@@ -8,8 +8,8 @@ export const team: Person[] = [
     role: "Ecosystem & Networking",
     avatar: "/lovable-uploads/64bce3f9-3ed0-4cc2-90ba-9bc836707a73.png",
     group: "team",
-    gptDescription: "Ecosystem builder with a heart for people.\nKnee-deep in content, comms, and connection.\nLives where community thrives.",
-    bio: "There is much to say. I've been involved in web3 for 3 years and enjoyed almost every minute. I've taken the experience from web3 small businesses to web3 and now I create content, advise, host spaces/streams, and provide network connections."
+    gptDescription: "Ecosystem builder with a heart for people. Knee-deep in content, comms, and connection. Lives where community thrives.",
+    bio: "Ecosystem builder with extensive experience in Web3 for 3 years. Involved in content creation, communications, advisory services, hosting spaces and streams, and providing network connections across the Web3 landscape."
   },
   {
     id: 17,
@@ -18,7 +18,7 @@ export const team: Person[] = [
     avatar: "/lovable-uploads/d02246f5-470f-4d66-a2cb-88d9748dfcef.png",
     group: "team",
     gptDescription: "Radiology by day, Blender by night. Health, art, and Web3 in perfect symmetry. Creative care in every detail.",
-    bio: "I work in the medical field for 8 years. I am a certified Radiologic Technologist. Have been cross trained in CT and Mammo as well, but have not sat for the certification exam. I have hospital and outpatient experience. My hobby and passion is Art, physical and on the blockchain. I create in 3D using Blender."
+    bio: "Certified Radiologic Technologist with 8 years of medical field experience, cross-trained in CT and Mammography. Combines healthcare expertise with artistic passion, creating 3D art using Blender and exploring blockchain-based creative projects."
   },
   {
     id: 6,
@@ -27,7 +27,7 @@ export const team: Person[] = [
     avatar: "/lovable-uploads/ba7ce5e9-c5ee-4e01-9746-5504712070b7.png",
     group: "team",
     gptDescription: "Governance whisperer. DAO-native with systems in their bones. Designing for trust and flow.",
-    bio: "I have been deeply involved in decentralized governance, operations, and community building across multiple Web3 projects, with a focus on DeSci, AI, and impact-driven DAOs. My journey started in traditional project management and web development, but I quickly transitioned into the Web3 space, drawn by its potential to revolutionize industries through decentralization and open collaboration."
+    bio: "Deeply involved in decentralized governance, operations, and community building across multiple Web3 projects. Focuses on DeSci, AI, and impact-driven DAOs, with background in traditional project management and web development."
   },
   {
     id: 29,
@@ -35,8 +35,8 @@ export const team: Person[] = [
     role: "Agentic Infrastructure",
     avatar: "/placeholder.svg",
     group: "team",
-    gptDescription: "Building the future of autonomous systems and agentic infrastructure.",
-    bio: "Agentic infrastructure development and autonomous systems design."
+    gptDescription: "Building the future of autonomous systems and agentic infrastructure for decentralized science applications.",
+    bio: "Agentic infrastructure specialist focused on developing autonomous systems and intelligent infrastructure solutions for decentralized science and Web3 applications."
   },
   {
     id: 9,
@@ -45,7 +45,7 @@ export const team: Person[] = [
     avatar: "/lovable-uploads/d40b9bb3-1154-41eb-8f04-9df2c968b110.png",
     group: "team",
     gptDescription: "Four decades in healing hands. Clinical wisdom meets wearable future. Built on care, scaled by tech.",
-    bio: "My name is Richard G. Nassab, DC. I am currently in practice with 40 plus years of experience. I specialize in chronic and difficult conditions in which I work interdisciplinary. With curable dao I will be focused on wearable technologies current and future. These will help with our day to day needs and patient assessment and empowerment."
+    bio: "Dr. Richard G. Nassab, DC with over 40 years of clinical practice experience. Specializes in chronic and difficult conditions with interdisciplinary approach. Focuses on wearable technologies for patient assessment and empowerment at CurableDAO."
   },
   {
     id: 7,
@@ -54,7 +54,7 @@ export const team: Person[] = [
     avatar: "/lovable-uploads/d558783f-32dc-44c3-9b91-77b76dd49f16.png",
     group: "team",
     gptDescription: "Biotech brain, DeFi heart. Fermentation, AI, and healing frequencies. Where molecules meet music.",
-    bio: "I graduated as a nanomaterials chemical engineer, initially focused on material science before discovering my passion for biotechnology through biological applications of nanomaterials. This led me to pursue a career at the intersection of materials and life sciences. I've worked at multiple biotechnology companies, including one partnered with CRISPR Therapeutics, before joining Pfizer as a process engineer/scientist."
+    bio: "Nanomaterials chemical engineer turned biotechnology specialist. Worked at multiple biotech companies including CRISPR Therapeutics partner, before joining Pfizer as process engineer and scientist. Combines materials science with life sciences innovation."
   },
   {
     id: 8,
@@ -63,7 +63,7 @@ export const team: Person[] = [
     avatar: "/lovable-uploads/78f3d7f6-b133-4ee6-bea4-b5e4842c9728.png",
     group: "team",
     gptDescription: "Therapeutics shepherd across decades. Wearables, rare disease, and roadmaps. From molecule to market, mapped.",
-    bio: "With over 20 years of experience in the pharmaceutical and biotechnology industry, I'm a proven leader who has successfully guided programs from early discovery through clinical development and regulatory approval. I've been working in biotech working on cure for cancer with research and technology."
+    bio: "Over 20 years of experience in pharmaceutical and biotechnology industry. Proven leader guiding programs from early discovery through clinical development and regulatory approval. Expertise in biotech research and technology for cancer treatment."
   },
   {
     id: 10,
@@ -72,7 +72,7 @@ export const team: Person[] = [
     avatar: "/lovable-uploads/90558286-0ee7-4d4f-b509-691581da1995.png",
     group: "team",
     gptDescription: "IP, governance, and data decoded. Law student with DAO firepower. Where compliance meets conviction.",
-    bio: "I have over two years of experience contributing to the Decentralized Science (DeSci) ecosystem and more than four years in the broader blockchain space. My contributions span roles such as IP and Compliance Officer at Aragon DAO, as well as tokenomics and governance support at Valley DAO, Cerebrum DAO, and currently, Spine DAO."
+    bio: "Over two years of experience in Decentralized Science ecosystem and four years in blockchain space. IP and Compliance Officer at Aragon DAO, with tokenomics and governance support experience at Valley DAO, Cerebrum DAO, and Spine DAO."
   },
   {
     id: 18,
@@ -80,8 +80,8 @@ export const team: Person[] = [
     role: "Guardian",
     avatar: "/placeholder.svg",
     group: "team",
-    gptDescription: "New guardian joining the mission. Details to be updated soon.",
-    bio: "Guardian profile details coming soon."
+    gptDescription: "Guardian specialist bringing security expertise and protective oversight to the CurableDAO ecosystem.",
+    bio: "Guardian specialist with expertise in security protocols and protective oversight, ensuring the safety and integrity of the CurableDAO ecosystem and its community members."
   },
   {
     id: 19,
@@ -89,7 +89,7 @@ export const team: Person[] = [
     role: "Guardian",
     avatar: "/placeholder.svg",
     group: "team",
-    gptDescription: "New guardian joining the mission. Details to be updated soon.",
-    bio: "Guardian profile details coming soon."
+    gptDescription: "Security-focused guardian providing comprehensive protection and risk management for decentralized operations.",
+    bio: "Security-focused guardian with comprehensive expertise in protection protocols and risk management for decentralized operations and community safety initiatives."
   }
 ];

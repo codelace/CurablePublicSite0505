@@ -12,9 +12,6 @@ const About = () => {
   // For value card hover state
   const [hoveredValue, setHoveredValue] = useState<number | null>(null);
   
-  // For profile card hover state
-  const [hoveredProfile, setHoveredProfile] = useState<number | null>(null);
-  
   // For device detection
   const isMobile = useIsMobile();
   
@@ -42,11 +39,11 @@ const About = () => {
   }, []);
 
   return (
-    <div className="w-full relative min-h-screen pb-8 pt-[60px] sm:pt-[68px]"> {/* Added padding top to account for navbar height */}
+    <div className="w-full relative min-h-screen pb-8 pt-[60px] sm:pt-[68px]">
       {/* Enhanced background effects */}
       <AboutBackgroundEffects />
       
-      <div className="container mx-auto px-4 max-w-7xl z-10 relative pt-4"> {/* Further reduced top padding */}
+      <div className="container mx-auto px-4 max-w-7xl z-10 relative pt-4">
         {/* Mission Section with enhanced reveal animation */}
         <div className={`transition-all duration-700 ${animatedSections.includes('mission-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
           <AboutHero />
@@ -74,9 +71,7 @@ const About = () => {
         {/* Team Section with enhanced animation */}
         <div className={`transition-all duration-700 delay-200 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'} mb-8`}>
           <TeamSection 
-            isVisible={animatedSections.includes('team-section')} 
-            hoveredProfile={hoveredProfile} 
-            setHoveredProfile={setHoveredProfile} 
+            isVisible={animatedSections.includes('team-section')}
           />
         </div>
         
