@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { formatHaikuDescription } from '@/utils/profileStyles';
 
 interface ProfileBioProps {
   bio?: string;
@@ -21,24 +20,18 @@ const ProfileBio: React.FC<ProfileBioProps> = ({ bio, gptDescription }) => {
     );
   }
   
-  // Format as haiku-style with line breaks
-  const haikuLines = formatHaikuDescription(description);
+  // Split by newlines and render each line
+  const lines = description.split('\n').filter(line => line.trim());
   
   return (
     <div className="pt-2 border-t border-graphite-700/30">
-      {haikuLines ? (
-        <div className="text-titanium-white/80 text-sm space-y-1">
-          {haikuLines.map((line, index) => (
-            <p key={index} className="leading-relaxed">
-              {line.trim()}
-            </p>
-          ))}
-        </div>
-      ) : (
-        <p className="text-titanium-white/80 text-sm leading-relaxed">
-          {description}
-        </p>
-      )}
+      <div className="text-titanium-white/80 text-sm space-y-1 text-left">
+        {lines.map((line, index) => (
+          <p key={index} className="leading-relaxed">
+            {line.trim()}
+          </p>
+        ))}
+      </div>
     </div>
   );
 };

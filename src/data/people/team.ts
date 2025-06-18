@@ -8,7 +8,7 @@ export const team: Person[] = [
     role: "Ecosystem & Networking",
     avatar: "/lovable-uploads/64bce3f9-3ed0-4cc2-90ba-9bc836707a73.png",
     group: "team",
-    bio: "Ecosystem architect with a heart for people. Three years deep in content, comms, and connection. Lives where community thrives."
+    bio: "Ecosystem architect with a heart for people.\nThree years deep in content, comms, and connection.\nLives where community thrives."
   },
   {
     id: 17,
@@ -16,7 +16,7 @@ export const team: Person[] = [
     role: "Content & Community",
     avatar: "/lovable-uploads/d02246f5-470f-4d66-a2cb-88d9748dfcef.png",
     group: "team",
-    bio: "Radiology by day, Blender by night. Health, art, and Web3 in perfect symmetry. Creative care in every detail."
+    bio: "Radiology by day, Blender by night.\nHealth, art, and Web3 in perfect symmetry.\nCreative care in every detail."
   },
   {
     id: 6,
@@ -24,7 +24,7 @@ export const team: Person[] = [
     role: "DAO Ops & Governance",
     avatar: "/lovable-uploads/ba7ce5e9-c5ee-4e01-9746-5504712070b7.png",
     group: "team",
-    bio: "Governance whisperer. DAO-native with systems in their bones. Designing for trust and flow."
+    bio: "Governance whisperer.\nDAO-native with systems in their bones.\nDesigning for trust and flow."
   },
   {
     id: 29,
@@ -32,7 +32,7 @@ export const team: Person[] = [
     role: "Agentic Infrastructure",
     avatar: "/placeholder.svg",
     group: "team",
-    bio: "Translates complex pathways into clear decisions. Bridges science, strategy, and structure. Builds frameworks that unlock progress."
+    bio: "Translates complex pathways into clear decisions.\nBridges science, strategy, and structure.\nBuilds frameworks that unlock progress."
   },
   {
     id: 9,
@@ -40,7 +40,7 @@ export const team: Person[] = [
     role: "Human Health",
     avatar: "/lovable-uploads/d40b9bb3-1154-41eb-8f04-9df2c968b110.png",
     group: "team",
-    bio: "Four decades in healing hands. Clinical wisdom meets wearable future. Built on care, scaled by tech."
+    bio: "Four decades in healing hands.\nClinical wisdom meets wearable future.\nBuilt on care, scaled by tech."
   },
   {
     id: 7,
@@ -48,7 +48,7 @@ export const team: Person[] = [
     role: "Science & Research",
     avatar: "/lovable-uploads/d558783f-32dc-44c3-9b91-77b76dd49f16.png",
     group: "team",
-    bio: "Biotech brain, DeFi heart. Fermentation, AI, and healing frequencies. Where molecules meet music."
+    bio: "Biotech brain, DeFi heart.\nFermentation, AI, and healing frequencies.\nWhere molecules meet music."
   },
   {
     id: 8,
@@ -56,7 +56,7 @@ export const team: Person[] = [
     role: "Regulatory Affairs",
     avatar: "/lovable-uploads/78f3d7f6-b133-4ee6-bea4-b5e4842c9728.png",
     group: "team",
-    bio: "Therapeutics shepherd across decades. Wearables, rare disease, and roadmaps. From molecule to market, mapped."
+    bio: "Therapeutics shepherd across decades.\nWearables, rare disease, and roadmaps.\nFrom molecule to market, mapped."
   },
   {
     id: 10,
@@ -64,7 +64,7 @@ export const team: Person[] = [
     role: "Legal & Compliance",
     avatar: "/lovable-uploads/90558286-0ee7-4d4f-b509-691581da1995.png",
     group: "team",
-    bio: "IP, governance, and data decoded. Law student with DAO firepower. Where compliance meets conviction."
+    bio: "IP, governance, and data decoded.\nLaw student with DAO firepower.\nWhere compliance meets conviction."
   },
   {
     id: 18,
@@ -72,7 +72,7 @@ export const team: Person[] = [
     role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "team",
-    bio: "Engineer turned visual poet. Draws motion where science meets hope. Designing futures, frame by frame."
+    bio: "Engineer turned visual poet.\nDraws motion where science meets hope.\nDesigning futures, frame by frame."
   },
   {
     id: 19,
@@ -80,6 +80,6 @@ export const team: Person[] = [
     role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "team",
-    bio: "Built from grit and open source dreams. Lifts barriers with governance and care. Onboards a generation to build for good."
+    bio: "Built from grit and open source dreams.\nLifts barriers with governance and care.\nOnboards a generation to build for good."
   }
 ];

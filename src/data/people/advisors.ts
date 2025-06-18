@@ -8,7 +8,7 @@ export const advisors: Person[] = [
     role: "Engineering & Security",
     avatar: "/lovable-uploads/a2f4ba16-59a7-4321-a074-79d871ef3491.png",
     group: "advisor",
-    bio: "Legacy code, future dreams. From IBM to biotech breakthroughs. Infrastructure with soul."
+    bio: "Legacy code, future dreams.\nFrom IBM to biotech breakthroughs.\nInfrastructure with soul."
   },
   {
     id: 12,
@@ -16,7 +16,7 @@ export const advisors: Person[] = [
     role: "Web3 Builders",
     avatar: "/lovable-uploads/e12440db-60fb-408c-bef3-081c44b9f807.png",
     group: "advisor",
-    bio: "Pixels, protocols, possibility. From dev to content to culture. Exploring what's next, every day."
+    bio: "Pixels, protocols, possibility.\nFrom dev to content to culture.\nExploring what's next, every day."
   },
   {
     id: 13,
@@ -24,7 +24,7 @@ export const advisors: Person[] = [
     role: "Agentic Infrastructure",
     avatar: "/lovable-uploads/b6f57fff-8618-41e8-ae67-aa9643b7a86d.png",
     group: "advisor",
-    bio: "Minimizing pain through agentic code. AI that thinks with purpose. Quiet logic, loud impact."
+    bio: "Minimizing pain through agentic code.\nAI that thinks with purpose.\nQuiet logic, loud impact."
   },
   {
     id: 14,
@@ -32,7 +32,7 @@ export const advisors: Person[] = [
     role: "DAO Ops & Gov",
     avatar: "/lovable-uploads/4c90c926-820b-4db0-9a47-a457463c075a.png",
     group: "advisor",
-    bio: "Builds startups from the inside out. Fractional CHRO with deep people wisdom. Scaling culture with care.",
+    bio: "Builds startups from the inside out.\nFractional CHRO with deep people wisdom.\nScaling culture with care.",
     website: "https://www.linkedin.com/in/tholczer"
   },
   {
@@ -41,7 +41,7 @@ export const advisors: Person[] = [
     role: "Engineering & AI",
     avatar: "/lovable-uploads/6a79f3bb-c709-4794-9b5a-40ac0a922f6e.png",
     group: "advisor",
-    bio: "Code meets purpose in the new economy. Web3 engineer shaping safer systems. Quiet builder with vision."
+    bio: "Code meets purpose in the new economy.\nWeb3 engineer shaping safer systems.\nQuiet builder with vision."
   },
   {
     id: 16,
@@ -49,7 +49,7 @@ export const advisors: Person[] = [
     role: "Content & Community",
     avatar: "/lovable-uploads/31f14b9a-7672-4ad1-a74e-b7ef1e0fd867.png",
     group: "advisor",
-    bio: "No bots, just bonds. Feeds real roots for real reach. Community with soul and spark."
+    bio: "No bots, just bonds.\nFeeds real roots for real reach.\nCommunity with soul and spark."
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ export const advisors: Person[] = [
     role: "Engineering & AI",
     avatar: "/lovable-uploads/edfc0e0b-7e7f-439f-b909-d78d05dfb329.png",
     group: "advisor",
-    bio: "Full-stack force since 2018. Chemical roots, crypto branches. Code with soul, built to scale."
+    bio: "Full-stack force since 2018.\nChemical roots, crypto branches.\nCode with soul, built to scale."
   },
   {
     id: 3,
@@ -65,7 +65,7 @@ export const advisors: Person[] = [
     role: "Web3 Builders",
     avatar: "/lovable-uploads/9dc560d7-8282-4ac5-aa25-1491ffcfd77f.png",
     group: "advisor",
-    bio: "Tokenomics meets creative flow. Shaping culture with product intuition. Where strategy feels like art."
+    bio: "Tokenomics meets creative flow.\nShaping culture with product intuition.\nWhere strategy feels like art."
   },
   {
     id: 31,
@@ -73,7 +73,7 @@ export const advisors: Person[] = [
     role: "Regulatory Affairs",
     avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Translates complex pathways into clear decisions. Bridges science, strategy, and structure. Builds frameworks that unlock progress."
+    bio: "Translates complex pathways into clear decisions.\nBridges science, strategy, and structure.\nBuilds frameworks that unlock progress."
   },
   {
     id: 20,
@@ -81,7 +81,7 @@ export const advisors: Person[] = [
     role: "DAO Ops & Governance",
     avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Writer with a pulse on progress. Helps communities bloom through story. Always typing toward the future."
+    bio: "Writer with a pulse on progress.\nHelps communities bloom through story.\nAlways typing toward the future."
   },
   {
     id: 21,
@@ -89,7 +89,7 @@ export const advisors: Person[] = [
     role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Rooted in signal, not noise. Champion of threads, channels, and change. Pushing DeSci forward with care."
+    bio: "Rooted in signal, not noise.\nChampion of threads, channels, and change.\nPushing DeSci forward with care."
   },
   {
     id: 22,
@@ -97,7 +97,7 @@ export const advisors: Person[] = [
     role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Tells stories frame by frame. Designs that resonate, words that move. Bringing DAOs to life in motion."
+    bio: "Tells stories frame by frame.\nDesigns that resonate, words that move.\nBringing DAOs to life in motion."
   },
   {
     id: 23,
@@ -105,7 +105,7 @@ export const advisors: Person[] = [
     role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Communities built one word at a time. Finds signals, simplifies noise. Where growth feels like belonging."
+    bio: "Communities built one word at a time.\nFinds signals, simplifies noise.\nWhere growth feels like belonging."
   },
   {
     id: 24,
@@ -113,7 +113,7 @@ export const advisors: Person[] = [
     role: "Human Health",
     avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Wellness meets the blockchain frontier. Biometric truths from biohacked rings. Cannabis decoded, one data point at a time."
+    bio: "Wellness meets the blockchain frontier.\nBiometric truths from biohacked rings.\nCannabis decoded, one data point at a time."
   },
   {
     id: 25,
@@ -121,7 +121,7 @@ export const advisors: Person[] = [
     role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Words that spark, replies that ripple. Threadsmith and vibe amplifier. Always engaging, always present."
+    bio: "Words that spark, replies that ripple.\nThreadsmith and vibe amplifier.\nAlways engaging, always present."
   },
   {
     id: 26,
@@ -129,7 +129,7 @@ export const advisors: Person[] = [
     role: "Human Health",
     avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Chemical insight meets healing flow. Fusing posture, wearables, and care. Science rebalanced with nature."
+    bio: "Chemical insight meets healing flow.\nFusing posture, wearables, and care.\nScience rebalanced with nature."
   },
   {
     id: 27,
@@ -137,7 +137,7 @@ export const advisors: Person[] = [
     role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "From trenches to timelines. An artist reshaping the now. Real vibes, surreal impact."
+    bio: "From trenches to timelines.\nAn artist reshaping the now.\nReal vibes, surreal impact."
   },
   {
     id: 30,
@@ -145,6 +145,6 @@ export const advisors: Person[] = [
     role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Believes in a future built on chain. Driven by purpose, grounded in care. Here to move science and people forward."
+    bio: "Believes in a future built on chain.\nDriven by purpose, grounded in care.\nHere to move science—and people—forward."
   }
 ];
