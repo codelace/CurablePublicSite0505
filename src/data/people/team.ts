@@ -1,4 +1,3 @@
-
 import { Person } from '../types/person';
 
 export const team: Person[] = [
@@ -8,7 +7,7 @@ export const team: Person[] = [
     role: "Ecosystem & Networking",
     avatar: "/lovable-uploads/64bce3f9-3ed0-4cc2-90ba-9bc836707a73.png",
     group: "team",
-    bio: "Ecosystem architect with a heart for people.\nThree years deep in content, comms, and connection.\nLives where community thrives."
+    bio: "Ecosystem architect with a heart for people.\nDeep in content, comms, and connection.\nLives where community thrives."
   },
   {
     id: 17,
