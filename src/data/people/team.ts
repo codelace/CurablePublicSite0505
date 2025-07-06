@@ -1,4 +1,5 @@
 
+
 import { Person } from '../types/person';
 
 export const team: Person[] = [
@@ -11,20 +12,20 @@ export const team: Person[] = [
     bio: "Ecosystem architect with a heart for people.\nDeep in content, comms, and connection.\nLives where community thrives."
   },
   {
-    id: 17,
-    name: "Rocks",
-    role: "Content & Community",
-    avatar: "/lovable-uploads/d02246f5-470f-4d66-a2cb-88d9748dfcef.png",
-    group: "team",
-    bio: "Radiology by day, Blender by night.\nHealth, art, and Web3 in perfect symmetry.\nCreative care in every detail."
-  },
-  {
     id: 6,
     name: "Kenichi",
     role: "DAO Ops & Governance",
     avatar: "/lovable-uploads/ba7ce5e9-c5ee-4e01-9746-5504712070b7.png",
     group: "team",
     bio: "Governance whisperer.\nDAO-native with systems in their bones.\nDesigning for trust and flow."
+  },
+  {
+    id: 17,
+    name: "Rocks",
+    role: "Content & Community",
+    avatar: "/lovable-uploads/d02246f5-470f-4d66-a2cb-88d9748dfcef.png",
+    group: "team",
+    bio: "Radiology by day, Blender by night.\nHealth, art, and Web3 in perfect symmetry.\nCreative care in every detail."
   },
   {
     id: 29,
@@ -91,3 +92,4 @@ export const team: Person[] = [
     bio: "Profile details coming soon..."
   }
 ];
+
