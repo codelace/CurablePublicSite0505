@@ -1,4 +1,3 @@
-
 import { Person } from '../types/person';
 
 export const advisors: Person[] = [
@@ -76,6 +75,14 @@ export const advisors: Person[] = [
     bio: "Translates complex pathways into clear decisions.\nBridges science, strategy, and structure.\nBuilds frameworks that unlock progress."
   },
   {
+    id: 33,
+    name: "Derrick Houser",
+    role: "Science & Research",
+    avatar: "/placeholder.svg",
+    group: "advisor",
+    bio: "Profile details coming soon..."
+  },
+  {
     id: 26,
     name: "Dr Beaver",
     role: "Human Health",
@@ -146,5 +153,13 @@ export const advisors: Person[] = [
     avatar: "/placeholder.svg",
     group: "advisor",
     bio: "Believes in a future built on chain.\nDriven by purpose, grounded in care.\nHere to move science—and people—forward."
+  },
+  {
+    id: 34,
+    name: "Yuri",
+    role: "Content & Community",
+    avatar: "/placeholder.svg",
+    group: "advisor",
+    bio: "Profile details coming soon..."
   }
 ];

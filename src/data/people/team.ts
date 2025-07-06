@@ -1,3 +1,4 @@
+
 import { Person } from '../types/person';
 
 export const team: Person[] = [
@@ -80,5 +81,13 @@ export const team: Person[] = [
     avatar: "/placeholder.svg",
     group: "team",
     bio: "Built from grit and open source dreams.\nLifts barriers with governance and care.\nOnboards a generation to build for good."
+  },
+  {
+    id: 32,
+    name: "Heem",
+    role: "Web3 Builders",
+    avatar: "/placeholder.svg",
+    group: "team",
+    bio: "Profile details coming soon..."
   }
 ];
