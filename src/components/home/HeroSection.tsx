@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -32,7 +31,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         <h1 className={`transition-all duration-700 delay-200 transform ${revealClass('hero-text')}`}>
           <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-space leading-tight tracking-tight mb-1">
             <span className="text-titanium-white">Curable</span>
-            <span className="text-logo-blue">DAO</span>
+            <span className="text-logo-blue"> Labs</span>
           </div>
           <div className="text-lg sm:text-xl md:text-2xl mt-1 text-titanium-white/80 font-light">
             <GradientText variant="blue-purple" animate>Blueprinting Tomorrow's Cures</GradientText>
