@@ -15,7 +15,7 @@ export const sections: WhitepaperSection[] = [
 
 • Promising IP often stalls inside "valleys of death" created by siloed funding, regulatory red‑tape, and monopolistic data practices.*
 
-Curable.DAO proposes a radically open, blockchain‑native alternative that pairs decentralized governance with AI‑guided discovery. By uniting researchers, patients, investors, and technologists in a borderless digital laboratory, we aim to compress timelines, lower costs, and distribute both risk and reward more equitably than any legacy pharma model can.` 
+Curable Labs proposes a radically open, blockchain‑native alternative that pairs decentralized governance with AI‑guided discovery. By uniting researchers, patients, investors, and technologists in a borderless digital laboratory, we aim to compress timelines, lower costs, and distribute both risk and reward more equitably than any legacy pharma model can.` 
   },
   { 
     title: '2. Mission Statement', 
@@ -26,7 +26,7 @@ Our north star is a world where treatments move at the speed of collective intel
   { 
     title: '3. Global Community at the Core', 
     body: `Borderless by design.
-Curable.DAO dissolves geographic and institutional barriers through:
+Curable Labs dissolves geographic and institutional barriers through:
 
 Mechanism	Impact
 On‑chain Treasury	Anyone can audit how funds are raised, allocated, and spent.
@@ -38,7 +38,7 @@ These pillars foster a meritocratic environment where collaboration eclipses com
   },
   { 
     title: '4. Bridging DeFi & Biotech', 
-    body: `Traditional biotech finance relies on venture capital, non‑dilutive grants, or Big Pharma licensing—slow, opaque paths ill‑suited to urgent global health needs. Curable.DAO fuses DeFi liquidity tooling with scientific diligence:
+    body: `Traditional biotech finance relies on venture capital, non‑dilutive grants, or Big Pharma licensing—slow, opaque paths ill‑suited to urgent global health needs. Curable Labs fuses DeFi liquidity tooling with scientific diligence:
 
 Tokenized IP‑NFTs
 Intellectual‑property non‑fungible tokens anchor provisional patents or know‑how to an immutable chain record. Fractional ownership lets thousands back a single lead compound at micrometer precision.
@@ -51,7 +51,7 @@ Revenues from out‑licensing or asset sales flow back to token holders with aud
   },
   { 
     title: '5. Democratizing Biotech', 
-    body: `Curable.DAO eradicates three systemic gatekeepers:
+    body: `Curable Labs eradicates three systemic gatekeepers:
 
 Gatekeeper	Legacy Barrier	DAO Alternative
 Capital Access	Elite VC networks, grant committees	Permissionless token sales & quadratic donations
@@ -64,7 +64,7 @@ The result: research agendas that reflect global disease burdens, not just marke
     title: '6. Unlocking Global Talent', 
     body: `"Talent is everywhere, opportunity is not." — Patrick Collison
 
-Curable.DAO's Talent Mesh flips that axiom:
+Curable Labs's Talent Mesh flips that axiom:
 
 Proof‑of‑Contribution—Every experiment, literature review, or code commit is hashed, timestamped, and credited.
 
@@ -74,7 +74,7 @@ Dynamic Incentives—High‑impact tasks (e.g., validating an ALS target) earn b
   },
   { 
     title: '7. AI‑Powered Drug Discovery', 
-    body: `Curable.DAO integrates a modular "Agentic" pipeline:
+    body: `Curable Labs integrates a modular "Agentic" pipeline:
 
 Stage	Agent Role (automated)	Human Validation Point
 Ideation	Large‑language models mine literature & clinical databases for targets	Scientific Advisory Committee triage
@@ -86,7 +86,7 @@ This synergy compresses lead‑optimization cycles from quarters to weeks.`
   },
   { 
     title: '8. Staffing Solutions & DAO Structure', 
-    body: `Curable.DAO operates four concentric circles of responsibility:
+    body: `Curable Labs operates four concentric circles of responsibility:
 
 Circle	Token Requirement	Powers
 Observer	None	View data, comment in forums
@@ -129,7 +129,7 @@ Core Engineering — distributed team specializing in agentic AI and smart contr
   },
   { 
     title: 'Conclusion', 
-    body: `Curable.DAO delivers a playbook for 21st‑century drug discovery—open, intelligent, and relentlessly mission‑driven. By blending:
+    body: `Curable Labs delivers a playbook for 21st‑century drug discovery—open, intelligent, and relentlessly mission‑driven. By blending:
 
 Agentic AI that iterates in silico thousands of times faster than any wet lab,
 
