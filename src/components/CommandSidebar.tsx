@@ -39,7 +39,7 @@ const CommandSidebar = () => {
       <SidebarHeader className="p-4">
         <Link to="/" className="flex items-center gap-2">
           <img 
-            src="/lovable-uploads/a254c794-6d6f-44de-9821-c578cdf74255.png" 
+            src="/lovable-uploads/09b91ead-c551-44c9-9287-08ac8adcacd4.png" 
             alt="CURABLE LABS" 
             className="h-8 w-auto" 
           />

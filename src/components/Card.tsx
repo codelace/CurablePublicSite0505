@@ -5,9 +5,19 @@ interface CardProps {
   children: React.ReactNode;
   className?: string;
   glowColor?: 'blue' | 'purple' | 'red' | 'green' | 'amber';
+  variant?: string;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ children, className = '', glowColor }) => {
+const Card = React.forwardRef<HTMLDivElement, CardProps>(({ 
+  children, 
+  className = '', 
+  glowColor,
+  variant,
+  onMouseEnter,
+  onMouseLeave 
+}, ref) => {
   const getGlowClass = () => {
     switch (glowColor) {
       case 'blue':
@@ -19,19 +29,27 @@ const Card: React.FC<CardProps> = ({ children, className = '', glowColor }) => {
       case 'green':
         return 'shadow-[0_0_20px_rgba(34,197,94,0.3)] border-green-500/30';
       case 'amber':
-        return 'shadow-[0_0_20px_rgba(245,158,11,0.3)] border-warm-amber/30';
+        return 'shadow-[0_0_20px_rgba(245,158,11,0.3)] border-amber-500/30';
       default:
         return 'border-graphite-700/60';
     }
   };
 
+  const baseClasses = `bg-dark-surface/90 backdrop-blur-sm border rounded-lg transition-all duration-300 hover:scale-105 ${getGlowClass()}`;
+  const variantClasses = variant === 'elevated' ? 'shadow-xl' : '';
+
   return (
     <div 
-      className={`bg-dark-surface/90 backdrop-blur-sm border rounded-lg transition-all duration-300 hover:scale-105 ${getGlowClass()} ${className}`}
+      ref={ref}
+      className={`${baseClasses} ${variantClasses} ${className}`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {children}
     </div>
   );
-};
+});
+
+Card.displayName = 'Card';
 
 export default Card;
