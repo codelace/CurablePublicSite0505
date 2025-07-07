@@ -72,7 +72,7 @@ const App = () => {
                 </div>
                 <div className="mt-6 font-space text-titanium-white text-3xl relative">
                   <span className="text-warm-rose animate-pulse">Curable</span>
-                  <span className="text-titanium-white">DAO</span>
+                  <span className="text-titanium-white"> Labs</span>
                   <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-warm-rose to-transparent animate-expand"></div>
                 </div>
                 <div className="mt-8 text-titanium-white/60 font-mono text-sm animate-pulse">
