@@ -21,6 +21,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
       case 'team': return 'Guardian';
       case 'advisor': return 'Advisor';
       case 'founder': return 'Founder';
+      case 'contributor': return 'Contributor';
       default: return group;
     }
   };
@@ -34,6 +35,8 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
         return 'bg-quantum-red/20 text-quantum-red border-quantum-red/30';
       case 'founder': 
         return 'bg-plasma-violet/20 text-plasma-violet border-plasma-violet/30';
+      case 'contributor':
+        return 'bg-warm-amber/20 text-warm-amber border-warm-amber/30';
       default: 
         return 'bg-logo-blue/20 text-logo-blue border-logo-blue/30';
     }
@@ -41,7 +44,9 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
 
   const groupDisplay = getGroupDisplay(person.group);
   const badgeClass = getBadgeStyle(person.group);
-  const badgeVariant = person.group === 'team' ? 'default' : person.group === 'advisor' ? 'secondary' : 'outline';
+  const badgeVariant = person.group === 'team' ? 'default' : 
+                      person.group === 'advisor' ? 'secondary' : 
+                      person.group === 'contributor' ? 'outline' : 'outline';
   
   // Apply different animation classes based on person group
   const getAnimationClass = () => {
@@ -52,6 +57,8 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
         return 'quantum-barrier';
       case 'founder':
         return 'bio-scan';
+      case 'contributor':
+        return 'warm-glow';
       default:
         return '';
     }
@@ -63,7 +70,9 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
     <Card 
       className={`flex flex-col text-center h-full p-3 transition-all duration-300 
                 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${animationClass}`}
-      glowColor={person.group === 'team' ? 'blue' : person.group === 'advisor' ? 'red' : 'purple'}
+      glowColor={person.group === 'team' ? 'blue' : 
+                person.group === 'advisor' ? 'red' : 
+                person.group === 'contributor' ? 'amber' : 'purple'}
     >
       <div 
         className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 
@@ -92,6 +101,8 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
             <span className="cyber-highlight">{person.name}</span>
           ) : person.group === 'advisor' ? (
             <span className="quantum-text">{person.name}</span>
+          ) : person.group === 'contributor' ? (
+            <span className="warm-highlight">{person.name}</span>
           ) : (
             <span className="bio-highlight">{person.name}</span>
           )}

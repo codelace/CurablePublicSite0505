@@ -1,5 +1,4 @@
 
-
 import { Person } from '../types/person';
 
 export const team: Person[] = [
@@ -88,8 +87,7 @@ export const team: Person[] = [
     name: "Heem",
     role: "Web3 Builders",
     avatar: "/placeholder.svg",
-    group: "team",
+    group: "contributor",
     bio: "Profile details coming soon..."
   }
 ];
-

@@ -1,51 +1,45 @@
 
-/**
- * Utility functions for profile card styling
- */
-
-/**
- * Returns the appropriate background style class based on user group
- */
-export const getBackgroundStyle = (group: string): string => {
+export const getBorderStyle = (group: string) => {
   switch (group) {
-    case 'team': return 'bg-gradient-to-br from-gunmetal-900/90 to-logo-blue/30';
-    case 'advisor': return 'bg-gradient-to-br from-gunmetal-900/90 to-quantum-red/30';
-    case 'founder': return 'bg-gradient-to-br from-gunmetal-900/90 to-plasma-violet/30';
-    default: return 'bg-gunmetal-900/90';
+    case 'team':
+      return 'border-logo-blue/40';
+    case 'advisor':
+      return 'border-quantum-red/40';
+    case 'founder':
+      return 'border-plasma-violet/40';
+    case 'contributor':
+      return 'border-warm-amber/40';
+    default:
+      return 'border-logo-blue/40';
   }
 };
 
-/**
- * Returns the appropriate border style class based on user group
- */
-export const getBorderStyle = (group: string): string => {
+export const getBackgroundStyle = (group: string) => {
   switch (group) {
-    case 'team': return 'border-logo-blue/60';
-    case 'advisor': return 'border-quantum-red/60';
-    case 'founder': return 'border-plasma-violet/60';
-    default: return 'border-graphite-700/60';
+    case 'team':
+      return 'bg-gunmetal-900/95';
+    case 'advisor':
+      return 'bg-gunmetal-900/95';
+    case 'founder':
+      return 'bg-gunmetal-900/95';
+    case 'contributor':
+      return 'bg-gunmetal-900/95';
+    default:
+      return 'bg-gunmetal-900/95';
   }
 };
 
-/**
- * Returns the appropriate glow effect class based on user group
- */
-export const getGlowStyle = (group: string): string => {
+export const getGlowStyle = (group: string) => {
   switch (group) {
-    case 'team': return 'shadow-[0_0_15px_rgba(30,174,219,0.4)]';
-    case 'advisor': return 'shadow-[0_0_15px_rgba(255,51,102,0.4)]';
-    case 'founder': return 'shadow-[0_0_15px_rgba(161,98,255,0.4)]';
-    default: return '';
+    case 'team':
+      return 'shadow-lg shadow-logo-blue/20';
+    case 'advisor':
+      return 'shadow-lg shadow-quantum-red/20';
+    case 'founder':
+      return 'shadow-lg shadow-plasma-violet/20';
+    case 'contributor':
+      return 'shadow-lg shadow-warm-amber/20';
+    default:
+      return 'shadow-lg shadow-logo-blue/20';
   }
-};
-
-/**
- * Format text as haiku with line breaks after periods
- * Returns an array of sentences for React to render
- */
-export const formatHaikuDescription = (description?: string): string[] | null => {
-  if (!description) return null;
-  
-  // Split by periods only
-  return description.split(/(?<=\.)\s+/);
 };
