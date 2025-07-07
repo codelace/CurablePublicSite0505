@@ -26,6 +26,7 @@ const navItems = [
   { title: "About", url: "/about", icon: CircleDot },
   { title: "Whitepaper", url: "/whitepaper", icon: Settings },
   { title: "Tokenomics", url: "/tokenomics", icon: CircleDot },
+  { title: "FAQ", url: "/faq", icon: CircleDot },
 ];
 
 const CommandSidebar = () => {
