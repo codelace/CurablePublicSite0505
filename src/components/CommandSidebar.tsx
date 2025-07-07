@@ -39,8 +39,8 @@ const CommandSidebar = () => {
       <SidebarHeader className="p-4">
         <Link to="/" className="flex items-center gap-2">
           <img 
-            src="/lovable-uploads/9f48e9db-5a06-4a87-be2f-b514b3153f90.png" 
-            alt="CURABLE DAO" 
+            src="/lovable-uploads/a254c794-6d6f-44de-9821-c578cdf74255.png" 
+            alt="CURABLE LABS" 
             className="h-8 w-auto" 
           />
           <div className="w-2 h-2 rounded-full bg-quantum-red animate-pulse-dot"></div>
@@ -102,10 +102,10 @@ const CommandSidebar = () => {
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild tooltip="Join DAO">
+                <SidebarMenuButton asChild tooltip="Join Labs">
                   <Link to="/join" className="text-plasma-violet">
                     <CircleDot />
-                    <span>Join DAO</span>
+                    <span>Join Labs</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>

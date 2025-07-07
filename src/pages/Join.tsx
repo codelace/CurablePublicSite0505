@@ -4,7 +4,7 @@ import CommandHUDHeader from '@/components/CommandHUDHeader';
 import CommandPatternBackground from '@/components/CommandPatternBackground';
 
 const Join = () => {
-  // Google Form URL for joining CurableDAO
+  // Google Form URL for joining Curable Labs
   const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdu5VMFl1uiLK0uIrWpYPn7WknpzhW7AeRNePRet1mxg5Tovg/viewform";
   
   return (
@@ -17,7 +17,7 @@ const Join = () => {
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="animate-fade-up">
           <CommandHUDHeader 
-            title="Join CurableDAO"
+            title="Join Curable Labs"
             subtitle="Onboarding protocol initialized"
             statusText="MEMBER ONBOARDING" 
           />
@@ -37,7 +37,7 @@ const Join = () => {
           <iframe 
             src={`${formURL}?embedded=true`} 
             className="w-full h-[90vh] rounded-lg relative z-10"
-            title="Join CurableDAO"
+            title="Join Curable Labs"
           />
         </div>
       </div>

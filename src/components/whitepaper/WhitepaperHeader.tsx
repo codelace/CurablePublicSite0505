@@ -47,7 +47,7 @@ const WhitepaperHeader: React.FC<WhitepaperHeaderProps> = ({ fullTerminalText })
       
       <h1 className="text-3xl font-bold text-titanium-white mt-2 flex items-center gap-2 font-space relative z-10">
         <span className="text-bio-blue">&gt;</span> 
-        <GradientText variant="blue-purple" animate>CurableDAO</GradientText> 
+        <GradientText variant="blue-purple" animate>Curable Labs</GradientText> 
         <span>Whitepaper</span>
         <Badge className="ml-2 bg-plasma-violet/20 text-plasma-violet text-xs glow-pulse">v2.5</Badge>
       </h1>

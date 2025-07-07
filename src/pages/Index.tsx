@@ -14,7 +14,7 @@ const Index = () => {
   // Memoize status items to prevent unnecessary re-renders
   const statusItems = useMemo(() => [
     { label: 'API CONNECTED', status: 'connected' as const },
-    { label: 'DAO PROTOCOL v1.2.4', status: 'connected' as const },
+    { label: 'LABS PROTOCOL v1.2.4', status: 'connected' as const },
     { label: 'NETWORK UPTIME 99.8%', status: 'connected' as const },
     { label: 'CONSENSUS PROTOCOL', status: 'pending' as const }
   ], []);

@@ -18,8 +18,8 @@ export const NavLogo = () => {
         ></div>
         <div className={`absolute -inset-px rounded-lg border border-logo-blue/0 transition-all duration-500 ${isHovered ? 'border-logo-blue/40 scale-105' : ''}`}></div>
         <img 
-          src="/lovable-uploads/527a9005-0c4c-4647-b5c1-3650cacf17bf.png" 
-          alt="CURABLE DAO" 
+          src="/lovable-uploads/a254c794-6d6f-44de-9821-c578cdf74255.png" 
+          alt="CURABLE LABS" 
           className={`h-8 sm:h-12 w-auto transition-all duration-500 ${isHovered ? 'filter brightness-125 scale-105' : ''}`}
         />
         

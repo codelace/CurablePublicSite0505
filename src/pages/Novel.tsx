@@ -25,7 +25,7 @@ const Novel = () => {
           
           <div className="glass-panel p-6 mb-8">
             <p className="text-lg text-titanium-white/90 max-w-2xl">
-              Have a breakthrough idea or compound? Pitch it here and tap into CurableDAO's collective power
+              Have a breakthrough idea or compound? Pitch it here and tap into Curable Labs' collective power
               to validate, fund, and develop your innovation.
             </p>
           </div>
