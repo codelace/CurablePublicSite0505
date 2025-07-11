@@ -70,7 +70,7 @@ export const team: Person[] = [
     id: 18,
     name: "Kareem",
     role: "Content & Community",
-    avatar: "/placeholder.svg",
+    avatar: "/lovable-uploads/e90e85b3-a32d-44f1-ac55-6ee4afa72902.png",
     group: "team",
     bio: "Engineer turned visual poet.\nDraws motion where science meets hope.\nDesigning futures, frame by frame."
   },
