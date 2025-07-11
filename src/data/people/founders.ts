@@ -4,7 +4,7 @@ import { Person } from '../types/person';
 export const founders: Person[] = [
   {
     id: 1,
-    name: "Hugh Donatello",
+    name: "RomanBridge",
     role: "Chief Executive Officer",
     avatar: "/lovable-uploads/29dc9117-d819-4eb1-b3d0-f5d52977d0ae.png",
     group: "founder",
@@ -13,7 +13,7 @@ export const founders: Person[] = [
   },
   {
     id: 2,
-    name: "Ilyssa Evans",
+    name: "PixelQueen",
     role: "Chief Operations Officer",
     avatar: "/lovable-uploads/5dbccdf9-3ed8-4974-b59c-9026351fd218.png",
     group: "founder",
