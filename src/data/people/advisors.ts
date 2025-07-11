@@ -76,7 +76,7 @@ export const advisors: Person[] = [
   },
   {
     id: 33,
-    name: "Derrick Houser",
+    name: "Derrick",
     role: "Science & Research",
     avatar: "/placeholder.svg",
     group: "advisor",
