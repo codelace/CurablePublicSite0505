@@ -86,7 +86,7 @@ export const team: Person[] = [
     id: 32,
     name: "Heem",
     role: "Web3 Builders",
-    avatar: "/placeholder.svg",
+    avatar: "/lovable-uploads/e0586ce0-63ff-4179-8615-9ca81b24d560.png",
     group: "contributor",
     bio: "Profile details coming soon..."
   }
