@@ -78,7 +78,7 @@ export const team: Person[] = [
     id: 19,
     name: "Aguda",
     role: "Content & Community",
-    avatar: "/placeholder.svg",
+    avatar: "/lovable-uploads/af7cfa51-e777-489b-86cd-8cfc511bf235.png",
     group: "team",
     bio: "Built from grit and open source dreams.\nLifts barriers with governance and care.\nOnboards a generation to build for good."
   },
