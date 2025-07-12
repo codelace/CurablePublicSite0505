@@ -26,45 +26,12 @@ export const advisors: Person[] = [
     bio: "Minimizing pain through agentic code.\nAI that thinks with purpose.\nQuiet logic, loud impact."
   },
   {
-    id: 14,
-    name: "Tamas",
-    role: "DAO Ops & Gov",
-    avatar: "/lovable-uploads/4c90c926-820b-4db0-9a47-a457463c075a.png",
+    id: 35,
+    name: "Dr. Murtaza",
+    role: "Science & Research",
+    avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Builds startups from the inside out.\nFractional CHRO with deep people wisdom.\nScaling culture with care.",
-    website: "https://www.linkedin.com/in/tholczer"
-  },
-  {
-    id: 15,
-    name: "Iggy",
-    role: "Engineering & AI",
-    avatar: "/lovable-uploads/6a79f3bb-c709-4794-9b5a-40ac0a922f6e.png",
-    group: "advisor",
-    bio: "Code meets purpose in the new economy.\nWeb3 engineer shaping safer systems.\nQuiet builder with vision."
-  },
-  {
-    id: 16,
-    name: "Pink",
-    role: "Content & Community",
-    avatar: "/lovable-uploads/31f14b9a-7672-4ad1-a74e-b7ef1e0fd867.png",
-    group: "advisor",
-    bio: "No bots, just bonds.\nFeeds real roots for real reach.\nCommunity with soul and spark."
-  },
-  {
-    id: 5,
-    name: "Devox",
-    role: "Engineering & AI",
-    avatar: "/lovable-uploads/edfc0e0b-7e7f-439f-b909-d78d05dfb329.png",
-    group: "advisor",
-    bio: "Full-stack force since 2018.\nChemical roots, crypto branches.\nCode with soul, built to scale."
-  },
-  {
-    id: 3,
-    name: "Fax",
-    role: "Web3 Builders",
-    avatar: "/lovable-uploads/9dc560d7-8282-4ac5-aa25-1491ffcfd77f.png",
-    group: "advisor",
-    bio: "Tokenomics meets creative flow.\nShaping culture with product intuition.\nWhere strategy feels like art."
+    bio: "Bridging computational biology with experimental discovery.\nDriven by data, guided by curiosity.\nTransforming research into actionable insights."
   },
   {
     id: 31,
@@ -163,11 +130,44 @@ export const advisors: Person[] = [
     bio: "Profile details coming soon..."
   },
   {
-    id: 35,
-    name: "Dr. Murtaza",
-    role: "Science & Research",
-    avatar: "/placeholder.svg",
+    id: 14,
+    name: "Tamas",
+    role: "DAO Ops & Gov",
+    avatar: "/lovable-uploads/4c90c926-820b-4db0-9a47-a457463c075a.png",
     group: "advisor",
-    bio: "Bridging computational biology with experimental discovery.\nDriven by data, guided by curiosity.\nTransforming research into actionable insights."
+    bio: "Builds startups from the inside out.\nFractional CHRO with deep people wisdom.\nScaling culture with care.",
+    website: "https://www.linkedin.com/in/tholczer"
+  },
+  {
+    id: 15,
+    name: "Iggy",
+    role: "Engineering & AI",
+    avatar: "/lovable-uploads/6a79f3bb-c709-4794-9b5a-40ac0a922f6e.png",
+    group: "advisor",
+    bio: "Code meets purpose in the new economy.\nWeb3 engineer shaping safer systems.\nQuiet builder with vision."
+  },
+  {
+    id: 16,
+    name: "Pink",
+    role: "Content & Community",
+    avatar: "/lovable-uploads/31f14b9a-7672-4ad1-a74e-b7ef1e0fd867.png",
+    group: "advisor",
+    bio: "No bots, just bonds.\nFeeds real roots for real reach.\nCommunity with soul and spark."
+  },
+  {
+    id: 5,
+    name: "Devox",
+    role: "Engineering & AI",
+    avatar: "/lovable-uploads/edfc0e0b-7e7f-439f-b909-d78d05dfb329.png",
+    group: "advisor",
+    bio: "Full-stack force since 2018.\nChemical roots, crypto branches.\nCode with soul, built to scale."
+  },
+  {
+    id: 3,
+    name: "Fax",
+    role: "Web3 Builders",
+    avatar: "/lovable-uploads/9dc560d7-8282-4ac5-aa25-1491ffcfd77f.png",
+    group: "advisor",
+    bio: "Tokenomics meets creative flow.\nShaping culture with product intuition.\nWhere strategy feels like art."
   }
 ];
