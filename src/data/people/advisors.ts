@@ -86,7 +86,7 @@ export const advisors: Person[] = [
     id: 26,
     name: "Dr Beaver",
     role: "Human Health",
-    avatar: "/placeholder.svg",
+    avatar: "/lovable-uploads/bf241b6e-8404-4dd0-a4a9-8b3068901941.png",
     group: "advisor",
     bio: "Chemical insight meets healing flow.\nFusing posture, wearables, and care.\nScience rebalanced with nature."
   },
