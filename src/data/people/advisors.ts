@@ -161,5 +161,13 @@ export const advisors: Person[] = [
     avatar: "/placeholder.svg",
     group: "advisor",
     bio: "Profile details coming soon..."
+  },
+  {
+    id: 35,
+    name: "Dr. Murtaza",
+    role: "Science & Research",
+    avatar: "/placeholder.svg",
+    group: "advisor",
+    bio: "Bridging computational biology with experimental discovery.\nDriven by data, guided by curiosity.\nTransforming research into actionable insights."
   }
 ];
