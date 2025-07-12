@@ -70,7 +70,7 @@ export const advisors: Person[] = [
     id: 31,
     name: "Amit",
     role: "Regulatory Affairs",
-    avatar: "/placeholder.svg",
+    avatar: "/lovable-uploads/6727052f-f5c8-48ae-89cb-471ef5f89127.png",
     group: "advisor",
     bio: "Translates complex pathways into clear decisions.\nBridges science, strategy, and structure.\nBuilds frameworks that unlock progress."
   },
