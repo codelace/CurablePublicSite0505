@@ -114,7 +114,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
         
         <p className="text-plasma-violet text-xs font-mono mb-3 terminal-text">{person.role}</p>
         
-        <div className="flex-1 flex flex-col justify-end">
+        <div className="flex-1 flex flex-col justify-start">
           <div className="text-titanium-white/80 text-xs leading-relaxed text-left">
             {person.bio ? (
               person.bio.split('\n').filter(line => line.trim()).map((line, index) => (
