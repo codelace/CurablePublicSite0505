@@ -130,6 +130,14 @@ export const advisors: Person[] = [
     bio: "Profile details coming soon..."
   },
   {
+    id: 3,
+    name: "Fax",
+    role: "Web3 Builders",
+    avatar: "/lovable-uploads/9dc560d7-8282-4ac5-aa25-1491ffcfd77f.png",
+    group: "advisor",
+    bio: "Tokenomics meets creative flow.\nShaping culture with product intuition.\nWhere strategy feels like art."
+  },
+  {
     id: 15,
     name: "Iggy",
     role: "Engineering & AI",
@@ -152,14 +160,6 @@ export const advisors: Person[] = [
     avatar: "/lovable-uploads/edfc0e0b-7e7f-439f-b909-d78d05dfb329.png",
     group: "advisor",
     bio: "Full-stack force since 2018.\nChemical roots, crypto branches.\nCode with soul, built to scale."
-  },
-  {
-    id: 3,
-    name: "Fax",
-    role: "Web3 Builders",
-    avatar: "/lovable-uploads/9dc560d7-8282-4ac5-aa25-1491ffcfd77f.png",
-    group: "advisor",
-    bio: "Tokenomics meets creative flow.\nShaping culture with product intuition.\nWhere strategy feels like art."
   },
   {
     id: 14,
