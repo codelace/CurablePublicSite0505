@@ -26,12 +26,12 @@ export const advisors: Person[] = [
     bio: "Minimizing pain through agentic code.\nAI that thinks with purpose.\nQuiet logic, loud impact."
   },
   {
-    id: 35,
-    name: "Dr. Murtaza",
-    role: "Science & Research",
-    avatar: "/placeholder.svg",
+    id: 26,
+    name: "Dr Beaver",
+    role: "Human Health",
+    avatar: "/lovable-uploads/bf241b6e-8404-4dd0-a4a9-8b3068901941.png",
     group: "advisor",
-    bio: "Bridging computational biology with experimental discovery.\nDriven by data, guided by curiosity.\nTransforming research into actionable insights."
+    bio: "Chemical insight meets healing flow.\nFusing posture, wearables, and care.\nScience rebalanced with nature."
   },
   {
     id: 31,
@@ -50,12 +50,12 @@ export const advisors: Person[] = [
     bio: "A builder at the frontier of biology.\nTranslates data into discovery tools.\nBridging science with systems that scale."
   },
   {
-    id: 26,
-    name: "Dr Beaver",
-    role: "Human Health",
-    avatar: "/lovable-uploads/bf241b6e-8404-4dd0-a4a9-8b3068901941.png",
+    id: 35,
+    name: "Dr. Murtaza",
+    role: "Science & Research",
+    avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Chemical insight meets healing flow.\nFusing posture, wearables, and care.\nScience rebalanced with nature."
+    bio: "Bridging computational biology with experimental discovery.\nDriven by data, guided by curiosity.\nTransforming research into actionable insights."
   },
   {
     id: 20,
