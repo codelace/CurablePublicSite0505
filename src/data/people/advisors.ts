@@ -130,15 +130,6 @@ export const advisors: Person[] = [
     bio: "Profile details coming soon..."
   },
   {
-    id: 14,
-    name: "Tamas",
-    role: "DAO Ops & Gov",
-    avatar: "/lovable-uploads/4c90c926-820b-4db0-9a47-a457463c075a.png",
-    group: "advisor",
-    bio: "Builds startups from the inside out.\nFractional CHRO with deep people wisdom.\nScaling culture with care.",
-    website: "https://www.linkedin.com/in/tholczer"
-  },
-  {
     id: 15,
     name: "Iggy",
     role: "Engineering & AI",
@@ -169,5 +160,14 @@ export const advisors: Person[] = [
     avatar: "/lovable-uploads/9dc560d7-8282-4ac5-aa25-1491ffcfd77f.png",
     group: "advisor",
     bio: "Tokenomics meets creative flow.\nShaping culture with product intuition.\nWhere strategy feels like art."
+  },
+  {
+    id: 14,
+    name: "Tamas",
+    role: "DAO Ops & Gov",
+    avatar: "/lovable-uploads/4c90c926-820b-4db0-9a47-a457463c075a.png",
+    group: "advisor",
+    bio: "Builds startups from the inside out.\nFractional CHRO with deep people wisdom.\nScaling culture with care.",
+    website: "https://www.linkedin.com/in/tholczer"
   }
 ];
