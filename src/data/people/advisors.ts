@@ -45,7 +45,7 @@ export const advisors: Person[] = [
     id: 33,
     name: "Derrick",
     role: "Science & Research",
-    avatar: "/placeholder.svg",
+    avatar: "/lovable-uploads/c768edd4-6ef7-4383-9a85-75efb5a94194.png",
     group: "advisor",
     bio: "A builder at the frontier of biology.\nTranslates data into discovery tools.\nBridging science with systems that scale."
   },
