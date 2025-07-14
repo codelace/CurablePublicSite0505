@@ -130,28 +130,12 @@ export const advisors: Person[] = [
     bio: "Profile details coming soon..."
   },
   {
-    id: 3,
-    name: "Fax",
-    role: "Web3 Builders",
-    avatar: "/lovable-uploads/9dc560d7-8282-4ac5-aa25-1491ffcfd77f.png",
-    group: "advisor",
-    bio: "Tokenomics meets creative flow.\nShaping culture with product intuition.\nWhere strategy feels like art."
-  },
-  {
     id: 15,
     name: "Iggy",
     role: "Engineering & AI",
     avatar: "/lovable-uploads/6a79f3bb-c709-4794-9b5a-40ac0a922f6e.png",
     group: "advisor",
     bio: "Code meets purpose in the new economy.\nWeb3 engineer shaping safer systems.\nQuiet builder with vision."
-  },
-  {
-    id: 16,
-    name: "Pink",
-    role: "Content & Community",
-    avatar: "/lovable-uploads/31f14b9a-7672-4ad1-a74e-b7ef1e0fd867.png",
-    group: "advisor",
-    bio: "No bots, just bonds.\nFeeds real roots for real reach.\nCommunity with soul and spark."
   },
   {
     id: 5,
