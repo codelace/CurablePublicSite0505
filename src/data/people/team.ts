@@ -35,14 +35,6 @@ export const team: Person[] = [
     bio: "Therapeutics shepherd across decades.\nWearables, rare disease, and roadmaps.\nFrom molecule to market, mapped."
   },
   {
-    id: 4,
-    name: "AC",
-    role: "Ecosystem & Networking",
-    avatar: "/lovable-uploads/64bce3f9-3ed0-4cc2-90ba-9bc836707a73.png",
-    group: "team",
-    bio: "Ecosystem architect with a heart for people.\nDeep in content, comms, and connection.\nLives where community thrives."
-  },
-  {
     id: 17,
     name: "Rocks",
     role: "Content & Community",

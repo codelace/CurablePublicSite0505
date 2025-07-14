@@ -153,5 +153,13 @@ export const advisors: Person[] = [
     group: "advisor",
     bio: "Builds startups from the inside out.\nFractional CHRO with deep people wisdom.\nScaling culture with care.",
     website: "https://www.linkedin.com/in/tholczer"
+  },
+  {
+    id: 4,
+    name: "AC",
+    role: "Ecosystem & Networking",
+    avatar: "/lovable-uploads/64bce3f9-3ed0-4cc2-90ba-9bc836707a73.png",
+    group: "advisor",
+    bio: "Ecosystem architect with a heart for people.\nDeep in content, comms, and connection.\nLives where community thrives."
   }
 ];
