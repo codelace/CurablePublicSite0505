@@ -18,14 +18,6 @@ export const advisors: Person[] = [
     bio: "Pixels, protocols, possibility.\nFrom dev to content to culture.\nExploring what's next, every day."
   },
   {
-    id: 13,
-    name: "Ravish",
-    role: "Agentic Infrastructure",
-    avatar: "/lovable-uploads/b6f57fff-8618-41e8-ae67-aa9643b7a86d.png",
-    group: "advisor",
-    bio: "Minimizing pain through agentic code.\nAI that thinks with purpose.\nQuiet logic, loud impact."
-  },
-  {
     id: 26,
     name: "Dr Beaver",
     role: "Human Health",
