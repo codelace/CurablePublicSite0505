@@ -104,7 +104,7 @@ const Wearable = () => {
         <div className="container mx-auto max-w-4xl relative z-10">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-logo-blue via-bio-blue to-bio-green bg-clip-text text-transparent">
-              Patients are the Source of Truth at Curable Labs — Wearables Are the Connection
+              Patients are the Source of Truth at Curable Labs — Wearables are the Connection
             </h1>
             <p className="text-xl text-titanium-white/80 leading-relaxed max-w-3xl mx-auto">
               At Curable Labs, everything begins with you. Your lived experiences, daily data, and unique insights form the foundation of our mission. Wearables offer a direct line to understanding what truly matters—your real-life health, daily fluctuations, and personal responses to treatment.
