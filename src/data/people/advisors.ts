@@ -53,7 +53,7 @@ export const advisors: Person[] = [
     id: 20,
     name: "Royalty",
     role: "DAO Ops & Governance",
-    avatar: "/placeholder.svg",
+    avatar: "/lovable-uploads/dff8ce7e-3d40-43e7-8334-42c91cd71fea.png",
     group: "advisor",
     bio: "Writer with a pulse on progress.\nHelps communities bloom through story.\nAlways typing toward the future."
   },
