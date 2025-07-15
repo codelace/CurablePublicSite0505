@@ -69,7 +69,7 @@ export const advisors: Person[] = [
     id: 22,
     name: "Ayodele",
     role: "Content & Community",
-    avatar: "/placeholder.svg",
+    avatar: "/lovable-uploads/bdf42a63-a0a5-48e4-85a3-d5ff22594f98.png",
     group: "advisor",
     bio: "Tells stories frame by frame.\nDesigns that resonate, words that move.\nBringing DAOs to life in motion."
   },
