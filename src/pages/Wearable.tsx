@@ -104,13 +104,10 @@ const Wearable = () => {
         <div className="container mx-auto max-w-4xl relative z-10">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-logo-blue via-bio-blue to-bio-green bg-clip-text text-transparent">
-              Patients Are the Source of Truth
+              Patients are the Source of Truth at Curable Labs — Wearables Are the Connection
             </h1>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-titanium-white/90">
-              Wearables Are the Connection
-            </h2>
             <p className="text-xl text-titanium-white/80 leading-relaxed max-w-3xl mx-auto">
-              At CurableLabs, everything begins with you. Your lived experiences, daily data, and unique insights form the foundation of our mission. Wearables offer a direct line to understanding what truly matters—your real-life health, daily fluctuations, and personal responses to treatment.
+              At Curable Labs, everything begins with you. Your lived experiences, daily data, and unique insights form the foundation of our mission. Wearables offer a direct line to understanding what truly matters—your real-life health, daily fluctuations, and personal responses to treatment.
             </p>
           </div>
           
@@ -231,7 +228,7 @@ const Wearable = () => {
           </div>
           
           <p className="text-lg mb-8 text-titanium-white/80">
-            Whether you're here to build, test, design, share, or advocate—there's a place for you at CurableLabs. Together, we're co-creating wearables that aren't just smart—they're revolutionary.
+            Whether you're here to build, test, design, share, or advocate—there's a place for you at Curable Labs. Together, we're co-creating wearables that aren't just smart—they're revolutionary.
           </p>
         </div>
       </section>
@@ -244,7 +241,7 @@ const Wearable = () => {
           </h2>
           <div className="bg-dark-surface/50 backdrop-blur-sm rounded-2xl p-8 border border-logo-blue/30">
             <p className="text-xl mb-6 text-titanium-white/90">
-              CurableLabs isn't just a project—it's a community-powered revolution in how cures are found and delivered.
+              Curable Labs isn't just a project—it's a community-powered revolution in how cures are found and delivered.
             </p>
             <p className="text-lg text-bio-green font-medium">
               Your expertise matters. Your data matters. Your voice is the future of medicine.
