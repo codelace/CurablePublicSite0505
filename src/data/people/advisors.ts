@@ -106,14 +106,6 @@ export const advisors: Person[] = [
     bio: "From trenches to timelines.\nAn artist reshaping the now.\nReal vibes, surreal impact."
   },
   {
-    id: 30,
-    name: "LOV3",
-    role: "Content & Community",
-    avatar: "/placeholder.svg",
-    group: "advisor",
-    bio: "Believes in a future built on chain.\nDriven by purpose, grounded in care.\nHere to move science—and people—forward."
-  },
-  {
     id: 34,
     name: "Yuri",
     role: "Content & Community",
