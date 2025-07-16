@@ -12,7 +12,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Whitepaper from "./pages/Whitepaper";
 import Tokenomics from "./pages/Tokenomics";
-import FAQ from "./pages/FAQ";
+
 import Join from "./pages/Join";
 import Novel from "./pages/Novel";
 import Wearable from "./pages/Wearable";
@@ -116,11 +116,6 @@ const App = () => {
                     <Route path="/tokenomics" element={
                       <PageTransition>
                         <Tokenomics />
-                      </PageTransition>
-                    } />
-                    <Route path="/faq" element={
-                      <PageTransition>
-                        <FAQ />
                       </PageTransition>
                     } />
                     <Route path="/wearable" element={
