@@ -50,14 +50,6 @@ export const advisors: Person[] = [
     bio: "Profile details coming soon..."
   },
   {
-    id: 35,
-    name: "Dr. Murtaza",
-    role: "Science & Research",
-    avatar: "/placeholder.svg",
-    group: "advisor",
-    bio: "Bridging computational biology with experimental discovery.\nDriven by data, guided by curiosity.\nTransforming research into actionable insights."
-  },
-  {
     id: 20,
     name: "Royalty",
     role: "DAO Ops & Governance",
@@ -88,6 +80,14 @@ export const advisors: Person[] = [
     avatar: "/lovable-uploads/7a144c7a-2805-43ba-99c0-c28ce13216c3.png",
     group: "advisor",
     bio: "Communities built one word at a time.\nFinds signals, simplifies noise.\nWhere growth feels like belonging."
+  },
+  {
+    id: 35,
+    name: "Dr. Murtaza",
+    role: "Science & Research",
+    avatar: "/placeholder.svg",
+    group: "advisor",
+    bio: "Bridging computational biology with experimental discovery.\nDriven by data, guided by curiosity.\nTransforming research into actionable insights."
   },
   {
     id: 24,
