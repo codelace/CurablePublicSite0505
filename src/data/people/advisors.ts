@@ -39,7 +39,7 @@ export const advisors: Person[] = [
     role: "Content & Community",
     avatar: "/lovable-uploads/b2542f9b-43ae-4271-b4fa-a445c4c4ec3b.png",
     group: "advisor",
-    bio: "Profile details coming soon..."
+    bio: "Shapes messages that move missions.\nGrants, governance, and grounded growth.\nLearning in public, building with care."
   },
   {
     id: 20,
