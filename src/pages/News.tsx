@@ -111,18 +111,24 @@ const News = () => {
               {/* Newsletter Embed - High Quality Display */}
               <div className="mb-8">
                 {newsletter.imageUrl ? (
-                  // PNG/Image Display - High quality, no compression
+                  // SVG/Image Display - Force proper rendering
                   <div className="max-w-5xl mx-auto">
                     <img 
                       src={newsletter.imageUrl} 
                       alt={newsletter.title}
-                      className="w-full h-auto rounded-xl border border-warm-amber/20 shadow-lg"
+                      className="w-full h-auto rounded-xl border border-warm-amber/20 shadow-lg bg-white"
                       style={{ 
-                        imageRendering: 'crisp-edges',
+                        imageRendering: 'auto',
                         maxWidth: '100%',
-                        height: 'auto'
+                        height: 'auto',
+                        objectFit: 'contain'
                       }}
                       loading="lazy"
+                      onLoad={() => console.log('Image loaded successfully')}
+                      onError={(e) => {
+                        console.log('Image failed to load');
+                        console.log('Attempted URL:', newsletter.imageUrl);
+                      }}
                     />
                   </div>
                 ) : newsletter.pdfUrl ? (
