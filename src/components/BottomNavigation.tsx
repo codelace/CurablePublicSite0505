@@ -99,7 +99,7 @@ export const BottomNavigation = () => {
       {/* Responsive grid layout for social links */}
       <div className="container mx-auto px-4 py-3">
         {/* Horizontal scrollable container for mobile, grid for larger screens */}
-        <div className="flex overflow-x-auto space-x-4 justify-center sm:grid sm:grid-cols-9 sm:gap-4 sm:space-x-0 sm:justify-items-center pb-2 sm:pb-0">
+        <div className="flex overflow-x-auto gap-2 justify-center sm:grid sm:grid-cols-9 sm:gap-4 pb-2 sm:pb-0">
           {socialLinks.map((social, index) => (
             <a
               key={index}
