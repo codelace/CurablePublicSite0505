@@ -10,14 +10,6 @@ export const advisors: Person[] = [
     bio: "Legacy code, future dreams.\nFrom IBM to biotech breakthroughs.\nInfrastructure with soul."
   },
   {
-    id: 12,
-    name: "B. Toshi",
-    role: "Web3 Builders",
-    avatar: "/lovable-uploads/e12440db-60fb-408c-bef3-081c44b9f807.png",
-    group: "advisor",
-    bio: "Pixels, protocols, possibility.\nFrom dev to content to culture.\nExploring what's next, every day."
-  },
-  {
     id: 26,
     name: "Dr Beaver",
     role: "Human Health",
