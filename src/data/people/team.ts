@@ -83,14 +83,6 @@ export const team: Person[] = [
     bio: "Profile details coming soon..."
   },
   {
-    id: 32,
-    name: "Heem",
-    role: "Web3 Builders",
-    avatar: "/lovable-uploads/e0586ce0-63ff-4179-8615-9ca81b24d560.png",
-    group: "contributor",
-    bio: "its try, try, try until you land it"
-  },
-  {
     id: 38,
     name: "Israel",
     role: "Content & Community Engagement",

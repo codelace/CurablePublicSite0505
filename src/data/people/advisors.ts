@@ -74,6 +74,14 @@ export const advisors: Person[] = [
     bio: "Communities built one word at a time.\nFinds signals, simplifies noise.\nWhere growth feels like belonging."
   },
   {
+    id: 32,
+    name: "Heem",
+    role: "Web3 Builders",
+    avatar: "/lovable-uploads/e0586ce0-63ff-4179-8615-9ca81b24d560.png",
+    group: "advisor",
+    bio: "its try, try, try until you land it"
+  },
+  {
     id: 35,
     name: "Dr. Murtaza",
     role: "Science & Research",
@@ -104,14 +112,6 @@ export const advisors: Person[] = [
     avatar: "/placeholder.svg",
     group: "advisor",
     bio: "From trenches to timelines.\nAn artist reshaping the now.\nReal vibes, surreal impact."
-  },
-  {
-    id: 15,
-    name: "Iggy",
-    role: "Engineering & AI",
-    avatar: "/lovable-uploads/6a79f3bb-c709-4794-9b5a-40ac0a922f6e.png",
-    group: "advisor",
-    bio: "Code meets purpose in the new economy.\nWeb3 engineer shaping safer systems.\nQuiet builder with vision."
   },
   {
     id: 37,
