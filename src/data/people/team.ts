@@ -89,5 +89,13 @@ export const team: Person[] = [
     avatar: "/lovable-uploads/e0586ce0-63ff-4179-8615-9ca81b24d560.png",
     group: "contributor",
     bio: "its try, try, try until you land it"
+  },
+  {
+    id: 38,
+    name: "Israel",
+    role: "Content & Community Engagement",
+    avatar: "/placeholder.svg",
+    group: "contributor",
+    bio: "Profile details coming soon..."
   }
 ];

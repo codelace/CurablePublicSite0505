@@ -113,4 +113,12 @@ export const advisors: Person[] = [
     group: "advisor",
     bio: "Code meets purpose in the new economy.\nWeb3 engineer shaping safer systems.\nQuiet builder with vision."
   },
+  {
+    id: 37,
+    name: "Emmanuel",
+    role: "Content & Community Engagement",
+    avatar: "/placeholder.svg",
+    group: "advisor",
+    bio: "Profile details coming soon..."
+  },
 ];
