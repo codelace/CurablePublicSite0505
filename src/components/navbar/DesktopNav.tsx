@@ -89,8 +89,6 @@ export const DesktopNav = () => {
         NEWS
       </Link>
 
-      {/* Social Media Links */}
-      <SocialLinks className="ml-4" />
     </nav>
   );
 };

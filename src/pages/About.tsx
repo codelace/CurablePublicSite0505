@@ -145,64 +145,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Social Media Section */}
-        <div className="my-4">
-          <SectionDivider />
-        </div>
-
-        <div className={`transition-all duration-700 delay-400 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'} mb-8`}>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-logo-blue">
-              Connect With Us
-            </h2>
-            <p className="text-lg text-titanium-white/80 max-w-3xl mx-auto leading-relaxed">
-              Follow our journey across platforms and join the decentralized science revolution.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-graphite-700/20 backdrop-blur-sm border border-logo-blue/20 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-logo-blue/10">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-                {[
-                  { name: "Discord", icon: "🎮", url: "https://discord.gg/6ysU6ge653", active: true },
-                  { name: "LinkedIn", icon: "💼", url: "#", active: false },
-                  { name: "X (Twitter)", icon: "🐦", url: "https://x.com/curabledao", active: true },
-                  { name: "YouTube", icon: "📺", url: "#", active: false },
-                  { name: "Instagram", icon: "📷", url: "#", active: false },
-                  { name: "Facebook", icon: "📘", url: "#", active: false },
-                  { name: "TikTok", icon: "🎵", url: "#", active: false },
-                  { name: "Reddit", icon: "🟠", url: "#", active: false },
-                  { name: "ResearchGate", icon: "🔬", url: "#", active: false },
-                  { name: "Academia.edu", icon: "🎓", url: "#", active: false },
-                  { name: "Substack", icon: "📝", url: "#", active: false },
-                  { name: "Farcaster", icon: "🟣", url: "#", active: false }
-                ].map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`group flex flex-col items-center p-4 rounded-lg border transition-all duration-300 ${
-                      social.active 
-                        ? 'border-logo-blue/40 bg-gunmetal-900/50 hover:bg-logo-blue/10 hover:border-logo-blue/80' 
-                        : 'border-graphite-700/40 bg-gunmetal-900/30 hover:bg-graphite-700/30 cursor-not-allowed opacity-60'
-                    }`}
-                  >
-                    <div className="text-3xl mb-2">{social.icon}</div>
-                    <span className={`text-sm font-medium ${
-                      social.active ? 'text-titanium-white group-hover:text-logo-blue' : 'text-titanium-white/60'
-                    }`}>
-                      {social.name}
-                    </span>
-                    {!social.active && (
-                      <span className="text-xs text-titanium-white/40 mt-1">Coming Soon</span>
-                    )}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
         
         {/* Enhanced footer element with dramatic call to action */}
         <AboutCallToAction isVisible={animatedSections.includes('team-section')} />

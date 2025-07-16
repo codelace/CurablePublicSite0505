@@ -97,8 +97,6 @@ export const MobileNav = () => {
                 NEWS
               </Link>
 
-              {/* Social Media Links */}
-              <SocialLinks size={22} className="py-3 border-b border-graphite-700/40" />
             </nav>
           </div>
           
