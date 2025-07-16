@@ -25,7 +25,7 @@ const News = () => {
     date: "2025-07-16", 
     type: "newsletter",
     summary: "",
-    pdfUrl: "/Blue And White Simple Minimalist Modern Newsletter Flyer A4.pdf"
+    imageUrl: "/Blue And White Simple Minimalist Modern Newsletter Flyer A4.svg"
   };
 
   return (
@@ -108,44 +108,27 @@ const News = () => {
                 </p>
               )}
               
-              {/* Newsletter Embed - High Quality Display */}
+              {/* Newsletter Embed - Smaller, high quality display */}
               <div className="mb-8">
-                {newsletter.imageUrl ? (
-                  // SVG/Image Display - Force proper rendering
-                  <div className="max-w-5xl mx-auto">
-                    <img 
-                      src={newsletter.imageUrl} 
-                      alt={newsletter.title}
-                      className="w-full h-auto rounded-xl border border-warm-amber/20 shadow-lg bg-white"
-                      style={{ 
-                        imageRendering: 'auto',
-                        maxWidth: '100%',
-                        height: 'auto',
-                        objectFit: 'contain'
-                      }}
-                      loading="lazy"
-                      onLoad={() => console.log('Image loaded successfully')}
-                      onError={(e) => {
-                        console.log('Image failed to load');
-                        console.log('Attempted URL:', newsletter.imageUrl);
-                      }}
-                    />
-                  </div>
-                ) : newsletter.pdfUrl ? (
-                  // PDF Embed - Enhanced loading with fallback
-                  <div className="max-w-5xl mx-auto">
-                    <div className="aspect-[4/3] w-full min-h-[600px] lg:min-h-[800px]">
-                      <iframe
-                        src={`${newsletter.pdfUrl}#view=FitH&toolbar=1&navpanes=1&scrollbar=1&page=1&zoom=85`}
-                        className="w-full h-full rounded-xl border border-warm-amber/20 shadow-lg bg-white"
-                        title={newsletter.title}
-                        allow="fullscreen"
-                        onLoad={() => console.log('PDF loaded successfully')}
-                        onError={() => console.log('PDF failed to load')}
-                      />
-                    </div>
-                  </div>
-                ) : null}
+                <div className="max-w-2xl mx-auto">
+                  <img 
+                    src={newsletter.imageUrl} 
+                    alt={newsletter.title}
+                    className="w-full h-auto rounded-xl border border-warm-amber/20 shadow-lg bg-white"
+                    style={{ 
+                      imageRendering: 'auto',
+                      maxWidth: '100%',
+                      height: 'auto',
+                      objectFit: 'contain'
+                    }}
+                    loading="lazy"
+                    onLoad={() => console.log('Newsletter image loaded successfully')}
+                    onError={(e) => {
+                      console.log('Newsletter image failed to load');
+                      console.log('Attempted URL:', newsletter.imageUrl);
+                    }}
+                  />
+                </div>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
