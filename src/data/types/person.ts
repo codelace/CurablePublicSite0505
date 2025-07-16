@@ -4,7 +4,7 @@ export type Person = {
   name: string;
   role: string;
   avatar: string;
-  group: 'team' | 'advisor' | 'founder' | 'contributor';
+  group: 'team' | 'advisor' | 'founder' | 'contributor' | 'guardian';
   gptDescription?: string;
   bio?: string;
   website?: string;
