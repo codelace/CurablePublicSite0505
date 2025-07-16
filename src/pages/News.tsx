@@ -165,23 +165,6 @@ const News = () => {
               </div>
             </article>
 
-            {/* How to Add Content Instructions */}
-            <div className="mt-16 text-center">
-              <div className="bg-graphite-700/20 backdrop-blur-sm border border-logo-blue/20 rounded-2xl p-8 max-w-2xl mx-auto">
-                <h3 className="text-2xl font-bold mb-4 text-logo-blue">
-                  Add More Content
-                </h3>
-                <p className="text-titanium-white/80 leading-relaxed mb-6">
-                  To add more newsletters or articles, simply update the newsletter object above with your content.
-                </p>
-                <div className="text-left bg-gunmetal-900/50 rounded-lg p-4 text-sm text-titanium-white/70 font-mono">
-                  <div className="mb-2 text-warm-amber">// For PNG/Image:</div>
-                  <div>imageUrl: "/path-to-your-image.png"</div>
-                  <div className="mt-3 mb-2 text-warm-amber">// For PDF:</div>
-                  <div>pdfUrl: "/path-to-your-document.pdf"</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
