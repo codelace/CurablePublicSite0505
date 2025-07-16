@@ -25,7 +25,7 @@ const News = () => {
     date: "2025-07-16", 
     type: "newsletter",
     summary: "",
-    imageUrl: "/public/lovable-uploads/09b91ead-c551-44c9-9287-08ac8adcacd4.png"
+    imageUrl: "/lovable-uploads/28c83e65-0fa7-41f0-90de-ec67116f9c2d.png"
   };
 
   return (
