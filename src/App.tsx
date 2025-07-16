@@ -18,6 +18,7 @@ import Novel from "./pages/Novel";
 import Wearable from "./pages/Wearable";
 import Agency from "./pages/Agency";
 import GatedIpNft from "./pages/GatedIpNft";
+import Newsletter from "./pages/Newsletter";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -135,6 +136,11 @@ const App = () => {
                     <Route path="/gated-ip-nft" element={
                       <PageTransition>
                         <GatedIpNft />
+                      </PageTransition>
+                    } />
+                    <Route path="/newsletter" element={
+                      <PageTransition>
+                        <Newsletter />
                       </PageTransition>
                     } />
                     <Route path="/join" element={
