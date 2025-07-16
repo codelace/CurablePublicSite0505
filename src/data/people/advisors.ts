@@ -26,6 +26,14 @@ export const advisors: Person[] = [
     bio: "Translates complex pathways into clear decisions.\nBridges science, strategy, and structure.\nBuilds frameworks that unlock progress."
   },
   {
+    id: 32,
+    name: "Heem",
+    role: "Web3 Builders",
+    avatar: "/lovable-uploads/e0586ce0-63ff-4179-8615-9ca81b24d560.png",
+    group: "advisor",
+    bio: "its try, try, try until you land it"
+  },
+  {
     id: 33,
     name: "Derrick",
     role: "Science & Research",
@@ -72,14 +80,6 @@ export const advisors: Person[] = [
     avatar: "/lovable-uploads/7a144c7a-2805-43ba-99c0-c28ce13216c3.png",
     group: "advisor",
     bio: "Communities built one word at a time.\nFinds signals, simplifies noise.\nWhere growth feels like belonging."
-  },
-  {
-    id: 32,
-    name: "Heem",
-    role: "Web3 Builders",
-    avatar: "/lovable-uploads/e0586ce0-63ff-4179-8615-9ca81b24d560.png",
-    group: "advisor",
-    bio: "its try, try, try until you land it"
   },
   {
     id: 35,
