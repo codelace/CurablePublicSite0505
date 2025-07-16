@@ -14,6 +14,15 @@ const News = () => {
   const blogPosts = [
     {
       id: 1,
+      title: "Curable Labs Newsletter - July 2025",
+      date: "2025-07-01",
+      type: "newsletter",
+      summary: "Our comprehensive July newsletter featuring the latest updates on Far Eastern Medicine meets Western FDA Science, AI & DAO governance, team updates, and breakthrough research initiatives.",
+      imageUrl: "/lovable-uploads/c5a1b4de-8ace-4603-8c44-cccf33c75507.png",
+      featured: true
+    },
+    {
+      id: 2,
       title: "Latest Research Breakthroughs in Longevity Science",
       date: "2024-01-15",
       type: "article",
@@ -21,7 +30,7 @@ const News = () => {
       imageUrl: "/lovable-uploads/63148301-fd23-4d1a-a630-bb9f9093b3ef.png"
     },
     {
-      id: 2,
+      id: 3,
       title: "Curable Labs Q4 2023 Research Report",
       date: "2024-01-10",
       type: "pdf",
@@ -29,7 +38,7 @@ const News = () => {
       pdfUrl: "/sample-research-report.pdf" // Placeholder for actual PDF
     },
     {
-      id: 3,
+      id: 4,
       title: "Protocol v2.0 Development Update",
       date: "2024-01-05",
       type: "article",
@@ -96,63 +105,107 @@ const News = () => {
                   key={post.id}
                   className={`bg-gradient-to-br from-graphite-800/40 to-graphite-700/20 border border-warm-rose/20 rounded-2xl p-8 backdrop-blur-sm transition-all duration-1000 hover:border-warm-rose/40 hover:shadow-lg hover:shadow-warm-rose/10 ${
                     heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                  }`}
+                  } ${post.featured ? 'border-warm-amber/30 bg-gradient-to-br from-warm-amber/10 to-warm-rose/5' : ''}`}
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
-                  <div className="flex flex-col lg:flex-row gap-8">
-                    {/* Content */}
-                    <div className="flex-1">
-                      <div className="flex items-center gap-4 mb-4">
-                        <span className="text-sm text-warm-rose font-medium px-3 py-1 bg-warm-rose/10 rounded-full">
-                          {post.type === 'pdf' ? 'Research Report' : 'Article'}
-                        </span>
-                        <span className="text-sm text-titanium-white/60">
-                          {new Date(post.date).toLocaleDateString('en-US', { 
-                            year: 'numeric', 
-                            month: 'long', 
-                            day: 'numeric' 
-                          })}
-                        </span>
-                      </div>
-                      
-                      <h2 className="text-2xl md:text-3xl font-bold mb-4 text-titanium-white">
-                        {post.title}
-                      </h2>
-                      
-                      <p className="text-titanium-white/80 leading-relaxed mb-6">
-                        {post.summary}
-                      </p>
-                      
-                      <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-warm-rose to-warm-amber text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-warm-rose/20 transition-all duration-300">
-                        {post.type === 'pdf' ? 'Download PDF' : 'Read More'}
-                        <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </button>
-                    </div>
-                    
-                    {/* Media */}
-                    <div className="lg:w-80 xl:w-96">
-                      {post.type === 'pdf' ? (
-                        <div className="aspect-[4/3] bg-gradient-to-br from-warm-rose/20 to-warm-amber/20 rounded-xl border border-warm-rose/30 flex items-center justify-center">
-                          <div className="text-center">
-                            <svg className="w-16 h-16 mx-auto mb-4 text-warm-rose" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                            <p className="text-warm-rose font-medium">PDF Document</p>
-                            <p className="text-titanium-white/60 text-sm mt-1">Click to download</p>
-                          </div>
+                  <div className={`flex flex-col ${post.featured ? 'lg:flex-col' : 'lg:flex-row'} gap-8`}>
+                    {/* Featured Newsletter Layout */}
+                    {post.featured ? (
+                      <>
+                        <div className="flex items-center gap-4 mb-4">
+                          <span className="text-sm text-warm-amber font-medium px-3 py-1 bg-warm-amber/10 rounded-full">
+                            Featured Newsletter
+                          </span>
+                          <span className="text-sm text-titanium-white/60">
+                            {new Date(post.date).toLocaleDateString('en-US', { 
+                              year: 'numeric', 
+                              month: 'long', 
+                              day: 'numeric' 
+                            })}
+                          </span>
                         </div>
-                      ) : (
-                        <div className="aspect-[4/3] rounded-xl overflow-hidden">
+                        
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-titanium-white">
+                          {post.title}
+                        </h2>
+                        
+                        <p className="text-titanium-white/80 leading-relaxed mb-8 text-lg">
+                          {post.summary}
+                        </p>
+                        
+                        {/* Newsletter Preview */}
+                        <div className="mb-8">
                           <img 
                             src={post.imageUrl} 
                             alt={post.title}
-                            className="w-full h-full object-cover"
+                            className="w-full rounded-xl border border-warm-amber/20 shadow-lg"
                           />
                         </div>
-                      )}
-                    </div>
+                        
+                        <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-warm-amber to-warm-coral text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-warm-amber/20 transition-all duration-300">
+                          View Full Newsletter
+                          <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        {/* Regular Post Layout */}
+                        <div className="flex-1">
+                          <div className="flex items-center gap-4 mb-4">
+                            <span className="text-sm text-warm-rose font-medium px-3 py-1 bg-warm-rose/10 rounded-full">
+                              {post.type === 'pdf' ? 'Research Report' : 'Article'}
+                            </span>
+                            <span className="text-sm text-titanium-white/60">
+                              {new Date(post.date).toLocaleDateString('en-US', { 
+                                year: 'numeric', 
+                                month: 'long', 
+                                day: 'numeric' 
+                              })}
+                            </span>
+                          </div>
+                          
+                          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-titanium-white">
+                            {post.title}
+                          </h2>
+                          
+                          <p className="text-titanium-white/80 leading-relaxed mb-6">
+                            {post.summary}
+                          </p>
+                          
+                          <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-warm-rose to-warm-amber text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-warm-rose/20 transition-all duration-300">
+                            {post.type === 'pdf' ? 'Download PDF' : 'Read More'}
+                            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </button>
+                        </div>
+                        
+                        {/* Media */}
+                        <div className="lg:w-80 xl:w-96">
+                          {post.type === 'pdf' ? (
+                            <div className="aspect-[4/3] bg-gradient-to-br from-warm-rose/20 to-warm-amber/20 rounded-xl border border-warm-rose/30 flex items-center justify-center">
+                              <div className="text-center">
+                                <svg className="w-16 h-16 mx-auto mb-4 text-warm-rose" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                <p className="text-warm-rose font-medium">PDF Document</p>
+                                <p className="text-titanium-white/60 text-sm mt-1">Click to download</p>
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="aspect-[4/3] rounded-xl overflow-hidden">
+                              <img 
+                                src={post.imageUrl} 
+                                alt={post.title}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      </>
+                    )}
                   </div>
                 </article>
               ))}
