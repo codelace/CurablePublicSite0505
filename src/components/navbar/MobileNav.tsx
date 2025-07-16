@@ -91,10 +91,10 @@ export const MobileNav = () => {
               </a>
 
               <Link 
-                to="/newsletter" 
-                className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/newsletter') ? 'text-plasma-violet' : 'text-titanium-white'}`}
+                to="/news" 
+                className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/news') ? 'text-plasma-violet' : 'text-titanium-white'}`}
               >
-                NEWSLETTER
+                NEWS
               </Link>
 
               <Link 

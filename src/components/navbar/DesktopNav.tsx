@@ -83,10 +83,10 @@ export const DesktopNav = () => {
       </a>
 
       <Link 
-        to="/newsletter" 
-        className={`nav-link after:transition-all after:duration-300 ${isActive('/newsletter') ? 'text-logo-blue after:opacity-100 after:left-0 after:right-0' : ''}`}
+        to="/news" 
+        className={`nav-link after:transition-all after:duration-300 ${isActive('/news') ? 'text-logo-blue after:opacity-100 after:left-0 after:right-0' : ''}`}
       >
-        NEWSLETTER
+        NEWS
       </Link>
       
       <Link 
