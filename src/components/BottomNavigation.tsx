@@ -1,4 +1,4 @@
-import { X, Github, Linkedin, Youtube, Instagram } from 'lucide-react';
+import { X, Linkedin, Youtube, Instagram, Facebook, BookOpen, GraduationCap, FileText } from 'lucide-react';
 
 export const BottomNavigation = () => {
   const socialLinks = [
@@ -42,10 +42,63 @@ export const BottomNavigation = () => {
       icon: <Instagram size={20} />
     },
     { 
-      name: "GitHub", 
+      name: "Facebook", 
       url: "#", 
       active: false,
-      icon: <Github size={20} />
+      icon: <Facebook size={20} />
+    },
+    { 
+      name: "TikTok", 
+      url: "#", 
+      active: false,
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+        </svg>
+      )
+    },
+    { 
+      name: "Reddit", 
+      url: "#", 
+      active: false,
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20 12c0 8-8 8-8 8s-8 0-8-8a8 8 0 0 1 16 0Z"/>
+          <circle cx="12" cy="10" r="3"/>
+          <path d="m7 13 3 3 3-3"/>
+        </svg>
+      )
+    },
+    { 
+      name: "ResearchGate", 
+      url: "#", 
+      active: false,
+      icon: <BookOpen size={20} />
+    },
+    { 
+      name: "Academia", 
+      url: "#", 
+      active: false,
+      icon: <GraduationCap size={20} />
+    },
+    { 
+      name: "Substack", 
+      url: "#", 
+      active: false,
+      icon: <FileText size={20} />
+    },
+    { 
+      name: "Farcaster", 
+      url: "#", 
+      active: false,
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="8"/>
+          <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+          <line x1="9" x2="9.01" y1="9" y2="9"/>
+          <line x1="15" x2="15.01" y1="9" y2="9"/>
+        </svg>
+      )
     }
   ];
 
@@ -55,9 +108,10 @@ export const BottomNavigation = () => {
       role="navigation"
       aria-label="Social media navigation"
     >
-      {/* Mobile-friendly container with proper spacing */}
+      {/* Responsive grid layout for social links */}
       <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-center space-x-6 sm:space-x-8">
+        {/* Horizontal scrollable container for mobile, grid for larger screens */}
+        <div className="flex overflow-x-auto space-x-4 sm:grid sm:grid-cols-6 lg:grid-cols-12 sm:gap-4 sm:space-x-0 pb-2 sm:pb-0">
           {socialLinks.map((social, index) => (
             <a
               key={index}
@@ -65,7 +119,7 @@ export const BottomNavigation = () => {
               target={social.active ? "_blank" : undefined}
               rel={social.active ? "noopener noreferrer" : undefined}
               className={`
-                group flex flex-col items-center justify-center min-w-[44px] min-h-[44px] p-2 rounded-lg transition-all duration-300
+                group flex flex-col items-center justify-center min-w-[60px] p-2 rounded-lg transition-all duration-300 flex-shrink-0
                 ${social.active 
                   ? 'text-titanium-white/70 hover:text-warm-amber hover:bg-warm-amber/10 active:scale-95' 
                   : 'text-titanium-white/30 cursor-not-allowed'
@@ -80,14 +134,14 @@ export const BottomNavigation = () => {
                 {social.icon}
               </div>
               
-              {/* Label - hidden on small screens, visible on larger screens */}
-              <span className="hidden sm:block text-xs mt-1 font-medium">
+              {/* Label - visible on larger screens only */}
+              <span className="hidden lg:block text-xs mt-1 font-medium text-center">
                 {social.name}
               </span>
               
-              {/* Coming Soon indicator for mobile */}
+              {/* Coming Soon indicator */}
               {!social.active && (
-                <span className="sm:hidden text-[10px] text-titanium-white/20 mt-0.5">
+                <span className="lg:hidden text-[10px] text-titanium-white/20 mt-0.5">
                   Soon
                 </span>
               )}
