@@ -25,7 +25,7 @@ const News = () => {
     date: "2025-07-16", 
     type: "newsletter",
     summary: "",
-    pdfUrl: "/Blue And White Simple Minimalist Modern Newsletter Flyer A4.pdf"
+    imageUrl: "/Blue And White Simple Minimalist Modern Newsletter Flyer A4.svg"
   };
 
   return (
