@@ -7,9 +7,9 @@ import { guardians } from './guardians';
 
 export const people: Person[] = [
   ...founders,
+  ...guardians,
   ...team,
-  ...advisors,
-  ...guardians
+  ...advisors
 ];
 
 // Re-export the type for backward compatibility
