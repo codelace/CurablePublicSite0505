@@ -61,7 +61,7 @@ export const advisors: Person[] = [
     id: 21,
     name: "Storm",
     role: "Content & Community",
-    avatar: "/lovable-uploads/57890764-fc4c-4e0b-8ef9-92a78b9f3a12.png",
+    avatar: "/lovable-uploads/ac8aae08-5543-495f-bd8d-2f6dd2e05900.png",
     group: "advisor",
     bio: "Rooted in signal, not noise.\nChampion of threads, channels, and change.\nPushing DeSci forward with care."
   },
