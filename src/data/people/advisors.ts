@@ -42,6 +42,14 @@ export const advisors: Person[] = [
     bio: "A builder at the frontier of biology.\nTranslates data into discovery tools.\nBridging science with systems that scale."
   },
   {
+    id: 34,
+    name: "Yuri",
+    role: "Content & Community",
+    avatar: "/lovable-uploads/b2542f9b-43ae-4271-b4fa-a445c4c4ec3b.png",
+    group: "advisor",
+    bio: "Profile details coming soon..."
+  },
+  {
     id: 35,
     name: "Dr. Murtaza",
     role: "Science & Research",
@@ -104,14 +112,6 @@ export const advisors: Person[] = [
     avatar: "/placeholder.svg",
     group: "advisor",
     bio: "From trenches to timelines.\nAn artist reshaping the now.\nReal vibes, surreal impact."
-  },
-  {
-    id: 34,
-    name: "Yuri",
-    role: "Content & Community",
-    avatar: "/lovable-uploads/b2542f9b-43ae-4271-b4fa-a445c4c4ec3b.png",
-    group: "advisor",
-    bio: "Profile details coming soon..."
   },
   {
     id: 15,
