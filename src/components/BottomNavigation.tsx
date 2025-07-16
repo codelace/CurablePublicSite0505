@@ -31,26 +31,26 @@ export const BottomNavigation = () => {
     },
     { 
       name: "YouTube", 
-      url: "#", 
-      active: false,
+      url: "https://youtube.com/@curablelabs?si=WAZg0fVpyZTg_B_1", 
+      active: true,
       icon: <Youtube size={20} />
     },
     { 
       name: "Instagram", 
-      url: "#", 
-      active: false,
+      url: "https://www.instagram.com/curablelabs?igsh=MWRkaDI0a2NyMXVudg==", 
+      active: true,
       icon: <Instagram size={20} />
     },
     { 
       name: "Facebook", 
-      url: "#", 
-      active: false,
+      url: "https://www.facebook.com/share/1CKatHuWzf/?mibextid=wwXIfr", 
+      active: true,
       icon: <Facebook size={20} />
     },
     { 
       name: "TikTok", 
-      url: "#", 
-      active: false,
+      url: "https://www.tiktok.com/@curablelabs?_t=ZM-8xzMkmObuQ1&_r=1", 
+      active: true,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
@@ -59,8 +59,8 @@ export const BottomNavigation = () => {
     },
     { 
       name: "Reddit", 
-      url: "#", 
-      active: false,
+      url: "https://www.reddit.com/u/CurableLabs/s/zF7ztUxkhB", 
+      active: true,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M20 12c0 8-8 8-8 8s-8 0-8-8a8 8 0 0 1 16 0Z"/>
@@ -70,31 +70,19 @@ export const BottomNavigation = () => {
       )
     },
     { 
-      name: "ResearchGate", 
-      url: "#", 
-      active: false,
-      icon: <BookOpen size={20} />
-    },
-    { 
-      name: "Academia", 
-      url: "#", 
-      active: false,
-      icon: <GraduationCap size={20} />
-    },
-    { 
       name: "Substack", 
-      url: "#", 
-      active: false,
+      url: "https://substack.com/@curablelabs", 
+      active: true,
       icon: <FileText size={20} />
     },
     { 
       name: "Farcaster", 
-      url: "#", 
-      active: false,
+      url: "https://farcaster.xyz/curablelabs", 
+      active: true,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="8"/>
-          <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+          <path d="M8 14s1.5 2 4 2s4-2 4-2"/>
           <line x1="9" x2="9.01" y1="9" y2="9"/>
           <line x1="15" x2="15.01" y1="9" y2="9"/>
         </svg>
