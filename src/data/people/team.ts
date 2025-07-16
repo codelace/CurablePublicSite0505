@@ -75,6 +75,14 @@ export const team: Person[] = [
     bio: "Built from grit and open source dreams.\nLifts barriers with governance and care.\nOnboards a generation to build for good."
   },
   {
+    id: 36,
+    name: "Dr. Ralph",
+    role: "Scientific Advisory Committee",
+    avatar: "/placeholder.svg",
+    group: "guardian",
+    bio: "Profile details coming soon..."
+  },
+  {
     id: 32,
     name: "Heem",
     role: "Web3 Builders",
