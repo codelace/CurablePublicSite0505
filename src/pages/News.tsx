@@ -21,13 +21,11 @@ const News = () => {
     pdfUrl?: string;
   } = {
     id: 1,
-    title: "Curable Labs Newsletter - July 2025",
-    date: "2025-07-01",
+    title: "Blue And White Simple Minimalist Modern Newsletter",
+    date: "2025-07-01", 
     type: "newsletter",
-    summary: "Our comprehensive July newsletter featuring the latest updates on Far Eastern Medicine meets Western FDA Science, AI & DAO governance, team updates, and breakthrough research initiatives.",
-    imageUrl: "/lovable-uploads/c5a1b4de-8ace-4603-8c44-cccf33c75507.png",
-    // For PDF embedding, you can use pdfUrl instead of imageUrl
-    // pdfUrl: "/path-to-your-newsletter.pdf"
+    summary: "Our latest newsletter featuring modern design and comprehensive updates. View the full interactive PDF document with all the latest news and insights.",
+    pdfUrl: "/Blue And White Simple Minimalist Modern Newsletter Flyer A4.pdf"
   };
 
   return (
