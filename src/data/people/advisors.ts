@@ -79,7 +79,7 @@ export const advisors: Person[] = [
     role: "Science & Research",
     avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Bridging computational biology with experimental discovery.\nDriven by data, guided by curiosity.\nTransforming research into actionable insights."
+    bio: "Where chemistry meets clinical vision.\nExpert in molecular matchmaking.\nDesigns small answers to big questions."
   },
   {
     id: 24,
