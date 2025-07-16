@@ -24,12 +24,6 @@ export const BottomNavigation = () => {
       icon: <X size={20} />
     },
     { 
-      name: "LinkedIn", 
-      url: "#", 
-      active: false,
-      icon: <Linkedin size={20} />
-    },
-    { 
       name: "YouTube", 
       url: "https://youtube.com/@curablelabs?si=WAZg0fVpyZTg_B_1", 
       active: true,
@@ -99,7 +93,7 @@ export const BottomNavigation = () => {
       {/* Responsive grid layout for social links */}
       <div className="container mx-auto px-4 py-3">
         {/* Horizontal scrollable container for mobile, grid for larger screens */}
-        <div className="flex overflow-x-auto gap-2 justify-center sm:grid sm:grid-cols-9 sm:gap-4 pb-2 sm:pb-0">
+        <div className="flex overflow-x-auto gap-2 justify-center sm:grid sm:grid-cols-8 sm:gap-4 pb-2 sm:pb-0">
           {socialLinks.map((social, index) => (
             <a
               key={index}
