@@ -21,10 +21,10 @@ const News = () => {
     pdfUrl?: string;
   } = {
     id: 1,
-    title: "Blue And White Simple Minimalist Modern Newsletter",
-    date: "2025-07-01", 
+    title: "Newsletter",
+    date: "2025-07-16", 
     type: "newsletter",
-    summary: "Our latest newsletter featuring modern design and comprehensive updates. View the full interactive PDF document with all the latest news and insights.",
+    summary: "",
     pdfUrl: "/Blue And White Simple Minimalist Modern Newsletter Flyer A4.pdf"
   };
 
@@ -102,9 +102,11 @@ const News = () => {
                 {newsletter.title}
               </h2>
               
-              <p className="text-titanium-white/80 leading-relaxed mb-8 text-lg">
-                {newsletter.summary}
-              </p>
+              {newsletter.summary && (
+                <p className="text-titanium-white/80 leading-relaxed mb-8 text-lg">
+                  {newsletter.summary}
+                </p>
+              )}
               
               {/* Newsletter Embed - High Quality Display */}
               <div className="mb-8">
