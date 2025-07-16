@@ -126,14 +126,16 @@ const News = () => {
                     />
                   </div>
                 ) : newsletter.pdfUrl ? (
-                  // PDF Embed - Full iframe display
+                  // PDF Embed - Enhanced loading with fallback
                   <div className="max-w-5xl mx-auto">
                     <div className="aspect-[4/3] w-full min-h-[600px] lg:min-h-[800px]">
                       <iframe
-                        src={`${newsletter.pdfUrl}#toolbar=1&navpanes=1&scrollbar=1`}
+                        src={`${newsletter.pdfUrl}#view=FitH&toolbar=1&navpanes=1&scrollbar=1&page=1&zoom=85`}
                         className="w-full h-full rounded-xl border border-warm-amber/20 shadow-lg bg-white"
                         title={newsletter.title}
                         allow="fullscreen"
+                        onLoad={() => console.log('PDF loaded successfully')}
+                        onError={() => console.log('PDF failed to load')}
                       />
                     </div>
                   </div>
