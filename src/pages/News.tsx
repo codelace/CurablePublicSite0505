@@ -108,25 +108,32 @@ const News = () => {
                 {newsletter.summary}
               </p>
               
-              {/* Newsletter Embed - Optimized Size */}
+              {/* Newsletter Embed - High Quality Display */}
               <div className="mb-8">
                 {newsletter.imageUrl ? (
-                  // PNG/Image Display - Smaller container for better quality
-                  <div className="max-w-4xl mx-auto">
+                  // PNG/Image Display - High quality, no compression
+                  <div className="max-w-5xl mx-auto">
                     <img 
                       src={newsletter.imageUrl} 
                       alt={newsletter.title}
                       className="w-full h-auto rounded-xl border border-warm-amber/20 shadow-lg"
+                      style={{ 
+                        imageRendering: 'crisp-edges',
+                        maxWidth: '100%',
+                        height: 'auto'
+                      }}
+                      loading="lazy"
                     />
                   </div>
                 ) : newsletter.pdfUrl ? (
-                  // PDF Embed - For when you want to embed a PDF instead
-                  <div className="max-w-4xl mx-auto">
-                    <div className="aspect-[4/3] w-full">
+                  // PDF Embed - Full iframe display
+                  <div className="max-w-5xl mx-auto">
+                    <div className="aspect-[4/3] w-full min-h-[600px] lg:min-h-[800px]">
                       <iframe
-                        src={newsletter.pdfUrl}
-                        className="w-full h-full rounded-xl border border-warm-amber/20 shadow-lg"
+                        src={`${newsletter.pdfUrl}#toolbar=1&navpanes=1&scrollbar=1`}
+                        className="w-full h-full rounded-xl border border-warm-amber/20 shadow-lg bg-white"
                         title={newsletter.title}
+                        allow="fullscreen"
                       />
                     </div>
                   </div>
