@@ -51,20 +51,20 @@ export const team: Person[] = [
     bio: "Biotech brain, DeFi heart.\nFermentation, AI, and healing frequencies.\nWhere molecules meet music."
   },
   {
-    id: 36,
-    name: "Dr. Ralph",
-    role: "Scientific Advisory Committee",
-    avatar: "/placeholder.svg",
-    group: "guardian",
-    bio: "Profile details coming soon..."
-  },
-  {
     id: 10,
     name: "Olokoji",
     role: "Legal & Compliance",
     avatar: "/lovable-uploads/90558286-0ee7-4d4f-b509-691581da1995.png",
     group: "team",
     bio: "IP, governance, and data decoded.\nLaw student with DAO firepower.\nWhere compliance meets conviction."
+  },
+  {
+    id: 36,
+    name: "Dr. Ralph",
+    role: "Scientific Advisory Committee",
+    avatar: "/placeholder.svg",
+    group: "guardian",
+    bio: "Profile details coming soon..."
   },
   {
     id: 18,
