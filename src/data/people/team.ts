@@ -63,7 +63,7 @@ export const team: Person[] = [
     name: "Dr. Ralph",
     role: "Scientific Advisory Committee",
     avatar: "/placeholder.svg",
-    group: "guardian",
+    group: "team",
     bio: "Profile details coming soon..."
   },
   {
