@@ -74,7 +74,7 @@ export const DesktopNav = () => {
       </NavigationMenu>
       
       <a 
-        href="https://curableda-oi-codelace77.replit.app/" 
+        href="https://cureworld.com" 
         target="_blank" 
         rel="noopener noreferrer"
         className="nav-link after:transition-all after:duration-300 hover:text-logo-blue"
