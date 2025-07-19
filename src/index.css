@@ -1,4 +1,3 @@
-
 @import './styles/animations.css';
 @import './styles/terminal.css';
 @import './styles/utilities.css';
@@ -9,14 +8,145 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Rest of your CSS styles */
 :root {
-  /* ... keep existing code */
+  /* Core semantic colors */
+  --background: 224 15% 12%;
+  --foreground: 213 31% 91%;
+  --card: 224 15% 15%;
+  --card-foreground: 213 31% 91%;
+  --popover: 224 15% 12%;
+  --popover-foreground: 213 31% 91%;
+  --primary: 210 98% 78%;
+  --primary-foreground: 224 15% 12%;
+  --secondary: 215 25% 27%;
+  --secondary-foreground: 213 31% 91%;
+  --muted: 215 25% 27%;
+  --muted-foreground: 217 10% 64%;
+  --accent: 215 25% 27%;
+  --accent-foreground: 213 31% 91%;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 213 31% 91%;
+  --border: 215 28% 17%;
+  --input: 215 28% 17%;
+  --ring: 210 98% 78%;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+  --radius: 0.5rem;
+
+  /* Brand colors */
+  --logo-blue: 210 98% 78%;
+  --warm-rose: 354 83% 74%;
+  --warm-amber: 43 96% 56%;
+  --warm-coral: 14 91% 73%;
+  --plasma-violet: 271 91% 65%;
+  --quantum-red: 348 100% 60%;
+
+  /* Grays and surfaces */
+  --gunmetal-900: 224 15% 12%;
+  --gunmetal-800: 220 13% 18%;
+  --gunmetal-700: 217 12% 23%;
+  --titanium-white: 213 31% 91%;
+  --graphite-900: 220 9% 22%;
+  --graphite-800: 218 11% 27%;
+  --graphite-700: 216 12% 32%;
+  --dark-surface: 224 15% 15%;
+  --dark-base: 224 15% 12%;
+  --arc-blue: 210 98% 78%;
+
+  /* Background patterns */
+  --bg-noise: url('/noise.png');
+
+  /* Shadows */
+  --shadow-warm: 0 4px 20px rgba(249, 168, 212, 0.15);
+  --shadow-glow: 0 0 30px rgba(138, 180, 248, 0.3);
+  --shadow-depth: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  /* Gradients */
+  --gradient-warm: linear-gradient(135deg, hsl(354 83% 74%), hsl(43 96% 56%));
+  --gradient-cool: linear-gradient(135deg, hsl(210 98% 78%), hsl(271 91% 65%));
+  --gradient-radial: radial-gradient(circle at center, var(--color-start) 0%, var(--color-end) 100%);
+
+  /* Transitions */
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Dark mode styles */
+/* Additional semantic color mappings for dark theme */
 .dark {
-  /* ... keep existing code */
+  --background: 224 15% 12%;
+  --foreground: 213 31% 91%;
+  --card: 224 15% 15%;
+  --card-foreground: 213 31% 91%;
+  --popover: 224 15% 12%;
+  --popover-foreground: 213 31% 91%;
+  --primary: 210 98% 78%;
+  --primary-foreground: 224 15% 12%;
+  --secondary: 215 25% 27%;
+  --secondary-foreground: 213 31% 91%;
+  --muted: 215 25% 27%;
+  --muted-foreground: 217 10% 64%;
+  --accent: 215 25% 27%;
+  --accent-foreground: 213 31% 91%;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 213 31% 91%;
+  --border: 215 28% 17%;
+  --input: 215 28% 17%;
+  --ring: 210 98% 78%;
 }
 
-/* Any other existing styles */
+/* Base font and typography */
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background-color: hsl(var(--primary) / 0.3);
+  color: hsl(var(--primary-foreground));
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
