@@ -82,7 +82,7 @@ export const MobileNav = () => {
               </div>
               
               <a 
-                href="https://cureworld.com" 
+                href="https://curableworld.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-base font-bold py-3 border-b border-graphite-700/40 text-titanium-white hover:text-plasma-violet"

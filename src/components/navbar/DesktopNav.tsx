@@ -74,7 +74,7 @@ export const DesktopNav = () => {
       </NavigationMenu>
       
       <a 
-        href="https://cureworld.com" 
+        href="https://curableworld.com" 
         target="_blank" 
         rel="noopener noreferrer"
         className="nav-link after:transition-all after:duration-300 hover:text-logo-blue"

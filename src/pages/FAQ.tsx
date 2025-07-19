@@ -121,7 +121,7 @@ const FAQ = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="https://cureworld.com" 
+                href="https://curableworld.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-logo-blue hover:bg-logo-blue/80 text-gunmetal-900 font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-logo-blue/30"
