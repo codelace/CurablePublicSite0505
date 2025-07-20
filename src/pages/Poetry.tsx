@@ -54,13 +54,13 @@ const Poetry = () => {
   }, []);
 
   const toggleAutoPlay = useCallback(() => {
-    console.log('Auto-play button clicked, current state:', isAutoPlay);
+    console.log('toggleAutoPlay called, current state:', isAutoPlay);
     setIsAutoPlay(prev => {
       const newState = !prev;
-      console.log('Setting auto-play to:', newState);
+      console.log('Setting auto-play state from', prev, 'to:', newState);
       return newState;
     });
-  }, [isAutoPlay]);
+  }, []);
 
   const handleHaikuComplete = useCallback((haikuId: number) => {
     setTimeout(() => {
