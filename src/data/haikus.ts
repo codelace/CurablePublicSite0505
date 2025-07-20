@@ -9,112 +9,68 @@ export interface Haiku {
 export const haikus: Haiku[] = [
   {
     id: 1,
-    author: "Marcus Chen",
+    author: "Community Voice",
     lines: [
-      "Cells whisper secrets",
-      "In quantum fields of healing",
-      "Life's code rewrites itself"
+      "Cardinal chaos",
+      "Beauty is in the storm's eye",
+      "A molecule muse"
     ],
-    theme: "Cellular Regeneration",
-    category: "science"
+    theme: "Beauty in Complexity",
+    category: "philosophy"
   },
   {
     id: 2,
-    author: "Dr. Sarah Kim",
+    author: "Team Spirit",
     lines: [
-      "Data flows like blood",
-      "Through digital arteries",
-      "Health becomes data"
+      "Empowering the heart",
+      "Souls perform miracles",
+      "We share love"
     ],
-    theme: "Digital Health",
-    category: "technology"
-  },
-  {
-    id: 3,
-    author: "Apollo",
-    lines: [
-      "Blockchain holds our truth",
-      "Each transaction a heartbeat",
-      "Trust in mathematics"
-    ],
-    theme: "Decentralized Trust",
-    category: "technology"
-  },
-  {
-    id: 4,
-    author: "Zara Okafor",
-    lines: [
-      "Ancient herbs know best",
-      "Molecules dance with wisdom",
-      "Old ways meet new tools"
-    ],
-    theme: "Traditional Medicine",
+    theme: "Collective Healing",
     category: "healing"
   },
   {
-    id: 5,
-    author: "Dr. James Wright",
+    id: 3,
+    author: "Community Member",
     lines: [
-      "Patient data speaks",
-      "In patterns we barely see",
-      "AI finds the path"
+      "Patient's voice rings clear,",
+      "Science and healing unite,",
+      "Hope's new path unfolds."
     ],
-    theme: "Predictive Medicine",
+    theme: "Patient-Centered Care",
+    category: "science"
+  },
+  {
+    id: 4,
+    author: "Research Team",
+    lines: [
+      "Working together.",
+      "The thrill of discovery.",
+      "Patients own the cure."
+    ],
+    theme: "Collaborative Research",
+    category: "science"
+  },
+  {
+    id: 5,
+    author: "Lab Collective",
+    lines: [
+      "Atoms dance in grace,",
+      "Through our lens, life's code unfolds—",
+      "Beauty binds us all."
+    ],
+    theme: "Molecular Beauty",
     category: "science"
   },
   {
     id: 6,
-    author: "Elena Rodriguez",
+    author: "Team Philosophy",
     lines: [
-      "Genes like morning dew",
-      "Hold tomorrow's medicine",
-      "Written in our cells"
+      "No single hero,",
+      "We're stronger when we build it",
+      "Side by side as one."
     ],
-    theme: "Genomic Medicine",
-    category: "science"
-  },
-  {
-    id: 7,
-    author: "Team Collective",
-    lines: [
-      "Open source healing",
-      "Knowledge shared across borders",
-      "Cures belong to all"
-    ],
-    theme: "Open Science",
-    category: "philosophy"
-  },
-  {
-    id: 8,
-    author: "Dr. Michael Chen",
-    lines: [
-      "Sunlight on skin cells",
-      "Vitamin D synthesis",
-      "Nature's pharmacy"
-    ],
-    theme: "Natural Healing",
-    category: "nature"
-  },
-  {
-    id: 9,
-    author: "Research Team",
-    lines: [
-      "Lab results shimmer",
-      "Like stars in a data sky",
-      "Each point holds a life"
-    ],
-    theme: "Clinical Research",
-    category: "science"
-  },
-  {
-    id: 10,
-    author: "Community Voice",
-    lines: [
-      "Together we build",
-      "A future where pain dissolves",
-      "Into digital hope"
-    ],
-    theme: "Collective Healing",
+    theme: "Unity in Purpose",
     category: "philosophy"
   }
 ];
