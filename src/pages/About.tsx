@@ -39,7 +39,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="w-full relative min-h-screen pb-8 pt-[60px] sm:pt-[68px]">
+    <div className="w-full relative min-h-screen pb-32 pt-[60px] sm:pt-[68px]">
       {/* Enhanced background effects */}
       <AboutBackgroundEffects />
       
