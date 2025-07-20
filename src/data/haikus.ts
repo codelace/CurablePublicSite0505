@@ -1,6 +1,5 @@
 export interface Haiku {
   id: number;
-  author: string;
   lines: [string, string, string];
   theme: string;
   category: 'philosophy' | 'science' | 'healing' | 'technology' | 'nature';
@@ -9,7 +8,6 @@ export interface Haiku {
 export const haikus: Haiku[] = [
   {
     id: 1,
-    author: "I.L.",
     lines: [
       "Cardinal chaos",
       "Beauty is in the storm's eye",
@@ -20,7 +18,6 @@ export const haikus: Haiku[] = [
   },
   {
     id: 2,
-    author: "Dr. Sensei",
     lines: [
       "Empowering the heart",
       "Souls perform miracles",
@@ -31,7 +28,6 @@ export const haikus: Haiku[] = [
   },
   {
     id: 3,
-    author: "A.A.",
     lines: [
       "Patient's voice rings clear,",
       "Science and healing unite,",
@@ -42,7 +38,6 @@ export const haikus: Haiku[] = [
   },
   {
     id: 4,
-    author: "Storm",
     lines: [
       "Working together.",
       "The thrill of discovery.",
@@ -53,7 +48,6 @@ export const haikus: Haiku[] = [
   },
   {
     id: 5,
-    author: "S.B.",
     lines: [
       "Atoms dance in grace,",
       "Through our lens, life's code unfolds—",
@@ -64,7 +58,6 @@ export const haikus: Haiku[] = [
   },
   {
     id: 6,
-    author: "E.M.",
     lines: [
       "No single hero,",
       "We're stronger when we build it",

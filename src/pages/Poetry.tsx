@@ -195,10 +195,6 @@ const Poetry = () => {
                       transition={{ delay: 1, duration: 0.5 }}
                       className="flex flex-col items-center gap-3 pt-6 border-t border-titanium-white/10"
                     >
-                      <p className="text-titanium-white/60 font-mono">
-                        — {currentHaiku.author}
-                      </p>
-                      
                       <div className="flex items-center gap-3">
                         <Badge 
                           variant="outline" 
