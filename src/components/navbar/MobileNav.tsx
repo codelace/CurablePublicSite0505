@@ -48,6 +48,12 @@ export const MobileNav = () => {
               >
                 TOKENOMICS
               </Link>
+              <Link 
+                to="/poetry" 
+                className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/poetry') ? 'text-plasma-violet' : 'text-titanium-white'}`}
+              >
+                POETRY
+              </Link>
               
               <div className="border-b border-graphite-700/40">
                 <button 

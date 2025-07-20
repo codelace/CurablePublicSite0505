@@ -34,6 +34,12 @@ export const DesktopNav = () => {
       >
         TOKENOMICS
       </Link>
+      <Link 
+        to="/poetry" 
+        className={`nav-link after:transition-all after:duration-300 ${isActive('/poetry') ? 'text-logo-blue after:opacity-100 after:left-0 after:right-0' : ''}`}
+      >
+        POETRY
+      </Link>
       
       <NavigationMenu>
         <NavigationMenuList>

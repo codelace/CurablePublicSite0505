@@ -9,7 +9,7 @@ export interface Haiku {
 export const haikus: Haiku[] = [
   {
     id: 1,
-    author: "Community Voice",
+    author: "I.L.",
     lines: [
       "Cardinal chaos",
       "Beauty is in the storm's eye",
@@ -20,7 +20,7 @@ export const haikus: Haiku[] = [
   },
   {
     id: 2,
-    author: "Team Spirit",
+    author: "Dr. Sensei",
     lines: [
       "Empowering the heart",
       "Souls perform miracles",
@@ -31,7 +31,7 @@ export const haikus: Haiku[] = [
   },
   {
     id: 3,
-    author: "Community Member",
+    author: "A.A.",
     lines: [
       "Patient's voice rings clear,",
       "Science and healing unite,",
@@ -42,7 +42,7 @@ export const haikus: Haiku[] = [
   },
   {
     id: 4,
-    author: "Research Team",
+    author: "Storm",
     lines: [
       "Working together.",
       "The thrill of discovery.",
@@ -53,7 +53,7 @@ export const haikus: Haiku[] = [
   },
   {
     id: 5,
-    author: "Lab Collective",
+    author: "S.B.",
     lines: [
       "Atoms dance in grace,",
       "Through our lens, life's code unfolds—",
@@ -64,7 +64,7 @@ export const haikus: Haiku[] = [
   },
   {
     id: 6,
-    author: "Team Philosophy",
+    author: "E.M.",
     lines: [
       "No single hero,",
       "We're stronger when we build it",
