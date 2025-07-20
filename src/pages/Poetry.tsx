@@ -156,20 +156,6 @@ const Poetry = () => {
                 </Button>
               </div>
             </div>
-            
-            {/* Helpful hint when haiku is active */}
-            {currentHaiku && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="mt-3 pt-3 border-t border-warm-rose/20"
-              >
-                <p className="text-xs text-warm-rose/80 font-mono text-center">
-                  ✨ Use "Next" for another haiku, "Auto-Play" for continuous flow, or explore categories above
-                </p>
-              </motion.div>
-            )}
           </Card>
         </div>
 
