@@ -93,7 +93,7 @@ export const advisors: Person[] = [
     id: 24,
     name: "Apollo",
     role: "Human Health",
-    avatar: "/placeholder.svg",
+    avatar: "/lovable-uploads/d9378658-8874-42d9-8d22-871f19c12f11.png",
     group: "advisor",
     bio: "Wellness meets the blockchain frontier.\nBiometric truths from biohacked rings.\nCannabis decoded, one data point at a time."
   },
