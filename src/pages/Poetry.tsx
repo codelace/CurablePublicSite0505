@@ -98,9 +98,9 @@ const Poetry = () => {
 
       {/* Main Content */}
       <div className="relative z-10 min-h-screen p-8">
-        {/* Controls */}
-        <div className="fixed top-24 left-8 right-8 z-30">
-          <Card className="glass-panel p-4 bg-dark-surface/40 border-titanium-white/10">
+        {/* Controls - More visible when haiku is active */}
+        <div className={`fixed top-24 left-8 right-8 z-30 transition-all duration-500 ${currentHaiku ? 'opacity-100 scale-100' : 'opacity-60 scale-95 pointer-events-none'}`}>
+          <Card className={`glass-panel p-4 border-2 transition-all duration-300 ${currentHaiku ? 'bg-dark-surface/60 border-warm-rose/40 shadow-lg shadow-warm-rose/20' : 'bg-dark-surface/40 border-titanium-white/10'}`}>
             <div className="flex flex-wrap items-center justify-between gap-4">
               {/* Category Filters */}
               <div className="flex flex-wrap gap-2">
@@ -125,37 +125,51 @@ const Poetry = () => {
                 ))}
               </div>
 
-              {/* Action Buttons */}
+              {/* Action Buttons - More prominent when active */}
               <div className="flex items-center gap-2">
                 <Button
-                  variant="outline"
+                  variant={currentHaiku ? "default" : "outline"}
                   size="sm"
                   onClick={() => setIsAutoPlay(!isAutoPlay)}
-                  className="flex items-center gap-2"
+                  className={`flex items-center gap-2 transition-all ${currentHaiku ? 'bg-warm-rose/20 border-warm-rose/50 hover:bg-warm-rose/30' : ''}`}
                 >
                   {isAutoPlay ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                   {isAutoPlay ? 'Pause' : 'Auto-Play'}
                 </Button>
                 <Button
-                  variant="outline"
+                  variant={currentHaiku ? "default" : "outline"}
                   size="sm"
                   onClick={showRandomHaiku}
-                  className="flex items-center gap-2"
+                  className={`flex items-center gap-2 transition-all ${currentHaiku ? 'bg-logo-blue/20 border-logo-blue/50 hover:bg-logo-blue/30' : ''}`}
                 >
                   <Shuffle className="w-4 h-4" />
-                  Random
+                  {currentHaiku ? 'Next' : 'Random'}
                 </Button>
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => setCurrentHaiku(null)}
-                  className="flex items-center gap-2"
+                  className={`flex items-center gap-2 transition-all ${currentHaiku ? 'opacity-100' : 'opacity-50'}`}
                 >
                   <RotateCcw className="w-4 h-4" />
                   Clear
                 </Button>
               </div>
             </div>
+            
+            {/* Helpful hint when haiku is active */}
+            {currentHaiku && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="mt-3 pt-3 border-t border-warm-rose/20"
+              >
+                <p className="text-xs text-warm-rose/80 font-mono text-center">
+                  ✨ Use "Next" for another haiku, "Auto-Play" for continuous flow, or explore categories above
+                </p>
+              </motion.div>
+            )}
           </Card>
         </div>
 
