@@ -40,7 +40,7 @@ export const team: Person[] = [
     role: "Content & Community",
     avatar: "/lovable-uploads/d02246f5-470f-4d66-a2cb-88d9748dfcef.png",
     group: "team",
-    bio: "Radiology by day, Blender by night.\nHealth, art, and Web3 in perfect symmetry.\nCreative care in every detail."
+    bio: "Healthcare by day, Blender by night.\nHealth, art, and Web3 in perfect symmetry.\nCreative care in every detail."
   },
   {
     id: 7,
