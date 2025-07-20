@@ -62,7 +62,7 @@ export const team: Person[] = [
     id: 36,
     name: "Dr. Ralph",
     role: "Scientific Advisory Committee",
-    avatar: "/placeholder.svg",
+    avatar: "/lovable-uploads/45825344-621c-4487-a951-8c81cd128805.png",
     group: "team",
     bio: "Profile details coming soon..."
   },
