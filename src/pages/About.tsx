@@ -80,7 +80,7 @@ const About = () => {
           <SectionDivider />
         </div>
 
-        <div className={`transition-all duration-700 delay-300 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'} mb-32`}>
+        <div className={`transition-all duration-700 delay-300 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'} mb-16`}>
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-logo-blue">
               Frequently Asked Questions
