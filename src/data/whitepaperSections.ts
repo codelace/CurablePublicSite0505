@@ -77,7 +77,7 @@ Dynamic Incentives—High‑impact tasks (e.g., validating an ALS target) earn b
     body: `Curable Labs integrates a modular "Agentic" pipeline:
 
 Stage	Agent Role (automated)	Human Validation Point
-Ideation	Large‑language models mine literature & clinical databases for targets	Scientific Advisory Committee triage
+Ideation	Large‑language models mine literature & clinical databases for targets	Scientific Advisory triage
 In‑silico Screening	Docking & ML binding‑affinity agents screen 10⁸ molecules/week	Medicinal chemists review top 0.1 %
 Simulation & ADMET	Agentic loop refines hits with toxicity, solubility, and RMSD filters	Wet‑lab partners confirm
 Regulatory Pathfinder	NLP agents index FDA / EMA guidelines, generating tailored checklists	Regulatory leads sign‑off
@@ -123,7 +123,7 @@ Hugh Donatello — Chief Executive Officer, biotech commercialization veteran.
 
 Ilyssa Evans — Chief Operations Officer, AI & Web3 strategist.
 
-Scientific Advisory Committee — led by Dr. Ralph Snodgrass (immunology, FDA liaison).
+Scientific Advisory — led by Dr. Ralph Snodgrass (immunology, FDA liaison).
 
 Core Engineering — distributed team specializing in agentic AI and smart contracts.` 
   },
