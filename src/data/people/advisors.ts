@@ -4,7 +4,7 @@ export const advisors: Person[] = [
   {
     id: 11,
     name: "Weblogica",
-    role: "Engineering & Security",
+    role: "Engineering & AI",
     avatar: "/lovable-uploads/a2f4ba16-59a7-4321-a074-79d871ef3491.png",
     group: "advisor",
     bio: "Legacy code, future dreams.\nFrom IBM to biotech breakthroughs.\nInfrastructure with soul."
@@ -28,7 +28,7 @@ export const advisors: Person[] = [
   {
     id: 32,
     name: "Heem",
-    role: "Web3 Builders",
+    role: "Engineering & AI",
     avatar: "/lovable-uploads/e0586ce0-63ff-4179-8615-9ca81b24d560.png",
     group: "advisor",
     bio: "its try, try, try until you land it"

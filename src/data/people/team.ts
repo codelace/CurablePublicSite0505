@@ -13,7 +13,7 @@ export const team: Person[] = [
   {
     id: 29,
     name: "Scooby",
-    role: "Agentic Infrastructure",
+    role: "Agency",
     avatar: "/lovable-uploads/12eb85d3-4579-4834-9297-df31bb4dccbc.png",
     group: "team",
     bio: "Translates complex pathways into clear decisions.\nBridges science, strategy, and structure.\nBuilds frameworks that unlock progress."
