@@ -39,6 +39,16 @@ export const haikus: Haiku[] = [
   {
     id: 4,
     lines: [
+      "No single hero,",
+      "We're stronger when we build it",
+      "Side by side as one."
+    ],
+    theme: "Unity in Purpose",
+    category: "philosophy"
+  },
+  {
+    id: 5,
+    lines: [
       "Working together.",
       "The thrill of discovery.",
       "Patients own the cure."
@@ -47,7 +57,7 @@ export const haikus: Haiku[] = [
     category: "science"
   },
   {
-    id: 5,
+    id: 6,
     lines: [
       "Atoms dance in grace,",
       "Through our lens, life's code unfolds—",
@@ -55,15 +65,5 @@ export const haikus: Haiku[] = [
     ],
     theme: "Molecular Beauty",
     category: "science"
-  },
-  {
-    id: 6,
-    lines: [
-      "No single hero,",
-      "We're stronger when we build it",
-      "Side by side as one."
-    ],
-    theme: "Unity in Purpose",
-    category: "philosophy"
   }
 ];
