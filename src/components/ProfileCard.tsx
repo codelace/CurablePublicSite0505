@@ -75,8 +75,8 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
                 person.group === 'contributor' ? 'amber' : 'purple'}
     >
       <div 
-        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 
-                  border-plasma-violet/30 mb-2 mx-auto relative transition-all duration-300"
+        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 
+                  border-plasma-violet/30 mb-1.5 mx-auto relative transition-all duration-300"
         onLoad={() => setIsLoaded(true)}
       >
         <Avatar className="w-full h-full">
@@ -108,23 +108,23 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
           )}
         </h3>
         
-        <Badge variant={badgeVariant} className={`mb-1 text-xs ${badgeClass} mx-auto`}>
+        <Badge variant={badgeVariant} className={`mb-0.5 text-[10px] ${badgeClass} mx-auto px-1.5 py-0.5`}>
           {groupDisplay}
         </Badge>
         
-        <p className="text-plasma-violet text-xs font-mono mb-2 terminal-text">{person.role}</p>
+        <p className="text-plasma-violet text-[10px] font-mono mb-1.5 terminal-text">{person.role}</p>
         
         <div className="flex-1 flex flex-col justify-start">
-          <div className="text-titanium-white/80 text-[10px] leading-tight text-left">
+          <div className="text-titanium-white/80 text-[9px] leading-tight text-left">
             {person.bio ? (
               person.bio.split('\n').filter(line => line.trim()).map((line, index) => (
-                <p key={index} className="mb-0.5 last:mb-0">
+                <p key={index} className="mb-0 last:mb-0">
                   {line.trim()}
                 </p>
               ))
             ) : person.gptDescription ? (
               person.gptDescription.split('\n').filter(line => line.trim()).map((line, index) => (
-                <p key={index} className="mb-0.5 last:mb-0">
+                <p key={index} className="mb-0 last:mb-0">
                   {line.trim()}
                 </p>
               ))
