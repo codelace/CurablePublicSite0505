@@ -63,26 +63,49 @@ export const usePoetryEngine = () => {
   }, []);
 
   const addRandomHaiku = useCallback(() => {
-    if (state.displayedHaikus.size >= state.maxDisplayed) return;
+    setState(prev => {
+      if (prev.displayedHaikus.size >= prev.maxDisplayed) return prev;
 
-    const availableHaikus = filteredHaikus.filter(h => !state.displayedHaikus.has(h.id));
-    if (availableHaikus.length === 0) return;
+      const currentFilteredHaikus = state.activeCategory 
+        ? haikus.filter(h => h.category === state.activeCategory)
+        : haikus;
+      
+      const availableHaikus = currentFilteredHaikus.filter(h => !prev.displayedHaikus.has(h.id));
+      if (availableHaikus.length === 0) return prev;
 
-    const randomHaiku = availableHaikus[Math.floor(Math.random() * availableHaikus.length)];
-    const position = generatePosition();
+      const randomHaiku = availableHaikus[Math.floor(Math.random() * availableHaikus.length)];
+      
+      // Generate position
+      const existingPositions = Array.from(prev.displayedHaikus.values()).map(item => item.position);
+      let attempts = 0;
+      let position;
 
-    setState(prev => ({
-      ...prev,
-      displayedHaikus: new Map([
-        ...prev.displayedHaikus,
-        [randomHaiku.id, { 
-          haiku: randomHaiku, 
-          timestamp: Date.now(),
-          position 
-        }]
-      ])
-    }));
-  }, [filteredHaikus, state.displayedHaikus, state.maxDisplayed, generatePosition]);
+      do {
+        position = {
+          x: Math.random() * 60 + 20,
+          y: Math.random() * 50 + 25
+        };
+        attempts++;
+      } while (
+        attempts < 20 && 
+        existingPositions.some(existing => 
+          Math.abs(existing.x - position.x) < 25 || Math.abs(existing.y - position.y) < 20
+        )
+      );
+
+      return {
+        ...prev,
+        displayedHaikus: new Map([
+          ...prev.displayedHaikus,
+          [randomHaiku.id, { 
+            haiku: randomHaiku, 
+            timestamp: Date.now(),
+            position 
+          }]
+        ])
+      };
+    });
+  }, [state.activeCategory]);
 
   const removeHaiku = useCallback((haikuId: number) => {
     setState(prev => {
