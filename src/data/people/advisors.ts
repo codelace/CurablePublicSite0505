@@ -116,7 +116,7 @@ export const advisors: Person[] = [
   {
     id: 37,
     name: "Emmanuel",
-    role: "Content & Community Engagement",
+    role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
     bio: "Profile details coming soon..."

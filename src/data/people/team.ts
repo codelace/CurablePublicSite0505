@@ -85,7 +85,7 @@ export const team: Person[] = [
   {
     id: 38,
     name: "Israel",
-    role: "Content & Community Engagement",
+    role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "contributor",
     bio: "Profile details coming soon..."
