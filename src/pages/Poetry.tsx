@@ -30,16 +30,22 @@ const Poetry = () => {
     if (!isAutoPlay) return;
 
     const interval = setInterval(() => {
-      const randomHaiku = filteredHaikus[Math.floor(Math.random() * filteredHaikus.length)];
-      setCurrentHaiku(randomHaiku);
+      setCurrentHaiku(prevHaiku => {
+        const availableHaikus = filteredHaikus.filter(h => h.id !== prevHaiku?.id);
+        if (availableHaikus.length === 0) return prevHaiku;
+        return availableHaikus[Math.floor(Math.random() * availableHaikus.length)];
+      });
     }, 5000);
 
     return () => clearInterval(interval);
   }, [isAutoPlay, filteredHaikus]);
 
   const showRandomHaiku = () => {
-    const randomHaiku = filteredHaikus[Math.floor(Math.random() * filteredHaikus.length)];
-    setCurrentHaiku(randomHaiku);
+    setCurrentHaiku(prevHaiku => {
+      const availableHaikus = filteredHaikus.filter(h => h.id !== prevHaiku?.id);
+      if (availableHaikus.length === 0) return filteredHaikus[0] || null;
+      return availableHaikus[Math.floor(Math.random() * availableHaikus.length)];
+    });
   };
 
   const getCategoryColor = (category: string) => {
