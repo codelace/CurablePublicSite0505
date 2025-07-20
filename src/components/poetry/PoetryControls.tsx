@@ -36,7 +36,10 @@ export const PoetryControls = ({
         
         <div className="flex justify-center gap-4 mt-4">
           <Button
-            onClick={onToggleAutoPlay}
+            onClick={() => {
+              console.log('Auto-play button clicked in PoetryControls');
+              onToggleAutoPlay();
+            }}
             variant="outline"
             size="sm"
             className={`font-mono transition-all duration-300 pointer-events-auto ${
