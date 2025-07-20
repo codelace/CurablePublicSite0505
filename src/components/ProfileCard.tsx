@@ -115,16 +115,16 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
         <p className="text-plasma-violet text-xs font-mono mb-2 terminal-text">{person.role}</p>
         
         <div className="flex-1 flex flex-col justify-start">
-          <div className="text-titanium-white/80 text-xs leading-relaxed text-left">
+          <div className="text-titanium-white/80 text-[10px] leading-tight text-left">
             {person.bio ? (
               person.bio.split('\n').filter(line => line.trim()).map((line, index) => (
-                <p key={index} className="mb-1 last:mb-0">
+                <p key={index} className="mb-0.5 last:mb-0">
                   {line.trim()}
                 </p>
               ))
             ) : person.gptDescription ? (
               person.gptDescription.split('\n').filter(line => line.trim()).map((line, index) => (
-                <p key={index} className="mb-1 last:mb-0">
+                <p key={index} className="mb-0.5 last:mb-0">
                   {line.trim()}
                 </p>
               ))
