@@ -13,6 +13,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Whitepaper from "./pages/Whitepaper";
 import Tokenomics from "./pages/Tokenomics";
+import Poetry from "./pages/Poetry";
 
 import Join from "./pages/Join";
 import Novel from "./pages/Novel";
@@ -117,6 +118,11 @@ const App = () => {
                     <Route path="/tokenomics" element={
                       <PageTransition>
                         <Tokenomics />
+                      </PageTransition>
+                    } />
+                    <Route path="/poetry" element={
+                      <PageTransition>
+                        <Poetry />
                       </PageTransition>
                     } />
                     <Route path="/wearable" element={
