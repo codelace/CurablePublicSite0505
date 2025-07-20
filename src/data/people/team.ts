@@ -46,7 +46,7 @@ export const team: Person[] = [
     id: 7,
     name: "Dope",
     role: "Science & Research",
-    avatar: "/lovable-uploads/d558783f-32dc-44c3-9b91-77b76dd49f16.png",
+    avatar: "/lovable-uploads/5f792e7c-983d-43a5-afa0-228231c200a1.png",
     group: "team",
     bio: "Biotech brain, DeFi heart.\nFermentation, AI, and healing frequencies.\nWhere molecules meet music."
   },
