@@ -1,109 +1,20 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { PoetryBackground } from '@/components/poetry/PoetryBackground';
 import { PoetryTitle } from '@/components/poetry/PoetryTitle';
-import { PoetryControls } from '@/components/poetry/PoetryControls';
-import { HaikuDisplay } from '@/components/poetry/HaikuDisplay';
 import { PoetryFooter } from '@/components/poetry/PoetryFooter';
-import { haikus } from '@/data/haikus';
+import { usePoetryEngine } from '@/components/poetry/PoetryEngine';
+import { AutoPlayManager } from '@/components/poetry/AutoPlayManager';
+import { HaikuRenderer } from '@/components/poetry/HaikuRenderer';
+import { ControlPanel } from '@/components/poetry/ControlPanel';
 
 const Poetry = () => {
-  // State management
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  const [displayedHaikus, setDisplayedHaikus] = useState<number[]>([]);
-  const [isAutoPlay, setIsAutoPlay] = useState(false);
   const [showTitle, setShowTitle] = useState(true);
+  const { state, categories, filteredHaikus, displayedHaikuIds, actions } = usePoetryEngine();
 
-  // Derived state
-  const categories = Array.from(new Set(haikus.map(h => h.category)));
-  const filteredHaikus = activeCategory 
-    ? haikus.filter(h => h.category === activeCategory)
-    : haikus;
-
-  // Event handlers
-  const addRandomHaiku = useCallback(() => {
-    console.log('addRandomHaiku called');
-    console.log('filteredHaikus.length:', filteredHaikus.length);
-    console.log('displayedHaikus:', displayedHaikus);
-    
-    if (filteredHaikus.length === 0) {
-      console.log('No filtered haikus available');
-      return;
-    }
-    
-    const availableHaikus = filteredHaikus.filter(h => !displayedHaikus.includes(h.id));
-    console.log('availableHaikus.length:', availableHaikus.length);
-    
-    if (availableHaikus.length === 0) {
-      console.log('No available haikus (all already displayed)');
-      return;
-    }
-    
-    const randomHaiku = availableHaikus[Math.floor(Math.random() * availableHaikus.length)];
-    console.log('Selected haiku:', randomHaiku);
-    
-    setDisplayedHaikus(prev => {
-      const newDisplayed = [...prev, randomHaiku.id];
-      console.log('New displayed haikus:', newDisplayed);
-      return newDisplayed;
-    });
-  }, [filteredHaikus, displayedHaikus]);
-
-  const clearHaikus = useCallback(() => {
-    console.log('clearHaikus called');
-    setDisplayedHaikus([]);
-  }, []);
-
-  const toggleAutoPlay = useCallback(() => {
-    console.log('toggleAutoPlay called, current state:', isAutoPlay);
-    setIsAutoPlay(prev => {
-      const newState = !prev;
-      console.log('Setting auto-play state from', prev, 'to:', newState);
-      return newState;
-    });
-  }, []);
-
-  const handleHaikuComplete = useCallback((haikuId: number) => {
-    setTimeout(() => {
-      setDisplayedHaikus(prev => prev.filter(id => id !== haikuId));
-    }, 3000);
-  }, []);
-
-  const handleCategoryChange = useCallback((category: string | null) => {
-    console.log('Category changed to:', category);
-    setActiveCategory(category);
-  }, []);
-
-  // Effects
+  // Hide title after 5 seconds
   useEffect(() => {
-    console.log('Auto-play effect triggered, isAutoPlay:', isAutoPlay, 'displayedHaikus:', displayedHaikus.length);
-    
-    if (!isAutoPlay) {
-      console.log('Auto-play is off, no interval set');
-      return;
-    }
-
-    console.log('Setting up auto-play interval');
-    const interval = setInterval(() => {
-      console.log('Auto-play interval tick, current displayed:', displayedHaikus.length);
-      if (displayedHaikus.length < 3) {
-        console.log('Adding random haiku via auto-play');
-        addRandomHaiku();
-      } else {
-        console.log('Maximum haikus reached, not adding more');
-      }
-    }, 4000);
-
-    return () => {
-      console.log('Clearing auto-play interval');
-      clearInterval(interval);
-    };
-  }, [isAutoPlay, displayedHaikus, addRandomHaiku]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowTitle(false);
-    }, 5000);
-
+    const timer = setTimeout(() => setShowTitle(false), 5000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -114,25 +25,41 @@ const Poetry = () => {
       <div className="relative z-10 min-h-screen">
         <PoetryTitle showTitle={showTitle} />
 
-        <PoetryControls
+        <ControlPanel
           categories={categories}
-          activeCategory={activeCategory}
-          onCategoryChange={handleCategoryChange}
+          activeCategory={state.activeCategory}
+          onCategoryChange={actions.setCategory}
           filteredHaikus={filteredHaikus}
-          isAutoPlay={isAutoPlay}
-          onToggleAutoPlay={toggleAutoPlay}
-          onShowRandom={addRandomHaiku}
-          onClearAll={clearHaikus}
+          isAutoPlay={state.isAutoPlay}
+          onToggleAutoPlay={actions.toggleAutoPlay}
+          onShowRandom={actions.addRandomHaiku}
+          onClearAll={actions.clearAll}
+          displayedCount={state.displayedHaikus.size}
         />
 
-        <HaikuDisplay
-          displayedHaikus={displayedHaikus}
-          onHaikuComplete={handleHaikuComplete}
+        {/* Haiku Display Area */}
+        <div className="relative h-screen w-full">
+          {Array.from(state.displayedHaikus.entries()).map(([haikuId, { haiku, position }], index) => (
+            <HaikuRenderer
+              key={`${haikuId}-${Date.now()}`}
+              haiku={haiku}
+              position={position}
+              delay={index * 800}
+              onComplete={() => actions.removeHaiku(haikuId)}
+            />
+          ))}
+        </div>
+
+        <AutoPlayManager
+          isActive={state.isAutoPlay}
+          displayedCount={state.displayedHaikus.size}
+          maxDisplayed={state.maxDisplayed}
+          onAddHaiku={actions.addRandomHaiku}
         />
 
         <PoetryFooter
-          displayedHaikus={displayedHaikus}
-          isAutoPlay={isAutoPlay}
+          displayedHaikus={displayedHaikuIds}
+          isAutoPlay={state.isAutoPlay}
         />
       </div>
     </div>
