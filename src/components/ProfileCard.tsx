@@ -68,15 +68,15 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
 
   return (
     <Card 
-      className={`flex flex-col text-center h-full p-3 transition-all duration-300 
+      className={`flex flex-col text-center h-full p-2 transition-all duration-300 
                 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${animationClass}`}
       glowColor={person.group === 'team' ? 'blue' : 
                 person.group === 'advisor' ? 'red' : 
                 person.group === 'contributor' ? 'amber' : 'purple'}
     >
       <div 
-        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 
-                  border-plasma-violet/30 mb-3 mx-auto relative transition-all duration-300"
+        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 
+                  border-plasma-violet/30 mb-2 mx-auto relative transition-all duration-300"
         onLoad={() => setIsLoaded(true)}
       >
         <Avatar className="w-full h-full">
@@ -96,7 +96,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
       </div>
       
       <div className="flex-1 flex flex-col">
-        <h3 className="text-sm sm:text-base font-bold mb-2 text-titanium-white">
+        <h3 className="text-xs sm:text-sm font-bold mb-1 text-titanium-white">
           {person.group === 'founder' ? (
             <span className="cyber-highlight">{person.name}</span>
           ) : person.group === 'advisor' ? (
@@ -108,11 +108,11 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
           )}
         </h3>
         
-        <Badge variant={badgeVariant} className={`mb-2 text-xs ${badgeClass} mx-auto`}>
+        <Badge variant={badgeVariant} className={`mb-1 text-xs ${badgeClass} mx-auto`}>
           {groupDisplay}
         </Badge>
         
-        <p className="text-plasma-violet text-xs font-mono mb-3 terminal-text">{person.role}</p>
+        <p className="text-plasma-violet text-xs font-mono mb-2 terminal-text">{person.role}</p>
         
         <div className="flex-1 flex flex-col justify-start">
           <div className="text-titanium-white/80 text-xs leading-relaxed text-left">
