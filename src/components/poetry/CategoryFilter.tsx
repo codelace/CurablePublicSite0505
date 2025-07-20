@@ -36,12 +36,15 @@ export const CategoryFilter = ({ categories, activeCategory, onCategoryChange, h
   };
 
   return (
-    <div className="flex flex-wrap gap-3 justify-center mb-8">
+    <div className="flex flex-wrap gap-3 justify-center mb-8 pointer-events-auto">
       <Button
         variant="outline"
         size="sm"
-        onClick={() => onCategoryChange(null)}
-        className={`font-mono transition-all duration-300 ${
+        onClick={() => {
+          console.log('All categories button clicked');
+          onCategoryChange(null);
+        }}
+        className={`font-mono transition-all duration-300 pointer-events-auto ${
           activeCategory === null 
             ? 'bg-warm-rose/20 text-warm-rose border-warm-rose/50' 
             : 'bg-dark-surface/40 text-titanium-white/70 border-titanium-white/20 hover:bg-warm-rose/20 hover:text-warm-rose'
@@ -55,8 +58,11 @@ export const CategoryFilter = ({ categories, activeCategory, onCategoryChange, h
           key={category}
           variant="outline"
           size="sm"
-          onClick={() => onCategoryChange(category)}
-          className={`font-mono transition-all duration-300 capitalize ${
+          onClick={() => {
+            console.log('Category button clicked:', category);
+            onCategoryChange(category);
+          }}
+          className={`font-mono transition-all duration-300 capitalize pointer-events-auto ${
             activeCategory === category 
               ? getActiveColor(category)
               : `bg-dark-surface/40 text-titanium-white/70 border-titanium-white/20 ${getCategoryColor(category)}`

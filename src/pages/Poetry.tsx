@@ -26,16 +26,34 @@ const Poetry = () => {
   });
 
   const addRandomHaiku = () => {
-    if (filteredHaikus.length === 0) return;
+    console.log('addRandomHaiku called');
+    console.log('filteredHaikus.length:', filteredHaikus.length);
+    console.log('displayedHaikus:', displayedHaikus);
+    
+    if (filteredHaikus.length === 0) {
+      console.log('No filtered haikus available');
+      return;
+    }
     
     const availableHaikus = filteredHaikus.filter(h => !displayedHaikus.includes(h.id));
-    if (availableHaikus.length === 0) return;
+    console.log('availableHaikus.length:', availableHaikus.length);
+    
+    if (availableHaikus.length === 0) {
+      console.log('No available haikus (all already displayed)');
+      return;
+    }
     
     const randomHaiku = availableHaikus[Math.floor(Math.random() * availableHaikus.length)];
-    setDisplayedHaikus(prev => [...prev, randomHaiku.id]);
+    console.log('Selected haiku:', randomHaiku);
+    setDisplayedHaikus(prev => {
+      const newDisplayed = [...prev, randomHaiku.id];
+      console.log('New displayed haikus:', newDisplayed);
+      return newDisplayed;
+    });
   };
 
   const clearHaikus = () => {
+    console.log('clearHaikus called');
     setDisplayedHaikus([]);
   };
 
@@ -111,8 +129,8 @@ const Poetry = () => {
         </AnimatePresence>
 
         {/* Controls */}
-        <div className="fixed top-24 left-1/2 transform -translate-x-1/2 z-30">
-          <div className="glass-panel p-4 backdrop-blur-xl bg-dark-surface/20 border border-warm-rose/20 rounded-xl">
+        <div className="fixed top-24 left-1/2 transform -translate-x-1/2 z-50 pointer-events-auto">
+          <div className="glass-panel p-4 backdrop-blur-xl bg-dark-surface/20 border border-warm-rose/20 rounded-xl pointer-events-auto">
             <CategoryFilter 
               categories={categories}
               activeCategory={activeCategory}
@@ -122,10 +140,13 @@ const Poetry = () => {
             
             <div className="flex justify-center gap-4 mt-4">
               <Button
-                onClick={() => setIsAutoPlay(!isAutoPlay)}
+                onClick={() => {
+                  console.log('Auto-play button clicked, current state:', isAutoPlay);
+                  setIsAutoPlay(!isAutoPlay);
+                }}
                 variant="outline"
                 size="sm"
-                className={`font-mono transition-all duration-300 ${
+                className={`font-mono transition-all duration-300 pointer-events-auto ${
                   isAutoPlay 
                     ? 'bg-warm-rose/20 text-warm-rose border-warm-rose/50' 
                     : 'bg-dark-surface/40 text-titanium-white/70 border-titanium-white/20 hover:bg-warm-rose/20 hover:text-warm-rose'
@@ -136,20 +157,26 @@ const Poetry = () => {
               </Button>
               
               <Button
-                onClick={addRandomHaiku}
+                onClick={() => {
+                  console.log('Show Random button clicked');
+                  addRandomHaiku();
+                }}
                 variant="outline"
                 size="sm"
-                className="font-mono bg-dark-surface/40 text-titanium-white/70 border-titanium-white/20 hover:bg-logo-blue/20 hover:text-logo-blue transition-all duration-300"
+                className="font-mono bg-dark-surface/40 text-titanium-white/70 border-titanium-white/20 hover:bg-logo-blue/20 hover:text-logo-blue transition-all duration-300 pointer-events-auto"
               >
                 <Shuffle className="w-4 h-4 mr-2" />
                 Show Random
               </Button>
               
               <Button
-                onClick={clearHaikus}
+                onClick={() => {
+                  console.log('Clear All button clicked');
+                  clearHaikus();
+                }}
                 variant="outline"
                 size="sm"
-                className="font-mono bg-dark-surface/40 text-titanium-white/70 border-titanium-white/20 hover:bg-warm-coral/20 hover:text-warm-coral transition-all duration-300"
+                className="font-mono bg-dark-surface/40 text-titanium-white/70 border-titanium-white/20 hover:bg-warm-coral/20 hover:text-warm-coral transition-all duration-300 pointer-events-auto"
               >
                 Clear All
               </Button>
