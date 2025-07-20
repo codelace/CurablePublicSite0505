@@ -16,7 +16,7 @@ export const team: Person[] = [
     role: "Agency",
     avatar: "/lovable-uploads/12eb85d3-4579-4834-9297-df31bb4dccbc.png",
     group: "team",
-    bio: "Translates complex pathways into clear decisions.\nBridges science, strategy, and structure.\nBuilds frameworks that unlock progress."
+    bio: "Tech tinkerer with a healer's heart.\nVibe-driven builder of better tools.\nCurious mind, endlessly leveling up."
   },
   {
     id: 9,
