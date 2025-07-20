@@ -55,7 +55,11 @@ const Poetry = () => {
 
   const toggleAutoPlay = useCallback(() => {
     console.log('Auto-play button clicked, current state:', isAutoPlay);
-    setIsAutoPlay(prev => !prev);
+    setIsAutoPlay(prev => {
+      const newState = !prev;
+      console.log('Setting auto-play to:', newState);
+      return newState;
+    });
   }, [isAutoPlay]);
 
   const handleHaikuComplete = useCallback((haikuId: number) => {
@@ -71,15 +75,28 @@ const Poetry = () => {
 
   // Effects
   useEffect(() => {
-    if (!isAutoPlay) return;
+    console.log('Auto-play effect triggered, isAutoPlay:', isAutoPlay, 'displayedHaikus:', displayedHaikus.length);
+    
+    if (!isAutoPlay) {
+      console.log('Auto-play is off, no interval set');
+      return;
+    }
 
+    console.log('Setting up auto-play interval');
     const interval = setInterval(() => {
+      console.log('Auto-play interval tick, current displayed:', displayedHaikus.length);
       if (displayedHaikus.length < 3) {
+        console.log('Adding random haiku via auto-play');
         addRandomHaiku();
+      } else {
+        console.log('Maximum haikus reached, not adding more');
       }
     }, 4000);
 
-    return () => clearInterval(interval);
+    return () => {
+      console.log('Clearing auto-play interval');
+      clearInterval(interval);
+    };
   }, [isAutoPlay, displayedHaikus, addRandomHaiku]);
 
   useEffect(() => {
