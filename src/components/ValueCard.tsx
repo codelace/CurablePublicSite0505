@@ -120,7 +120,7 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
   return (
     <Card 
       ref={cardRef}
-      className={`flex flex-col items-center text-center h-full p-3 transition-all duration-500 ${
+      className={`flex flex-col items-center text-center h-full p-2 transition-all duration-500 ${
         isHovered ? 'transform -translate-y-2' : ''
       }`}
       glowColor={colorScheme.glowColor === 'blue' ? 'blue' : 'purple'}
@@ -130,7 +130,7 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
         <div className={`absolute inset-0 bg-gradient-to-br ${colorScheme.gradientFrom} ${colorScheme.gradientTo} rounded-lg transition-opacity duration-500 opacity-70`}></div>
       )}
       
-      <div className={`mb-3 relative z-10 ${isHovered ? 'animate-pulse-dot' : ''}`}>
+      <div className={`mb-2 relative z-10 ${isHovered ? 'animate-pulse-dot' : ''}`}>
         <div className={`absolute inset-0 rounded-full bg-gradient-radial opacity-0 transition-opacity duration-300 ${isHovered ? 'opacity-30' : ''}`}></div>
         {iconMap[value.icon as keyof typeof iconMap]}
         
@@ -143,7 +143,7 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
         )}
       </div>
       
-      <h3 className={`text-lg font-bold mb-2 transition-all duration-300 relative z-10 ${isHovered ? '' : 'text-titanium-white'}`}>
+      <h3 className={`text-base font-bold mb-1 transition-all duration-300 relative z-10 ${isHovered ? '' : 'text-titanium-white'}`}>
         {isHovered ? (
           <GradientText variant={colorScheme.glowColor === 'blue' ? 'blue-purple' : 'purple-red'} animate={true}>
             {value.title}
@@ -153,7 +153,7 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
         )}
       </h3>
       
-      <p className={`text-titanium-white/80 text-xs mb-2 transition-opacity duration-300 ${isHovered ? 'opacity-90' : 'opacity-75'} relative z-10`}>
+      <p className={`text-titanium-white/80 text-xs mb-1 transition-opacity duration-300 ${isHovered ? 'opacity-90' : 'opacity-75'} relative z-10`}>
         {value.description}
       </p>
       

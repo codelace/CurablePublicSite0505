@@ -30,7 +30,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
       <TooltipProvider>
         <div 
           ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"
         >
           {people.map((person) => (
             <div 
