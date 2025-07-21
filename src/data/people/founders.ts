@@ -13,7 +13,7 @@ export const founders: Person[] = [
   },
   {
     id: 2,
-    name: "PixelQueen",
+    name: "Pixel Queen",
     role: "Chief Operations Officer",
     avatar: "/lovable-uploads/0e4b0a67-af35-4800-841c-9da722f95b26.png",
     group: "founder",
