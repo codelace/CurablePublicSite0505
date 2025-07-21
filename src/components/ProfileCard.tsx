@@ -75,7 +75,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
                 person.group === 'contributor' ? 'amber' : 'purple'}
     >
       <div 
-        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 
+        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 
                   border-plasma-violet/30 mb-1.5 mx-auto relative transition-all duration-300"
         onLoad={() => setIsLoaded(true)}
       >
@@ -96,7 +96,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
       </div>
       
       <div className="flex-1 flex flex-col">
-        <h3 className="text-xs sm:text-sm font-bold mb-1 text-titanium-white">
+        <h3 className="text-[10px] sm:text-xs font-bold mb-1 text-titanium-white">
           {person.group === 'founder' ? (
             <span className="cyber-highlight">{person.name}</span>
           ) : person.group === 'advisor' ? (
@@ -108,11 +108,11 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
           )}
         </h3>
         
-        <Badge variant={badgeVariant} className={`mb-0.5 text-[10px] ${badgeClass} mx-auto px-1.5 py-0.5`}>
+        <Badge variant={badgeVariant} className={`mb-0.5 text-[8px] ${badgeClass} mx-auto px-1.5 py-0.5`}>
           {groupDisplay}
         </Badge>
         
-        <p className="text-plasma-violet text-[10px] font-mono mb-1.5 terminal-text">{person.role}</p>
+        <p className="text-plasma-violet text-[8px] font-mono mb-1.5 terminal-text">{person.role}</p>
         
         <div className="flex-1 flex flex-col justify-start">
           <div className="text-titanium-white/80 text-[9px] leading-tight text-left">
