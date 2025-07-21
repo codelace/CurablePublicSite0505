@@ -11,7 +11,7 @@ interface ProfileHeaderProps {
 const ProfileHeader: React.FC<ProfileHeaderProps> = ({ person }) => {
   return (
     <div className="flex items-center gap-3">
-      <Avatar className="w-14 h-14 border-2 border-graphite-700/60">
+      <Avatar className="w-20 h-20 border-2 border-graphite-700/60">
         <AvatarImage src={person.avatar} alt={person.name} />
         <AvatarFallback className="bg-gunmetal-900/80">
           {person.name.split(' ').map(n => n[0]).join('')}
@@ -19,9 +19,9 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ person }) => {
       </Avatar>
       
       <div>
-        <h4 className="font-bold text-titanium-white text-lg">{person.name}</h4>
+        <h4 className="font-bold text-titanium-white text-sm">{person.name}</h4>
         <p className={cn(
-          "text-sm font-mono",
+          "text-xs font-mono",
           person.group === 'team' ? 'text-logo-blue' :
           person.group === 'advisor' ? 'text-quantum-red' : 'text-plasma-violet'
         )}>
