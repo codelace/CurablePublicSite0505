@@ -11,6 +11,7 @@ export const MobileNav = () => {
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
   const [productsOpen, setProductsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   return (
     <Sheet>
@@ -30,24 +31,38 @@ export const MobileNav = () => {
           
           <div className="flex-1 overflow-auto p-4">
             <nav className="flex flex-col space-y-4">
-              <Link 
-                to="/about" 
-                className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/about') ? 'text-plasma-violet' : 'text-titanium-white'}`}
-              >
-                ABOUT
-              </Link>
-              <Link 
-                to="/whitepaper" 
-                className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/whitepaper') ? 'text-plasma-violet' : 'text-titanium-white'}`}
-              >
-                WHITEPAPER
-              </Link>
-              <Link 
-                to="/tokenomics" 
-                className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/tokenomics') ? 'text-plasma-violet' : 'text-titanium-white'}`}
-              >
-                TOKENOMICS
-              </Link>
+              <div className="border-b border-graphite-700/40">
+                <button 
+                  onClick={() => setAboutOpen(!aboutOpen)}
+                  className="w-full flex items-center justify-between text-base font-bold py-3 text-titanium-white"
+                >
+                  ABOUT
+                  <ChevronDown className={`w-4 h-4 transition-transform ${aboutOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {aboutOpen && (
+                  <div className="pb-3 pl-4 space-y-2">
+                    <Link 
+                      to="/about" 
+                      className={`block text-sm py-2 ${isActive('/about') ? 'text-plasma-violet' : 'text-titanium-white/80'}`}
+                    >
+                      About
+                    </Link>
+                    <Link 
+                      to="/whitepaper" 
+                      className={`block text-sm py-2 ${isActive('/whitepaper') ? 'text-plasma-violet' : 'text-titanium-white/80'}`}
+                    >
+                      Whitepaper
+                    </Link>
+                    <Link 
+                      to="/tokenomics" 
+                      className={`block text-sm py-2 ${isActive('/tokenomics') ? 'text-plasma-violet' : 'text-titanium-white/80'}`}
+                    >
+                      Tokenomics
+                    </Link>
+                  </div>
+                )}
+              </div>
+              
               <Link 
                 to="/poetry" 
                 className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/poetry') ? 'text-plasma-violet' : 'text-titanium-white'}`}
