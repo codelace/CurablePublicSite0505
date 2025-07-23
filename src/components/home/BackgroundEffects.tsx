@@ -7,9 +7,9 @@ const BackgroundEffects: React.FC = () => {
     <>
       {/* Performance-optimized quantum background system */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-      {/* Enhanced quantum rainbow background system */}
-        <div className="absolute inset-0 opacity-6">
-          <div className="w-full h-full bg-[radial-gradient(circle_at_20%_30%,hsl(var(--quantum-cyan))_1px,transparent_1px),radial-gradient(circle_at_80%_70%,hsl(var(--quantum-purple))_1px,transparent_1px),radial-gradient(circle_at_60%_40%,hsl(var(--quantum-emerald))_1px,transparent_1px)] bg-[length:120px_120px,140px_140px,100px_100px] animate-pulse"></div>
+      {/* Minimal quantum background system - reduced dots */}
+        <div className="absolute inset-0 opacity-3">
+          <div className="w-full h-full bg-[radial-gradient(circle_at_30%_70%,hsl(var(--quantum-cyan))_1px,transparent_1px)] bg-[length:200px_200px] animate-pulse"></div>
         </div>
         
         {/* Rich multi-layered quantum rainbow gradients */}

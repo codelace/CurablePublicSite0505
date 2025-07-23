@@ -40,37 +40,37 @@ const About = () => {
 
   return (
     <div className="w-full relative min-h-screen bg-dark-base">
-      {/* Revolutionary Background System */}
+      {/* Simplified Background System */}
       <AboutBackgroundEffects />
       
       {/* Main Content Container */}
       <div className="relative z-10">
-        {/* Hero Section */}
-        <section className="pt-[80px] pb-20">
-          <div className="container mx-auto px-4 max-w-7xl">
-            <div className={`transition-all duration-1000 ${animatedSections.includes('mission-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+        {/* Hero Section - Simplified */}
+        <section className="pt-[100px] pb-16">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className={`transition-all duration-700 ${animatedSections.includes('mission-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <AboutHero />
             </div>
           </div>
         </section>
 
-        {/* Values Section */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4 max-w-7xl">
-            <div className={`transition-all duration-1000 delay-300 ${animatedSections.includes('values-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+        {/* Values Section - Cleaner */}
+        <section className="py-16 relative">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className={`transition-all duration-700 ${animatedSections.includes('values-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <ValuesSection 
                 isVisible={animatedSections.includes('values-section')} 
-                hoveredValue={hoveredValue} 
-                setHoveredValue={setHoveredValue} 
+                hoveredValue={null} 
+                setHoveredValue={() => {}} 
               />
             </div>
           </div>
         </section>
 
-        {/* Team Section */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4 max-w-7xl">
-            <div className={`transition-all duration-1000 delay-500 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+        {/* Team Section - Simplified */}
+        <section className="py-16 relative">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className={`transition-all duration-700 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <TeamSection 
                 isVisible={animatedSections.includes('team-section')}
               />
@@ -78,26 +78,24 @@ const About = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4 max-w-7xl">
-            <div className={`transition-all duration-1000 delay-700 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
-              {/* Enhanced FAQ Header */}
-              <div className="text-center mb-16">
-                <div className="mb-6">
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-poppins font-bold mb-4">
-                    Frequently Asked <span className="holographic-text bg-gradient-to-r from-quantum-red via-warm-rose to-logo-blue bg-clip-text text-transparent">Questions</span>
-                  </h2>
-                  <div className="w-24 h-1 bg-gradient-to-r from-quantum-red to-logo-blue mx-auto mb-6"></div>
-                </div>
-                <p className="text-xl text-foreground/80 max-w-4xl mx-auto leading-relaxed font-poppins">
-                  Everything you need to know about our revolutionary decentralized science platform
+        {/* FAQ Section - Cleaner Design */}
+        <section className="py-16 relative">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className={`transition-all duration-700 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              {/* Simplified FAQ Header */}
+              <div className="text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-4 text-white">
+                  Frequently Asked <span className="bg-gradient-to-r from-quantum-cyan to-quantum-purple bg-clip-text text-transparent">Questions</span>
+                </h2>
+                <div className="w-20 h-1 bg-gradient-to-r from-quantum-cyan to-quantum-purple mx-auto mb-6"></div>
+                <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed font-poppins">
+                  Everything you need to know about our decentralized science platform
                 </p>
               </div>
 
-              {/* Enhanced FAQ Grid */}
-              <div className="max-w-6xl mx-auto">
-                <div className="grid gap-6 md:gap-8">
+              {/* Clean FAQ Grid */}
+              <div className="max-w-5xl mx-auto">
+                <div className="grid gap-4 md:gap-6">
                   {[
                     {
                       question: "What is Curable Labs?",
@@ -134,26 +132,15 @@ const About = () => {
                   ].map((faq, index) => (
                     <div 
                       key={index} 
-                      className="card-quantum-optimized magnetic-attraction-optimized bg-brand-charcoal/60 backdrop-blur-lg border border-quantum-red/30 rounded-2xl p-6 sm:p-8 shadow-xl shadow-quantum-red/20 hover:shadow-quantum-red/40 hover:border-quantum-red/50 transition-all duration-500 group"
-                      style={{ transitionDelay: `${index * 100}ms` }}
+                      className="bg-brand-charcoal/40 backdrop-blur-sm border border-quantum-cyan/20 rounded-xl p-6 transition-all duration-300 hover:border-quantum-cyan/40 hover:bg-brand-charcoal/60"
                     >
-                      {/* Quantum background effects */}
-                      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
-                        <div className="neural-network-optimized opacity-5">
-                          <div className="neural-node-optimized"></div>
-                          <div className="neural-node-optimized"></div>
-                        </div>
-                      </div>
-                      
-                      <div className="relative z-10">
-                        <h3 className="text-xl sm:text-2xl font-poppins font-bold text-foreground mb-4 holographic-text group-hover:text-quantum-red transition-colors duration-300">
-                          {faq.question}
-                        </h3>
-                        <div className="w-16 h-0.5 bg-gradient-to-r from-quantum-red to-transparent mb-4 group-hover:w-24 transition-all duration-300"></div>
-                        <p className="text-foreground/90 leading-relaxed font-poppins text-lg">
-                          {faq.answer}
-                        </p>
-                      </div>
+                      <h3 className="text-xl font-poppins font-semibold text-white mb-3">
+                        {faq.question}
+                      </h3>
+                      <div className="w-12 h-0.5 bg-gradient-to-r from-quantum-cyan to-quantum-purple mb-3"></div>
+                      <p className="text-foreground/90 leading-relaxed font-poppins">
+                        {faq.answer}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -162,9 +149,9 @@ const About = () => {
           </div>
         </section>
 
-        {/* Call to Action Section */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4 max-w-7xl">
+        {/* Call to Action Section - Simplified */}
+        <section className="py-16 relative">
+          <div className="container mx-auto px-4 max-w-6xl">
             <AboutCallToAction isVisible={animatedSections.includes('team-section')} />
           </div>
         </section>

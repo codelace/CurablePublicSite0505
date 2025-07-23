@@ -21,46 +21,49 @@ const AboutHero = () => {
     '🧬 Gene sequence analysis complete'
   ]);
   
-  // Simple staggered animation with faster timing for less scrolling
+  // Simplified animation - no staggered delays
   useEffect(() => {
-    const elements = ['header', 'ticker', 'mission', 'features', 'cta'];
+    const timer = setTimeout(() => {
+      setDisplayedElements(['header', 'ticker', 'mission', 'features', 'cta']);
+    }, 200);
     
-    const showElements = async () => {
-      for (const element of elements) {
-        await new Promise(resolve => setTimeout(resolve, 120)); // Reduced delay
-        setDisplayedElements(prev => [...prev, element]);
-      }
-    };
-    
-    showElements();
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="relative z-10 w-full overflow-visible">
-      {/* Background effects */}
+      {/* Simplified Background effects */}
       <HeroBackgroundEffects />
       
-      {/* Header component */}
-      <HeroHeader isVisible={displayedElements.includes('header')} />
+      {/* Clean header component */}
+      <div className={`transition-all duration-500 ${displayedElements.includes('header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+        <HeroHeader isVisible={displayedElements.includes('header')} />
+      </div>
       
-      {/* Status panel with ticker */}
-      <StatusPanel 
-        isVisible={displayedElements.includes('ticker')} 
-        items={tickerItems} 
-      />
+      {/* Status panel without complex animations */}
+      <div className={`transition-all duration-500 ${displayedElements.includes('ticker') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+        <StatusPanel 
+          isVisible={displayedElements.includes('ticker')} 
+          items={tickerItems} 
+        />
+      </div>
       
       {/* Mission statement panel */}
-      <div className={`transform transition-all duration-700 ${displayedElements.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <div className={`transition-all duration-500 ${displayedElements.includes('mission') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         <MissionPanel />
       </div>
       
-      {/* Feature badges with smaller spacing */}
-      <div className="my-4">
-        <FeatureBadges isVisible={displayedElements.includes('features')} />
+      {/* Feature badges - simplified */}
+      <div className="my-6">
+        <div className={`transition-all duration-500 ${displayedElements.includes('features') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <FeatureBadges isVisible={displayedElements.includes('features')} />
+        </div>
       </div>
       
-      {/* CTA section (mobile or desktop) */}
-      <CTASection isVisible={displayedElements.includes('cta')} />
+      {/* CTA section - clean */}
+      <div className={`transition-all duration-500 ${displayedElements.includes('cta') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+        <CTASection isVisible={displayedElements.includes('cta')} />
+      </div>
     </div>
   );
 };
