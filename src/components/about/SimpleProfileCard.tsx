@@ -8,6 +8,7 @@ interface SimpleProfileCardProps {
 }
 
 const SimpleProfileCard: React.FC<SimpleProfileCardProps> = memo(({ person }) => {
+  console.log('SimpleProfileCard rendering for:', person?.name);
   const [imageLoaded, setImageLoaded] = useState(false);
 
   // Simple styling maps

@@ -1,12 +1,15 @@
 import React, { memo } from 'react';
 import { people } from '@/data/people';
-import SimpleProfileCard from './SimpleProfileCard';
+import MinimalProfileCard from './MinimalProfileCard';
 
 interface SimpleTeamSectionProps {
   isVisible: boolean;
 }
 
 const SimpleTeamSection: React.FC<SimpleTeamSectionProps> = memo(({ isVisible }) => {
+  console.log('SimpleTeamSection rendering...', isVisible);
+  console.log('people data:', people);
+  console.log('MinimalProfileCard:', MinimalProfileCard);
   if (!isVisible) return null;
 
   // Simple sorting - no complex logic
@@ -31,7 +34,7 @@ const SimpleTeamSection: React.FC<SimpleTeamSectionProps> = memo(({ isVisible })
       {/* Simple Grid - No animations, instant load */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {sortedPeople.map((person) => (
-          <SimpleProfileCard key={person.id} person={person} />
+          <MinimalProfileCard key={person.id} person={person} />
         ))}
       </div>
 
