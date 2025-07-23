@@ -1,12 +1,8 @@
 
-import React, { memo, useState } from 'react';
-import AboutHero from '@/components/about/AboutHero';
-import SimpleTeamSection from '@/components/about/SimpleTeamSection';
+import React, { memo } from 'react';
 
 const About = memo(() => {
-  console.log('About component rendering...');
-  console.log('AboutHero:', AboutHero);
-  console.log('SimpleTeamSection:', SimpleTeamSection);
+  console.log('About component rendering - no imports...');
   
   return (
     <div className="w-full relative min-h-screen bg-dark-base about-page hw-accelerated">
