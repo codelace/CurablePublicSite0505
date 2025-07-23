@@ -3,6 +3,7 @@
 @import './styles/utilities.css';
 @import './styles/base.css';
 @import './styles/components.css';
+@import './styles/enhanced-components.css';
 @import './styles/brand-enhancements.css';
 @import './styles/advanced-effects.css';
 @import './styles/premium-interactions.css';
@@ -41,13 +42,19 @@
   --chart-5: 27 87% 67%;
   --radius: 0.5rem;
 
-  /* Brand colors */
+  /* Brand colors - Enhanced palette */
   --logo-blue: 210 98% 78%;
   --warm-rose: 354 83% 74%;
   --warm-amber: 43 96% 56%;
   --warm-coral: 14 91% 73%;
   --plasma-violet: 271 91% 65%;
   --quantum-red: 348 100% 60%;
+  
+  /* Biotech accent colors */
+  --bio-cyan: 189 94% 71%;
+  --bio-emerald: 158 64% 52%;
+  --bio-violet: 271 81% 56%;
+  --neural-pink: 322 84% 64%;
 
   /* Grays and surfaces */
   --gunmetal-900: 224 15% 12%;
@@ -69,10 +76,15 @@
   --shadow-glow: 0 0 30px rgba(138, 180, 248, 0.3);
   --shadow-depth: 0 10px 30px rgba(0, 0, 0, 0.3);
 
-  /* Gradients */
+  /* Enhanced gradients */
   --gradient-warm: linear-gradient(135deg, hsl(354 83% 74%), hsl(43 96% 56%));
   --gradient-cool: linear-gradient(135deg, hsl(210 98% 78%), hsl(271 91% 65%));
+  --gradient-biotech: linear-gradient(135deg, hsl(189 94% 71%), hsl(158 64% 52%), hsl(271 81% 56%));
+  --gradient-neural: linear-gradient(135deg, hsl(322 84% 64%), hsl(271 91% 65%), hsl(210 98% 78%));
   --gradient-radial: radial-gradient(circle at center, var(--color-start) 0%, var(--color-end) 100%);
+  --gradient-mesh: radial-gradient(at 40% 20%, hsl(var(--quantum-red) / 0.3) 0px, transparent 50%),
+                   radial-gradient(at 80% 0%, hsl(var(--logo-blue) / 0.3) 0px, transparent 50%),
+                   radial-gradient(at 0% 50%, hsl(var(--plasma-violet) / 0.3) 0px, transparent 50%);
 
   /* Transitions */
   --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -102,7 +114,7 @@
   --ring: 210 98% 78%;
 }
 
-/* Base font and typography */
+/* Enhanced Typography System */
 * {
   border-color: hsl(var(--border));
 }
@@ -114,6 +126,46 @@ body {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+}
+
+/* Typography Scale */
+.text-display {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  background: var(--gradient-cool);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-headline {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-body-large {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.text-caption {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 500;
+  opacity: 0.8;
 }
 
 /* Scrollbar styles */

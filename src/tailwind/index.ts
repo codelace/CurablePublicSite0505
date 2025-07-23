@@ -14,18 +14,33 @@ export const themeExtensions = {
   screens,
   colors: {
     ...colors,
-    // Additional brand colors for enhanced theming
-    'brand-gradient': 'linear-gradient(135deg, hsl(var(--quantum-red)), hsl(var(--warm-rose)))',
-    'biotech-glow': 'hsl(var(--quantum-red) / 0.3)',
+    // Enhanced biotech color palette
+    'bio-cyan': 'hsl(var(--bio-cyan))',
+    'bio-emerald': 'hsl(var(--bio-emerald))',
+    'bio-violet': 'hsl(var(--bio-violet))',
+    'neural-pink': 'hsl(var(--neural-pink))',
   },
   fontFamily: {
     ...typography.fontFamily,
     poppins: ['Poppins', 'sans-serif'],
+    display: ['Inter', 'system-ui', 'sans-serif'],
+    body: ['Inter', 'system-ui', 'sans-serif'],
   },
   backgroundImage: {
     ...backgroundImages,
-    'quantum-gradient': 'linear-gradient(135deg, hsl(var(--quantum-red)), hsl(var(--warm-rose)), hsl(var(--logo-blue)))',
-    'biotech-mesh': 'radial-gradient(circle at 25% 25%, hsl(var(--quantum-red) / 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, hsl(var(--logo-blue) / 0.1) 0%, transparent 50%)',
+    'gradient-warm': 'var(--gradient-warm)',
+    'gradient-cool': 'var(--gradient-cool)',
+    'gradient-biotech': 'var(--gradient-biotech)',
+    'gradient-neural': 'var(--gradient-neural)',
+    'gradient-mesh': 'var(--gradient-mesh)',
+    'noise': 'var(--bg-noise)',
+  },
+  boxShadow: {
+    'glow': 'var(--shadow-glow)',
+    'warm': 'var(--shadow-warm)',
+    'depth': 'var(--shadow-depth)',
+    'neural': '0 0 40px hsl(var(--neural-pink) / 0.3)',
+    'biotech': '0 0 30px hsl(var(--bio-cyan) / 0.2)',
   },
   borderRadius,
   keyframes: {
@@ -38,11 +53,23 @@ export const themeExtensions = {
       '0%, 100%': { boxShadow: '0 0 20px hsl(var(--quantum-red) / 0.3)' },
       '50%': { boxShadow: '0 0 40px hsl(var(--quantum-red) / 0.6)' },
     },
+    'neural-wave': {
+      '0%': { backgroundPosition: '0% 50%' },
+      '50%': { backgroundPosition: '100% 50%' },
+      '100%': { backgroundPosition: '0% 50%' },
+    },
+    'mesh-drift': {
+      '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
+      '33%': { transform: 'translate(30px, -30px) rotate(120deg)' },
+      '66%': { transform: 'translate(-20px, 20px) rotate(240deg)' },
+    },
   },
   animation: {
     ...animations,
     'quantum-pulse': 'quantum-pulse 2s ease-in-out infinite',
     'biotech-glow': 'biotech-glow 3s ease-in-out infinite',
+    'neural-wave': 'neural-wave 8s ease-in-out infinite',
+    'mesh-drift': 'mesh-drift 20s ease-in-out infinite',
   },
   rotate,
 };

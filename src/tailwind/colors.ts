@@ -34,23 +34,27 @@ export const colors = {
     DEFAULT: 'hsl(var(--card))',
     foreground: 'hsl(var(--card-foreground))'
   },
-  // Custom colors
-  "stealth-black": "#050505",
-  "gunmetal-900": "#101418",
-  "graphite-700": "#272C33",
-  "arc-blue": "#1EAEDB", // Logo blue
-  "quantum-red": "0 100% 67%", // Brand guideline primary red #ff5757
-  "plasma-violet": "258 100% 69%",
-  "titanium-white": "#E8F1F9",
-  "brand-charcoal": "213 40% 19%", // Brand guideline charcoal blue #1d2f42
-  "logo-blue": "#1EAEDB", // Logo blue as a separate color,
+  // Custom colors - All HSL format for consistency
+  "stealth-black": "240 5% 2%",
+  "gunmetal-900": "hsl(var(--gunmetal-900))",
+  "gunmetal-800": "hsl(var(--gunmetal-800))",
+  "gunmetal-700": "hsl(var(--gunmetal-700))",
+  "graphite-900": "hsl(var(--graphite-900))",
+  "graphite-800": "hsl(var(--graphite-800))",
+  "graphite-700": "hsl(var(--graphite-700))",
+  "arc-blue": "hsl(var(--arc-blue))",
+  "logo-blue": "hsl(var(--logo-blue))",
+  "quantum-red": "hsl(var(--quantum-red))",
+  "plasma-violet": "hsl(var(--plasma-violet))",
+  "titanium-white": "hsl(var(--titanium-white))",
+  "brand-charcoal": "213 40% 19%",
   "bio-blue": "203 71% 64%",
   "bio-green": "135 69% 67%",
   "bio-violet": "277 68% 75%",
-  "dark-base": "#0E0E10",
-  "dark-surface": "#1A1A1E",
+  "dark-base": "hsl(var(--dark-base))",
+  "dark-surface": "hsl(var(--dark-surface))",
   // Warmer colors for magnetic feel
-  "warm-amber": "#FF9E2C", 
-  "warm-coral": "#FF6B6B",
-  "warm-rose": "#FF4676",
+  "warm-amber": "hsl(var(--warm-amber))",
+  "warm-coral": "hsl(var(--warm-coral))",
+  "warm-rose": "hsl(var(--warm-rose))",
 };

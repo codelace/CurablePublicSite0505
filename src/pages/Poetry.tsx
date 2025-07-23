@@ -74,7 +74,7 @@ const Poetry = () => {
       <div className="fixed top-0 left-0 w-96 h-96 rounded-full bg-warm-amber/5 blur-3xl opacity-30 animate-pulse" />
       <div className="fixed bottom-0 right-0 w-96 h-96 rounded-full bg-warm-coral/5 blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
 
-      {/* Title Section */}
+      {/* Enhanced Title Section */}
       <AnimatePresence>
         {showTitle && (
           <motion.div 
@@ -84,79 +84,69 @@ const Poetry = () => {
             transition={{ duration: 0.8 }}
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20"
           >
-            <Card className="glass-panel p-8 bg-brand-charcoal/40 border-quantum-red/30 shadow-lg shadow-quantum-red/20">
-              <h1 className="text-5xl font-poppins mb-4 text-white">
+            <div className="card-glass p-12 shadow-glow">
+              <h1 className="text-display text-gradient-biotech mb-6 animate-fade-in-up">
                 Poetry Sanctuary
               </h1>
-              <p className="text-lg text-foreground/70 font-poppins">
+              <p className="text-body-large text-foreground/80 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                 Where science meets soul, healing finds voice
               </p>
-            </Card>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Main Content */}
       <div className="relative z-10 min-h-screen p-8">
-        {/* Controls - More visible when haiku is active */}
+        {/* Enhanced Controls */}
         <div className={`fixed top-24 left-8 right-8 z-30 transition-all duration-500 ${currentHaiku ? 'opacity-100 scale-100' : 'opacity-60 scale-95 pointer-events-none'}`}>
-          <Card className={`glass-panel p-4 border-2 transition-all duration-300 ${currentHaiku ? 'bg-brand-charcoal/60 border-quantum-red/40 shadow-lg shadow-quantum-red/20' : 'bg-brand-charcoal/40 border-titanium-white/10'}`}>
+          <div className={`card-glass p-6 transition-all duration-300 ${currentHaiku ? 'shadow-biotech' : 'shadow-md'}`}>
             <div className="flex flex-wrap items-center justify-between gap-4">
               {/* Category Filters */}
               <div className="flex flex-wrap gap-2">
-                <Button
-                  variant={selectedCategory === null ? "default" : "outline"}
-                  size="sm"
+                <button
                   onClick={() => setSelectedCategory(null)}
-                  className="text-xs"
+                  className={`btn-ghost text-xs ${selectedCategory === null ? 'btn-primary' : ''}`}
                 >
                   All ({haikus.length})
-                </Button>
+                </button>
                 {categories.map(category => (
-                  <Button
+                  <button
                     key={category}
-                    variant={selectedCategory === category ? "default" : "outline"}
-                    size="sm"
                     onClick={() => setSelectedCategory(category)}
-                    className="text-xs capitalize"
+                    className={`btn-ghost text-xs capitalize ${selectedCategory === category ? 'btn-primary' : ''}`}
                   >
                     {category} ({haikus.filter(h => h.category === category).length})
-                  </Button>
+                  </button>
                 ))}
               </div>
 
-              {/* Action Buttons - More prominent when active */}
+              {/* Action Buttons */}
               <div className="flex items-center gap-2">
-                <Button
-                  variant={currentHaiku ? "default" : "outline"}
-                  size="sm"
+                <button
                   onClick={() => setIsAutoPlay(!isAutoPlay)}
-                  className={`flex items-center gap-2 transition-all ${currentHaiku ? 'bg-quantum-red/20 border-quantum-red/50 hover:bg-quantum-red/30' : ''}`}
+                  className={`btn-magnetic flex items-center gap-2 text-xs ${currentHaiku ? 'btn-primary' : 'btn-secondary'}`}
                 >
                   {isAutoPlay ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                   {isAutoPlay ? 'Pause' : 'Auto-Play'}
-                </Button>
-                <Button
-                  variant={currentHaiku ? "default" : "outline"}
-                  size="sm"
+                </button>
+                <button
                   onClick={showRandomHaiku}
-                  className={`flex items-center gap-2 transition-all ${currentHaiku ? 'bg-logo-blue/20 border-logo-blue/50 hover:bg-logo-blue/30' : ''}`}
+                  className={`btn-magnetic flex items-center gap-2 text-xs ${currentHaiku ? 'btn-primary' : 'btn-secondary'}`}
                 >
                   <Shuffle className="w-4 h-4" />
                   {currentHaiku ? 'Next' : 'Random'}
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
+                </button>
+                <button
                   onClick={() => setCurrentHaiku(null)}
-                  className={`flex items-center gap-2 transition-all ${currentHaiku ? 'opacity-100' : 'opacity-50'}`}
+                  className={`btn-ghost flex items-center gap-2 text-xs ${currentHaiku ? 'opacity-100' : 'opacity-50'}`}
                 >
                   <RotateCcw className="w-4 h-4" />
                   Clear
-                </Button>
+                </button>
               </div>
             </div>
-          </Card>
+          </div>
         </div>
 
         {/* Haiku Display */}
@@ -171,44 +161,45 @@ const Poetry = () => {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-2xl w-full"
               >
-                <Card className="glass-panel p-12 bg-brand-charcoal/40 border-quantum-red/20 text-center shadow-lg shadow-quantum-red/10">
-                  <div className="space-y-6">
+                <div className="card-glass p-16 text-center shadow-neural animate-scale-in">
+                  <div className="space-y-8">
                     {/* Haiku Lines */}
-                    <div className="space-y-4">
+                    <div className="space-y-6">
                       {currentHaiku.lines.map((line, index) => (
                         <motion.div
                           key={index}
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.3, duration: 0.5 }}
-                          className="text-2xl md:text-3xl font-poppins text-foreground leading-relaxed"
+                          className="text-headline text-gradient-biotech leading-relaxed animate-fade-in-up"
+                          style={{ animationDelay: `${index * 0.3}s` }}
                         >
                           {line}
                         </motion.div>
                       ))}
                     </div>
 
-                    {/* Metadata */}
+                    {/* Enhanced Metadata */}
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 1, duration: 0.5 }}
-                      className="flex flex-col items-center gap-3 pt-6 border-t border-titanium-white/10"
+                      className="flex flex-col items-center gap-4 pt-8 border-t border-foreground/10"
                     >
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-4">
                         <Badge 
                           variant="outline" 
-                          className={`${getCategoryColor(currentHaiku.category)} font-mono text-xs`}
+                          className={`${getCategoryColor(currentHaiku.category)} font-mono text-xs px-3 py-1`}
                         >
                           {currentHaiku.category}
                         </Badge>
-                        <span className="text-titanium-white/40 text-sm">
+                        <span className="text-body text-foreground/60">
                           {currentHaiku.theme}
                         </span>
                       </div>
                     </motion.div>
                   </div>
-                </Card>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
