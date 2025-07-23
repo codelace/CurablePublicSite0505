@@ -100,6 +100,14 @@
   --shadow-depth: 0 10px 30px rgba(0, 0, 0, 0.3);
 
   /* Enhanced quantum rainbow gradients with glassmorphic appeal */
+  --gradient-quantum-primary: linear-gradient(135deg, hsl(var(--quantum-cyan)), hsl(var(--quantum-purple)), hsl(var(--quantum-emerald)), hsl(var(--quantum-sapphire)));
+  --gradient-quantum-secondary: linear-gradient(135deg, hsl(var(--quantum-emerald)), hsl(var(--quantum-mint)), hsl(var(--quantum-teal)), hsl(var(--quantum-violet)));
+  --gradient-quantum-accent: linear-gradient(135deg, hsl(var(--quantum-amber)), hsl(var(--quantum-rose)), hsl(var(--quantum-violet)), hsl(var(--quantum-indigo)));
+  --gradient-quantum-aurora: linear-gradient(135deg, hsl(var(--quantum-cyan)), hsl(var(--quantum-violet)), hsl(var(--quantum-emerald)), hsl(var(--quantum-sapphire)));
+  --gradient-quantum-spectrum: linear-gradient(135deg, hsl(var(--quantum-cyan)) 0%, hsl(var(--quantum-purple)) 25%, hsl(var(--quantum-emerald)) 50%, hsl(var(--quantum-sapphire)) 75%, hsl(var(--quantum-teal)) 100%);
+  --gradient-quantum-flow: linear-gradient(90deg, hsl(var(--quantum-cyan)), hsl(var(--quantum-purple)), hsl(var(--quantum-emerald)), hsl(var(--quantum-amber)), hsl(var(--quantum-indigo)), hsl(var(--quantum-rose)));
+  --gradient-quantum-mesh: radial-gradient(circle at 30% 30%, hsl(var(--quantum-cyan)) 0%, transparent 50%), radial-gradient(circle at 70% 70%, hsl(var(--quantum-purple)) 0%, transparent 50%), radial-gradient(circle at 50% 90%, hsl(var(--quantum-emerald)) 0%, transparent 50%);
+  --gradient-quantum-subtle: linear-gradient(135deg, hsl(var(--quantum-cyan) / 0.2), hsl(var(--quantum-purple) / 0.15), hsl(var(--quantum-emerald) / 0.2));
   --gradient-warm: linear-gradient(135deg, hsl(354 83% 74%), hsl(43 96% 56%));
   --gradient-cool: linear-gradient(135deg, hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)));
   --gradient-biotech: linear-gradient(135deg, hsl(var(--electric-quantum-blue)), hsl(158 64% 52%), hsl(var(--quantum-red)));
@@ -109,7 +117,6 @@
   --gradient-electric: linear-gradient(135deg, hsl(220 100% 80%), hsl(240 100% 70%), hsl(260 100% 60%));
   --gradient-hero: linear-gradient(135deg, hsl(var(--quantum-red)), hsl(240 100% 75%), hsl(220 100% 85%));
   --gradient-text: linear-gradient(135deg, hsl(220 100% 85%), hsl(240 100% 75%), hsl(260 100% 70%));
-  --gradient-quantum-spectrum: linear-gradient(135deg, hsl(var(--quantum-teal)), hsl(var(--electric-quantum-blue)), hsl(var(--quantum-purple)));
   --gradient-aurora: linear-gradient(135deg, hsl(var(--quantum-cyan)), hsl(var(--electric-quantum-blue)), hsl(var(--quantum-purple)), hsl(var(--quantum-red)));
   --gradient-cosmic: linear-gradient(135deg, hsl(var(--quantum-mint)), hsl(var(--quantum-teal)), hsl(var(--electric-quantum-blue)));
   --gradient-rainbow: linear-gradient(135deg, hsl(var(--quantum-red)), hsl(var(--quantum-orange)), hsl(var(--quantum-amber)), hsl(var(--quantum-lime)), hsl(var(--quantum-teal)), hsl(var(--quantum-cyan)), hsl(var(--quantum-indigo)), hsl(var(--quantum-purple)), hsl(var(--quantum-fuchsia)));

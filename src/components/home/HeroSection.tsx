@@ -63,41 +63,43 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         <div className={`flex flex-wrap justify-center gap-4 sm:gap-6 transition-all duration-700 delay-400 transform ${revealClass('hero-text')}`}>
           <button
             onClick={scrollToContent}
-            className="btn-quantum-enhanced magnetic-attraction group relative px-8 py-4 text-white font-poppins font-bold rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-105 will-change-transform"
+            className="btn-quantum-rainbow magnetic-attraction group relative px-8 py-4 text-white font-poppins font-bold rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-105 will-change-transform"
             style={{
-              background: 'linear-gradient(135deg, #FF5757, #FF7777, #00CCFF, #6699FF)',
+              background: 'linear-gradient(135deg, hsl(var(--quantum-cyan)), hsl(var(--quantum-purple)), hsl(var(--quantum-emerald)), hsl(var(--quantum-sapphire)))',
+              backgroundSize: '300% 300%',
               border: '2px solid rgba(255, 255, 255, 0.2)',
-              boxShadow: '0 4px 20px rgba(255, 87, 87, 0.3), 0 4px 20px rgba(102, 153, 255, 0.2)'
+              boxShadow: '0 4px 20px hsl(var(--quantum-cyan) / 0.3), 0 4px 20px hsl(var(--quantum-purple) / 0.2)',
+              animation: 'rainbow-flow 6s ease-in-out infinite'
             }}
           >
             <div className="relative z-10 flex items-center gap-3">
               <span className="text-lg">Explore Platform</span> 
               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-3 transition-transform will-change-transform" />
             </div>
-            <div className="absolute inset-0 bg-gradient-cosmic opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-quantum-mint/20 via-quantum-amber/20 to-quantum-rose/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </button>
           
           <Link 
             to="/whitepaper"
-            className="magnetic-attraction px-8 py-4 bg-transparent text-white hover:text-white font-poppins font-bold rounded-xl transition-all duration-500 hover:shadow-lg hover:scale-105 will-change-transform backdrop-blur-sm group"
+            className="magnetic-attraction px-8 py-4 text-white font-poppins font-bold rounded-xl transition-all duration-500 hover:shadow-lg hover:scale-105 will-change-transform backdrop-blur-sm group relative overflow-hidden"
             style={{
-              border: '2px solid #77AAFF',
-              background: 'linear-gradient(135deg, transparent, rgba(119, 170, 255, 0.1))',
-              color: '#AACCFF',
-              boxShadow: '0 0 15px rgba(119, 170, 255, 0.3)'
+              border: '2px solid hsl(var(--quantum-emerald) / 0.6)',
+              background: 'linear-gradient(135deg, hsl(var(--quantum-emerald) / 0.1), hsl(var(--quantum-mint) / 0.1), hsl(var(--quantum-teal) / 0.2))',
+              backgroundSize: '300% 300%',
+              boxShadow: '0 4px 20px hsl(var(--quantum-emerald) / 0.3)',
+              animation: 'rainbow-flow 8s ease-in-out infinite reverse'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, #77AAFF, #5588FF)';
-              e.currentTarget.style.color = 'white';
-              e.currentTarget.style.boxShadow = '0 0 25px rgba(119, 170, 255, 0.6)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, hsl(var(--quantum-emerald)), hsl(var(--quantum-mint)), hsl(var(--quantum-teal)))';
+              e.currentTarget.style.boxShadow = '0 8px 30px hsl(var(--quantum-emerald) / 0.4), 0 4px 20px hsl(var(--quantum-mint) / 0.3)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, transparent, rgba(119, 170, 255, 0.1))';
-              e.currentTarget.style.color = '#AACCFF';
-              e.currentTarget.style.boxShadow = '0 0 15px rgba(119, 170, 255, 0.3)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, hsl(var(--quantum-emerald) / 0.1), hsl(var(--quantum-mint) / 0.1), hsl(var(--quantum-teal) / 0.2))';
+              e.currentTarget.style.boxShadow = '0 4px 20px hsl(var(--quantum-emerald) / 0.3)';
             }}
           >
-            <span className="text-lg">Read Whitepaper</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-quantum-sapphire/10 via-quantum-violet/10 to-quantum-amber/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <span className="relative z-10 text-lg">Read Whitepaper</span>
           </Link>
         </div>
       </div>

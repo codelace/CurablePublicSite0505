@@ -13,13 +13,14 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-lg hover:scale-105 quantum-field",
         outline:
-          "border-2 border-quantum-red/50 bg-transparent text-quantum-red hover:bg-quantum-red/10 hover:border-quantum-red hover:shadow-lg hover:shadow-quantum-red/30 backdrop-blur-sm quantum-field",
+          "border-2 border-quantum-cyan/50 bg-transparent text-quantum-cyan hover:bg-quantum-cyan/10 hover:border-quantum-cyan hover:shadow-lg hover:shadow-quantum-cyan/30 backdrop-blur-sm quantum-field",
         secondary:
-          "bg-brand-charcoal text-foreground hover:bg-brand-charcoal/80 shadow-lg shadow-brand-charcoal/20 hover:shadow-brand-charcoal/40 hover:scale-105 quantum-field",
-        ghost: "hover:bg-quantum-red/10 hover:text-quantum-red transition-all duration-300 quantum-field",
-        link: "text-quantum-red underline-offset-4 hover:underline hover:text-quantum-red/80 holographic-text",
-        premium: "bg-gradient-to-r from-quantum-red to-warm-rose text-white shadow-xl shadow-quantum-red/40 hover:shadow-quantum-red/60 hover:scale-105 border border-quantum-red/30 quantum-field",
-        glass: "bg-white/10 text-white border-2 border-white/20 hover:bg-white/20 backdrop-blur-lg shadow-xl hover:scale-105 quantum-field",
+          "btn-quantum-secondary text-white hover:scale-105 quantum-field",
+        ghost: "hover:bg-quantum-purple/10 hover:text-quantum-purple transition-all duration-300 quantum-field",
+        link: "text-quantum-cyan underline-offset-4 hover:underline hover:text-quantum-purple/80 holographic-text",
+        premium: "btn-quantum-rainbow text-white quantum-field",
+        glass: "glass-quantum text-white border-2 border-white/20 hover:bg-white/20 backdrop-blur-lg shadow-xl hover:scale-105 quantum-field",
+        accent: "btn-quantum-accent text-white quantum-field",
       },
       size: {
         default: "h-12 px-6 py-3",

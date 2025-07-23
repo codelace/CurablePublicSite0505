@@ -60,7 +60,7 @@
   transform: translateY(-2px) scale(1.02);
 }
 
-/* Quantum button effects with optimized shadows */
+/* Enhanced quantum button effects with rich color variations */
 .btn-quantum-rainbow {
   background: linear-gradient(135deg, 
     hsl(var(--quantum-cyan)), 
@@ -81,6 +81,44 @@
   box-shadow: 
     0 8px 30px hsl(var(--quantum-cyan) / 0.4),
     0 8px 30px hsl(var(--quantum-purple) / 0.3);
+}
+
+.btn-quantum-secondary {
+  background: linear-gradient(135deg, 
+    hsl(var(--quantum-emerald)), 
+    hsl(var(--quantum-mint)), 
+    hsl(var(--quantum-teal)));
+  background-size: 300% 300%;
+  animation: rainbow-flow 8s ease-in-out infinite reverse;
+  border: 2px solid hsl(var(--quantum-emerald) / 0.6);
+  box-shadow: 0 4px 20px hsl(var(--quantum-emerald) / 0.3);
+  transition: all var(--transition-smooth);
+}
+
+.btn-quantum-secondary:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 
+    0 8px 30px hsl(var(--quantum-emerald) / 0.4),
+    0 4px 20px hsl(var(--quantum-mint) / 0.3);
+}
+
+.btn-quantum-accent {
+  background: linear-gradient(135deg, 
+    hsl(var(--quantum-amber)), 
+    hsl(var(--quantum-rose)), 
+    hsl(var(--quantum-violet)));
+  background-size: 300% 300%;
+  animation: rainbow-flow 7s ease-in-out infinite;
+  border: 2px solid hsl(var(--quantum-amber) / 0.6);
+  box-shadow: 0 4px 20px hsl(var(--quantum-amber) / 0.3);
+  transition: all var(--transition-smooth);
+}
+
+.btn-quantum-accent:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 
+    0 8px 30px hsl(var(--quantum-amber) / 0.4),
+    0 4px 20px hsl(var(--quantum-rose) / 0.3);
 }
 
 @keyframes rainbow-flow {

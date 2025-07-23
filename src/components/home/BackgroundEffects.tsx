@@ -12,10 +12,11 @@ const BackgroundEffects: React.FC = () => {
           <div className="w-full h-full bg-[radial-gradient(circle_at_20%_30%,hsl(var(--quantum-cyan))_1px,transparent_1px),radial-gradient(circle_at_80%_70%,hsl(var(--quantum-purple))_1px,transparent_1px),radial-gradient(circle_at_60%_40%,hsl(var(--quantum-emerald))_1px,transparent_1px)] bg-[length:120px_120px,140px_140px,100px_100px] animate-pulse"></div>
         </div>
         
-        {/* Multi-layered quantum rainbow gradients */}
-        <div className="absolute inset-0 bg-gradient-to-br from-quantum-cyan/4 via-quantum-purple/3 to-quantum-emerald/4"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-quantum-sapphire/3 via-quantum-violet/2 to-quantum-teal/3"></div>
-        <div className="absolute inset-0 bg-gradient-to-bl from-quantum-mint/2 via-quantum-amber/2 to-quantum-rose/3"></div>
+        {/* Rich multi-layered quantum rainbow gradients */}
+        <div className="absolute inset-0 bg-gradient-quantum-primary opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-quantum-secondary opacity-8"></div>
+        <div className="absolute inset-0 bg-gradient-quantum-accent opacity-6"></div>
+        <div className="absolute inset-0 bg-gradient-quantum-subtle opacity-15"></div>
         
         {/* Professional quantum orbs with varied colors */}
         <div className="absolute top-[20%] right-[18%] w-96 h-96 rounded-full bg-gradient-radial from-quantum-cyan/6 to-transparent blur-3xl animate-pulse-glow will-change-transform"></div>
