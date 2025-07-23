@@ -11,7 +11,7 @@ export const haikus: Haiku[] = [
     lines: [
       "Cardinal chaos",
       "Beauty is in the storm's eye",
-      "A molecule muse"
+      "A molecular muse"
     ],
     theme: "Beauty in Complexity",
     category: "philosophy"
