@@ -19,18 +19,18 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
     ? "flex items-center justify-center w-full py-2 rounded-lg text-white font-bold text-xs relative overflow-hidden"
     : "flex items-center justify-center px-3 py-2 rounded-lg text-white font-bold text-xs min-w-[75px] transition-colors duration-300 relative overflow-hidden";
 
-  // Changed to a more visible gunmetal-blue to stand out from the background
+  // Using brand charcoal for a more professional, trustworthy look
   const dnaButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "bg-gradient-to-r from-graphite-700 to-logo-blue/30 hover:from-graphite-700 hover:to-logo-blue/50" 
-    : "bg-gradient-to-r from-graphite-700 to-logo-blue/30 hover:from-graphite-700 hover:to-logo-blue/50 hover:shadow-[0_0_12px_rgba(30,174,219,0.3)] transition-all duration-300"}`;
+    ? "bg-gradient-to-r from-brand-charcoal to-logo-blue/30 hover:from-brand-charcoal hover:to-logo-blue/50" 
+    : "bg-gradient-to-r from-brand-charcoal to-logo-blue/30 hover:from-brand-charcoal hover:to-logo-blue/50 hover:shadow-[0_0_12px_rgba(30,174,219,0.3)] transition-all duration-300"}`;
 
   // Keep other button classes the same
   const joinButtonClasses = `${baseButtonClasses} ${isMobile 
     ? "hover:bg-gradient-to-r hover:from-quantum-red hover:to-logo-blue" 
-    : "hover:bg-gradient-to-r hover:from-quantum-red hover:to-logo-blue hover:shadow-[0_0_12px_hsl(0_74%_55%/0.6)] transition-all duration-300"}`;
+    : "hover:bg-gradient-to-r hover:from-quantum-red hover:to-logo-blue hover:shadow-[0_0_12px_hsl(0_100%_67%/0.6)] transition-all duration-300"}`;
   
   const joinButtonStyle = {
-    backgroundColor: 'hsl(0 74% 55%)'
+    backgroundColor: 'hsl(0 100% 67%)' // Brand guideline primary red
   };
 
   const novelButtonClasses = `${baseButtonClasses} ${isMobile 
