@@ -55,7 +55,7 @@
   
   .card-glass {
     @apply bg-background/60 backdrop-blur-xl border border-border/30
-           rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500
+           rounded-xl shadow-2xl hover:shadow-2xl transition-all duration-500
            relative overflow-hidden;
   }
   
