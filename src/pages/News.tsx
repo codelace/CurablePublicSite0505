@@ -61,7 +61,7 @@ const News = () => {
 
             {/* Main Heading */}
             <h1 className="text-5xl md:text-7xl font-poppins font-bold mb-6">
-              <span className="bg-gradient-to-r from-quantum-red via-brand-charcoal to-logo-blue bg-clip-text text-transparent">
+              <span className="text-white">
                 News & Updates
               </span>
             </h1>
