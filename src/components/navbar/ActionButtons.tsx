@@ -34,8 +34,12 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
   };
 
   const novelButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "bg-electric-quantum-blue hover:bg-gradient-to-r hover:from-electric-quantum-blue hover:to-quantum-electric" 
-    : "bg-electric-quantum-blue hover:bg-gradient-to-r hover:from-electric-quantum-blue hover:to-quantum-electric hover:shadow-[0_0_12px_hsl(240_100%_70%/0.6)] transition-all duration-300"}`;
+    ? "hover:bg-gradient-to-r hover:from-electric-quantum-blue hover:to-quantum-electric" 
+    : "hover:bg-gradient-to-r hover:from-electric-quantum-blue hover:to-quantum-electric hover:shadow-[0_0_12px_hsl(240_100%_70%/0.6)] transition-all duration-300"}`;
+  
+  const novelButtonStyle = {
+    backgroundColor: 'hsl(240 100% 70%)' // Electric quantum blue
+  };
 
   return (
     <div className={containerClasses}>
@@ -88,6 +92,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
       <Link 
         to="/novel" 
         className={`${novelButtonClasses} transition-colors duration-300`}
+        style={novelButtonStyle}
         onMouseEnter={() => setHoveredButton('novel')}
         onMouseLeave={() => setHoveredButton(null)}
       >
