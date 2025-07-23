@@ -45,18 +45,18 @@ const About = () => {
       
       {/* Main Content Container */}
       <div className="relative z-10">
-        {/* Hero Section - Compact */}
-        <section className="pt-[85px] pb-8">
-          <div className="container mx-auto px-4 max-w-7xl">
+        {/* Hero Section - Ultra Compact */}
+        <section className="pt-[75px] pb-4">
+          <div className="container mx-auto px-4 max-w-8xl">
             <div className={`transition-all duration-700 ${animatedSections.includes('mission-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <AboutHero />
             </div>
           </div>
         </section>
 
-        {/* Values Section - Reduced spacing */}
-        <section className="py-8 relative">
-          <div className="container mx-auto px-4 max-w-7xl">
+        {/* Values Section - Minimal spacing */}
+        <section className="py-4 relative">
+          <div className="container mx-auto px-4 max-w-8xl">
             <div className={`transition-all duration-700 ${animatedSections.includes('values-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <ValuesSection 
                 isVisible={animatedSections.includes('values-section')} 
@@ -67,9 +67,9 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team Section - Compact */}
-        <section className="py-8 relative">
-          <div className="container mx-auto px-4 max-w-7xl">
+        {/* Team Section - Minimal spacing */}
+        <section className="py-4 relative">
+          <div className="container mx-auto px-4 max-w-8xl">
             <div className={`transition-all duration-700 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <TeamSection 
                 isVisible={animatedSections.includes('team-section')}
@@ -78,17 +78,17 @@ const About = () => {
           </div>
         </section>
 
-        {/* FAQ Section - Compact and wider layout */}
-        <section className="py-8 relative">
-          <div className="container mx-auto px-4 max-w-7xl">
+        {/* FAQ Section - Minimal spacing and ultra-wide layout */}
+        <section className="py-4 relative">
+          <div className="container mx-auto px-4 max-w-8xl">
             <div className={`transition-all duration-700 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              {/* Compact FAQ Header */}
-              <div className="text-center mb-8">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-3 text-white">
+              {/* Ultra Compact FAQ Header */}
+              <div className="text-center mb-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-poppins font-bold mb-2 text-white">
                   Frequently Asked <span className="bg-gradient-to-r from-quantum-cyan to-quantum-purple bg-clip-text text-transparent">Questions</span>
                 </h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-quantum-cyan to-quantum-purple mx-auto mb-4"></div>
-                <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed font-poppins">
+                <div className="w-16 h-0.5 bg-gradient-to-r from-quantum-cyan to-quantum-purple mx-auto mb-2"></div>
+                <p className="text-base text-foreground/80 max-w-2xl mx-auto leading-relaxed font-poppins">
                   Everything you need to know about our decentralized science platform
                 </p>
               </div>
@@ -157,9 +157,9 @@ const About = () => {
           </div>
         </section>
 
-        {/* Call to Action Section - Simplified */}
-        <section className="py-8 relative">
-          <div className="container mx-auto px-4 max-w-6xl">
+        {/* Call to Action Section - Ultra Compact */}
+        <section className="py-4 relative">
+          <div className="container mx-auto px-4 max-w-8xl">
             <AboutCallToAction isVisible={animatedSections.includes('team-section')} />
           </div>
         </section>
