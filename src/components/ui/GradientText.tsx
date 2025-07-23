@@ -13,7 +13,15 @@ export type GradientVariant =
   | 'blue-purple'
   | 'purple-red'
   | 'green-blue'
-  | 'red-purple';
+  | 'red-purple'
+  | 'rainbow'
+  | 'glassmorphic'
+  | 'orange'
+  | 'rose'
+  | 'emerald'
+  | 'indigo'
+  | 'lime'
+  | 'fuchsia';
 
 export interface GradientTextProps {
   children: React.ReactNode;
@@ -57,6 +65,22 @@ const GradientText = ({
         return 'from-quantum-mint to-quantum-cyan';
       case 'red-purple':
         return 'from-quantum-red to-quantum-purple';
+      case 'rainbow':
+        return 'from-quantum-red via-quantum-orange via-quantum-amber via-quantum-lime via-quantum-teal via-quantum-cyan via-quantum-indigo via-quantum-purple to-quantum-fuchsia';
+      case 'glassmorphic':
+        return 'from-quantum-cyan/80 via-quantum-purple/70 to-quantum-rose/80';
+      case 'orange':
+        return 'from-quantum-orange to-quantum-amber';
+      case 'rose':
+        return 'from-quantum-rose to-quantum-fuchsia';
+      case 'emerald':
+        return 'from-quantum-emerald to-quantum-mint';
+      case 'indigo':
+        return 'from-quantum-indigo to-quantum-purple';
+      case 'lime':
+        return 'from-quantum-lime to-quantum-teal';
+      case 'fuchsia':
+        return 'from-quantum-fuchsia to-quantum-rose';
       default:
         return 'from-quantum-red to-warm-rose';
     }

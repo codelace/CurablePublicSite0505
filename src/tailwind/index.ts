@@ -28,12 +28,18 @@ export const themeExtensions = {
     'electric-quantum-blue': 'hsl(var(--electric-quantum-blue))',
     'quantum-electric': 'hsl(var(--quantum-electric))',
     
-    // Complementary quantum palette for visual richness
+    // Enhanced quantum rainbow palette for visual richness
     'quantum-teal': 'hsl(var(--quantum-teal))',
     'quantum-purple': 'hsl(var(--quantum-purple))',
     'quantum-cyan': 'hsl(var(--quantum-cyan))',
     'quantum-amber': 'hsl(var(--quantum-amber))',
     'quantum-mint': 'hsl(var(--quantum-mint))',
+    'quantum-orange': 'hsl(var(--quantum-orange))',
+    'quantum-rose': 'hsl(var(--quantum-rose))',
+    'quantum-emerald': 'hsl(var(--quantum-emerald))',
+    'quantum-indigo': 'hsl(var(--quantum-indigo))',
+    'quantum-lime': 'hsl(var(--quantum-lime))',
+    'quantum-fuchsia': 'hsl(var(--quantum-fuchsia))',
   },
   fontFamily: {
     ...typography.fontFamily,
@@ -55,6 +61,9 @@ export const themeExtensions = {
     'gradient-quantum-spectrum': 'var(--gradient-quantum-spectrum)',
     'gradient-aurora': 'var(--gradient-aurora)',
     'gradient-cosmic': 'var(--gradient-cosmic)',
+    'gradient-rainbow': 'var(--gradient-rainbow)',
+    'gradient-glassmorphic': 'var(--gradient-glassmorphic)',
+    'gradient-text-rainbow': 'var(--gradient-text-rainbow)',
     'gradient-mesh': 'var(--gradient-mesh)',
     'noise': 'var(--bg-noise)',
   },

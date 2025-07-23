@@ -1,0 +1,114 @@
+@layer components {
+  /* Enhanced Glassmorphic Effects with Quantum Rainbow */
+  .glass-quantum {
+    @apply relative overflow-hidden;
+    background: linear-gradient(135deg, 
+      hsl(var(--quantum-cyan) / 0.15), 
+      hsl(var(--quantum-purple) / 0.1), 
+      hsl(var(--quantum-rose) / 0.12)
+    );
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-quantum::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: var(--gradient-glassmorphic);
+    pointer-events: none;
+  }
+
+  .glass-quantum:hover::before {
+    @apply opacity-30;
+  }
+
+  /* Rainbow gradient text with glassmorphic background */
+  .text-glass-rainbow {
+    @apply relative;
+    background: var(--gradient-text-rainbow);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 300%;
+    animation: rainbow-flow 8s ease-in-out infinite;
+  }
+
+  .text-glass-rainbow::before {
+    content: '';
+    @apply absolute inset-0 -z-10 blur-xl opacity-30;
+    background: var(--gradient-text-rainbow);
+    background-size: 300% 300%;
+    animation: rainbow-flow 8s ease-in-out infinite;
+  }
+
+  /* Enhanced quantum card with rainbow accents */
+  .card-quantum-rainbow {
+    @apply glass-quantum;
+    background: linear-gradient(135deg, 
+      hsl(var(--quantum-cyan) / 0.08), 
+      hsl(var(--quantum-indigo) / 0.06), 
+      hsl(var(--quantum-purple) / 0.08),
+      hsl(var(--quantum-rose) / 0.06)
+    );
+    border-image: linear-gradient(135deg, 
+      hsl(var(--quantum-cyan) / 0.3), 
+      hsl(var(--quantum-purple) / 0.2), 
+      hsl(var(--quantum-rose) / 0.3)
+    ) 1;
+  }
+
+  /* Quantum rainbow button effect */
+  .btn-quantum-rainbow {
+    @apply relative overflow-hidden;
+    background: linear-gradient(135deg, 
+      hsl(var(--quantum-cyan) / 0.2), 
+      hsl(var(--quantum-indigo) / 0.15), 
+      hsl(var(--quantum-purple) / 0.2)
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  .btn-quantum-rainbow::after {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: var(--gradient-rainbow);
+    pointer-events: none;
+  }
+
+  .btn-quantum-rainbow:hover::after {
+    @apply opacity-20;
+  }
+
+  /* Performance optimized animations */
+  @keyframes rainbow-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Glassmorphic floating elements */
+  .glass-orb {
+    @apply absolute rounded-full blur-xl;
+    background: radial-gradient(circle, 
+      hsl(var(--quantum-cyan) / 0.3) 0%, 
+      hsl(var(--quantum-purple) / 0.2) 50%, 
+      transparent 100%
+    );
+    animation: float-glow 6s ease-in-out infinite;
+  }
+
+  @keyframes float-glow {
+    0%, 100% { 
+      transform: translateY(0px) scale(1);
+      opacity: 0.6;
+    }
+    50% { 
+      transform: translateY(-20px) scale(1.1);
+      opacity: 0.8;
+    }
+  }
+}
