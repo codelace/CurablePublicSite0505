@@ -14,10 +14,7 @@ const HeroBackgroundEffects: React.FC = () => {
       <div className="absolute top-3/4 right-1/6 w-64 h-64 rounded-full bg-quantum-purple/8 blur-3xl animate-pulse-glow" style={{animationDelay: "4s"}}></div>
       <div className="absolute top-1/2 left-3/4 w-56 h-56 rounded-full bg-quantum-amber/6 blur-3xl animate-pulse-glow" style={{animationDelay: "6s"}}></div>
       
-      {/* Quantum rainbow mesh pattern */}
-      <div className="absolute inset-0 opacity-6">
-        <div className="w-full h-full bg-[radial-gradient(circle_at_30%_30%,hsl(var(--quantum-cyan))_1px,transparent_1px),radial-gradient(circle_at_70%_70%,hsl(var(--quantum-purple))_1px,transparent_1px)] bg-[length:80px_80px,100px_100px] animate-pulse"></div>
-      </div>
+      {/* Keep quantum rainbow orbs and gradients without mesh dots */}
     </>
   );
 };

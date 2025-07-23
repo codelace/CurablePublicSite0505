@@ -27,10 +27,7 @@ const AboutBackgroundEffects = () => {
         <div className="absolute h-full w-[1px] left-1/3 bg-gradient-to-b from-transparent via-quantum-emerald/30 to-transparent animate-magnetic-flow" style={{animationDelay: "4s"}}></div>
       </div>
       
-      {/* Quantum rainbow dots pattern */}
-      <div className="absolute inset-0 opacity-8">
-        <div className="w-full h-full bg-[radial-gradient(circle_at_25%_25%,hsl(var(--quantum-cyan))_1px,transparent_1px),radial-gradient(circle_at_75%_75%,hsl(var(--quantum-purple))_1px,transparent_1px),radial-gradient(circle_at_50%_90%,hsl(var(--quantum-emerald))_1px,transparent_1px)] bg-[length:100px_100px,120px_120px,80px_80px] animate-pulse"></div>
-      </div>
+      {/* Keep the beautiful quantum rainbow field lines without dots */}
     </div>
   );
 };
