@@ -4,8 +4,9 @@ import AboutHero from '@/components/about/AboutHero';
 import SimpleTeamSection from '@/components/about/SimpleTeamSection';
 
 const About = memo(() => {
-  console.log('About rendering. AboutHero:', AboutHero);
-  console.log('About rendering. SimpleTeamSection:', SimpleTeamSection);
+  console.log('About component rendering...');
+  console.log('AboutHero:', AboutHero);
+  console.log('SimpleTeamSection:', SimpleTeamSection);
   
   return (
     <div className="w-full relative min-h-screen bg-dark-base about-page hw-accelerated">
@@ -16,17 +17,17 @@ const About = memo(() => {
       
       {/* Main Content Container - No animations */}
       <div className="relative z-10">
-        {/* Hero Section */}
+        {/* Test with just a simple div first */}
         <section className="pt-[75px] pb-4">
           <div className="container mx-auto px-4 max-w-8xl">
-            <AboutHero />
+            <div>About Hero Section</div>
           </div>
         </section>
 
         {/* Simple Team Section */}
         <section className="py-4 relative">
           <div className="container mx-auto px-4 max-w-8xl">
-            <SimpleTeamSection isVisible={true} />
+            <div>Team Section</div>
           </div>
         </section>
       </div>
