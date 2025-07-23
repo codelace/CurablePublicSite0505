@@ -56,7 +56,7 @@ export const team: Person[] = [
     role: "Legal & Compliance",
     avatar: "/lovable-uploads/90558286-0ee7-4d4f-b509-691581da1995.png",
     group: "team",
-    bio: "IP, governance, and data decoded.\nLaw student with DAO firepower.\nWhere compliance meets conviction."
+    bio: "IP, governance, and data decoded.\nLaw with DAO firepower.\nWhere compliance meets conviction."
   },
   {
     id: 36,
