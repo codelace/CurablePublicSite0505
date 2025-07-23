@@ -19,6 +19,12 @@ export const themeExtensions = {
     'bio-emerald': 'hsl(var(--bio-emerald))',
     'bio-violet': 'hsl(var(--bio-violet))',
     'neural-pink': 'hsl(var(--neural-pink))',
+    
+    // New molecular blues from branding
+    'molecular-royal': 'hsl(var(--molecular-royal))',
+    'molecular-bright': 'hsl(var(--molecular-bright))',
+    'molecular-deep': 'hsl(var(--molecular-deep))',
+    'molecular-accent': 'hsl(var(--molecular-accent))',
   },
   fontFamily: {
     ...typography.fontFamily,

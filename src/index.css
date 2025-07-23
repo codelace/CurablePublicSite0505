@@ -55,6 +55,12 @@
   --bio-emerald: 158 64% 52%;
   --bio-violet: 271 81% 56%;
   --neural-pink: 322 84% 64%;
+  
+  /* New molecular blues from branding */
+  --molecular-royal: 240 80% 25%;
+  --molecular-bright: 240 100% 65%;
+  --molecular-deep: 250 80% 35%;
+  --molecular-accent: 235 95% 55%;
 
   /* Grays and surfaces */
   --gunmetal-900: 224 15% 12%;
