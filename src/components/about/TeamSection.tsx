@@ -100,7 +100,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
               {sortedPeople.map((person, index) => (
                 <div 
                   key={`team-member-${person.id}`}
-                  className={`magnetic-attraction-optimized transform transition-all duration-1000 
+                  className={`transform transition-all duration-1000 
                             ${revealCards.includes(index) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-90'}`}
                   style={{ 
                     transitionDelay: `${index * 80}ms`,
@@ -114,25 +114,25 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
             {/* Team Stats Footer */}
             <div className="mt-12 pt-8 border-t border-quantum-red/20">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div className="magnetic-attraction-optimized">
+                <div>
                   <div className="text-3xl font-bold text-quantum-red holographic-text mb-2">
                     {people.filter(p => p.group === 'founder').length}
                   </div>
                   <div className="text-foreground/70 font-poppins font-medium">Founders</div>
                 </div>
-                <div className="magnetic-attraction-optimized">
+                <div>
                   <div className="text-3xl font-bold text-logo-blue holographic-text mb-2">
                     {people.filter(p => p.group === 'team').length}
                   </div>
                   <div className="text-foreground/70 font-poppins font-medium">Core Guardians</div>
                 </div>
-                <div className="magnetic-attraction-optimized">
+                <div>
                   <div className="text-3xl font-bold text-plasma-violet holographic-text mb-2">
                     {people.filter(p => p.group === 'advisor').length}
                   </div>
                   <div className="text-foreground/70 font-poppins font-medium">Strategic Advisors</div>
                 </div>
-                <div className="magnetic-attraction-optimized">
+                <div>
                   <div className="text-3xl font-bold text-warm-amber holographic-text mb-2">
                     {people.filter(p => p.group === 'contributor').length}
                   </div>

@@ -34,7 +34,7 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({ isVisible, hoveredValue, 
           {values.map((value, index) => (
             <div 
               key={index}
-              className="magnetic-attraction-optimized transform transition-all duration-300"
+              className="transform transition-all duration-300"
               onMouseEnter={() => setHoveredValue(index)}
               onMouseLeave={() => setHoveredValue(null)}
               style={{ 
