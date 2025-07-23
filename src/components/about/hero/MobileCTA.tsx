@@ -3,7 +3,6 @@ import React from 'react';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import GradientText from '@/components/ui/GradientText';
 
 const MobileCTA: React.FC = () => {
   return (
@@ -21,7 +20,7 @@ const MobileCTA: React.FC = () => {
           <div className="h-full flex flex-col justify-center items-center">
             <div className="text-center mb-10">
               <h3 className="text-2xl font-poppins font-bold mb-3 text-titanium-white">
-                <GradientText variant="multi" animate>Launch Options</GradientText>
+                <span className="bg-gradient-to-r from-quantum-red via-quantum-cyan to-quantum-purple bg-clip-text text-transparent">Launch Options</span>
               </h3>
               <p className="text-titanium-white/80 text-sm">Choose your destination</p>
             </div>

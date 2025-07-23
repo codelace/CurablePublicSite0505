@@ -4,6 +4,9 @@ import AboutHero from '@/components/about/AboutHero';
 import SimpleTeamSection from '@/components/about/SimpleTeamSection';
 
 const About = memo(() => {
+  console.log('About rendering. AboutHero:', AboutHero);
+  console.log('About rendering. SimpleTeamSection:', SimpleTeamSection);
+  
   return (
     <div className="w-full relative min-h-screen bg-dark-base about-page hw-accelerated">
       {/* Minimal Background - No heavy effects */}
