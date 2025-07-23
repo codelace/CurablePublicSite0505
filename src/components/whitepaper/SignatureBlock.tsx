@@ -4,7 +4,7 @@ import { TooltipProvider, TooltipContent, TooltipTrigger, Tooltip } from "@/comp
 
 const SignatureBlock: React.FC = () => {
   return (
-    <div className="font-mono bg-dark-surface/40 border border-graphite-700/40 p-6 rounded mt-12 relative overflow-hidden">
+    <div className="font-mono bg-brand-charcoal/40 border border-quantum-red/40 p-6 rounded-xl mt-12 relative overflow-hidden shadow-lg shadow-quantum-red/20 backdrop-blur-sm">
       {/* Background scan effect */}
       <div className="absolute inset-0 holo-scan pointer-events-none"></div>
       
@@ -24,13 +24,13 @@ const SignatureBlock: React.FC = () => {
         </div>
       </div>
       
-      <div className="text-titanium-white/80 text-sm relative z-10">
+      <div className="text-foreground/80 text-sm relative z-10 font-poppins">
         <div className="text-quantum-red mb-4 glow-text">/*</div>
-        <div className="mb-2 hover:text-titanium-white transition-colors">CurableDAO is a protocol for collective healing.</div>
-        <div className="mb-2 hover:text-titanium-white transition-colors">We, the network, sign this whitepaper in shared pursuit</div>
-        <div className="mb-4 hover:text-titanium-white transition-colors">of decentralized biomedical breakthroughs.</div>
-        <div className="mb-2 hover:text-titanium-white transition-colors">Signed,</div>
-        <div className="text-bio-blue mb-2 glow-text">The CurableDAO Genesis Contributors</div>
+        <div className="mb-2 hover:text-foreground transition-colors">CurableDAO is a protocol for collective healing.</div>
+        <div className="mb-2 hover:text-foreground transition-colors">We, the network, sign this whitepaper in shared pursuit</div>
+        <div className="mb-4 hover:text-foreground transition-colors">of decentralized biomedical breakthroughs.</div>
+        <div className="mb-2 hover:text-foreground transition-colors">Signed,</div>
+        <div className="text-logo-blue mb-2 glow-text">The CurableDAO Genesis Contributors</div>
         <div className="text-quantum-red glow-text">*/</div>
       </div>
       

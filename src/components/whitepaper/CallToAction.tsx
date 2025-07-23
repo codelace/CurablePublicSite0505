@@ -28,15 +28,15 @@ const CallToAction: React.FC = () => {
       <div className={`absolute -bottom-0.5 -right-0.5 w-5 h-5 border-b border-r border-quantum-red/60 rounded-br-sm transition-all duration-300 ${hover === 'container' ? 'border-quantum-red w-6 h-6' : ''}`}></div>
       
       <div className="text-center sm:text-left mb-3 sm:mb-0 sm:mr-4">
-        <h3 className="text-lg font-space font-bold mb-1">
-          <GradientText variant="blue-purple">Join the Movement</GradientText>
+        <h3 className="text-lg font-poppins font-bold mb-1">
+          <GradientText variant="red">Join the Movement</GradientText>
         </h3>
-        <p className="text-sm text-titanium-white/70">Contribute to the next generation of decentralized biomedical research</p>
+        <p className="text-sm text-foreground/70 font-poppins">Contribute to the next generation of decentralized biomedical research</p>
       </div>
       
       <div className="flex flex-col sm:flex-row gap-3">
         <Button 
-          className={`bg-quantum-red text-dark-base font-mono font-bold flex items-center gap-2 shadow-[0_0_12px_rgba(255,51,102,0.3)] transition-all duration-300 relative overflow-hidden group btn-hover-effect ${hover === 'fork' ? 'shadow-[0_0_20px_rgba(255,51,102,0.5)] scale-105' : ''}`}
+          className={`bg-quantum-red text-white font-poppins font-bold flex items-center gap-2 shadow-lg shadow-quantum-red/30 transition-all duration-300 relative overflow-hidden group btn-hover-effect premium-hover ${hover === 'fork' ? 'shadow-xl shadow-quantum-red/50 scale-105' : ''}`}
           onMouseEnter={() => setHover('fork')}
           onMouseLeave={() => setHover('container')}
         >
@@ -47,7 +47,7 @@ const CallToAction: React.FC = () => {
         
         <Button 
           variant="outline"
-          className={`bg-transparent border-bio-blue text-bio-blue font-mono flex items-center gap-2 shadow-[0_0_8px_rgba(91,192,235,0.1)] transition-all duration-300 relative overflow-hidden group btn-hover-effect ${hover === 'cite' ? 'shadow-[0_0_15px_rgba(91,192,235,0.3)] scale-105' : ''}`}
+          className={`bg-transparent border-logo-blue text-logo-blue font-poppins flex items-center gap-2 shadow-lg shadow-logo-blue/20 transition-all duration-300 relative overflow-hidden group btn-hover-effect premium-hover ${hover === 'cite' ? 'shadow-xl shadow-logo-blue/40 scale-105' : ''}`}
           onMouseEnter={() => setHover('cite')}
           onMouseLeave={() => setHover('container')}
         >

@@ -12,8 +12,8 @@ const ProfileBio: React.FC<ProfileBioProps> = ({ bio, gptDescription }) => {
   
   if (!description) {
     return (
-      <div className="pt-2 border-t border-graphite-700/30">
-        <p className="text-titanium-white/60 text-sm italic">
+      <div className="pt-2 border-t border-quantum-red/30">
+        <p className="text-foreground/60 text-sm font-poppins italic">
           Profile details coming soon...
         </p>
       </div>
@@ -24,8 +24,8 @@ const ProfileBio: React.FC<ProfileBioProps> = ({ bio, gptDescription }) => {
   const lines = description.split('\n').filter(line => line.trim());
   
   return (
-    <div className="pt-2 border-t border-graphite-700/30">
-      <div className="text-titanium-white/80 text-sm space-y-1 text-left">
+    <div className="pt-2 border-t border-quantum-red/30">
+      <div className="text-foreground/90 text-sm space-y-1 text-left font-poppins">
         {lines.map((line, index) => (
           <p key={index} className="leading-relaxed">
             {line.trim()}

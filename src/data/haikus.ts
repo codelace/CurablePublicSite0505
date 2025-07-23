@@ -64,6 +64,6 @@ export const haikus: Haiku[] = [
       "Beauty binds us all."
     ],
     theme: "Molecular Beauty",
-    category: "science"
+    category: "philosophy"
   }
 ];

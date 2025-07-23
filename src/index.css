@@ -5,6 +5,7 @@
 @import './styles/components.css';
 @import './styles/brand-enhancements.css';
 @import './styles/advanced-effects.css';
+@import './styles/premium-interactions.css';
 
 @tailwind base;
 @tailwind components;

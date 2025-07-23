@@ -1,0 +1,312 @@
+/* Premium Interactive Design Enhancements for Curable Labs */
+
+/* Ultra-sophisticated hover states */
+.premium-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.premium-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    hsl(var(--quantum-red) / 0.2), 
+    transparent);
+  transition: left 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
+}
+
+.premium-hover:hover::before {
+  left: 100%;
+}
+
+.premium-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 20px 40px hsl(var(--quantum-red) / 0.3),
+    0 0 0 1px hsl(var(--quantum-red) / 0.2);
+}
+
+/* Next-level form styling */
+.form-quantum {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-quantum::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    hsl(var(--quantum-red)), 
+    hsl(var(--warm-rose)));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+}
+
+.form-quantum:focus-within::after {
+  width: 100%;
+}
+
+.form-quantum:focus-within {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px hsl(var(--quantum-red) / 0.2);
+}
+
+/* Revolutionary button animations */
+.btn-quantum-pro {
+  position: relative;
+  background: linear-gradient(135deg, 
+    hsl(var(--quantum-red)), 
+    hsl(var(--warm-rose)));
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-quantum-pro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    hsl(var(--warm-rose)), 
+    hsl(var(--logo-blue)));
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-quantum-pro:hover::before {
+  opacity: 1;
+}
+
+.btn-quantum-pro::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translate(-50%, -50%);
+}
+
+.btn-quantum-pro:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Advanced card morphing */
+.card-morph {
+  perspective: 1000px;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-morph:hover {
+  transform: rotateX(5deg) rotateY(5deg) translateZ(20px);
+}
+
+.card-morph::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, 
+    hsl(var(--quantum-red) / 0.1), 
+    hsl(var(--warm-rose) / 0.1), 
+    hsl(var(--logo-blue) / 0.1));
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: inherit;
+}
+
+.card-morph:hover::before {
+  opacity: 1;
+}
+
+/* Quantum text effects */
+.text-quantum-glow {
+  background: linear-gradient(90deg, 
+    hsl(var(--quantum-red)), 
+    hsl(var(--warm-rose)), 
+    hsl(var(--logo-blue)), 
+    hsl(var(--quantum-red)));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: quantum-text-flow 4s linear infinite;
+  text-shadow: 0 0 30px hsl(var(--quantum-red) / 0.5);
+}
+
+@keyframes quantum-text-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* Biotech data visualization */
+.data-visualization {
+  position: relative;
+  background: linear-gradient(135deg, 
+    hsl(var(--brand-charcoal) / 0.9), 
+    hsl(var(--gunmetal-900) / 0.7));
+  border: 1px solid hsl(var(--quantum-red) / 0.3);
+  overflow: hidden;
+}
+
+.data-visualization::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: repeating-linear-gradient(90deg, 
+    transparent, 
+    transparent 98px, 
+    hsl(var(--quantum-red) / 0.1) 100px);
+  animation: data-scan 3s linear infinite;
+}
+
+@keyframes data-scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Enhanced navigation states */
+.nav-quantum {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-quantum::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    hsl(var(--quantum-red) / 0.1), 
+    hsl(var(--warm-rose) / 0.1));
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: inherit;
+}
+
+.nav-quantum:hover::before {
+  opacity: 1;
+}
+
+.nav-quantum::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    hsl(var(--quantum-red)), 
+    hsl(var(--warm-rose)));
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-quantum:hover::after,
+.nav-quantum.active::after {
+  width: 100%;
+}
+
+/* Professional loading animations */
+.loader-quantum {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.loader-quantum::before,
+.loader-quantum::after {
+  content: '';
+  position: absolute;
+  border: 3px solid transparent;
+  border-top: 3px solid hsl(var(--quantum-red));
+  border-radius: 50%;
+  animation: quantum-spin 1.2s linear infinite;
+}
+
+.loader-quantum::before {
+  width: 40px;
+  height: 40px;
+}
+
+.loader-quantum::after {
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  left: 10px;
+  border-top-color: hsl(var(--warm-rose));
+  animation-direction: reverse;
+  animation-duration: 0.8s;
+}
+
+@keyframes quantum-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Advanced shadow system */
+.shadow-quantum-sm {
+  box-shadow: 0 2px 8px hsl(var(--quantum-red) / 0.15);
+}
+
+.shadow-quantum-md {
+  box-shadow: 
+    0 4px 16px hsl(var(--quantum-red) / 0.2),
+    0 2px 4px hsl(var(--quantum-red) / 0.1);
+}
+
+.shadow-quantum-lg {
+  box-shadow: 
+    0 8px 32px hsl(var(--quantum-red) / 0.25),
+    0 4px 8px hsl(var(--quantum-red) / 0.15);
+}
+
+.shadow-quantum-xl {
+  box-shadow: 
+    0 16px 48px hsl(var(--quantum-red) / 0.3),
+    0 8px 16px hsl(var(--quantum-red) / 0.2),
+    0 0 0 1px hsl(var(--quantum-red) / 0.1);
+}
+
+/* Responsive design enhancements */
+@media (max-width: 768px) {
+  .premium-hover:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+  
+  .card-morph:hover {
+    transform: translateZ(10px);
+  }
+}
+
+/* Accessibility enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .premium-hover,
+  .form-quantum,
+  .btn-quantum-pro,
+  .card-morph,
+  .nav-quantum {
+    transition: none;
+  }
+  
+  .premium-hover::before,
+  .btn-quantum-pro::before,
+  .btn-quantum-pro::after,
+  .card-morph::before {
+    animation: none;
+  }
+}
