@@ -44,8 +44,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
               {/* Dynamic background field */}
               <div className="absolute -inset-4 bg-gradient-to-r from-quantum-cyan/10 via-quantum-emerald/15 to-quantum-sapphire/10 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700 scale-110 animate-pulse"></div>
               
-              {/* Quantum field distortion */}
-              <div className="absolute -inset-2 bg-gradient-radial from-transparent via-quantum-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{animationDuration: '20s'}}></div>
               
               <span className="relative font-semibold tracking-wide text-white block" 
                     style={{
