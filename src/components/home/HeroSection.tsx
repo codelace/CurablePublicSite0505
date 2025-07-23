@@ -40,8 +40,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         
         <h1 className={`transition-all duration-700 delay-200 transform ${revealClass('hero-text')}`}>
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-poppins leading-tight tracking-tight mb-2">
-            <span className="text-foreground">Curable</span>
-            <span className="holographic-text"> Labs</span>
+            <span className="text-electric-quantum-blue">Curable</span>
+            <span className="holographic-text text-quantum-electric"> Labs</span>
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-2 text-foreground/90 font-light">
             <GradientText variant="electric" animate>Blueprinting Tomorrow's Cures</GradientText>
@@ -58,13 +58,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         <div className={`flex flex-wrap justify-center gap-4 sm:gap-6 transition-all duration-700 delay-400 transform ${revealClass('hero-text')}`}>
           <button
             onClick={scrollToContent}
-            className="btn-quantum-enhanced magnetic-attraction group relative px-8 py-4 bg-gradient-to-r from-quantum-red to-warm-rose text-white font-poppins font-bold rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-quantum-red/50 hover:scale-105 will-change-transform border border-quantum-red/30"
+            className="btn-quantum-enhanced magnetic-attraction group relative px-8 py-4 bg-gradient-to-r from-electric-quantum-blue to-quantum-electric text-white font-poppins font-bold rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-electric-quantum-blue/50 hover:scale-105 will-change-transform border border-electric-quantum-blue/30"
+            style={{
+              background: 'linear-gradient(135deg, hsl(240, 100%, 70%), hsl(235, 100%, 75%))'
+            }}
           >
             <div className="relative z-10 flex items-center gap-3">
               <span className="text-lg">Explore Platform</span> 
               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-3 transition-transform will-change-transform" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-electric-quantum-blue to-quantum-electric opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-quantum-red to-warm-rose opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
           </button>
           
           <Link 

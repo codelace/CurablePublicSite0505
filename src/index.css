@@ -93,9 +93,9 @@
   --gradient-molecular: linear-gradient(135deg, hsl(var(--molecular-royal)), hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)));
   --gradient-electric: linear-gradient(135deg, hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)), hsl(var(--molecular-bright)));
   --gradient-radial: radial-gradient(circle at center, var(--color-start) 0%, var(--color-end) 100%);
-  --gradient-mesh: radial-gradient(at 40% 20%, hsl(var(--quantum-red) / 0.4) 0px, transparent 50%),
-                   radial-gradient(at 80% 0%, hsl(var(--electric-quantum-blue) / 0.4) 0px, transparent 50%),
-                   radial-gradient(at 0% 50%, hsl(var(--quantum-electric) / 0.3) 0px, transparent 50%);
+  --gradient-mesh: radial-gradient(at 40% 20%, hsl(var(--electric-quantum-blue) / 0.5) 0px, transparent 50%),
+                   radial-gradient(at 80% 0%, hsl(var(--quantum-electric) / 0.4) 0px, transparent 50%),
+                   radial-gradient(at 0% 50%, hsl(var(--quantum-red) / 0.3) 0px, transparent 50%);
 
   /* Transitions */
   --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
