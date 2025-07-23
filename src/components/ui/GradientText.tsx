@@ -59,7 +59,7 @@ const GradientText = ({
   return (
     <span
       className={cn(
-        'bg-gradient-to-r bg-clip-text text-quantum-red font-poppins font-bold [&:not(:hover)]:text-transparent',
+        'bg-gradient-to-r bg-clip-text text-transparent font-poppins font-bold',
         getGradientClasses(),
         shouldAnimate ? 'animate-text-shimmer bg-[length:200%_auto]' : '',
         className
