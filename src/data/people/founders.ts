@@ -15,7 +15,7 @@ export const founders: Person[] = [
     id: 2,
     name: "Pixel Queen",
     role: "Chief Operations Officer",
-    avatar: "/lovable-uploads/84c2f0c6-1a69-4df8-b732-1b895d8d8cf7.png",
+    avatar: "/lovable-uploads/f4c3e2c4-4d31-41fd-a909-bfcbdd39622d.png",
     group: "founder",
     bio: "DeSci architect, systems rebel.\nChemical mind with artistic fire.\nFrom benchtop to blockchain.",
     gptDescription: "Ilyssa is a seasoned technology executive with deep expertise in artificial intelligence and Web3 technologies. She has led the development and scaling of machine learning systems for Fortune 500 companies, with particular focus on healthcare applications. Her background spans AI/ML engineering, distributed systems architecture, and blockchain technology. Ilyssa is instrumental in designing Curable Labs' agentic AI systems and decentralized governance mechanisms that power the platform's drug discovery capabilities."
