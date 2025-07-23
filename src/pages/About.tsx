@@ -1,6 +1,9 @@
 import React from 'react';
 
+console.log('About.tsx: React import:', React);
+
 const About = () => {
+  console.log('About component function executing...');
   return (
     <div className="w-full relative min-h-screen bg-dark-base">
       <div className="relative z-10">
