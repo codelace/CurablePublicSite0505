@@ -14,7 +14,7 @@ export const haikus: Haiku[] = [
       "A molecular muse"
     ],
     theme: "Beauty in Complexity",
-    category: "philosophy"
+    category: "science"
   },
   {
     id: 2,
