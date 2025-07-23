@@ -6,6 +6,7 @@
 @import './styles/brand-enhancements.css';
 @import './styles/advanced-effects.css';
 @import './styles/premium-interactions.css';
+@import './styles/quantum-effects.css';
 
 @tailwind base;
 @tailwind components;

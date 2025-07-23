@@ -82,16 +82,16 @@ const About = () => {
 
         <div className={`transition-all duration-700 delay-300 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'} mb-16`}>
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-poppins font-bold mb-6 text-logo-blue">
+            <h2 className="text-3xl sm:text-4xl font-poppins font-bold mb-6 holographic-text">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-titanium-white/80 max-w-3xl mx-auto leading-relaxed mb-8 font-poppins">
+            <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed mb-8 font-poppins">
               Everything you need to know about Curable Labs' decentralized science platform.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-brand-charcoal/50 backdrop-blur-sm border border-quantum-red/30 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-quantum-red/20 hover:shadow-quantum-red/40 hover:border-quantum-red/50 transition-all duration-500 group">
+            <div className="card-quantum-pro magnetic-attraction quantum-field bg-brand-charcoal/60 backdrop-blur-lg border-2 border-quantum-red/30 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-quantum-red/30 hover:shadow-quantum-red/50 hover:border-quantum-red/50 transition-all duration-500 group">
               <div className="space-y-4">
                 {[
                   {
@@ -127,13 +127,13 @@ const About = () => {
                     answer: "Yes, Curable Labs is actively funding and supporting DeSci projects, especially those that align with its mission of decentralizing drug discovery and accelerating therapeutic innovation."
                   }
                 ].map((faq, index) => (
-                  <div key={index} className="border border-graphite-700/40 rounded-lg bg-brand-charcoal/30 hover:bg-brand-charcoal/50 hover:border-quantum-red/30 transition-all duration-300">
+                  <div key={index} className="magnetic-attraction card-quantum-pro border-2 border-quantum-red/30 rounded-xl bg-brand-charcoal/40 hover:bg-brand-charcoal/60 hover:border-quantum-red/50 transition-all duration-300 shadow-lg shadow-quantum-red/20">
                     <div className="px-6 py-4">
-                      <h3 className="text-lg font-poppins font-semibold text-titanium-white mb-3 text-logo-blue">
+                      <h3 className="text-lg font-poppins font-semibold text-foreground mb-3 holographic-text">
                         {faq.question}
                       </h3>
-                      <div className="pt-2 border-t border-graphite-700/30">
-                        <p className="text-titanium-white/90 leading-relaxed">
+                      <div className="pt-2 border-t border-quantum-red/30">
+                        <p className="text-foreground/90 leading-relaxed font-poppins">
                           {faq.answer}
                         </p>
                       </div>

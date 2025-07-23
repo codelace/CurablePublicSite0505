@@ -5,7 +5,7 @@ import { mission } from '@/data/mission';
 const MissionPanel: React.FC = () => {
   return (
     <div 
-      className="magnetic-card p-3 sm:p-4 mb-3 relative overflow-hidden group transition-all duration-500 backdrop-blur-md"
+      className="card-quantum-pro magnetic-attraction p-3 sm:p-4 mb-3 relative overflow-hidden group transition-all duration-500 backdrop-blur-md holographic-text"
     >
       {/* Enhanced corner brackets with warmer colors */}
       <div className="absolute top-0 left-0 w-6 h-6 border-t border-l border-warm-rose/50"></div>

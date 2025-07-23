@@ -22,11 +22,15 @@ const HeroHeader: React.FC<HeroHeaderProps> = ({ isVisible }) => {
       <CommandHUDHeader 
         title={
           <>
-            <span className="text-titanium-white">The Future of Cures: </span>
-            <span className="text-warm-rose">Molecule-to-Market</span>
+            <span className="text-foreground font-bold">The Future of Cures: </span>
+            <span className="text-quantum-red font-bold glow-text">Molecule-to-Market</span>
           </>
         }
-        subtitle={<>Decentralized <GradientText variant="red-purple" animated={true}>research & development</GradientText> protocol</>} 
+        subtitle={
+          <>
+            Decentralized <span className="text-quantum-red font-bold glow-text">research & development</span> protocol
+          </>
+        } 
         statusText="CURABLE CORE ACTIVE"
         animated={false}
       />
