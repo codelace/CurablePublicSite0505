@@ -38,7 +38,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       case 'team': 
         return 'bg-logo-blue/20 text-logo-blue border-logo-blue/40';
       case 'advisor': 
-        return 'bg-quantum-red/20 text-quantum-red border-quantum-red/40';
+        return 'bg-plasma-violet/20 text-plasma-violet border-plasma-violet/40';
       case 'founder': 
         return 'bg-blue-400/20 text-blue-400 border-blue-400/40';
       case 'contributor':
