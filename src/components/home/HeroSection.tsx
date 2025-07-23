@@ -32,7 +32,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             <div className="absolute inset-0 rounded-full border-4 border-quantum-red/30 shadow-lg shadow-quantum-red/20"></div>
             <div className="absolute inset-0 rounded-full border-t-4 border-r-4 border-quantum-red animate-spin will-change-transform shadow-quantum-red/40" style={{animationDuration: '3s'}}></div>
             <div className="absolute inset-0 rounded-full border-4 border-transparent border-b-4 border-logo-blue animate-pulse opacity-70"></div>
-            <div className="absolute inset-0 m-6 rounded-full bg-quantum-red/30 animate-pulse shadow-inner"></div>
+            
             
             {/* Inner quantum core */}
             <div className="absolute inset-0 m-8 rounded-full bg-gradient-to-br from-quantum-red to-warm-rose opacity-60 blur-sm animate-pulse"></div>
