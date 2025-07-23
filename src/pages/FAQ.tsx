@@ -60,7 +60,7 @@ const FAQ = () => {
           <div className="inline-block mb-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-3 h-3 rounded-full bg-logo-blue animate-pulse-dot"></div>
-              <h1 className="text-4xl sm:text-6xl font-bold font-space">
+              <h1 className="text-4xl sm:text-6xl font-poppins font-bold font-space">
                 <span className="bg-gradient-to-r from-logo-blue via-plasma-violet to-warm-rose bg-clip-text text-transparent">
                   CURABLE LABS
                 </span>
@@ -70,7 +70,7 @@ const FAQ = () => {
             <div className="h-px w-32 bg-gradient-to-r from-transparent via-logo-blue to-transparent mx-auto"></div>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-logo-blue">
+          <h2 className="text-2xl sm:text-3xl font-poppins font-bold mb-6 text-logo-blue">
             Frequently Asked Questions
           </h2>
           
@@ -92,7 +92,7 @@ const FAQ = () => {
                 >
                   <AccordionTrigger className="px-6 py-4 text-left hover:no-underline group">
                     <div className="flex items-center justify-between w-full">
-                      <span className="text-lg font-semibold text-titanium-white group-hover:text-logo-blue transition-colors duration-300">
+                      <span className="text-lg font-poppins font-semibold text-titanium-white group-hover:text-logo-blue transition-colors duration-300">
                         {faq.question}
                       </span>
                     </div>
@@ -113,7 +113,7 @@ const FAQ = () => {
         {/* Call to Action */}
         <div className="text-center mt-16 sm:mt-20">
           <div className="bg-gradient-to-r from-logo-blue/10 via-plasma-violet/10 to-warm-rose/10 rounded-2xl p-8 sm:p-12 border border-logo-blue/20 max-w-2xl mx-auto">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-logo-blue">
+            <h3 className="text-2xl sm:text-3xl font-poppins font-bold mb-4 text-logo-blue">
               Ready to Join the Revolution?
             </h3>
             <p className="text-titanium-white/80 mb-6 leading-relaxed">

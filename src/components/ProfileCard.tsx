@@ -96,7 +96,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
       </div>
       
       <div className="flex-1 flex flex-col">
-        <h3 className="text-[10px] sm:text-xs font-bold mb-1 text-titanium-white">
+        <h3 className="text-[10px] sm:text-xs font-poppins font-semibold mb-1 text-titanium-white">
           {person.group === 'founder' ? (
             <span className="cyber-highlight">{person.name}</span>
           ) : person.group === 'advisor' ? (

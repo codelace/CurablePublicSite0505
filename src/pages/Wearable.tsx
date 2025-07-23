@@ -112,7 +112,7 @@ const Wearable = () => {
           </div>
           
           <div className="bg-gunmetal-900/50 backdrop-blur-sm rounded-2xl p-8 border border-logo-blue/30">
-            <h3 className="text-2xl font-semibold mb-4 text-logo-blue">Our Mission:</h3>
+            <h3 className="text-2xl font-poppins font-semibold mb-4 text-logo-blue">Our Mission:</h3>
             <p className="text-lg text-titanium-white/90">
               Connect researchers directly with patients through wearables, enabling truly patient-centered research and innovation.
             </p>
@@ -123,7 +123,7 @@ const Wearable = () => {
       {/* How You Can Be Part of the Solution */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-bio-blue to-bio-green bg-clip-text text-transparent">
+          <h2 className="text-4xl font-poppins font-bold text-center mb-16 bg-gradient-to-r from-bio-blue to-bio-green bg-clip-text text-transparent">
             How You Can Be Part of the Solution
           </h2>
           
@@ -135,9 +135,9 @@ const Wearable = () => {
                   <div className="flex items-center justify-center w-12 h-12 bg-logo-blue/20 rounded-lg mb-4">
                     <IconComponent className="w-6 h-6 text-logo-blue" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-logo-blue">{role.shape}</h3>
+                  <h3 className="text-xl font-poppins font-semibold mb-3 text-logo-blue">{role.shape}</h3>
                   <p className="text-sm text-titanium-white/80 mb-4">{role.role}</p>
-                  <p className="text-sm text-bio-green font-medium">{role.impact}</p>
+                  <p className="text-sm text-bio-green font-poppins font-medium">{role.impact}</p>
                 </div>
               );
             })}
@@ -148,7 +148,7 @@ const Wearable = () => {
       {/* Why Wearables Matter */}
       <section className="py-20 px-4 bg-gunmetal-900/20">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-4">
+          <h2 className="text-4xl font-poppins font-bold text-center mb-4">
             Why Wearables Matter
           </h2>
           <div className="text-center mb-16">
@@ -163,7 +163,7 @@ const Wearable = () => {
                   <div className="flex items-center justify-center w-12 h-12 bg-bio-blue/20 rounded-lg mb-4">
                     <IconComponent className="w-6 h-6 text-bio-blue" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-3 text-bio-blue">{benefit.title}</h3>
+                  <h3 className="text-lg font-poppins font-semibold mb-3 text-bio-blue">{benefit.title}</h3>
                   <p className="text-sm text-titanium-white/80 leading-relaxed">{benefit.description}</p>
                 </div>
               );
@@ -175,7 +175,7 @@ const Wearable = () => {
       {/* Building Community */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-bio-green to-bio-violet bg-clip-text text-transparent">
+          <h2 className="text-4xl font-poppins font-bold text-center mb-8 bg-gradient-to-r from-bio-green to-bio-violet bg-clip-text text-transparent">
             Building a Community for Fast-Track Cures
           </h2>
           <p className="text-xl text-center mb-16 text-titanium-white/80 max-w-3xl mx-auto">
@@ -190,7 +190,7 @@ const Wearable = () => {
                   <div className="flex items-center justify-center w-12 h-12 bg-bio-green/20 rounded-lg mb-4">
                     <IconComponent className="w-6 h-6 text-bio-green" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-3 text-bio-green">{benefit.title}</h3>
+                  <h3 className="text-lg font-poppins font-semibold mb-3 text-bio-green">{benefit.title}</h3>
                   <p className="text-sm text-titanium-white/80 leading-relaxed">{benefit.description}</p>
                 </div>
               );
@@ -202,7 +202,7 @@ const Wearable = () => {
       {/* Join Us Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-logo-blue/10 via-bio-blue/10 to-bio-green/10">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-logo-blue to-bio-green bg-clip-text text-transparent">
+          <h2 className="text-4xl font-poppins font-bold mb-8 bg-gradient-to-r from-logo-blue to-bio-green bg-clip-text text-transparent">
             Join Us in Shaping the Future of Health
           </h2>
           <p className="text-xl mb-12 text-titanium-white/80">
@@ -212,17 +212,17 @@ const Wearable = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="bg-dark-surface/50 backdrop-blur-sm rounded-xl p-6 border border-logo-blue/30">
               <Heart className="w-12 h-12 text-logo-blue mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3 text-logo-blue">Patients</h3>
+              <h3 className="text-xl font-poppins font-semibold mb-3 text-logo-blue">Patients</h3>
               <p className="text-sm text-titanium-white/80">Share your real-world data and lived experience to validate wearables and guide research.</p>
             </div>
             <div className="bg-dark-surface/50 backdrop-blur-sm rounded-xl p-6 border border-bio-blue/30">
               <Activity className="w-12 h-12 text-bio-blue mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3 text-bio-blue">Scientists & Clinicians</h3>
+              <h3 className="text-xl font-poppins font-semibold mb-3 text-bio-blue">Scientists & Clinicians</h3>
               <p className="text-sm text-titanium-white/80">Collaborate on AI-informed wearable tools and define next-gen biomarkers.</p>
             </div>
             <div className="bg-dark-surface/50 backdrop-blur-sm rounded-xl p-6 border border-bio-green/30">
               <Code className="w-12 h-12 text-bio-green mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3 text-bio-green">Developers</h3>
+              <h3 className="text-xl font-poppins font-semibold mb-3 text-bio-green">Developers</h3>
               <p className="text-sm text-titanium-white/80">Co-create secure, privacy-first platforms that enable direct patient-to-research data flow.</p>
             </div>
           </div>
@@ -236,14 +236,14 @@ const Wearable = () => {
       {/* Final CTA */}
       <section className="py-20 px-4 bg-gunmetal-900/50">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-bio-violet to-logo-blue bg-clip-text text-transparent">
+          <h2 className="text-4xl font-poppins font-bold mb-8 bg-gradient-to-r from-bio-violet to-logo-blue bg-clip-text text-transparent">
             Ready to join the movement?
           </h2>
           <div className="bg-dark-surface/50 backdrop-blur-sm rounded-2xl p-8 border border-logo-blue/30">
             <p className="text-xl mb-6 text-titanium-white/90">
               Curable Labs isn't just a project—it's a community-powered revolution in how cures are found and delivered.
             </p>
-            <p className="text-lg text-bio-green font-medium">
+            <p className="text-lg text-bio-green font-poppins font-medium">
               Your expertise matters. Your data matters. Your voice is the future of medicine.
             </p>
           </div>

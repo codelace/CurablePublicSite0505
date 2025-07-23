@@ -143,7 +143,7 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
         )}
       </div>
       
-      <h3 className={`text-base font-bold mb-1 transition-all duration-300 relative z-10 ${isHovered ? '' : 'text-titanium-white'}`}>
+      <h3 className={`text-base font-poppins font-semibold mb-1 transition-all duration-300 relative z-10 ${isHovered ? '' : 'text-titanium-white'}`}>
         {isHovered ? (
           <GradientText variant={colorScheme.glowColor === 'blue' ? 'blue-purple' : 'purple-red'} animate={true}>
             {value.title}

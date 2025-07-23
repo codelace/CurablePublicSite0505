@@ -82,7 +82,7 @@ const About = () => {
 
         <div className={`transition-all duration-700 delay-300 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'} mb-16`}>
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-logo-blue">
+            <h2 className="text-3xl sm:text-4xl font-poppins font-bold mb-6 text-logo-blue">
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-titanium-white/80 max-w-3xl mx-auto leading-relaxed">
@@ -129,7 +129,7 @@ const About = () => {
                 ].map((faq, index) => (
                   <div key={index} className="border border-graphite-700/40 rounded-lg bg-gunmetal-900/50 hover:bg-gunmetal-900/70 transition-all duration-300">
                     <div className="px-6 py-4">
-                      <h3 className="text-lg font-semibold text-titanium-white mb-3 text-logo-blue">
+                      <h3 className="text-lg font-poppins font-semibold text-titanium-white mb-3 text-logo-blue">
                         {faq.question}
                       </h3>
                       <div className="pt-2 border-t border-graphite-700/30">

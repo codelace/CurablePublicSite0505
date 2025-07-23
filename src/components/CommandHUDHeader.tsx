@@ -111,7 +111,7 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
           <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-logo-blue/40 to-transparent animate-scan-line"></div>
         </div>
         
-        <h1 className="relative text-2xl md:text-3xl lg:text-5xl font-bold text-titanium-white mb-3 font-space flex flex-wrap items-center gap-2 break-words z-10">
+        <h1 className="relative text-2xl md:text-3xl lg:text-5xl font-bold text-titanium-white mb-3 font-poppins flex flex-wrap items-center gap-2 break-words z-10">
           <span className={`${colors.accent} mr-1`}>&gt;</span> {title}
           {isHovered && <span className="inline-block h-6 w-1 bg-logo-blue/70 animate-blink"></span>}
         </h1>
