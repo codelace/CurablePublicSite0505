@@ -83,14 +83,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-quantum-sapphire/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{animationDelay: '1s'}}></div>
                   {/* Scanning line effect */}
                   <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-quantum-sapphire/20 to-transparent opacity-0 group-hover:opacity-100 transform -skew-x-12 animate-pulse" style={{animationDelay: '1s'}}></div>
-                  
-                  {/* DNA helix particles around each word */}
-                  <div className="absolute -inset-2 pointer-events-none">
-                    <div className="absolute top-0 left-0 w-1 h-1 bg-quantum-sapphire rounded-full animate-ping opacity-60" style={{animationDelay: '2s', animationDuration: '3s'}}></div>
-                    <div className="absolute top-0 right-0 w-1 h-1 bg-quantum-emerald rounded-full animate-ping opacity-50" style={{animationDelay: '2.5s', animationDuration: '2.5s'}}></div>
-                    <div className="absolute bottom-0 left-0 w-1 h-1 bg-quantum-cyan rounded-full animate-ping opacity-70" style={{animationDelay: '3s', animationDuration: '4s'}}></div>
-                    <div className="absolute bottom-0 right-0 w-1 h-1 bg-quantum-sapphire rounded-full animate-ping opacity-40" style={{animationDelay: '4s', animationDuration: '3.5s'}}></div>
-                  </div>
                 </span>
               </span>
               
