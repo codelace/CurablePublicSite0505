@@ -20,7 +20,7 @@ export const NavLogo = () => {
         <img 
           src="/lovable-uploads/40cee2f5-b09e-4f15-bf52-9dd4b77719e6.png" 
           alt="CURABLE LABS" 
-          className={`h-16 sm:h-20 w-auto transition-all duration-500 ${isHovered ? 'filter brightness-125 scale-105' : ''}`}
+          className={`h-24 sm:h-32 w-auto transition-all duration-500 ${isHovered ? 'filter brightness-125 scale-105' : ''}`}
         />
         
         {/* Add subtle particles effect on hover */}
