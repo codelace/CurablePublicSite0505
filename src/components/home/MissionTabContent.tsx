@@ -139,7 +139,7 @@ const ProgressIndicators: React.FC = () => {
           <span className="font-poppins font-bold text-quantum-red">78%</span>
         </div>
         <div className="h-3 bg-brand-charcoal/70 rounded-full overflow-hidden border border-quantum-red/20 shadow-inner">
-          <div className="h-full bg-gradient-to-r from-quantum-red to-warm-rose rounded-full animate-expand shadow-lg shadow-quantum-red/40" style={{width: "78%", animationDuration: "2.1s"}}></div>
+          <div className="h-full bg-gradient-to-r from-red-500 to-pink-500 rounded-full animate-expand shadow-lg shadow-red-500/40" style={{width: "78%", animationDuration: "2.1s"}}></div>
         </div>
       </div>
       
