@@ -42,7 +42,7 @@ const GradientText = ({
       case 'multi':
         return 'from-quantum-red via-warm-rose to-logo-blue';
       case 'red':
-        return 'from-quantum-red to-warm-rose';
+        return 'from-warm-rose to-quantum-red';
       case 'blue-purple':
         return 'from-logo-blue to-plasma-violet';
       case 'purple-red':
