@@ -32,7 +32,7 @@ export const NavLogo = () => {
           </div>  
         )}
       </Link>
-      <div className="relative ml-2">
+      <div className="relative ml-2 p-1">
         <div className="absolute -inset-1 rounded-full blur-sm animate-pulse" style={{backgroundColor: 'hsl(0 100% 67% / 0.5)'}}></div>
         <div className="relative w-2 h-2 rounded-full animate-pulse-dot" style={{backgroundColor: 'hsl(0 100% 67%)'}}></div>
         {/* Add pulsing ring - removed as requested */}
