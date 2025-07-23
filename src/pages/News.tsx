@@ -46,18 +46,6 @@ const News = () => {
               heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            {/* News Icon */}
-            <div className="mb-8">
-              <div className="w-20 h-20 mx-auto bg-gradient-to-br from-quantum-red to-brand-charcoal rounded-full flex items-center justify-center shadow-lg shadow-quantum-red/30">
-                <svg 
-                  className="w-10 h-10 text-white" 
-                  fill="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
-                </svg>
-              </div>
-            </div>
 
             {/* Main Heading */}
             <h1 className="text-5xl md:text-7xl font-poppins font-bold mb-6">
