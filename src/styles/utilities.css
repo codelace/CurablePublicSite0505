@@ -232,44 +232,6 @@
     width: 100%;
   }
   
-  /* DNA double helix animation for bio elements */
-  .dna-animate {
-    position: relative;
-  }
-  
-  .dna-animate::before,
-  .dna-animate::after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, rgba(30, 174, 219, 0.5), transparent);
-    animation: dnaWave 3s infinite ease-in-out;
-    opacity: 0;
-  }
-  
-  .dna-animate::before {
-    left: -10px;
-  }
-  
-  .dna-animate::after {
-    right: -10px;
-    animation-delay: 1.5s;
-  }
-  
-  .dna-animate:hover::before,
-  .dna-animate:hover::after {
-    opacity: 1;
-  }
-  
-  @keyframes dnaWave {
-    0%, 100% {
-      height: 20%;
-    }
-    50% {
-      height: 60%;
-    }
-  }
   
   /* Cyber circuit background */
   .cyber-circuit {
