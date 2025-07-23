@@ -60,7 +60,7 @@ export default {
         "gunmetal-900": "#101418",
         "graphite-700": "#272C33",
         "arc-blue": "#1EAEDB", // Logo blue
-        "quantum-red": "#FF3366",
+        "quantum-red": "0 74% 55%",
         "plasma-violet": "#A162FF",
         "titanium-white": "#E8F1F9",
         "logo-blue": "#1EAEDB", // Logo blue as a separate color,
