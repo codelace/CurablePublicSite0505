@@ -26,11 +26,11 @@ const SignatureBlock: React.FC = () => {
       
       <div className="text-foreground/80 text-sm relative z-10 font-poppins">
         <div className="text-quantum-red mb-4 glow-text">/*</div>
-        <div className="mb-2 hover:text-foreground transition-colors">CurableDAO is a protocol for collective healing.</div>
+        <div className="mb-2 hover:text-foreground transition-colors">Curable Labs is a protocol for collective healing.</div>
         <div className="mb-2 hover:text-foreground transition-colors">We, the network, sign this whitepaper in shared pursuit</div>
         <div className="mb-4 hover:text-foreground transition-colors">of decentralized biomedical breakthroughs.</div>
         <div className="mb-2 hover:text-foreground transition-colors">Signed,</div>
-        <div className="text-logo-blue mb-2 glow-text">The CurableDAO Genesis Contributors</div>
+        <div className="text-logo-blue mb-2 glow-text">The Curable Labs Genesis Contributors</div>
         <div className="text-quantum-red glow-text">*/</div>
       </div>
       

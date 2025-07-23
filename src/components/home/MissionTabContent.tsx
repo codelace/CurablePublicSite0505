@@ -47,7 +47,7 @@ const MissionTabContent: React.FC = () => {
           </h1>
           
           <p className={`text-foreground/90 leading-relaxed mb-8 text-base sm:text-lg md:text-xl max-w-3xl font-poppins transform transition-all duration-700 delay-100 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            CurableDAO is building an agentic, decentralized ecosystem for discovering, validating, and delivering
+            Curable Labs is building an agentic, decentralized ecosystem for discovering, validating, and delivering
             <span className="text-quantum-red font-semibold holographic-text"> novel cures</span>. We merge AI-powered research, open IP markets, and blockchain-native governance to transform stalled science into shared progress.
           </p>
           
@@ -96,7 +96,7 @@ const MissionTabContent: React.FC = () => {
             </h2>
             
             <p className="text-foreground/90 leading-relaxed text-lg mb-8 font-poppins">
-              CurableDAO integrates agentic AI, transparent funding, and community-led validation into a living R&D platform.
+              Curable Labs integrates agentic AI, transparent funding, and community-led validation into a living R&D platform.
               Our IP‑NFT framework unlocks collaboration, regulatory traceability, and scientific equity for the diseases that matter most.
             </p>
             
