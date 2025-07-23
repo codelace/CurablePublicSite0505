@@ -3,8 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+/* Import Google Fonts with Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
 @import url('https://fonts.cdnfonts.com/css/jetbrains-mono');
 
 @layer base {
@@ -45,19 +45,20 @@
   }
 
   html, body {
-    @apply bg-gunmetal-900 text-titanium-white antialiased;
+    @apply bg-brand-charcoal text-foreground antialiased;
     color-scheme: dark;
   }
 
   body {
-    @apply bg-gradient-dark text-titanium-white antialiased font-sans;
-    font-family: 'Inter', sans-serif;
+    @apply bg-gradient-to-br from-brand-charcoal via-gunmetal-900 to-dark-base text-foreground antialiased;
+    font-family: 'Poppins', 'Inter', sans-serif;
     overflow-x: hidden;
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-space font-bold;
-    font-family: 'Space Grotesk', sans-serif;
+    @apply font-poppins font-bold;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
   }
 

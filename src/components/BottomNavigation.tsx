@@ -86,7 +86,7 @@ export const BottomNavigation = () => {
 
   return (
     <nav 
-      className="fixed bottom-0 left-0 right-0 z-50 bg-gunmetal-900/95 backdrop-blur-lg border-t border-warm-amber/20"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-brand-charcoal/95 backdrop-blur-lg border-t border-quantum-red/20 shadow-lg shadow-quantum-red/20"
       role="navigation"
       aria-label="Social media navigation"
     >
@@ -103,8 +103,8 @@ export const BottomNavigation = () => {
               className={`
                 group flex flex-col items-center justify-center min-w-[60px] p-2 rounded-lg transition-all duration-300 flex-shrink-0
                 ${social.active 
-                  ? 'text-titanium-white/70 hover:text-warm-amber hover:bg-warm-amber/10 active:scale-95' 
-                  : 'text-titanium-white/30 cursor-not-allowed'
+                  ? 'text-foreground/70 hover:text-quantum-red hover:bg-quantum-red/10 active:scale-95 font-poppins' 
+                  : 'text-foreground/30 cursor-not-allowed font-poppins'
                 }
               `}
               aria-label={`${social.name}${social.active ? '' : ' (Coming Soon)'}`}
@@ -123,7 +123,7 @@ export const BottomNavigation = () => {
               
               {/* Coming Soon indicator */}
               {!social.active && (
-                <span className="lg:hidden text-[10px] text-titanium-white/20 mt-0.5">
+                <span className="lg:hidden text-[10px] text-foreground/20 mt-0.5 font-poppins">
                   Soon
                 </span>
               )}
@@ -132,8 +132,8 @@ export const BottomNavigation = () => {
         </div>
         
         {/* Copyright notice - only on desktop */}
-        <div className="hidden md:block text-center mt-2 pt-2 border-t border-warm-amber/10">
-          <p className="text-xs text-titanium-white/40">
+        <div className="hidden md:block text-center mt-2 pt-2 border-t border-quantum-red/10">
+          <p className="text-xs text-foreground/40 font-poppins">
             © 2025 Curable Labs. All rights reserved.
           </p>
         </div>

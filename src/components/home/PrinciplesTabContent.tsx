@@ -43,7 +43,7 @@ const PrinciplesTabContent: React.FC = () => {
   
   return (
     <>
-      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center text-titanium-white">
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center text-foreground font-poppins">
         <GradientText variant="multi" animate={true}>Decentralized Research Protocol</GradientText>
       </h2>
       
@@ -85,9 +85,9 @@ const PrinciplesTabContent: React.FC = () => {
               >
                 <div className="flex items-center mb-2">
                   <span className="text-2xl mr-3">{principle.icon}</span>
-                  <h3 className="text-lg font-bold text-titanium-white">{principle.title}</h3>
+                  <h3 className="text-lg font-bold text-foreground font-poppins">{principle.title}</h3>
                 </div>
-                <p className="text-titanium-white/80 text-sm">{principle.description}</p>
+                <p className="text-foreground/80 text-sm font-poppins">{principle.description}</p>
               </Card>
             </TabsContent>
           ))}
@@ -112,14 +112,14 @@ const CompactPrincipleCard: React.FC<PrincipleCardProps> = ({ principle, isHover
       case 'open':
         return {
           glowColor: 'blue',
-          textColor: 'text-logo-blue',
-          iconBg: 'bg-logo-blue/10'
+          textColor: 'text-quantum-red',
+          iconBg: 'bg-quantum-red/10'
         };
       default: // agentic-intelligence, collective
         return {
           glowColor: 'purple',
-          textColor: 'text-plasma-violet',
-          iconBg: 'bg-plasma-violet/10'
+          textColor: 'text-warm-rose',
+          iconBg: 'bg-warm-rose/10'
         };
     }
   };
@@ -140,16 +140,16 @@ const CompactPrincipleCard: React.FC<PrincipleCardProps> = ({ principle, isHover
         <div className={`w-8 h-8 rounded-full ${colorScheme.iconBg} flex items-center justify-center ${isHovered ? 'animate-pulse' : ''}`}>
           <span className="text-xl">{principle.icon}</span>
         </div>
-        <h3 className={`ml-2 text-sm font-bold ${isHovered ? colorScheme.textColor : 'text-titanium-white'}`}>
+        <h3 className={`ml-2 text-sm font-bold font-poppins ${isHovered ? colorScheme.textColor : 'text-foreground'}`}>
           {principle.title.split(' ')[0]}
         </h3>
       </div>
       
-      <p className="text-titanium-white/80 text-xs leading-tight">{principle.description}</p>
+      <p className="text-foreground/80 text-xs leading-tight font-poppins">{principle.description}</p>
       
       {isHovered && (
-        <div className="mt-2 pt-1 border-t border-graphite-700/20 w-full animate-fade-in">
-          <div className="flex justify-between text-[0.65rem] text-titanium-white/50 font-mono">
+        <div className="mt-2 pt-1 border-t border-quantum-red/20 w-full animate-fade-in">
+          <div className="flex justify-between text-[0.65rem] text-foreground/50 font-mono">
             <span>Protocol</span>
             <span className={colorScheme.textColor}>active</span>
           </div>
