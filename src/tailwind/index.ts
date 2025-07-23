@@ -38,6 +38,8 @@ export const themeExtensions = {
     'gradient-cool': 'var(--gradient-cool)',
     'gradient-biotech': 'var(--gradient-biotech)',
     'gradient-neural': 'var(--gradient-neural)',
+    'gradient-quantum': 'var(--gradient-quantum)',
+    'gradient-molecular': 'var(--gradient-molecular)',
     'gradient-mesh': 'var(--gradient-mesh)',
     'noise': 'var(--bg-noise)',
   },

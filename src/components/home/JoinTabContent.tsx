@@ -45,9 +45,9 @@ const OrbitalParticles: React.FC = () => {
     <div className="relative h-8 opacity-60">
       <div className="absolute top-0 left-0 right-0 flex justify-center">
         <div className="relative w-32 h-8">
-          <div className="absolute top-4 left-16 w-1 h-1 rounded-full bg-logo-blue animate-orbit"></div>
-          <div className="absolute top-4 left-16 w-1.5 h-1.5 rounded-full bg-plasma-violet animate-orbit" style={{animationDelay: "0.5s", animationDirection: "reverse"}}></div>
-          <div className="absolute top-4 left-16 w-0.5 h-0.5 rounded-full bg-bio-green animate-orbit" style={{animationDelay: "1s"}}></div>
+          <div className="absolute top-4 left-16 w-1 h-1 rounded-full bg-molecular-bright animate-orbit"></div>
+          <div className="absolute top-4 left-16 w-1.5 h-1.5 rounded-full bg-molecular-accent animate-orbit" style={{animationDelay: "0.5s", animationDirection: "reverse"}}></div>
+          <div className="absolute top-4 left-16 w-0.5 h-0.5 rounded-full bg-molecular-royal animate-orbit" style={{animationDelay: "1s"}}></div>
         </div>
       </div>
     </div>
