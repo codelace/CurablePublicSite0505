@@ -16,7 +16,7 @@ export const NavLogo = () => {
           <img 
             src="/lovable-uploads/771c6d8b-9ba9-4f5e-a255-d7b1dc828db3.png" 
             alt="CURABLE LABS" 
-            className="h-12 sm:h-14 w-auto"
+            className="h-14 sm:h-16 w-auto"
           />
         ) : (
           // Default logo for all other pages
