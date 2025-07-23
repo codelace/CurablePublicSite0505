@@ -24,7 +24,7 @@ const CommandPatternBackground: React.FC<CommandPatternBackgroundProps> = ({
   animated = false,
   className = '',
   speed = 'medium',
-  color = 'violet', // Default to violet for consistency
+  color = 'red', // Default to red for quantum-red branding
   interactive = false,
 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -83,7 +83,7 @@ const CommandPatternBackground: React.FC<CommandPatternBackgroundProps> = ({
       {/* Add a subtle radial gradient that follows mouse position when interactive */}
       {interactive && isInteracting && (
         <div 
-          className="absolute w-[800px] h-[800px] rounded-full bg-gradient-radial from-plasma-violet/5 to-transparent pointer-events-none transition-all duration-300 ease-out"
+          className="absolute w-[800px] h-[800px] rounded-full bg-gradient-radial from-quantum-red/5 to-transparent pointer-events-none transition-all duration-300 ease-out"
           style={{
             left: `${mousePosition.x - 400}px`,
             top: `${mousePosition.y - 400}px`,
@@ -94,7 +94,7 @@ const CommandPatternBackground: React.FC<CommandPatternBackgroundProps> = ({
       )}
       
       {/* Add ambient glow effect */}
-      <div className="absolute inset-0 bg-gradient-conic from-transparent via-plasma-violet/5 to-transparent opacity-50 animate-rotate-slow"></div>
+      <div className="absolute inset-0 bg-gradient-conic from-transparent via-quantum-red/5 to-transparent opacity-50 animate-rotate-slow"></div>
     </div>
   );
 };

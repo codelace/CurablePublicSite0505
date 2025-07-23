@@ -1,0 +1,306 @@
+/* Advanced Interactive Effects for Curable Labs */
+
+/* Quantum-inspired Particle System */
+.quantum-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.quantum-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: linear-gradient(45deg, hsl(var(--quantum-red)), hsl(var(--warm-rose)));
+  border-radius: 50%;
+  animation: quantum-drift 8s infinite linear;
+  opacity: 0.6;
+}
+
+@keyframes quantum-drift {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(50px) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Bio-molecular Visualization */
+.dna-strand {
+  position: relative;
+  overflow: hidden;
+}
+
+.dna-strand::before,
+.dna-strand::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    hsl(var(--quantum-red) / 0.8), 
+    hsl(var(--warm-rose) / 0.6), 
+    hsl(var(--logo-blue) / 0.8));
+  animation: dna-twist 4s ease-in-out infinite;
+}
+
+.dna-strand::before {
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.dna-strand::after {
+  right: 25%;
+  animation-delay: 2s;
+}
+
+@keyframes dna-twist {
+  0%, 100% { transform: rotateY(0deg); }
+  50% { transform: rotateY(180deg); }
+}
+
+/* Neural Network Effect */
+.neural-network {
+  position: relative;
+  background: 
+    radial-gradient(circle at 20% 30%, hsl(var(--quantum-red) / 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, hsl(var(--logo-blue) / 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, hsl(var(--warm-rose) / 0.15) 0%, transparent 50%);
+  animation: neural-pulse 6s ease-in-out infinite;
+}
+
+@keyframes neural-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+/* Advanced Text Reveal Animations */
+.text-reveal-biotech {
+  overflow: hidden;
+  position: relative;
+}
+
+.text-reveal-biotech::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    hsl(var(--quantum-red) / 0.8), 
+    transparent);
+  animation: biotech-scan 2s ease-out;
+}
+
+@keyframes biotech-scan {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Holographic Interface Elements */
+.hologram-panel {
+  position: relative;
+  background: linear-gradient(135deg, 
+    hsl(var(--brand-charcoal) / 0.9), 
+    hsl(var(--gunmetal-900) / 0.7));
+  border: 1px solid hsl(var(--quantum-red) / 0.3);
+  backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: 
+    0 8px 32px hsl(var(--quantum-red) / 0.15),
+    inset 0 1px 0 hsl(var(--foreground) / 0.1),
+    0 0 0 1px hsl(var(--quantum-red) / 0.1);
+}
+
+.hologram-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, 
+    transparent 30%, 
+    hsl(var(--quantum-red) / 0.05) 50%, 
+    transparent 70%);
+  animation: hologram-flicker 3s ease-in-out infinite;
+}
+
+@keyframes hologram-flicker {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Research Data Visualization */
+.data-stream {
+  position: relative;
+  overflow: hidden;
+}
+
+.data-stream::after {
+  content: '> ANALYZING MOLECULAR STRUCTURE... █';
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  transform: translateY(-50%);
+  color: hsl(var(--quantum-red));
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  animation: data-flow 8s linear infinite;
+}
+
+@keyframes data-flow {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Enhanced Magnetic Interaction */
+.magnetic-zone {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.magnetic-zone:hover {
+  transform: translateZ(0) scale(1.02);
+  filter: brightness(1.1) saturate(1.2);
+}
+
+.magnetic-zone::after {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, 
+    hsl(var(--quantum-red) / 0.2) 0%, 
+    transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.magnetic-zone:hover::after {
+  opacity: 1;
+}
+
+/* Scientific Interface Elements */
+.lab-readout {
+  background: linear-gradient(135deg, 
+    hsl(var(--brand-charcoal) / 0.95), 
+    hsl(var(--gunmetal-900) / 0.85));
+  border: 1px solid hsl(var(--quantum-red) / 0.4);
+  border-radius: 8px;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.lab-readout::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    hsl(var(--quantum-red)), 
+    transparent);
+  animation: readout-scan 2s ease-in-out infinite;
+}
+
+@keyframes readout-scan {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Responsive Biotech Grid */
+.biotech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  position: relative;
+}
+
+.biotech-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(hsl(var(--quantum-red) / 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--quantum-red) / 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-pulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes grid-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Enhanced Focus and Interaction States */
+.focus-quantum:focus-visible {
+  outline: none;
+  box-shadow: 
+    0 0 0 2px hsl(var(--quantum-red)),
+    0 0 0 4px hsl(var(--quantum-red) / 0.2),
+    0 8px 16px hsl(var(--quantum-red) / 0.3);
+  transform: scale(1.02);
+}
+
+/* Professional Loading States */
+.biotech-loader {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid hsl(var(--quantum-red) / 0.3);
+  border-radius: 50%;
+  border-top-color: hsl(var(--quantum-red));
+  animation: biotech-spin 1s ease-in-out infinite;
+}
+
+@keyframes biotech-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Molecular Structure Animations */
+.molecule-bond {
+  position: relative;
+}
+
+.molecule-bond::before,
+.molecule-bond::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: hsl(var(--quantum-red));
+  animation: bond-vibration 2s ease-in-out infinite alternate;
+}
+
+.molecule-bond::before {
+  left: 30%;
+  animation-delay: 0s;
+}
+
+.molecule-bond::after {
+  right: 30%;
+  animation-delay: 0.5s;
+}
+
+@keyframes bond-vibration {
+  0% { transform: scaleY(1) rotate(0deg); }
+  100% { transform: scaleY(1.1) rotate(2deg); }
+}

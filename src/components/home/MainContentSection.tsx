@@ -35,14 +35,14 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
           <div 
             key={`status-${idx}`} 
             className={`flex items-center gap-1 px-2 py-0.5 rounded-md border text-xs font-mono
-              ${item.status === 'connected' ? 'border-bio-green/50 text-bio-green bg-bio-green/10' : 
-                item.status === 'pending' ? 'border-logo-blue/50 text-logo-blue bg-logo-blue/10' : 
-                'border-quantum-red/50 text-quantum-red bg-quantum-red/10'}`}
+              ${item.status === 'connected' ? 'border-quantum-red/50 text-quantum-red bg-quantum-red/10' : 
+                item.status === 'pending' ? 'border-warm-amber/50 text-warm-amber bg-warm-amber/10' : 
+                'border-logo-blue/50 text-logo-blue bg-logo-blue/10'} font-poppins`}
           >
             <div className={`w-1.5 h-1.5 rounded-full
-              ${item.status === 'connected' ? 'bg-bio-green animate-pulse' : 
-                item.status === 'pending' ? 'bg-logo-blue animate-pulse' : 
-                'bg-quantum-red'}`} 
+              ${item.status === 'connected' ? 'bg-quantum-red animate-pulse' : 
+                item.status === 'pending' ? 'bg-warm-amber animate-pulse' : 
+                'bg-logo-blue'}`}
             />
             {item.label}
           </div>
@@ -58,9 +58,9 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
       
       {/* Page navigation hint with reduced margin */}
       <div className={`flex justify-center mt-4 transition-all duration-700 delay-400 ${revealSections.includes('tabs') ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="flex flex-col items-center text-titanium-white/30 animate-pulse">
+        <div className="flex flex-col items-center text-foreground/30 animate-pulse">
           <ChevronDown className="w-4 h-4" />
-          <span className="text-xs font-mono">Scroll to explore</span>
+          <span className="text-xs font-poppins">Scroll to explore</span>
         </div>
       </div>
     </div>

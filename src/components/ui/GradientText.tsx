@@ -40,9 +40,9 @@ const GradientText = ({
       case 'violet':
         return 'from-plasma-violet to-purple-400';
       case 'multi':
-        return 'from-logo-blue via-plasma-violet to-quantum-red';
+        return 'from-quantum-red via-warm-rose to-logo-blue';
       case 'red':
-        return 'from-quantum-red to-red-400';
+        return 'from-quantum-red to-warm-rose';
       case 'blue-purple':
         return 'from-logo-blue to-plasma-violet';
       case 'purple-red':
@@ -52,14 +52,14 @@ const GradientText = ({
       case 'red-purple':
         return 'from-quantum-red to-plasma-violet';
       default:
-        return 'from-logo-blue to-blue-400';
+        return 'from-quantum-red to-warm-rose';
     }
   };
 
   return (
     <span
       className={cn(
-        'bg-gradient-to-r bg-clip-text text-transparent',
+        'bg-gradient-to-r bg-clip-text text-transparent font-poppins font-bold',
         getGradientClasses(),
         shouldAnimate ? 'animate-text-shimmer bg-[length:200%_auto]' : '',
         className
