@@ -4,7 +4,7 @@ export const getBorderStyle = (group: string) => {
     case 'team':
       return 'border-logo-blue/60';
     case 'advisor':
-      return 'border-quantum-red/60';
+      return 'border-plasma-violet/60';
     case 'founder':
       return 'border-plasma-violet/60';
     case 'contributor':
