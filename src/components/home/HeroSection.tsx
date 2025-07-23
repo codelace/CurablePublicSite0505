@@ -44,44 +44,76 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             <span className="text-white font-bold drop-shadow-lg" style={{textShadow: '0 4px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.3)'}}> Labs</span>
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-4 font-light">
-            <span className="relative inline-block group">
-              {/* Background glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-quantum-cyan/20 via-quantum-emerald/20 to-quantum-sapphire/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-110"></div>
+            <span className="relative inline-block group cursor-default">
+              {/* Dynamic background field */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-quantum-cyan/10 via-quantum-emerald/15 to-quantum-sapphire/10 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700 scale-110 animate-pulse"></div>
               
-              <span className="relative font-semibold tracking-wide text-white" 
+              {/* Quantum field distortion */}
+              <div className="absolute -inset-2 bg-gradient-radial from-transparent via-quantum-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-spin" style={{animationDuration: '20s'}}></div>
+              
+              <span className="relative font-semibold tracking-wide text-white block" 
                     style={{
-                      textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 0 25px rgba(96, 165, 250, 0.5), 0 0 50px rgba(34, 197, 94, 0.3)',
-                      filter: 'drop-shadow(0 0 15px rgba(96, 165, 250, 0.4))'
+                      textShadow: '0 3px 10px rgba(0,0,0,0.9), 0 0 30px rgba(96, 165, 250, 0.6), 0 0 80px rgba(34, 197, 94, 0.4)',
+                      filter: 'drop-shadow(0 0 25px rgba(96, 165, 250, 0.5))'
                     }}>
-                <span className="relative">
-                  Blueprinting Tomorrow{"'"}s 
-                  <span className="ml-2 text-white font-bold relative"
+                
+                {/* First part with subtle animation */}
+                <span className="relative inline-block">
+                  <span className="relative z-10">Blueprinting Tomorrow{"'"}s</span>
+                  {/* Scanning line effect */}
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-quantum-cyan/20 to-transparent opacity-0 group-hover:opacity-100 transform -skew-x-12 animate-pulse"></div>
+                </span>
+                
+                {/* "Cures" with enhanced effects */}
+                <span className="ml-2 relative inline-block">
+                  <span className="relative z-10 text-white font-bold"
                         style={{
-                          textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 0 30px rgba(96, 165, 250, 0.6), 0 0 60px rgba(34, 197, 94, 0.4)',
-                          filter: 'drop-shadow(0 0 20px rgba(96, 165, 250, 0.5))'
+                          textShadow: '0 3px 10px rgba(0,0,0,0.9), 0 0 40px rgba(96, 165, 250, 0.8), 0 0 80px rgba(34, 197, 94, 0.6)',
+                          filter: 'drop-shadow(0 0 30px rgba(96, 165, 250, 0.7))'
                         }}>
                     Cures
-                    {/* Gradient overlay that doesn't affect readability */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-quantum-cyan/30 via-quantum-emerald/30 to-quantum-sapphire/30 mix-blend-overlay animate-pulse"></div>
                   </span>
+                  
+                  {/* Multi-layered glow effects */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-quantum-cyan/20 via-quantum-emerald/25 to-quantum-sapphire/20 mix-blend-overlay animate-pulse group-hover:scale-110 transition-transform duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-quantum-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+                  
+                  {/* DNA helix particles around "Cures" */}
+                  <div className="absolute -inset-2 pointer-events-none">
+                    <div className="absolute top-0 left-0 w-1 h-1 bg-quantum-cyan rounded-full animate-ping opacity-60" style={{animationDelay: '0s', animationDuration: '3s'}}></div>
+                    <div className="absolute top-0 right-0 w-1 h-1 bg-quantum-emerald rounded-full animate-ping opacity-50" style={{animationDelay: '0.5s', animationDuration: '2.5s'}}></div>
+                    <div className="absolute bottom-0 left-0 w-1 h-1 bg-quantum-sapphire rounded-full animate-ping opacity-70" style={{animationDelay: '1s', animationDuration: '4s'}}></div>
+                    <div className="absolute bottom-0 right-0 w-1 h-1 bg-quantum-cyan rounded-full animate-ping opacity-40" style={{animationDelay: '2s', animationDuration: '3.5s'}}></div>
+                  </div>
                 </span>
               </span>
               
-              {/* Enhanced quantum underline with DNA helix pattern */}
-              <div className="absolute -bottom-2 left-0 right-0 h-1 overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-transparent via-quantum-cyan to-transparent opacity-60 animate-pulse"></div>
-                <div className="absolute top-0 left-0 h-full w-2 bg-quantum-emerald/80 animate-pulse" 
-                     style={{animation: 'dna-traverse 4s linear infinite'}}></div>
+              {/* Enhanced DNA helix underline with multiple strands */}
+              <div className="absolute -bottom-3 left-0 right-0 h-2 overflow-hidden">
+                {/* Primary strand */}
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-quantum-cyan to-transparent opacity-70 animate-pulse"></div>
+                {/* Secondary strand */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-quantum-emerald to-transparent opacity-50 animate-pulse" style={{animationDelay: '1s'}}></div>
+                
+                {/* Traversing DNA bases */}
+                <div className="absolute top-0 left-0 h-full w-3 bg-gradient-to-r from-quantum-cyan to-quantum-emerald opacity-80 rounded-full animate-pulse" 
+                     style={{animation: 'dna-traverse 6s linear infinite'}}></div>
+                <div className="absolute bottom-0 right-0 h-full w-2 bg-gradient-to-r from-quantum-sapphire to-quantum-cyan opacity-60 rounded-full animate-pulse" 
+                     style={{animation: 'dna-traverse-reverse 8s linear infinite'}}></div>
               </div>
               
-              {/* Floating DNA particles */}
-              <div className="absolute inset-0 pointer-events-none opacity-40">
-                <div className="absolute top-0 left-1/4 w-1.5 h-1.5 bg-quantum-cyan rounded-full animate-ping" 
-                     style={{animationDelay: '0s', animationDuration: '4s'}}></div>
-                <div className="absolute top-1/2 right-1/3 w-1 h-1 bg-quantum-emerald rounded-full animate-ping" 
-                     style={{animationDelay: '1.5s', animationDuration: '3s'}}></div>
-                <div className="absolute bottom-0 right-1/4 w-1.5 h-1.5 bg-quantum-sapphire rounded-full animate-ping" 
-                     style={{animationDelay: '3s', animationDuration: '5s'}}></div>
+              {/* Quantum field particles */}
+              <div className="absolute -inset-8 pointer-events-none opacity-30">
+                <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-quantum-cyan rounded-full animate-ping" 
+                     style={{animationDelay: '0s', animationDuration: '5s'}}></div>
+                <div className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-quantum-emerald rounded-full animate-ping" 
+                     style={{animationDelay: '2s', animationDuration: '4s'}}></div>
+                <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-quantum-sapphire rounded-full animate-ping" 
+                     style={{animationDelay: '4s', animationDuration: '6s'}}></div>
+                <div className="absolute top-3/4 right-1/4 w-2 h-2 bg-quantum-cyan rounded-full animate-ping" 
+                     style={{animationDelay: '1s', animationDuration: '3s'}}></div>
+                <div className="absolute bottom-1/2 left-1/5 w-1.5 h-1.5 bg-quantum-emerald rounded-full animate-ping" 
+                     style={{animationDelay: '3s', animationDuration: '7s'}}></div>
               </div>
             </span>
           </div>
