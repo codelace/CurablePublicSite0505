@@ -44,12 +44,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             <span className="holographic-text bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}> Labs</span>
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-2 font-light">
-            <span className="bg-gradient-text-rainbow bg-clip-text text-transparent font-semibold drop-shadow-lg" 
+            <span className="font-semibold text-white drop-shadow-lg" 
                   style={{
-                    backgroundSize: '300% 300%',
-                    animation: 'gradient-text-flow 8s ease-in-out infinite',
-                    textShadow: '0 0 20px rgba(195, 195, 255, 0.8), 0 0 40px rgba(235, 135, 255, 0.4)',
-                    filter: 'contrast(1.3) brightness(1.2)'
+                    background: 'linear-gradient(90deg, #66D9EF, #A855F7, #EC4899, #F59E0B)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundSize: '200% 200%',
+                    animation: 'gradient-text-flow 6s ease-in-out infinite',
+                    filter: 'none',
+                    textShadow: 'none'
                   }}>
               Blueprinting Tomorrow's Cures
             </span>

@@ -97,22 +97,39 @@ const Wearable = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-dark-base text-titanium-white">
+    <div className="min-h-screen bg-dark-base text-titanium-white relative overflow-hidden">
+      {/* Enhanced quantum background effects */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-quantum-cyan/6 via-quantum-purple/4 to-quantum-emerald/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-quantum-amber/3 via-quantum-lime/2 to-quantum-indigo/4"></div>
+        <div className="w-full h-full bg-[radial-gradient(circle_at_30%_30%,hsl(var(--quantum-cyan))_1px,transparent_1px),radial-gradient(circle_at_70%_70%,hsl(var(--quantum-purple))_1px,transparent_1px)] bg-[length:50px_50px,80px_80px] opacity-20"></div>
+      </div>
+
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-logo-blue/10 to-transparent" />
+      <section className="pt-32 pb-20 px-4 relative z-10">
+        <div className="absolute inset-0 bg-gradient-glassmorphic opacity-30" />
         <div className="container mx-auto max-w-4xl relative z-10">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-titanium-white">
-              Patients are the Source of Truth at Curable Labs — Wearables are the Connection
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-rainbow bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                Patients are the Source of Truth at Curable Labs
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-quantum-cyan to-quantum-purple bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                — Wearables are the Connection
+              </span>
             </h1>
-            <p className="text-xl text-titanium-white/80 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-titanium-white/90 leading-relaxed max-w-3xl mx-auto">
               At Curable Labs, everything begins with you. Your lived experiences, daily data, and unique insights form the foundation of our mission. Wearables offer a direct line to understanding what truly matters—your real-life health, daily fluctuations, and personal responses to treatment.
             </p>
           </div>
           
-          <div className="bg-brand-charcoal/50 backdrop-blur-sm rounded-2xl p-8 border border-logo-blue/30 hover:border-quantum-red/30 transition-colors duration-300">
-            <h3 className="text-2xl font-poppins font-semibold mb-4 text-logo-blue">Our Mission:</h3>
+          <div className="glass-quantum rounded-2xl p-8 border border-quantum-cyan/30 hover:border-quantum-purple/40 transition-colors duration-300">
+            <h3 className="text-2xl font-poppins font-semibold mb-4">
+              <span className="bg-gradient-to-r from-quantum-cyan to-quantum-indigo bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                Our Mission:
+              </span>
+            </h3>
             <p className="text-lg text-titanium-white/90">
               Connect researchers directly with patients through wearables, enabling truly patient-centered research and innovation.
             </p>
@@ -121,23 +138,33 @@ const Wearable = () => {
       </section>
 
       {/* How You Can Be Part of the Solution */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 relative z-10">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-poppins font-bold text-center mb-16 bg-gradient-to-r from-bio-blue to-bio-green bg-clip-text text-transparent">
-            How You Can Be Part of the Solution
+          <h2 className="text-4xl font-poppins font-bold text-center mb-16">
+            <span className="bg-gradient-to-r from-quantum-emerald via-quantum-cyan to-quantum-purple bg-clip-text text-transparent font-bold" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+              How You Can Be Part of the Solution
+            </span>
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {roles.map((role, index) => {
               const IconComponent = role.icon;
               return (
-                <div key={index} className="bg-brand-charcoal/20 backdrop-blur-sm rounded-xl p-6 border border-logo-blue/20 hover:border-quantum-red/40 hover:bg-brand-charcoal/30 transition-all duration-300 hover:scale-105">
-                  <div className="flex items-center justify-center w-12 h-12 bg-logo-blue/20 rounded-lg mb-4">
-                    <IconComponent className="w-6 h-6 text-logo-blue" />
+                <div key={index} className="glass-quantum rounded-xl p-6 border border-quantum-cyan/20 hover:border-quantum-purple/40 hover:bg-quantum-cyan/5 transition-all duration-300 hover:scale-105 group">
+                  <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-quantum-cyan/20 to-quantum-purple/20 rounded-lg mb-4 group-hover:from-quantum-cyan/30 group-hover:to-quantum-purple/30 transition-all duration-300">
+                    <IconComponent className="w-6 h-6 text-quantum-cyan group-hover:text-quantum-purple transition-colors duration-300" />
                   </div>
-                  <h3 className="text-xl font-poppins font-semibold mb-3 text-logo-blue">{role.shape}</h3>
+                  <h3 className="text-xl font-poppins font-semibold mb-3">
+                    <span className="bg-gradient-to-r from-quantum-cyan to-quantum-indigo bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                      {role.shape}
+                    </span>
+                  </h3>
                   <p className="text-sm text-titanium-white/80 mb-4">{role.role}</p>
-                  <p className="text-sm text-bio-green font-poppins font-medium">{role.impact}</p>
+                  <p className="text-sm font-poppins font-medium">
+                    <span className="bg-gradient-to-r from-quantum-emerald to-quantum-mint bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                      {role.impact}
+                    </span>
+                  </p>
                 </div>
               );
             })}
@@ -146,10 +173,12 @@ const Wearable = () => {
       </section>
 
       {/* Why Wearables Matter */}
-      <section className="py-20 px-4 bg-gunmetal-900/20">
+      <section className="py-20 px-4 relative z-10">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-poppins font-bold text-center mb-4">
-            Why Wearables Matter
+            <span className="bg-gradient-to-r from-quantum-orange via-quantum-amber to-quantum-lime bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+              Why Wearables Matter
+            </span>
           </h2>
           <div className="text-center mb-16">
             <span className="text-3xl">🧠</span>
@@ -159,11 +188,15 @@ const Wearable = () => {
             {wearablesBenefits.map((benefit, index) => {
               const IconComponent = benefit.icon;
               return (
-                <div key={index} className="bg-dark-surface/50 backdrop-blur-sm rounded-xl p-6 border border-graphite-700/50 hover:border-logo-blue/30 transition-all duration-300">
-                  <div className="flex items-center justify-center w-12 h-12 bg-bio-blue/20 rounded-lg mb-4">
-                    <IconComponent className="w-6 h-6 text-bio-blue" />
+                <div key={index} className="glass-quantum rounded-xl p-6 border border-quantum-amber/20 hover:border-quantum-lime/30 transition-all duration-300 hover:scale-105">
+                  <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-quantum-amber/20 to-quantum-lime/20 rounded-lg mb-4">
+                    <IconComponent className="w-6 h-6 text-quantum-amber" />
                   </div>
-                  <h3 className="text-lg font-poppins font-semibold mb-3 text-bio-blue">{benefit.title}</h3>
+                  <h3 className="text-lg font-poppins font-semibold mb-3">
+                    <span className="bg-gradient-to-r from-quantum-amber to-quantum-orange bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                      {benefit.title}
+                    </span>
+                  </h3>
                   <p className="text-sm text-titanium-white/80 leading-relaxed">{benefit.description}</p>
                 </div>
               );
@@ -173,10 +206,12 @@ const Wearable = () => {
       </section>
 
       {/* Building Community */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 relative z-10">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-poppins font-bold text-center mb-8 bg-gradient-to-r from-bio-green to-bio-violet bg-clip-text text-transparent">
-            Building a Community for Fast-Track Cures
+          <h2 className="text-4xl font-poppins font-bold text-center mb-8">
+            <span className="bg-gradient-to-r from-quantum-emerald via-quantum-mint to-quantum-lime bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+              Building a Community for Fast-Track Cures
+            </span>
           </h2>
           <p className="text-xl text-center mb-16 text-titanium-white/80 max-w-3xl mx-auto">
             Wearables not only capture data—they catalyze rapid, inclusive science:
@@ -186,11 +221,15 @@ const Wearable = () => {
             {communityBenefits.map((benefit, index) => {
               const IconComponent = benefit.icon;
               return (
-                <div key={index} className="bg-brand-charcoal/20 backdrop-blur-sm rounded-xl p-6 border border-bio-green/20 hover:border-quantum-red/30 hover:bg-brand-charcoal/30 transition-all duration-300">
-                  <div className="flex items-center justify-center w-12 h-12 bg-bio-green/20 rounded-lg mb-4">
-                    <IconComponent className="w-6 h-6 text-bio-green" />
+                <div key={index} className="glass-quantum rounded-xl p-6 border border-quantum-emerald/20 hover:border-quantum-mint/30 transition-all duration-300 hover:scale-105">
+                  <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-quantum-emerald/20 to-quantum-mint/20 rounded-lg mb-4">
+                    <IconComponent className="w-6 h-6 text-quantum-emerald" />
                   </div>
-                  <h3 className="text-lg font-poppins font-semibold mb-3 text-bio-green">{benefit.title}</h3>
+                  <h3 className="text-lg font-poppins font-semibold mb-3">
+                    <span className="bg-gradient-to-r from-quantum-emerald to-quantum-mint bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                      {benefit.title}
+                    </span>
+                  </h3>
                   <p className="text-sm text-titanium-white/80 leading-relaxed">{benefit.description}</p>
                 </div>
               );
@@ -200,29 +239,44 @@ const Wearable = () => {
       </section>
 
       {/* Join Us Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-logo-blue/10 via-bio-blue/10 to-bio-green/10">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-poppins font-bold mb-8 bg-gradient-to-r from-logo-blue to-bio-green bg-clip-text text-transparent">
-            Join Us in Shaping the Future of Health
+      <section className="py-20 px-4 relative z-10">
+        <div className="absolute inset-0 bg-gradient-glassmorphic opacity-20"></div>
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
+          <h2 className="text-4xl font-poppins font-bold mb-8">
+            <span className="bg-gradient-to-r from-quantum-indigo via-quantum-purple to-quantum-fuchsia bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+              Join Us in Shaping the Future of Health
+            </span>
           </h2>
           <p className="text-xl mb-12 text-titanium-white/80">
             We're recruiting passionate collaborators across three key areas:
           </p>
           
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-dark-surface/50 backdrop-blur-sm rounded-xl p-6 border border-logo-blue/30">
-              <Heart className="w-12 h-12 text-logo-blue mx-auto mb-4" />
-              <h3 className="text-xl font-poppins font-semibold mb-3 text-logo-blue">Patients</h3>
+            <div className="glass-quantum rounded-xl p-6 border border-quantum-indigo/30 hover:border-quantum-purple/40 transition-all duration-300">
+              <Heart className="w-12 h-12 text-quantum-indigo mx-auto mb-4" />
+              <h3 className="text-xl font-poppins font-semibold mb-3">
+                <span className="bg-gradient-to-r from-quantum-indigo to-quantum-purple bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                  Patients
+                </span>
+              </h3>
               <p className="text-sm text-titanium-white/80">Share your real-world data and lived experience to validate wearables and guide research.</p>
             </div>
-            <div className="bg-dark-surface/50 backdrop-blur-sm rounded-xl p-6 border border-bio-blue/30">
-              <Activity className="w-12 h-12 text-bio-blue mx-auto mb-4" />
-              <h3 className="text-xl font-poppins font-semibold mb-3 text-bio-blue">Scientists & Clinicians</h3>
+            <div className="glass-quantum rounded-xl p-6 border border-quantum-purple/30 hover:border-quantum-fuchsia/40 transition-all duration-300">
+              <Activity className="w-12 h-12 text-quantum-purple mx-auto mb-4" />
+              <h3 className="text-xl font-poppins font-semibold mb-3">
+                <span className="bg-gradient-to-r from-quantum-purple to-quantum-fuchsia bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                  Scientists & Clinicians
+                </span>
+              </h3>
               <p className="text-sm text-titanium-white/80">Collaborate on AI-informed wearable tools and define next-gen biomarkers.</p>
             </div>
-            <div className="bg-dark-surface/50 backdrop-blur-sm rounded-xl p-6 border border-bio-green/30">
-              <Code className="w-12 h-12 text-bio-green mx-auto mb-4" />
-              <h3 className="text-xl font-poppins font-semibold mb-3 text-bio-green">Developers</h3>
+            <div className="glass-quantum rounded-xl p-6 border border-quantum-fuchsia/30 hover:border-quantum-rose/40 transition-all duration-300">
+              <Code className="w-12 h-12 text-quantum-fuchsia mx-auto mb-4" />
+              <h3 className="text-xl font-poppins font-semibold mb-3">
+                <span className="bg-gradient-to-r from-quantum-fuchsia to-quantum-rose bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                  Developers
+                </span>
+              </h3>
               <p className="text-sm text-titanium-white/80">Co-create secure, privacy-first platforms that enable direct patient-to-research data flow.</p>
             </div>
           </div>
@@ -234,17 +288,21 @@ const Wearable = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-4 bg-gunmetal-900/50">
+      <section className="py-20 px-4 relative z-10">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-poppins font-bold mb-8 bg-gradient-to-r from-bio-violet to-logo-blue bg-clip-text text-transparent">
-            Ready to join the movement?
+          <h2 className="text-4xl font-poppins font-bold mb-8">
+            <span className="bg-gradient-to-r from-quantum-rose via-quantum-fuchsia to-quantum-purple bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+              Ready to join the movement?
+            </span>
           </h2>
-          <div className="bg-brand-charcoal/40 backdrop-blur-sm rounded-2xl p-8 border border-logo-blue/30 hover:border-quantum-red/30 transition-colors duration-300">
+          <div className="glass-quantum rounded-2xl p-8 border border-quantum-rose/30 hover:border-quantum-fuchsia/40 transition-colors duration-300">
             <p className="text-xl mb-6 text-titanium-white/90">
               Curable Labs isn't just a project—it's a community-powered revolution in how cures are found and delivered.
             </p>
-            <p className="text-lg text-bio-green font-poppins font-medium">
-              Your expertise matters. Your data matters. Your voice is the future of medicine.
+            <p className="text-lg font-poppins font-medium">
+              <span className="bg-gradient-to-r from-quantum-rose to-quantum-fuchsia bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                Your expertise matters. Your data matters. Your voice is the future of medicine.
+              </span>
             </p>
           </div>
         </div>
