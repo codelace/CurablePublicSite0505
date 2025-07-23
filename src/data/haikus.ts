@@ -34,7 +34,7 @@ export const haikus: Haiku[] = [
       "Hope's new path unfolds."
     ],
     theme: "Patient-Centered Care",
-    category: "science"
+    category: "healing"
   },
   {
     id: 4,
