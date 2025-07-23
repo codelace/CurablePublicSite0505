@@ -2,7 +2,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { people } from '@/data/people';
 import ProfileCard from '@/components/ProfileCard';
-import CommandHUDHeader from '@/components/CommandHUDHeader';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { useInViewport } from '@/utils/performance';
 import GradientText from '@/components/ui/GradientText';
@@ -13,7 +12,6 @@ interface TeamSectionProps {
 
 const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
   const { ref, isInViewport } = useInViewport();
-  const gridRef = useRef<HTMLDivElement>(null);
   const [revealCards, setRevealCards] = useState<number[]>([]);
   
   // Staggered reveal animation
@@ -23,77 +21,90 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
         people.forEach((_, index) => {
           setTimeout(() => {
             setRevealCards(prev => [...prev, index]);
-          }, index * 80); // Stagger each card by 80ms
+          }, index * 80);
         });
       }, 200);
       return () => clearTimeout(timer);
     }
   }, [isVisible]);
 
-  // Group people by category for organized display
-  const groupedPeople = {
-    founders: people.filter(person => person.group === 'founder'),
-    advisors: people.filter(person => person.group === 'advisor'), 
-    team: people.filter(person => person.group === 'team'),
-    contributors: people.filter(person => person.group === 'contributor')
-  };
+  // Group and sort people by priority
+  const sortedPeople = [
+    ...people.filter(person => person.group === 'founder'),
+    ...people.filter(person => person.group === 'team'), 
+    ...people.filter(person => person.group === 'advisor'),
+    ...people.filter(person => person.group === 'contributor')
+  ];
   
   return (
     <div 
       id="team-section" 
       ref={ref as React.RefObject<HTMLDivElement>}
-      className="mb-8 relative z-20 w-full"
+      className="relative w-full"
     >
       {/* Revolutionary Quantum Field Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Quantum Particle System */}
-        <div className="quantum-particles-optimized"></div>
-        
-        {/* Neural Network Grid */}
-        <div className="neural-network-optimized opacity-10">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Multi-layered quantum effects */}
+        <div className="quantum-particles-optimized opacity-20"></div>
+        <div className="neural-network-optimized opacity-15">
           <div className="neural-node-optimized"></div>
           <div className="neural-node-optimized"></div>
           <div className="neural-node-optimized"></div>
           <div className="neural-node-optimized"></div>
         </div>
+        <div className="data-stream-optimized opacity-10"></div>
+        <div className="holographic-mesh-optimized opacity-12"></div>
         
-        {/* Data Stream Background */}
-        <div className="data-stream-optimized opacity-5"></div>
-        
-        {/* Holographic Mesh */}
-        <div className="holographic-mesh-optimized opacity-8"></div>
+        {/* Flowing gradients */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-quantum-red/20 via-plasma-violet/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-logo-blue/20 via-bio-green/10 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
       
       <div className="relative z-10">
-        {/* Enhanced Header with Quantum Effects */}
-        <div className="mb-8 text-center">
-          <CommandHUDHeader 
-            title={
-              <span className="text-foreground font-bold">
-                Meet Our <GradientText variant="multi" className="inline-block font-extrabold">Quantum</GradientText> Team
-              </span>
-            }
-            variant="secondary" 
-            statusText="CONTRIBUTOR MODULE ACTIVE" 
-            className="mb-4"
-          />
+        {/* Revolutionary Header Design */}
+        <div className="text-center mb-16">
+          {/* Main Title */}
+          <div className="mb-8">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-poppins font-black mb-6">
+              Meet Our{' '}
+              <GradientText variant="multi" className="inline-block font-black">
+                Quantum Team
+              </GradientText>
+            </h2>
+            
+            {/* Elegant divider */}
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="w-16 h-1 bg-gradient-to-r from-transparent via-quantum-red to-transparent"></div>
+              <div className="w-4 h-4 rounded-full bg-quantum-red shadow-lg shadow-quantum-red/50 animate-pulse"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-quantum-red via-plasma-violet to-logo-blue"></div>
+              <div className="w-4 h-4 rounded-full bg-logo-blue shadow-lg shadow-logo-blue/50 animate-pulse"></div>
+              <div className="w-16 h-1 bg-gradient-to-r from-logo-blue via-transparent to-transparent"></div>
+            </div>
+          </div>
           
-          <p className="text-foreground/80 text-lg max-w-3xl mx-auto font-poppins leading-relaxed">
-            A diverse collective of scientists, engineers, and visionaries working to 
-            <span className="text-quantum-red font-semibold holographic-text"> revolutionize biotech research</span> through 
-            decentralized innovation and AI-powered discovery.
+          {/* Subtitle */}
+          <p className="text-xl sm:text-2xl text-foreground/80 max-w-5xl mx-auto leading-relaxed font-poppins">
+            A diverse collective of{' '}
+            <span className="text-quantum-red font-bold holographic-text">scientists</span>,{' '}
+            <span className="text-plasma-violet font-bold holographic-text">engineers</span>, and{' '}
+            <span className="text-logo-blue font-bold holographic-text">visionaries</span>{' '}
+            working to revolutionize biotech research through decentralized innovation and AI-powered discovery.
           </p>
         </div>
         
+        {/* Enhanced Team Grid */}
         <TooltipProvider>
-          {/* Unified Team Grid - All members together, sorted by priority */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-            {[...groupedPeople.founders, ...groupedPeople.team, ...groupedPeople.advisors, ...groupedPeople.contributors]
-              .map((person, index) => (
+          <div className="card-quantum-optimized bg-brand-charcoal/30 backdrop-blur-lg border border-quantum-red/20 rounded-3xl p-8 sm:p-12 shadow-2xl shadow-quantum-red/20">
+            {/* Grid container with improved responsiveness */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 sm:gap-8">
+              {sortedPeople.map((person, index) => (
                 <div 
                   key={`team-member-${person.id}`}
-                  className={`magnetic-attraction-optimized transform transition-all duration-700 delay-${index * 60}
-                            ${revealCards.includes(index) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}
+                  className={`magnetic-attraction-optimized transform transition-all duration-1000 
+                            ${revealCards.includes(index) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-90'}`}
+                  style={{ 
+                    transitionDelay: `${index * 80}ms`,
+                  }}
                 >
                   <ProfileCard 
                     person={person} 
@@ -102,6 +113,37 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
                   />
                 </div>
               ))}
+            </div>
+            
+            {/* Team Stats Footer */}
+            <div className="mt-12 pt-8 border-t border-quantum-red/20">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div className="magnetic-attraction-optimized">
+                  <div className="text-3xl font-bold text-quantum-red holographic-text mb-2">
+                    {people.filter(p => p.group === 'founder').length}
+                  </div>
+                  <div className="text-foreground/70 font-poppins font-medium">Founders</div>
+                </div>
+                <div className="magnetic-attraction-optimized">
+                  <div className="text-3xl font-bold text-logo-blue holographic-text mb-2">
+                    {people.filter(p => p.group === 'team').length}
+                  </div>
+                  <div className="text-foreground/70 font-poppins font-medium">Core Guardians</div>
+                </div>
+                <div className="magnetic-attraction-optimized">
+                  <div className="text-3xl font-bold text-plasma-violet holographic-text mb-2">
+                    {people.filter(p => p.group === 'advisor').length}
+                  </div>
+                  <div className="text-foreground/70 font-poppins font-medium">Strategic Advisors</div>
+                </div>
+                <div className="magnetic-attraction-optimized">
+                  <div className="text-3xl font-bold text-warm-amber holographic-text mb-2">
+                    {people.filter(p => p.group === 'contributor').length}
+                  </div>
+                  <div className="text-foreground/70 font-poppins font-medium">Contributors</div>
+                </div>
+              </div>
+            </div>
           </div>
         </TooltipProvider>
       </div>
