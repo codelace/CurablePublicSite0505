@@ -14,12 +14,12 @@ const HeroStatus: React.FC<HeroStatusProps> = ({ items }) => {
       {items.map((item, index) => (
         <div 
           key={index}
-          className="inline-flex items-center px-3 py-1 rounded-full font-mono text-xs bg-gunmetal-900/70 border border-graphite-700/40"
+          className="inline-flex items-center px-3 py-1 rounded-full font-poppins text-xs bg-brand-charcoal/70 border border-quantum-red/40 text-foreground"
         >
           <span 
             className={`w-2 h-2 rounded-full mr-2 ${
-              item.status === 'connected' ? 'bg-arc-blue' : 
-              item.status === 'pending' ? 'bg-amber-400' : 
+              item.status === 'connected' ? 'bg-logo-blue' : 
+              item.status === 'pending' ? 'bg-warm-amber' : 
               'bg-quantum-red'
             }`}
           />

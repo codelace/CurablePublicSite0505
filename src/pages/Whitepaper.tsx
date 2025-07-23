@@ -69,7 +69,7 @@ const Whitepaper = () => {
         />
         
         {/* Main content area */}
-        <main className="flex-1 bg-dark-base/80 backdrop-blur-sm min-h-[calc(100vh-9rem)] relative">
+        <main className="flex-1 bg-brand-charcoal/80 backdrop-blur-sm min-h-[calc(100vh-9rem)] relative">
           {/* Decorative background elements */}
           <div className="absolute inset-0 bg-gradient-radial opacity-10 pointer-events-none"></div>
           <div className="absolute inset-0 grid-overlay opacity-5 pointer-events-none"></div>

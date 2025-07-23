@@ -35,10 +35,10 @@ const StatusTicker: React.FC<StatusTickerProps> = ({
   if (!items.length) return null;
 
   return (
-    <div className={`bg-gunmetal-900/60 backdrop-blur-sm border border-graphite-700/40 rounded-lg p-3 overflow-hidden ${className}`}>
+    <div className={`bg-brand-charcoal/60 backdrop-blur-sm border border-quantum-red/40 rounded-lg p-3 overflow-hidden shadow-lg shadow-quantum-red/20 ${className}`}>
       <div className="flex items-center space-x-4 h-6">
         <div 
-          className={`whitespace-nowrap flex items-center font-mono text-plasma-violet transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+          className={`whitespace-nowrap flex items-center font-poppins text-warm-rose transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
         >
           <span className="text-logo-blue mr-2">$</span> {items[currentIndex]}
         </div>

@@ -24,14 +24,14 @@ const Novel = () => {
           />
           
           <div className="glass-panel p-6 mb-8">
-            <p className="text-lg text-titanium-white/90 max-w-2xl">
+            <p className="text-lg text-foreground/90 max-w-2xl font-poppins">
               Have a breakthrough idea or compound? Pitch it here and tap into Curable Labs' collective power
               to validate, fund, and develop your innovation.
             </p>
           </div>
         </div>
         
-        <div className="bg-graphite-700/30 rounded-lg overflow-hidden border border-graphite-700/60 shadow-lg animate-fade-up relative">
+        <div className="bg-brand-charcoal/30 rounded-lg overflow-hidden border border-quantum-red/60 shadow-lg animate-fade-up relative">
           <div className="absolute inset-0 z-0 pointer-events-none">
             <CommandPatternBackground variant="grid" intensity="low" />
           </div>
