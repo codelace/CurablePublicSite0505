@@ -40,12 +40,12 @@ export const colors = {
   "graphite-700": "#272C33",
   "arc-blue": "#1EAEDB", // Logo blue
   "quantum-red": "0 74% 55%",
-  "plasma-violet": "#A162FF",
+  "plasma-violet": "258 100% 69%",
   "titanium-white": "#E8F1F9",
   "logo-blue": "#1EAEDB", // Logo blue as a separate color,
   "bio-blue": "203 71% 64%",
-  "bio-green": "#8EE4AF",
-  "bio-violet": "#CBA6F7",
+  "bio-green": "135 69% 67%",
+  "bio-violet": "277 68% 75%",
   "dark-base": "#0E0E10",
   "dark-surface": "#1A1A1E",
   // Warmer colors for magnetic feel
