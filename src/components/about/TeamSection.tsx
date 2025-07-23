@@ -106,11 +106,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
                     transitionDelay: `${index * 80}ms`,
                   }}
                 >
-                  <ProfileCard 
-                    person={person} 
-                    featured={person.group === 'founder'} 
-                    compact={person.group === 'contributor' || person.group === 'team'} 
-                  />
+                  <ProfileCard person={person} />
                 </div>
               ))}
             </div>
