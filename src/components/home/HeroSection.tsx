@@ -100,7 +100,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         
         <p className={`text-foreground/80 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed mb-6 mt-4 transition-all duration-700 delay-300 transform ${revealClass('hero-text')} font-poppins`}>
           An AI-powered, decentralized ecosystem for discovering, validating, and 
-          delivering <span className="bg-gradient-to-r from-quantum-cyan to-quantum-sapphire bg-clip-text text-transparent font-semibold" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>novel cures</span> through 
+          delivering <span className="text-quantum-cyan font-semibold">novel cures</span> through 
           blockchain-native governance and <span className="text-quantum-emerald font-semibold">collaborative research</span>.
         </p>
         
