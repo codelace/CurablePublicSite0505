@@ -30,7 +30,7 @@
   
   /* Glass panel effects - ENHANCED with warmer glows */
   .glass-panel {
-    @apply bg-gunmetal-900/60 backdrop-blur-lg border border-graphite-700/40 rounded-lg relative overflow-hidden transition-all duration-300 hover:border-quantum-red/20 hover:shadow-[0_0_15px_rgba(255,51,102,0.15)];
+    @apply bg-gunmetal-900/60 backdrop-blur-lg border border-graphite-700/40 rounded-lg relative overflow-hidden transition-all duration-300 hover:border-quantum-red/20 hover:shadow-[0_0_15px_hsl(0_74%_55%/0.15)];
   }
   
   /* New: Interactive data card with highlight scanning effect - now with warmer colors */
@@ -45,7 +45,7 @@
   }
   
   .data-card:hover {
-    @apply border-quantum-red/50 shadow-[0_5px_15px_rgba(255,51,102,0.15)];
+    @apply border-quantum-red/50 shadow-[0_5px_15px_hsl(0_74%_55%/0.15)];
   }
   
   .data-card:hover::before {
@@ -74,7 +74,7 @@
   }
   
   .quantum-card:hover {
-    @apply border-quantum-red/40 shadow-[0_0_25px_rgba(255,51,102,0.2)];
+    @apply border-quantum-red/40 shadow-[0_0_25px_hsl(0_74%_55%/0.2)];
   }
   
   .quantum-card:hover::after {
@@ -101,7 +101,7 @@
   }
   
   .magnetic-card:hover {
-    @apply border-quantum-red/60 shadow-[0_0_30px_rgba(255,51,102,0.25)];
+    @apply border-quantum-red/60 shadow-[0_0_30px_hsl(0_74%_55%/0.25)];
   }
   
   .magnetic-card:hover::before {
