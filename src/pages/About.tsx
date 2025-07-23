@@ -1,47 +1,57 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import SectionDivider from '@/components/SectionDivider';
 import AboutHero from '@/components/about/AboutHero';
 import ValuesSection from '@/components/about/ValuesSection';
-import TeamSection from '@/components/about/TeamSection';
+import OptimizedTeamSection from '@/components/about/OptimizedTeamSection';
 import { useIsMobile } from '@/hooks/use-mobile';
-import AboutBackgroundEffects from '@/components/about/AboutBackgroundEffects';
 import AboutCallToAction from '@/components/about/AboutCallToAction';
+import { useReducedMotion } from '@/utils/performance';
+import '@/styles/performance-optimized.css';
 
-const About = () => {
-  // For value card hover state
-  const [hoveredValue, setHoveredValue] = useState<number | null>(null);
-  
+const About = memo(() => {
   // For device detection
   const isMobile = useIsMobile();
+  const prefersReducedMotion = useReducedMotion();
   
   // For advanced section animation with sequential reveal
   const [animatedSections, setAnimatedSections] = useState<string[]>([]);
 
-  // Force all sections to be visible with more compact timing
+  // Optimized section reveal with reduced motion support
   useEffect(() => {
     const sections = ['mission-section', 'values-section', 'team-section'];
     
-    // Enhanced staggered animation with shorter delays for less scrolling
+    if (prefersReducedMotion) {
+      // Instantly show all sections if user prefers reduced motion
+      setAnimatedSections(sections);
+      return;
+    }
+    
+    // Enhanced staggered animation with shorter delays
     const animateSection = (index: number) => {
       if (index >= sections.length) return;
       
       setTimeout(() => {
         setAnimatedSections(prev => [...prev, sections[index]]);
         animateSection(index + 1);
-      }, 150); // Even shorter delay between sections for faster reveal
+      }, 100); // Faster reveal for better performance
     };
     
-    // Slight initial delay for the first section to allow page transition
+    // Faster initial reveal
     setTimeout(() => {
       animateSection(0);
-    }, 100); // Shorter initial delay
-  }, []);
+    }, 50);
+  }, [prefersReducedMotion]);
 
   return (
     <div className="w-full relative min-h-screen bg-dark-base">
-      {/* Simplified Background System */}
-      <AboutBackgroundEffects />
+      {/* Simplified Background System - only when not in reduced motion */}
+      {!prefersReducedMotion && (
+        <div className="fixed inset-0 pointer-events-none">
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-radial from-quantum-cyan/5 to-transparent blur-3xl"></div>
+          <div className="absolute bottom-1/3 left-1/5 w-80 h-80 rounded-full bg-gradient-radial from-quantum-emerald/3 to-transparent blur-3xl"></div>
+        </div>
+      )}
       
       {/* Main Content Container */}
       <div className="relative z-10">
@@ -57,7 +67,7 @@ const About = () => {
         {/* Values Section - Minimal spacing */}
         <section className="py-4 relative">
           <div className="container mx-auto px-4 max-w-8xl">
-            <div className={`transition-all duration-700 ${animatedSections.includes('values-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className={`transition-all duration-300 ${animatedSections.includes('values-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <ValuesSection 
                 isVisible={animatedSections.includes('values-section')} 
                 hoveredValue={null} 
@@ -67,11 +77,11 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team Section - Minimal spacing */}
+        {/* Optimized Team Section */}
         <section className="py-4 relative">
           <div className="container mx-auto px-4 max-w-8xl">
-            <div className={`transition-all duration-700 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <TeamSection 
+            <div className={`transition-all duration-300 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <OptimizedTeamSection 
                 isVisible={animatedSections.includes('team-section')}
               />
             </div>
@@ -162,6 +172,8 @@ const About = () => {
       </div>
     </div>
   );
-};
+});
+
+About.displayName = 'About';
 
 export default About;

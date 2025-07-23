@@ -10,7 +10,7 @@ import { useCallback, useRef, useEffect, useState } from 'react';
  * Helps prevent animations and effects from running when not visible
  */
 export const useInViewport = (options = {}) => {
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const [isInViewport, setIsInViewport] = useState(false);
 
   const callback = useCallback(
@@ -82,4 +82,22 @@ export const batchDomOperations = () => {
     },
     execute
   };
+};
+
+/**
+ * Hook to detect user's motion preference for accessibility
+ */
+export const useReducedMotion = () => {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
+
+  return prefersReducedMotion;
 };

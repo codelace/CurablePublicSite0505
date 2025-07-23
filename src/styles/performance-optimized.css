@@ -1,0 +1,111 @@
+/* Performance-optimized styles */
+
+@layer utilities {
+  /* Hardware-accelerated transforms */
+  .card-quantum-optimized {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Simplified neural network effect */
+  .neural-network-optimized {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .neural-node-optimized {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.3;
+  }
+
+  .neural-node-optimized:nth-child(1) {
+    top: 20%;
+    left: 20%;
+  }
+
+  .neural-node-optimized:nth-child(2) {
+    bottom: 20%;
+    right: 20%;
+  }
+
+  /* Lightweight particle effect */
+  .quantum-particles-optimized {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .quantum-particles-optimized::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.5;
+  }
+
+  .quantum-particles-optimized::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.3;
+  }
+
+  /* Reduced motion alternatives */
+  @media (prefers-reduced-motion: reduce) {
+    .card-quantum-optimized {
+      transition: opacity 0.2s ease;
+    }
+    
+    .card-quantum-optimized:hover {
+      opacity: 0.9;
+    }
+
+    /* Disable all animations */
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Text line clamp utility */
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* GPU-accelerated opacity transitions */
+  .gpu-optimized {
+    transform: translateZ(0);
+    will-change: opacity;
+  }
+
+  /* Optimized fade transition */
+  .fade-optimized {
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Memory-efficient grid */
+  .grid-optimized {
+    display: grid;
+    contain: layout style;
+  }
+}
