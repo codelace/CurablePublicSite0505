@@ -111,31 +111,6 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
             </div>
           )}
 
-          {/* Advisors Section */}
-          {groupedPeople.advisors.length > 0 && (
-            <div className="mb-12">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-0.5 bg-gradient-to-r from-quantum-red to-warm-rose"></div>
-                <h3 className="text-xl font-bold text-foreground font-poppins">
-                  <GradientText variant="red" className="font-extrabold">Strategic Advisors</GradientText>
-                </h3>
-                <div className="flex-1 h-0.5 bg-gradient-to-r from-warm-rose to-transparent"></div>
-              </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {groupedPeople.advisors.map((person, index) => (
-                  <div 
-                    key={`advisor-${person.id}`}
-                    className={`magnetic-attraction-optimized transform transition-all duration-700 delay-${(index + groupedPeople.founders.length) * 100}
-                              ${revealCards.includes(index + groupedPeople.founders.length) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}
-                  >
-                    <ProfileCard person={person} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Core Team Section */}
           {groupedPeople.team.length > 0 && (
             <div className="mb-12">
@@ -151,10 +126,35 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
                 {groupedPeople.team.map((person, index) => (
                   <div 
                     key={`team-${person.id}`}
-                    className={`magnetic-attraction-optimized transform transition-all duration-700 delay-${(index + groupedPeople.founders.length + groupedPeople.advisors.length) * 80}
-                              ${revealCards.includes(index + groupedPeople.founders.length + groupedPeople.advisors.length) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}
+                    className={`magnetic-attraction-optimized transform transition-all duration-700 delay-${(index + groupedPeople.founders.length) * 80}
+                              ${revealCards.includes(index + groupedPeople.founders.length) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}
                   >
                     <ProfileCard person={person} compact={true} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Advisors Section */}
+          {groupedPeople.advisors.length > 0 && (
+            <div className="mb-12">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-0.5 bg-gradient-to-r from-quantum-red to-warm-rose"></div>
+                <h3 className="text-xl font-bold text-foreground font-poppins">
+                  <GradientText variant="red" className="font-extrabold">Strategic Advisors</GradientText>
+                </h3>
+                <div className="flex-1 h-0.5 bg-gradient-to-r from-warm-rose to-transparent"></div>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {groupedPeople.advisors.map((person, index) => (
+                  <div 
+                    key={`advisor-${person.id}`}
+                    className={`magnetic-attraction-optimized transform transition-all duration-700 delay-${(index + groupedPeople.founders.length + groupedPeople.team.length) * 100}
+                              ${revealCards.includes(index + groupedPeople.founders.length + groupedPeople.team.length) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}
+                  >
+                    <ProfileCard person={person} />
                   </div>
                 ))}
               </div>
