@@ -1,9 +1,11 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 export const NavLogo = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/' || location.pathname === '/home';
   
   return (
     <div className="flex items-center">
@@ -17,11 +19,25 @@ export const NavLogo = () => {
           className={`absolute -inset-2 bg-gradient-radial from-logo-blue/10 to-plasma-violet/5 rounded-lg blur-md transition-all duration-500 ${isHovered ? 'opacity-100 scale-110' : 'opacity-0'}`}
         ></div>
         <div className={`absolute -inset-px rounded-lg border border-logo-blue/0 transition-all duration-500 ${isHovered ? 'border-logo-blue/40 scale-105' : ''}`}></div>
-        <img 
-          src="/lovable-uploads/7fa7cf70-1810-42ff-af5b-012906495a54.png" 
-          alt="CURABLE LABS" 
-          className={`h-9 sm:h-11 w-auto transition-all duration-500 ${isHovered ? 'filter brightness-125 scale-105' : ''}`}
-        />
+        
+        {isHomePage ? (
+          // Molecular structure logo for home page
+          <img 
+            src="/lovable-uploads/bc8e231d-70f3-44a4-a6e5-48ab5cebf792.png" 
+            alt="CURABLE LABS" 
+            className={`h-9 sm:h-11 w-auto transition-all duration-500 ${isHovered ? 'filter brightness-125 scale-105' : ''}`}
+            style={{
+              filter: isHovered ? 'brightness(1.25) contrast(1.2) drop-shadow(0 0 10px rgba(96, 165, 250, 0.5))' : 'brightness(1.1) contrast(1.1)'
+            }}
+          />
+        ) : (
+          // Default logo for all other pages
+          <img 
+            src="/lovable-uploads/7fa7cf70-1810-42ff-af5b-012906495a54.png" 
+            alt="CURABLE LABS" 
+            className={`h-9 sm:h-11 w-auto transition-all duration-500 ${isHovered ? 'filter brightness-125 scale-105' : ''}`}
+          />
+        )}
         
         {/* Add subtle particles effect on hover */}
         {isHovered && (

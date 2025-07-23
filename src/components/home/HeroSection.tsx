@@ -28,21 +28,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
       <div className="mb-4 text-center max-w-5xl mx-auto relative z-10">
         <div className="relative mb-2 inline-block">
           <div className={`h-20 w-20 sm:h-24 sm:w-24 relative mx-auto mb-4 transition-all duration-700 transform ${mounted ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`}>
-            {/* Molecular structure logo */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <img 
-                src="/lovable-uploads/bc8e231d-70f3-44a4-a6e5-48ab5cebf792.png" 
-                alt="Curable Labs Molecular Logo" 
-                className="w-full h-full object-contain filter brightness-110 contrast-125"
-                style={{
-                  filter: 'brightness(1.2) contrast(1.3) drop-shadow(0 0 20px rgba(96, 165, 250, 0.5)) drop-shadow(0 0 40px rgba(34, 197, 94, 0.3))'
-                }}
-              />
-            </div>
+            {/* Performance-optimized rotating rings with quantum spectrum */}
+            <div className="absolute inset-0 rounded-full border-4 border-quantum-red/30 shadow-lg shadow-quantum-red/20"></div>
+            <div className="absolute inset-0 rounded-full border-t-4 border-r-4 border-quantum-teal animate-spin will-change-transform shadow-quantum-teal/40" style={{animationDuration: '3s'}}></div>
+            <div className="absolute inset-0 rounded-full border-4 border-transparent border-b-4 border-quantum-cyan animate-pulse opacity-70" style={{animationDuration: '2s'}}></div>
             
-            {/* Quantum glow rings around the molecular logo */}
-            <div className="absolute inset-0 rounded-full border-2 border-quantum-cyan/30 shadow-lg shadow-quantum-cyan/20 animate-pulse" style={{animationDuration: '3s'}}></div>
-            <div className="absolute inset-0 rounded-full border border-quantum-emerald/20 animate-spin opacity-70" style={{animationDuration: '8s'}}></div>
+            {/* Inner quantum core with aurora gradient */}
+            <div className="absolute inset-0 m-8 rounded-full bg-gradient-aurora opacity-80 blur-sm animate-pulse will-change-transform" style={{animationDuration: '4s'}}></div>
           </div>
         </div>
         
