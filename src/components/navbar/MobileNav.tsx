@@ -17,7 +17,7 @@ export const MobileNav = () => {
     <Sheet>
       <SheetTrigger asChild>
         <button 
-          className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-graphite-700/40 border border-logo-blue/30 shadow-md shadow-logo-blue/20 hover:shadow-logo-blue/40 hover:border-logo-blue/50 transition-all duration-300"
+          className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-graphite-700/40 border border-blue-400/30 shadow-md shadow-blue-400/20 hover:shadow-blue-400/40 hover:border-blue-400/50 transition-all duration-300"
           aria-label="Toggle menu"
         >
           <Menu className="w-5 h-5 text-titanium-white" />
@@ -43,19 +43,19 @@ export const MobileNav = () => {
                   <div className="pb-3 pl-4 space-y-2">
                     <Link 
                       to="/about" 
-                      className={`block text-sm py-2 ${isActive('/about') ? 'text-molecular-accent' : 'text-titanium-white/80'}`}
+                      className={`block text-sm py-2 ${isActive('/about') ? 'text-blue-400' : 'text-titanium-white/80'}`}
                     >
                       About
                     </Link>
                     <Link 
                       to="/whitepaper" 
-                      className={`block text-sm py-2 ${isActive('/whitepaper') ? 'text-molecular-accent' : 'text-titanium-white/80'}`}
+                      className={`block text-sm py-2 ${isActive('/whitepaper') ? 'text-blue-400' : 'text-titanium-white/80'}`}
                     >
                       Whitepaper
                     </Link>
                     <Link 
                       to="/tokenomics" 
-                      className={`block text-sm py-2 ${isActive('/tokenomics') ? 'text-molecular-accent' : 'text-titanium-white/80'}`}
+                      className={`block text-sm py-2 ${isActive('/tokenomics') ? 'text-blue-400' : 'text-titanium-white/80'}`}
                     >
                       Tokenomics
                     </Link>
@@ -75,19 +75,19 @@ export const MobileNav = () => {
                   <div className="pb-3 pl-4 space-y-2">
                     <Link 
                       to="/wearable" 
-                      className={`block text-sm py-2 ${isActive('/wearable') ? 'text-molecular-accent' : 'text-titanium-white/80'}`}
+                      className={`block text-sm py-2 ${isActive('/wearable') ? 'text-blue-400' : 'text-titanium-white/80'}`}
                     >
                       Wearable
                     </Link>
                     <Link 
                       to="/agency" 
-                      className={`block text-sm py-2 ${isActive('/agency') ? 'text-molecular-accent' : 'text-titanium-white/80'}`}
+                      className={`block text-sm py-2 ${isActive('/agency') ? 'text-blue-400' : 'text-titanium-white/80'}`}
                     >
                       Agency
                     </Link>
                     <Link 
                       to="/gated-ip-nft" 
-                      className={`block text-sm py-2 ${isActive('/gated-ip-nft') ? 'text-molecular-accent' : 'text-titanium-white/80'}`}
+                      className={`block text-sm py-2 ${isActive('/gated-ip-nft') ? 'text-blue-400' : 'text-titanium-white/80'}`}
                     >
                       Gated IP NFT
                     </Link>
@@ -99,21 +99,21 @@ export const MobileNav = () => {
                 href="https://cureworld.org" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 text-titanium-white hover:text-molecular-accent"
+                className="text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 text-titanium-white hover:text-blue-400"
               >
                 CUREWORLD
               </a>
 
               <Link 
                 to="/news" 
-                className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/news') ? 'text-molecular-accent' : 'text-titanium-white'}`}
+                className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/news') ? 'text-blue-400' : 'text-titanium-white'}`}
               >
                 NEWS
               </Link>
 
               <Link 
                 to="/poetry" 
-                className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/poetry') ? 'text-molecular-accent' : 'text-titanium-white'}`}
+                className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/poetry') ? 'text-blue-400' : 'text-titanium-white'}`}
               >
                 POETRY
               </Link>

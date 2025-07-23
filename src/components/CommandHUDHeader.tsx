@@ -43,10 +43,10 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
         };
       case 'accent':
         return {
-          accent: 'text-molecular-bright',
-          glow: 'shadow-molecular-bright/30',
-          border: 'border-molecular-bright/40',
-          hover: 'hover:border-molecular-bright/70 hover:shadow-[0_0_40px_hsl(240_100%_65%/0.5)]'
+          accent: 'text-blue-400',
+          glow: 'shadow-blue-400/30',
+          border: 'border-blue-400/40',
+          hover: 'hover:border-blue-400/70 hover:shadow-[0_0_40px_rgba(96,165,250,0.5)]'
         };
       default:
         return {
@@ -132,7 +132,7 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
             
             <div className="absolute top-[50%] left-3 h-3 w-3 rounded-full bg-logo-blue/70 animate-pulse-dot"></div>
             <div className="absolute top-[30%] right-3 h-3 w-3 rounded-full bg-bio-green/70 animate-pulse-dot" style={{animationDelay: "0.5s"}}></div>
-            <div className="absolute bottom-[40%] left-[20%] h-2 w-2 rounded-full bg-molecular-bright/70 animate-ping" style={{animationDuration: "2s"}}></div>
+            <div className="absolute bottom-[40%] left-[20%] h-2 w-2 rounded-full bg-blue-400/70 animate-ping" style={{animationDuration: "2s"}}></div>
             <div className="absolute top-[70%] right-[30%] h-2 w-2 rounded-full bg-quantum-red/70 animate-ping" style={{animationDuration: "3s", animationDelay: "1s"}}></div>
           </>
         )}

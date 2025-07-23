@@ -21,21 +21,21 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
 
   // Using brand charcoal for a more professional, trustworthy look
   const dnaButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "bg-gradient-to-r from-brand-charcoal to-logo-blue/30 hover:from-brand-charcoal hover:to-logo-blue/50" 
-    : "bg-gradient-to-r from-brand-charcoal to-logo-blue/30 hover:from-brand-charcoal hover:to-logo-blue/50 hover:shadow-[0_0_12px_rgba(30,174,219,0.3)] transition-all duration-300"}`;
+    ? "bg-gradient-to-r from-brand-charcoal to-blue-400/30 hover:from-brand-charcoal hover:to-blue-400/50" 
+    : "bg-gradient-to-r from-brand-charcoal to-blue-400/30 hover:from-brand-charcoal hover:to-blue-400/50 hover:shadow-[0_0_12px_rgba(96,165,250,0.3)] transition-all duration-300"}`;
 
   // Keep other button classes the same
   const joinButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "hover:bg-gradient-to-r hover:from-quantum-red hover:to-logo-blue" 
-    : "hover:bg-gradient-to-r hover:from-quantum-red hover:to-logo-blue hover:shadow-[0_0_12px_hsl(0_100%_67%/0.6)] transition-all duration-300"}`;
+    ? "hover:bg-gradient-to-r hover:from-quantum-red hover:to-blue-400" 
+    : "hover:bg-gradient-to-r hover:from-quantum-red hover:to-blue-400 hover:shadow-[0_0_12px_hsl(0_100%_67%/0.6)] transition-all duration-300"}`;
   
   const joinButtonStyle = {
     backgroundColor: 'hsl(0 100% 67%)' // Brand guideline primary red
   };
 
   const novelButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "hover:bg-gradient-to-r hover:from-electric-quantum-blue hover:to-quantum-electric" 
-    : "hover:bg-gradient-to-r hover:from-electric-quantum-blue hover:to-quantum-electric hover:shadow-[0_0_12px_hsl(240_100%_70%/0.6)] transition-all duration-300"}`;
+    ? "hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-500" 
+    : "hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-500 hover:shadow-[0_0_12px_rgba(96,165,250,0.6)] transition-all duration-300"}`;
   
   const novelButtonStyle = {
     background: 'linear-gradient(135deg, #6699FF, #4477FF, #3366FF)', // Beautiful blue gradient

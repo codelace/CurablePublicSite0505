@@ -39,7 +39,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       case 'advisor': 
         return 'bg-quantum-red/20 text-quantum-red border-quantum-red/40';
       case 'founder': 
-        return 'bg-molecular-bright/20 text-molecular-bright border-molecular-bright/40';
+        return 'bg-blue-400/20 text-blue-400 border-blue-400/40';
       case 'contributor':
         return 'bg-warm-amber/20 text-warm-amber border-warm-amber/40';
       default: 
