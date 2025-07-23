@@ -48,14 +48,6 @@ const WhitepaperSidebar: React.FC<WhitepaperSidebarProps> = ({
       </nav>
       
       <div className="mt-6 pt-6 border-t border-graphite-700/60 space-y-2">
-        <Button 
-          variant="outline" 
-          className="w-full bg-dark-base border-graphite-700/60 hover:bg-gunmetal-900 hover:border-bio-blue/60 font-mono text-bio-blue flex items-center gap-2 group relative overflow-hidden"
-        >
-          <Download className="w-4 h-4 transition-transform group-hover:scale-110" />
-          <span className="relative z-10">download.pdf</span>
-          <div className="absolute inset-0 bg-bio-blue/10 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-        </Button>
         
         <Button 
           variant="outline" 
