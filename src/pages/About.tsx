@@ -1,16 +1,9 @@
 
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import AboutHero from '@/components/about/AboutHero';
-import ValuesSection from '@/components/about/ValuesSection';
 import SimpleTeamSection from '@/components/about/SimpleTeamSection';
-import AboutCallToAction from '@/components/about/AboutCallToAction';
 
 const About = memo(() => {
-  console.log('About page rendering...');
-  console.log('AboutHero:', AboutHero);
-  console.log('ValuesSection:', ValuesSection);
-  console.log('SimpleTeamSection:', SimpleTeamSection);
-  console.log('AboutCallToAction:', AboutCallToAction);
   return (
     <div className="w-full relative min-h-screen bg-dark-base about-page hw-accelerated">
       {/* Minimal Background - No heavy effects */}
