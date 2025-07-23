@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import { people } from '@/data/people';
-import GradientText from '@/components/ui/GradientText';
 import SimpleProfileCard from './SimpleProfileCard';
 
 interface SimpleTeamSectionProps {
