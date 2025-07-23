@@ -41,19 +41,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         <h1 className={`transition-all duration-700 delay-200 transform ${revealClass('hero-text')}`}>
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-poppins leading-tight tracking-tight mb-2">
             <span className="bg-gradient-to-r from-white via-quantum-cyan to-white bg-clip-text text-transparent font-bold drop-shadow-lg" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Curable</span>
-            <span className="bg-gradient-to-r from-quantum-emerald via-white to-quantum-indigo bg-clip-text text-transparent font-bold drop-shadow-lg" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}> Labs</span>
+            <span className="text-white font-bold drop-shadow-lg" style={{textShadow: '0 4px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.3)'}}> Labs</span>
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-4 font-light">
-            <span className="font-medium text-white drop-shadow-lg" 
+            <span className="font-medium text-white" 
                   style={{
-                    background: 'linear-gradient(90deg, hsl(var(--quantum-cyan)), hsl(var(--quantum-purple)), hsl(var(--quantum-emerald)), hsl(var(--quantum-indigo)))',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundSize: '300% 300%',
-                    animation: 'gradient-text-flow 8s ease-in-out infinite',
-                    filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))'
+                    textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 0 15px rgba(255,255,255,0.2)'
                   }}>
-              Blueprinting Tomorrow's Cures
+              Blueprinting Tomorrow{"'"}s Cures
             </span>
           </div>
         </h1>
