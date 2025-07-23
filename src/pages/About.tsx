@@ -127,7 +127,7 @@ const About = () => {
                     answer: "Yes, Curable Labs is actively funding and supporting DeSci projects, especially those that align with its mission of decentralizing drug discovery and accelerating therapeutic innovation."
                   }
                 ].map((faq, index) => (
-                  <div key={index} className="border border-graphite-700/40 rounded-lg bg-gunmetal-900/50 hover:bg-gunmetal-900/70 transition-all duration-300">
+                  <div key={index} className="border border-graphite-700/40 rounded-lg bg-brand-charcoal/30 hover:bg-brand-charcoal/50 hover:border-quantum-red/30 transition-all duration-300">
                     <div className="px-6 py-4">
                       <h3 className="text-lg font-poppins font-semibold text-titanium-white mb-3 text-logo-blue">
                         {faq.question}

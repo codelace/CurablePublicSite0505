@@ -108,7 +108,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
           )}
         </h3>
         
-        <Badge variant={badgeVariant} className={`mb-0.5 text-[8px] ${badgeClass} mx-auto px-1.5 py-0.5`}>
+        <Badge variant={badgeVariant} className={`mb-0.5 text-[8px] ${badgeClass} mx-auto px-1.5 py-0.5 font-poppins font-medium`}>
           {groupDisplay}
         </Badge>
         

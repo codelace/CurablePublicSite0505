@@ -88,7 +88,7 @@ const FAQ = () => {
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
-                  className="border border-graphite-700/40 rounded-lg bg-gunmetal-900/50 hover:bg-gunmetal-900/70 transition-all duration-300"
+                  className="border border-graphite-700/40 rounded-lg bg-brand-charcoal/30 hover:bg-brand-charcoal/50 hover:border-quantum-red/30 transition-all duration-300"
                 >
                   <AccordionTrigger className="px-6 py-4 text-left hover:no-underline group">
                     <div className="flex items-center justify-between w-full">
@@ -124,13 +124,13 @@ const FAQ = () => {
                 href="https://cureworld.org" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-logo-blue hover:bg-logo-blue/80 text-gunmetal-900 font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-logo-blue/30"
+                className="px-6 py-3 bg-quantum-red hover:bg-quantum-red/80 text-white font-poppins font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-quantum-red/30"
               >
                 Explore CureWorld
               </a>
               <a 
                 href="/join"
-                className="px-6 py-3 border border-plasma-violet text-plasma-violet hover:bg-plasma-violet hover:text-gunmetal-900 font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-plasma-violet/30"
+                className="px-6 py-3 border border-brand-charcoal text-brand-charcoal hover:bg-brand-charcoal hover:text-white font-poppins font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-brand-charcoal/30"
               >
                 Join the Labs
               </a>

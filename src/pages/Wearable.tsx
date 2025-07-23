@@ -111,7 +111,7 @@ const Wearable = () => {
             </p>
           </div>
           
-          <div className="bg-gunmetal-900/50 backdrop-blur-sm rounded-2xl p-8 border border-logo-blue/30">
+          <div className="bg-brand-charcoal/50 backdrop-blur-sm rounded-2xl p-8 border border-logo-blue/30 hover:border-quantum-red/30 transition-colors duration-300">
             <h3 className="text-2xl font-poppins font-semibold mb-4 text-logo-blue">Our Mission:</h3>
             <p className="text-lg text-titanium-white/90">
               Connect researchers directly with patients through wearables, enabling truly patient-centered research and innovation.
@@ -131,7 +131,7 @@ const Wearable = () => {
             {roles.map((role, index) => {
               const IconComponent = role.icon;
               return (
-                <div key={index} className="bg-gunmetal-900/30 backdrop-blur-sm rounded-xl p-6 border border-logo-blue/20 hover:border-logo-blue/40 transition-all duration-300 hover:scale-105">
+                <div key={index} className="bg-brand-charcoal/20 backdrop-blur-sm rounded-xl p-6 border border-logo-blue/20 hover:border-quantum-red/40 hover:bg-brand-charcoal/30 transition-all duration-300 hover:scale-105">
                   <div className="flex items-center justify-center w-12 h-12 bg-logo-blue/20 rounded-lg mb-4">
                     <IconComponent className="w-6 h-6 text-logo-blue" />
                   </div>
@@ -186,7 +186,7 @@ const Wearable = () => {
             {communityBenefits.map((benefit, index) => {
               const IconComponent = benefit.icon;
               return (
-                <div key={index} className="bg-gunmetal-900/30 backdrop-blur-sm rounded-xl p-6 border border-bio-green/20 hover:border-bio-green/40 transition-all duration-300">
+                <div key={index} className="bg-brand-charcoal/20 backdrop-blur-sm rounded-xl p-6 border border-bio-green/20 hover:border-quantum-red/30 hover:bg-brand-charcoal/30 transition-all duration-300">
                   <div className="flex items-center justify-center w-12 h-12 bg-bio-green/20 rounded-lg mb-4">
                     <IconComponent className="w-6 h-6 text-bio-green" />
                   </div>
@@ -239,7 +239,7 @@ const Wearable = () => {
           <h2 className="text-4xl font-poppins font-bold mb-8 bg-gradient-to-r from-bio-violet to-logo-blue bg-clip-text text-transparent">
             Ready to join the movement?
           </h2>
-          <div className="bg-dark-surface/50 backdrop-blur-sm rounded-2xl p-8 border border-logo-blue/30">
+          <div className="bg-brand-charcoal/40 backdrop-blur-sm rounded-2xl p-8 border border-logo-blue/30 hover:border-quantum-red/30 transition-colors duration-300">
             <p className="text-xl mb-6 text-titanium-white/90">
               Curable Labs isn't just a project—it's a community-powered revolution in how cures are found and delivered.
             </p>
