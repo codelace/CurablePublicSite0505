@@ -1,36 +1,18 @@
+import React from 'react';
 
-import React, { memo } from 'react';
-
-const About = memo(() => {
-  console.log('About component rendering - no imports...');
-  
+const About = () => {
   return (
-    <div className="w-full relative min-h-screen bg-dark-base about-page hw-accelerated">
-      {/* Minimal Background - No heavy effects */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-radial from-quantum-cyan/3 to-transparent blur-3xl"></div>
-      </div>
-      
-      {/* Main Content Container - No animations */}
+    <div className="w-full relative min-h-screen bg-dark-base">
       <div className="relative z-10">
-        {/* Test with just a simple div first */}
         <section className="pt-[75px] pb-4">
           <div className="container mx-auto px-4 max-w-8xl">
-            <div>About Hero Section</div>
-          </div>
-        </section>
-
-        {/* Simple Team Section */}
-        <section className="py-4 relative">
-          <div className="container mx-auto px-4 max-w-8xl">
-            <div>Team Section</div>
+            <h1 className="text-white text-4xl font-bold">About Page</h1>
+            <p className="text-white/80 mt-4">This is the about page.</p>
           </div>
         </section>
       </div>
     </div>
   );
-});
-
-About.displayName = 'About';
+};
 
 export default About;
