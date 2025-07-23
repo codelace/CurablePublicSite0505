@@ -108,11 +108,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
       <div className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 transition-all duration-700 delay-500 ${revealClass('hero-text')} magnetic-attraction`}>
         <button 
           onClick={scrollToContent}
-          className="flex flex-col items-center text-foreground/60 hover:text-blue-400 transition-colors duration-300 group"
+          className="flex flex-col items-center text-foreground/60 hover:text-foreground transition-colors duration-300 group"
           aria-label="Scroll to content"
         >
-          <span className="text-sm mb-2 font-poppins font-medium group-hover:text-blue-400">Explore</span>
-          <ChevronDown className="w-6 h-6 animate-bounce group-hover:text-blue-400 transition-colors" />
+          <span className="text-sm mb-2 font-poppins font-medium group-hover:text-foreground">Explore</span>
+          <ChevronDown className="w-6 h-6 animate-bounce group-hover:text-foreground transition-colors" />
         </button>
       </div>
     </div>
