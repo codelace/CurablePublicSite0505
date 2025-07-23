@@ -115,7 +115,7 @@ const Wearable = () => {
                 Patients are the Source of Truth at Curable Labs
               </span>
               <br />
-              <span className="bg-gradient-to-r from-quantum-cyan to-quantum-purple bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+              <span className="text-white">
                 — Wearables are the Connection
               </span>
             </h1>
