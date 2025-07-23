@@ -54,13 +54,6 @@ export const DesktopNav = () => {
         </NavigationMenuList>
       </NavigationMenu>
       
-      <Link 
-        to="/poetry" 
-        className={`nav-link after:transition-all after:duration-300 ${isActive('/poetry') ? 'text-logo-blue after:opacity-100 after:left-0 after:right-0' : ''}`}
-      >
-        POETRY
-      </Link>
-      
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -113,6 +106,13 @@ export const DesktopNav = () => {
         className={`nav-link after:transition-all after:duration-300 ${isActive('/news') ? 'text-logo-blue after:opacity-100 after:left-0 after:right-0' : ''}`}
       >
         NEWS
+      </Link>
+
+      <Link 
+        to="/poetry" 
+        className={`nav-link after:transition-all after:duration-300 ${isActive('/poetry') ? 'text-logo-blue after:opacity-100 after:left-0 after:right-0' : ''}`}
+      >
+        POETRY
       </Link>
 
     </nav>
