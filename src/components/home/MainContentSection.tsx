@@ -46,11 +46,18 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
                   item.status === 'pending' ? 'border-warm-amber/50 text-warm-amber bg-warm-amber/10 shadow-warm-amber/20' : 
                   'border-logo-blue/50 text-logo-blue bg-logo-blue/10 shadow-logo-blue/20'}`}
             >
-              <div className={`w-2 h-2 rounded-full
-                ${item.status === 'connected' ? 'bg-quantum-red animate-pulse shadow-lg shadow-quantum-red/40' : 
-                  item.status === 'pending' ? 'bg-warm-amber animate-pulse shadow-lg shadow-warm-amber/40' : 
-                  'bg-logo-blue shadow-lg shadow-logo-blue/40'}`}
-              />
+              <div className={`w-3 h-3 rounded-full relative
+                ${item.status === 'connected' ? 'bg-quantum-red shadow-lg shadow-quantum-red/60 quantum-pulse-enhanced' : 
+                  item.status === 'pending' ? 'bg-warm-amber shadow-lg shadow-warm-amber/60 quantum-pulse-enhanced' : 
+                  'bg-logo-blue shadow-lg shadow-logo-blue/60 quantum-pulse-enhanced'}`}
+              >
+                {/* Enhanced pulsing ring effect */}
+                <div className={`absolute inset-0 rounded-full animate-ping
+                  ${item.status === 'connected' ? 'bg-quantum-red/70' : 
+                    item.status === 'pending' ? 'bg-warm-amber/70' : 
+                    'bg-logo-blue/70'}`}
+                ></div>
+              </div>
               {item.label}
             </div>
           ))}
