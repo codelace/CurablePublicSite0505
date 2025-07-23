@@ -40,19 +40,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         
         <h1 className={`transition-all duration-700 delay-200 transform ${revealClass('hero-text')}`}>
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-poppins leading-tight tracking-tight mb-2">
-            <span className="bg-gradient-to-r from-red-400 via-blue-400 to-blue-500 bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Curable</span>
-            <span className="holographic-text bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}> Labs</span>
+            <span className="bg-gradient-to-r from-quantum-cyan via-quantum-purple to-quantum-emerald bg-clip-text text-transparent font-bold" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Curable</span>
+            <span className="bg-gradient-to-r from-quantum-emerald via-quantum-indigo to-quantum-cyan bg-clip-text text-transparent font-bold" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}> Labs</span>
           </div>
-          <div className="text-xl sm:text-2xl md:text-3xl mt-2 font-light">
-            <span className="font-semibold text-white drop-shadow-lg" 
+          <div className="text-xl sm:text-2xl md:text-3xl mt-4 font-light">
+            <span className="font-medium bg-gradient-to-r from-quantum-cyan via-quantum-purple via-quantum-emerald to-quantum-indigo bg-clip-text text-transparent" 
                   style={{
-                    background: 'linear-gradient(90deg, #66D9EF, #A855F7, #EC4899, #F59E0B)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    backgroundSize: '200% 200%',
-                    animation: 'gradient-text-flow 6s ease-in-out infinite',
-                    filter: 'none',
-                    textShadow: 'none'
+                    backgroundSize: '300% 300%',
+                    animation: 'gradient-text-flow 8s ease-in-out infinite'
                   }}>
               Blueprinting Tomorrow's Cures
             </span>

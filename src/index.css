@@ -66,18 +66,13 @@
     --electric-quantum-blue: 246 100% 65%;  /* Better contrast */
     --quantum-electric: 260 100% 45%;       /* Lighter deep violet */
     
-    /* Enhanced quantum rainbow palette for visual interest */
-    --quantum-teal: 180 100% 60%;           /* Bridges blue-green */
-    --quantum-purple: 270 100% 70%;         /* Electric purple */
-    --quantum-cyan: 195 100% 75%;           /* Light quantum cyan */
-    --quantum-amber: 45 100% 65%;           /* Warm complement to blues */
-    --quantum-mint: 160 100% 70%;           /* Fresh mint accent */
-    --quantum-orange: 25 90% 65%;           /* Vibrant orange */
-    --quantum-rose: 340 85% 70%;            /* Electric rose */
-    --quantum-emerald: 142 85% 60%;         /* Deep emerald */
-    --quantum-indigo: 235 85% 70%;          /* Rich indigo */
-    --quantum-lime: 84 85% 65%;             /* Electric lime */
-    --quantum-fuchsia: 300 85% 70%;         /* Bright fuchsia */
+    /* Professional quantum rainbow palette - polished and consistent */
+    --quantum-cyan: 183 85% 65%;           /* Clean cyan */
+    --quantum-purple: 271 78% 65%;         /* Elegant purple */
+    --quantum-emerald: 158 72% 58%;        /* Rich emerald */
+    --quantum-indigo: 239 82% 68%;         /* Deep indigo */
+    --quantum-teal: 174 68% 56%;           /* Professional teal */
+    --quantum-violet: 277 65% 68%;         /* Soft violet */
 
   /* Grays and surfaces */
   --gunmetal-900: 224 15% 12%;
