@@ -68,26 +68,32 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
 
   return (
     <Card 
-      className={`flex flex-col text-center h-full p-2 transition-all duration-300 
+      className={`magnetic-attraction card-quantum-pro quantum-field flex flex-col text-center h-full p-3 transition-all duration-500 hover:scale-110 hover:shadow-xl hover:shadow-quantum-red/30
                 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${animationClass}`}
       glowColor={person.group === 'team' ? 'blue' : 
                 person.group === 'advisor' ? 'red' : 
                 person.group === 'contributor' ? 'amber' : 'purple'}
     >
+      {/* Enhanced neural network background for profile cards */}
+      <div className="absolute inset-0 neural-network opacity-10">
+        <div className="neural-node"></div>
+        <div className="neural-node"></div>
+      </div>
+      
       <div 
-        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 
-                  border-plasma-violet/30 mb-1.5 mx-auto relative transition-all duration-300"
+        className="w-20 h-20 sm:w-24 sm:w-24 rounded-full overflow-hidden border-2 
+                  border-quantum-red/40 mb-2 mx-auto relative transition-all duration-500 magnetic-attraction shadow-lg shadow-quantum-red/20"
         onLoad={() => setIsLoaded(true)}
       >
         <Avatar className="w-full h-full">
           <AvatarImage 
             src={person.avatar} 
             alt={person.name} 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
             onLoad={() => setIsLoaded(true)}
           />
           <AvatarFallback 
-            className="bg-plasma-violet/20 text-titanium-white"
+            className="bg-brand-charcoal/80 text-foreground font-poppins font-bold holographic-text"
             onLoad={() => setIsLoaded(true)}
           >
             {person.name.split(' ').map(n => n[0]).join('')}
@@ -95,36 +101,36 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
         </Avatar>
       </div>
       
-      <div className="flex-1 flex flex-col">
-        <h3 className="text-[10px] sm:text-xs font-poppins font-semibold mb-1 text-titanium-white">
+      <div className="flex-1 flex flex-col relative z-10">
+        <h3 className="text-sm sm:text-base font-poppins font-bold mb-2 text-foreground">
           {person.group === 'founder' ? (
-            <span className="cyber-highlight">{person.name}</span>
+            <span className="holographic-text">{person.name}</span>
           ) : person.group === 'advisor' ? (
-            <span className="quantum-text">{person.name}</span>
+            <span className="holographic-text">{person.name}</span>
           ) : person.group === 'contributor' ? (
-            <span className="warm-highlight">{person.name}</span>
+            <span className="holographic-text">{person.name}</span>
           ) : (
-            <span className="bio-highlight">{person.name}</span>
+            <span className="holographic-text">{person.name}</span>
           )}
         </h3>
         
-        <Badge variant={badgeVariant} className={`mb-0.5 text-[8px] ${badgeClass} mx-auto px-1.5 py-0.5 font-poppins font-medium`}>
+        <Badge variant={badgeVariant} className={`mb-2 text-xs ${badgeClass} mx-auto px-3 py-1 font-poppins font-semibold rounded-lg shadow-lg`}>
           {groupDisplay}
         </Badge>
         
-        <p className="text-plasma-violet text-[8px] font-mono mb-1.5 terminal-text">{person.role}</p>
+        <p className="text-quantum-red text-sm font-poppins mb-2 holographic-text">{person.role}</p>
         
         <div className="flex-1 flex flex-col justify-start">
-          <div className="text-titanium-white/80 text-[9px] leading-tight text-left">
+          <div className="text-foreground/80 text-sm leading-relaxed text-left font-poppins">
             {person.bio ? (
               person.bio.split('\n').filter(line => line.trim()).map((line, index) => (
-                <p key={index} className="mb-0 last:mb-0">
+                <p key={index} className="mb-1 last:mb-0">
                   {line.trim()}
                 </p>
               ))
             ) : person.gptDescription ? (
               person.gptDescription.split('\n').filter(line => line.trim()).map((line, index) => (
-                <p key={index} className="mb-0 last:mb-0">
+                <p key={index} className="mb-1 last:mb-0">
                   {line.trim()}
                 </p>
               ))

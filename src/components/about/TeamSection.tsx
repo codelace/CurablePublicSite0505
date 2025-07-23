@@ -18,30 +18,46 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
     <div 
       id="team-section" 
       ref={ref as React.RefObject<HTMLDivElement>}
-      className="mb-3 relative z-20 opacity-100 translate-y-0 w-full"
+      className="mb-3 relative z-20 opacity-100 translate-y-0 w-full quantum-field card-quantum-pro"
     >
-      <CommandHUDHeader 
-        title="Our Team" 
-        variant="secondary" 
-        statusText="CONTRIBUTOR MODULE" 
-        className="mb-2"
-      />
+      {/* Enhanced background effects */}
+      <div className="absolute inset-0 neural-network opacity-20">
+        <div className="neural-node"></div>
+        <div className="neural-node"></div>
+        <div className="neural-node"></div>
+        <div className="neural-node"></div>
+        <div className="neural-node"></div>
+        <div className="neural-node"></div>
+      </div>
       
-      <TooltipProvider>
-        <div 
-          ref={gridRef}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2"
-        >
-          {people.map((person) => (
-            <div 
-              key={`team-member-${person.id}`}
-              className="transform transition-all duration-300 hover:scale-105"
-            >
-              <ProfileCard person={person} />
-            </div>
-          ))}
-        </div>
-      </TooltipProvider>
+      <div className="relative z-10">
+        <CommandHUDHeader 
+          title={<span className="holographic-text">Our Team</span>}
+          variant="secondary" 
+          statusText="CONTRIBUTOR MODULE" 
+          className="mb-2"
+        />
+        
+        <TooltipProvider>
+          <div 
+            ref={gridRef}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 p-4 bg-brand-charcoal/20 rounded-xl border border-quantum-red/20"
+          >
+            {people.map((person, index) => (
+              <div 
+                key={`team-member-${person.id}`}
+                className="magnetic-attraction transform transition-all duration-500 hover:scale-110 hover:z-30"
+                style={{ 
+                  transitionDelay: `${index * 25}ms`,
+                  transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.95)'
+                }}
+              >
+                <ProfileCard person={person} />
+              </div>
+            ))}
+          </div>
+        </TooltipProvider>
+      </div>
     </div>
   );
 };

@@ -120,55 +120,61 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
   return (
     <Card 
       ref={cardRef}
-      className={`flex flex-col items-center text-center h-full p-2 transition-all duration-500 ${
-        isHovered ? 'transform -translate-y-2' : ''
+      className={`magnetic-attraction card-quantum-pro quantum-field flex flex-col items-center text-center h-full p-3 transition-all duration-500 ${
+        isHovered ? 'transform -translate-y-3 scale-105' : ''
       }`}
       glowColor={colorScheme.glowColor === 'blue' ? 'blue' : 'purple'}
     >
+      {/* Quantum background effects */}
+      <div className="absolute inset-0 quantum-particles opacity-30"></div>
+      
       {/* Enhanced background effect */}
       {isHovered && (
-        <div className={`absolute inset-0 bg-gradient-to-br from-quantum-red/10 via-brand-charcoal/20 to-quantum-red/5 rounded-lg transition-opacity duration-500 opacity-70 group-hover:opacity-90`}></div>
+        <div className={`absolute inset-0 bg-gradient-to-br from-quantum-red/15 via-brand-charcoal/30 to-quantum-red/10 rounded-xl transition-opacity duration-500 opacity-70 group-hover:opacity-90 neural-network`}>
+          <div className="neural-node"></div>
+          <div className="neural-node"></div>
+        </div>
       )}
       
-      <div className={`mb-2 relative z-10 ${isHovered ? 'animate-pulse-dot' : ''}`}>
-        <div className={`absolute inset-0 rounded-full bg-gradient-radial from-quantum-red/20 to-transparent opacity-0 transition-opacity duration-300 ${isHovered ? 'opacity-50' : ''}`}></div>
+      <div className={`mb-3 relative z-10 ${isHovered ? 'animate-pulse-dot' : ''}`}>
+        <div className={`absolute inset-0 rounded-full bg-gradient-radial from-quantum-red/30 to-transparent opacity-0 transition-opacity duration-300 ${isHovered ? 'opacity-60' : ''}`}></div>
         {iconMap[value.icon as keyof typeof iconMap]}
         
         {/* Add orbiting particle effect */}
         {isHovered && (
-          <div className="absolute inset-[-8px] pointer-events-none">
-            <div className="absolute w-1.5 h-1.5 rounded-full bg-logo-blue/60 animate-orbit" style={{animationDuration: '3s'}}></div>
-            <div className="absolute w-1 h-1 rounded-full bg-plasma-violet/60 animate-orbit" style={{animationDuration: '4s', animationDelay: '0.5s'}}></div>
+          <div className="absolute inset-[-12px] pointer-events-none">
+            <div className="absolute w-2 h-2 rounded-full bg-quantum-red/80 animate-orbit shadow-lg shadow-quantum-red/40" style={{animationDuration: '3s'}}></div>
+            <div className="absolute w-1.5 h-1.5 rounded-full bg-logo-blue/80 animate-orbit shadow-lg shadow-logo-blue/40" style={{animationDuration: '4s', animationDelay: '0.5s'}}></div>
           </div>
         )}
       </div>
       
-      <h3 className={`text-base font-poppins font-semibold mb-1 transition-all duration-300 relative z-10 ${isHovered ? '' : 'text-titanium-white'}`}>
+      <h3 className={`text-lg font-poppins font-bold mb-2 transition-all duration-300 relative z-10 ${isHovered ? '' : 'text-foreground'}`}>
         {isHovered ? (
-          <GradientText variant={colorScheme.glowColor === 'blue' ? 'blue-purple' : 'purple-red'} animate={true}>
+          <GradientText variant="red" animate={true}>
             {value.title}
           </GradientText>
         ) : (
-          value.title
+          <span className="holographic-text">{value.title}</span>
         )}
       </h3>
       
-      <p className={`text-titanium-white/80 text-xs mb-1 transition-opacity duration-300 ${isHovered ? 'opacity-90' : 'opacity-75'} relative z-10`}>
+      <p className={`text-foreground/80 text-sm mb-2 transition-opacity duration-300 ${isHovered ? 'opacity-90' : 'opacity-75'} relative z-10 font-poppins`}>
         {value.description}
       </p>
       
       {isHovered && (
-        <div className="mt-2 pt-2 border-t border-graphite-700/40 w-full fade-in-up relative z-10">
-          <p className="text-xs font-mono text-logo-blue flex items-center glow-text">
-            <span className="mr-1 opacity-70 animate-pulse">›</span>
+        <div className="mt-3 pt-3 border-t border-quantum-red/30 w-full fade-in-up relative z-10">
+          <p className="text-sm font-poppins text-quantum-red flex items-center holographic-text">
+            <span className="mr-2 opacity-70 animate-pulse text-base">›</span>
             {valueDetailMap[value.icon as keyof typeof valueDetailMap]}
           </p>
-          <div className="mt-1 w-full h-1 bg-gradient-to-r from-transparent via-quantum-red/30 to-transparent rounded-full animate-pulse-glow"></div>
+          <div className="mt-2 w-full h-1 bg-gradient-to-r from-transparent via-quantum-red/50 to-transparent rounded-full animate-pulse-glow shadow-lg shadow-quantum-red/30"></div>
           
           {/* Add data visualization bar */}
-          <div className="mt-2 w-full h-1 bg-graphite-700/30 rounded-full overflow-hidden">
+          <div className="mt-3 w-full h-2 bg-brand-charcoal/50 rounded-full overflow-hidden border border-quantum-red/20">
             <div 
-              className={`h-full ${value.icon === 'rigor' || value.icon === 'access' ? 'bg-logo-blue' : 'bg-plasma-violet'} rounded-full animate-expand`}
+              className={`h-full bg-gradient-to-r from-quantum-red to-warm-rose rounded-full animate-expand shadow-lg shadow-quantum-red/40`}
               style={{
                 width: value.icon === 'transparency' ? '98%' : 
                        value.icon === 'rigor' ? '84%' : 
