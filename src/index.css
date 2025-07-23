@@ -11,6 +11,7 @@
 @import './styles/performance-quantum.css';
 @import './styles/performance-enhancements.css';
 @import './styles/glassmorphic-effects.css';
+@import './styles/quantum-performance.css';
 
 @tailwind base;
 @tailwind components;
@@ -66,13 +67,17 @@
     --electric-quantum-blue: 246 100% 65%;  /* Better contrast */
     --quantum-electric: 260 100% 45%;       /* Lighter deep violet */
     
-    /* Professional quantum rainbow palette - polished and consistent */
+    /* Enhanced quantum rainbow palette - professional yet vibrant */
     --quantum-cyan: 183 85% 65%;           /* Clean cyan */
     --quantum-purple: 271 78% 65%;         /* Elegant purple */
     --quantum-emerald: 158 72% 58%;        /* Rich emerald */
     --quantum-indigo: 239 82% 68%;         /* Deep indigo */
     --quantum-teal: 174 68% 56%;           /* Professional teal */
     --quantum-violet: 277 65% 68%;         /* Soft violet */
+    --quantum-amber: 43 85% 62%;           /* Warm amber */
+    --quantum-rose: 351 75% 65%;           /* Elegant rose */
+    --quantum-mint: 160 70% 60%;           /* Fresh mint */
+    --quantum-sapphire: 220 85% 65%;       /* Deep sapphire */
 
   /* Grays and surfaces */
   --gunmetal-900: 224 15% 12%;

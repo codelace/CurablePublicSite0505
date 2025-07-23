@@ -28,13 +28,17 @@ export const themeExtensions = {
     'electric-quantum-blue': 'hsl(var(--electric-quantum-blue))',
     'quantum-electric': 'hsl(var(--quantum-electric))',
     
-    // Professional quantum rainbow palette
+    // Enhanced quantum rainbow palette for rich UX
     'quantum-cyan': 'hsl(var(--quantum-cyan))',
     'quantum-purple': 'hsl(var(--quantum-purple))',
     'quantum-emerald': 'hsl(var(--quantum-emerald))',
     'quantum-indigo': 'hsl(var(--quantum-indigo))',
     'quantum-teal': 'hsl(var(--quantum-teal))',
     'quantum-violet': 'hsl(var(--quantum-violet))',
+    'quantum-amber': 'hsl(var(--quantum-amber))',
+    'quantum-rose': 'hsl(var(--quantum-rose))',
+    'quantum-mint': 'hsl(var(--quantum-mint))',
+    'quantum-sapphire': 'hsl(var(--quantum-sapphire))',
   },
   fontFamily: {
     ...typography.fontFamily,

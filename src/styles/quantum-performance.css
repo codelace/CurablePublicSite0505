@@ -1,0 +1,181 @@
+/* Quantum Performance Optimizations */
+
+/* Hardware-accelerated quantum effects */
+.quantum-field {
+  transform: translateZ(0);
+  will-change: transform;
+  contain: layout style paint;
+}
+
+/* Optimized quantum particles with reduced calculations */
+.quantum-particles-enhanced {
+  background-image: 
+    radial-gradient(circle at 20% 30%, hsl(var(--quantum-cyan)) 1px, transparent 1px),
+    radial-gradient(circle at 80% 70%, hsl(var(--quantum-purple)) 1px, transparent 1px),
+    radial-gradient(circle at 60% 40%, hsl(var(--quantum-emerald)) 1px, transparent 1px);
+  background-size: 120px 120px, 140px 140px, 100px 100px;
+  animation: quantum-drift 20s linear infinite;
+  will-change: background-position;
+}
+
+/* Efficient pulse animations with reduced GPU usage */
+.pulse-glow-optimized {
+  animation: pulse-glow 3s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    opacity: 0.4; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: scale(1.02);
+  }
+}
+
+/* Quantum drift animation for background patterns */
+@keyframes quantum-drift {
+  0% { background-position: 0% 0%, 0% 0%, 0% 0%; }
+  33% { background-position: 30% 10%, -20% 30%, 15% -15%; }
+  66% { background-position: -15% 30%, 40% -10%, -20% 40%; }
+  100% { background-position: 0% 0%, 0% 0%, 0% 0%; }
+}
+
+/* Performance-optimized rainbow text flow */
+@keyframes gradient-text-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Efficient magnetic attraction with reduced repaints */
+.magnetic-attraction-enhanced {
+  transition: transform var(--transition-smooth);
+  will-change: transform;
+}
+
+.magnetic-attraction-enhanced:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Quantum button effects with optimized shadows */
+.btn-quantum-rainbow {
+  background: linear-gradient(135deg, 
+    hsl(var(--quantum-cyan)), 
+    hsl(var(--quantum-purple)), 
+    hsl(var(--quantum-emerald)),
+    hsl(var(--quantum-sapphire)));
+  background-size: 300% 300%;
+  animation: rainbow-flow 6s ease-in-out infinite;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 4px 20px hsl(var(--quantum-cyan) / 0.3),
+    0 4px 20px hsl(var(--quantum-purple) / 0.2);
+  transition: all var(--transition-smooth);
+}
+
+.btn-quantum-rainbow:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 
+    0 8px 30px hsl(var(--quantum-cyan) / 0.4),
+    0 8px 30px hsl(var(--quantum-purple) / 0.3);
+}
+
+@keyframes rainbow-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Optimized glassmorphic effects */
+.glass-quantum {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Efficient text shadows for quantum aesthetics */
+.text-quantum-glow {
+  text-shadow: 
+    0 0 10px hsl(var(--quantum-cyan) / 0.5),
+    0 0 20px hsl(var(--quantum-purple) / 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Performance-first quantum grid */
+.quantum-grid-optimized {
+  background-image: 
+    linear-gradient(hsl(var(--quantum-cyan) / 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--quantum-cyan) / 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-pulse 4s ease-in-out infinite;
+}
+
+@keyframes grid-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Quantum border animations */
+.border-quantum-flow {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-quantum-flow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(90deg, 
+    hsl(var(--quantum-cyan)),
+    hsl(var(--quantum-purple)),
+    hsl(var(--quantum-emerald)),
+    hsl(var(--quantum-sapphire)));
+  background-size: 300% 300%;
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  animation: border-flow 3s linear infinite;
+}
+
+@keyframes border-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* Optimized for mobile performance */
+@media (max-width: 768px) {
+  .quantum-particles-enhanced {
+    background-size: 80px 80px, 100px 100px, 60px 60px;
+    animation-duration: 30s;
+  }
+  
+  .pulse-glow-optimized {
+    animation-duration: 4s;
+  }
+  
+  .quantum-grid-optimized {
+    background-size: 30px 30px;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .quantum-particles-enhanced,
+  .pulse-glow-optimized,
+  .quantum-grid-optimized {
+    animation: none;
+  }
+  
+  .magnetic-attraction-enhanced:hover {
+    transform: none;
+  }
+}
