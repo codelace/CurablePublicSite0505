@@ -86,19 +86,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
                 </span>
               </span>
               
-              {/* Enhanced DNA helix underline with multiple strands */}
-              <div className="absolute -bottom-3 left-0 right-0 h-2 overflow-hidden">
-                {/* Primary strand */}
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-quantum-cyan to-transparent opacity-70 animate-pulse"></div>
-                {/* Secondary strand */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-quantum-emerald to-transparent opacity-50 animate-pulse" style={{animationDelay: '1s'}}></div>
-                
-                {/* Traversing DNA bases */}
-                <div className="absolute top-0 left-0 h-full w-3 bg-gradient-to-r from-quantum-cyan to-quantum-emerald opacity-80 rounded-full animate-pulse" 
-                     style={{animation: 'dna-traverse 6s linear infinite'}}></div>
-                <div className="absolute bottom-0 right-0 h-full w-2 bg-gradient-to-r from-quantum-sapphire to-quantum-cyan opacity-60 rounded-full animate-pulse" 
-                     style={{animation: 'dna-traverse-reverse 8s linear infinite'}}></div>
-              </div>
               
               {/* Quantum field particles */}
               <div className="absolute -inset-8 pointer-events-none opacity-30">
