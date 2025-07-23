@@ -21,11 +21,11 @@ export const NavLogo = () => {
         <div className={`absolute -inset-px rounded-lg border border-logo-blue/0 transition-all duration-500 ${isHovered ? 'border-logo-blue/40 scale-105' : ''}`}></div>
         
         {isHomePage ? (
-          // Molecular structure logo for home page
+          // Molecular structure logo for home page - bigger size
           <img 
-            src="/lovable-uploads/bc8e231d-70f3-44a4-a6e5-48ab5cebf792.png" 
+            src="/lovable-uploads/771c6d8b-9ba9-4f5e-a255-d7b1dc828db3.png" 
             alt="CURABLE LABS" 
-            className={`h-9 sm:h-11 w-auto transition-all duration-500 ${isHovered ? 'filter brightness-125 scale-105' : ''}`}
+            className={`h-12 sm:h-14 w-auto transition-all duration-500 ${isHovered ? 'filter brightness-125 scale-105' : ''}`}
             style={{
               filter: isHovered ? 'brightness(1.25) contrast(1.2) drop-shadow(0 0 10px rgba(96, 165, 250, 0.5))' : 'brightness(1.1) contrast(1.1)'
             }}
