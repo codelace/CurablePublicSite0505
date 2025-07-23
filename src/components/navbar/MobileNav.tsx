@@ -34,7 +34,7 @@ export const MobileNav = () => {
               <div className="border-b border-graphite-700/40">
                 <button 
                   onClick={() => setAboutOpen(!aboutOpen)}
-                  className="w-full flex items-center justify-between text-base font-bold py-3 text-titanium-white"
+                  className="w-full flex items-center justify-between text-base font-poppins font-semibold py-3 text-titanium-white"
                 >
                   ABOUT
                   <ChevronDown className={`w-4 h-4 transition-transform ${aboutOpen ? 'rotate-180' : ''}`} />
@@ -66,7 +66,7 @@ export const MobileNav = () => {
               <div className="border-b border-graphite-700/40">
                 <button 
                   onClick={() => setProductsOpen(!productsOpen)}
-                  className="w-full flex items-center justify-between text-base font-bold py-3 text-titanium-white"
+                  className="w-full flex items-center justify-between text-base font-poppins font-semibold py-3 text-titanium-white"
                 >
                   PRODUCTS
                   <ChevronDown className={`w-4 h-4 transition-transform ${productsOpen ? 'rotate-180' : ''}`} />
@@ -99,21 +99,21 @@ export const MobileNav = () => {
                 href="https://cureworld.org" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-base font-bold py-3 border-b border-graphite-700/40 text-titanium-white hover:text-plasma-violet"
+                className="text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 text-titanium-white hover:text-plasma-violet"
               >
                 CUREWORLD
               </a>
 
               <Link 
                 to="/news" 
-                className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/news') ? 'text-plasma-violet' : 'text-titanium-white'}`}
+                className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/news') ? 'text-plasma-violet' : 'text-titanium-white'}`}
               >
                 NEWS
               </Link>
 
               <Link 
                 to="/poetry" 
-                className={`text-base font-bold py-3 border-b border-graphite-700/40 ${isActive('/poetry') ? 'text-plasma-violet' : 'text-titanium-white'}`}
+                className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/poetry') ? 'text-plasma-violet' : 'text-titanium-white'}`}
               >
                 POETRY
               </Link>

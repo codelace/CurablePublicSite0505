@@ -77,6 +77,7 @@ export default {
       fontFamily: {
         space: ["Space Grotesk", "sans-serif"],
         sans: ["Inter", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       backgroundImage: {
         "gradient-dark": "linear-gradient(to bottom right, #0E0E10, #1A1A1E)",

@@ -19,7 +19,7 @@ export const DesktopNav = () => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="nav-link bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-sm sm:text-base font-normal">
+            <NavigationMenuTrigger className="nav-link bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-sm sm:text-base font-poppins font-medium">
               ABOUT
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -57,7 +57,7 @@ export const DesktopNav = () => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="nav-link bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-sm sm:text-base font-normal">
+            <NavigationMenuTrigger className="nav-link bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-sm sm:text-base font-poppins font-medium">
               PRODUCTS
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -96,21 +96,21 @@ export const DesktopNav = () => {
         href="https://cureworld.org" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="nav-link after:transition-all after:duration-300 hover:text-logo-blue"
+        className="nav-link after:transition-all after:duration-300 hover:text-logo-blue font-poppins font-medium"
       >
         CUREWORLD
       </a>
 
       <Link 
         to="/news" 
-        className={`nav-link after:transition-all after:duration-300 ${isActive('/news') ? 'text-logo-blue after:opacity-100 after:left-0 after:right-0' : ''}`}
+        className={`nav-link after:transition-all after:duration-300 font-poppins font-medium ${isActive('/news') ? 'text-logo-blue after:opacity-100 after:left-0 after:right-0' : ''}`}
       >
         NEWS
       </Link>
 
       <Link 
         to="/poetry" 
-        className={`nav-link after:transition-all after:duration-300 ${isActive('/poetry') ? 'text-logo-blue after:opacity-100 after:left-0 after:right-0' : ''}`}
+        className={`nav-link after:transition-all after:duration-300 font-poppins font-medium ${isActive('/poetry') ? 'text-logo-blue after:opacity-100 after:left-0 after:right-0' : ''}`}
       >
         POETRY
       </Link>
