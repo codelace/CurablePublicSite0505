@@ -88,7 +88,7 @@ const Poetry = () => {
               <h1 className="text-5xl font-poppins mb-4 text-white">
                 Poetry Sanctuary
               </h1>
-              <p className="text-lg text-titanium-white/70 font-poppins">
+              <p className="text-lg text-foreground/70 font-poppins">
                 Where science meets soul, healing finds voice
               </p>
             </Card>
@@ -181,7 +181,7 @@ const Poetry = () => {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.3, duration: 0.5 }}
-                          className="text-2xl md:text-3xl font-poppins text-titanium-white leading-relaxed"
+                          className="text-2xl md:text-3xl font-poppins text-foreground leading-relaxed"
                         >
                           {line}
                         </motion.div>
