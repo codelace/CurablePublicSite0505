@@ -35,7 +35,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             
             
             {/* Inner quantum core */}
-            <div className="absolute inset-0 m-8 rounded-full bg-gradient-to-br from-quantum-red to-warm-rose opacity-60 blur-sm animate-pulse"></div>
+            <div className="absolute inset-0 m-8 rounded-full bg-gradient-to-br from-quantum-red to-warm-rose opacity-60 blur-sm"></div>
           </div>
         </div>
         
