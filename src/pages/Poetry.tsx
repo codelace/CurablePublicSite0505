@@ -85,7 +85,7 @@ const Poetry = () => {
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20"
           >
             <Card className="glass-panel p-8 bg-dark-surface/30 border-warm-rose/30">
-              <h1 className="text-5xl font-space mb-4 bg-gradient-to-r from-warm-rose via-warm-amber to-logo-blue bg-clip-text text-transparent">
+              <h1 className="text-5xl font-poppins mb-4 bg-gradient-to-r from-warm-rose via-warm-amber to-logo-blue bg-clip-text text-transparent">
                 Poetry Sanctuary
               </h1>
               <p className="text-lg text-titanium-white/70 font-mono">

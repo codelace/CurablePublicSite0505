@@ -144,7 +144,7 @@ const Tokenomics = () => {
             <div className="absolute -top-0.5 -right-0.5 w-4 h-4 border-t border-r border-bio-blue/70 rounded-tr-sm"></div>
             <div className="absolute -bottom-0.5 -left-0.5 w-4 h-4 border-b border-l border-bio-blue/70 rounded-bl-sm"></div>
             <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 border-b border-r border-bio-blue/70 rounded-br-sm"></div>
-            <h3 className="text-sm font-bold text-titanium-white mb-1 relative z-10">
+            <h3 className="text-sm font-poppins font-bold text-titanium-white mb-1 relative z-10">
               <span className="text-quantum-red">&gt;</span> Get Involved
             </h3>
             <p className="text-titanium-white/90 mb-2 text-xs relative z-10">
@@ -152,7 +152,7 @@ const Tokenomics = () => {
             </p>
             <Link 
               to="/join" 
-              className="bg-quantum-red text-dark-base hover:bg-quantum-red/90 font-mono font-bold flex items-center gap-2 shadow-[0_0_12px_rgba(255,51,102,0.3)] hover:shadow-[0_0_20px_rgba(255,51,102,0.5)] transition-all duration-300 relative overflow-hidden group px-3 py-1.5 rounded-lg mx-auto inline-flex text-sm z-10"
+              className="bg-quantum-red text-white hover:bg-quantum-red/90 font-poppins font-bold flex items-center gap-2 shadow-[0_0_12px_hsl(0_100%_67%/0.3)] hover:shadow-[0_0_20px_hsl(0_100%_67%/0.5)] transition-all duration-300 relative overflow-hidden group px-3 py-1.5 rounded-lg mx-auto inline-flex text-sm z-10"
             >
               <span className="relative z-10">JOIN THE DAO</span>
               <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />

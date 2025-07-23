@@ -21,7 +21,7 @@ const MissionPanel: React.FC = () => {
       
       {/* Mission text with enhanced styling */}
       <div className="relative z-10">
-        <h2 className="text-lg sm:text-xl font-bold text-titanium-white mb-2 font-space">
+        <h2 className="text-lg sm:text-xl font-bold text-titanium-white mb-2 font-poppins">
           Mission<span className="text-warm-rose">_</span>
           <span className="absolute -bottom-1 left-0 w-16 h-0.5 bg-gradient-to-r from-warm-rose to-transparent"></span>
         </h2>

@@ -66,7 +66,7 @@ const News = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <h1 className="text-5xl md:text-7xl font-poppins font-bold mb-6">
               <span className="bg-gradient-to-r from-warm-rose via-warm-coral to-warm-amber bg-clip-text text-transparent">
                 News & Updates
               </span>
@@ -86,7 +86,7 @@ const News = () => {
               }`}
             >
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-sm text-warm-amber font-medium px-3 py-1 bg-warm-amber/10 rounded-full">
+                <span className="text-sm text-quantum-red font-poppins font-medium px-3 py-1 bg-quantum-red/10 rounded-full">
                   Featured Newsletter
                 </span>
                 <span className="text-sm text-titanium-white/60">
@@ -98,7 +98,7 @@ const News = () => {
                 </span>
               </div>
               
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-titanium-white">
+              <h2 className="text-3xl md:text-4xl font-poppins font-bold mb-6 text-titanium-white">
                 {newsletter.title}
               </h2>
               
@@ -136,7 +136,7 @@ const News = () => {
                   <a 
                     href={newsletter.pdfUrl}
                     download
-                    className="inline-flex items-center px-8 py-4 border border-warm-amber text-warm-amber font-semibold rounded-lg hover:bg-warm-amber/10 transition-all duration-300"
+                    className="inline-flex items-center px-8 py-4 border border-quantum-red text-quantum-red font-poppins font-semibold rounded-lg hover:bg-quantum-red/10 hover:shadow-lg hover:shadow-quantum-red/20 transition-all duration-300"
                   >
                     Download PDF
                     <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

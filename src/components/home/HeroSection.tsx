@@ -29,7 +29,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         </div>
         
         <h1 className={`transition-all duration-700 delay-200 transform ${revealClass('hero-text')}`}>
-          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-space leading-tight tracking-tight mb-1">
+          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-poppins leading-tight tracking-tight mb-1">
             <span className="text-titanium-white">Curable</span>
             <span className="text-logo-blue"> Labs</span>
           </div>
@@ -48,7 +48,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         <div className={`flex flex-wrap justify-center gap-2 sm:gap-3 transition-all duration-700 delay-400 transform ${revealClass('hero-text')}`}>
           <button
             onClick={scrollToContent}
-            className="group relative px-4 py-2 bg-logo-blue hover:bg-logo-blue/90 text-white font-bold rounded-lg overflow-hidden transition-all duration-500 hover:shadow-[0_0_25px_rgba(30,174,219,0.4)] hover:scale-105 will-change-transform"
+            className="group relative px-4 py-2 bg-quantum-red hover:bg-quantum-red/90 text-white font-poppins font-bold rounded-lg overflow-hidden transition-all duration-500 hover:shadow-[0_0_25px_hsl(0_100%_67%/0.4)] hover:scale-105 will-change-transform"
           >
             <div className="relative z-10 flex items-center gap-2">
               <span>Explore Platform</span> 
@@ -59,7 +59,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
           
           <Link 
             to="/whitepaper"
-            className="px-4 py-2 bg-transparent border-2 border-titanium-white/30 hover:border-titanium-white/70 text-titanium-white font-bold rounded-lg transition-all duration-500 hover:shadow-[0_0_15px_rgba(232,241,249,0.15)] hover:scale-105 will-change-transform"
+            className="px-4 py-2 bg-transparent border-2 border-brand-charcoal/50 hover:border-brand-charcoal text-brand-charcoal hover:text-white hover:bg-brand-charcoal/20 font-poppins font-bold rounded-lg transition-all duration-500 hover:shadow-[0_0_15px_hsl(213_40%_19%/0.25)] hover:scale-105 will-change-transform"
           >
             Read Whitepaper
           </Link>

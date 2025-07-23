@@ -9,7 +9,7 @@ const JoinTabContent: React.FC = () => {
   return (
     <section className="max-w-2xl mx-auto text-center">
       <Card className="p-8 bg-gunmetal-900/70 backdrop-blur-xl border border-graphite-700/60" variant="elevated" glowColor="red">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-titanium-white">
+        <h2 className="text-2xl sm:text-3xl font-poppins font-bold mb-4 text-titanium-white">
           <GradientText variant="multi" animate={true} className="holo-scan">Join Curable Labs</GradientText>
         </h2>
         <p className="text-titanium-white/90 mb-6 text-base sm:text-lg data-surge">
@@ -20,13 +20,13 @@ const JoinTabContent: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Button className="btn-primary py-6 hover:scale-105 transition-all energy-pulse" asChild>
               <Link to="/join" className="flex flex-col items-center justify-center">
-                <span className="text-base font-bold">Apply to Launch a Cure</span>
+                <span className="text-base font-poppins font-bold">Apply to Launch a Cure</span>
                 <span className="text-xs opacity-80 mt-1">For researchers & institutions</span>
               </Link>
             </Button>
             <Button className="btn-secondary py-6 hover:scale-105 transition-all energy-pulse" asChild>
               <Link to="/join" className="flex flex-col items-center justify-center">
-                <span className="text-base font-bold">Join the DAO</span>
+                <span className="text-base font-poppins font-bold">Join the DAO</span>
                 <span className="text-xs opacity-80 mt-1">For contributors & investors</span>
               </Link>
             </Button>

@@ -26,7 +26,7 @@ const MissionTabContent: React.FC = () => {
           <div className="absolute -top-20 -left-20 w-60 h-60 rounded-full bg-gradient-to-r from-bio-blue/20 to-plasma-violet/10 blur-3xl"></div>
           <div className="absolute -bottom-40 -right-20 w-80 h-80 rounded-full bg-gradient-to-r from-plasma-violet/20 to-quantum-red/10 blur-3xl"></div>
           
-          <h1 className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-titanium-white transform transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <h1 className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-poppins font-bold mb-6 text-titanium-white transform transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             Medicine's New <br />
             <span className="relative inline-block">
               <GradientText variant="blue-purple" animate className="holo-scan text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
