@@ -5,6 +5,7 @@ import { Person } from '@/data/people';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { getBorderStyle, getGlowStyle } from '@/utils/profileStyles';
 
 interface ProfileCardProps {
   person: Person;
@@ -49,12 +50,14 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 
   const groupDisplay = getGroupDisplay(person.group);
   const badgeClass = getBadgeStyle(person.group);
+  const borderClass = getBorderStyle(person.group);
+  const glowClass = getGlowStyle(person.group);
 
   return (
     <Card 
       className={`card-quantum-optimized magnetic-attraction-optimized flex flex-col text-center h-full p-4 
-                transition-all duration-500 hover:scale-105 group border border-quantum-red/20
-                shadow-xl shadow-quantum-red/20 hover:shadow-quantum-red/40
+                transition-all duration-500 hover:scale-105 group border ${borderClass}
+                ${glowClass} hover:shadow-2xl
                 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
       glowColor={person.group === 'team' ? 'blue' : 
                 person.group === 'advisor' ? 'red' : 
