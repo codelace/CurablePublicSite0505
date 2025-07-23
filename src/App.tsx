@@ -11,7 +11,6 @@ import CommandPatternBackground from "./components/CommandPatternBackground";
 import ParticleBackground from "./components/ParticleBackground";
 import Index from "./pages/Index";
 import About from "./pages/About";
-console.log('About import in App.tsx:', About);
 import Whitepaper from "./pages/Whitepaper";
 import Tokenomics from "./pages/Tokenomics";
 import Poetry from "./pages/Poetry";

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import CommandHUDHeader from '@/components/CommandHUDHeader';
+import GradientText from '@/components/ui/GradientText';
 
 interface HeroHeaderProps {
   isVisible: boolean;
