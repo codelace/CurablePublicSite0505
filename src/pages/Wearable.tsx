@@ -110,8 +110,8 @@ const Wearable = () => {
         <div className="absolute inset-0 bg-gradient-glassmorphic opacity-30" />
         <div className="container mx-auto max-w-4xl relative z-10">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-rainbow bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+              <span className="text-white">
                 Patients are the Source of Truth at Curable Labs
               </span>
               <br />
