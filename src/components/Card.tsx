@@ -25,7 +25,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(({
       case 'blue':
         return 'shadow-biotech border-bio-cyan/30';
       case 'purple':
-        return 'shadow-neural border-bio-violet/30';
+        return 'shadow-neural border-molecular-accent/30';
       case 'red':
         return 'shadow-warm border-quantum-red/30';
       case 'green':

@@ -53,7 +53,7 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
   
   const iconMap = {
     transparency: (
-      <svg className={`w-8 h-8 text-plasma-violet transition-all duration-500 ${isHovered ? 'scale-110 text-glow-purple' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <svg className={`w-8 h-8 text-molecular-bright transition-all duration-500 ${isHovered ? 'scale-110 text-glow-purple' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={isHovered ? 2 : 1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" className={isHovered ? 'animate-pulse' : ''} />
       </svg>
     ),
@@ -63,7 +63,7 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
       </svg>
     ),
     governance: (
-      <svg className={`w-8 h-8 text-plasma-violet transition-all duration-500 ${isHovered ? 'scale-110 text-glow-purple' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <svg className={`w-8 h-8 text-molecular-bright transition-all duration-500 ${isHovered ? 'scale-110 text-glow-purple' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={isHovered ? 2 : 1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" className={isHovered ? 'animate-pulse' : ''} />
       </svg>
     ),
@@ -100,16 +100,16 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
         };
       case 'governance':
         return {
-          gradientFrom: 'from-plasma-violet/10',
+          gradientFrom: 'from-molecular-bright/10',
           gradientTo: 'to-quantum-red/5',
-          ringColor: 'border-plasma-violet/40',
+          ringColor: 'border-molecular-bright/40',
           glowColor: 'purple'
         };
       default: // transparency
         return {
-          gradientFrom: 'from-plasma-violet/10',
+          gradientFrom: 'from-molecular-bright/10',
           gradientTo: 'to-logo-blue/5',
-          ringColor: 'border-plasma-violet/40',
+          ringColor: 'border-molecular-bright/40',
           glowColor: 'purple'
         };
     }

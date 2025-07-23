@@ -43,19 +43,19 @@ export const MobileNav = () => {
                   <div className="pb-3 pl-4 space-y-2">
                     <Link 
                       to="/about" 
-                      className={`block text-sm py-2 ${isActive('/about') ? 'text-plasma-violet' : 'text-titanium-white/80'}`}
+                      className={`block text-sm py-2 ${isActive('/about') ? 'text-molecular-accent' : 'text-titanium-white/80'}`}
                     >
                       About
                     </Link>
                     <Link 
                       to="/whitepaper" 
-                      className={`block text-sm py-2 ${isActive('/whitepaper') ? 'text-plasma-violet' : 'text-titanium-white/80'}`}
+                      className={`block text-sm py-2 ${isActive('/whitepaper') ? 'text-molecular-accent' : 'text-titanium-white/80'}`}
                     >
                       Whitepaper
                     </Link>
                     <Link 
                       to="/tokenomics" 
-                      className={`block text-sm py-2 ${isActive('/tokenomics') ? 'text-plasma-violet' : 'text-titanium-white/80'}`}
+                      className={`block text-sm py-2 ${isActive('/tokenomics') ? 'text-molecular-accent' : 'text-titanium-white/80'}`}
                     >
                       Tokenomics
                     </Link>
@@ -75,19 +75,19 @@ export const MobileNav = () => {
                   <div className="pb-3 pl-4 space-y-2">
                     <Link 
                       to="/wearable" 
-                      className={`block text-sm py-2 ${isActive('/wearable') ? 'text-plasma-violet' : 'text-titanium-white/80'}`}
+                      className={`block text-sm py-2 ${isActive('/wearable') ? 'text-molecular-accent' : 'text-titanium-white/80'}`}
                     >
                       Wearable
                     </Link>
                     <Link 
                       to="/agency" 
-                      className={`block text-sm py-2 ${isActive('/agency') ? 'text-plasma-violet' : 'text-titanium-white/80'}`}
+                      className={`block text-sm py-2 ${isActive('/agency') ? 'text-molecular-accent' : 'text-titanium-white/80'}`}
                     >
                       Agency
                     </Link>
                     <Link 
                       to="/gated-ip-nft" 
-                      className={`block text-sm py-2 ${isActive('/gated-ip-nft') ? 'text-plasma-violet' : 'text-titanium-white/80'}`}
+                      className={`block text-sm py-2 ${isActive('/gated-ip-nft') ? 'text-molecular-accent' : 'text-titanium-white/80'}`}
                     >
                       Gated IP NFT
                     </Link>
@@ -99,21 +99,21 @@ export const MobileNav = () => {
                 href="https://cureworld.org" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 text-titanium-white hover:text-plasma-violet"
+                className="text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 text-titanium-white hover:text-molecular-accent"
               >
                 CUREWORLD
               </a>
 
               <Link 
                 to="/news" 
-                className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/news') ? 'text-plasma-violet' : 'text-titanium-white'}`}
+                className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/news') ? 'text-molecular-accent' : 'text-titanium-white'}`}
               >
                 NEWS
               </Link>
 
               <Link 
                 to="/poetry" 
-                className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/poetry') ? 'text-plasma-violet' : 'text-titanium-white'}`}
+                className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/poetry') ? 'text-molecular-accent' : 'text-titanium-white'}`}
               >
                 POETRY
               </Link>

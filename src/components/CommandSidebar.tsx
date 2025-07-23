@@ -104,7 +104,7 @@ const CommandSidebar = () => {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild tooltip="Join Labs">
-                  <Link to="/join" className="text-plasma-violet">
+                  <Link to="/join" className="text-molecular-accent">
                     <CircleDot />
                     <span>Join Labs</span>
                   </Link>
