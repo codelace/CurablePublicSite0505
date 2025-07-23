@@ -132,15 +132,23 @@ const About = () => {
                   ].map((faq, index) => (
                     <div 
                       key={index} 
-                      className="bg-brand-charcoal/40 backdrop-blur-sm border border-quantum-cyan/20 rounded-xl p-6 transition-all duration-300 hover:border-quantum-cyan/40 hover:bg-brand-charcoal/60"
+                      className="bg-brand-charcoal/50 backdrop-blur-sm border border-quantum-cyan/30 rounded-xl p-6 transition-all duration-500 hover:border-quantum-purple/50 hover:bg-brand-charcoal/70 group relative overflow-hidden"
                     >
-                      <h3 className="text-xl font-poppins font-semibold text-white mb-3">
-                        {faq.question}
-                      </h3>
-                      <div className="w-12 h-0.5 bg-gradient-to-r from-quantum-cyan to-quantum-purple mb-3"></div>
-                      <p className="text-foreground/90 leading-relaxed font-poppins">
-                        {faq.answer}
-                      </p>
+                      {/* Quantum rainbow background effect on hover */}
+                      <div className="absolute inset-0 bg-gradient-quantum-subtle opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none"></div>
+                      
+                      {/* Quantum rainbow accent orb */}
+                      <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-gradient-radial from-quantum-cyan/20 to-transparent blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      
+                      <div className="relative z-10">
+                        <h3 className="text-xl font-poppins font-semibold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-quantum-cyan group-hover:to-quantum-purple group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500">
+                          {faq.question}
+                        </h3>
+                        <div className="w-12 h-0.5 bg-gradient-to-r from-quantum-cyan to-quantum-purple mb-3 group-hover:w-20 transition-all duration-500"></div>
+                        <p className="text-foreground/90 leading-relaxed font-poppins">
+                          {faq.answer}
+                        </p>
+                      </div>
                     </div>
                   ))}
                 </div>
