@@ -103,7 +103,7 @@ const Wearable = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-logo-blue/10 to-transparent" />
         <div className="container mx-auto max-w-4xl relative z-10">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-logo-blue via-bio-blue to-bio-green bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-titanium-white">
               Patients are the Source of Truth at Curable Labs — Wearables are the Connection
             </h1>
             <p className="text-xl text-titanium-white/80 leading-relaxed max-w-3xl mx-auto">
