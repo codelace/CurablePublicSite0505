@@ -18,21 +18,23 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
     <div 
       id="team-section" 
       ref={ref as React.RefObject<HTMLDivElement>}
-      className="mb-3 relative z-20 opacity-100 translate-y-0 w-full quantum-field card-quantum-pro"
+      className="mb-3 relative z-20 opacity-100 translate-y-0 w-full"
     >
-      {/* Enhanced background effects */}
-      <div className="absolute inset-0 neural-network opacity-20">
-        <div className="neural-node"></div>
-        <div className="neural-node"></div>
-        <div className="neural-node"></div>
-        <div className="neural-node"></div>
-        <div className="neural-node"></div>
-        <div className="neural-node"></div>
+      {/* Fixed background effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="neural-network opacity-10">
+          <div className="neural-node"></div>
+          <div className="neural-node"></div>
+          <div className="neural-node"></div>
+          <div className="neural-node"></div>
+          <div className="neural-node"></div>
+          <div className="neural-node"></div>
+        </div>
       </div>
       
       <div className="relative z-10">
         <CommandHUDHeader 
-          title={<span className="holographic-text">Our Team</span>}
+          title={<span className="text-foreground">Our Team</span>}
           variant="secondary" 
           statusText="CONTRIBUTOR MODULE" 
           className="mb-2"
@@ -46,7 +48,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
             {people.map((person, index) => (
               <div 
                 key={`team-member-${person.id}`}
-                className="magnetic-attraction transform transition-all duration-500 hover:scale-110 hover:z-30"
+                className="transform transition-all duration-500 hover:scale-110"
                 style={{ 
                   transitionDelay: `${index * 25}ms`,
                   transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.95)'

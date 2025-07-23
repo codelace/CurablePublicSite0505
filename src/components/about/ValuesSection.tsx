@@ -14,15 +14,17 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({ isVisible, hoveredValue, 
   return (
     <div 
       id="values-section" 
-      className={`mb-3 relative z-10 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} w-full quantum-field`}
+      className={`mb-3 relative z-10 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} w-full`}
     >
-      {/* Quantum background effects */}
-      <div className="absolute inset-0 quantum-particles"></div>
-      <div className="absolute inset-0 data-stream-bg opacity-5"></div>
+      {/* Fixed quantum background effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="quantum-particles opacity-20"></div>
+        <div className="data-stream-bg opacity-5"></div>
+      </div>
       
       <div className="relative z-10">
         <CommandHUDHeader 
-          title={<span className="holographic-text">Our Core Values</span>}
+          title={<span className="text-foreground">Our Core Values</span>}
           variant="accent" 
           statusText="VALUES MODULE"
           className="mb-2"
@@ -32,7 +34,7 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({ isVisible, hoveredValue, 
           {values.map((value, index) => (
             <div 
               key={index}
-              className="magnetic-attraction card-quantum-pro transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-quantum-red/30"
+              className="transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-quantum-red/20"
               onMouseEnter={() => setHoveredValue(index)}
               onMouseLeave={() => setHoveredValue(null)}
               style={{ 

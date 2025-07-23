@@ -68,21 +68,23 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
 
   return (
     <Card 
-      className={`magnetic-attraction card-quantum-pro quantum-field flex flex-col text-center h-full p-3 transition-all duration-500 hover:scale-110 hover:shadow-xl hover:shadow-quantum-red/30
+      className={`flex flex-col text-center h-full p-3 transition-all duration-500 hover:scale-110 hover:shadow-lg hover:shadow-quantum-red/20
                 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${animationClass}`}
       glowColor={person.group === 'team' ? 'blue' : 
                 person.group === 'advisor' ? 'red' : 
                 person.group === 'contributor' ? 'amber' : 'purple'}
     >
-      {/* Enhanced neural network background for profile cards */}
-      <div className="absolute inset-0 neural-network opacity-10">
-        <div className="neural-node"></div>
-        <div className="neural-node"></div>
+      {/* Simplified neural network background for profile cards */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="neural-network opacity-5">
+          <div className="neural-node"></div>
+          <div className="neural-node"></div>
+        </div>
       </div>
       
       <div 
         className="w-20 h-20 sm:w-24 sm:w-24 rounded-full overflow-hidden border-2 
-                  border-quantum-red/40 mb-2 mx-auto relative transition-all duration-500 magnetic-attraction shadow-lg shadow-quantum-red/20"
+                  border-quantum-red/40 mb-2 mx-auto relative transition-all duration-500 shadow-lg shadow-quantum-red/10"
         onLoad={() => setIsLoaded(true)}
       >
         <Avatar className="w-full h-full">
@@ -104,13 +106,13 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
       <div className="flex-1 flex flex-col relative z-10">
         <h3 className="text-sm sm:text-base font-poppins font-bold mb-2 text-foreground">
           {person.group === 'founder' ? (
-            <span className="holographic-text">{person.name}</span>
+            <span className="text-foreground">{person.name}</span>
           ) : person.group === 'advisor' ? (
-            <span className="holographic-text">{person.name}</span>
+            <span className="text-foreground">{person.name}</span>
           ) : person.group === 'contributor' ? (
-            <span className="holographic-text">{person.name}</span>
+            <span className="text-foreground">{person.name}</span>
           ) : (
-            <span className="holographic-text">{person.name}</span>
+            <span className="text-foreground">{person.name}</span>
           )}
         </h3>
         
@@ -118,7 +120,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
           {groupDisplay}
         </Badge>
         
-        <p className="text-quantum-red text-sm font-poppins mb-2 holographic-text">{person.role}</p>
+        <p className="text-quantum-red text-sm font-poppins mb-2">{person.role}</p>
         
         <div className="flex-1 flex flex-col justify-start">
           <div className="text-foreground/80 text-sm leading-relaxed text-left font-poppins">

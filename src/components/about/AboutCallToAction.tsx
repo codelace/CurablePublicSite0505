@@ -18,9 +18,9 @@ const AboutCallToAction: React.FC<AboutCallToActionProps> = ({ isVisible }) => {
           href="/join" 
           className="btn-quantum-enhanced relative px-10 py-4 bg-gradient-to-r from-quantum-red to-warm-rose rounded-full border-2 border-quantum-red/50 text-white font-poppins font-bold flex items-center gap-3 transition transform duration-300 hover:scale-105 shadow-xl shadow-quantum-red/30"
         >
-          {/* Holographic text effect */}
-          <span className="holographic-text text-lg">Join Our Mission</span>
-          <span className="group-hover:translate-x-2 transition-transform duration-300 text-xl">→</span>
+          {/* Enhanced text with better contrast */}
+          <span className="text-white text-lg font-bold relative z-10 drop-shadow-lg">Join Our Mission</span>
+          <span className="group-hover:translate-x-2 transition-transform duration-300 text-xl text-white relative z-10">→</span>
           
           {/* Inner glow */}
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
