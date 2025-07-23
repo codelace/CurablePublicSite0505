@@ -36,7 +36,7 @@ export const NavLogo = () => {
         <div className="absolute -inset-1 bg-bio-blue rounded-full blur-sm animate-pulse"></div>
         <div className="relative w-2 h-2 rounded-full bg-bio-blue animate-pulse-dot"></div>
         {/* Add pulsing ring */}
-        <div className="absolute -inset-2 border-4 border-logo-blue rounded-full animate-ping opacity-80" style={{animationDuration: '2s'}}></div>
+        <div className="absolute -inset-2 border-4 rounded-full animate-ping opacity-80" style={{animationDuration: '2s', borderColor: 'hsl(0 74% 55%)'}}></div>
       </div>
     </div>
   );
