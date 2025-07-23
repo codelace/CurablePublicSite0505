@@ -86,105 +86,23 @@ const TeamSection: React.FC<TeamSectionProps> = ({ isVisible }) => {
         </div>
         
         <TooltipProvider>
-          {/* Founders Section */}
-          {groupedPeople.founders.length > 0 && (
-            <div className="mb-12">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-0.5 bg-gradient-to-r from-plasma-violet to-quantum-red"></div>
-                <h3 className="text-xl font-bold text-foreground font-poppins">
-                  <GradientText variant="purple-red" className="font-extrabold">Founders</GradientText>
-                </h3>
-                <div className="flex-1 h-0.5 bg-gradient-to-r from-quantum-red to-transparent"></div>
-              </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                {groupedPeople.founders.map((person, index) => (
-                  <div 
-                    key={`founder-${person.id}`}
-                    className={`magnetic-attraction-optimized transform transition-all duration-700 delay-${index * 100}
-                              ${revealCards.includes(index) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}
-                  >
-                    <ProfileCard person={person} featured={true} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Core Team Section */}
-          {groupedPeople.team.length > 0 && (
-            <div className="mb-12">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-0.5 bg-gradient-to-r from-logo-blue to-bio-green"></div>
-                <h3 className="text-xl font-bold text-foreground font-poppins">
-                  <GradientText variant="green-blue" className="font-extrabold">Core Guardians</GradientText>
-                </h3>
-                <div className="flex-1 h-0.5 bg-gradient-to-r from-bio-green to-transparent"></div>
-              </div>
-              
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-                {groupedPeople.team.map((person, index) => (
-                  <div 
-                    key={`team-${person.id}`}
-                    className={`magnetic-attraction-optimized transform transition-all duration-700 delay-${(index + groupedPeople.founders.length) * 80}
-                              ${revealCards.includes(index + groupedPeople.founders.length) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}
-                  >
-                    <ProfileCard person={person} compact={true} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Advisors Section */}
-          {groupedPeople.advisors.length > 0 && (
-            <div className="mb-12">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-0.5 bg-gradient-to-r from-quantum-red to-warm-rose"></div>
-                <h3 className="text-xl font-bold text-foreground font-poppins">
-                  <GradientText variant="red" className="font-extrabold">Strategic Advisors</GradientText>
-                </h3>
-                <div className="flex-1 h-0.5 bg-gradient-to-r from-warm-rose to-transparent"></div>
-              </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {groupedPeople.advisors.map((person, index) => (
-                  <div 
-                    key={`advisor-${person.id}`}
-                    className={`magnetic-attraction-optimized transform transition-all duration-700 delay-${(index + groupedPeople.founders.length + groupedPeople.team.length) * 100}
-                              ${revealCards.includes(index + groupedPeople.founders.length + groupedPeople.team.length) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}
-                  >
-                    <ProfileCard person={person} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Contributors Section */}
-          {groupedPeople.contributors.length > 0 && (
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-0.5 bg-gradient-to-r from-warm-amber to-warm-coral"></div>
-                <h3 className="text-xl font-bold text-foreground font-poppins">
-                  <GradientText variant="multi" className="font-extrabold">Contributors</GradientText>
-                </h3>
-                <div className="flex-1 h-0.5 bg-gradient-to-r from-warm-coral to-transparent"></div>
-              </div>
-              
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                {groupedPeople.contributors.map((person, index) => (
-                  <div 
-                    key={`contributor-${person.id}`}
-                    className={`magnetic-attraction-optimized transform transition-all duration-700 delay-${(index + groupedPeople.founders.length + groupedPeople.advisors.length + groupedPeople.team.length) * 60}
-                              ${revealCards.includes(index + groupedPeople.founders.length + groupedPeople.advisors.length + groupedPeople.team.length) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}
-                  >
-                    <ProfileCard person={person} compact={true} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          {/* Unified Team Grid - All members together, sorted by priority */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+            {[...groupedPeople.founders, ...groupedPeople.team, ...groupedPeople.advisors, ...groupedPeople.contributors]
+              .map((person, index) => (
+                <div 
+                  key={`team-member-${person.id}`}
+                  className={`magnetic-attraction-optimized transform transition-all duration-700 delay-${index * 60}
+                            ${revealCards.includes(index) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}
+                >
+                  <ProfileCard 
+                    person={person} 
+                    featured={person.group === 'founder'} 
+                    compact={person.group === 'contributor' || person.group === 'team'} 
+                  />
+                </div>
+              ))}
+          </div>
         </TooltipProvider>
       </div>
     </div>
