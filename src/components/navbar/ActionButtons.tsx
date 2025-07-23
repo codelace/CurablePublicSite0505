@@ -26,8 +26,12 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
 
   // Keep other button classes the same
   const joinButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "bg-quantum-red hover:bg-gradient-to-r hover:from-quantum-red hover:to-logo-blue" 
-    : "bg-quantum-red hover:bg-gradient-to-r hover:from-quantum-red hover:to-logo-blue hover:shadow-[0_0_12px_hsl(0_74%_55%/0.6)] transition-all duration-300"}`;
+    ? "hover:bg-gradient-to-r hover:from-quantum-red hover:to-logo-blue" 
+    : "hover:bg-gradient-to-r hover:from-quantum-red hover:to-logo-blue hover:shadow-[0_0_12px_hsl(0_74%_55%/0.6)] transition-all duration-300"}`;
+  
+  const joinButtonStyle = {
+    backgroundColor: 'hsl(0 74% 55%)'
+  };
 
   const novelButtonClasses = `${baseButtonClasses} ${isMobile 
     ? "bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-quantum-red" 
@@ -64,6 +68,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
       <Link 
         to="/join" 
         className={`${joinButtonClasses} transition-colors duration-300`}
+        style={joinButtonStyle}
         onMouseEnter={() => setHoveredButton('join')}
         onMouseLeave={() => setHoveredButton(null)}
       >
