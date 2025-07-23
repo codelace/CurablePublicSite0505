@@ -5,7 +5,7 @@ import { mission } from '@/data/mission';
 const MissionPanel: React.FC = () => {
   return (
     <div 
-      className="card-quantum-pro magnetic-attraction p-3 sm:p-4 mb-3 relative overflow-hidden group transition-all duration-500 backdrop-blur-md holographic-text"
+      className="p-3 sm:p-4 mb-3 relative overflow-hidden group transition-all duration-500 bg-brand-charcoal/60 border border-quantum-red/30 rounded-xl shadow-lg shadow-quantum-red/20"
     >
       {/* Enhanced corner brackets with warmer colors */}
       <div className="absolute top-0 left-0 w-6 h-6 border-t border-l border-warm-rose/50"></div>
@@ -21,17 +21,17 @@ const MissionPanel: React.FC = () => {
       
       {/* Mission text with enhanced styling */}
       <div className="relative z-10">
-        <h2 className="text-lg sm:text-xl font-bold text-titanium-white mb-2 font-poppins">
-          Mission<span className="text-warm-rose">_</span>
-          <span className="absolute -bottom-1 left-0 w-16 h-0.5 bg-gradient-to-r from-warm-rose to-transparent"></span>
+        <h2 className="text-lg sm:text-xl font-bold text-foreground mb-2 font-poppins">
+          Mission<span className="text-quantum-red">_</span>
+          <span className="absolute -bottom-1 left-0 w-16 h-0.5 bg-gradient-to-r from-quantum-red to-transparent"></span>
         </h2>
         
         {/* Mission text with warmer border - more compact */}
-        <div className="relative rounded-lg p-2 sm:p-3 bg-gunmetal-900/30 backdrop-blur-sm border border-warm-rose/30 shadow-inner">
-          <p className="text-titanium-white/90 leading-relaxed text-sm font-light">
-            <span className="text-warm-rose text-base">"</span>
+        <div className="relative rounded-lg p-2 sm:p-3 bg-brand-charcoal/40 border border-quantum-red/20 shadow-inner">
+          <p className="text-foreground/90 leading-relaxed text-sm font-poppins">
+            <span className="text-quantum-red text-base">"</span>
             {mission}
-            <span className="text-warm-rose text-base">"</span>
+            <span className="text-quantum-red text-base">"</span>
           </p>
           
           {/* Magnetic corner glow */}
