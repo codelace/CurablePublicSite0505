@@ -2,15 +2,15 @@
 export const getBorderStyle = (group: string) => {
   switch (group) {
     case 'team':
-      return 'border-logo-blue/40';
+      return 'border-logo-blue/60';
     case 'advisor':
-      return 'border-quantum-red/40';
+      return 'border-quantum-red/60';
     case 'founder':
-      return 'border-plasma-violet/40';
+      return 'border-plasma-violet/60';
     case 'contributor':
-      return 'border-warm-amber/40';
+      return 'border-warm-amber/60';
     default:
-      return 'border-logo-blue/40';
+      return 'border-logo-blue/60';
   }
 };
 
