@@ -40,16 +40,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         
         <h1 className={`transition-all duration-700 delay-200 transform ${revealClass('hero-text')}`}>
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-poppins leading-tight tracking-tight mb-2">
-            <span className="bg-gradient-to-r from-quantum-cyan via-quantum-purple to-quantum-emerald bg-clip-text text-transparent font-bold" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Curable</span>
-            <span className="bg-gradient-to-r from-quantum-emerald via-quantum-indigo to-quantum-cyan bg-clip-text text-transparent font-bold" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}> Labs</span>
+            <span className="bg-gradient-to-r from-white via-quantum-cyan to-white bg-clip-text text-transparent font-bold drop-shadow-lg" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Curable</span>
+            <span className="bg-gradient-to-r from-quantum-emerald via-white to-quantum-indigo bg-clip-text text-transparent font-bold drop-shadow-lg" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}> Labs</span>
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-4 font-light">
-            <span className="font-medium bg-gradient-to-r from-quantum-cyan via-quantum-purple via-quantum-emerald to-quantum-indigo bg-clip-text text-transparent" 
+            <span className="font-medium text-white drop-shadow-lg" 
                   style={{
+                    background: 'linear-gradient(90deg, hsl(var(--quantum-cyan)), hsl(var(--quantum-purple)), hsl(var(--quantum-emerald)), hsl(var(--quantum-indigo)))',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundSize: '300% 300%',
-                    animation: 'gradient-text-flow 8s ease-in-out infinite'
+                    animation: 'gradient-text-flow 8s ease-in-out infinite',
+                    filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))'
                   }}>
               Blueprinting Tomorrow's Cures
             </span>
