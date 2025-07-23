@@ -247,3 +247,86 @@
     transition: none;
   }
 }
+
+/* Enhanced Quantum Animation Classes */
+.quantum-pulse-enhanced {
+  animation: quantum-pulse-enhanced 2s ease-in-out infinite;
+}
+
+.quantum-pulse-subtle {
+  animation: quantum-pulse-subtle 3s ease-in-out infinite;
+}
+
+.data-pulse-optimized {
+  animation: data-pulse-optimized 2.5s ease-in-out infinite;
+}
+
+.quantum-barrier-optimized {
+  animation: quantum-barrier-optimized 3s ease-in-out infinite;
+}
+
+.bio-scan-optimized {
+  animation: bio-scan-optimized 2s ease-in-out infinite;
+}
+
+.warm-glow-optimized {
+  animation: warm-glow-optimized 2.5s ease-in-out infinite;
+}
+
+@keyframes quantum-pulse-enhanced {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg); 
+    box-shadow: 0 0 20px hsl(var(--quantum-red) / 0.3);
+  }
+  50% { 
+    transform: scale(1.02) rotate(1deg); 
+    box-shadow: 0 0 40px hsl(var(--quantum-red) / 0.6);
+  }
+}
+
+@keyframes quantum-pulse-subtle {
+  0%, 100% { 
+    transform: scale(1); 
+    box-shadow: 0 0 15px hsl(var(--quantum-red) / 0.2);
+  }
+  50% { 
+    transform: scale(1.01); 
+    box-shadow: 0 0 25px hsl(var(--quantum-red) / 0.4);
+  }
+}
+
+@keyframes data-pulse-optimized {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsl(var(--logo-blue) / 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 35px hsl(var(--logo-blue) / 0.6);
+  }
+}
+
+@keyframes quantum-barrier-optimized {
+  0%, 100% { 
+    box-shadow: 0 0 18px hsl(var(--quantum-red) / 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 30px hsl(var(--quantum-red) / 0.7);
+  }
+}
+
+@keyframes bio-scan-optimized {
+  0%, 100% { 
+    box-shadow: 0 0 22px hsl(var(--plasma-violet) / 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 38px hsl(var(--plasma-violet) / 0.6);
+  }
+}
+
+@keyframes warm-glow-optimized {
+  0%, 100% { 
+    box-shadow: 0 0 16px hsl(var(--warm-amber) / 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 28px hsl(var(--warm-amber) / 0.6);
+  }
+}
