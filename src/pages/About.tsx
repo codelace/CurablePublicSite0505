@@ -45,18 +45,18 @@ const About = () => {
       
       {/* Main Content Container */}
       <div className="relative z-10">
-        {/* Hero Section - Simplified */}
-        <section className="pt-[100px] pb-16">
-          <div className="container mx-auto px-4 max-w-6xl">
+        {/* Hero Section - Compact */}
+        <section className="pt-[85px] pb-8">
+          <div className="container mx-auto px-4 max-w-7xl">
             <div className={`transition-all duration-700 ${animatedSections.includes('mission-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <AboutHero />
             </div>
           </div>
         </section>
 
-        {/* Values Section - Cleaner */}
-        <section className="py-16 relative">
-          <div className="container mx-auto px-4 max-w-6xl">
+        {/* Values Section - Reduced spacing */}
+        <section className="py-8 relative">
+          <div className="container mx-auto px-4 max-w-7xl">
             <div className={`transition-all duration-700 ${animatedSections.includes('values-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <ValuesSection 
                 isVisible={animatedSections.includes('values-section')} 
@@ -67,9 +67,9 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team Section - Simplified */}
-        <section className="py-16 relative">
-          <div className="container mx-auto px-4 max-w-6xl">
+        {/* Team Section - Compact */}
+        <section className="py-8 relative">
+          <div className="container mx-auto px-4 max-w-7xl">
             <div className={`transition-all duration-700 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <TeamSection 
                 isVisible={animatedSections.includes('team-section')}
@@ -78,24 +78,24 @@ const About = () => {
           </div>
         </section>
 
-        {/* FAQ Section - Cleaner Design */}
-        <section className="py-16 relative">
-          <div className="container mx-auto px-4 max-w-6xl">
+        {/* FAQ Section - Compact and wider layout */}
+        <section className="py-8 relative">
+          <div className="container mx-auto px-4 max-w-7xl">
             <div className={`transition-all duration-700 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              {/* Simplified FAQ Header */}
-              <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-4 text-white">
+              {/* Compact FAQ Header */}
+              <div className="text-center mb-8">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-3 text-white">
                   Frequently Asked <span className="bg-gradient-to-r from-quantum-cyan to-quantum-purple bg-clip-text text-transparent">Questions</span>
                 </h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-quantum-cyan to-quantum-purple mx-auto mb-6"></div>
+                <div className="w-20 h-1 bg-gradient-to-r from-quantum-cyan to-quantum-purple mx-auto mb-4"></div>
                 <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed font-poppins">
                   Everything you need to know about our decentralized science platform
                 </p>
               </div>
 
-              {/* Clean FAQ Grid */}
-              <div className="max-w-5xl mx-auto">
-                <div className="grid gap-4 md:gap-6">
+              {/* Efficient two-column FAQ Grid */}
+              <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
                   {[
                     {
                       question: "What is Curable Labs?",
@@ -132,7 +132,7 @@ const About = () => {
                   ].map((faq, index) => (
                     <div 
                       key={index} 
-                      className="bg-brand-charcoal/50 backdrop-blur-sm border border-quantum-cyan/30 rounded-xl p-6 transition-all duration-500 hover:border-quantum-purple/50 hover:bg-brand-charcoal/70 group relative overflow-hidden"
+                      className="bg-brand-charcoal/50 backdrop-blur-sm border border-quantum-cyan/30 rounded-xl p-5 transition-all duration-500 hover:border-quantum-purple/50 hover:bg-brand-charcoal/70 group relative overflow-hidden"
                     >
                       {/* Quantum rainbow background effect on hover */}
                       <div className="absolute inset-0 bg-gradient-quantum-subtle opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none"></div>
@@ -158,7 +158,7 @@ const About = () => {
         </section>
 
         {/* Call to Action Section - Simplified */}
-        <section className="py-16 relative">
+        <section className="py-8 relative">
           <div className="container mx-auto px-4 max-w-6xl">
             <AboutCallToAction isVisible={animatedSections.includes('team-section')} />
           </div>
