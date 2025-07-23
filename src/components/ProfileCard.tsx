@@ -68,23 +68,23 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, isActive = false }) =
 
   return (
     <Card 
-      className={`flex flex-col text-center h-full p-3 transition-all duration-500 hover:scale-110 hover:shadow-lg hover:shadow-quantum-red/20
+      className={`card-quantum-optimized magnetic-attraction-optimized flex flex-col text-center h-full p-3 transition-all duration-300
                 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${animationClass}`}
       glowColor={person.group === 'team' ? 'blue' : 
                 person.group === 'advisor' ? 'red' : 
                 person.group === 'contributor' ? 'amber' : 'purple'}
     >
-      {/* Simplified neural network background for profile cards */}
+      {/* Performance-optimized neural network background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="neural-network opacity-5">
-          <div className="neural-node"></div>
-          <div className="neural-node"></div>
+        <div className="neural-network-optimized opacity-5">
+          <div className="neural-node-optimized"></div>
+          <div className="neural-node-optimized"></div>
         </div>
       </div>
       
       <div 
         className="w-20 h-20 sm:w-24 sm:w-24 rounded-full overflow-hidden border-2 
-                  border-quantum-red/40 mb-2 mx-auto relative transition-all duration-500 shadow-lg shadow-quantum-red/10"
+                  border-quantum-red/40 mb-2 mx-auto relative transition-all duration-300 shadow-lg shadow-quantum-red/10"
         onLoad={() => setIsLoaded(true)}
       >
         <Avatar className="w-full h-full">

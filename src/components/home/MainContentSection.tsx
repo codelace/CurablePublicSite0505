@@ -36,12 +36,12 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
       </div>
       
       <div className="relative z-10">
-        {/* Core status indicators with enhanced styling */}
-        <div className={`flex flex-wrap gap-2 justify-center mb-4 transition-all duration-700 delay-200 ${revealSections.includes('status') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        {/* Core status indicators with performance-optimized styling */}
+        <div className={`flex flex-wrap gap-2 justify-center mb-4 transition-all duration-500 delay-200 ${revealSections.includes('status') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {statusItems.map((item, idx) => (
             <div 
               key={`status-${idx}`} 
-              className={`magnetic-attraction card-quantum-pro flex items-center gap-2 px-4 py-2 rounded-xl border-2 text-sm font-poppins font-semibold shadow-lg transition-all duration-300 hover:scale-105
+              className={`magnetic-attraction-optimized card-quantum-optimized flex items-center gap-2 px-4 py-2 rounded-xl border-2 text-sm font-poppins font-semibold shadow-lg transition-all duration-300
                 ${item.status === 'connected' ? 'border-quantum-red/50 text-quantum-red bg-quantum-red/10 shadow-quantum-red/20' : 
                   item.status === 'pending' ? 'border-warm-amber/50 text-warm-amber bg-warm-amber/10 shadow-warm-amber/20' : 
                   'border-logo-blue/50 text-logo-blue bg-logo-blue/10 shadow-logo-blue/20'}`}
@@ -56,15 +56,15 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
           ))}
         </div>
 
-        {/* Tab Content with enhanced container */}
-        <div className={`transition-all duration-700 delay-300 ${revealSections.includes('tabs') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="relative min-h-[12rem] card-quantum-pro bg-brand-charcoal/30 backdrop-blur-lg border border-quantum-red/20 rounded-xl p-6 shadow-xl shadow-quantum-red/20">
-            {/* Neural network background for content */}
+        {/* Tab Content with performance-optimized container */}
+        <div className={`transition-all duration-500 delay-300 ${revealSections.includes('tabs') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="relative min-h-[12rem] card-quantum-optimized bg-brand-charcoal/30 backdrop-blur-lg border border-quantum-red/20 rounded-xl p-6 shadow-xl shadow-quantum-red/20">
+            {/* Performance-optimized neural network background for content */}
             <div className="absolute inset-0 pointer-events-none">
-              <div className="neural-network opacity-10">
-                <div className="neural-node"></div>
-                <div className="neural-node"></div>
-                <div className="neural-node"></div>
+              <div className="neural-network-optimized opacity-8">
+                <div className="neural-node-optimized"></div>
+                <div className="neural-node-optimized"></div>
+                <div className="neural-node-optimized"></div>
               </div>
             </div>
             

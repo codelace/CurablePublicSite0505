@@ -120,19 +120,19 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
   return (
     <Card 
       ref={cardRef}
-      className={`flex flex-col items-center text-center h-full p-3 transition-all duration-500 hover:shadow-lg hover:shadow-quantum-red/20 ${
-        isHovered ? 'transform -translate-y-3 scale-105' : ''
+      className={`card-quantum-optimized magnetic-attraction-optimized flex flex-col items-center text-center h-full p-3 transition-all duration-300 ${
+        isHovered ? 'transform -translate-y-2 scale-102' : ''
       }`}
       glowColor={colorScheme.glowColor === 'blue' ? 'blue' : 'purple'}
     >
-      {/* Simplified quantum background effects */}
+      {/* Performance-optimized quantum background effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="quantum-particles opacity-20"></div>
+        <div className="quantum-particles-optimized opacity-15"></div>
       </div>
       
       {/* Enhanced background effect */}
       {isHovered && (
-        <div className={`absolute inset-0 bg-gradient-to-br from-quantum-red/10 via-brand-charcoal/20 to-quantum-red/5 rounded-xl transition-opacity duration-500 opacity-70`}></div>
+        <div className={`absolute inset-0 bg-gradient-to-br from-quantum-red/8 via-brand-charcoal/15 to-quantum-red/5 rounded-xl transition-opacity duration-300 opacity-70`}></div>
       )}
       
       <div className={`mb-3 relative z-10 ${isHovered ? 'animate-pulse-dot' : ''}`}>

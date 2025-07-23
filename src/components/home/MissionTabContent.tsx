@@ -54,7 +54,7 @@ const MissionTabContent: React.FC = () => {
           <div className={`flex flex-wrap gap-4 mb-12 transform transition-all duration-700 delay-200 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <Button 
               onClick={() => window.open("https://binding-db-integrator-1-codelace77.replit.app/", "_blank")}
-              className="btn-quantum-enhanced magnetic-attraction bg-gradient-to-r from-quantum-red to-warm-rose hover:from-quantum-red/90 hover:to-warm-rose/90 text-white font-bold py-6 px-8 rounded-xl flex items-center gap-3 shadow-xl shadow-quantum-red/40 hover:shadow-quantum-red/60 transition-all duration-300 text-lg border border-quantum-red/30"
+              className="btn-quantum-optimized magnetic-attraction-optimized bg-gradient-to-r from-quantum-red to-warm-rose hover:from-quantum-red/90 hover:to-warm-rose/90 text-white font-bold py-6 px-8 rounded-xl flex items-center gap-3 shadow-xl shadow-quantum-red/40 hover:shadow-quantum-red/60 transition-all duration-300 text-lg border border-quantum-red/30"
             >
               Launch Platform
               <ArrowRight className="w-5 h-5" />
@@ -63,10 +63,10 @@ const MissionTabContent: React.FC = () => {
             <Button 
               onClick={() => navigate("/join")} 
               variant="outline"
-              className="magnetic-attraction border-2 border-quantum-red/50 text-quantum-red hover:text-white hover:bg-quantum-red/20 font-bold py-6 px-8 rounded-xl flex items-center gap-3 transition-all duration-300 text-lg backdrop-blur-sm shadow-lg hover:shadow-quantum-red/30"
+              className="magnetic-attraction-optimized border-2 border-quantum-red/50 text-white hover:text-white hover:bg-quantum-red/20 font-bold py-6 px-8 rounded-xl flex items-center gap-3 transition-all duration-300 text-lg backdrop-blur-sm shadow-lg hover:shadow-quantum-red/30 bg-quantum-red/10"
             >
-              Join DAO
-              <ArrowRight className="w-5 h-5" />
+              <span className="text-white font-bold">Join DAO</span>
+              <ArrowRight className="w-5 h-5 text-white" />
             </Button>
           </div>
         </div>

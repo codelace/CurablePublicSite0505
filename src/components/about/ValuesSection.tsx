@@ -14,33 +14,33 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({ isVisible, hoveredValue, 
   return (
     <div 
       id="values-section" 
-      className={`mb-3 relative z-10 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} w-full`}
+      className={`mb-3 relative z-10 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} w-full`}
     >
-      {/* Fixed quantum background effects */}
+      {/* Performance-optimized quantum background effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="quantum-particles opacity-20"></div>
-        <div className="data-stream-bg opacity-5"></div>
+        <div className="quantum-particles-optimized"></div>
+        <div className="data-stream-optimized"></div>
       </div>
       
       <div className="relative z-10">
         <CommandHUDHeader 
-          title={<span className="text-foreground">Our Core Values</span>}
+          title={<span className="text-foreground font-bold">Our Core Values</span>}
           variant="accent" 
           statusText="VALUES MODULE"
           className="mb-2"
         />
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {values.map((value, index) => (
             <div 
               key={index}
-              className="transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-quantum-red/20"
+              className="magnetic-attraction-optimized transform transition-all duration-300"
               onMouseEnter={() => setHoveredValue(index)}
               onMouseLeave={() => setHoveredValue(null)}
               style={{ 
-                transitionDelay: `${index * 75}ms`,
+                transitionDelay: `${index * 50}ms`,
                 opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(30px)'
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)'
               }}
             >
               <ValueCard value={value} isHovered={hoveredValue === index} />
