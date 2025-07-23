@@ -1,58 +1,54 @@
 /* Reduced animation set for better performance */
 
-@layer utilities {
-  /* Performance-focused animations only */
+/* Essential opacity transitions */
+.animate-fade-in-fast {
+  animation: fadeInFast 0.2s ease-out forwards;
+}
+
+@keyframes fadeInFast {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Minimal pulse for indicators */
+.animate-pulse-minimal {
+  animation: pulseMinimal 2s ease-in-out infinite;
+}
+
+@keyframes pulseMinimal {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Simple scale for interactions */
+.animate-scale-minimal {
+  transition: transform 0.15s ease-out;
+}
+
+.animate-scale-minimal:hover {
+  transform: scale(1.02);
+}
+
+/* Disable heavy animations on lower-end devices */
+@media (max-width: 768px) {
+  .animate-pulse,
+  .animate-ping,
+  .animate-spin,
+  .animate-bounce {
+    animation: none !important;
+  }
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
   
-  /* Essential opacity transitions */
   .animate-fade-in-fast {
-    animation: fadeInFast 0.2s ease-out forwards;
-  }
-  
-  @keyframes fadeInFast {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  /* Minimal pulse for indicators */
-  .animate-pulse-minimal {
-    animation: pulseMinimal 2s ease-in-out infinite;
-  }
-  
-  @keyframes pulseMinimal {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-  }
-  
-  /* Simple scale for interactions */
-  .animate-scale-minimal {
-    transition: transform 0.15s ease-out;
-  }
-  
-  .animate-scale-minimal:hover {
-    transform: scale(1.02);
-  }
-  
-  /* Disable heavy animations on lower-end devices */
-  @media (max-width: 768px) {
-    .animate-pulse,
-    .animate-ping,
-    .animate-spin,
-    .animate-bounce {
-      animation: none !important;
-    }
-  }
-  
-  /* Respect user motion preferences */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-    
-    .animate-fade-in-fast {
-      animation: none;
-      opacity: 1;
-    }
+    animation: none;
+    opacity: 1;
   }
 }
