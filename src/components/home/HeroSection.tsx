@@ -27,7 +27,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
       {/* Main Hero Content with more compact spacing */}
       <div className="mb-4 text-center max-w-5xl mx-auto relative z-10">
         <div className="relative mb-2 inline-block">
-          <div className={`h-20 w-20 sm:h-24 sm:w-24 relative mx-auto mb-4 transition-all duration-700 transform ${mounted ? 'scale-100 opacity-100' : 'scale-50 opacity-0'} magnetic-attraction`}>
+          <div className={`h-20 w-20 sm:h-24 sm:w-24 relative mx-auto mb-4 transition-all duration-700 transform ${mounted ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`}>
             {/* Enhanced rotating rings */}
             <div className="absolute inset-0 rounded-full border-4 border-quantum-red/30 shadow-lg shadow-quantum-red/20"></div>
             <div className="absolute inset-0 rounded-full border-t-4 border-r-4 border-quantum-red animate-spin will-change-transform shadow-quantum-red/40" style={{animationDuration: '3s'}}></div>
