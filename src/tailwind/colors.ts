@@ -43,7 +43,7 @@ export const colors = {
   "plasma-violet": "#A162FF",
   "titanium-white": "#E8F1F9",
   "logo-blue": "#1EAEDB", // Logo blue as a separate color,
-  "bio-blue": "#5BC0EB",
+  "bio-blue": "203 71% 64%",
   "bio-green": "#8EE4AF",
   "bio-violet": "#CBA6F7",
   "dark-base": "#0E0E10",
