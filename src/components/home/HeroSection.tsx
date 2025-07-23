@@ -40,25 +40,26 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         
         <h1 className={`transition-all duration-700 delay-200 transform ${revealClass('hero-text')}`}>
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-poppins leading-tight tracking-tight mb-2">
-            <span style={{color: '#4477FF', textShadow: '0 0 20px rgba(68, 119, 255, 0.6)'}}>Curable</span>
-            <span className="holographic-text" style={{color: '#6699FF', textShadow: '0 0 15px rgba(102, 153, 255, 0.5)'}}> Labs</span>
+            <span className="bg-gradient-to-r from-red-400 via-blue-400 to-blue-500 bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Curable</span>
+            <span className="holographic-text bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}> Labs</span>
           </div>
-          <div className="text-xl sm:text-2xl md:text-3xl mt-2 text-foreground/90 font-light">
-            <span style={{
-              background: 'linear-gradient(135deg, #4477FF, #6699FF)', 
-              WebkitBackgroundClip: 'text', 
-              WebkitTextFillColor: 'transparent', 
-              backgroundClip: 'text',
-              textShadow: '0 0 30px rgba(68, 119, 255, 0.4)',
-              filter: 'brightness(1.2)'
-            }}>Blueprinting Tomorrow's Cures</span>
+          <div className="text-xl sm:text-2xl md:text-3xl mt-2 font-light">
+            <span className="bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 bg-clip-text text-transparent font-semibold" 
+                  style={{
+                    WebkitBackgroundClip: 'text', 
+                    WebkitTextFillColor: 'transparent',
+                    textShadow: '0 0 20px rgba(139, 69, 19, 0.3)',
+                    filter: 'brightness(1.3) contrast(1.2)'
+                  }}>
+              Blueprinting Tomorrow's Cures
+            </span>
           </div>
         </h1>
         
         <p className={`text-foreground/80 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed mb-6 mt-4 transition-all duration-700 delay-300 transform ${revealClass('hero-text')} font-poppins`}>
           An AI-powered, decentralized ecosystem for discovering, validating, and 
-          delivering <span style={{color: '#5588FF', fontWeight: '600', textShadow: '0 0 10px rgba(85, 136, 255, 0.5)'}}>novel cures</span> through 
-          blockchain-native governance and <span style={{color: '#7799FF', fontWeight: '600', textShadow: '0 0 10px rgba(119, 153, 255, 0.4)'}}>collaborative research</span>.
+          delivering <span className="bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent font-semibold" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>novel cures</span> through 
+          blockchain-native governance and <span className="bg-gradient-to-r from-red-300 to-red-400 bg-clip-text text-transparent font-semibold" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>collaborative research</span>.
         </p>
         
         {/* Enhanced call to action buttons with compact spacing */}
@@ -67,36 +68,36 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             onClick={scrollToContent}
             className="btn-quantum-enhanced magnetic-attraction group relative px-8 py-4 text-white font-poppins font-bold rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-105 will-change-transform"
             style={{
-              background: 'linear-gradient(135deg, #4477FF, #6699FF)',
-              border: '2px solid #5588FF',
-              boxShadow: '0 4px 20px rgba(68, 119, 255, 0.4)'
+              background: 'linear-gradient(135deg, #FF5757, #FF7777, #77AAFF, #5588FF)',
+              border: '2px solid rgba(255, 255, 255, 0.2)',
+              boxShadow: '0 4px 20px rgba(255, 87, 87, 0.3), 0 4px 20px rgba(85, 136, 255, 0.2)'
             }}
           >
             <div className="relative z-10 flex items-center gap-3">
               <span className="text-lg">Explore Platform</span> 
               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-3 transition-transform will-change-transform" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-quantum-red to-warm-rose opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
           </button>
           
           <Link 
             to="/whitepaper"
-            className="magnetic-attraction px-8 py-4 bg-transparent text-white hover:text-white font-poppins font-bold rounded-xl transition-all duration-500 hover:shadow-lg hover:scale-105 will-change-transform backdrop-blur-sm"
+            className="magnetic-attraction px-8 py-4 bg-transparent text-white hover:text-white font-poppins font-bold rounded-xl transition-all duration-500 hover:shadow-lg hover:scale-105 will-change-transform backdrop-blur-sm group"
             style={{
-              border: '2px solid #5588FF',
-              color: '#5588FF',
-              boxShadow: '0 0 15px rgba(85, 136, 255, 0.3)',
-              textShadow: '0 0 10px rgba(85, 136, 255, 0.3)'
+              border: '2px solid #77AAFF',
+              background: 'linear-gradient(135deg, transparent, rgba(119, 170, 255, 0.1))',
+              color: '#AACCFF',
+              boxShadow: '0 0 15px rgba(119, 170, 255, 0.3)'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#4477FF';
+              e.currentTarget.style.background = 'linear-gradient(135deg, #77AAFF, #5588FF)';
               e.currentTarget.style.color = 'white';
-              e.currentTarget.style.boxShadow = '0 0 25px rgba(68, 119, 255, 0.6)';
+              e.currentTarget.style.boxShadow = '0 0 25px rgba(119, 170, 255, 0.6)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = '#5588FF';
-              e.currentTarget.style.boxShadow = '0 0 15px rgba(85, 136, 255, 0.3)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, transparent, rgba(119, 170, 255, 0.1))';
+              e.currentTarget.style.color = '#AACCFF';
+              e.currentTarget.style.boxShadow = '0 0 15px rgba(119, 170, 255, 0.3)';
             }}
           >
             <span className="text-lg">Read Whitepaper</span>

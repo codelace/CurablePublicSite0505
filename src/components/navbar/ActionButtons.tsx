@@ -38,10 +38,10 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
     : "hover:bg-gradient-to-r hover:from-electric-quantum-blue hover:to-quantum-electric hover:shadow-[0_0_12px_hsl(240_100%_70%/0.6)] transition-all duration-300"}`;
   
   const novelButtonStyle = {
-    backgroundColor: '#3366FF', // Brighter, more vibrant electric blue
-    border: '2px solid #4477FF',
+    background: 'linear-gradient(135deg, #6699FF, #4477FF, #3366FF)', // Beautiful blue gradient
+    border: '2px solid #77AAFF',
     color: 'white',
-    boxShadow: '0 0 20px rgba(51, 102, 255, 0.5)'
+    boxShadow: '0 4px 20px rgba(102, 153, 255, 0.4)'
   };
 
   return (

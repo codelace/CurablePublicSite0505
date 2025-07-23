@@ -43,6 +43,8 @@ export const themeExtensions = {
     'gradient-quantum': 'var(--gradient-quantum)',
     'gradient-molecular': 'var(--gradient-molecular)',
     'gradient-electric': 'var(--gradient-electric)',
+    'gradient-hero': 'var(--gradient-hero)',
+    'gradient-text': 'var(--gradient-text)',
     'gradient-mesh': 'var(--gradient-mesh)',
     'noise': 'var(--bg-noise)',
   },
