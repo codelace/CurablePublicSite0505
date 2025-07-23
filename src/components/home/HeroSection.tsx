@@ -41,8 +41,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-4 font-light">
             <span className="relative inline-block group cursor-default">
-              {/* Dynamic background field */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-quantum-cyan/10 via-quantum-emerald/15 to-quantum-sapphire/10 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700 scale-110 animate-pulse"></div>
+              {/* Simplified background field */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-quantum-cyan/5 via-quantum-emerald/8 to-quantum-sapphire/5 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
               
               
               <span className="relative font-semibold tracking-wide text-white block" 

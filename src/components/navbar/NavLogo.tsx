@@ -1,51 +1,30 @@
 
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
 
 export const NavLogo = () => {
-  const [isHovered, setIsHovered] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/' || location.pathname === '/home';
   
   return (
-    <div className="flex items-center">
+    <div className="flex items-center logo-instant">
       <Link 
         to="/home" 
-        className="flex items-center group relative"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div 
-          className={`absolute -inset-2 bg-gradient-radial from-logo-blue/10 to-plasma-violet/5 rounded-lg blur-md transition-all duration-500 ${isHovered ? 'opacity-100 scale-110' : 'opacity-0'}`}
-        ></div>
-        <div className={`absolute -inset-px rounded-lg border border-logo-blue/0 transition-all duration-500 ${isHovered ? 'border-logo-blue/40 scale-105' : ''}`}></div>
-        
+        className="flex items-center nav-instant"
+      >        
         {isHomePage ? (
-          // Molecular structure logo for home page - bigger size
+          // Molecular structure logo for home page
           <img 
             src="/lovable-uploads/771c6d8b-9ba9-4f5e-a255-d7b1dc828db3.png" 
             alt="CURABLE LABS" 
-            className={`h-12 sm:h-14 w-auto transition-all duration-500 ${isHovered ? 'filter brightness-125 scale-105' : ''}`}
-            style={{
-              filter: isHovered ? 'brightness(1.25) contrast(1.2) drop-shadow(0 0 10px rgba(96, 165, 250, 0.5))' : 'brightness(1.1) contrast(1.1)'
-            }}
+            className="h-12 sm:h-14 w-auto"
           />
         ) : (
           // Default logo for all other pages
           <img 
             src="/lovable-uploads/7fa7cf70-1810-42ff-af5b-012906495a54.png" 
             alt="CURABLE LABS" 
-            className={`h-9 sm:h-11 w-auto transition-all duration-500 ${isHovered ? 'filter brightness-125 scale-105' : ''}`}
+            className="h-9 sm:h-11 w-auto"
           />
-        )}
-        
-        {/* Add subtle particles effect on hover */}
-        {isHovered && (
-          <div className="absolute inset-0 overflow-hidden rounded-lg">
-            <div className="absolute w-1 h-1 bg-logo-blue/40 rounded-full top-1/4 left-1/2 animate-ping"></div>
-            <div className="absolute w-1 h-1 bg-plasma-violet/40 rounded-full top-3/4 left-1/4 animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="absolute w-1 h-1 bg-logo-blue/30 rounded-full bottom-1/4 right-1/4 animate-ping" style={{animationDelay: '0.8s'}}></div>
-          </div>  
         )}
       </Link>
     </div>

@@ -1,97 +1,49 @@
 
-import React, { useState, useEffect, memo } from 'react';
-import SectionDivider from '@/components/SectionDivider';
+import React, { memo } from 'react';
 import AboutHero from '@/components/about/AboutHero';
 import ValuesSection from '@/components/about/ValuesSection';
-import OptimizedTeamSection from '@/components/about/OptimizedTeamSection';
-import { useIsMobile } from '@/hooks/use-mobile';
+import SimpleTeamSection from '@/components/about/SimpleTeamSection';
 import AboutCallToAction from '@/components/about/AboutCallToAction';
-import { useReducedMotion } from '@/utils/performance';
-import '@/styles/performance-optimized.css';
 
 const About = memo(() => {
-  // For device detection
-  const isMobile = useIsMobile();
-  const prefersReducedMotion = useReducedMotion();
-  
-  // For advanced section animation with sequential reveal
-  const [animatedSections, setAnimatedSections] = useState<string[]>([]);
-
-  // Optimized section reveal with reduced motion support
-  useEffect(() => {
-    const sections = ['mission-section', 'values-section', 'team-section'];
-    
-    if (prefersReducedMotion) {
-      // Instantly show all sections if user prefers reduced motion
-      setAnimatedSections(sections);
-      return;
-    }
-    
-    // Enhanced staggered animation with shorter delays
-    const animateSection = (index: number) => {
-      if (index >= sections.length) return;
-      
-      setTimeout(() => {
-        setAnimatedSections(prev => [...prev, sections[index]]);
-        animateSection(index + 1);
-      }, 100); // Faster reveal for better performance
-    };
-    
-    // Faster initial reveal
-    setTimeout(() => {
-      animateSection(0);
-    }, 50);
-  }, [prefersReducedMotion]);
-
   return (
-    <div className="w-full relative min-h-screen bg-dark-base">
-      {/* Simplified Background System - only when not in reduced motion */}
-      {!prefersReducedMotion && (
-        <div className="fixed inset-0 pointer-events-none">
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-radial from-quantum-cyan/5 to-transparent blur-3xl"></div>
-          <div className="absolute bottom-1/3 left-1/5 w-80 h-80 rounded-full bg-gradient-radial from-quantum-emerald/3 to-transparent blur-3xl"></div>
-        </div>
-      )}
+    <div className="w-full relative min-h-screen bg-dark-base about-page hw-accelerated">
+      {/* Minimal Background - No heavy effects */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-radial from-quantum-cyan/3 to-transparent blur-3xl"></div>
+      </div>
       
-      {/* Main Content Container */}
+      {/* Main Content Container - No animations */}
       <div className="relative z-10">
-        {/* Hero Section - Ultra Compact */}
+        {/* Hero Section */}
         <section className="pt-[75px] pb-4">
           <div className="container mx-auto px-4 max-w-8xl">
-            <div className={`transition-all duration-700 ${animatedSections.includes('mission-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <AboutHero />
-            </div>
+            <AboutHero />
           </div>
         </section>
 
-        {/* Values Section - Minimal spacing */}
+        {/* Values Section */}
         <section className="py-4 relative">
           <div className="container mx-auto px-4 max-w-8xl">
-            <div className={`transition-all duration-300 ${animatedSections.includes('values-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <ValuesSection 
-                isVisible={animatedSections.includes('values-section')} 
-                hoveredValue={null} 
-                setHoveredValue={() => {}} 
-              />
-            </div>
+            <ValuesSection 
+              isVisible={true} 
+              hoveredValue={null} 
+              setHoveredValue={() => {}} 
+            />
           </div>
         </section>
 
-        {/* Optimized Team Section */}
+        {/* Simple Team Section */}
         <section className="py-4 relative">
           <div className="container mx-auto px-4 max-w-8xl">
-            <div className={`transition-all duration-300 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <OptimizedTeamSection 
-                isVisible={animatedSections.includes('team-section')}
-              />
-            </div>
+            <SimpleTeamSection isVisible={true} />
           </div>
         </section>
 
-        {/* FAQ Section - Minimal spacing and ultra-wide layout */}
+        {/* FAQ Section - Simple, no animations */}
         <section className="py-4 relative">
           <div className="container mx-auto px-4 max-w-8xl">
-            <div className={`transition-all duration-700 ${animatedSections.includes('team-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div>
               {/* Ultra Compact FAQ Header */}
               <div className="text-center mb-4">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-poppins font-bold mb-2 text-white">
@@ -166,7 +118,7 @@ const About = memo(() => {
         {/* Call to Action Section - Ultra Compact */}
         <section className="py-4 relative">
           <div className="container mx-auto px-4 max-w-8xl">
-            <AboutCallToAction isVisible={animatedSections.includes('team-section')} />
+            <AboutCallToAction isVisible={true} />
           </div>
         </section>
       </div>

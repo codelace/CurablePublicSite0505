@@ -1,0 +1,74 @@
+/* Performance-first CSS for instant responsiveness */
+
+/* Disable all complex animations on mobile and low-end devices */
+@media (max-width: 768px), (pointer: coarse) {
+  .animate-pulse,
+  .animate-ping,
+  .animate-spin,
+  .animate-bounce,
+  .animate-pulse-glow,
+  .animate-pulse-subtle,
+  .animate-pulse-dot {
+    animation: none !important;
+  }
+  
+  /* Simplify all transitions */
+  * {
+    transition-duration: 0.15s !important;
+  }
+}
+
+/* Optimize scrolling performance */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Hardware acceleration for critical elements */
+.hw-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Instant navigation transitions */
+.nav-instant {
+  transition: none !important;
+}
+
+.nav-instant * {
+  transition: none !important;
+}
+
+/* Reduce motion for accessibility and performance */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize About page specifically */
+.about-page {
+  contain: layout style;
+}
+
+.about-page * {
+  will-change: auto;
+}
+
+.about-page .profile-card {
+  contain: layout style paint;
+}
+
+/* Instant logo switching */
+.logo-instant {
+  transition: none !important;
+  transform: none !important;
+}
+
+.logo-instant * {
+  transition: none !important;
+  animation: none !important;
+}
