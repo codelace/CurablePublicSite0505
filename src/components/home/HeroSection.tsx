@@ -40,27 +40,29 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         
         <h1 className={`transition-all duration-700 delay-200 transform ${revealClass('hero-text')}`}>
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-poppins leading-tight tracking-tight mb-2">
-            <span className="text-electric-quantum-blue">Curable</span>
-            <span className="holographic-text text-quantum-electric"> Labs</span>
+            <span style={{color: '#1700E0'}}>Curable</span>
+            <span className="holographic-text" style={{color: '#2E008B'}}> Labs</span>
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-2 text-foreground/90 font-light">
-            <GradientText variant="electric" animate>Blueprinting Tomorrow's Cures</GradientText>
+            <span style={{background: 'linear-gradient(135deg, #1700E0, #2E008B)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>Blueprinting Tomorrow's Cures</span>
           </div>
         </h1>
         
         <p className={`text-foreground/80 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed mb-6 mt-4 transition-all duration-700 delay-300 transform ${revealClass('hero-text')} font-poppins`}>
           An AI-powered, decentralized ecosystem for discovering, validating, and 
-          delivering <span className="text-electric-quantum-blue font-semibold holographic-text">novel cures</span> through 
-          blockchain-native governance and <span className="text-quantum-electric font-semibold">collaborative research</span>.
+          delivering <span style={{color: '#1700E0', fontWeight: '600'}}>novel cures</span> through 
+          blockchain-native governance and <span style={{color: '#2E008B', fontWeight: '600'}}>collaborative research</span>.
         </p>
         
         {/* Enhanced call to action buttons with compact spacing */}
         <div className={`flex flex-wrap justify-center gap-4 sm:gap-6 transition-all duration-700 delay-400 transform ${revealClass('hero-text')}`}>
           <button
             onClick={scrollToContent}
-            className="btn-quantum-enhanced magnetic-attraction group relative px-8 py-4 bg-gradient-to-r from-electric-quantum-blue to-quantum-electric text-white font-poppins font-bold rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-electric-quantum-blue/50 hover:scale-105 will-change-transform border border-electric-quantum-blue/30"
+            className="btn-quantum-enhanced magnetic-attraction group relative px-8 py-4 text-white font-poppins font-bold rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-105 will-change-transform"
             style={{
-              background: 'linear-gradient(135deg, hsl(240, 100%, 70%), hsl(235, 100%, 75%))'
+              background: 'linear-gradient(135deg, #1700E0, #2E008B)',
+              border: '2px solid #1700E0',
+              boxShadow: '0 0 20px rgba(23, 0, 224, 0.4)'
             }}
           >
             <div className="relative z-10 flex items-center gap-3">
@@ -72,7 +74,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
           
           <Link 
             to="/whitepaper"
-            className="magnetic-attraction px-8 py-4 bg-transparent border-2 border-electric-quantum-blue/50 hover:border-electric-quantum-blue text-electric-quantum-blue hover:text-white hover:bg-gradient-to-r hover:from-electric-quantum-blue/20 hover:to-quantum-electric/20 font-poppins font-bold rounded-xl transition-all duration-500 hover:shadow-lg hover:shadow-electric-quantum-blue/30 hover:scale-105 will-change-transform backdrop-blur-sm"
+            className="magnetic-attraction px-8 py-4 bg-transparent text-white hover:text-white font-poppins font-bold rounded-xl transition-all duration-500 hover:shadow-lg hover:scale-105 will-change-transform backdrop-blur-sm"
+            style={{
+              border: '2px solid #1700E0',
+              color: '#1700E0',
+              boxShadow: '0 0 15px rgba(23, 0, 224, 0.3)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#1700E0';
+              e.currentTarget.style.color = 'white';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = '#1700E0';
+            }}
           >
             <span className="text-lg">Read Whitepaper</span>
           </Link>

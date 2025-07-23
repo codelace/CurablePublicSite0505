@@ -56,13 +56,13 @@
   --bio-violet: 271 81% 56%;
   --neural-pink: 322 84% 64%;
   
-    /* New molecular blues from branding */
+    /* New molecular blues from branding - CORRECT COLORS */
     --molecular-royal: 240 80% 25%;
     --molecular-bright: 240 100% 65%;
     --molecular-deep: 250 80% 35%;
     --molecular-accent: 235 95% 55%;
-    --electric-quantum-blue: 240 100% 70%;
-    --quantum-electric: 235 100% 75%;
+    --electric-quantum-blue: 246 100% 44%;  /* #1700E0 - TRUE ELECTRIC BLUE */
+    --quantum-electric: 260 100% 27%;       /* #2E008B - DEEP VIOLET ACCENT */
 
   /* Grays and surfaces */
   --gunmetal-900: 224 15% 12%;
