@@ -19,10 +19,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-320px)] pb-2 will-change-transform relative quantum-field">
       {/* Quantum background effects */}
       <div className="absolute inset-0 quantum-particles"></div>
-      <div className="absolute inset-0 dna-helix opacity-10">
-        <div className="dna-strand"></div>
-        <div className="dna-strand"></div>
-      </div>
       
       {/* Main Hero Content with more compact spacing */}
       <div className="mb-4 text-center max-w-5xl mx-auto relative z-10">
