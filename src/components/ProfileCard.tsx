@@ -55,9 +55,8 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 
   return (
     <Card 
-      className={`card-quantum-optimized magnetic-attraction-optimized flex flex-col text-center h-full p-4 
-                transition-all duration-500 hover:scale-105 group border ${borderClass}
-                ${glowClass} hover:shadow-2xl
+      className={`card-quantum-optimized flex flex-col text-center h-full p-4 
+                border ${borderClass} ${glowClass}
                 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
       glowColor={person.group === 'team' ? 'blue' : 
                 person.group === 'advisor' ? 'red' : 
@@ -78,17 +77,16 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
                    ${person.group === 'founder' ? 'border-plasma-violet/50' : 
                      person.group === 'advisor' ? 'border-quantum-red/50' : 
                      person.group === 'team' ? 'border-logo-blue/50' : 'border-warm-amber/50'} 
-                   mb-3 mx-auto relative transition-all duration-500 shadow-lg
+                   mb-3 mx-auto relative shadow-lg
                    ${person.group === 'founder' ? 'shadow-plasma-violet/20' : 
                      person.group === 'advisor' ? 'shadow-quantum-red/20' : 
-                     person.group === 'team' ? 'shadow-logo-blue/20' : 'shadow-warm-amber/20'}
-                   group-hover:shadow-2xl group-hover:scale-110`}
+                     person.group === 'team' ? 'shadow-logo-blue/20' : 'shadow-warm-amber/20'}`}
       >
         <Avatar className="w-full h-full">
           <AvatarImage 
             src={person.avatar} 
             alt={person.name} 
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-full object-cover"
             onLoad={() => setIsLoaded(true)}
           />
           <AvatarFallback 
@@ -102,7 +100,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       
       <div className="flex-1 flex flex-col relative z-10">
         {/* Name - consistent size */}
-        <h3 className="text-sm sm:text-base font-poppins font-bold mb-2 text-foreground group-hover:text-quantum-red transition-colors duration-300">
+        <h3 className="text-sm sm:text-base font-poppins font-bold mb-2 text-foreground">
           {person.name}
         </h3>
         
@@ -110,8 +108,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
         <Badge 
           variant="outline" 
           className={`mb-2 mx-auto px-3 py-1 font-poppins font-semibold rounded-lg 
-                     transition-all duration-300 border ${badgeClass} shadow-lg text-xs
-                     group-hover:scale-105`}
+                     border ${badgeClass} shadow-lg text-xs`}
         >
           {groupDisplay}
         </Badge>
@@ -143,9 +140,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
         </div>
       </div>
       
-      {/* Hover effect overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/5 
-                     opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
+      {/* Removed hover effects */}
     </Card>
   );
 };
