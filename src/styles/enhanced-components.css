@@ -61,7 +61,7 @@
   
   .card-glass::after {
     content: '';
-    @apply absolute inset-0 bg-gradient-mesh opacity-10;
+    @apply absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-10;
     pointer-events: none;
   }
 
@@ -113,7 +113,7 @@
   
   .section-modern::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-mesh opacity-5;
+    @apply absolute inset-0 bg-gradient-to-br from-primary/2 to-accent/2 opacity-50;
     pointer-events: none;
   }
   
