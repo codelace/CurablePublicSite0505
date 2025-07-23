@@ -31,7 +31,7 @@ const News = () => {
   return (
     <div className="min-h-screen bg-gunmetal-900 text-titanium-white relative overflow-hidden">
       {/* Background Effects */}
-      <div className="fixed inset-0 bg-gradient-radial from-dark-surface/20 to-dark-base/95 pointer-events-none"></div>
+      <div className="fixed inset-0 bg-gradient-radial from-quantum-red/5 via-brand-charcoal/10 to-dark-base/95 pointer-events-none"></div>
       <div className="fixed inset-0 bg-noise opacity-[0.02] pointer-events-none"></div>
       
       {/* Glow effects */}
@@ -48,7 +48,7 @@ const News = () => {
           >
             {/* News Icon */}
             <div className="mb-8">
-              <div className="w-20 h-20 mx-auto bg-gradient-to-br from-warm-rose to-warm-amber rounded-full flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto bg-gradient-to-br from-quantum-red to-brand-charcoal rounded-full flex items-center justify-center shadow-lg shadow-quantum-red/30">
                 <svg 
                   className="w-10 h-10 text-white" 
                   fill="none" 
@@ -67,7 +67,7 @@ const News = () => {
 
             {/* Main Heading */}
             <h1 className="text-5xl md:text-7xl font-poppins font-bold mb-6">
-              <span className="bg-gradient-to-r from-warm-rose via-warm-coral to-warm-amber bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-quantum-red via-brand-charcoal to-logo-blue bg-clip-text text-transparent">
                 News & Updates
               </span>
             </h1>

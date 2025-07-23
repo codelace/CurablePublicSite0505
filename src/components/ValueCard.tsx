@@ -127,11 +127,11 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
     >
       {/* Enhanced background effect */}
       {isHovered && (
-        <div className={`absolute inset-0 bg-gradient-to-br ${colorScheme.gradientFrom} ${colorScheme.gradientTo} rounded-lg transition-opacity duration-500 opacity-70`}></div>
+        <div className={`absolute inset-0 bg-gradient-to-br from-quantum-red/10 via-brand-charcoal/20 to-quantum-red/5 rounded-lg transition-opacity duration-500 opacity-70 group-hover:opacity-90`}></div>
       )}
       
       <div className={`mb-2 relative z-10 ${isHovered ? 'animate-pulse-dot' : ''}`}>
-        <div className={`absolute inset-0 rounded-full bg-gradient-radial opacity-0 transition-opacity duration-300 ${isHovered ? 'opacity-30' : ''}`}></div>
+        <div className={`absolute inset-0 rounded-full bg-gradient-radial from-quantum-red/20 to-transparent opacity-0 transition-opacity duration-300 ${isHovered ? 'opacity-50' : ''}`}></div>
         {iconMap[value.icon as keyof typeof iconMap]}
         
         {/* Add orbiting particle effect */}
@@ -163,7 +163,7 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
             <span className="mr-1 opacity-70 animate-pulse">›</span>
             {valueDetailMap[value.icon as keyof typeof valueDetailMap]}
           </p>
-          <div className="mt-1 w-full h-1 bg-gradient-to-r from-transparent via-logo-blue/20 to-transparent rounded-full animate-pulse-glow"></div>
+          <div className="mt-1 w-full h-1 bg-gradient-to-r from-transparent via-quantum-red/30 to-transparent rounded-full animate-pulse-glow"></div>
           
           {/* Add data visualization bar */}
           <div className="mt-2 w-full h-1 bg-graphite-700/30 rounded-full overflow-hidden">

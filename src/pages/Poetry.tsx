@@ -70,7 +70,7 @@ const Poetry = () => {
         interactive={true}
       />
       
-      <div className="fixed inset-0 bg-gradient-radial from-warm-rose/5 via-transparent to-logo-blue/5 pointer-events-none" />
+      <div className="fixed inset-0 bg-gradient-radial from-quantum-red/10 via-brand-charcoal/5 to-logo-blue/5 pointer-events-none" />
       <div className="fixed top-0 left-0 w-96 h-96 rounded-full bg-warm-amber/5 blur-3xl opacity-30 animate-pulse" />
       <div className="fixed bottom-0 right-0 w-96 h-96 rounded-full bg-warm-coral/5 blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
 
@@ -84,11 +84,11 @@ const Poetry = () => {
             transition={{ duration: 0.8 }}
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20"
           >
-            <Card className="glass-panel p-8 bg-dark-surface/30 border-warm-rose/30">
-              <h1 className="text-5xl font-poppins mb-4 bg-gradient-to-r from-warm-rose via-warm-amber to-logo-blue bg-clip-text text-transparent">
+            <Card className="glass-panel p-8 bg-brand-charcoal/40 border-quantum-red/30 shadow-lg shadow-quantum-red/20">
+              <h1 className="text-5xl font-poppins mb-4 bg-gradient-to-r from-quantum-red via-brand-charcoal to-logo-blue bg-clip-text text-transparent">
                 Poetry Sanctuary
               </h1>
-              <p className="text-lg text-titanium-white/70 font-mono">
+              <p className="text-lg text-titanium-white/70 font-poppins">
                 Where science meets soul, healing finds voice
               </p>
             </Card>
@@ -100,7 +100,7 @@ const Poetry = () => {
       <div className="relative z-10 min-h-screen p-8">
         {/* Controls - More visible when haiku is active */}
         <div className={`fixed top-24 left-8 right-8 z-30 transition-all duration-500 ${currentHaiku ? 'opacity-100 scale-100' : 'opacity-60 scale-95 pointer-events-none'}`}>
-          <Card className={`glass-panel p-4 border-2 transition-all duration-300 ${currentHaiku ? 'bg-dark-surface/60 border-warm-rose/40 shadow-lg shadow-warm-rose/20' : 'bg-dark-surface/40 border-titanium-white/10'}`}>
+          <Card className={`glass-panel p-4 border-2 transition-all duration-300 ${currentHaiku ? 'bg-brand-charcoal/60 border-quantum-red/40 shadow-lg shadow-quantum-red/20' : 'bg-brand-charcoal/40 border-titanium-white/10'}`}>
             <div className="flex flex-wrap items-center justify-between gap-4">
               {/* Category Filters */}
               <div className="flex flex-wrap gap-2">
@@ -131,7 +131,7 @@ const Poetry = () => {
                   variant={currentHaiku ? "default" : "outline"}
                   size="sm"
                   onClick={() => setIsAutoPlay(!isAutoPlay)}
-                  className={`flex items-center gap-2 transition-all ${currentHaiku ? 'bg-warm-rose/20 border-warm-rose/50 hover:bg-warm-rose/30' : ''}`}
+                  className={`flex items-center gap-2 transition-all ${currentHaiku ? 'bg-quantum-red/20 border-quantum-red/50 hover:bg-quantum-red/30' : ''}`}
                 >
                   {isAutoPlay ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                   {isAutoPlay ? 'Pause' : 'Auto-Play'}
@@ -171,7 +171,7 @@ const Poetry = () => {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-2xl w-full"
               >
-                <Card className="glass-panel p-12 bg-dark-surface/40 border-warm-rose/20 text-center">
+                <Card className="glass-panel p-12 bg-brand-charcoal/40 border-quantum-red/20 text-center shadow-lg shadow-quantum-red/10">
                   <div className="space-y-6">
                     {/* Haiku Lines */}
                     <div className="space-y-4">
@@ -181,7 +181,7 @@ const Poetry = () => {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.3, duration: 0.5 }}
-                          className="text-2xl md:text-3xl font-space text-titanium-white leading-relaxed"
+                          className="text-2xl md:text-3xl font-poppins text-titanium-white leading-relaxed"
                         >
                           {line}
                         </motion.div>
@@ -220,7 +220,7 @@ const Poetry = () => {
               animate={{ opacity: 1 }}
               className="text-center"
             >
-              <p className="text-titanium-white/40 font-mono text-lg mb-6">
+              <p className="text-titanium-white/40 font-poppins text-lg mb-6">
                 Ready to explore the poetry sanctuary
               </p>
               <Button

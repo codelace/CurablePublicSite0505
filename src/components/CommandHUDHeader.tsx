@@ -63,7 +63,7 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
   return (
     <div className={`${className} mb-8 transform transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
       <div className="flex flex-col xs:flex-row items-start xs:items-center justify-between mb-3 gap-2">
-        <div className="inline-block px-3 py-1 rounded-full font-mono text-xs bg-gunmetal-900/90 border border-graphite-700/80 shadow-lg">
+        <div className="inline-block px-3 py-1 rounded-full font-poppins text-xs bg-brand-charcoal/90 border border-quantum-red/50 shadow-lg shadow-quantum-red/20 hover:shadow-quantum-red/40 transition-all duration-300">
           <span className="flex items-center">
             <span className="inline-block w-2 h-2 rounded-full bg-bio-green mr-2 animate-pulse"></span>
             {statusText}
@@ -93,22 +93,22 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
       </div>
       
       <div 
-        className={`relative bg-dark-surface/80 backdrop-blur-lg border ${colors.border} rounded-xl p-6 sm:p-8 ${colors.glow} shadow-2xl transition-all duration-500 ${colors.hover} overflow-hidden`}
+        className={`relative bg-brand-charcoal/80 backdrop-blur-lg border ${colors.border} rounded-xl p-6 sm:p-8 ${colors.glow} shadow-2xl hover:shadow-quantum-red/30 transition-all duration-500 ${colors.hover} overflow-hidden group`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Enhanced background effect with gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gunmetal-900/60 via-transparent to-dark-surface/30 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-charcoal/60 via-quantum-red/5 to-brand-charcoal/30 pointer-events-none group-hover:from-quantum-red/10 group-hover:to-brand-charcoal/40 transition-all duration-500"></div>
         
         {/* Dynamic circuit lines with pulsing animation */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-[20%] w-full h-[1px] bg-gradient-to-r from-transparent via-logo-blue/30 to-transparent animate-pulse"></div>
-          <div className="absolute bottom-[30%] w-full h-[1px] bg-gradient-to-r from-transparent via-logo-blue/30 to-transparent animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute left-[10%] h-full w-[1px] bg-gradient-to-b from-transparent via-logo-blue/30 to-transparent animate-pulse" style={{animationDelay: '0.5s'}}></div>
-          <div className="absolute right-[20%] h-full w-[1px] bg-gradient-to-b from-transparent via-logo-blue/30 to-transparent animate-pulse" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute top-[20%] w-full h-[1px] bg-gradient-to-r from-transparent via-quantum-red/40 to-transparent animate-pulse"></div>
+          <div className="absolute bottom-[30%] w-full h-[1px] bg-gradient-to-r from-transparent via-brand-charcoal/60 to-transparent animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute left-[10%] h-full w-[1px] bg-gradient-to-b from-transparent via-quantum-red/30 to-transparent animate-pulse" style={{animationDelay: '0.5s'}}></div>
+          <div className="absolute right-[20%] h-full w-[1px] bg-gradient-to-b from-transparent via-brand-charcoal/50 to-transparent animate-pulse" style={{animationDelay: '1.5s'}}></div>
           
           {/* Dynamic scan line effect */}
-          <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-logo-blue/40 to-transparent animate-scan-line"></div>
+          <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-quantum-red/60 to-transparent animate-scan-line opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
         
         <h1 className="relative text-2xl md:text-3xl lg:text-5xl font-bold text-titanium-white mb-3 font-poppins flex flex-wrap items-center gap-2 break-words z-10">
@@ -117,8 +117,8 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
         </h1>
         
         {subtitle && (
-          <p className="relative text-titanium-white/80 max-w-3xl font-mono text-sm z-10 ml-6 border-l-2 border-bio-green/30 pl-3">
-            <span className="text-bio-green">#</span> {subtitle}
+          <p className="relative text-titanium-white/80 max-w-3xl font-poppins text-sm z-10 ml-6 border-l-2 border-quantum-red/40 pl-3 hover:border-quantum-red/70 transition-colors duration-300">
+            <span className="text-quantum-red">#</span> {subtitle}
           </p>
         )}
         

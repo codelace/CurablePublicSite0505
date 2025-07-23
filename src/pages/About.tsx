@@ -85,13 +85,13 @@ const About = () => {
             <h2 className="text-3xl sm:text-4xl font-poppins font-bold mb-6 text-logo-blue">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-titanium-white/80 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-titanium-white/80 max-w-3xl mx-auto leading-relaxed mb-8 font-poppins">
               Everything you need to know about Curable Labs' decentralized science platform.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-graphite-700/20 backdrop-blur-sm border border-logo-blue/20 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-logo-blue/10">
+            <div className="bg-brand-charcoal/50 backdrop-blur-sm border border-quantum-red/30 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-quantum-red/20 hover:shadow-quantum-red/40 hover:border-quantum-red/50 transition-all duration-500 group">
               <div className="space-y-4">
                 {[
                   {

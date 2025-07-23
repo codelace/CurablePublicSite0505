@@ -47,7 +47,7 @@ const FAQ = () => {
   return (
     <div className="min-h-screen bg-gunmetal-900 text-titanium-white">
       {/* Background Effects */}
-      <div className="fixed inset-0 bg-gradient-radial from-dark-surface/20 to-dark-base/95 pointer-events-none"></div>
+      <div className="fixed inset-0 bg-gradient-radial from-quantum-red/5 via-brand-charcoal/10 to-dark-base/95 pointer-events-none"></div>
       <div className="fixed inset-0 bg-noise opacity-[0.02] pointer-events-none"></div>
       
       {/* Glow effects */}
@@ -61,20 +61,20 @@ const FAQ = () => {
             <div className="flex items-center gap-3 mb-4">
               <div className="w-3 h-3 rounded-full bg-logo-blue animate-pulse-dot"></div>
               <h1 className="text-4xl sm:text-6xl font-poppins font-bold font-space">
-                <span className="bg-gradient-to-r from-logo-blue via-plasma-violet to-warm-rose bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-quantum-red via-brand-charcoal to-logo-blue bg-clip-text text-transparent">
                   CURABLE LABS
                 </span>
               </h1>
               <div className="w-3 h-3 rounded-full bg-warm-rose animate-pulse-dot"></div>
             </div>
-            <div className="h-px w-32 bg-gradient-to-r from-transparent via-logo-blue to-transparent mx-auto"></div>
+            <div className="h-px w-32 bg-gradient-to-r from-transparent via-quantum-red to-transparent mx-auto"></div>
           </div>
           
           <h2 className="text-2xl sm:text-3xl font-poppins font-bold mb-6 text-logo-blue">
             Frequently Asked Questions
           </h2>
           
-          <p className="text-lg text-titanium-white/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-titanium-white/80 max-w-3xl mx-auto leading-relaxed font-poppins">
             Everything you need to know about Curable Labs' decentralized science platform, 
             AI-powered drug discovery, and community-driven therapeutic innovation.
           </p>
@@ -82,7 +82,7 @@ const FAQ = () => {
 
         {/* FAQ Accordion */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-graphite-700/20 backdrop-blur-sm border border-logo-blue/20 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-logo-blue/10">
+          <div className="bg-brand-charcoal/40 backdrop-blur-sm border border-quantum-red/30 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-quantum-red/20 hover:shadow-quantum-red/40 transition-all duration-500">
             <Accordion type="single" collapsible className="space-y-4">
               {faqData.map((faq, index) => (
                 <AccordionItem 
@@ -112,7 +112,7 @@ const FAQ = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16 sm:mt-20">
-          <div className="bg-gradient-to-r from-logo-blue/10 via-plasma-violet/10 to-warm-rose/10 rounded-2xl p-8 sm:p-12 border border-logo-blue/20 max-w-2xl mx-auto">
+          <div className="bg-gradient-to-r from-quantum-red/10 via-brand-charcoal/20 to-quantum-red/10 rounded-2xl p-8 sm:p-12 border border-quantum-red/30 max-w-2xl mx-auto shadow-lg shadow-quantum-red/10">
             <h3 className="text-2xl sm:text-3xl font-poppins font-bold mb-4 text-logo-blue">
               Ready to Join the Revolution?
             </h3>

@@ -48,8 +48,8 @@ const AboutBackgroundEffects = () => {
       
       {/* Magnetic field lines */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute w-full h-[1px] top-1/3 bg-gradient-to-r from-transparent via-warm-rose/50 to-transparent animate-magnetic-flow"></div>
-        <div className="absolute w-full h-[1px] top-2/3 bg-gradient-to-r from-transparent via-warm-amber/50 to-transparent animate-magnetic-flow" style={{animationDelay: "1s"}}></div>
+        <div className="absolute w-full h-[1px] top-1/3 bg-gradient-to-r from-transparent via-quantum-red/60 to-transparent animate-magnetic-flow"></div>
+        <div className="absolute w-full h-[1px] top-2/3 bg-gradient-to-r from-transparent via-brand-charcoal/70 to-transparent animate-magnetic-flow" style={{animationDelay: "1s"}}></div>
       </div>
     </div>
   );
