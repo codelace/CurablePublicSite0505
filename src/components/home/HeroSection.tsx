@@ -28,13 +28,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
       <div className="mb-4 text-center max-w-5xl mx-auto relative z-10">
         <div className="relative mb-2 inline-block">
           <div className={`h-20 w-20 sm:h-24 sm:w-24 relative mx-auto mb-4 transition-all duration-700 transform ${mounted ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`}>
-            {/* Enhanced rotating rings with electric quantum blue */}
+            {/* Performance-optimized rotating rings with quantum spectrum */}
             <div className="absolute inset-0 rounded-full border-4 border-quantum-red/30 shadow-lg shadow-quantum-red/20"></div>
-            <div className="absolute inset-0 rounded-full border-t-4 border-r-4 border-electric-quantum-blue animate-spin will-change-transform shadow-electric-quantum-blue/40" style={{animationDuration: '3s'}}></div>
-            <div className="absolute inset-0 rounded-full border-4 border-transparent border-b-4 border-quantum-electric animate-pulse opacity-70"></div>
+            <div className="absolute inset-0 rounded-full border-t-4 border-r-4 border-quantum-teal animate-spin will-change-transform shadow-quantum-teal/40" style={{animationDuration: '3s'}}></div>
+            <div className="absolute inset-0 rounded-full border-4 border-transparent border-b-4 border-quantum-cyan animate-pulse opacity-70" style={{animationDuration: '2s'}}></div>
             
-            {/* Inner quantum core with electric blue gradient */}
-            <div className="absolute inset-0 m-8 rounded-full bg-gradient-to-br from-quantum-red via-electric-quantum-blue to-quantum-electric opacity-80 blur-sm animate-pulse"></div>
+            {/* Inner quantum core with aurora gradient */}
+            <div className="absolute inset-0 m-8 rounded-full bg-gradient-aurora opacity-80 blur-sm animate-pulse will-change-transform" style={{animationDuration: '4s'}}></div>
           </div>
         </div>
         
@@ -44,12 +44,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             <span className="holographic-text bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}> Labs</span>
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-2 font-light">
-            <span className="bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 bg-clip-text text-transparent font-semibold" 
+            <span className="text-quantum-enhanced quantum-optimized" 
                   style={{
+                    background: 'linear-gradient(135deg, #00CCFF, #6699FF, #AA66FF)',
                     WebkitBackgroundClip: 'text', 
                     WebkitTextFillColor: 'transparent',
-                    textShadow: '0 0 20px rgba(139, 69, 19, 0.3)',
-                    filter: 'brightness(1.3) contrast(1.2)'
+                    backgroundSize: '200% 200%',
+                    animation: 'gradient-text-flow 6s ease-in-out infinite'
                   }}>
               Blueprinting Tomorrow's Cures
             </span>
@@ -68,16 +69,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             onClick={scrollToContent}
             className="btn-quantum-enhanced magnetic-attraction group relative px-8 py-4 text-white font-poppins font-bold rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-105 will-change-transform"
             style={{
-              background: 'linear-gradient(135deg, #FF5757, #FF7777, #77AAFF, #5588FF)',
+              background: 'linear-gradient(135deg, #FF5757, #FF7777, #00CCFF, #6699FF)',
               border: '2px solid rgba(255, 255, 255, 0.2)',
-              boxShadow: '0 4px 20px rgba(255, 87, 87, 0.3), 0 4px 20px rgba(85, 136, 255, 0.2)'
+              boxShadow: '0 4px 20px rgba(255, 87, 87, 0.3), 0 4px 20px rgba(102, 153, 255, 0.2)'
             }}
           >
             <div className="relative z-10 flex items-center gap-3">
               <span className="text-lg">Explore Platform</span> 
               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-3 transition-transform will-change-transform" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-cosmic opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
           </button>
           
           <Link 

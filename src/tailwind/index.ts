@@ -20,13 +20,20 @@ export const themeExtensions = {
     'bio-violet': 'hsl(var(--bio-violet))',
     'neural-pink': 'hsl(var(--neural-pink))',
     
-    // New molecular blues from branding
+    // Electric blue molecular branding
     'molecular-royal': 'hsl(var(--molecular-royal))',
     'molecular-bright': 'hsl(var(--molecular-bright))',
     'molecular-deep': 'hsl(var(--molecular-deep))',
     'molecular-accent': 'hsl(var(--molecular-accent))',
     'electric-quantum-blue': 'hsl(var(--electric-quantum-blue))',
     'quantum-electric': 'hsl(var(--quantum-electric))',
+    
+    // Complementary quantum palette for visual richness
+    'quantum-teal': 'hsl(var(--quantum-teal))',
+    'quantum-purple': 'hsl(var(--quantum-purple))',
+    'quantum-cyan': 'hsl(var(--quantum-cyan))',
+    'quantum-amber': 'hsl(var(--quantum-amber))',
+    'quantum-mint': 'hsl(var(--quantum-mint))',
   },
   fontFamily: {
     ...typography.fontFamily,
@@ -45,6 +52,9 @@ export const themeExtensions = {
     'gradient-electric': 'var(--gradient-electric)',
     'gradient-hero': 'var(--gradient-hero)',
     'gradient-text': 'var(--gradient-text)',
+    'gradient-quantum-spectrum': 'var(--gradient-quantum-spectrum)',
+    'gradient-aurora': 'var(--gradient-aurora)',
+    'gradient-cosmic': 'var(--gradient-cosmic)',
     'gradient-mesh': 'var(--gradient-mesh)',
     'noise': 'var(--bg-noise)',
   },

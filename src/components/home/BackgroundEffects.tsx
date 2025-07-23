@@ -21,18 +21,18 @@ const BackgroundEffects: React.FC = () => {
         {/* Data stream background */}
         <div className="absolute inset-0 data-stream-optimized"></div>
         
-        {/* Enhanced gradient overlay with harmonious blue integration */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-400/12 via-quantum-red/6 to-blue-500/10"></div>
+        {/* Performance-optimized quantum spectrum overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-quantum-teal/8 via-quantum-red/6 to-quantum-purple/10 will-change-transform"></div>
         
         {/* Performance-optimized holographic mesh pattern */}
         <div className="absolute inset-0 opacity-4">
           <div className="w-full h-full bg-[radial-gradient(circle_at_50%_50%,hsl(var(--quantum-red))_1px,transparent_1px)] bg-[length:60px_60px] animate-pulse"></div>
         </div>
         
-        {/* Optimized glowing orbs with harmonious blue spectrum */}
-        <div className="absolute top-[15%] right-[20%] w-64 h-64 rounded-full bg-blue-400/15 blur-3xl animate-pulse-glow magnetic-attraction-optimized"></div>
-        <div className="absolute bottom-[25%] left-[15%] w-80 h-80 rounded-full bg-blue-500/12 blur-3xl animate-pulse-glow magnetic-attraction-optimized" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-[60%] right-[10%] w-48 h-48 rounded-full bg-quantum-red/8 blur-3xl animate-pulse-glow magnetic-attraction-optimized" style={{animationDelay: '4s'}}></div>
+        {/* Performance-optimized glowing orbs with quantum spectrum */}
+        <div className="absolute top-[15%] right-[20%] w-64 h-64 rounded-full bg-quantum-cyan/12 blur-3xl animate-pulse-glow magnetic-attraction-optimized will-change-transform"></div>
+        <div className="absolute bottom-[25%] left-[15%] w-80 h-80 rounded-full bg-quantum-teal/10 blur-3xl animate-pulse-glow magnetic-attraction-optimized will-change-transform" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-[60%] right-[10%] w-48 h-48 rounded-full bg-quantum-amber/8 blur-3xl animate-pulse-glow magnetic-attraction-optimized will-change-transform" style={{animationDelay: '4s'}}></div>
       </div>
       
       {/* Dynamic animated circuit lines */}

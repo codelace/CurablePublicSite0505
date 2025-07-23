@@ -9,6 +9,7 @@
 @import './styles/premium-interactions.css';
 @import './styles/quantum-effects.css';
 @import './styles/performance-quantum.css';
+@import './styles/performance-enhancements.css';
 
 @tailwind base;
 @tailwind components;
@@ -56,13 +57,20 @@
   --bio-violet: 271 81% 56%;
   --neural-pink: 322 84% 64%;
   
-    /* New molecular blues from branding - ADJUSTED FOR CONTRAST */
+    /* Enhanced molecular blues + complementary quantum colors */
     --molecular-royal: 240 80% 25%;
     --molecular-bright: 240 100% 65%;
     --molecular-deep: 250 80% 35%;
     --molecular-accent: 235 95% 55%;
-    --electric-quantum-blue: 246 100% 65%;  /* Brighter for better contrast */
+    --electric-quantum-blue: 246 100% 65%;  /* Better contrast */
     --quantum-electric: 260 100% 45%;       /* Lighter deep violet */
+    
+    /* Complementary quantum palette for visual interest */
+    --quantum-teal: 180 100% 60%;           /* Bridges blue-green */
+    --quantum-purple: 270 100% 70%;         /* Electric purple */
+    --quantum-cyan: 195 100% 75%;           /* Light quantum cyan */
+    --quantum-amber: 45 100% 65%;           /* Warm complement to blues */
+    --quantum-mint: 160 100% 70%;           /* Fresh mint accent */
 
   /* Grays and surfaces */
   --gunmetal-900: 224 15% 12%;
@@ -84,17 +92,22 @@
   --shadow-glow: 0 0 30px rgba(138, 180, 248, 0.3);
   --shadow-depth: 0 10px 30px rgba(0, 0, 0, 0.3);
 
-  /* Enhanced gradients with electric blue */
+  /* Performance-optimized enhanced gradients with complementary colors */
   --gradient-warm: linear-gradient(135deg, hsl(354 83% 74%), hsl(43 96% 56%));
   --gradient-cool: linear-gradient(135deg, hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)));
   --gradient-biotech: linear-gradient(135deg, hsl(var(--electric-quantum-blue)), hsl(158 64% 52%), hsl(var(--quantum-red)));
   --gradient-neural: linear-gradient(135deg, hsl(var(--quantum-red)), hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)));
-  --gradient-quantum: linear-gradient(135deg, hsl(var(--quantum-red)), hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)));
-  --gradient-molecular: linear-gradient(135deg, hsl(var(--molecular-royal)), hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)));
-  --gradient-electric: linear-gradient(135deg, hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)), hsl(var(--molecular-bright)));
+  --gradient-quantum: linear-gradient(135deg, hsl(var(--quantum-red)), hsl(var(--electric-quantum-blue)), hsl(210 98% 78%));
+  --gradient-molecular: linear-gradient(135deg, hsl(240 100% 85%), hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)));
+  --gradient-electric: linear-gradient(135deg, hsl(220 100% 80%), hsl(240 100% 70%), hsl(260 100% 60%));
+  --gradient-hero: linear-gradient(135deg, hsl(var(--quantum-red)), hsl(240 100% 75%), hsl(220 100% 85%));
+  --gradient-text: linear-gradient(135deg, hsl(220 100% 85%), hsl(240 100% 75%), hsl(260 100% 70%));
+  --gradient-quantum-spectrum: linear-gradient(135deg, hsl(var(--quantum-teal)), hsl(var(--electric-quantum-blue)), hsl(var(--quantum-purple)));
+  --gradient-aurora: linear-gradient(135deg, hsl(var(--quantum-cyan)), hsl(var(--electric-quantum-blue)), hsl(var(--quantum-purple)), hsl(var(--quantum-red)));
+  --gradient-cosmic: linear-gradient(135deg, hsl(var(--quantum-mint)), hsl(var(--quantum-teal)), hsl(var(--electric-quantum-blue)));
   --gradient-radial: radial-gradient(circle at center, var(--color-start) 0%, var(--color-end) 100%);
-  --gradient-mesh: radial-gradient(at 40% 20%, hsl(var(--electric-quantum-blue) / 0.5) 0px, transparent 50%),
-                   radial-gradient(at 80% 0%, hsl(var(--quantum-electric) / 0.4) 0px, transparent 50%),
+  --gradient-mesh: radial-gradient(at 40% 20%, hsl(var(--electric-quantum-blue) / 0.3) 0px, transparent 50%),
+                   radial-gradient(at 80% 0%, hsl(var(--quantum-teal) / 0.2) 0px, transparent 50%),
                    radial-gradient(at 0% 50%, hsl(var(--quantum-red) / 0.3) 0px, transparent 50%);
 
   /* Transitions */

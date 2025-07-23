@@ -36,27 +36,27 @@ const GradientText = ({
   const getGradientClasses = () => {
     switch (variant) {
       case 'blue':
-        return 'from-logo-blue to-blue-400';
+        return 'from-quantum-cyan to-blue-400';
       case 'green':
-        return 'from-bio-green to-emerald-400';
+        return 'from-bio-green to-quantum-mint';
       case 'violet':
-        return 'from-plasma-violet to-purple-400';
+        return 'from-quantum-purple to-purple-400';
       case 'electric':
-        return 'from-electric-quantum-blue to-quantum-electric';
+        return 'from-quantum-cyan to-quantum-teal';
       case 'quantum':
-        return 'from-quantum-red via-electric-quantum-blue to-quantum-electric';
+        return 'from-quantum-red via-quantum-cyan to-quantum-purple';
       case 'multi':
-        return 'from-quantum-red via-electric-quantum-blue to-logo-blue';
+        return 'from-quantum-red via-quantum-cyan to-quantum-purple';
       case 'red':
         return 'from-warm-rose to-quantum-red';
       case 'blue-purple':
-        return 'from-electric-quantum-blue to-quantum-electric';
+        return 'from-quantum-cyan to-quantum-purple';
       case 'purple-red':
-        return 'from-electric-quantum-blue to-quantum-red';
+        return 'from-quantum-purple to-quantum-red';
       case 'green-blue':
-        return 'from-bio-green to-electric-quantum-blue';
+        return 'from-quantum-mint to-quantum-cyan';
       case 'red-purple':
-        return 'from-quantum-red to-electric-quantum-blue';
+        return 'from-quantum-red to-quantum-purple';
       default:
         return 'from-quantum-red to-warm-rose';
     }
