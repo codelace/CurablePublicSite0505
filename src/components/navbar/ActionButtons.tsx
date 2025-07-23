@@ -34,8 +34,8 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
   };
 
   const novelButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "bg-molecular-bright hover:bg-gradient-to-r hover:from-molecular-bright hover:to-quantum-red" 
-    : "bg-molecular-bright hover:bg-gradient-to-r hover:from-molecular-bright hover:to-quantum-red hover:shadow-[0_0_12px_hsl(240_100%_65%/0.6)] transition-all duration-300"}`;
+    ? "bg-electric-quantum-blue hover:bg-gradient-to-r hover:from-electric-quantum-blue hover:to-quantum-electric" 
+    : "bg-electric-quantum-blue hover:bg-gradient-to-r hover:from-electric-quantum-blue hover:to-quantum-electric hover:shadow-[0_0_12px_hsl(240_100%_70%/0.6)] transition-all duration-300"}`;
 
   return (
     <div className={containerClasses}>
@@ -100,7 +100,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         
         {/* Subtle border glow when hovered */}
         {hoveredButton === 'novel' && (
-          <span className="absolute inset-0 rounded-lg ring-1 ring-molecular-bright/70 animate-pulse-subtle"></span>
+          <span className="absolute inset-0 rounded-lg ring-1 ring-electric-quantum-blue/70 animate-pulse-subtle"></span>
         )}
       </Link>
     </div>

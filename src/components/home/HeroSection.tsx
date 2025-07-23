@@ -28,13 +28,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
       <div className="mb-4 text-center max-w-5xl mx-auto relative z-10">
         <div className="relative mb-2 inline-block">
           <div className={`h-20 w-20 sm:h-24 sm:w-24 relative mx-auto mb-4 transition-all duration-700 transform ${mounted ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`}>
-            {/* Enhanced rotating rings with quantum colors */}
+            {/* Enhanced rotating rings with electric quantum blue */}
             <div className="absolute inset-0 rounded-full border-4 border-quantum-red/30 shadow-lg shadow-quantum-red/20"></div>
-            <div className="absolute inset-0 rounded-full border-t-4 border-r-4 border-molecular-bright animate-spin will-change-transform shadow-molecular-bright/40" style={{animationDuration: '3s'}}></div>
-            <div className="absolute inset-0 rounded-full border-4 border-transparent border-b-4 border-molecular-accent animate-pulse opacity-70"></div>
+            <div className="absolute inset-0 rounded-full border-t-4 border-r-4 border-electric-quantum-blue animate-spin will-change-transform shadow-electric-quantum-blue/40" style={{animationDuration: '3s'}}></div>
+            <div className="absolute inset-0 rounded-full border-4 border-transparent border-b-4 border-quantum-electric animate-pulse opacity-70"></div>
             
-            {/* Inner quantum core with multi-color gradient */}
-            <div className="absolute inset-0 m-8 rounded-full bg-gradient-to-br from-quantum-red via-molecular-bright to-molecular-accent opacity-60 blur-sm animate-pulse"></div>
+            {/* Inner quantum core with electric blue gradient */}
+            <div className="absolute inset-0 m-8 rounded-full bg-gradient-to-br from-quantum-red via-electric-quantum-blue to-quantum-electric opacity-80 blur-sm animate-pulse"></div>
           </div>
         </div>
         
@@ -44,14 +44,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             <span className="holographic-text"> Labs</span>
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-2 text-foreground/90 font-light">
-            <GradientText variant="red" animate>Blueprinting Tomorrow's Cures</GradientText>
+            <GradientText variant="electric" animate>Blueprinting Tomorrow's Cures</GradientText>
           </div>
         </h1>
         
         <p className={`text-foreground/80 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed mb-6 mt-4 transition-all duration-700 delay-300 transform ${revealClass('hero-text')} font-poppins`}>
           An AI-powered, decentralized ecosystem for discovering, validating, and 
-          delivering <span className="text-molecular-bright font-semibold holographic-text">novel cures</span> through 
-          blockchain-native governance and <span className="text-molecular-accent font-semibold">collaborative research</span>.
+          delivering <span className="text-electric-quantum-blue font-semibold holographic-text">novel cures</span> through 
+          blockchain-native governance and <span className="text-quantum-electric font-semibold">collaborative research</span>.
         </p>
         
         {/* Enhanced call to action buttons with compact spacing */}
@@ -64,12 +64,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
               <span className="text-lg">Explore Platform</span> 
               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-3 transition-transform will-change-transform" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-molecular-bright to-molecular-accent opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-electric-quantum-blue to-quantum-electric opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
           </button>
           
           <Link 
             to="/whitepaper"
-            className="magnetic-attraction px-8 py-4 bg-transparent border-2 border-molecular-bright/50 hover:border-molecular-bright text-molecular-bright hover:text-white hover:bg-gradient-to-r hover:from-molecular-bright/20 hover:to-molecular-accent/20 font-poppins font-bold rounded-xl transition-all duration-500 hover:shadow-lg hover:shadow-molecular-bright/30 hover:scale-105 will-change-transform backdrop-blur-sm"
+            className="magnetic-attraction px-8 py-4 bg-transparent border-2 border-electric-quantum-blue/50 hover:border-electric-quantum-blue text-electric-quantum-blue hover:text-white hover:bg-gradient-to-r hover:from-electric-quantum-blue/20 hover:to-quantum-electric/20 font-poppins font-bold rounded-xl transition-all duration-500 hover:shadow-lg hover:shadow-electric-quantum-blue/30 hover:scale-105 will-change-transform backdrop-blur-sm"
           >
             <span className="text-lg">Read Whitepaper</span>
           </Link>
@@ -80,11 +80,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
       <div className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 transition-all duration-700 delay-500 ${revealClass('hero-text')} magnetic-attraction`}>
         <button 
           onClick={scrollToContent}
-          className="flex flex-col items-center text-foreground/60 hover:text-molecular-accent transition-colors duration-300 group"
+          className="flex flex-col items-center text-foreground/60 hover:text-electric-quantum-blue transition-colors duration-300 group"
           aria-label="Scroll to content"
         >
-          <span className="text-sm mb-2 font-poppins font-medium group-hover:text-molecular-accent">Explore</span>
-          <ChevronDown className="w-6 h-6 animate-bounce group-hover:text-molecular-accent transition-colors" />
+          <span className="text-sm mb-2 font-poppins font-medium group-hover:text-electric-quantum-blue">Explore</span>
+          <ChevronDown className="w-6 h-6 animate-bounce group-hover:text-electric-quantum-blue transition-colors" />
         </button>
       </div>
     </div>

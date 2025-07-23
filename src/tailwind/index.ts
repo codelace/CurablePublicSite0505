@@ -25,6 +25,8 @@ export const themeExtensions = {
     'molecular-bright': 'hsl(var(--molecular-bright))',
     'molecular-deep': 'hsl(var(--molecular-deep))',
     'molecular-accent': 'hsl(var(--molecular-accent))',
+    'electric-quantum-blue': 'hsl(var(--electric-quantum-blue))',
+    'quantum-electric': 'hsl(var(--quantum-electric))',
   },
   fontFamily: {
     ...typography.fontFamily,
@@ -40,6 +42,7 @@ export const themeExtensions = {
     'gradient-neural': 'var(--gradient-neural)',
     'gradient-quantum': 'var(--gradient-quantum)',
     'gradient-molecular': 'var(--gradient-molecular)',
+    'gradient-electric': 'var(--gradient-electric)',
     'gradient-mesh': 'var(--gradient-mesh)',
     'noise': 'var(--bg-noise)',
   },

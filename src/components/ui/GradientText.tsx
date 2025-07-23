@@ -8,6 +8,8 @@ export type GradientVariant =
   | 'multi' 
   | 'violet'
   | 'red'
+  | 'electric'
+  | 'quantum'
   | 'blue-purple'
   | 'purple-red'
   | 'green-blue'
@@ -39,18 +41,22 @@ const GradientText = ({
         return 'from-bio-green to-emerald-400';
       case 'violet':
         return 'from-plasma-violet to-purple-400';
+      case 'electric':
+        return 'from-electric-quantum-blue to-quantum-electric';
+      case 'quantum':
+        return 'from-quantum-red via-electric-quantum-blue to-quantum-electric';
       case 'multi':
-        return 'from-quantum-red via-warm-rose to-logo-blue';
+        return 'from-quantum-red via-electric-quantum-blue to-logo-blue';
       case 'red':
         return 'from-warm-rose to-quantum-red';
       case 'blue-purple':
-        return 'from-logo-blue to-plasma-violet';
+        return 'from-electric-quantum-blue to-quantum-electric';
       case 'purple-red':
-        return 'from-plasma-violet to-quantum-red';
+        return 'from-electric-quantum-blue to-quantum-red';
       case 'green-blue':
-        return 'from-bio-green to-logo-blue';
+        return 'from-bio-green to-electric-quantum-blue';
       case 'red-purple':
-        return 'from-quantum-red to-plasma-violet';
+        return 'from-quantum-red to-electric-quantum-blue';
       default:
         return 'from-quantum-red to-warm-rose';
     }

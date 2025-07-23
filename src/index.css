@@ -56,11 +56,13 @@
   --bio-violet: 271 81% 56%;
   --neural-pink: 322 84% 64%;
   
-  /* New molecular blues from branding */
-  --molecular-royal: 240 80% 25%;
-  --molecular-bright: 240 100% 65%;
-  --molecular-deep: 250 80% 35%;
-  --molecular-accent: 235 95% 55%;
+    /* New molecular blues from branding */
+    --molecular-royal: 240 80% 25%;
+    --molecular-bright: 240 100% 65%;
+    --molecular-deep: 250 80% 35%;
+    --molecular-accent: 235 95% 55%;
+    --electric-quantum-blue: 240 100% 70%;
+    --quantum-electric: 235 100% 75%;
 
   /* Grays and surfaces */
   --gunmetal-900: 224 15% 12%;
@@ -82,17 +84,18 @@
   --shadow-glow: 0 0 30px rgba(138, 180, 248, 0.3);
   --shadow-depth: 0 10px 30px rgba(0, 0, 0, 0.3);
 
-  /* Enhanced gradients */
+  /* Enhanced gradients with electric blue */
   --gradient-warm: linear-gradient(135deg, hsl(354 83% 74%), hsl(43 96% 56%));
-  --gradient-cool: linear-gradient(135deg, hsl(210 98% 78%), hsl(271 91% 65%));
-  --gradient-biotech: linear-gradient(135deg, hsl(189 94% 71%), hsl(158 64% 52%), hsl(271 81% 56%));
-  --gradient-neural: linear-gradient(135deg, hsl(322 84% 64%), hsl(271 91% 65%), hsl(210 98% 78%));
-  --gradient-quantum: linear-gradient(135deg, hsl(var(--quantum-red)), hsl(var(--molecular-bright)), hsl(var(--molecular-accent)));
-  --gradient-molecular: linear-gradient(135deg, hsl(var(--molecular-royal)), hsl(var(--molecular-bright)), hsl(var(--molecular-deep)));
+  --gradient-cool: linear-gradient(135deg, hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)));
+  --gradient-biotech: linear-gradient(135deg, hsl(var(--electric-quantum-blue)), hsl(158 64% 52%), hsl(var(--quantum-red)));
+  --gradient-neural: linear-gradient(135deg, hsl(var(--quantum-red)), hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)));
+  --gradient-quantum: linear-gradient(135deg, hsl(var(--quantum-red)), hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)));
+  --gradient-molecular: linear-gradient(135deg, hsl(var(--molecular-royal)), hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)));
+  --gradient-electric: linear-gradient(135deg, hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)), hsl(var(--molecular-bright)));
   --gradient-radial: radial-gradient(circle at center, var(--color-start) 0%, var(--color-end) 100%);
-  --gradient-mesh: radial-gradient(at 40% 20%, hsl(var(--quantum-red) / 0.3) 0px, transparent 50%),
-                   radial-gradient(at 80% 0%, hsl(var(--molecular-bright) / 0.3) 0px, transparent 50%),
-                   radial-gradient(at 0% 50%, hsl(var(--molecular-accent) / 0.3) 0px, transparent 50%);
+  --gradient-mesh: radial-gradient(at 40% 20%, hsl(var(--quantum-red) / 0.4) 0px, transparent 50%),
+                   radial-gradient(at 80% 0%, hsl(var(--electric-quantum-blue) / 0.4) 0px, transparent 50%),
+                   radial-gradient(at 0% 50%, hsl(var(--quantum-electric) / 0.3) 0px, transparent 50%);
 
   /* Transitions */
   --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -144,7 +147,7 @@ body {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  background: var(--gradient-cool);
+  background: var(--gradient-quantum);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
