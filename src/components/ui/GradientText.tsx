@@ -60,15 +60,15 @@ const GradientText = ({
     <span
       className={cn(
         'bg-gradient-to-r bg-clip-text text-transparent font-poppins font-bold',
-        'drop-shadow-sm', // Add text shadow for better visibility
         getGradientClasses(),
         shouldAnimate ? 'animate-text-shimmer bg-[length:200%_auto]' : '',
         className
       )}
       style={{
-        // Add text stroke for better visibility against backgrounds
-        WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.3)',
-        textShadow: '0 0 10px rgba(255, 87, 87, 0.5), 0 0 20px rgba(255, 87, 87, 0.3)'
+        // Enhanced visibility without blur
+        WebkitTextStroke: '1px rgba(255, 255, 255, 0.8)',
+        textShadow: '0 0 8px rgba(255, 87, 87, 0.8), 0 0 16px rgba(255, 87, 87, 0.4)',
+        filter: 'contrast(1.2) brightness(1.1)'
       }}
     >
       {children}
