@@ -55,14 +55,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
                     }}>
                 <span className="relative">
                   Blueprinting Tomorrow{"'"}s 
-                  <span className="ml-2 bg-gradient-to-r from-quantum-cyan via-quantum-emerald to-quantum-sapphire bg-clip-text text-transparent font-bold animate-pulse"
+                  <span className="ml-2 text-white font-bold relative"
                         style={{
-                          WebkitBackgroundClip: 'text',
-                          WebkitTextFillColor: 'transparent',
-                          backgroundSize: '200% 100%',
-                          animation: 'gradient-shift 3s ease-in-out infinite'
+                          textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 0 30px rgba(96, 165, 250, 0.6), 0 0 60px rgba(34, 197, 94, 0.4)',
+                          filter: 'drop-shadow(0 0 20px rgba(96, 165, 250, 0.5))'
                         }}>
                     Cures
+                    {/* Gradient overlay that doesn't affect readability */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-quantum-cyan/30 via-quantum-emerald/30 to-quantum-sapphire/30 mix-blend-overlay animate-pulse"></div>
                   </span>
                 </span>
               </span>
