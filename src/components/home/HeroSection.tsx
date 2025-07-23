@@ -45,24 +45,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-4 font-light">
             <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-quantum-cyan via-quantum-emerald to-quantum-sapphire bg-clip-text text-transparent font-semibold tracking-wide animate-pulse" 
+              <span className="font-semibold tracking-wide text-white" 
                     style={{
-                      WebkitBackgroundClip: 'text', 
-                      WebkitTextFillColor: 'transparent',
-                      backgroundSize: '200% 100%',
-                      animation: 'gradient-shift 4s ease-in-out infinite',
-                      textShadow: '0 0 30px rgba(96, 165, 250, 0.5), 0 0 60px rgba(34, 197, 94, 0.3)'
+                      textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(96, 165, 250, 0.4), 0 0 40px rgba(34, 197, 94, 0.2)',
+                      filter: 'drop-shadow(0 0 10px rgba(96, 165, 250, 0.3))'
                     }}>
                 Blueprinting Tomorrow{"'"}s Cures
               </span>
               {/* Quantum glow underline */}
               <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-quantum-cyan to-transparent opacity-60 animate-pulse"></div>
-              {/* Floating particles effect */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-quantum-cyan rounded-full animate-ping opacity-30" style={{animationDelay: '0s', animationDuration: '3s'}}></div>
-                <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-quantum-emerald rounded-full animate-ping opacity-40" style={{animationDelay: '1s', animationDuration: '2.5s'}}></div>
-                <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-quantum-sapphire rounded-full animate-ping opacity-35" style={{animationDelay: '2s', animationDuration: '4s'}}></div>
-              </div>
             </span>
           </div>
         </h1>
