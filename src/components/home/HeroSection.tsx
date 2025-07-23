@@ -44,16 +44,45 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             <span className="text-white font-bold drop-shadow-lg" style={{textShadow: '0 4px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.3)'}}> Labs</span>
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-4 font-light">
-            <span className="relative inline-block">
-              <span className="font-semibold tracking-wide text-white" 
+            <span className="relative inline-block group">
+              {/* Background glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-quantum-cyan/20 via-quantum-emerald/20 to-quantum-sapphire/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-110"></div>
+              
+              <span className="relative font-semibold tracking-wide text-white" 
                     style={{
-                      textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(96, 165, 250, 0.4), 0 0 40px rgba(34, 197, 94, 0.2)',
-                      filter: 'drop-shadow(0 0 10px rgba(96, 165, 250, 0.3))'
+                      textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 0 25px rgba(96, 165, 250, 0.5), 0 0 50px rgba(34, 197, 94, 0.3)',
+                      filter: 'drop-shadow(0 0 15px rgba(96, 165, 250, 0.4))'
                     }}>
-                Blueprinting Tomorrow{"'"}s Cures
+                <span className="relative">
+                  Blueprinting Tomorrow{"'"}s 
+                  <span className="ml-2 bg-gradient-to-r from-quantum-cyan via-quantum-emerald to-quantum-sapphire bg-clip-text text-transparent font-bold animate-pulse"
+                        style={{
+                          WebkitBackgroundClip: 'text',
+                          WebkitTextFillColor: 'transparent',
+                          backgroundSize: '200% 100%',
+                          animation: 'gradient-shift 3s ease-in-out infinite'
+                        }}>
+                    Cures
+                  </span>
+                </span>
               </span>
-              {/* Quantum glow underline */}
-              <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-quantum-cyan to-transparent opacity-60 animate-pulse"></div>
+              
+              {/* Enhanced quantum underline with DNA helix pattern */}
+              <div className="absolute -bottom-2 left-0 right-0 h-1 overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-transparent via-quantum-cyan to-transparent opacity-60 animate-pulse"></div>
+                <div className="absolute top-0 left-0 h-full w-2 bg-quantum-emerald/80 animate-pulse" 
+                     style={{animation: 'dna-traverse 4s linear infinite'}}></div>
+              </div>
+              
+              {/* Floating DNA particles */}
+              <div className="absolute inset-0 pointer-events-none opacity-40">
+                <div className="absolute top-0 left-1/4 w-1.5 h-1.5 bg-quantum-cyan rounded-full animate-ping" 
+                     style={{animationDelay: '0s', animationDuration: '4s'}}></div>
+                <div className="absolute top-1/2 right-1/3 w-1 h-1 bg-quantum-emerald rounded-full animate-ping" 
+                     style={{animationDelay: '1.5s', animationDuration: '3s'}}></div>
+                <div className="absolute bottom-0 right-1/4 w-1.5 h-1.5 bg-quantum-sapphire rounded-full animate-ping" 
+                     style={{animationDelay: '3s', animationDuration: '5s'}}></div>
+              </div>
             </span>
           </div>
         </h1>
