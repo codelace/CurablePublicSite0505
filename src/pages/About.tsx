@@ -2,7 +2,7 @@
 import React, { memo } from 'react';
 import AboutHero from '@/components/about/AboutHero';
 import ValuesSection from '@/components/about/ValuesSection';
-import TeamSection from '@/components/about/TeamSection';
+import SimpleTeamSection from '@/components/about/SimpleTeamSection';
 import AboutCallToAction from '@/components/about/AboutCallToAction';
 
 const About = memo(() => {
@@ -33,10 +33,10 @@ const About = memo(() => {
           </div>
         </section>
 
-        {/* Team Section */}
+        {/* Simple Team Section */}
         <section className="py-4 relative">
           <div className="container mx-auto px-4 max-w-8xl">
-            <TeamSection isVisible={true} />
+            <SimpleTeamSection isVisible={true} />
           </div>
         </section>
 
