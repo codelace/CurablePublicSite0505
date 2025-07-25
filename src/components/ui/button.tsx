@@ -21,6 +21,8 @@ const buttonVariants = cva(
         premium: "btn-quantum-rainbow text-white quantum-field",
         glass: "glass-quantum text-white border-2 border-white/20 hover:bg-white/20 backdrop-blur-lg shadow-xl hover:scale-105 quantum-field",
         accent: "btn-quantum-accent text-white quantum-field",
+        spectral: "btn-spectacular text-white hover:scale-105 quantum-field",
+        cosmic: "bg-gradient-to-r from-cosmic-indigo to-cosmic-aura text-white hover:from-cosmic-aura hover:to-cosmic-indigo shadow-lg glow-cosmic-medium hover:glow-cosmic-strong hover:scale-105 quantum-field",
       },
       size: {
         default: "h-12 px-6 py-3",

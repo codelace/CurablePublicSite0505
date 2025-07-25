@@ -198,6 +198,49 @@
   .text-accent-spectral:hover::after {
     transform: scaleX(1);
   }
+  
+  /* Enhanced button effects with spectacular colors */
+  .btn-spectacular {
+    position: relative;
+    background: linear-gradient(135deg, hsl(var(--spectral-crimson)), hsl(var(--cosmic-indigo)));
+    border: 2px solid hsl(var(--spectral-glow) / 0.5);
+    box-shadow: 
+      0 4px 15px hsl(var(--spectral-crimson) / 0.3),
+      0 2px 8px hsl(var(--cosmic-indigo) / 0.2);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .btn-spectacular:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+      0 8px 25px hsl(var(--spectral-crimson) / 0.4),
+      0 4px 15px hsl(var(--cosmic-indigo) / 0.3);
+  }
+  
+  /* Comprehensive glow system */
+  .glow-spectral-soft {
+    box-shadow: 0 0 10px hsl(var(--spectral-crimson) / 0.2);
+  }
+  
+  .glow-spectral-medium {
+    box-shadow: 0 0 20px hsl(var(--spectral-crimson) / 0.4);
+  }
+  
+  .glow-spectral-strong {
+    box-shadow: 0 0 30px hsl(var(--spectral-crimson) / 0.6);
+  }
+  
+  .glow-cosmic-soft {
+    box-shadow: 0 0 10px hsl(var(--cosmic-indigo) / 0.2);
+  }
+  
+  .glow-cosmic-medium {
+    box-shadow: 0 0 20px hsl(var(--cosmic-indigo) / 0.4);
+  }
+  
+  .glow-cosmic-strong {
+    box-shadow: 0 0 30px hsl(var(--cosmic-indigo) / 0.6);
+  }
 }
 
 /* Responsive adjustments */

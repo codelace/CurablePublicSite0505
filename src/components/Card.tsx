@@ -4,8 +4,8 @@ import React from 'react';
 interface CardProps {
   children: React.ReactNode;
   className?: string;
-  glowColor?: 'blue' | 'purple' | 'red' | 'green' | 'amber' | 'neural' | 'biotech';
-  variant?: 'modern' | 'glass' | 'elevated' | 'magnetic';
+  glowColor?: 'blue' | 'purple' | 'red' | 'green' | 'amber' | 'neural' | 'biotech' | 'spectral' | 'cosmic';
+  variant?: 'modern' | 'glass' | 'elevated' | 'magnetic' | 'spectacular';
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   interactive?: boolean;
@@ -36,6 +36,10 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(({
         return 'shadow-neural border-neural-pink/30';
       case 'biotech':
         return 'shadow-biotech border-bio-cyan/30';
+      case 'spectral':
+        return 'spectral-glow border-spectral-crimson/40';
+      case 'cosmic':
+        return 'shadow-glow border-cosmic-indigo/40';
       default:
         return 'border-border/50';
     }
@@ -48,7 +52,9 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(({
       case 'elevated':
         return 'card-modern shadow-depth';
       case 'magnetic':
-        return 'card-modern magnetic-hover';
+        return 'card-modern magnetic-spectral';
+      case 'spectacular':
+        return 'card-modern border-spectral particle-field-spectral cosmic-aura';
       default:
         return 'card-modern';
     }

@@ -15,6 +15,7 @@
 @import './styles/glassmorphic-effects.css';
 @import './styles/quantum-performance.css';
 @import './styles/spectacular-accents.css';
+@import './styles/design-system-enhanced.css';
 
 @tailwind base;
 @tailwind components;
