@@ -17,14 +17,14 @@ const About = memo(() => {
       <div className="relative z-10">
         {/* Hero Section */}
         <section className="pt-[75px] pb-4">
-          <div className="container mx-auto px-4 max-w-8xl">
+          <div className="container mx-auto px-3 sm:px-4 max-w-9xl">
             <AboutHero />
           </div>
         </section>
 
         {/* Values Section */}
         <section className="py-4 relative">
-          <div className="container mx-auto px-4 max-w-8xl">
+          <div className="container mx-auto px-3 sm:px-4 max-w-9xl">
             <ValuesSection 
               isVisible={true} 
               hoveredValue={null} 
@@ -35,7 +35,7 @@ const About = memo(() => {
 
         {/* Simple Team Section */}
         <section className="py-4 relative">
-          <div className="container mx-auto px-4 max-w-8xl">
+          <div className="container mx-auto px-3 sm:px-4 max-w-9xl">
             <SimpleTeamSection isVisible={true} />
           </div>
         </section>

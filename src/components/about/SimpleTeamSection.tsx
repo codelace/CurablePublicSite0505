@@ -29,8 +29,8 @@ const SimpleTeamSection: React.FC<SimpleTeamSectionProps> = memo(({ isVisible })
         </p>
       </div>
 
-      {/* Simple Grid - No animations, instant load */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {/* Optimized Grid - 6+ users per row to maximize real estate */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-4 sm:gap-6">
         {sortedPeople.map((person) => (
           <SimpleProfileCard key={person.id} person={person} />
         ))}

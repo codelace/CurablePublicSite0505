@@ -21,14 +21,14 @@ const SimpleProfileCard: React.FC<SimpleProfileCardProps> = memo(({ person }) =>
   const badgeColorMap = {
     team: 'text-logo-blue border-logo-blue/40',
     advisor: 'text-plasma-violet border-plasma-violet/40',
-    founder: 'text-blue-400 border-blue-400/40',
+    founder: 'text-spectral-crimson border-spectral-crimson/40',
     contributor: 'text-warm-amber border-warm-amber/40'
   } as const;
 
   const borderColorMap = {
     team: 'border-logo-blue/50',
     advisor: 'border-plasma-violet/50',
-    founder: 'border-blue-400/50',
+    founder: 'border-spectral-crimson/50',
     contributor: 'border-warm-amber/50'
   } as const;
 
@@ -37,51 +37,45 @@ const SimpleProfileCard: React.FC<SimpleProfileCardProps> = memo(({ person }) =>
   const borderClass = borderColorMap[person.group as keyof typeof borderColorMap] || borderColorMap.team;
 
   return (
-    <div className="bg-brand-charcoal/40 backdrop-blur-sm border border-graphite-700/60 rounded-xl p-4 h-full flex flex-col text-center">
-      {/* Avatar - Simple, no complex effects */}
-      <div className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 ${borderClass} mb-3 mx-auto`}>
+    <div className="bg-brand-charcoal/40 backdrop-blur-sm border border-spectral-crimson/30 rounded-xl p-3 sm:p-4 h-full flex flex-col text-center hover:border-cosmic-indigo/50 transition-all duration-300 magnetic-spectral group">
+      {/* Avatar - Optimized for denser layout */}
+      <div className={`w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 ${borderClass} mb-2 sm:mb-3 mx-auto transition-all duration-300 group-hover:scale-105`}>
         <Avatar className="w-full h-full">
           <AvatarImage 
             src={person.avatar} 
             alt={person.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             onLoad={() => setImageLoaded(true)}
             loading="lazy"
           />
-          <AvatarFallback className="bg-brand-charcoal/90 text-foreground font-poppins font-bold text-lg">
+          <AvatarFallback className="bg-brand-charcoal/90 text-foreground font-poppins font-bold text-sm sm:text-lg">
             {person.name.split(' ').map(n => n[0]).join('')}
           </AvatarFallback>
         </Avatar>
       </div>
       
-      <div className="flex-1 flex flex-col">
-        {/* Name */}
-        <h3 className="text-sm sm:text-base font-poppins font-bold mb-2 text-foreground">
+      <div className="flex-1 flex flex-col justify-between">
+        {/* Name - Optimized spacing */}
+        <h3 className="text-xs sm:text-sm md:text-base font-poppins font-bold mb-1 sm:mb-2 text-foreground line-clamp-2 leading-tight">
           {person.name}
         </h3>
         
-        {/* Badge */}
-        <Badge variant="outline" className={`mb-2 mx-auto px-3 py-1 font-poppins font-semibold rounded-lg border ${badgeClass} text-xs bg-transparent`}>
+        {/* Badge - Smaller for dense layout */}
+        <Badge variant="outline" className={`mb-1 sm:mb-2 mx-auto px-2 py-0.5 font-poppins font-semibold rounded-lg border ${badgeClass} text-xs bg-transparent`}>
           {groupDisplay}
         </Badge>
         
-        {/* Role */}
-        <p className="text-quantum-red text-sm font-poppins mb-2 font-medium">
+        {/* Role - Compact sizing */}
+        <p className="text-spectral-crimson text-xs sm:text-sm font-poppins mb-1 sm:mb-2 font-medium line-clamp-2 leading-tight">
           {person.role}
         </p>
         
-        {/* Bio - Simple, no complex parsing */}
-        <div className="flex-1 flex flex-col justify-start">
-          <div className="text-foreground/80 text-xs leading-relaxed text-left font-poppins">
-            {person.bio ? (
-              <p>{person.bio.split('\n')[0]?.trim() || 'Profile details coming soon...'}</p>
-            ) : person.gptDescription ? (
-              <p>{person.gptDescription.split('\n')[0]?.trim() || 'Profile details coming soon...'}</p>
-            ) : (
-              <p className="italic opacity-60">Profile details coming soon...</p>
-            )}
-          </div>
-        </div>
+        {/* Bio - Truncated for dense layout */}
+        {person.bio && (
+          <p className="text-foreground/70 text-xs font-poppins leading-relaxed line-clamp-2 sm:line-clamp-3">
+            {person.bio}
+          </p>
+        )}
       </div>
     </div>
   );
