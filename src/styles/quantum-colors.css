@@ -1,0 +1,153 @@
+@layer utilities {
+  /* Enhanced shadows using new color palette */
+  .shadow-spectral {
+    box-shadow: 0 4px 12px hsl(var(--spectral-crimson) / 0.2);
+  }
+  
+  .shadow-cosmic {
+    box-shadow: 0 4px 12px hsl(var(--cosmic-indigo) / 0.2);
+  }
+  
+  .shadow-quantum {
+    box-shadow: 
+      0 4px 12px hsl(var(--spectral-crimson) / 0.15),
+      0 8px 24px hsl(var(--cosmic-indigo) / 0.1);
+  }
+  
+  /* Enhanced glow effects */
+  .glow-spectral {
+    filter: drop-shadow(0 0 8px hsl(var(--spectral-glow) / 0.6));
+  }
+  
+  .glow-cosmic {
+    filter: drop-shadow(0 0 8px hsl(var(--cosmic-aura) / 0.6));
+  }
+  
+  /* Quantum text effects with new colors */
+  .text-quantum-enhanced {
+    background: linear-gradient(45deg, 
+      hsl(var(--spectral-glow)), 
+      hsl(var(--cosmic-aura)), 
+      hsl(var(--spectral-crimson)));
+    background-size: 300% 300%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: quantum-flow 6s infinite;
+  }
+  
+  @keyframes quantum-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  /* Enhanced particle effects */
+  .particle-field-quantum {
+    background-image: 
+      radial-gradient(circle at 20% 20%, hsl(var(--spectral-crimson) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, hsl(var(--cosmic-indigo) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 50% 10%, hsl(var(--spectral-glow) / 0.05) 0%, transparent 50%);
+    animation: particle-drift 12s infinite ease-in-out;
+  }
+  
+  @keyframes particle-drift {
+    0%, 100% { 
+      background-position: 0% 0%, 100% 100%, 50% 0%;
+      opacity: 0.3;
+    }
+    50% { 
+      background-position: 30% 30%, 70% 70%, 80% 20%;
+      opacity: 0.6;
+    }
+  }
+  
+  /* Quantum borders */
+  .border-quantum-enhanced {
+    border: 1px solid transparent;
+    background: linear-gradient(135deg, 
+      hsl(var(--spectral-crimson) / 0.3), 
+      hsl(var(--cosmic-indigo) / 0.3)) border-box;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) padding-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+  
+  /* Enhanced hover states */
+  .hover-quantum-enhanced {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-quantum-enhanced:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 20px 40px hsl(var(--spectral-crimson) / 0.2),
+      0 0 80px hsl(var(--cosmic-indigo) / 0.15);
+  }
+  
+  /* Quantum loading states */
+  .loading-quantum-enhanced {
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      hsl(var(--spectral-glow) / 0.2) 50%, 
+      transparent 100%);
+    background-size: 200% 100%;
+    animation: quantum-shimmer 2s infinite;
+  }
+  
+  @keyframes quantum-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  /* Enhanced quantum buttons */
+  .btn-quantum-primary {
+    background: linear-gradient(135deg, 
+      hsl(var(--spectral-crimson)), 
+      hsl(var(--cosmic-indigo)));
+    border: 1px solid hsl(var(--spectral-glow) / 0.5);
+    color: hsl(var(--titanium-white));
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-quantum-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      hsl(var(--titanium-white) / 0.2), 
+      transparent);
+    transition: left 0.6s;
+  }
+  
+  .btn-quantum-primary:hover::before {
+    left: 100%;
+  }
+  
+  .btn-quantum-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px hsl(var(--spectral-crimson) / 0.4);
+  }
+  
+  /* Quantum secondary button */
+  .btn-quantum-secondary {
+    background: transparent;
+    border: 1px solid hsl(var(--cosmic-indigo) / 0.6);
+    color: hsl(var(--cosmic-aura));
+    transition: all 0.3s ease;
+  }
+  
+  .btn-quantum-secondary:hover {
+    background: hsl(var(--cosmic-indigo) / 0.1);
+    border-color: hsl(var(--cosmic-aura));
+    color: hsl(var(--titanium-white));
+    box-shadow: 0 0 20px hsl(var(--cosmic-indigo) / 0.3);
+  }
+}

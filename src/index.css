@@ -17,6 +17,8 @@
 @import './styles/spectacular-accents.css';
 @import './styles/design-system-enhanced.css';
 @import './styles/quantum-enhanced.css';
+@import './styles/quantum-colors.css';
+@import './styles/quantum-animations.css';
 
 @tailwind base;
 @tailwind components;

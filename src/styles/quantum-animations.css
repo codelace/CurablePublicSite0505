@@ -1,0 +1,110 @@
+@layer utilities {
+  /* Quantum field animations */
+  .quantum-field-line {
+    animation: quantumField 4s infinite ease-in-out;
+  }
+  
+  @keyframes quantumField {
+    0%, 100% { 
+      opacity: 0.3; 
+      transform: scaleX(0.8);
+    }
+    50% { 
+      opacity: 0.8; 
+      transform: scaleX(1.2);
+    }
+  }
+  
+  /* Enhanced glow effects for quantum theme */
+  .glow-spectral {
+    filter: drop-shadow(0 0 8px hsl(var(--spectral-glow) / 0.8));
+  }
+  
+  .glow-cosmic {
+    filter: drop-shadow(0 0 8px hsl(var(--cosmic-aura) / 0.8));
+  }
+  
+  /* Heat distortion replacement with quantum distortion */
+  .quantum-distortion {
+    background: linear-gradient(45deg, 
+      transparent 40%, 
+      hsl(var(--spectral-crimson) / 0.1) 50%, 
+      transparent 60%);
+    animation: quantumWave 6s infinite ease-in-out;
+  }
+  
+  @keyframes quantumWave {
+    0%, 100% { 
+      background-position: 0% 0%;
+      opacity: 0.3;
+    }
+    50% { 
+      background-position: 100% 100%;
+      opacity: 0.6;
+    }
+  }
+  
+  /* Enhanced button effects */
+  .btn-quantum-magnetic {
+    background: linear-gradient(135deg, 
+      hsl(var(--spectral-crimson)), 
+      hsl(var(--cosmic-indigo)));
+    box-shadow: 
+      0 4px 15px hsl(var(--spectral-crimson) / 0.3),
+      0 0 30px hsl(var(--cosmic-indigo) / 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn-quantum-magnetic:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+      0 8px 25px hsl(var(--spectral-crimson) / 0.4),
+      0 0 40px hsl(var(--cosmic-indigo) / 0.3);
+  }
+  
+  /* Quantum badge enhancements */
+  .badge-quantum {
+    background: linear-gradient(135deg, 
+      hsl(var(--spectral-crimson) / 0.1), 
+      hsl(var(--cosmic-indigo) / 0.1));
+    border: 1px solid hsl(var(--spectral-glow) / 0.3);
+    backdrop-filter: blur(8px);
+  }
+  
+  /* Enhanced status indicators */
+  .status-quantum {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .status-quantum::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, 
+      transparent, 
+      hsl(var(--spectral-glow) / 0.1), 
+      transparent);
+    animation: quantumScan 3s infinite;
+  }
+  
+  @keyframes quantumScan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  /* Improved particle effects */
+  .particles-quantum-enhanced {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--spectral-crimson) / 0.1) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, hsl(var(--cosmic-indigo) / 0.1) 1px, transparent 1px),
+      radial-gradient(circle at 50% 10%, hsl(var(--spectral-glow) / 0.05) 1px, transparent 1px);
+    background-size: 30px 30px, 40px 40px, 50px 50px;
+    animation: particleFloat 15s infinite linear;
+  }
+  
+  @keyframes particleFloat {
+    0% { background-position: 0% 0%, 0% 0%, 0% 0%; }
+    100% { background-position: 100% 100%, -100% 100%, 50% 100%; }
+  }
+}

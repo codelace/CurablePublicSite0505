@@ -23,23 +23,23 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(({
   const getGlowClass = () => {
     switch (glowColor) {
       case 'blue':
-        return 'shadow-biotech border-bio-cyan/30';
+        return 'shadow-biotech border-cosmic-aura/30';
       case 'purple':
-        return 'shadow-neural border-blue-400/30';
+        return 'shadow-neural border-cosmic-indigo/30';
       case 'red':
-        return 'shadow-warm border-quantum-red/30';
+        return 'shadow-warm border-spectral-crimson/30';
       case 'green':
         return 'shadow-glow border-bio-emerald/30';
       case 'amber':
-        return 'shadow-warm border-warm-amber/30';
+        return 'shadow-warm border-spectral-glow/30';
       case 'neural':
-        return 'shadow-neural border-neural-pink/30';
+        return 'shadow-neural border-cosmic-aura/30';
       case 'biotech':
-        return 'shadow-biotech border-bio-cyan/30';
+        return 'shadow-biotech border-cosmic-indigo/30';
       case 'spectral':
-        return 'spectral-glow border-spectral-crimson/40';
+        return 'shadow-spectral border-spectral-crimson/40';
       case 'cosmic':
-        return 'shadow-glow border-cosmic-indigo/40';
+        return 'shadow-cosmic border-cosmic-indigo/40';
       default:
         return 'border-border/50';
     }
