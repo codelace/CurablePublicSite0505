@@ -1,5 +1,5 @@
 
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Menu, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { SocialLinks } from './SocialLinks';
@@ -41,24 +41,30 @@ export const MobileNav = () => {
                 </button>
                 {aboutOpen && (
                   <div className="pb-3 pl-4 space-y-2">
-                    <Link 
-                      to="/about" 
-                      className={`block text-sm py-2 ${isActive('/about') ? 'text-blue-400' : 'text-titanium-white/80'}`}
-                    >
-                      About
-                    </Link>
-                    <Link 
-                      to="/whitepaper" 
-                      className={`block text-sm py-2 ${isActive('/whitepaper') ? 'text-blue-400' : 'text-titanium-white/80'}`}
-                    >
-                      Whitepaper
-                    </Link>
-                    <Link 
-                      to="/tokenomics" 
-                      className={`block text-sm py-2 ${isActive('/tokenomics') ? 'text-blue-400' : 'text-titanium-white/80'}`}
-                    >
-                      Tokenomics
-                    </Link>
+                    <SheetClose asChild>
+                      <Link 
+                        to="/about" 
+                        className={`block text-sm py-2 ${isActive('/about') ? 'text-blue-400' : 'text-titanium-white/80'}`}
+                      >
+                        About
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link 
+                        to="/whitepaper" 
+                        className={`block text-sm py-2 ${isActive('/whitepaper') ? 'text-blue-400' : 'text-titanium-white/80'}`}
+                      >
+                        Whitepaper
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link 
+                        to="/tokenomics" 
+                        className={`block text-sm py-2 ${isActive('/tokenomics') ? 'text-blue-400' : 'text-titanium-white/80'}`}
+                      >
+                        Tokenomics
+                      </Link>
+                    </SheetClose>
                   </div>
                 )}
               </div>
@@ -73,24 +79,30 @@ export const MobileNav = () => {
                 </button>
                 {productsOpen && (
                   <div className="pb-3 pl-4 space-y-2">
-                    <Link 
-                      to="/wearable" 
-                      className={`block text-sm py-2 ${isActive('/wearable') ? 'text-blue-400' : 'text-titanium-white/80'}`}
-                    >
-                      Wearable
-                    </Link>
-                    <Link 
-                      to="/agency" 
-                      className={`block text-sm py-2 ${isActive('/agency') ? 'text-blue-400' : 'text-titanium-white/80'}`}
-                    >
-                      Agency
-                    </Link>
-                    <Link 
-                      to="/gated-ip-nft" 
-                      className={`block text-sm py-2 ${isActive('/gated-ip-nft') ? 'text-blue-400' : 'text-titanium-white/80'}`}
-                    >
-                      Gated IP NFT
-                    </Link>
+                    <SheetClose asChild>
+                      <Link 
+                        to="/wearable" 
+                        className={`block text-sm py-2 ${isActive('/wearable') ? 'text-blue-400' : 'text-titanium-white/80'}`}
+                      >
+                        Wearable
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link 
+                        to="/agency" 
+                        className={`block text-sm py-2 ${isActive('/agency') ? 'text-blue-400' : 'text-titanium-white/80'}`}
+                      >
+                        Agency
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link 
+                        to="/gated-ip-nft" 
+                        className={`block text-sm py-2 ${isActive('/gated-ip-nft') ? 'text-blue-400' : 'text-titanium-white/80'}`}
+                      >
+                        Gated IP NFT
+                      </Link>
+                    </SheetClose>
                   </div>
                 )}
               </div>
@@ -104,19 +116,23 @@ export const MobileNav = () => {
                 CUREWORLD
               </a>
 
-              <Link 
-                to="/news" 
-                className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/news') ? 'text-blue-400' : 'text-titanium-white'}`}
-              >
-                NEWS
-              </Link>
+              <SheetClose asChild>
+                <Link 
+                  to="/news" 
+                  className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/news') ? 'text-blue-400' : 'text-titanium-white'}`}
+                >
+                  NEWS
+                </Link>
+              </SheetClose>
 
-              <Link 
-                to="/poetry" 
-                className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/poetry') ? 'text-blue-400' : 'text-titanium-white'}`}
-              >
-                POETRY
-              </Link>
+              <SheetClose asChild>
+                <Link 
+                  to="/poetry" 
+                  className={`text-base font-poppins font-semibold py-3 border-b border-graphite-700/40 ${isActive('/poetry') ? 'text-blue-400' : 'text-titanium-white'}`}
+                >
+                  POETRY
+                </Link>
+              </SheetClose>
 
             </nav>
           </div>
