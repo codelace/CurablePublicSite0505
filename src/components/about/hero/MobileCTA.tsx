@@ -11,10 +11,13 @@ const MobileCTA: React.FC = () => {
       <Sheet>
         <SheetTrigger asChild>
           <Button 
-            className="bg-quantum-red hover:bg-quantum-red/90 text-white font-poppins font-bold flex items-center gap-2 border-2 border-quantum-red/70 shadow-[0_0_20px_hsl(0_100%_67%/0.4)] transition-all duration-500 w-full justify-center text-sm py-6 hover:shadow-[0_0_30px_hsl(0_100%_67%/0.6)] hover:translate-y-[-2px]"
+            className="bg-spectral-crimson hover:bg-cosmic-indigo text-white font-poppins font-bold flex items-center gap-3 border-2 border-spectral-crimson/70 hover:border-cosmic-indigo/70 shadow-[0_0_25px_hsl(0_85%_67%/0.5)] transition-all duration-700 w-full justify-center text-base py-7 hover:shadow-[0_0_40px_hsl(258_100%_69%/0.7)] hover:translate-y-[-3px] magnetic-attraction backdrop-blur-md relative overflow-hidden group"
           >
-            EXPLORE PLATFORM
-            <ChevronRight className="w-5 h-5 animate-pulse" />
+            <span className="holographic-text font-bold tracking-wider">EXPLORE PLATFORM</span>
+            <ChevronRight className="w-6 h-6 animate-pulse group-hover:translate-x-1 transition-transform duration-500" />
+            
+            {/* Animated background glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-spectral-crimson/20 to-cosmic-indigo/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
           </Button>
         </SheetTrigger>
         <SheetContent className="bg-gunmetal-900/95 border-graphite-700/60 p-6 w-[90vw] sm:max-w-[350px] shadow-[0_0_30px_rgba(161,98,255,0.4)]">
