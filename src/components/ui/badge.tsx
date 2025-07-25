@@ -9,14 +9,14 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default:
-          "border-transparent bg-quantum-red text-white hover:bg-quantum-red/90 shadow-lg shadow-quantum-red/20",
+          "border-transparent bg-spectral-crimson text-white hover:bg-spectral-crimson/90 shadow-lg shadow-spectral-crimson/20 badge-quantum",
         secondary:
-          "border-transparent bg-brand-charcoal text-foreground hover:bg-brand-charcoal/80 shadow-lg shadow-brand-charcoal/20",
+          "border-transparent bg-card text-foreground hover:bg-card/80 shadow-lg shadow-card/20 quantum-backdrop",
         destructive:
           "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80 shadow-lg",
-        outline: "text-foreground border-quantum-red/50 hover:bg-quantum-red/10 hover:border-quantum-red backdrop-blur-sm",
-        premium: "border-transparent bg-gradient-to-r from-quantum-red to-warm-rose text-white shadow-xl shadow-quantum-red/30",
-        success: "border-transparent bg-logo-blue text-white hover:bg-logo-blue/90 shadow-lg shadow-logo-blue/20",
+        outline: "text-foreground border-spectral-crimson/50 hover:bg-spectral-crimson/10 hover:border-spectral-glow backdrop-blur-sm quantum-backdrop",
+        premium: "border-transparent bg-gradient-to-r from-spectral-crimson to-cosmic-indigo text-white shadow-xl shadow-spectral/30 btn-quantum-magnetic",
+        success: "border-transparent bg-cosmic-aura text-white hover:bg-cosmic-aura/90 shadow-lg shadow-cosmic/20 glow-cosmic",
       },
     },
     defaultVariants: {

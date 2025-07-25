@@ -44,45 +44,45 @@ const GradientText = ({
   const getGradientClasses = () => {
     switch (variant) {
       case 'blue':
-        return 'from-quantum-cyan to-blue-400';
+        return 'from-cosmic-aura to-cosmic-indigo';
       case 'green':
-        return 'from-bio-green to-quantum-mint';
+        return 'from-bio-green to-spectral-glow';
       case 'violet':
-        return 'from-quantum-purple to-purple-400';
+        return 'from-cosmic-indigo to-spectral-crimson';
       case 'electric':
-        return 'from-quantum-cyan to-quantum-teal';
+        return 'from-spectral-glow to-cosmic-aura';
       case 'quantum':
-        return 'from-quantum-red via-quantum-cyan to-quantum-purple';
+        return 'from-spectral-crimson via-spectral-glow to-cosmic-indigo';
       case 'multi':
-        return 'from-quantum-red via-quantum-cyan to-quantum-purple';
+        return 'from-spectral-crimson via-spectral-glow to-cosmic-indigo';
       case 'red':
-        return 'from-warm-rose to-quantum-red';
+        return 'from-spectral-crimson to-spectral-glow';
       case 'blue-purple':
-        return 'from-quantum-cyan to-quantum-purple';
+        return 'from-cosmic-aura to-cosmic-indigo';
       case 'purple-red':
-        return 'from-quantum-purple to-quantum-red';
+        return 'from-cosmic-indigo to-spectral-crimson';
       case 'green-blue':
-        return 'from-quantum-mint to-quantum-cyan';
+        return 'from-bio-green to-cosmic-aura';
       case 'red-purple':
-        return 'from-quantum-red to-quantum-purple';
+        return 'from-spectral-crimson to-cosmic-indigo';
       case 'rainbow':
-        return 'from-quantum-red via-quantum-orange via-quantum-amber via-quantum-lime via-quantum-teal via-quantum-cyan via-quantum-indigo via-quantum-purple to-quantum-fuchsia';
+        return 'from-spectral-crimson via-spectral-glow via-cosmic-aura via-cosmic-indigo to-spectral-crimson';
       case 'glassmorphic':
-        return 'from-quantum-cyan/80 via-quantum-purple/70 to-quantum-rose/80';
+        return 'from-spectral-glow/80 via-cosmic-aura/70 to-spectral-crimson/80';
       case 'orange':
-        return 'from-quantum-orange to-quantum-amber';
+        return 'from-spectral-glow to-spectral-crimson';
       case 'rose':
-        return 'from-quantum-rose to-quantum-fuchsia';
+        return 'from-spectral-crimson to-spectral-glow';
       case 'emerald':
-        return 'from-quantum-emerald to-quantum-mint';
+        return 'from-bio-green to-cosmic-aura';
       case 'indigo':
-        return 'from-quantum-indigo to-quantum-purple';
+        return 'from-cosmic-indigo to-cosmic-aura';
       case 'lime':
-        return 'from-quantum-lime to-quantum-teal';
+        return 'from-spectral-glow to-cosmic-aura';
       case 'fuchsia':
-        return 'from-quantum-fuchsia to-quantum-rose';
+        return 'from-spectral-crimson to-cosmic-indigo';
       default:
-        return 'from-quantum-red to-warm-rose';
+        return 'from-spectral-crimson to-spectral-glow';
     }
   };
 
@@ -95,10 +95,10 @@ const GradientText = ({
         className
       )}
       style={{
-        // Enhanced visibility without blur
-        WebkitTextStroke: '1px rgba(255, 255, 255, 0.8)',
-        textShadow: '0 0 8px rgba(255, 87, 87, 0.8), 0 0 16px rgba(255, 87, 87, 0.4)',
-        filter: 'contrast(1.2) brightness(1.1)'
+        // Enhanced quantum visibility effects
+        WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.6)',
+        textShadow: '0 0 12px hsl(var(--spectral-glow) / 0.8), 0 0 24px hsl(var(--cosmic-aura) / 0.4)',
+        filter: 'contrast(1.3) brightness(1.2) saturate(1.1)'
       }}
     >
       {children}

@@ -19,6 +19,7 @@
 @import './styles/quantum-enhanced.css';
 @import './styles/quantum-colors.css';
 @import './styles/quantum-animations.css';
+@import './styles/spectacular-quantum.css';
 
 @tailwind base;
 @tailwind components;

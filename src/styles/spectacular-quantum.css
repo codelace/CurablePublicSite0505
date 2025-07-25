@@ -1,0 +1,181 @@
+@layer utilities {
+  /* Spectacular scan line animations */
+  .animate-scan-line {
+    animation: scanLine 4s infinite linear;
+  }
+  
+  @keyframes scanLine {
+    0% { 
+      top: -2px; 
+      opacity: 0;
+      filter: hue-rotate(0deg);
+    }
+    50% { 
+      top: 50%; 
+      opacity: 1;
+      filter: hue-rotate(180deg);
+    }
+    100% { 
+      top: 100%; 
+      opacity: 0;
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  /* Enhanced blink animation */
+  .animate-blink {
+    animation: quantumBlink 1.2s infinite;
+  }
+  
+  @keyframes quantumBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  
+  /* Spectacular pulse dot */
+  .animate-pulse-dot {
+    animation: pulseDot 2s infinite;
+  }
+  
+  @keyframes pulseDot {
+    0%, 100% { 
+      transform: scale(1); 
+      opacity: 0.7;
+      filter: blur(0px);
+    }
+    50% { 
+      transform: scale(1.5); 
+      opacity: 1;
+      filter: blur(1px);
+    }
+  }
+  
+  /* Quantum text shimmer */
+  .animate-text-shimmer {
+    animation: textShimmer 3s infinite linear;
+  }
+  
+  @keyframes textShimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+  
+  /* Extraordinary gradient flow */
+  .gradient-flow-quantum {
+    background: linear-gradient(45deg, 
+      hsl(var(--spectral-crimson)), 
+      hsl(var(--spectral-glow)), 
+      hsl(var(--cosmic-indigo)), 
+      hsl(var(--cosmic-aura)));
+    background-size: 400% 400%;
+    animation: gradientFlow 8s infinite ease-in-out;
+  }
+  
+  @keyframes gradientFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  /* Spectacular rotating border */
+  .border-rotating-quantum {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, 
+      hsl(var(--spectral-crimson)), 
+      hsl(var(--cosmic-indigo))) border-box;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) padding-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+  
+  .border-rotating-quantum::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: conic-gradient(from 0deg, 
+      hsl(var(--spectral-crimson)), 
+      hsl(var(--spectral-glow)), 
+      hsl(var(--cosmic-indigo)), 
+      hsl(var(--cosmic-aura)), 
+      hsl(var(--spectral-crimson)));
+    border-radius: inherit;
+    animation: rotateBorder 4s linear infinite;
+    z-index: -1;
+  }
+  
+  @keyframes rotateBorder {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Quantum holographic effect */
+  .holographic-quantum {
+    background: linear-gradient(45deg, 
+      transparent 30%, 
+      hsl(var(--spectral-glow) / 0.1) 50%, 
+      transparent 70%);
+    background-size: 200% 200%;
+    animation: holographicShift 6s infinite ease-in-out;
+  }
+  
+  @keyframes holographicShift {
+    0%, 100% { 
+      background-position: 0% 0%;
+      filter: hue-rotate(0deg);
+    }
+    50% { 
+      background-position: 100% 100%;
+      filter: hue-rotate(60deg);
+    }
+  }
+  
+  /* Spectacular energy orb */
+  .energy-orb-quantum {
+    position: relative;
+    border-radius: 50%;
+    background: radial-gradient(circle, 
+      hsl(var(--spectral-glow) / 0.8) 0%, 
+      hsl(var(--cosmic-aura) / 0.4) 70%, 
+      transparent 100%);
+    animation: energyPulse 3s infinite ease-in-out;
+  }
+  
+  .energy-orb-quantum::before {
+    content: '';
+    position: absolute;
+    inset: -20%;
+    border-radius: 50%;
+    background: radial-gradient(circle, 
+      transparent 40%, 
+      hsl(var(--spectral-crimson) / 0.2) 60%, 
+      transparent 80%);
+    animation: energyPulse 3s infinite ease-in-out reverse;
+  }
+  
+  @keyframes energyPulse {
+    0%, 100% { 
+      transform: scale(1); 
+      opacity: 0.8; 
+    }
+    50% { 
+      transform: scale(1.2); 
+      opacity: 1; 
+    }
+  }
+  
+  /* Quantum data stream */
+  .data-stream-quantum {
+    background: repeating-linear-gradient(90deg, 
+      transparent 0%, 
+      hsl(var(--spectral-glow) / 0.1) 2%, 
+      transparent 4%);
+    animation: dataFlow 2s infinite linear;
+  }
+  
+  @keyframes dataFlow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+  }
+}
