@@ -1,0 +1,170 @@
+@layer utilities {
+  /* Quantum field enhancement */
+  .quantum-field-enhanced {
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, 
+      hsl(var(--spectral-crimson) / 0.1) 0%, 
+      transparent 50%),
+      radial-gradient(circle at 20% 80%, 
+      hsl(var(--cosmic-indigo) / 0.1) 0%, 
+      transparent 50%);
+    animation: quantum-field-pulse 8s infinite alternate;
+  }
+  
+  @keyframes quantum-field-pulse {
+    0% { 
+      background-size: 100% 100%, 80% 80%;
+      opacity: 0.3;
+    }
+    100% { 
+      background-size: 120% 120%, 100% 100%;
+      opacity: 0.6;
+    }
+  }
+  
+  /* Enhanced quantum buttons */
+  .btn-quantum-enhanced {
+    position: relative;
+    background: linear-gradient(135deg, 
+      hsl(var(--spectral-crimson) / 0.8), 
+      hsl(var(--cosmic-indigo) / 0.8));
+    border: 1px solid hsl(var(--spectral-glow) / 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+  
+  .btn-quantum-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      hsl(var(--titanium-white) / 0.2), 
+      transparent);
+    transition: left 0.5s;
+  }
+  
+  .btn-quantum-enhanced:hover::before {
+    left: 100%;
+  }
+  
+  .btn-quantum-enhanced:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px hsl(var(--spectral-crimson) / 0.3);
+  }
+  
+  /* Quantum text effects */
+  .text-quantum-flow {
+    background: linear-gradient(45deg, 
+      hsl(var(--spectral-glow)), 
+      hsl(var(--cosmic-aura)), 
+      hsl(var(--spectral-glow)));
+    background-size: 200% 200%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: quantum-text-flow 4s infinite linear;
+  }
+  
+  @keyframes quantum-text-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Quantum card enhancements */
+  .card-quantum-enhanced {
+    position: relative;
+    background: linear-gradient(135deg, 
+      hsl(var(--card) / 0.8), 
+      hsl(var(--card) / 0.6));
+    border: 1px solid hsl(var(--border) / 0.5);
+    backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-quantum-enhanced::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, 
+      hsl(var(--spectral-crimson) / 0.1), 
+      transparent, 
+      hsl(var(--cosmic-indigo) / 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .card-quantum-enhanced:hover::after {
+    opacity: 1;
+  }
+  
+  .card-quantum-enhanced:hover {
+    border-color: hsl(var(--spectral-glow) / 0.4);
+    box-shadow: 
+      0 20px 40px hsl(var(--spectral-crimson) / 0.1),
+      0 0 80px hsl(var(--cosmic-indigo) / 0.1);
+    transform: translateY(-4px);
+  }
+  
+  /* Quantum navigation enhancements */
+  .nav-quantum-enhanced {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-quantum-enhanced::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      hsl(var(--spectral-crimson)), 
+      hsl(var(--cosmic-indigo)));
+    transition: width 0.3s ease;
+  }
+  
+  .nav-quantum-enhanced:hover::after {
+    width: 100%;
+  }
+  
+  /* Quantum loading states */
+  .loading-quantum {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .loading-quantum::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      hsl(var(--spectral-glow) / 0.4), 
+      transparent);
+    animation: quantum-loading 2s infinite;
+  }
+  
+  @keyframes quantum-loading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+  
+  /* Quantum focus states */
+  .focus-quantum-enhanced:focus-visible {
+    outline: 2px solid hsl(var(--spectral-glow));
+    outline-offset: 2px;
+    box-shadow: 
+      0 0 0 4px hsl(var(--spectral-glow) / 0.2),
+      0 0 20px hsl(var(--cosmic-indigo) / 0.3);
+  }
+}

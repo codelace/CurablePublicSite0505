@@ -84,7 +84,7 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
   return (
     <Card 
       ref={cardRef}
-      className="card-quantum-optimized flex flex-col items-center text-center h-full p-3"
+      className="card-quantum-enhanced flex flex-col items-center text-center h-full p-3 quantum-barrier"
       glowColor={colorScheme.glowColor === 'blue' ? 'blue' : 'purple'}
     >
       {/* Performance-optimized quantum background effects */}
@@ -94,7 +94,7 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
       
       {/* Enhanced background effect */}
       {isHovered && (
-        <div className={`absolute inset-0 bg-gradient-to-br from-quantum-red/8 via-brand-charcoal/15 to-quantum-red/5 rounded-xl transition-opacity duration-300 opacity-70`}></div>
+        <div className={`absolute inset-0 bg-gradient-to-br from-spectral-crimson/8 via-cosmic-indigo/10 to-spectral-crimson/5 rounded-xl transition-opacity duration-300 opacity-70`}></div>
       )}
       
       <div className={`mb-3 relative z-10 ${isHovered ? 'animate-pulse-dot' : ''}`}>

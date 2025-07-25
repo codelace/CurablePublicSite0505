@@ -55,8 +55,8 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 
   return (
     <Card 
-      className={`card-quantum-optimized flex flex-col text-center h-full p-4 
-                border ${borderClass} ${glowClass}
+      className={`card-quantum-enhanced flex flex-col text-center h-full p-4 
+                border ${borderClass} ${glowClass} quantum-barrier data-pulse
                 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
       glowColor={person.group === 'team' ? 'blue' : 
                 person.group === 'advisor' ? 'red' : 
