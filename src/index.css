@@ -14,6 +14,7 @@
 @import './styles/performance-enhancements.css';
 @import './styles/glassmorphic-effects.css';
 @import './styles/quantum-performance.css';
+@import './styles/spectacular-accents.css';
 
 @tailwind base;
 @tailwind components;
@@ -54,6 +55,12 @@
   --warm-coral: 14 91% 73%;
   --plasma-violet: 271 91% 65%;
   --quantum-red: 348 100% 60%;
+  
+  /* Spectacular accent colors - subtle but remarkable */
+  --spectral-crimson: 0 85% 68%;        /* #ff5757 converted to HSL */
+  --cosmic-indigo: 250 100% 34%;        /* #1800ab converted to HSL */
+  --spectral-glow: 0 85% 78%;           /* Lighter variant of crimson */
+  --cosmic-aura: 250 100% 44%;          /* Lighter variant of indigo */
   
   /* Biotech accent colors */
   --bio-cyan: 189 94% 71%;
@@ -110,6 +117,12 @@
   --gradient-quantum-flow: linear-gradient(90deg, hsl(var(--quantum-cyan)), hsl(var(--quantum-purple)), hsl(var(--quantum-emerald)), hsl(var(--quantum-amber)), hsl(var(--quantum-indigo)), hsl(var(--quantum-rose)));
   --gradient-quantum-mesh: radial-gradient(circle at 30% 30%, hsl(var(--quantum-cyan)) 0%, transparent 50%), radial-gradient(circle at 70% 70%, hsl(var(--quantum-purple)) 0%, transparent 50%), radial-gradient(circle at 50% 90%, hsl(var(--quantum-emerald)) 0%, transparent 50%);
   --gradient-quantum-subtle: linear-gradient(135deg, hsl(var(--quantum-cyan) / 0.2), hsl(var(--quantum-purple) / 0.15), hsl(var(--quantum-emerald) / 0.2));
+  
+  /* Spectacular accent gradients - subtle but WOW factor */
+  --gradient-spectral: linear-gradient(135deg, hsl(var(--spectral-crimson)), hsl(var(--cosmic-indigo)));
+  --gradient-spectral-glow: linear-gradient(135deg, hsl(var(--spectral-glow)), hsl(var(--cosmic-aura)));
+  --gradient-spectral-mesh: radial-gradient(circle at 20% 80%, hsl(var(--spectral-crimson) / 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(var(--cosmic-indigo) / 0.15) 0%, transparent 50%);
+  --gradient-spectral-aurora: linear-gradient(135deg, hsl(var(--spectral-crimson) / 0.3), hsl(var(--cosmic-indigo) / 0.3), hsl(var(--quantum-cyan) / 0.2));
   --gradient-warm: linear-gradient(135deg, hsl(354 83% 74%), hsl(43 96% 56%));
   --gradient-cool: linear-gradient(135deg, hsl(var(--electric-quantum-blue)), hsl(var(--quantum-electric)));
   --gradient-biotech: linear-gradient(135deg, hsl(var(--electric-quantum-blue)), hsl(158 64% 52%), hsl(var(--quantum-red)));

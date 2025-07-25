@@ -24,13 +24,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
       <div className="mb-4 text-center max-w-5xl mx-auto relative z-10">
         <div className="relative mb-2 inline-block">
           <div className={`h-20 w-20 sm:h-24 sm:w-24 relative mx-auto mb-4 transition-all duration-700 transform ${mounted ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`}>
-            {/* Performance-optimized rotating rings with quantum spectrum */}
-            <div className="absolute inset-0 rounded-full border-4 border-quantum-red/30 shadow-lg shadow-quantum-red/20"></div>
-            <div className="absolute inset-0 rounded-full border-t-4 border-r-4 border-quantum-teal animate-spin will-change-transform shadow-quantum-teal/40" style={{animationDuration: '3s'}}></div>
+            {/* Performance-optimized rotating rings with spectacular accent colors */}
+            <div className="absolute inset-0 rounded-full border-4 border-spectral-crimson/30 shadow-lg shadow-spectral-crimson/20"></div>
+            <div className="absolute inset-0 rounded-full border-t-4 border-r-4 border-cosmic-indigo animate-spin will-change-transform shadow-cosmic-indigo/40" style={{animationDuration: '3s'}}></div>
             <div className="absolute inset-0 rounded-full border-4 border-transparent border-b-4 border-quantum-cyan animate-pulse opacity-70" style={{animationDuration: '2s'}}></div>
             
-            {/* Inner quantum core with aurora gradient */}
-            <div className="absolute inset-0 m-8 rounded-full bg-gradient-aurora opacity-80 blur-sm animate-pulse will-change-transform" style={{animationDuration: '4s'}}></div>
+            {/* Inner quantum core with spectacular aurora gradient */}
+            <div className="absolute inset-0 m-8 rounded-full opacity-80 blur-sm animate-pulse will-change-transform" 
+                 style={{
+                   background: 'linear-gradient(135deg, hsl(var(--spectral-crimson) / 0.4), hsl(var(--cosmic-indigo) / 0.4), hsl(var(--quantum-cyan) / 0.3))',
+                   animationDuration: '4s'
+                 }}></div>
           </div>
         </div>
         
@@ -110,10 +114,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             onClick={scrollToContent}
             className="btn-quantum-rainbow magnetic-attraction group relative px-8 py-4 text-white font-poppins font-bold rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-105 will-change-transform"
             style={{
-              background: 'linear-gradient(135deg, hsl(var(--quantum-cyan)), hsl(var(--quantum-purple)), hsl(var(--quantum-emerald)), hsl(var(--quantum-sapphire)))',
+              background: 'linear-gradient(135deg, hsl(var(--spectral-crimson)), hsl(var(--cosmic-indigo)), hsl(var(--quantum-cyan)), hsl(var(--quantum-emerald)))',
               backgroundSize: '300% 300%',
               border: '2px solid rgba(255, 255, 255, 0.2)',
-              boxShadow: '0 4px 20px hsl(var(--quantum-cyan) / 0.3), 0 4px 20px hsl(var(--quantum-purple) / 0.2)',
+              boxShadow: '0 4px 20px hsl(var(--spectral-crimson) / 0.4), 0 4px 20px hsl(var(--cosmic-indigo) / 0.3)',
               animation: 'rainbow-flow 6s ease-in-out infinite'
             }}
           >

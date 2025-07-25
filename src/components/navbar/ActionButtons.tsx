@@ -30,7 +30,8 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
     : "hover:bg-gradient-to-r hover:from-quantum-red hover:to-blue-400 hover:shadow-[0_0_12px_hsl(0_100%_67%/0.6)] transition-all duration-300"}`;
   
   const joinButtonStyle = {
-    backgroundColor: 'hsl(0 100% 67%)' // Brand guideline primary red
+    background: 'linear-gradient(135deg, hsl(var(--spectral-crimson)), hsl(var(--spectral-glow)))',
+    boxShadow: '0 2px 8px hsl(var(--spectral-crimson) / 0.3)'
   };
 
   const novelButtonClasses = `${baseButtonClasses} ${isMobile 
@@ -38,10 +39,10 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
     : "hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-500 hover:shadow-[0_0_12px_rgba(96,165,250,0.6)] transition-all duration-300"}`;
   
   const novelButtonStyle = {
-    background: 'linear-gradient(135deg, #00CCFF, #6699FF, #4477FF)', // Quantum spectrum blue gradient
-    border: '2px solid #77AAFF',
+    background: 'linear-gradient(135deg, hsl(var(--cosmic-indigo)), hsl(var(--cosmic-aura)), hsl(var(--quantum-cyan)))',
+    border: '2px solid hsl(var(--cosmic-aura))',
     color: 'white',
-    boxShadow: '0 4px 20px rgba(0, 204, 255, 0.4)'
+    boxShadow: '0 4px 20px hsl(var(--cosmic-indigo) / 0.4)'
   };
 
   return (

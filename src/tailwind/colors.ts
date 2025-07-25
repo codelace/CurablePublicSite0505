@@ -57,4 +57,10 @@ export const colors = {
   "warm-amber": "hsl(var(--warm-amber))",
   "warm-coral": "hsl(var(--warm-coral))",
   "warm-rose": "hsl(var(--warm-rose))",
+  
+  // Spectacular accent colors - subtle but remarkable
+  "spectral-crimson": "hsl(var(--spectral-crimson))",
+  "cosmic-indigo": "hsl(var(--cosmic-indigo))",
+  "spectral-glow": "hsl(var(--spectral-glow))",
+  "cosmic-aura": "hsl(var(--cosmic-aura))",
 };
