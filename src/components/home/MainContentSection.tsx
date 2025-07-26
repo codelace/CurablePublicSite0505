@@ -40,10 +40,10 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
 
         {/* Tab Content with performance-optimized container */}
         <div className={`transition-all duration-500 delay-300 ${revealSections.includes('tabs') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="relative min-h-[12rem] bg-gunmetal-900/40 backdrop-blur-lg border border-spectral-crimson/20 hover:border-cosmic-indigo/30 rounded-xl p-6 shadow-xl transition-colors duration-300">
+          <div className="relative min-h-[12rem] bg-gunmetal-900/40 backdrop-blur-lg border border-spectral-crimson/20 hover:border-spectral-glow/30 rounded-xl p-6 shadow-xl transition-colors duration-300">
             {/* Subtle quantum background */}
             <div className="absolute inset-0 pointer-events-none">
-              <div className="bg-gradient-to-br from-spectral-crimson/5 via-warm-coral/3 via-transparent to-cosmic-indigo/5"></div>
+              <div className="bg-gradient-to-br from-spectral-crimson/4 via-warm-coral/3 via-cosmic-indigo/5 via-spectral-glow/4 to-cosmic-aura/3"></div>
             </div>
             
             <div className="relative z-10">
@@ -54,9 +54,9 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
         
         {/* Enhanced page navigation hint */}
         <div className={`flex justify-center mt-6 transition-all duration-700 delay-400 ${revealSections.includes('tabs') ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="magnetic-spectral flex flex-col items-center text-foreground/40 hover:text-spectral-crimson transition-colors duration-300 group">
-            <ChevronDown className="w-5 h-5 animate-bounce group-hover:text-spectral-crimson" />
-            <span className="text-sm font-poppins font-medium mt-1 group-hover:text-spectral-crimson text-accent-spectral">Scroll to explore</span>
+          <div className="magnetic-spectral flex flex-col items-center text-foreground/40 hover:text-spectral-glow transition-colors duration-300 group">
+            <ChevronDown className="w-5 h-5 animate-bounce group-hover:text-spectral-glow" />
+            <span className="text-sm font-poppins font-medium mt-1 group-hover:text-spectral-glow">Scroll to explore</span>
           </div>
         </div>
       </div>
