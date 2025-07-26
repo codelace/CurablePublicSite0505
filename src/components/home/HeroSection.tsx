@@ -115,18 +115,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             onClick={scrollToContent}
             className="btn-quantum-rainbow magnetic-attraction group relative px-8 py-4 text-white font-poppins font-bold rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-105 will-change-transform"
             style={{
-              background: 'linear-gradient(135deg, hsl(var(--spectral-crimson)), hsl(var(--warm-coral)), hsl(var(--cosmic-indigo)), hsl(var(--spectral-glow)), hsl(var(--cosmic-aura)))',
-              backgroundSize: '300% 300%',
-              border: '2px solid rgba(255, 255, 255, 0.2)',
-              boxShadow: '0 4px 20px hsl(var(--spectral-crimson) / 0.4), 0 4px 20px hsl(var(--cosmic-indigo) / 0.3)',
-              animation: 'rainbow-flow 6s ease-in-out infinite'
+              background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)) 50%, hsl(var(--accent)) 100%)',
+              backgroundSize: '200% 200%',
+              border: '2px solid rgba(255, 255, 255, 0.1)',
+              boxShadow: '0 4px 20px hsl(var(--primary) / 0.3)',
+              animation: 'rainbow-flow 4s ease-in-out infinite'
             }}
           >
             <div className="relative z-10 flex items-center gap-3">
               <span className="text-lg">Explore Platform</span> 
               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-3 transition-transform will-change-transform" />
             </div>
-            <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </button>
           
           <Link 
