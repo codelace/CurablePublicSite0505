@@ -93,22 +93,38 @@ const CommandHUDHeader: React.FC<CommandHUDHeaderProps> = ({
       </div>
       
       <div 
-        className={`relative bg-card/80 backdrop-blur-lg border ${colors.border} rounded-xl p-6 sm:p-8 ${colors.glow} shadow-2xl hover:shadow-spectral/30 transition-all duration-500 ${colors.hover} overflow-hidden group quantum-field-enhanced`}
+        className={`relative bg-gradient-to-br from-card/90 via-card/70 to-card/80 backdrop-blur-xl border ${colors.border} rounded-xl p-6 sm:p-8 ${colors.glow} shadow-2xl hover:shadow-spectral/40 transition-all duration-500 ${colors.hover} overflow-hidden group quantum-field-enhanced holographic-quantum`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Enhanced quantum background effect with gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-spectral-crimson/10 via-cosmic-indigo/5 to-spectral-glow/10 pointer-events-none group-hover:from-spectral-crimson/20 group-hover:to-cosmic-indigo/15 transition-all duration-500 particles-quantum-enhanced"></div>
+        {/* Multi-layered quantum gradient backgrounds */}
+        <div className="absolute inset-0 bg-gradient-to-br from-spectral-crimson/15 via-cosmic-indigo/8 to-spectral-glow/12 pointer-events-none group-hover:from-spectral-crimson/25 group-hover:via-cosmic-aura/15 group-hover:to-cosmic-indigo/20 transition-all duration-700 particles-quantum-enhanced"></div>
+        <div className="absolute inset-0 bg-gradient-to-tl from-cosmic-indigo/10 via-transparent to-spectral-glow/15 pointer-events-none group-hover:from-cosmic-indigo/20 group-hover:to-spectral-crimson/18 transition-all duration-500 opacity-80"></div>
+        <div className="absolute inset-0 radial-gradient from-cosmic-aura/8 via-transparent to-spectral-crimson/6 pointer-events-none group-hover:from-cosmic-aura/15 group-hover:to-spectral-glow/12 transition-all duration-600"></div>
         
-        {/* Dynamic quantum circuit lines with pulsing animation */}
+        {/* Enhanced quantum particle field with multiple layers */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,hsl(var(--spectral-crimson)/0.15)_1px,transparent_1px),radial-gradient(circle_at_80%_70%,hsl(var(--cosmic-indigo)/0.12)_1px,transparent_1px),radial-gradient(circle_at_50%_20%,hsl(var(--spectral-glow)/0.1)_1px,transparent_1px),radial-gradient(circle_at_30%_80%,hsl(var(--cosmic-aura)/0.08)_1px,transparent_1px)] bg-[length:25px_25px,35px_35px,45px_45px,55px_55px] animate-[particleQuantumFloat_12s_infinite_linear]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,hsl(var(--spectral-glow)/0.08)_2px,transparent_2px),radial-gradient(circle_at_40%_60%,hsl(var(--cosmic-indigo)/0.1)_1.5px,transparent_1.5px)] bg-[length:40px_40px,60px_60px] animate-[particleQuantumFloat_18s_infinite_linear_reverse] opacity-70"></div>
+        </div>
+        
+        {/* Dynamic quantum circuit grid with enhanced effects */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-[20%] w-full h-[1px] bg-gradient-to-r from-transparent via-spectral-glow/40 to-transparent quantum-field-line"></div>
-          <div className="absolute bottom-[30%] w-full h-[1px] bg-gradient-to-r from-transparent via-cosmic-aura/40 to-transparent quantum-field-line" style={{animationDelay: '1s'}}></div>
-          <div className="absolute left-[10%] h-full w-[1px] bg-gradient-to-b from-transparent via-spectral-crimson/30 to-transparent quantum-field-line" style={{animationDelay: '0.5s'}}></div>
-          <div className="absolute right-[20%] h-full w-[1px] bg-gradient-to-b from-transparent via-cosmic-indigo/40 to-transparent quantum-field-line" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute top-[20%] w-full h-[1px] bg-gradient-to-r from-transparent via-spectral-glow/50 to-transparent quantum-field-line glow-spectral"></div>
+          <div className="absolute bottom-[30%] w-full h-[1px] bg-gradient-to-r from-transparent via-cosmic-aura/45 to-transparent quantum-field-line glow-cosmic" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-[60%] w-full h-[1px] bg-gradient-to-r from-transparent via-spectral-crimson/40 to-transparent quantum-field-line" style={{animationDelay: '2s'}}></div>
+          <div className="absolute left-[10%] h-full w-[1px] bg-gradient-to-b from-transparent via-spectral-crimson/35 to-transparent quantum-field-line glow-spectral" style={{animationDelay: '0.5s'}}></div>
+          <div className="absolute right-[20%] h-full w-[1px] bg-gradient-to-b from-transparent via-cosmic-indigo/45 to-transparent quantum-field-line glow-cosmic" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute left-[70%] h-full w-[1px] bg-gradient-to-b from-transparent via-cosmic-aura/30 to-transparent quantum-field-line" style={{animationDelay: '2.5s'}}></div>
           
-          {/* Enhanced quantum scan line effect */}
-          <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-spectral-glow/80 to-transparent animate-scan-line opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          {/* Multiple quantum scan lines with different speeds */}
+          <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-spectral-glow/90 to-transparent animate-scan-line opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_10px_hsl(var(--spectral-glow))]"></div>
+          <div className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cosmic-aura/70 to-transparent animate-[scanLine_6s_infinite_linear] opacity-0 group-hover:opacity-80 transition-opacity duration-700" style={{animationDelay: '1s'}}></div>
+          
+          {/* Quantum energy orbs */}
+          <div className="absolute top-[25%] left-[15%] w-3 h-3 energy-orb-quantum opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="absolute bottom-[35%] right-[25%] w-2 h-2 energy-orb-quantum opacity-0 group-hover:opacity-90 transition-opacity duration-700" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute top-[70%] left-[60%] w-2.5 h-2.5 energy-orb-quantum opacity-0 group-hover:opacity-80 transition-opacity duration-600" style={{animationDelay: '0.8s'}}></div>
         </div>
         
         <h1 className="relative text-2xl md:text-3xl lg:text-5xl font-bold text-titanium-white mb-3 font-poppins flex flex-wrap items-center gap-2 break-words z-10">
