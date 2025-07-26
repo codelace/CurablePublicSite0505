@@ -41,8 +41,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         
         <h1 className={`transition-all duration-700 delay-200 transform ${revealClass('hero-text')}`}>
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-poppins leading-tight tracking-tight mb-2">
-            <span className="bg-gradient-to-r from-titanium-white via-warm-coral via-cosmic-indigo to-spectral-glow bg-clip-text text-transparent font-bold" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Curable</span>
-            <span className="text-titanium-white font-bold"> Labs</span>
+            <span className="text-primary font-bold">Curable</span>
+            <span className="text-foreground font-bold"> Labs</span>
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-4 font-light">
             <span className="relative inline-block group cursor-default">
@@ -126,7 +126,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
               <span className="text-lg">Explore Platform</span> 
               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-3 transition-transform will-change-transform" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-warm-coral/12 via-cosmic-indigo/10 via-spectral-glow/15 to-cosmic-aura/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </button>
           
           <Link 
