@@ -21,13 +21,13 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
 
   // Using brand charcoal for a more professional, trustworthy look
   const dnaButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "bg-gradient-to-r from-brand-charcoal to-blue-400/30 hover:from-brand-charcoal hover:to-blue-400/50" 
-    : "bg-gradient-to-r from-brand-charcoal to-blue-400/30 hover:from-brand-charcoal hover:to-blue-400/50 hover:shadow-[0_0_12px_rgba(96,165,250,0.3)] transition-all duration-300"}`;
+    ? "bg-gradient-to-r from-gunmetal-900 to-cosmic-indigo/30 hover:from-gunmetal-800 hover:to-cosmic-indigo/50" 
+    : "bg-gradient-to-r from-gunmetal-900 to-cosmic-indigo/30 hover:from-gunmetal-800 hover:to-cosmic-indigo/50 hover:shadow-[0_0_12px_hsl(var(--cosmic-indigo)/0.3)] transition-all duration-300"}`;
 
   // Keep other button classes the same
   const joinButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "hover:bg-gradient-to-r hover:from-quantum-red hover:to-blue-400" 
-    : "hover:bg-gradient-to-r hover:from-quantum-red hover:to-blue-400 hover:shadow-[0_0_12px_hsl(0_100%_67%/0.6)] transition-all duration-300"}`;
+    ? "hover:bg-gradient-to-r hover:from-spectral-crimson hover:to-cosmic-indigo" 
+    : "hover:bg-gradient-to-r hover:from-spectral-crimson hover:to-cosmic-indigo hover:shadow-[0_0_12px_hsl(var(--spectral-crimson)/0.6)] transition-all duration-300"}`;
   
   const joinButtonStyle = {
     background: 'linear-gradient(135deg, hsl(var(--spectral-crimson)), hsl(var(--spectral-glow)))',
@@ -35,8 +35,8 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
   };
 
   const novelButtonClasses = `${baseButtonClasses} ${isMobile 
-    ? "hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-500" 
-    : "hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-500 hover:shadow-[0_0_12px_rgba(96,165,250,0.6)] transition-all duration-300"}`;
+    ? "hover:bg-gradient-to-r hover:from-cosmic-indigo hover:to-cosmic-aura" 
+    : "hover:bg-gradient-to-r hover:from-cosmic-indigo hover:to-cosmic-aura hover:shadow-[0_0_12px_hsl(var(--cosmic-indigo)/0.6)] transition-all duration-300"}`;
   
   const novelButtonStyle = {
     background: 'linear-gradient(135deg, hsl(var(--cosmic-indigo)), hsl(var(--cosmic-aura)), hsl(var(--quantum-cyan)))',
@@ -69,7 +69,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         
         {/* Subtle border glow when hovered - adjusted for blue accent */}
         {hoveredButton === 'dna' && (
-          <span className="absolute inset-0 rounded-lg ring-1 ring-logo-blue/70 animate-pulse-subtle"></span>
+          <span className="absolute inset-0 rounded-lg ring-1 ring-cosmic-indigo/70 animate-pulse-subtle"></span>
         )}
       </a>
       
@@ -89,7 +89,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         
         {/* Subtle border glow when hovered */}
         {hoveredButton === 'join' && (
-          <span className="absolute inset-0 rounded-lg ring-1 ring-quantum-red/70 animate-pulse-subtle"></span>
+          <span className="absolute inset-0 rounded-lg ring-1 ring-spectral-crimson/70 animate-pulse-subtle"></span>
         )}
       </Link>
       
@@ -109,7 +109,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
         
         {/* Subtle border glow when hovered */}
         {hoveredButton === 'novel' && (
-          <span className="absolute inset-0 rounded-lg ring-1 ring-electric-quantum-blue/70 animate-pulse-subtle"></span>
+          <span className="absolute inset-0 rounded-lg ring-1 ring-cosmic-aura/70 animate-pulse-subtle"></span>
         )}
       </Link>
     </div>

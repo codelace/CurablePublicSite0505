@@ -30,30 +30,30 @@ const WhitepaperHeader: React.FC<WhitepaperHeaderProps> = ({ fullTerminalText })
   }, [terminalText, fullTerminalText]);
 
   return (
-    <div className="bg-brand-charcoal border-b border-quantum-red/60 p-4 font-mono relative overflow-hidden shadow-lg shadow-quantum-red/20">
+    <div className="bg-gunmetal-900 border-b border-spectral-crimson/40 p-4 font-mono relative overflow-hidden shadow-lg shadow-spectral-crimson/20">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5 grid-overlay pointer-events-none"></div>
       
       {/* Data scan lines */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-full h-0.5 bg-quantum-red/10 top-1/4 animate-scan-line" style={{animationDuration: '6s', animationDelay: '1s'}}></div>
-        <div className="absolute w-full h-0.5 bg-warm-rose/10 top-2/3 animate-scan-line" style={{animationDuration: '8s', animationDelay: '3s'}}></div>
+        <div className="absolute w-full h-0.5 bg-spectral-crimson/10 top-1/4 animate-scan-line" style={{animationDuration: '6s', animationDelay: '1s'}}></div>
+        <div className="absolute w-full h-0.5 bg-cosmic-indigo/10 top-2/3 animate-scan-line" style={{animationDuration: '8s', animationDelay: '3s'}}></div>
       </div>
       
-      <div className="text-sm text-quantum-red whitespace-pre-line relative">
+      <div className="text-sm text-spectral-crimson whitespace-pre-line relative">
         {terminalText}
-        <span className={`inline-block w-2 h-4 bg-quantum-red ml-0.5 ${showCursor ? 'opacity-100' : 'opacity-0'}`} style={{transition: 'opacity 0.1s'}}></span>
+        <span className={`inline-block w-2 h-4 bg-spectral-crimson ml-0.5 ${showCursor ? 'opacity-100' : 'opacity-0'}`} style={{transition: 'opacity 0.1s'}}></span>
       </div>
       
       <h1 className="text-3xl font-bold text-foreground mt-2 flex items-center gap-2 font-poppins relative z-10">
-        <span className="text-quantum-red">&gt;</span> 
+        <span className="text-spectral-crimson">&gt;</span> 
         <GradientText variant="red" animate>Curable Labs</GradientText> 
         <span>Whitepaper</span>
-        <Badge className="ml-2 bg-quantum-red/20 text-quantum-red text-xs glow-pulse border-quantum-red/30">v2.5</Badge>
+        <Badge className="ml-2 bg-spectral-crimson/20 text-spectral-crimson text-xs border-spectral-crimson/30">v2.5</Badge>
       </h1>
       
       {/* Decorative circuit pattern */}
-      <div className="absolute bottom-2 right-2 text-[0.6rem] text-quantum-red/40 font-mono">
+      <div className="absolute bottom-2 right-2 text-[0.6rem] text-spectral-crimson/40 font-mono">
         ~/protocol/whitepaper/v2.5 $ <span className="cursor-blink">_</span>
       </div>
     </div>

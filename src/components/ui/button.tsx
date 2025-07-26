@@ -9,20 +9,20 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-quantum-red text-white hover:bg-quantum-red/90 shadow-lg shadow-quantum-red/30 hover:shadow-quantum-red/50 hover:scale-105 quantum-field",
+        default: "bg-spectral-crimson text-titanium-white hover:bg-spectral-crimson/90 shadow-lg shadow-spectral-crimson/30 hover:shadow-spectral-crimson/50 hover:scale-105 quantum-field",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-lg hover:scale-105 quantum-field",
         outline:
-          "border-2 border-quantum-cyan/50 bg-transparent text-quantum-cyan hover:bg-quantum-cyan/10 hover:border-quantum-cyan hover:shadow-lg hover:shadow-quantum-cyan/30 backdrop-blur-sm quantum-field",
+          "border-2 border-cosmic-indigo/50 bg-transparent text-cosmic-indigo hover:bg-cosmic-indigo/10 hover:border-cosmic-indigo hover:shadow-lg hover:shadow-cosmic-indigo/30 backdrop-blur-sm quantum-field",
         secondary:
-          "btn-quantum-secondary text-white hover:scale-105 quantum-field",
-        ghost: "hover:bg-quantum-purple/10 hover:text-quantum-purple transition-all duration-300 quantum-field",
-        link: "text-quantum-cyan underline-offset-4 hover:underline hover:text-quantum-purple/80 holographic-text",
-        premium: "btn-quantum-rainbow text-white quantum-field",
-        glass: "glass-quantum text-white border-2 border-white/20 hover:bg-white/20 backdrop-blur-lg shadow-xl hover:scale-105 quantum-field",
-        accent: "btn-quantum-accent text-white quantum-field",
-        spectral: "btn-spectacular text-white hover:scale-105 quantum-field",
-        cosmic: "bg-gradient-to-r from-cosmic-indigo to-cosmic-aura text-white hover:from-cosmic-aura hover:to-cosmic-indigo shadow-lg glow-cosmic-medium hover:glow-cosmic-strong hover:scale-105 quantum-field",
+          "bg-gunmetal-900/80 border border-spectral-crimson/30 text-titanium-white hover:bg-gunmetal-800/90 hover:border-cosmic-indigo/50 hover:scale-105 quantum-field",
+        ghost: "hover:bg-cosmic-indigo/10 hover:text-cosmic-indigo transition-all duration-300 quantum-field",
+        link: "text-spectral-glow underline-offset-4 hover:underline hover:text-cosmic-aura holographic-text",
+        premium: "bg-gradient-to-r from-spectral-crimson to-cosmic-indigo text-titanium-white hover:from-cosmic-indigo hover:to-spectral-crimson shadow-lg hover:scale-105 quantum-field",
+        glass: "bg-gunmetal-900/20 text-titanium-white border-2 border-spectral-crimson/20 hover:bg-gunmetal-900/40 hover:border-cosmic-indigo/40 backdrop-blur-lg shadow-xl hover:scale-105 quantum-field",
+        accent: "bg-cosmic-indigo text-titanium-white hover:bg-cosmic-aura shadow-lg hover:scale-105 quantum-field",
+        spectral: "bg-gradient-to-r from-spectral-crimson via-cosmic-indigo to-spectral-glow text-titanium-white hover:scale-105 quantum-field",
+        cosmic: "bg-gradient-to-r from-cosmic-indigo to-cosmic-aura text-titanium-white hover:from-cosmic-aura hover:to-cosmic-indigo shadow-lg hover:scale-105 quantum-field",
       },
       size: {
         default: "h-12 px-6 py-3",

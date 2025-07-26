@@ -1,4 +1,3 @@
-
 import { Link, useLocation } from 'react-router-dom';
 import { SocialLinks } from './SocialLinks';
 import {
@@ -23,11 +22,11 @@ export const DesktopNav = () => {
               ABOUT
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <div className="p-2 w-48 bg-brand-charcoal/95 border border-spectral-crimson/30 backdrop-blur-lg shadow-lg shadow-spectral-crimson/20 quantum-backdrop">
+              <div className="p-2 w-48 bg-gunmetal-900/95 border border-spectral-crimson/30 backdrop-blur-lg shadow-lg shadow-spectral-crimson/20">
                 <NavigationMenuLink asChild>
                   <Link 
                     to="/about" 
-                    className="block px-3 py-2 text-sm text-foreground hover:text-spectral-glow transition-colors font-poppins nav-quantum-enhanced"
+                    className="block px-3 py-2 text-sm text-foreground hover:text-spectral-glow transition-colors font-poppins"
                   >
                     About
                   </Link>
@@ -35,7 +34,7 @@ export const DesktopNav = () => {
                 <NavigationMenuLink asChild>
                   <Link 
                     to="/whitepaper" 
-                    className="block px-3 py-2 text-sm text-foreground hover:text-spectral-glow transition-colors font-poppins nav-quantum-enhanced"
+                    className="block px-3 py-2 text-sm text-foreground hover:text-spectral-glow transition-colors font-poppins"
                   >
                     Whitepaper
                   </Link>
@@ -43,7 +42,7 @@ export const DesktopNav = () => {
                 <NavigationMenuLink asChild>
                   <Link 
                     to="/tokenomics" 
-                    className="block px-3 py-2 text-sm text-foreground hover:text-spectral-glow transition-colors font-poppins nav-quantum-enhanced"
+                    className="block px-3 py-2 text-sm text-foreground hover:text-spectral-glow transition-colors font-poppins"
                   >
                     Tokenomics
                   </Link>
@@ -61,11 +60,11 @@ export const DesktopNav = () => {
               PRODUCTS
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <div className="p-2 w-48 bg-brand-charcoal/95 border border-cosmic-indigo/30 backdrop-blur-lg shadow-lg shadow-cosmic-indigo/20 quantum-backdrop">
+              <div className="p-2 w-48 bg-gunmetal-900/95 border border-cosmic-indigo/30 backdrop-blur-lg shadow-lg shadow-cosmic-indigo/20">
                 <NavigationMenuLink asChild>
                   <Link 
                     to="/wearable" 
-                    className="block px-3 py-2 text-sm text-foreground hover:text-cosmic-aura transition-colors font-poppins nav-quantum-enhanced"
+                    className="block px-3 py-2 text-sm text-foreground hover:text-cosmic-aura transition-colors font-poppins"
                   >
                     Wearable
                   </Link>
@@ -73,7 +72,7 @@ export const DesktopNav = () => {
                 <NavigationMenuLink asChild>
                   <Link 
                     to="/agency" 
-                    className="block px-3 py-2 text-sm text-foreground hover:text-cosmic-aura transition-colors font-poppins nav-quantum-enhanced"
+                    className="block px-3 py-2 text-sm text-foreground hover:text-cosmic-aura transition-colors font-poppins"
                   >
                     Agency
                   </Link>
@@ -81,7 +80,7 @@ export const DesktopNav = () => {
                 <NavigationMenuLink asChild>
                   <Link 
                     to="/gated-ip-nft" 
-                    className="block px-3 py-2 text-sm text-foreground hover:text-cosmic-aura transition-colors font-poppins nav-quantum-enhanced"
+                    className="block px-3 py-2 text-sm text-foreground hover:text-cosmic-aura transition-colors font-poppins"
                   >
                     Gated IP NFT
                   </Link>
@@ -96,21 +95,21 @@ export const DesktopNav = () => {
         href="https://cureworld.org" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="nav-link after:transition-all after:duration-300 hover:text-spectral-glow font-poppins font-medium nav-quantum-enhanced"
+        className="nav-link after:transition-all after:duration-300 hover:text-spectral-glow font-poppins font-medium"
       >
         CUREWORLD
       </a>
 
       <Link 
         to="/news" 
-        className={`nav-link after:transition-all after:duration-300 font-poppins font-medium nav-quantum-enhanced ${isActive('/news') ? 'text-spectral-glow after:opacity-100 after:left-0 after:right-0' : ''}`}
+        className={`nav-link after:transition-all after:duration-300 font-poppins font-medium ${isActive('/news') ? 'text-spectral-glow after:opacity-100 after:left-0 after:right-0' : ''}`}
       >
         NEWS
       </Link>
 
       <Link 
         to="/poetry" 
-        className={`nav-link after:transition-all after:duration-300 font-poppins font-medium nav-quantum-enhanced ${isActive('/poetry') ? 'text-cosmic-aura after:opacity-100 after:left-0 after:right-0' : ''}`}
+        className={`nav-link after:transition-all after:duration-300 font-poppins font-medium ${isActive('/poetry') ? 'text-cosmic-aura after:opacity-100 after:left-0 after:right-0' : ''}`}
       >
         POETRY
       </Link>
