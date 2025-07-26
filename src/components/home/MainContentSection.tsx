@@ -43,7 +43,7 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
           <div className="relative min-h-[12rem] bg-gunmetal-900/40 backdrop-blur-lg border border-spectral-crimson/20 hover:border-cosmic-indigo/30 rounded-xl p-6 shadow-xl transition-colors duration-300">
             {/* Subtle quantum background */}
             <div className="absolute inset-0 pointer-events-none">
-              <div className="bg-gradient-to-br from-spectral-crimson/5 via-transparent to-cosmic-indigo/5"></div>
+              <div className="bg-gradient-to-br from-spectral-crimson/5 via-warm-coral/3 via-transparent to-cosmic-indigo/5"></div>
             </div>
             
             <div className="relative z-10">

@@ -32,7 +32,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             {/* Subtle inner quantum core */}
             <div className="absolute inset-0 m-8 rounded-full opacity-30 blur-sm animate-pulse will-change-transform" 
                  style={{
-                   background: 'linear-gradient(135deg, hsl(var(--spectral-crimson) / 0.2), hsl(var(--cosmic-indigo) / 0.2), hsl(var(--spectral-glow) / 0.1))',
+                   background: 'linear-gradient(135deg, hsl(var(--spectral-crimson) / 0.2), hsl(var(--warm-coral) / 0.15), hsl(var(--cosmic-indigo) / 0.2), hsl(var(--spectral-glow) / 0.1))',
                    animationDuration: '5s'
                  }}></div>
           </div>
@@ -40,13 +40,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         
         <h1 className={`transition-all duration-700 delay-200 transform ${revealClass('hero-text')}`}>
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-poppins leading-tight tracking-tight mb-2">
-            <span className="bg-gradient-to-r from-titanium-white via-spectral-glow to-titanium-white bg-clip-text text-transparent font-bold" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Curable</span>
+            <span className="bg-gradient-to-r from-titanium-white via-warm-coral to-spectral-glow bg-clip-text text-transparent font-bold" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Curable</span>
             <span className="text-titanium-white font-bold"> Labs</span>
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-4 font-light">
             <span className="relative inline-block group cursor-default">
               {/* Subtle background field */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-spectral-crimson/3 via-cosmic-indigo/4 to-spectral-glow/3 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-spectral-crimson/3 via-warm-coral/2 via-cosmic-indigo/4 to-spectral-glow/3 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               
               <span className="relative font-semibold tracking-wide text-white block" 
@@ -104,8 +104,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
         
         <p className={`text-foreground/80 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed mb-6 mt-4 transition-all duration-700 delay-300 transform ${revealClass('hero-text')} font-poppins`}>
           An AI-powered, decentralized ecosystem for discovering, validating, and 
-          delivering <span className="text-cyan-400 font-semibold">novel cures</span> through 
-          blockchain-native governance and <span className="text-emerald-400 font-semibold">collaborative research</span>.
+          delivering <span className="text-warm-coral font-semibold">novel cures</span> through 
+          blockchain-native governance and <span className="text-cosmic-aura font-semibold">collaborative research</span>.
         </p>
         
         {/* Enhanced call to action buttons with compact spacing */}
@@ -114,7 +114,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
             onClick={scrollToContent}
             className="btn-quantum-rainbow magnetic-attraction group relative px-8 py-4 text-white font-poppins font-bold rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-105 will-change-transform"
             style={{
-              background: 'linear-gradient(135deg, hsl(var(--spectral-crimson)), hsl(var(--cosmic-indigo)), hsl(var(--quantum-cyan)), hsl(var(--quantum-emerald)))',
+              background: 'linear-gradient(135deg, hsl(var(--spectral-crimson)), hsl(var(--warm-coral)), hsl(var(--cosmic-indigo)), hsl(var(--spectral-glow)))',
               backgroundSize: '300% 300%',
               border: '2px solid rgba(255, 255, 255, 0.2)',
               boxShadow: '0 4px 20px hsl(var(--spectral-crimson) / 0.4), 0 4px 20px hsl(var(--cosmic-indigo) / 0.3)',
@@ -125,29 +125,29 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
               <span className="text-lg">Explore Platform</span> 
               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-3 transition-transform will-change-transform" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-quantum-mint/20 via-quantum-amber/20 to-quantum-rose/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-warm-coral/15 via-cosmic-aura/10 to-spectral-glow/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </button>
           
           <Link 
             to="/whitepaper"
             className="magnetic-attraction px-8 py-4 text-white font-poppins font-bold rounded-xl transition-all duration-500 hover:shadow-lg hover:scale-105 will-change-transform backdrop-blur-sm group relative overflow-hidden"
             style={{
-              border: '2px solid hsl(var(--quantum-emerald) / 0.6)',
-              background: 'linear-gradient(135deg, hsl(var(--quantum-emerald) / 0.1), hsl(var(--quantum-mint) / 0.1), hsl(var(--quantum-teal) / 0.2))',
+              border: '2px solid hsl(var(--cosmic-indigo) / 0.6)',
+              background: 'linear-gradient(135deg, hsl(var(--cosmic-indigo) / 0.1), hsl(var(--warm-coral) / 0.08), hsl(var(--spectral-glow) / 0.1), hsl(var(--cosmic-aura) / 0.1))',
               backgroundSize: '300% 300%',
-              boxShadow: '0 4px 20px hsl(var(--quantum-emerald) / 0.3)',
+              boxShadow: '0 4px 20px hsl(var(--cosmic-indigo) / 0.3)',
               animation: 'rainbow-flow 8s ease-in-out infinite reverse'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, hsl(var(--quantum-emerald)), hsl(var(--quantum-mint)), hsl(var(--quantum-teal)))';
-              e.currentTarget.style.boxShadow = '0 8px 30px hsl(var(--quantum-emerald) / 0.4), 0 4px 20px hsl(var(--quantum-mint) / 0.3)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, hsl(var(--cosmic-indigo)), hsl(var(--warm-coral)), hsl(var(--spectral-glow)), hsl(var(--cosmic-aura)))';
+              e.currentTarget.style.boxShadow = '0 8px 30px hsl(var(--cosmic-indigo) / 0.4), 0 4px 20px hsl(var(--warm-coral) / 0.3)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, hsl(var(--quantum-emerald) / 0.1), hsl(var(--quantum-mint) / 0.1), hsl(var(--quantum-teal) / 0.2))';
-              e.currentTarget.style.boxShadow = '0 4px 20px hsl(var(--quantum-emerald) / 0.3)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, hsl(var(--cosmic-indigo) / 0.1), hsl(var(--warm-coral) / 0.08), hsl(var(--spectral-glow) / 0.1), hsl(var(--cosmic-aura) / 0.1))';
+              e.currentTarget.style.boxShadow = '0 4px 20px hsl(var(--cosmic-indigo) / 0.3)';
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-quantum-sapphire/10 via-quantum-violet/10 to-quantum-amber/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-warm-coral/8 via-cosmic-aura/10 to-spectral-glow/8 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <span className="relative z-10 text-lg">Read Whitepaper</span>
           </Link>
         </div>
