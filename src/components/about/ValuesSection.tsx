@@ -16,10 +16,9 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({ isVisible, hoveredValue, 
       id="values-section" 
       className={`mb-3 relative z-10 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} w-full`}
     >
-      {/* Performance-optimized quantum background effects */}
+      {/* Subtle quantum background enhancement */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="quantum-particles-optimized"></div>
-        <div className="data-stream-optimized"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-spectral-crimson/5 via-transparent to-cosmic-indigo/5"></div>
       </div>
       
       <div className="relative z-10">

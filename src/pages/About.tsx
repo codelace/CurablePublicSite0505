@@ -8,9 +8,10 @@ import AboutCallToAction from '@/components/about/AboutCallToAction';
 const About = memo(() => {
   return (
     <div className="w-full relative min-h-screen bg-dark-base about-page hw-accelerated">
-      {/* Minimal Background - No heavy effects */}
+      {/* Subtle quantum background enhancement */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-radial from-quantum-cyan/3 to-transparent blur-3xl"></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-radial from-spectral-crimson/2 to-transparent blur-3xl"></div>
+        <div className="absolute bottom-1/3 left-1/5 w-80 h-80 rounded-full bg-gradient-radial from-cosmic-indigo/2 to-transparent blur-3xl"></div>
       </div>
       
       {/* Main Content Container - No animations */}
@@ -46,10 +47,10 @@ const About = memo(() => {
             <div>
               {/* Ultra Compact FAQ Header */}
               <div className="text-center mb-4">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-poppins font-bold mb-2 text-white">
-                  Frequently Asked <span className="bg-gradient-to-r from-quantum-cyan to-quantum-purple bg-clip-text text-transparent">Questions</span>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-poppins font-bold mb-2 text-titanium-white">
+                  Frequently Asked <span className="bg-gradient-to-r from-spectral-crimson to-cosmic-indigo bg-clip-text text-transparent">Questions</span>
                 </h2>
-                <div className="w-16 h-0.5 bg-gradient-to-r from-quantum-cyan to-quantum-purple mx-auto mb-2"></div>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-spectral-crimson to-cosmic-indigo mx-auto mb-2"></div>
                 <p className="text-base text-foreground/80 max-w-2xl mx-auto leading-relaxed font-poppins">
                   Everything you need to know about our decentralized science platform
                 </p>
@@ -94,15 +95,15 @@ const About = memo(() => {
                   ].map((faq, index) => (
                     <div 
                       key={index} 
-                      className="bg-brand-charcoal/50 backdrop-blur-sm border border-quantum-cyan/30 rounded-xl p-5 relative overflow-hidden"
+                      className="bg-gunmetal-900/60 backdrop-blur-sm border border-spectral-crimson/20 hover:border-cosmic-indigo/30 rounded-xl p-5 relative overflow-hidden transition-colors duration-300"
                     >
                       {/* Removed hover effects */}
                       
                       <div className="relative z-10">
-                        <h3 className="text-xl font-poppins font-semibold text-white mb-3">
+                        <h3 className="text-xl font-poppins font-semibold text-titanium-white mb-3">
                           {faq.question}
                         </h3>
-                        <div className="w-12 h-0.5 bg-gradient-to-r from-quantum-cyan to-quantum-purple mb-3"></div>
+                        <div className="w-12 h-0.5 bg-gradient-to-r from-spectral-crimson to-cosmic-indigo mb-3"></div>
                         <p className="text-foreground/90 leading-relaxed font-poppins">
                           {faq.answer}
                         </p>

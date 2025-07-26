@@ -92,20 +92,20 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
         <div className="quantum-particles-optimized opacity-15"></div>
       </div>
       
-      {/* Enhanced background effect */}
+      {/* Enhanced background effect with quantum colors */}
       {isHovered && (
-        <div className={`absolute inset-0 bg-gradient-to-br from-spectral-crimson/8 via-cosmic-indigo/10 to-spectral-crimson/5 rounded-xl transition-opacity duration-300 opacity-70`}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-spectral-crimson/6 via-cosmic-indigo/8 to-spectral-glow/4 rounded-xl transition-opacity duration-300 opacity-60"></div>
       )}
       
       <div className={`mb-3 relative z-10 ${isHovered ? 'animate-pulse-dot' : ''}`}>
-        <div className={`absolute inset-0 rounded-full bg-gradient-radial from-quantum-red/30 to-transparent opacity-0 transition-opacity duration-300 ${isHovered ? 'opacity-60' : ''}`}></div>
+        <div className={`absolute inset-0 rounded-full bg-gradient-radial from-spectral-crimson/20 to-transparent opacity-0 transition-opacity duration-300 ${isHovered ? 'opacity-40' : ''}`}></div>
         {iconMap[value.icon as keyof typeof iconMap]}
         
-        {/* Add orbiting particle effect */}
+        {/* Subtle orbiting particle effect */}
         {isHovered && (
           <div className="absolute inset-[-12px] pointer-events-none">
-            <div className="absolute w-2 h-2 rounded-full bg-quantum-red/80 animate-orbit shadow-lg shadow-quantum-red/40" style={{animationDuration: '3s'}}></div>
-            <div className="absolute w-1.5 h-1.5 rounded-full bg-logo-blue/80 animate-orbit shadow-lg shadow-logo-blue/40" style={{animationDuration: '4s', animationDelay: '0.5s'}}></div>
+            <div className="absolute w-1.5 h-1.5 rounded-full bg-spectral-crimson/60 animate-orbit" style={{animationDuration: '4s'}}></div>
+            <div className="absolute w-1 h-1 rounded-full bg-cosmic-indigo/60 animate-orbit" style={{animationDuration: '5s', animationDelay: '0.5s'}}></div>
           </div>
         )}
       </div>
@@ -125,17 +125,17 @@ const ValueCard: React.FC<ValueCardProps> = ({ value, isHovered }) => {
       </p>
       
       {isHovered && (
-        <div className="mt-3 pt-3 border-t border-quantum-red/30 w-full fade-in-up relative z-10">
-          <p className="text-sm font-poppins text-quantum-red flex items-center holographic-text">
-            <span className="mr-2 opacity-70 animate-pulse text-base">›</span>
+        <div className="mt-3 pt-3 border-t border-spectral-crimson/20 w-full fade-in-up relative z-10">
+          <p className="text-sm font-poppins text-spectral-crimson flex items-center">
+            <span className="mr-2 opacity-70 text-base">›</span>
             {valueDetailMap[value.icon as keyof typeof valueDetailMap]}
           </p>
-          <div className="mt-2 w-full h-1 bg-gradient-to-r from-transparent via-quantum-red/50 to-transparent rounded-full animate-pulse-glow shadow-lg shadow-quantum-red/30"></div>
+          <div className="mt-2 w-full h-0.5 bg-gradient-to-r from-transparent via-spectral-crimson/40 to-transparent rounded-full"></div>
           
-          {/* Add data visualization bar */}
-          <div className="mt-3 w-full h-2 bg-brand-charcoal/50 rounded-full overflow-hidden border border-quantum-red/20">
+          {/* Subtle data visualization bar */}
+          <div className="mt-3 w-full h-1.5 bg-gunmetal-900/50 rounded-full overflow-hidden border border-spectral-crimson/10">
             <div 
-              className={`h-full bg-gradient-to-r from-quantum-red to-warm-rose rounded-full animate-expand shadow-lg shadow-quantum-red/40`}
+              className="h-full bg-gradient-to-r from-spectral-crimson to-cosmic-indigo rounded-full transition-all duration-700"
               style={{
                 width: value.icon === 'transparency' ? '98%' : 
                        value.icon === 'rigor' ? '84%' : 

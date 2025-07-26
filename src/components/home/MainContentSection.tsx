@@ -40,14 +40,10 @@ const MainContentSection: React.FC<MainContentSectionProps> = ({
 
         {/* Tab Content with performance-optimized container */}
         <div className={`transition-all duration-500 delay-300 ${revealSections.includes('tabs') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="relative min-h-[12rem] card-quantum-optimized bg-brand-charcoal/30 backdrop-blur-lg border border-spectral-crimson/25 rounded-xl p-6 shadow-xl glow-spectral-soft">
-            {/* Performance-optimized neural network background for content */}
+          <div className="relative min-h-[12rem] bg-gunmetal-900/40 backdrop-blur-lg border border-spectral-crimson/20 hover:border-cosmic-indigo/30 rounded-xl p-6 shadow-xl transition-colors duration-300">
+            {/* Subtle quantum background */}
             <div className="absolute inset-0 pointer-events-none">
-              <div className="neural-network-optimized opacity-8">
-                <div className="neural-node-optimized"></div>
-                <div className="neural-node-optimized"></div>
-                <div className="neural-node-optimized"></div>
-              </div>
+              <div className="bg-gradient-to-br from-spectral-crimson/5 via-transparent to-cosmic-indigo/5"></div>
             </div>
             
             <div className="relative z-10">

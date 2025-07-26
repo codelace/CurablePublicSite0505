@@ -24,29 +24,29 @@ const HeroSection: React.FC<HeroSectionProps> = ({ mounted, revealSections, scro
       <div className="mb-4 text-center max-w-5xl mx-auto relative z-10">
         <div className="relative mb-2 inline-block">
           <div className={`h-20 w-20 sm:h-24 sm:w-24 relative mx-auto mb-4 transition-all duration-700 transform ${mounted ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`}>
-            {/* Performance-optimized rotating rings with spectacular accent colors */}
-            <div className="absolute inset-0 rounded-full border-4 border-spectral-crimson/30 shadow-lg shadow-spectral-crimson/20"></div>
-            <div className="absolute inset-0 rounded-full border-t-4 border-r-4 border-cosmic-indigo animate-spin will-change-transform shadow-cosmic-indigo/40" style={{animationDuration: '3s'}}></div>
-            <div className="absolute inset-0 rounded-full border-4 border-transparent border-b-4 border-quantum-cyan animate-pulse opacity-70" style={{animationDuration: '2s'}}></div>
+            {/* Subtle quantum rings with enhanced colors */}
+            <div className="absolute inset-0 rounded-full border-2 border-spectral-crimson/20"></div>
+            <div className="absolute inset-0 rounded-full border-t-2 border-r-2 border-cosmic-indigo animate-spin will-change-transform opacity-60" style={{animationDuration: '4s'}}></div>
+            <div className="absolute inset-0 rounded-full border-2 border-transparent border-b-2 border-spectral-glow animate-pulse opacity-40" style={{animationDuration: '3s'}}></div>
             
-            {/* Inner quantum core with spectacular aurora gradient */}
-            <div className="absolute inset-0 m-8 rounded-full opacity-80 blur-sm animate-pulse will-change-transform" 
+            {/* Subtle inner quantum core */}
+            <div className="absolute inset-0 m-8 rounded-full opacity-30 blur-sm animate-pulse will-change-transform" 
                  style={{
-                   background: 'linear-gradient(135deg, hsl(var(--spectral-crimson) / 0.4), hsl(var(--cosmic-indigo) / 0.4), hsl(var(--quantum-cyan) / 0.3))',
-                   animationDuration: '4s'
+                   background: 'linear-gradient(135deg, hsl(var(--spectral-crimson) / 0.2), hsl(var(--cosmic-indigo) / 0.2), hsl(var(--spectral-glow) / 0.1))',
+                   animationDuration: '5s'
                  }}></div>
           </div>
         </div>
         
         <h1 className={`transition-all duration-700 delay-200 transform ${revealClass('hero-text')}`}>
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-poppins leading-tight tracking-tight mb-2">
-            <span className="bg-gradient-to-r from-white via-quantum-cyan to-white bg-clip-text text-transparent font-bold drop-shadow-lg" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Curable</span>
-            <span className="text-white font-bold drop-shadow-lg" style={{textShadow: '0 4px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.3)'}}> Labs</span>
+            <span className="bg-gradient-to-r from-titanium-white via-spectral-glow to-titanium-white bg-clip-text text-transparent font-bold" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Curable</span>
+            <span className="text-titanium-white font-bold"> Labs</span>
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl mt-4 font-light">
             <span className="relative inline-block group cursor-default">
-              {/* Simplified background field */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-quantum-cyan/5 via-quantum-emerald/8 to-quantum-sapphire/5 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              {/* Subtle background field */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-spectral-crimson/3 via-cosmic-indigo/4 to-spectral-glow/3 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               
               <span className="relative font-semibold tracking-wide text-white block" 
