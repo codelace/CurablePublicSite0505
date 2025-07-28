@@ -121,16 +121,15 @@ export const DesktopNav = () => {
               APPS
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <div className="p-2 w-48 bg-gunmetal-900/95 border border-quantum-cyan/30 backdrop-blur-lg shadow-lg shadow-quantum-cyan/20">
+              <div className="p-2 w-32 bg-gunmetal-900/95 border border-quantum-cyan/30 backdrop-blur-lg shadow-lg shadow-quantum-cyan/20">
                 <NavigationMenuLink asChild>
                   <a 
                     href="https://curablelabs.io" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-foreground hover:text-quantum-cyan transition-colors font-poppins"
+                    className="flex items-center justify-center px-3 py-2 text-lg hover:bg-quantum-cyan/20 transition-colors rounded"
                   >
                     <span>🧪👾🌟</span>
-                    Curable Labs
                   </a>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
@@ -138,10 +137,9 @@ export const DesktopNav = () => {
                     href="https://binding-db-integrator-1-codelace77.replit.app/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-foreground hover:text-cosmic-indigo transition-colors font-poppins"
+                    className="flex items-center justify-center px-3 py-2 text-lg hover:bg-cosmic-indigo/20 transition-colors rounded"
                   >
                     <span>⚛️🧬⚗️</span>
-                    DNA Binding DB
                   </a>
                 </NavigationMenuLink>
               </div>
