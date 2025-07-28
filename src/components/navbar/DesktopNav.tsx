@@ -106,7 +106,7 @@ export const DesktopNav = () => {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center px-3 py-2 text-lg hover:bg-quantum-cyan/20 transition-colors rounded"
                   >
-                    <span>🧪👾🌟</span>
+                    <span>📈👾⚛️</span>
                   </a>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
@@ -116,7 +116,7 @@ export const DesktopNav = () => {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center px-3 py-2 text-lg hover:bg-cosmic-indigo/20 transition-colors rounded"
                   >
-                    <span>⚛️🧬⚗️</span>
+                    <span>🧬🔭📊</span>
                   </a>
                 </NavigationMenuLink>
               </div>
