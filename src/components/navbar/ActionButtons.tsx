@@ -48,27 +48,27 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
   return (
     <div className={containerClasses}>
       <a 
-        href="https://binding-db-integrator-1-codelace77.replit.app/" 
+        href="https://curablelabs.io" 
         target="_blank" 
         rel="noopener noreferrer"
         className={`${dnaButtonClasses} transition-colors duration-300`}
         style={{ width: '75px' }}
-        onMouseEnter={() => setHoveredButton('dna')}
+        onMouseEnter={() => setHoveredButton('labs')}
         onMouseLeave={() => setHoveredButton(null)}
       >
         {/* Enhanced overlay with improved transitions */}
         <span className="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
         <div className="flex items-center gap-1 relative z-10">
-          <span>⚛️</span>
-          <span>🧬</span>
-          <span>⚗️</span>
+          <span>🧪</span>
+          <span>👾</span>
+          <span>🌟</span>
         </div>
         
         {/* Simplified shine effect */}
         <span className="absolute top-0 left-[-100%] w-full h-full bg-white/10 transform skew-x-15 transition-all duration-700 group-hover:left-[100%]"></span>
         
-        {/* Subtle border glow when hovered - adjusted for blue accent */}
-        {hoveredButton === 'dna' && (
+        {/* Subtle border glow when hovered */}
+        {hoveredButton === 'labs' && (
           <span className="absolute inset-0 rounded-lg ring-1 ring-cosmic-indigo/70 animate-pulse-subtle"></span>
         )}
       </a>
@@ -114,27 +114,27 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
       </Link>
       
       <a 
-        href="https://curablelabs.io" 
+        href="https://binding-db-integrator-1-codelace77.replit.app/" 
         target="_blank" 
         rel="noopener noreferrer"
         className={`${dnaButtonClasses} transition-colors duration-300`}
         style={{ width: '75px' }}
-        onMouseEnter={() => setHoveredButton('labs')}
+        onMouseEnter={() => setHoveredButton('dna')}
         onMouseLeave={() => setHoveredButton(null)}
       >
         {/* Enhanced overlay with improved transitions */}
         <span className="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
         <div className="flex items-center gap-1 relative z-10">
-          <span>🧪</span>
-          <span>👾</span>
-          <span>🌟</span>
+          <span>⚛️</span>
+          <span>🧬</span>
+          <span>⚗️</span>
         </div>
         
         {/* Simplified shine effect */}
         <span className="absolute top-0 left-[-100%] w-full h-full bg-white/10 transform skew-x-15 transition-all duration-700 group-hover:left-[100%]"></span>
         
-        {/* Subtle border glow when hovered */}
-        {hoveredButton === 'labs' && (
+        {/* Subtle border glow when hovered - adjusted for blue accent */}
+        {hoveredButton === 'dna' && (
           <span className="absolute inset-0 rounded-lg ring-1 ring-cosmic-indigo/70 animate-pulse-subtle"></span>
         )}
       </a>
