@@ -31,6 +31,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
   
   const joinButtonStyle = {
     background: 'linear-gradient(135deg, hsl(var(--spectral-crimson)), hsl(var(--spectral-glow)))',
+    border: '2px solid transparent',
     boxShadow: '0 2px 8px hsl(var(--spectral-crimson) / 0.3)'
   };
 
