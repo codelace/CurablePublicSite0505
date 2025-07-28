@@ -91,29 +91,6 @@ export const DesktopNav = () => {
         </NavigationMenuList>
       </NavigationMenu>
       
-      <a 
-        href="https://cureworld.org" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="nav-link after:transition-all after:duration-300 hover:text-spectral-glow font-poppins font-medium"
-      >
-        CUREWORLD
-      </a>
-
-      <Link 
-        to="/news" 
-        className={`nav-link after:transition-all after:duration-300 font-poppins font-medium ${isActive('/news') ? 'text-spectral-glow after:opacity-100 after:left-0 after:right-0' : ''}`}
-      >
-        NEWS
-      </Link>
-
-      <Link 
-        to="/poetry" 
-        className={`nav-link after:transition-all after:duration-300 font-poppins font-medium ${isActive('/poetry') ? 'text-cosmic-aura after:opacity-100 after:left-0 after:right-0' : ''}`}
-      >
-        POETRY
-      </Link>
-
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -147,6 +124,29 @@ export const DesktopNav = () => {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+
+      <a 
+        href="https://cureworld.org" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="nav-link after:transition-all after:duration-300 hover:text-spectral-glow font-poppins font-medium"
+      >
+        CUREWORLD
+      </a>
+
+      <Link 
+        to="/news" 
+        className={`nav-link after:transition-all after:duration-300 font-poppins font-medium ${isActive('/news') ? 'text-spectral-glow after:opacity-100 after:left-0 after:right-0' : ''}`}
+      >
+        NEWS
+      </Link>
+
+      <Link 
+        to="/poetry" 
+        className={`nav-link after:transition-all after:duration-300 font-poppins font-medium ${isActive('/poetry') ? 'text-cosmic-aura after:opacity-100 after:left-0 after:right-0' : ''}`}
+      >
+        POETRY
+      </Link>
 
     </nav>
   );
