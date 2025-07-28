@@ -114,6 +114,42 @@ export const DesktopNav = () => {
         POETRY
       </Link>
 
+      <NavigationMenu>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className="nav-link bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-sm sm:text-base font-poppins font-medium">
+              APPS
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <div className="p-2 w-48 bg-gunmetal-900/95 border border-quantum-cyan/30 backdrop-blur-lg shadow-lg shadow-quantum-cyan/20">
+                <NavigationMenuLink asChild>
+                  <a 
+                    href="https://curablelabs.io" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-foreground hover:text-quantum-cyan transition-colors font-poppins"
+                  >
+                    <span>🧪👾🌟</span>
+                    Curable Labs
+                  </a>
+                </NavigationMenuLink>
+                <NavigationMenuLink asChild>
+                  <a 
+                    href="https://binding-db-integrator-1-codelace77.replit.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-foreground hover:text-cosmic-indigo transition-colors font-poppins"
+                  >
+                    <span>⚛️🧬⚗️</span>
+                    DNA Binding DB
+                  </a>
+                </NavigationMenuLink>
+              </div>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+
     </nav>
   );
 };
