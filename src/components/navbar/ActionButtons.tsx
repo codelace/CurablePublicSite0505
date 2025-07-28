@@ -22,7 +22,7 @@ export const ActionButtons = ({ className = "", isMobile = false }: ActionButton
   // Using brand charcoal for a more professional, trustworthy look
   const dnaButtonClasses = `${baseButtonClasses} ${isMobile 
     ? "bg-gradient-to-r from-gunmetal-900 to-cosmic-indigo/30 hover:from-gunmetal-800 hover:to-cosmic-indigo/50" 
-    : "bg-gradient-to-r from-gunmetal-900 to-cosmic-indigo/30 hover:from-gunmetal-800 hover:to-cosmic-indigo/50 hover:shadow-[0_0_12px_hsl(var(--cosmic-indigo)/0.3)] transition-all duration-300"}`;
+    : "bg-gradient-to-r from-gunmetal-900 to-cosmic-indigo/30 hover:from-gunmetal-800 hover:to-cosmic-indigo/50 hover:shadow-[0_0_12px_hsl(var(--cosmic-indigo)/0.3)] hover:scale-105 transition-all duration-300"}`;
 
   // Keep other button classes the same
   const joinButtonClasses = `${baseButtonClasses} ${isMobile 
