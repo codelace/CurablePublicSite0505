@@ -4,8 +4,8 @@ import CommandHUDHeader from '@/components/CommandHUDHeader';
 import CommandPatternBackground from '@/components/CommandPatternBackground';
 
 const Novel = () => {
-  // Google Form URL for novel cure submissions
-  const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSd4C1W9UXW5cF27y_Ny6RmA1Bc-RmNxq5k8YjglSuiU5nf1kA/viewform";
+  // Tally Form URL for novel cure submissions
+  const formURL = "https://tally.so/r/3N1Rll";
   
   return (
     <div className="container mx-auto px-4 py-16 pt-24 relative">
