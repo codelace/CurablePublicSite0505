@@ -4,8 +4,8 @@ import CommandHUDHeader from '@/components/CommandHUDHeader';
 import CommandPatternBackground from '@/components/CommandPatternBackground';
 
 const Join = () => {
-  // Tally Form URL for joining Curable Labs
-  const formURL = "https://tally.so/r/w2GlqD";
+  // Typeform URL for joining Curable Labs
+  const formURL = "https://form.typeform.com/to/iaikPSbI";
   
   return (
     <div className="container mx-auto px-4 py-16 pt-24 relative">

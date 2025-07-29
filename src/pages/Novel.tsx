@@ -4,8 +4,8 @@ import CommandHUDHeader from '@/components/CommandHUDHeader';
 import CommandPatternBackground from '@/components/CommandPatternBackground';
 
 const Novel = () => {
-  // Tally Form URL for novel cure submissions
-  const formURL = "https://tally.so/r/3N1Rll";
+  // Typeform URL for novel cure submissions
+  const formURL = "https://form.typeform.com/to/oYjh5372";
   
   return (
     <div className="container mx-auto px-4 py-16 pt-24 relative">
