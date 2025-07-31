@@ -5,7 +5,7 @@ import CommandPatternBackground from '@/components/CommandPatternBackground';
 
 const Novel = () => {
   // Typeform URL for novel cure submissions
-  const formURL = "https://form.typeform.com/to/oYjh5372";
+  const formURL = "https://curablelabs.typeform.com/to/oYjh5372";
   
   return (
     <div className="container mx-auto px-4 py-16 pt-24 relative">
