@@ -5,7 +5,7 @@ import CommandPatternBackground from '@/components/CommandPatternBackground';
 
 const Join = () => {
   // Typeform URL for joining Curable Labs
-  const formURL = "https://form.typeform.com/to/iaikPSbI";
+  const formURL = "https://curablelabs.typeform.com/to/iaikPSbI";
   
   return (
     <div className="container mx-auto px-4 py-16 pt-24 relative">
