@@ -89,5 +89,13 @@ export const team: Person[] = [
     avatar: "/placeholder.svg",
     group: "contributor",
     bio: "Profile details coming soon..."
+  },
+  {
+    id: 40,
+    name: "GlitterUnicorn",
+    role: "Content & Community",
+    avatar: "/placeholder.svg",
+    group: "team",
+    bio: "Profile details coming soon..."
   }
 ];
