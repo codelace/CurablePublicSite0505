@@ -88,14 +88,14 @@ export const team: Person[] = [
     role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "contributor",
-    bio: "Profile details coming soon..."
+    bio: "Curious mind chasing the edge of science.\nBullish on open cures and bold ideas.\nReady to grow where vision meets action."
   },
   {
     id: 40,
     name: "GlitterUnicorn",
-    role: "Content & Community",
+    role: "Engineering & AI",
     avatar: "/placeholder.svg",
-    group: "team",
-    bio: "Profile details coming soon..."
+    group: "contributor",
+    bio: "Defies systems built to exclude.\nTurns lived experience into fuel for change.\nBuilding futures where access is open."
   }
 ];

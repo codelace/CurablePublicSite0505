@@ -119,7 +119,7 @@ export const advisors: Person[] = [
     role: "Content & Community",
     avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Profile details coming soon..."
+    bio: "Turns complexity into clear connection.\nBridges brands with the people they serve.\nBuilding trust, one message at a time."
   },
   {
     id: 39,
@@ -127,6 +127,6 @@ export const advisors: Person[] = [
     role: "Content & Community Engagement",
     avatar: "/placeholder.svg",
     group: "advisor",
-    bio: "Profile details coming soon..."
+    bio: "Forged in the bonds of builder communities.\nCarries strength from past guilds to new frontiers.\nHelping cures emerge through collective power."
   },
 ];
