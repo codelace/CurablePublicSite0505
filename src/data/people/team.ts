@@ -94,7 +94,7 @@ export const team: Person[] = [
     id: 40,
     name: "GlitterUnicorn",
     role: "Engineering & AI",
-    avatar: "/placeholder.svg",
+    avatar: "/lovable-uploads/73fbb2dc-fea8-4599-ba4a-c1c1bd4f44b2.png",
     group: "contributor",
     bio: "Defies systems built to exclude.\nTurns lived experience into fuel for change.\nBuilding futures where access is open."
   }
