@@ -82,6 +82,14 @@ export const advisors: Person[] = [
     bio: "Communities built one word at a time.\nFinds signals, simplifies noise.\nWhere growth feels like belonging."
   },
   {
+    id: 40,
+    name: "GlitterUnicorn",
+    role: "Engineering & AI",
+    avatar: "/lovable-uploads/a165b91c-50e2-4fdc-9e57-b41bf5a20f7b.png",
+    group: "advisor",
+    bio: "Defies systems built to exclude.\nTurns lived experience into fuel for change.\nBuilding futures where access is open."
+  },
+  {
     id: 35,
     name: "Dr. Murtaza",
     role: "Science & Research",

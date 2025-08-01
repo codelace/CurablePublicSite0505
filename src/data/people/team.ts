@@ -90,12 +90,4 @@ export const team: Person[] = [
     group: "contributor",
     bio: "Curious mind chasing the edge of science.\nBullish on open cures and bold ideas.\nReady to grow where vision meets action."
   },
-  {
-    id: 40,
-    name: "GlitterUnicorn",
-    role: "Engineering & AI",
-    avatar: "/lovable-uploads/a165b91c-50e2-4fdc-9e57-b41bf5a20f7b.png",
-    group: "contributor",
-    bio: "Defies systems built to exclude.\nTurns lived experience into fuel for change.\nBuilding futures where access is open."
-  }
 ];
