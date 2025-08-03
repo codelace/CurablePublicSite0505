@@ -133,7 +133,7 @@ export const advisors: Person[] = [
     id: 39,
     name: "HEYEAH",
     role: "Content & Community Engagement",
-    avatar: "/placeholder.svg",
+    avatar: "/lovable-uploads/5759789f-b80d-4394-b89a-8a502a959b2e.png",
     group: "advisor",
     bio: "Forged in the bonds of builder communities.\nCarries strength from past guilds to new frontiers.\nHelping cures emerge through collective power."
   },
