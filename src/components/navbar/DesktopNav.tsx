@@ -140,7 +140,7 @@ export const DesktopNav = () => {
       </Link>
 
       <a 
-        href="https://cureworld.org" 
+        href="https://cureworld-1.onrender.com/" 
         target="_blank" 
         rel="noopener noreferrer"
         className="nav-link after:transition-all after:duration-300 hover:text-spectral-glow font-poppins font-medium"
