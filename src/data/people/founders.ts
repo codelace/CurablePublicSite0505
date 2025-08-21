@@ -6,7 +6,7 @@ export const founders: Person[] = [
     id: 1,
     name: "RomanBridge",
     role: "Chief Executive Officer",
-    avatar: "/lovable-uploads/29dc9117-d819-4eb1-b3d0-f5d52977d0ae.png",
+    avatar: "/lovable-uploads/cf9da259-cac9-47a1-8e8e-8bf3d9ae8888.png",
     group: "founder",
     bio: "Bench meets brain, code meets clarity.\nBiotech strategist decoding molecular truth.\nDesigning agents that think like scientists.",
     gptDescription: "Hugh brings over 15 years of experience in biotechnology and pharmaceutical commercialization. He has successfully navigated FDA approval processes for multiple rare disease treatments and has a proven track record of bringing life-saving therapies to market. His expertise spans regulatory affairs, business development, and strategic partnerships in the biotech sector. Hugh is passionate about leveraging Web3 technologies to democratize drug discovery and accelerate the development of treatments for underserved patient populations."
