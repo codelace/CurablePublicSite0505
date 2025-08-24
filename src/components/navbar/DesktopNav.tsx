@@ -101,7 +101,7 @@ export const DesktopNav = () => {
               <div className="p-2 w-32 bg-gunmetal-900/95 border border-quantum-cyan/30 backdrop-blur-lg shadow-lg shadow-quantum-cyan/20">
                 <NavigationMenuLink asChild>
                   <a 
-                    href="https://curablelabs.io" 
+                    href="https://curio-data.lovable.app" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center justify-center px-3 py-2 text-lg hover:bg-quantum-cyan/20 transition-colors rounded"
