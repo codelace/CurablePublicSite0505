@@ -114,16 +114,16 @@ const OptimizedProfileCard: React.FC<OptimizedProfileCardProps> = memo(({
           {person.role}
         </p>
         
-        {/* Bio - Truncated for performance */}
+        {/* Bio - Full display */}
         <div className="flex-1 flex flex-col justify-start">
           <div className="text-foreground/80 text-xs leading-relaxed text-left font-poppins">
             {person.bio ? (
-              <p className="line-clamp-4">
-                {person.bio.split('\n')[0]?.trim() || 'Profile details coming soon...'}
+              <p className="whitespace-pre-line">
+                {person.bio}
               </p>
             ) : person.gptDescription ? (
-              <p className="line-clamp-4">
-                {person.gptDescription.split('\n')[0]?.trim() || 'Profile details coming soon...'}
+              <p className="whitespace-pre-line">
+                {person.gptDescription}
               </p>
             ) : (
               <p className="italic opacity-60">Profile details coming soon...</p>

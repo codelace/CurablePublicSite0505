@@ -70,9 +70,9 @@ const SimpleProfileCard: React.FC<SimpleProfileCardProps> = memo(({ person }) =>
           {person.role}
         </p>
         
-        {/* Bio - Truncated for dense layout */}
+        {/* Bio - Full display */}
         {person.bio && (
-          <p className="text-foreground/70 text-xs font-poppins leading-relaxed line-clamp-2 sm:line-clamp-3">
+          <p className="text-foreground/70 text-xs font-poppins leading-relaxed whitespace-pre-line">
             {person.bio}
           </p>
         )}
