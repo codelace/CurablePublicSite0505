@@ -137,4 +137,28 @@ export const advisors: Person[] = [
     group: "advisor",
     bio: "Forged in the bonds of builder communities.\nCarries strength from past guilds to new frontiers.\nHelping cures emerge through collective power."
   },
+  {
+    id: 41,
+    name: "Grace",
+    role: "Content & Community",
+    avatar: "/placeholder.svg",
+    group: "advisor",
+    bio: "Designs with heart and intention.\nCrafts visuals that spark connection.\nDrawn to missions that move people."
+  },
+  {
+    id: 42,
+    name: "Alka",
+    role: "Design & Creative Direction",
+    avatar: "/lovable-uploads/408702c3-622e-41b2-8884-13f668886c4c.png",
+    group: "advisor",
+    bio: "Shapes voices that resonate and last.\nTurns movements into memory.\nMakes impact unforgettable."
+  },
+  {
+    id: 43,
+    name: "Dax",
+    role: "Engineering & AI",
+    avatar: "/placeholder.svg",
+    group: "advisor",
+    bio: "From bytes to blockchain, always building.\nSees systems as stories in motion.\nQuietly architecting what's next."
+  },
 ];
