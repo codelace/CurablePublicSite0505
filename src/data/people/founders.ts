@@ -19,5 +19,14 @@ export const founders: Person[] = [
     group: "founder",
     bio: "DeSci architect, systems rebel.\nChemical mind with artistic fire.\nFrom benchtop to blockchain.",
     gptDescription: "Ilyssa is a seasoned technology executive with deep expertise in artificial intelligence and Web3 technologies. She has led the development and scaling of machine learning systems for Fortune 500 companies, with particular focus on healthcare applications. Her background spans AI/ML engineering, distributed systems architecture, and blockchain technology. Ilyssa is instrumental in designing Curable Labs' agentic AI systems and decentralized governance mechanisms that power the platform's drug discovery capabilities."
+  },
+  {
+    id: 8,
+    name: "Trek",
+    role: "Chief Science Officer",
+    avatar: "/lovable-uploads/78f3d7f6-b133-4ee6-bea4-b5e4842c9728.png",
+    group: "founder",
+    bio: "Therapeutics shepherd across decades.\nWearables, rare disease, and roadmaps.\nFrom molecule to market, mapped.",
+    gptDescription: "Trek brings decades of experience in therapeutics development and regulatory affairs. He has successfully navigated complex approval processes for wearable medical devices and rare disease treatments. His expertise spans from molecular research to market launch, with particular focus on bridging the gap between innovative biotechnology and regulatory compliance. Trek is instrumental in ensuring Curable Labs' research meets the highest scientific and regulatory standards while accelerating the path to patient access."
   }
 ];

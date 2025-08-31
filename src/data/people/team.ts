@@ -27,14 +27,6 @@ export const team: Person[] = [
     bio: "Four decades in healing hands.\nClinical wisdom meets wearable future.\nBuilt on care, scaled by tech."
   },
   {
-    id: 8,
-    name: "Trek",
-    role: "Regulatory Affairs",
-    avatar: "/lovable-uploads/78f3d7f6-b133-4ee6-bea4-b5e4842c9728.png",
-    group: "team",
-    bio: "Therapeutics shepherd across decades.\nWearables, rare disease, and roadmaps.\nFrom molecule to market, mapped."
-  },
-  {
     id: 17,
     name: "Rocks",
     role: "Content & Community",
