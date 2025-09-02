@@ -11,14 +11,6 @@ export const team: Person[] = [
     bio: "Governance whisperer.\nDAO-native with systems in their bones.\nDesigning for trust and flow."
   },
   {
-    id: 29,
-    name: "Scooby",
-    role: "Agency",
-    avatar: "/lovable-uploads/12eb85d3-4579-4834-9297-df31bb4dccbc.png",
-    group: "team",
-    bio: "Tech tinkerer with a healer's heart.\nVibe-driven builder of better tools.\nCurious mind, endlessly leveling up."
-  },
-  {
     id: 9,
     name: "Sensei",
     role: "Human Health",
@@ -27,20 +19,20 @@ export const team: Person[] = [
     bio: "Four decades in healing hands.\nClinical wisdom meets wearable future.\nBuilt on care, scaled by tech."
   },
   {
-    id: 17,
-    name: "Rocks",
-    role: "Content & Community",
-    avatar: "/lovable-uploads/d02246f5-470f-4d66-a2cb-88d9748dfcef.png",
-    group: "team",
-    bio: "Healthcare by day, Blender by night.\nHealth, art, and Web3 in perfect symmetry.\nCreative care in every detail."
-  },
-  {
     id: 7,
     name: "Dope",
     role: "Science & Research",
     avatar: "/lovable-uploads/5f792e7c-983d-43a5-afa0-228231c200a1.png",
     group: "team",
     bio: "Biotech brain, DeFi heart.\nFermentation, AI, and healing frequencies.\nWhere molecules meet music."
+  },
+  {
+    id: 17,
+    name: "Rocks",
+    role: "Content & Community",
+    avatar: "/lovable-uploads/d02246f5-470f-4d66-a2cb-88d9748dfcef.png",
+    group: "team",
+    bio: "Healthcare by day, Blender by night.\nHealth, art, and Web3 in perfect symmetry.\nCreative care in every detail."
   },
   {
     id: 10,

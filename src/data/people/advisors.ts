@@ -2,6 +2,22 @@ import { Person } from '../types/person';
 
 export const advisors: Person[] = [
   {
+    id: 29,
+    name: "Scooby",
+    role: "Agency",
+    avatar: "/lovable-uploads/12eb85d3-4579-4834-9297-df31bb4dccbc.png",
+    group: "advisor",
+    bio: "Tech tinkerer with a healer's heart.\nVibe-driven builder of better tools.\nCurious mind, endlessly leveling up."
+  },
+  {
+    id: 34,
+    name: "Yuri",
+    role: "Content & Community",
+    avatar: "/lovable-uploads/b2542f9b-43ae-4271-b4fa-a445c4c4ec3b.png",
+    group: "advisor",
+    bio: "Shapes messages that move missions.\nGrants, governance, and grounded growth.\nLearning in public, building with care."
+  },
+  {
     id: 11,
     name: "Weblogica",
     role: "Engineering & AI",
@@ -40,14 +56,6 @@ export const advisors: Person[] = [
     avatar: "/lovable-uploads/c768edd4-6ef7-4383-9a85-75efb5a94194.png",
     group: "advisor",
     bio: "A builder at the frontier of biology.\nTranslates data into discovery tools.\nBridging science with systems that scale."
-  },
-  {
-    id: 34,
-    name: "Yuri",
-    role: "Content & Community",
-    avatar: "/lovable-uploads/b2542f9b-43ae-4271-b4fa-a445c4c4ec3b.png",
-    group: "advisor",
-    bio: "Shapes messages that move missions.\nGrants, governance, and grounded growth.\nLearning in public, building with care."
   },
   {
     id: 20,
