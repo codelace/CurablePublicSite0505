@@ -2,14 +2,6 @@ import { Person } from '../types/person';
 
 export const advisors: Person[] = [
   {
-    id: 29,
-    name: "Scooby",
-    role: "Agency",
-    avatar: "/lovable-uploads/12eb85d3-4579-4834-9297-df31bb4dccbc.png",
-    group: "advisor",
-    bio: "Tech tinkerer with a healer's heart.\nVibe-driven builder of better tools.\nCurious mind, endlessly leveling up."
-  },
-  {
     id: 34,
     name: "Yuri",
     role: "Content & Community",
